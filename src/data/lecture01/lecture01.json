@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "questionDe": "Nennen Sie drei Vorteile von Data Mining.",
+    "questionJa": "データマイニングの利点を3つ述べよ。",
+    "answerDe": "1. Mustererkennung, 2. Prognose, 3. Entscheidungsunterstützung",
+    "answerJa": "1. パターン認識、2. 予測、3. 意思決定支援",
+    "explanationDe": "Data Mining hilft, große Datenmengen systematisch zu analysieren.",
+    "explanationJa": "データマイニングは大量のデータを体系的に分析するのに役立ちます。",
+    "questionImage": "lecture01/lecture01_q01.png",
+    "explanationImage": "lecture01/lecture01_ex01.png"
+  },
+  {
+    "id": 2,
+    "questionDe": "Was ist ein Overfitting in ML?",
+    "questionJa": "機械学習における過学習とは？",
+    "answerDe": "Ein Modell passt sich zu stark an Trainingsdaten an.",
+    "answerJa": "モデルが訓練データに過剰に適応してしまうこと。",
+    "explanationDe": "Das Modell hat geringe Generalisierungsfähigkeit.",
+    "explanationJa": "そのモデルは汎化能力が低いことを意味します。"
+  }
+]
