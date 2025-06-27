@@ -7,7 +7,7 @@
       <!-- 問題画像 -->
       <div v-if="question.questionImage">
         <img
-          :src="`/images/${question.questionImage}`"
+          :src="`./images/${question.questionImage}`"
           class="img-fluid rounded my-2 border"
           alt="question image"
         />
@@ -61,8 +61,10 @@
             
           <!-- 原文スライド -->
           <div class="mt-4">
-            <p class="fw-bold mb-1">📑 原文（スライド抜粋）:</p>
-            <pre class="bg-light p-2 rounded border"><code>{{ question.originalSlideText }}</code></pre>
+            <p class="fw-bold mb-1">原文（スライド抜粋）:</p>
+            <div class="border rounded p-3 bg-white text-secondary" style="white-space: pre-wrap; font-family: inherit;">
+              {{ question.originalSlideText }}
+            </div>
           </div>
         </div>
       </div>

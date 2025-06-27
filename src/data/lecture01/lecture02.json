@@ -22,7 +22,8 @@
       "現代では、SNSの投稿、ネットショッピングの履歴、車のセンサーなどから、毎日膨大なデータが生成されています。人間だけではそれをすべて手作業で分析するのは不可能です。",
       "そこでData Miningのような自動的な分析技術が必要になります。大量のデータから意味のある情報を取り出す手段として役立ちます。",
       "例えば、ネット通販サイトでは、Data Miningによって『この商品を買った人は他に何を買ったか』を分析し、レコメンド機能や在庫管理に活用されます。"
-    ]
+    ],
+    "originalSlideText": "• Warum?\n• Überbordernde Menge an Daten\n• Wachsende Lücke zwischen Produktion und Auswertung der Daten\n• Ziel:\n• Extraktion von nützlichen und versteckten Informationen"
   },
   {
     "id": 2,
@@ -45,8 +46,9 @@
       "パターン認識とは、コンピュータがデータの中からよく見られる共通の傾向や構造を見つけ出すことを意味します。例えば「高齢者は特定の薬をよく使用する」といった傾向などです。",
       "Data Miningでは、決定木（Decision Tree）やクラスタリング（Clustering）などのアルゴリズムを用いて、こうしたパターンを自動的に見つけ出します。",
       "例えば、医療データから『血圧が高く、年齢が60歳以上の場合、心疾患のリスクが高い』といったルールを導き出すことができます。"
-    ]
-  },
+    ],
+    "originalSlideText": "• Methode:\n• Mustererkennung in den Daten\n• Nutzung von verschiedenen Data Mining Verfahren, um die Muster in den Daten (semi-)automatisch zu finden"
+  }, 
   {
     "id": 3,
     "questionDe": "(s.3) Nennen Sie vier Anforderungen an ein gültiges Data-Mining-Muster.",
@@ -63,18 +65,7 @@
       "新たなデータに対して非自明な予測が可能",
       "大量のデータに基づいている"
     ],
-    "explanationDe": [
-      "Ein Muster ist dann wertvoll, wenn es automatisch entdeckt wird, ohne dass der Mensch alle Daten manuell durchsuchen muss.",
-      "Es sollte auch nützlich sein – z. B. ein Muster, das zeigt, dass Schüler, die viel Mathematik lernen, bessere Noten in Physik bekommen.",
-      "Außerdem muss das Muster Aussagen über neue Daten ermöglichen, nicht nur über die, mit denen es erstellt wurde.",
-      "Damit solche Muster verlässlich sind, braucht man viele Daten, damit sich zufällige Effekte ausgleichen."
-    ],
-    "explanationJa": [
-      "価値のあるパターンとは、人の手を使わず自動的に見つけられるものでなければなりません。",
-      "また、そのパターン自体が有益である必要があります。例えば『数学をたくさん勉強する生徒は、物理でも良い成績を取りやすい』という傾向などです。",
-      "そのパターンが新しいデータにも当てはまり、予測に役立つことが重要です。",
-      "そのためには、十分な量のデータを使って偶然の影響を排除し、信頼できるパターンを見つける必要があります。"
-    ]
+    "originalSlideText": "• Data Mining ist definiert als Prozess zum Erkennen von Mustern in Daten\n• Muss automatisch oder zumindest semi-automatisch sein\n• Die gefundenen Muster müssen Informationen enthalten, die nützlich sind\n• Die gefundenen Muster ermöglichen nicht triviale Aussagen über neue Daten\n• Daten sind in großer Menge vorhanden"
   },
   {
     "id": 4,
@@ -87,16 +78,6 @@
     "answerJa": [
       "ブラックボックス",
       "透明なボックス"
-    ],
-    "explanationDe": [
-      "Eine 'Black Box'-Methode ist ein Verfahren, bei dem die internen Abläufe schwer nachvollziehbar sind – wie z. B. bei tiefen neuronalen Netzen. Man erhält ein Ergebnis, versteht aber nicht unbedingt, wie es zustande kam.",
-      "Eine 'Transparente Box'-Methode dagegen zeigt offen, wie Entscheidungen zustande kommen – z. B. durch Entscheidungsbäume, bei denen jede Regel erklärbar ist.",
-      "Beispiel: Bei der Kreditvergabe liefert ein neuronales Netz möglicherweise nur das Ergebnis 'Kredit abgelehnt', während ein Entscheidungsbaum die genauen Gründe zeigt, etwa 'zu niedriges Einkommen'."
-    ],
-    "explanationJa": [
-      "『ブラックボックス』型の手法とは、内部で何が起きているかが分かりにくいモデルのことです。例えば深層ニューラルネットワークは結果は出すけれど、どうしてその結果になったのかが分かりづらいです。",
-      "一方『透明なボックス』型の手法では、どのようにして判断が下されたのかを明示的に知ることができます。例えば決定木（Decision Tree）は、どの条件によってどの判断がされたかを説明できます。",
-      "例：銀行のローン審査では、ブラックボックスモデルだと『ローン却下』という結果だけが出て理由がわからないが、決定木なら『年収が基準以下』などの明確な理由が分かります。"
     ],
     "originalSlideText": "• Methodenarten:\n• Black Box: Innere Abläufe sind nicht einfach nachvollziehbar\n• Transparente Box: Zeigt die Struktur eines Musters offen und nachvollziehbar an"
   },
@@ -114,16 +95,38 @@
       "調査・説明が可能である",
       "将来の意思決定に役立つ"
     ],
+    "originalSlideText": "• Strukturierte Muster\n• Bilden die Struktur eindeutig ab\n• Sind untersuchbar\n• Sind begründbar\n• Sind nützlich für zukünftige Entscheidungen"
+  },
+  {
+    "id": 6,
+    "questionDe": "(s.5) Welche Informationen enthält der Beispieldatensatz für Kontaktlinsen?",
+    "questionJa": "コンタクトレンズに関する例のデータセットにはどのような情報が含まれているか？",
+    "answerDe": [
+      "Alter",
+      "Fehlsichtigkeit",
+      "Hornhautverkrümmung",
+      "Tränenproduktion",
+      "Empfohlene Linsen"
+    ],
+    "answerJa": [
+      "年齢",
+      "屈折異常の有無",
+      "乱視の有無",
+      "涙の分泌量",
+      "推奨されるレンズの種類"
+    ],
     "explanationDe": [
-      "Strukturierte Muster sind wie Regeln oder Formeln, die man nachvollziehen kann – zum Beispiel: 'Wenn die Temperatur unter 0°C fällt, gefriert Wasser'.",
-      "Solche Muster sind nicht nur sichtbar, sondern man kann auch erklären, warum sie gelten, und sie erneut testen.",
-      "Sie sind besonders nützlich, weil man mit ihnen zukünftige Situationen einschätzen kann – z. B. bei der Vorhersage von Kundenverhalten oder bei der Diagnose in der Medizin."
+      "In dem Beispiel werden verschiedene Eigenschaften von Personen mit ihren Kontaktlinsenempfehlungen kombiniert dargestellt.",
+      "Typische Attribute sind z. B. das Alter der Person (jung oder alt), ob sie kurzsichtig oder weitsichtig ist, ob eine Hornhautverkrümmung vorliegt und wie die Tränenproduktion eingeschätzt wird.",
+      "Basierend auf diesen Attributen wird eine bestimmte Linsenart empfohlen – z. B. harte oder weiche Linsen, oder keine Empfehlung."
     ],
     "explanationJa": [
-      "構造化されたパターンは、数式やルールのように、意味が明確で説明可能なパターンのことです。例：『気温が0℃を下回ると水は凍る』というようなもの。",
-      "そのようなパターンは目に見えるだけでなく、なぜそうなるのかを説明でき、再び検証することもできます。",
-      "こうしたパターンは、将来の出来事を予測したり、医療やマーケティングでの判断材料として活用することができます。"
-    ]
+      "この例では、個人の属性とコンタクトレンズの推奨結果が関連付けられた形で示されています。",
+      "具体的な属性としては、年齢（若年か高齢か）、近視または遠視かどうか、乱視の有無、涙の分泌量（正常または減少）が含まれます。",
+      "これらの条件に基づいて、ハードレンズやソフトレンズ、またはレンズなしといった推奨がなされます。"
+    ],
+    "originalSlideText": "Alter Fehlsichtigkeit Hornhaut-verkrümmung Tränen-produktion EmpfohleneLinsen\nJung Kurzsichtig nein reduziert keine\nJung Kurzsichtig nein normal weich\nJung Kurzsichtig ja reduziert keine\nJung Kurzsichtig ja normal hart\nJung weitsichtig nein reduziert keine\nJung weitsichtig nein normal weiche\n… … … … …",
+    "questionImage": "lecture01/lecture02_q1.png"
   },
   {
     "id": 7,
@@ -147,7 +150,8 @@
       "一方で、若くて乱視がない場合には、ソフトレンズの使用が適しているとされます。",
       "このようなルールは、決定木（Decision Tree）として可視化でき、新しいデータにも適用しやすいです。"
     ],
-    "explanationImage": "lecture01/lecture01_ex1.png"
+    "originalSlideText": "• Extrahierte Regeln:\n• Wenn Tränenproduktion = reduziert → Empfehlung = keine\n• Ansonsten:\n• Wenn Alter = jung und Hornhautverkrümmung = nein → weich\n• Darstellbar als Entscheidungsbaum",
+    "explanationImage": "lecture01/lecture02_ex1.png"
   },
   {
     "id": 8,
@@ -172,9 +176,12 @@
       "訓練データから作られたルールは、そのデータだけを説明しており、新しいデータにはうまく当てはまらないことがあります。",
       "現実世界では、センサーの不具合や記録ミスにより、データの一部が欠けていることがよくあります。",
       "また、入力ミスや古い情報が含まれている場合には、誤った結論を導いてしまう可能性があります。"
-    ]
+    ],
+    "originalSlideText": "• Probleme:\n• Regeln bilden nur den Datensatz ab\n• Vollständige Datensätze sind aber nicht die Norm\n• Reale Datensätze weisen Lücken aufgrund von Messfehlern auf\n• Reale Daten beinhalten Fehler"
   }
 
+  
+  
   
   
   
