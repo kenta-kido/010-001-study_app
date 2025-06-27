@@ -436,7 +436,208 @@
       "例：顧客ごとの詳細なルールを個別に作成する代わりに、共通する購買パターンを見つけてルール化し、例外的なケースは除外することで、より汎用的で信頼できるルールを得られます。"
     ],
     "originalSlideText": "• Bottom Up Idee:\n  • Starte mit einfachen Regeln\n  • Erstelle darauf aufbauend komplexere Regeln\n  • Stop, wenn die Regeln komplex genug sind\n• Vermeidung von Overfitting\n• Nennt man auch forward-pruning\n  • Geht auch rückwärts\n  • Backward-pruning\n  • Start mit generellen Regeln zu simplen Regeln"
-  } 
+  },
+  {
+    "id": 19,
+    "questionDe": "(s.11) Was sind wichtige Eigenschaften von Konzeptbeschreibungen im Data Mining? Nennen Sie drei.",
+    "questionJa": "Data Miningにおける概念記述の重要な性質を3つ挙げよ。",
+    "answerDe": [
+      "Verständlich",
+      "Nachvollziehbar und diskutierbar",
+      "Anwendbar auf Beispiele"
+    ],
+    "answerJa": [
+      "理解しやすい",
+      "説明・議論が可能",
+      "例に適用可能"
+    ],
+    "explanationDe": [
+      "Eine Konzeptbeschreibung ist eine Definition oder Regel, die ausdrückt, was man im Data Mining lernen will – z. B. 'Was ist ein guter Kunde?'.",
+      "Sie soll verständlich sein, damit auch Personen ohne technische Kenntnisse sie nachvollziehen können.",
+      "Zudem muss sie diskutierbar sein – z. B. mit Experten –, um sicherzustellen, dass das Konzept sinnvoll ist.",
+      "Wichtig ist auch, dass die Beschreibung in der Praxis auf konkrete Beispiele angewendet werden kann, etwa bei der Entscheidung, ob ein Kunde ein 'Risikokunde' ist oder nicht."
+    ],
+    "explanationJa": [
+      "概念記述とは、Data Miningにおいて『何を学ぶか』を定義するものです。例：『優良顧客とは何か？』という問いに答える定義のようなものです。",
+      "この記述は、非技術者でも理解できるものであることが望ましいです。",
+      "また、専門家と議論できるように説明可能であるべきです。たとえば、その概念が業務上意味のあるものかを確認するためです。",
+      "さらに、その概念が実際のデータ例に対して適用可能である必要があります。例：『この顧客はリスクが高いかどうか』と判断する場面などです。"
+    ],
+    "originalSlideText": "• Konzeptbeschreibungen: Das, was man lernen will\n  • Verständlich\n    • Nachvollziehbar\n    • Diskutierbar\n  • Anwendbar\n    • Kann man auf Beispiele anwenden"
+  },
+  {
+    "id": 20,
+    "questionDe": "(s.11) Erklären Sie den Unterschied zwischen Instanzen und Attributen im Data Mining.",
+    "questionJa": "Data Miningにおけるインスタンスと属性の違いを説明せよ。",
+    "answerDe": [
+      "Instanzen sind konkrete Beispiele für ein Konzept",
+      "Attribute beschreiben die Eigenschaften einer Instanz"
+    ],
+    "answerJa": [
+      "インスタンスとは、ある概念に対応する具体的な例である",
+      "属性とは、インスタンスの性質を記述する要素である"
+    ],
+    "explanationDe": [
+      "Eine Instanz ist ein einzelnes Beispiel für ein Konzept – z. B. ein Kunde, der als 'risikoreich' oder 'loyal' gelten kann.",
+      "Manchmal ist Hintergrundwissen nötig, um die Bedeutung einer Instanz zu verstehen – z. B. Kontext zu früherem Verhalten.",
+      "Attribute beschreiben Merkmale der Instanz, wie Alter, Einkommen oder Kaufverhalten.",
+      "Im Data Mining handelt es sich bei Attributen häufig um numerische (z. B. Alter = 45) oder kategoriale (z. B. Geschlecht = männlich) Daten."
+    ],
+    "explanationJa": [
+      "インスタンスとは、ある概念に対する具体的な例のことです。例えば『リスクのある顧客』という概念における、特定の顧客データなどが該当します。",
+      "そのインスタンスを正しく解釈するためには、背景知識（過去の履歴など）が重要になることもあります。",
+      "属性とは、そのインスタンスの特徴を表す要素で、たとえば『年齢』『収入』『購入履歴』などです。",
+      "Data Miningでは、属性は数値データ（例：年齢＝45）やカテゴリデータ（例：性別＝男性）などとして扱われることが多いです。"
+    ],
+    "originalSlideText": "• Instanzen\n  • Einzelnes Beispiel für das zu lernende Konzept\n  • Hintergrundwissen kann wichtig sein\n• Attribute\n  • Jede Instanz wird durch Attribute beschrieben\n  • Data Mining bearbeitet zumeist numerische oder kategorische Daten"
+  },
+  {
+    "id": 21,
+    "questionDe": "(s.12) Nennen Sie vier grundlegende Lernverfahren im Data Mining.",
+    "questionJa": "Data Miningにおける4つの基本的な学習手法を挙げよ。",
+    "answerDe": [
+      "Klassifikation",
+      "Assoziation",
+      "Clustering",
+      "Numerische Vorhersage"
+    ],
+    "answerJa": [
+      "分類（Klassifikation）",
+      "アソシエーション（Assoziation）",
+      "クラスタリング（Clustering）",
+      "数値予測（Numerische Vorhersage）"
+    ],
+    "explanationDe": [
+      "Klassifikation ordnet Daten vordefinierten Klassen zu, z. B. ob ein Kunde zahlungsfähig ist oder nicht.",
+      "Assoziation erkennt Zusammenhänge zwischen Attributen, z. B. 'Wer Bier kauft, kauft auch Chips'.",
+      "Clustering gruppiert Daten in ähnliche Gruppen, ohne vorher bekannte Klassen.",
+      "Numerische Vorhersage sagt einen konkreten Zahlenwert voraus, z. B. zukünftigen Umsatz."
+    ],
+    "explanationJa": [
+      "分類は、データを事前に定義されたクラスに割り当てる方法です。例：この顧客は支払い能力があるかないか。",
+      "アソシエーションは、属性間の関連性を発見するもので、『ビールを買った人はチップスも買う』といった関係を見つけます。",
+      "クラスタリングは、既知のクラスがない状態で似たデータをグループにまとめます。",
+      "数値予測では、将来の売上など、具体的な数値を予測します。"
+    ],
+    "originalSlideText": "• Lernverfahren:\n  • Klassifikation\n  • Assoziation\n  • Clustering\n  • Numerische Vorhersage\n• Output sind Konzeptbeschreibungen"
+  },
+  {
+    "id": 22,
+    "questionDe": "(s.13) Was ist Klassifikation im Data Mining und wie funktioniert sie?",
+    "questionJa": "Data Miningにおける分類とは何か、どのように機能するか説明せよ。",
+    "answerDe": [
+      "Klassifikation ordnet Daten einer vordefinierten Klasse zu",
+      "Beispiel: Kontaktlinsenempfehlung basierend auf Attributen",
+      "Typisches Beispiel für ein überwachtes Lernverfahren"
+    ],
+    "answerJa": [
+      "分類とは、データをあらかじめ定められたクラスに割り当てる手法である",
+      "例：属性情報に基づくコンタクトレンズの推薦",
+      "典型的な教師あり学習（Supervised Learning）である"
+    ],
+    "explanationDe": [
+      "Beim Klassifikationsverfahren wird für jedes neue Datenbeispiel eine Klasse vorhergesagt.",
+      "Ein bekanntes Beispiel ist der Kontaktlinsendatensatz: Hier wird auf Basis von Attributen (Alter, Tränenproduktion etc.) entschieden, ob harte, weiche oder keine Linsen empfohlen werden.",
+      "Dieses Verfahren ist überwacht – d. h. man kennt die Zielklasse aus den Trainingsdaten und kann die Vorhersagequalität messen."
+    ],
+    "explanationJa": [
+      "分類とは、新しいデータに対してそのクラス（カテゴリ）を予測する手法です。",
+      "代表例はコンタクトレンズのデータで、年齢や涙の分泌量などの属性から、どのレンズを使うべきかを分類します。",
+      "これは教師あり学習に該当し、あらかじめ正解ラベルが与えられており、予測精度を評価することが可能です。"
+    ],
+    "originalSlideText": "• Klassifikation\n  • Bsp. Kontaktlinsen:\n    • Aggregiert die Daten\n    • Gibt Empfehlungen, welche Linsen genutzt werden sollen\n• Supervised Lernverfahren\n  • Stellt iterativ neue Ergebnisse bereit für jeden neuen Datenpunkt\n  • Ergebnis ist die „Klasse“ der Beispiele\n  • Erfolg des Lernverfahrens kann beurteilt werden"
+  },
+  {
+    "id": 23,
+    "questionDe": "(s.14) Was charakterisiert Assoziationslernen im Data Mining?",
+    "questionJa": "Data Miningにおけるアソシエーション学習の特徴を述べよ。",
+    "answerDe": [
+      "Deckt interessante Strukturen in Daten auf",
+      "Kann mehrere Attribute gleichzeitig vorhersagen",
+      "Basiert oft auf Mindestanzahl und Genauigkeit der Regeln"
+    ],
+    "answerJa": [
+      "データ中の興味深い構造を明らかにする",
+      "複数の属性を同時に予測可能",
+      "ルールの最低出現数や精度に基づいている"
+    ],
+    "explanationDe": [
+      "Assoziationslernen identifiziert Beziehungen zwischen Attributen – z. B. wenn jemand Produkt A kauft, dann auch Produkt B.",
+      "Es können nicht nur Klassen, sondern beliebige Attributwerte vorhergesagt werden, z. B. Geschlecht, Alter und Kaufverhalten.",
+      "Assoziationsregeln müssen oft ein Mindestmaß an Unterstützung (Support) und Genauigkeit (Confidence) erfüllen.",
+      "Typischerweise wird es für kategoriale Daten verwendet."
+    ],
+    "explanationJa": [
+      "アソシエーション学習では、属性同士の関係性（関連ルール）を発見します。例：『商品Aを買った人は商品Bも買う』など。",
+      "クラスだけでなく、性別・年齢・購買傾向など任意の属性値を予測可能です。",
+      "ルールの妥当性を保つために、一定の出現頻度（サポート）や信頼度（コンフィデンス）が必要です。",
+      "主にカテゴリデータに対して使われることが多いです。"
+    ],
+    "originalSlideText": "• Assoziationen\n  • Offenlegung von interessanten Strukturen in Daten\n  • Kann jedes Attribut Vorhersagen, nicht nur die Klasse\n  • Kann mehr als einen Attributwert vorhersagen\n  • Es gibt wesentlich mehr Assoziationsregeln als Klassifikationsregeln\n  • Regeln basieren oft auf einem Minimum an notwendigen Daten\n  • Regeln brauchen oft eine minimales Level an Genauigkeit\n  • Notwendige Prüfung, ob die Regeln sinnvoll sind\n  • Typischerweise für kategoriale Daten"
+  },
+  {
+    "id": 24,
+    "questionDe": "(s.15) Was ist Clustering im Data Mining und welche Herausforderungen bestehen dabei?",
+    "questionJa": "Data Miningにおけるクラスタリングとは何か、またその際の課題を述べよ。",
+    "answerDe": [
+      "Clustering gruppiert Daten ohne vordefinierte Klassen",
+      "Herausforderungen: Finden der Cluster, Zuordnung neuer Instanzen",
+      "Analyse der Sinnhaftigkeit des Ergebnisses oft subjektiv"
+    ],
+    "answerJa": [
+      "クラスタリングは、あらかじめクラスが定義されていないデータをグループ化する手法である",
+      "課題：クラスタの発見と新しいインスタンスの割り当て",
+      "結果の有効性の評価が主観的になりやすい"
+    ],
+    "explanationDe": [
+      "Clustering ist ein unüberwachtes Verfahren, das ähnliche Datenpunkte zu Gruppen (Clustern) zusammenfasst, ohne dass vorher Klassen definiert sind.",
+      "Ein Beispiel wäre die Gruppierung von Kunden nach ihrem Kaufverhalten, ohne vorher festzulegen, welche Gruppen es geben soll.",
+      "Herausforderungen sind u. a.: Wie viele Cluster soll man erzeugen? Wie werden neue Daten zugeordnet? Und: Ist das Ergebnis sinnvoll?",
+      "Manchmal wird Clustering auch mit Klassifikation kombiniert, um später neue Instanzen einzuordnen."
+    ],
+    "explanationJa": [
+      "クラスタリングは教師なし学習の一種で、似ているデータ同士を自動的にグループ（クラスタ）に分ける手法です。事前にクラスラベルは必要ありません。",
+      "例：顧客の購買傾向に基づいて、あらかじめグループを定義せずに似た顧客同士を分類することなど。",
+      "主な課題は、いくつクラスタを作るべきか、新しいデータをどう割り当てるか、そして結果が妥当かどうかをどう判断するかです。",
+      "分類と組み合わせて、新しいインスタンスにあとからクラスを割り当てるという応用もあります。"
+    ],
+    "originalSlideText": "• Clustering\n  • Keine spezifischen Klassen\n  • Gruppiert Daten in ähnliche Gruppen\n  • Herausforderungen:\n    • Finden der Cluster\n    • Zuordnung von neuen Instanzen\n  • Wie viele Cluster braucht man?\n  • Subjektive Analyse, ob das Ergebnis sinnvoll ist\n  • Kann mit nachträglicher Klassifikation kombiniert werden, um neue Instanzen hinzuzufügen"
+  },
+  {
+    "id": 25,
+    "questionDe": "(s.16) Was versteht man unter numerischer Vorhersage im Data Mining und worauf kommt es dabei an?",
+    "questionJa": "Data Miningにおける数値予測とは何か、それを行う上で重要な点を述べよ。",
+    "answerDe": [
+      "Variante der Klassifikation mit numerischem Ergebnis",
+      "Vorhersage von konkreten Zahlenwerten statt Kategorien",
+      "Wichtig ist die Struktur der Beschreibung, nicht einzelne Vorhersagen"
+    ],
+    "answerJa": [
+      "分類の変種で、予測結果がカテゴリでなく数値となるもの",
+      "カテゴリーではなく、具体的な数値を予測する",
+      "個々の予測値ではなく、記述の構造（重要属性や属性間関係）が重要"
+    ],
+    "explanationDe": [
+      "Numerische Vorhersage (z. B. Regression) zielt darauf ab, kontinuierliche Werte wie Einkommen, Temperatur oder Umsatz vorherzusagen.",
+      "Anders als bei der Klassifikation ist das Ergebnis kein Label, sondern ein Zahlenwert.",
+      "Besonders wichtig ist die Struktur der zugrunde liegenden Regeln: Welche Attribute sind wichtig, und wie hängen sie zusammen?",
+      "Die genaue Vorhersage einzelner neuer Instanzen ist weniger entscheidend als ein gutes Verständnis der zugrunde liegenden Beziehungen."
+    ],
+    "explanationJa": [
+      "数値予測（たとえば回帰分析）では、収入・気温・売上などの連続値を予測します。",
+      "分類と違い、予測結果はカテゴリではなく具体的な数値です。",
+      "この場合、ルールの正確さよりも、どの属性が重要か、属性同士の関係がどうなっているかなど、説明構造そのものが重要になります。",
+      "新しい個別インスタンスへの予測精度よりも、全体の傾向を把握することが重視されます。"
+    ],
+    "originalSlideText": "• Numerische Vorhersage\n  • Variante der Klassifikation\n  • Ergebnis ist ein numerischer Wert statt eine Kategorie\n  • Vorhersage von neuen Instanzen eher unwichtig\n• Wichtiger ist meist die Struktur der Beschreibung\n  • Wichtige Attribute\n  • Relation der Attribute"
+  }  
+  
+  
+  
+  
+  
+  
+  
   
   
   
