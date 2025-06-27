@@ -124,7 +124,59 @@
       "そのようなパターンは目に見えるだけでなく、なぜそうなるのかを説明でき、再び検証することもできます。",
       "こうしたパターンは、将来の出来事を予測したり、医療やマーケティングでの判断材料として活用することができます。"
     ]
+  },
+  {
+    "id": 7,
+    "questionDe": "(s.6) Nennen Sie zwei Regeln, die aus dem Kontaktlinsen-Datensatz extrahiert wurden.",
+    "questionJa": "コンタクトレンズのデータから抽出されたルールを2つ挙げよ。",
+    "answerDe": [
+      "Wenn Tränenproduktion = reduziert → Empfehlung = keine",
+      "Wenn Alter = jung und Hornhautverkrümmung = nein → weich"
+    ],
+    "answerJa": [
+      "涙の分泌が減少している場合 → レンズは推奨されない",
+      "年齢が若く、乱視がない場合 → ソフトレンズが推奨される"
+    ],
+    "explanationDe": [
+      "Aus den gegebenen Daten lassen sich logische Wenn-Dann-Regeln ableiten. Zum Beispiel zeigt sich, dass eine reduzierte Tränenproduktion dazu führt, dass keine Kontaktlinsen empfohlen werden.",
+      "Wenn hingegen junge Personen keine Hornhautverkrümmung haben, eignen sich weiche Linsen gut für sie.",
+      "Solche Regeln lassen sich grafisch als Entscheidungsbaum darstellen, der für neue Fälle leicht anwendbar ist."
+    ],
+    "explanationJa": [
+      "このデータから『もし〜なら〜する』という形のルールを導き出すことができます。例えば、涙の量が減っている場合は、レンズは使わない方がよいという判断がなされます。",
+      "一方で、若くて乱視がない場合には、ソフトレンズの使用が適しているとされます。",
+      "このようなルールは、決定木（Decision Tree）として可視化でき、新しいデータにも適用しやすいです。"
+    ],
+    "explanationImage": "lecture01/lecture01_ex1.png"
+  },
+  {
+    "id": 8,
+    "questionDe": "(s.6) Nennen Sie drei Probleme, die bei realen Datensätzen im Vergleich zu vollständigen Datensätzen auftreten können.",
+    "questionJa": "実際のデータセットにおいて完全なデータと比べて発生しうる問題点を3つ挙げよ。",
+    "answerDe": [
+      "Regeln bilden nur den Datensatz ab",
+      "Reale Datensätze sind oft unvollständig",
+      "Reale Daten enthalten Fehler"
+    ],
+    "answerJa": [
+      "ルールは元のデータしか表現していない",
+      "実データはしばしば欠損している",
+      "実データには誤りが含まれている"
+    ],
+    "explanationDe": [
+      "Ein Regelwerk, das aus einem Trainingsdatensatz erstellt wird, beschreibt nur genau diesen Datensatz – es verallgemeinert möglicherweise nicht gut auf neue Daten.",
+      "Im echten Leben fehlen oft Datenpunkte – z. B. weil sie nicht gemessen wurden oder Messfehler vorlagen.",
+      "Zudem können Eingabefehler oder veraltete Informationen zu falschen Schlüssen führen."
+    ],
+    "explanationJa": [
+      "訓練データから作られたルールは、そのデータだけを説明しており、新しいデータにはうまく当てはまらないことがあります。",
+      "現実世界では、センサーの不具合や記録ミスにより、データの一部が欠けていることがよくあります。",
+      "また、入力ミスや古い情報が含まれている場合には、誤った結論を導いてしまう可能性があります。"
+    ]
   }
+
+  
+  
   
   
    
