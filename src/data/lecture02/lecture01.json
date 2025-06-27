@@ -1,21 +1,30 @@
 [
   {
     "id": 1,
-    "questionDe": "Nennen Sie drei Vorteile von Data Mining.",
-    "questionJa": "L2_L1_データマイニングの利点を3つ述べよ。",
-    "answerDe": "1. Mustererkennung, 2. Prognose, 3. Entscheidungsunterstützung",
-    "answerJa": "1. パターン認識、2. 予測、3. 意思決定支援",
-    "explanationDe": "Data Mining hilft, große Datenmengen systematisch zu analysieren.",
-    "explanationJa": "データマイニングは大量のデータを体系的に分析するのに役立ちます。",
-    "questionImage": "lecture02/lecture01_q01.png"
-  },
-  {
-    "id": 2,
-    "questionDe": "Was ist ein Overfitting in ML?",
-    "questionJa": "L2_L1_機械学習における過学習とは？",
-    "answerDe": "Ein Modell passt sich zu stark an Trainingsdaten an.",
-    "answerJa": "モデルが訓練データに過剰に適応してしまうこと。",
-    "explanationDe": "Das Modell hat geringe Generalisierungsfähigkeit.",
-    "explanationJa": "そのモデルは汎化能力が低いことを意味します。"
+    "questionDe": "Nennen Sie drei Gründe, warum Data Mining eingesetzt wird.",
+    "questionJa": "Data Miningが用いられる理由を3つ挙げよ。",
+    "answerDe": [
+      "Überbordernde Menge an Daten",
+      "Wachsende Lücke zwischen Produktion und Auswertung der Daten",
+      "Extraktion von nützlichen und versteckten Informationen"
+    ],
+    "answerJa": [
+      "膨大なデータ量",
+      "データ生成と分析のギャップの拡大",
+      "有用かつ隠れた情報の抽出"
+    ],
+    "explanationDe": [
+      "Data Mining wird eingesetzt, weil die heutige Datenmenge die menschliche Analysefähigkeit übersteigt.",
+      "Die überbordende Menge an Daten macht automatisierte Methoden notwendig.",
+      "Ziel ist die Extraktion von Informationen, die für Unternehmen oder Forschung wichtig sind."
+    ],
+    "explanationJa": [
+      "現代のデータ量は人間の分析能力を超えているため、自動化が必要とされます。",
+      "データの増加と分析のギャップを埋めるために用いられます。",
+      "Data Miningは、ビジネスや研究に役立つ情報を抽出する手法です。"
+    ],
+    "originalSlideText": "...",
+    "questionImage": "lecture01/lecture01_q1.png",
+    "explanationImage": "lecture01/lecture01_ex1.png"
   }
 ]
