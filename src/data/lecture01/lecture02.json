@@ -65,6 +65,18 @@
       "新たなデータに対して非自明な予測が可能",
       "大量のデータに基づいている"
     ],
+    "explanationDe": [
+      "Ein Muster ist dann sinnvoll, wenn es ohne manuellen Eingriff (semi-)automatisch entdeckt wird – etwa durch einen Algorithmus.",
+      "Es muss zudem nützlich sein, also z. B. Vorhersagen ermöglichen oder strategische Entscheidungen unterstützen.",
+      "Die Aussagekraft des Musters sollte nicht trivial sein – es sollte neue Informationen über noch nicht gesehene Daten liefern.",
+      "Damit diese Muster zuverlässig sind, ist eine große Datenmenge notwendig, um statistisch bedeutungsvolle Ergebnisse zu erzielen."
+    ],
+    "explanationJa": [
+      "パターンが有効であるためには、人手によらず自動または半自動で発見される必要があります（例：アルゴリズムによる探索）。",
+      "そのパターンが、何らかの実用的な意味を持ち、たとえば予測や意思決定に貢献できることが重要です。",
+      "単に明らかな事実ではなく、新しいデータにも当てはまるような、予測可能性を持つ必要があります。",
+      "また、信頼性を高めるには大量のデータが必要であり、統計的な裏付けがあることが求められます。"
+    ],
     "originalSlideText": "• Data Mining ist definiert als Prozess zum Erkennen von Mustern in Daten\n• Muss automatisch oder zumindest semi-automatisch sein\n• Die gefundenen Muster müssen Informationen enthalten, die nützlich sind\n• Die gefundenen Muster ermöglichen nicht triviale Aussagen über neue Daten\n• Daten sind in großer Menge vorhanden"
   },
   {
@@ -78,6 +90,16 @@
     "answerJa": [
       "ブラックボックス",
       "透明なボックス"
+    ],
+    "explanationDe": [
+      "Black-Box-Modelle wie tiefe neuronale Netze liefern zwar oft genaue Ergebnisse, aber die Entscheidungsprozesse sind für den Menschen schwer nachvollziehbar.",
+      "Transparente Box-Modelle – wie Entscheidungsbäume oder lineare Modelle – sind einfacher zu verstehen und nachvollziehbar.",
+      "Ein Vorteil transparenter Modelle ist, dass man die Ergebnisse erklären kann, z. B. warum ein Kredit abgelehnt wurde."
+    ],
+    "explanationJa": [
+      "ブラックボックス型のモデル（例：深層ニューラルネットワーク）は高い精度を持つ一方で、内部の処理が理解しづらく、結果の根拠が不明瞭です。",
+      "透明なボックス型のモデル（例：決定木、線形モデル）は、ルールや判断の根拠が明確で、説明がしやすいです。",
+      "例えば、ある人がローン審査で落ちた理由を、透明なモデルであれば『年収が基準に達していない』などと明確に説明できます。"
     ],
     "originalSlideText": "• Methodenarten:\n• Black Box: Innere Abläufe sind nicht einfach nachvollziehbar\n• Transparente Box: Zeigt die Struktur eines Musters offen und nachvollziehbar an"
   },
@@ -94,6 +116,16 @@
       "構造を明確に表現している",
       "調査・説明が可能である",
       "将来の意思決定に役立つ"
+    ],
+    "explanationDe": [
+      "Strukturierte Muster zeigen klar, wie verschiedene Merkmale miteinander zusammenhängen – wie logische Regeln oder Entscheidungsbäume.",
+      "Sie lassen sich prüfen und begründen, z. B. ob eine Regel wie 'wenn Einkommen < 1000, dann kein Kredit' sinnvoll ist.",
+      "Solche Muster sind besonders hilfreich bei Vorhersagen oder bei der Automatisierung von Entscheidungen im Unternehmen."
+    ],
+    "explanationJa": [
+      "構造化されたパターンは、各特徴の関係性が明確に示されたもので、論理ルールや決定木などがその例です。",
+      "そのパターンが妥当であるかどうかを確認したり説明することが可能であり、『収入が1000以下ならローン不可』といったルールの根拠も説明できます。",
+      "こうしたパターンは予測や業務の自動化など、将来的な意思決定に大いに役立ちます。"
     ],
     "originalSlideText": "• Strukturierte Muster\n• Bilden die Struktur eindeutig ab\n• Sind untersuchbar\n• Sind begründbar\n• Sind nützlich für zukünftige Entscheidungen"
   },
@@ -630,37 +662,339 @@
       "新しい個別インスタンスへの予測精度よりも、全体の傾向を把握することが重視されます。"
     ],
     "originalSlideText": "• Numerische Vorhersage\n  • Variante der Klassifikation\n  • Ergebnis ist ein numerischer Wert statt eine Kategorie\n  • Vorhersage von neuen Instanzen eher unwichtig\n• Wichtiger ist meist die Struktur der Beschreibung\n  • Wichtige Attribute\n  • Relation der Attribute"
-  }  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-  
-  
-  
-  
-  
-   
-  
-  
-
-
-
-
-
+  },
+  {
+    "id": 26,
+    "questionDe": "(s.17) Was ist eine Instanz im Data Mining und wie ist sie aufgebaut?",
+    "questionJa": "Data Miningにおけるインスタンスとは何か、それはどのように構成されるか？",
+    "answerDe": [
+      "Eine Instanz ist ein einzelnes Beispiel eines Konzepts",
+      "Instanzen sind durch Attribute beschrieben",
+      "ML-Verfahren arbeiten mit einer Menge von Instanzen"
+    ],
+    "answerJa": [
+      "インスタンスとは、ある概念における1つの具体例である",
+      "インスタンスは属性によって記述される",
+      "機械学習の手法はインスタンスの集合を入力として扱う"
+    ],
+    "explanationDe": [
+      "Eine Instanz repräsentiert ein einzelnes, unabhängiges Beispiel für ein zu lernendes Konzept – etwa ein Kunde mit bestimmten Eigenschaften.",
+      "Jede Instanz wird durch eine Sammlung von Attributen beschrieben, z. B. Alter, Einkommen oder Kaufverhalten.",
+      "Machine-Learning-Algorithmen erhalten typischerweise eine Menge solcher Instanzen als Eingabe, um daraus Muster zu lernen."
+    ],
+    "explanationJa": [
+      "インスタンスとは、学習したい概念における1つの具体的な事例を表します。例えば、特定の属性を持った1人の顧客などがインスタンスになります。",
+      "各インスタンスは複数の属性によって表現されます（例：年齢、収入、購買履歴など）。",
+      "機械学習アルゴリズムは通常、こうしたインスタンスの集まりをデータとして受け取り、パターンを学習します。"
+    ],
+    "originalSlideText": "• Input von ML Verfahren ist eine Menge von Instanzen\n• Instanz\n  • Einzelnes, unabhängiges Beispiel eines Konzeptes\n  • Charakterisiert durch die Attribute"
+  },
+  {
+    "id": 27,
+    "questionDe": "(s.18–19) Wie werden relationale Datenbanken für maschinelles Lernen vorbereitet und was bedeutet Denormalisierung?",
+    "questionJa": "関係データベースは機械学習のためにどのように準備されるか。また、デノーマライゼーションとは何か？",
+    "answerDe": [
+      "Tabellen aus relationalen Datenbanken werden zu einer Instanz-Tabelle zusammengeführt",
+      "Dabei findet eine Denormalisierung statt",
+      "Ziel: Alle Attribute in einer Tabelle zugänglich machen"
+    ],
+    "answerJa": [
+      "リレーショナルデータベースの複数のテーブルは1つのインスタンステーブルにまとめられる",
+      "この過程がデノーマライゼーション（非正規化）である",
+      "目的は、すべての属性を1つのテーブルに集約すること"
+    ],
+    "explanationDe": [
+      "In relationalen Datenbanken sind Informationen oft auf mehrere Tabellen verteilt und durch Schlüssel verbunden.",
+      "Für maschinelles Lernen müssen diese Informationen in eine flache Tabelle überführt werden, sodass jede Instanz alle relevanten Attribute enthält.",
+      "Dieser Prozess wird Denormalisierung genannt: Man kombiniert z. B. die Attribute zweier Personen in einer Zeile, sodass man Redundanz in Kauf nimmt, aber lernfähige Daten erhält.",
+      "Beispiel: Aus zwei Tabellen (Person und Beziehung) wird eine große Tabelle mit doppelten Attributen je Person."
+    ],
+    "explanationJa": [
+      "リレーショナルデータベースでは、データは複数のテーブルに分かれており、キーでつながれています。",
+      "しかし機械学習では、すべての情報を1つのテーブルにまとめた形式が必要になります。各インスタンスがすべての属性を1行で持つ形式です。",
+      "このような構造に変換する操作をデノーマライゼーション（非正規化）と呼びます。重複が増えますが、機械学習には有利な形式となります。",
+      "例：人物情報と関係情報のテーブルから、それぞれの人物の属性を全て含んだ1行を作るなど。"
+    ],
+    "originalSlideText": "• Beispiel Datenbanken:\n  • Viele Tabellen sind durch Relationen verbunden\n  • Für ML werden diese in eine Tabelle gepresst, damit alle Attribute in einer Tabelle stehen\n  • Denormalisierung\n• Beispiel Denormalisierung:\n  • Tabelle 1: Name, Geschlecht, Eltern 1, Eltern 2\n  • Tabelle 2: Erste Person, Zweite Person, ist Schwester?\n  • Denormalisiert:\n    • Erste Person: Name, Geschlecht, Eltern 1, Eltern 2\n    • Zweite Person: Name, Geschlecht, Eltern 1, Eltern 2\n    • Braucht man „ist Schwester?“ noch?"
+  },
+  {
+    "id": 28,
+    "questionDe": "(s.20) Welche Herausforderungen entstehen bei der Suche nach Relationen in Daten?",
+    "questionJa": "データ中の関係性の探索において発生する課題を挙げよ。",
+    "answerDe": [
+      "Suche kann komplex werden, z. B. bei Vorfahren-Beziehungen",
+      "Rekursion und lange Pfade sind schwer zu behandeln",
+      "Fehlerhafte Daten erschweren die Suche"
+    ],
+    "answerJa": [
+      "例えば先祖関係のように、関係探索が複雑になりうる",
+      "再帰的な構造や長い経路の処理が難しい",
+      "データの誤りがあると関係探索はさらに困難になる"
+    ],
+    "explanationDe": [
+      "Bei relationalen Daten ist es oft notwendig, Verbindungen zwischen Entitäten zu erkennen, z. B. wer mit wem verwandt ist.",
+      "Diese Verbindungen können beliebig lang oder rekursiv sein – etwa bei Vorfahren, wo man über mehrere Generationen gehen muss.",
+      "Induktive logische Programmierung kann helfen, aber ist empfindlich gegenüber Fehlern in den Daten.",
+      "Besonders schwierig wird es, wenn Informationen unvollständig oder falsch sind – z. B. fehlende Elternbeziehungen in einem Stammbaum."
+    ],
+    "explanationJa": [
+      "リレーションデータでは、エンティティ間の関係を見つけることが求められます。例：誰が誰の親かという血縁関係など。",
+      "こうした関係は再帰的だったり、非常に長い経路になったりすることがあり、処理が困難になります。",
+      "このような複雑な関係を学習するために、帰納論理プログラミングなどの技術が使われますが、データの誤りに弱いという特徴があります。",
+      "例えば、家系図で親の情報が抜けていたり間違っていたりすると、正しい関係を見つけるのが難しくなります。"
+    ],
+    "originalSlideText": "• Suche nach Relationen\n  • Z. B. nach Vorfahren\n  • Können beliebig lange Pfade werden\n  • Rekursion oder als Teilfeld\n  • Induktive logische Programmierung\n  • Schwierig bei fehlerhaften Daten"
+  },
+  {
+    "id": 29,
+    "questionDe": "(s.21) Nennen Sie drei Eigenschaften von Attributen im Data Mining.",
+    "questionJa": "Data Miningにおける属性（Attribute）の特徴を3つ挙げよ。",
+    "answerDe": [
+      "Feste, vordefinierte Menge von Merkmalen",
+      "Können in verschiedenen Instanzen unterschiedlich gültig sein",
+      "Können voneinander abhängig sein"
+    ],
+    "answerJa": [
+      "固定されたあらかじめ定義された特徴量の集合である",
+      "インスタンスごとに有効な属性が異なる場合がある",
+      "属性間に依存関係がある場合がある"
+    ],
+    "explanationDe": [
+      "Attribute beschreiben die Eigenschaften einer Instanz, z. B. das Alter oder die Anzahl der Räder eines Fahrzeugs.",
+      "Nicht alle Attribute sind für alle Instanzen sinnvoll. Bei Fahrzeugen ist z. B. 'Anzahl der Räder' nur für Landfahrzeuge sinnvoll, 'Anzahl der Masten' nur für Schiffe.",
+      "Eine typische Lösung ist, irrelevante Attribute einfach zu markieren.",
+      "Zudem können Abhängigkeiten bestehen, z. B. zwischen 'Geburtsname' und 'Familienstand'."
+    ],
+    "explanationJa": [
+      "属性とは、インスタンスの特徴を記述する項目です。例：年齢、車の車輪の数など。",
+      "すべてのインスタンスに対してすべての属性が常に意味を持つわけではありません。たとえば、車輪の数は陸上車両にとって意味がありますが、船にとっては意味がありません。一方で船にはマストの数という属性が意味を持ちます。",
+      "このような場合、無関係な属性には「無効」などとマークをつけて処理するのが一般的です。",
+      "また、属性同士に依存関係があることもあり、たとえば「旧姓」と「婚姻状況」などは関係性があります。"
+    ],
+    "originalSlideText": "• Feste, vordefinierte Menge von Merkmalen\n• Verschiedene Attribute können in verschiedenen Instanzen gültig sein\n• Beispiel Fahrzeuge\n  • Landfahrzeuge: Anzahl der Räder\n  • Schiffe: Anzahl der Masten\n• Standardlösung: Markiere Attribute als irrelevant, wenn sie nicht anwendbar sind\n• Es kann Abhängigkeiten zwischen Attributen geben\n  • „Geburtsname“ und „Familienstand“"
+  },
+  {
+    "id": 30,
+    "questionDe": "(s.22) Nennen Sie drei Typen von Attributen im Data Mining und ein Beispiel je Typ.",
+    "questionJa": "Data Miningにおける属性の型を3つ挙げ、それぞれの例を示せ。",
+    "answerDe": [
+      "Kategorial – z. B. Apfel, Birne",
+      "Ordinal – z. B. T-Shirt-Größe S, M, L",
+      "Quantitativ – z. B. 1, 2, 3, 4, 5"
+    ],
+    "answerJa": [
+      "カテゴリ型：例）りんご、洋ナシ",
+      "順序型：例）Tシャツのサイズ（S, M, L）",
+      "数量型：例）1, 2, 3, 4, 5"
+    ],
+    "explanationDe": [
+      "Kategoriale Attribute sind nominal und haben keine natürliche Reihenfolge – z. B. Apfel, Birne, Banane.",
+      "Ordinale Attribute haben eine feste Reihenfolge, aber die Abstände sind nicht definiert – z. B. Kleidungsgrößen.",
+      "Quantitative Attribute sind numerisch und erlauben arithmetische Operationen – z. B. Alter, Einkommen.",
+      "Außerdem gibt es Ordnungen wie sequentiell (z. B. Zeitpunkte), divergierend (z. B. Temperaturabweichungen), oder zyklisch (z. B. Wochentage)."
+    ],
+    "explanationJa": [
+      "カテゴリ型の属性は順序を持たず、りんご・洋ナシ・バナナなどの分類を表します。",
+      "順序型属性は大小の順番はあるものの、間の距離（差）は定義されていません。例：服のサイズ（S, M, Lなど）。",
+      "数量型属性は数値であり、加減乗除といった演算が可能です。例：年齢、収入など。",
+      "さらに、属性の並び順として、時間のような連続的順序（sequentiell）、中心からの離れ具合（divergierend）、曜日のように繰り返す順序（zyklisch）といった分類があります。"
+    ],
+    "originalSlideText": "• Attributarten:\n  • Kategorial\n    • Ungeordnet\n    • Z.B. Apfel, Birne\n  • Ordinal\n    • Geordnete Kategorien\n    • T-Shirt in S, M, L, XL, XXL\n  • Quantativ\n    • Unterstützen arithmetische Operationen\n    • 1, 2, 3, 4, 5\n• Ordnungen:\n  • Sequentiell\n  • Divergierend\n  • Zyklisch"
+  },
+  {
+    "id": 31,
+    "questionDe": "(s.24) Nennen Sie vier Gründe, warum Datenaufbereitung im Data Mining notwendig ist.",
+    "questionJa": "Data Miningにおいてデータ前処理が必要とされる理由を4つ挙げよ。",
+    "answerDe": [
+      "Benötigt oft am meisten Zeit",
+      "Daten sind meist von schlechter Qualität",
+      "Schlechter Input resultiert in schlechtem Output",
+      "Fehlende, fehlerhafte oder inkonsistente Werte"
+    ],
+    "answerJa": [
+      "最も時間を要する工程であることが多い",
+      "多くのデータは品質が悪い",
+      "不適切な入力は不適切な出力を生む",
+      "欠損値・誤値・フォーマットの不整合がある"
+    ],
+    "explanationDe": [
+      "Die Datenaufbereitung ist oft der aufwändigste Teil im Data Mining, da reale Daten häufig unvollständig oder fehlerhaft sind.",
+      "Fehlende Werte, falsche Kodierungen oder unklare Formate müssen bereinigt werden, um zuverlässige Modelle zu erhalten.",
+      "Beispielsweise kann ein fehlender Wert wie \"-999\" in einem Temperaturfeld zu falschen Berechnungen führen.",
+      "Ohne Dokumentation oder einheitliche Kodierung (z. B. Datum, Textstrings) kann die Analyse scheitern."
+    ],
+    "explanationJa": [
+      "データ前処理は、Data Miningにおいて最も手間がかかる部分の1つです。なぜなら、現実のデータはしばしば不完全だったり、誤って記録されていたりするからです。",
+      "欠損値、文字列の誤った符号化、フォーマットの不統一などを修正しないと、信頼できるモデルを作ることができません。",
+      "例：温度データに「-999」といった不正な値があると、平均値などの統計計算を誤らせます。",
+      "日付や文字列のフォーマットが統一されていなかったり、ドキュメント化が不足していると、分析が正しく行えません。"
+    ],
+    "originalSlideText": "• Benötigt häufig am meisten Zeit\n• Daten sind meistens von enttäuschend schlechter Qualität\n• Datenaufbereitung ist zwingend notwendig!\n• Schlechter Input resultiert in schlechtem Output\n• Sind die Daten dokumentiert?\n• Gibt es fehlende Werte?\n• Gibt es fehlerhafte Werte?\n• Wie sind Strings codiert?\n• Ist das Format konsistent?"
+  },
+  {
+    "id": 32,
+    "questionDe": "(s.25) Was sind Herausforderungen bei der Verknüpfung von Datenquellen?",
+    "questionJa": "データソースの結合における課題を4つ挙げよ。",
+    "answerDe": [
+      "Unterschiedliche Syntax und Zeitbereiche",
+      "Abgleich von Primärschlüsseln",
+      "Fehlertypen beachten",
+      "Aggregation auf verschiedenen Ebenen"
+    ],
+    "answerJa": [
+      "ソース間で構文や時間範囲が異なる",
+      "主キーの一致が必要",
+      "誤りの種類に注意が必要",
+      "異なる集約レベルの調整"
+    ],
+    "explanationDe": [
+      "Beim Zusammenführen von Datenquellen treten oft Unterschiede in der Syntax (z. B. Formatierung), in Zeitangaben oder Schlüsseldefinitionen auf.",
+      "Zudem gibt es verschiedene Fehlerquellen: falsche Datenformate, Mehrdeutigkeiten oder fehlende Verweise.",
+      "Manchmal müssen Daten auf verschiedenen Aggregationsebenen (z. B. pro Tag vs. pro Woche) zusammengeführt werden.",
+      "Data Warehouses und Templates helfen, konsistente Strukturen zu erzeugen."
+    ],
+    "explanationJa": [
+      "データソースを統合する際には、構文（フォーマット）や日時の扱いが異なることが課題になります。",
+      "また、異なるテーブルの間で主キー（IDなど）を正しく結合できるかどうかも重要です。",
+      "さらに、誤った形式や不明瞭な参照、欠損リンクなどのエラーの種類に対処する必要があります。",
+      "日単位・週単位など、集約の単位が異なるデータを統合する必要がある場合もあります。"
+    ],
+    "originalSlideText": "• Verknüpfung von Daten:\n  • Aus verschiedenen Quellen\n  • Syntax der Quellen\n  • Zeitbereiche\n  • Primärschlüssel\n  • Fehlerarten\n  • Aggregationsstufen\n• Data Warehouse\n  • Datenbankintegration\n  • Nützlicher Schritt vor der Analyse\n• Nutzung von Schematemplates für Daten\n  • Daten haben definierte Syntax"
+  },
+  {
+    "id": 33,
+    "questionDe": "(s.26) Was sind zwei Herausforderungen bei der Speicherung spärlicher Daten?",
+    "questionJa": "疎なデータ（Sparse Data）の保存に関して2つの課題を挙げよ。",
+    "answerDe": [
+      "Tabellen sind nicht optimal für unvollständige Daten",
+      "Speicherplatzprobleme bei Adjazenzmatrizen"
+    ],
+    "answerJa": [
+      "テーブル形式は欠損の多いデータに不向き",
+      "隣接行列で保存するとメモリを大量に消費する"
+    ],
+    "explanationDe": [
+      "In klassischen Tabellenformaten wird erwartet, dass alle Felder befüllt sind. Für spärliche Daten wie Graphen ist das ineffizient.",
+      "Eine Adjazenzmatrix für einen Graphen mit vielen fehlenden Verbindungen kann sehr viel Speicher verschwenden.",
+      "Alternativ wird oft eine Key-Value-Liste genutzt, in der nur vorhandene Werte gespeichert sind.",
+      "Fehlende Werte müssen dann explizit als solche markiert werden."
+    ],
+    "explanationJa": [
+      "一般的なテーブル形式では、すべての項目に値が入っていることが前提ですが、欠損が多いデータでは無駄が多くなります。",
+      "例えば、グラフ構造を隣接行列（adjacency matrix）として保存すると、多くの要素が0になり、メモリの無駄遣いになります。",
+      "その代わりに、存在する値だけを保存するキー・バリュー形式で記録する方法もあります。",
+      "この場合、欠損している値を明示的に「欠損」と記録しておく必要があります。"
+    ],
+    "originalSlideText": "• Sparse Data\n  • Tabellen beschreiben vollständige Daten gut\n  • Z.B. Speicherung von Graphen kann in einer sparse besetzten Adjazenzmatrix resultieren\n    • Speicherplatzprobleme\n• Speicherung in Key Value Listen\n  • Graphen: Edgelist mit Knoten, Knoten\n  • Wörter in Dokument: Position, Wort\n  • Aber missing values müssen explizit markiert werden"
+  },
+  {
+    "id": 34,
+    "questionDe": "(s.27) Was versteht man unter Normalisierung und Standardisierung in der Datenaufbereitung?",
+    "questionJa": "データ前処理における正規化（Normalisierung）と標準化（Standardisierung）とは何か？",
+    "answerDe": [
+      "Normalisierung skaliert Werte auf einen Bereich, z. B. [0,1]",
+      "Standardisierung verwendet Mittelwert und Standardabweichung",
+      "Kategorische Daten müssen besonders behandelt werden"
+    ],
+    "answerJa": [
+      "正規化は値を一定範囲（例：[0,1]）にスケーリングする処理",
+      "標準化は平均と標準偏差を使って変換する処理",
+      "カテゴリ変数は特別に扱う必要がある"
+    ],
+    "explanationDe": [
+      "Bei der Normalisierung werden numerische Werte in einen bestimmten Bereich transformiert, meist zwischen 0 und 1. Dies hilft, Ausreißer zu begrenzen und Werte vergleichbar zu machen.",
+      "Die Standardisierung setzt Daten auf eine Normalverteilung mit Mittelwert 0 und Standardabweichung 1, damit unterschiedliche Maßeinheiten keinen Einfluss auf das Modell haben.",
+      "Kategorische (nominale) Daten sollten nicht wie Zahlen behandelt werden – man sollte sie z. B. als one-hot encodieren und markieren."
+    ],
+    "explanationJa": [
+      "正規化とは、数値データを0から1の範囲などに変換することです。これにより、極端な値の影響を抑えたり、スケールを揃えて比較しやすくしたりできます。",
+      "標準化は、データを平均0・標準偏差1の正規分布に近づける変換です。異なる単位を持つ特徴量を公平に扱うために重要です。",
+      "一方、カテゴリデータを数値として扱うのは誤りです。例えばワンホットエンコーディングなど、適切な形式で扱う必要があります。"
+    ],
+    "originalSlideText": "• Verarbeitung von Attributen\n  • Numerische Werte können als natürliche oder reele Zahlen interpretiert werden\n  • Normalisierung kann das Intervall eingrenzen\n    • Nützlich für reele Zahlen\n  • Normalisierung zwischen [0,1]\n  • v' = (v – min) / (max – min)\n• Standardisierung\n  • Berechne Mittelwert m und Standardabweichung d der Daten\n  • v' = (v – m) / d\n  • Kategorische Daten können als numerische Werte interpretiert werden\n    • Markiere nominale Daten!"
+  },
+  {
+    "id": 35,
+    "questionDe": "(s.28) Nennen Sie drei Herausforderungen beim Umgang mit fehlenden Werten.",
+    "questionJa": "欠損値（Missing Values）の処理に関して発生する課題を3つ挙げよ。",
+    "answerDe": [
+      "Fehlende Werte werden oft mit ungewöhnlichen Zahlen kodiert",
+      "Es gibt verschiedene Ursachen für fehlende Werte",
+      "Fehlende Werte können selbst wichtige Information sein"
+    ],
+    "answerJa": [
+      "欠損値は異常な数値で符号化されることが多い",
+      "欠損の理由はさまざまである",
+      "欠損そのものが重要な情報を含む場合がある"
+    ],
+    "explanationDe": [
+      "Fehlende Werte werden häufig mit Werten wie -1, 999 oder leeren Strings codiert – dies kann zu Fehlern führen, wenn sie nicht erkannt werden.",
+      "Es gibt verschiedene Arten von 'Missing': Daten wurden nicht erhoben, sind irrelevant oder wurden absichtlich ausgelassen.",
+      "Ein fehlender Wert (z. B. kein Geburtsdatum) kann selbst ein Hinweis sein – etwa auf Datenschutz oder Unsicherheit.",
+      "ML-Verfahren behandeln solche Werte oft einfach als leer – was zu Missinterpretationen führen kann."
+    ],
+    "explanationJa": [
+      "欠損値はしばしば「-1」「999」「空白」などの特別な値で符号化されますが、これに気づかないと誤って解析に用いてしまいます。",
+      "欠損の理由には、『記録されなかった』『無関係』『意図的な省略』など様々なタイプがあります。",
+      "例えば、誕生日が記録されていないという事実自体が、『機密情報』などの意味を持っている場合があります。",
+      "機械学習では、欠損を単に空欄として扱ってしまうことが多く、その意味が失われる可能性があります。"
+    ],
+    "originalSlideText": "• Missing values\n  • Werden oft mit out of range Einträgen codiert\n    • Numerisch: -1, 999, etc\n    • Kategorisch: \"\", \"-\"\n  • Unterschiedliche Arten von missing values:\n    • Unbekannt\n    • Nicht aufgezeichnet\n    • Irrelevant\n• Fehlende Werte müssen bewertet werden\n  • Was ist der Grund?\n  • Ist der fehlende Wert selber eine wichtige Information?\n  • ML Verfahren behandeln fehlende Werte meistens ohne Bedeutung"
+  },
+  {
+    "id": 36,
+    "questionDe": "(s.29) Nennen Sie drei Arten fehlerhafter Daten.",
+    "questionJa": "誤ったデータ（Fehlerhafte Werte）の種類を3つ挙げよ。",
+    "answerDe": [
+      "Falsch geschriebene oder unvollständige Namen",
+      "Numerische Messfehler oder Duplikate",
+      "Veraltete Informationen"
+    ],
+    "answerJa": [
+      "名前の誤記や略称",
+      "数値の測定ミスや重複データ",
+      "古い（更新されていない）情報"
+    ],
+    "explanationDe": [
+      "Fehlerhafte Daten können durch Tippfehler entstehen – etwa bei Namensangaben (\"Dirk Zeckzer\" vs. \"D. Zeckzer\").",
+      "Numerische Daten enthalten oft Messfehler oder ungewollte Duplikate.",
+      "Daten können veraltet sein – z. B. wenn sich der Name einer Person durch Heirat geändert hat (\"Daniel Gerighausen\" vs. \"Daniel Wiegreffe\")."
+    ],
+    "explanationJa": [
+      "誤ったデータには、名前の誤字・略記（例：Dirk Zeckzer ↔ D. Zeckzer）のようなものがあります。",
+      "数値データには、測定の誤差や、同じ人物が複数回記録された重複などが含まれることがあります。",
+      "また、時間が経つことで情報が古くなるケースもあります。たとえば、氏名が変更されたにもかかわらず古い名前のまま記録されている場合などです。"
+    ],
+    "originalSlideText": "• Fehlerhafte Werte\n  • Falsch geschriebene Werte\n  • Abkürzungen vs. vollständige Namen\n    • Personennetzwerke basieren auf Namen\n    • D. Zeckzer <-> Dirk Zeckzer\n  • Numerische Werte können Messfehler haben\n  • Duplikate\n  • Veraltete Daten\n    • Daten können sich verändern\n    • Daniel Gerighausen <-> Daniel Wiegreffe"
+  },
+  {
+    "id": 37,
+    "questionDe": "(s.30) Nennen Sie vier Gründe, warum die Datenaufbereitung vor der Analyse besonders wichtig ist.",
+    "questionJa": "分析の前にデータ前処理を行うことが特に重要な理由を4つ挙げよ。",
+    "answerDe": [
+      "Datenaufbereitung ist extrem wichtig und aufwendig",
+      "Analyse der Verteilungen hilft, Ausreißer zu erkennen",
+      "Gute Dokumentation notwendig",
+      "Domänenwissen hilft bei Bewertung von Fehlern"
+    ],
+    "answerJa": [
+      "データ前処理は極めて重要であり、手間がかかる",
+      "分布の分析により外れ値を特定できる",
+      "適切なドキュメント化が必要",
+      "ドメイン知識が誤値の評価に役立つ"
+    ],
+    "explanationDe": [
+      "Datenaufbereitung ist ein zentraler Schritt, der oft über Erfolg oder Misserfolg der Analyse entscheidet.",
+      "Bevor eine Analyse beginnt, sollten Daten gesäubert, normalisiert, dokumentiert und verstanden sein.",
+      "Durch Histogramme oder Visualisierungen kann man z. B. Ausreißer erkennen, die das Modell negativ beeinflussen würden.",
+      "Fachliches Wissen über den Anwendungsbereich ist entscheidend, um Fehler oder ungewöhnliche Werte richtig zu interpretieren."
+    ],
+    "explanationJa": [
+      "データ前処理は、分析の成否を左右する重要なステップです。",
+      "分析を始める前に、データを正規化・クリーニングし、整った状態にし、内容を理解しておく必要があります。",
+      "ヒストグラムやグラフによる可視化を通じて、外れ値や異常値を発見しやすくなり、モデルへの悪影響を防げます。",
+      "また、対象領域に関する専門知識があれば、誤りや不自然な値を適切に判断する助けになります。"
+    ],
+    "originalSlideText": "• Zusammenfassung\n• Datenaufbereitung ist extrem wichtig\n• Muss vor der eigentlichen Analyse gemacht werden\n• Analyse der Verteilungen, z.B. mit Histogrammen\n• Visualisierung der Daten, um Outlier zu erkennen\n• Sehr aufwendig und zeitintensiv\n• Muss sauber dokumentiert werden\n• Domänenwissen ist notwendig\n  • Fehlerhafte Werte erkennen\n  • Verteilungen sinnvoll?"
+  }
 ]
