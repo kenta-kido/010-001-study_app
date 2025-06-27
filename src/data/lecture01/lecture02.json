@@ -382,7 +382,63 @@
       "この方法はシンプルで柔軟ですが、データが多すぎると検索に時間がかかるという課題があります。"
     ],
     "originalSlideText": "• Instanz basierte Methode lernen einzelne Beispiele und generalisieren"
-  }
+  },
+  {
+    "id": 17,
+    "questionDe": "(s.10) Nennen Sie zwei Ursachen von Overfitting und eine Maßnahme zur Vermeidung.",
+    "questionJa": "過学習の原因を2つ、それを防ぐための対策を1つ挙げよ。",
+    "answerDe": [
+      "Zu genaue Trainingsdaten führen zu überspezifischen Modellen",
+      "Alle Datenpunkte als Regel zu lernen ist zu spezifisch",
+      "Kombination von Regeln zur Verallgemeinerung"
+    ],
+    "answerJa": [
+      "訓練データが正確すぎると過度に特化したモデルになる",
+      "すべてのデータ点をルールとして学習すると過学習につながる",
+      "ルールの組み合わせによって一般化を図る"
+    ],
+    "explanationDe": [
+      "Overfitting entsteht, wenn ein Modell die Trainingsdaten zu genau widerspiegelt und keine Generalisierung auf neue Daten zulässt.",
+      "Wenn man z. B. jede Kundeninteraktion einzeln als Regel abspeichert, kann das Modell keine neuen Situationen behandeln.",
+      "Eine Lösung ist, mehrere spezifische Regeln zu kombinieren, um eine allgemeinere Regel zu erstellen, die auf verschiedene Fälle anwendbar ist."
+    ],
+    "explanationJa": [
+      "過学習は、訓練データにあまりにも忠実にモデルが適合しすぎて、新しいデータにうまく対応できなくなるときに起こります。",
+      "たとえば、顧客ごとの行動をすべて個別のルールにしてしまうと、未知の顧客への予測ができません。",
+      "この問題への対応策として、複数の具体的なルールを組み合わせ、より一般的なルールとして再構成する方法が有効です。"
+    ],
+    "originalSlideText": "• Overfitting\n  • Zu genaue Training Daten führen zu überspezifischen Modellen!\n  • Alle Datenpunkte als Regel zu lernen daher zu spezifisch\n  → Kombination von Regeln"
+  },
+  {
+    "id": 18,
+    "questionDe": "(s.10) Wie kann Overfitting bei der Regelbildung im Data Mining vermieden werden? Nennen Sie eine Strategie und zwei Pruning-Techniken.",
+    "questionJa": "Data Miningにおけるルール生成において、過学習を防ぐにはどうすればよいか。1つの戦略と2つのプルーニング手法を挙げよ。",
+    "answerDe": [
+      "Bottom-Up: Aufbau komplexer Regeln aus einfachen",
+      "Forward-Pruning: Stop bei ausreichender Komplexität",
+      "Backward-Pruning: Start mit komplexen Regeln und Vereinfachung"
+    ],
+    "answerJa": [
+      "ボトムアップ：単純なルールから複雑なルールを構築する",
+      "フォワードプルーニング：十分に複雑になった時点で生成を停止する",
+      "バックワードプルーニング：複雑なルールから出発して単純化する"
+    ],
+    "explanationDe": [
+      "Overfitting kann vermieden werden, indem man nicht sofort komplexe Regeln verwendet, sondern mit einfachen beginnt – das ist der Bottom-Up-Ansatz.",
+      "Dabei wird jede Regel schrittweise erweitert. Wenn sie komplex genug ist, wird der Prozess gestoppt. Dies nennt man Forward-Pruning.",
+      "Alternativ kann man mit einer komplexen Regel starten und diese vereinfachen, um unnötige Details zu entfernen – das ist Backward-Pruning.",
+      "Beispiel: Statt Regeln für jeden einzelnen Kunden zu erstellen, kombiniert man typische Verhaltensmuster und entfernt Spezialfälle, um verallgemeinerbare Regeln zu erhalten."
+    ],
+    "explanationJa": [
+      "過学習を防ぐためには、いきなり複雑なルールを作るのではなく、まず単純なルールから始めるというボトムアップ戦略が有効です。",
+      "この方法では、ルールを段階的に複雑にしていき、十分に複雑になった時点で生成を止めます。これをフォワードプルーニングと呼びます。",
+      "逆に、まず複雑なルールを作っておいて、そこから重要でない詳細を削って簡略化する方法もあり、これがバックワードプルーニングです。",
+      "例：顧客ごとの詳細なルールを個別に作成する代わりに、共通する購買パターンを見つけてルール化し、例外的なケースは除外することで、より汎用的で信頼できるルールを得られます。"
+    ],
+    "originalSlideText": "• Bottom Up Idee:\n  • Starte mit einfachen Regeln\n  • Erstelle darauf aufbauend komplexere Regeln\n  • Stop, wenn die Regeln komplex genug sind\n• Vermeidung von Overfitting\n• Nennt man auch forward-pruning\n  • Geht auch rückwärts\n  • Backward-pruning\n  • Start mit generellen Regeln zu simplen Regeln"
+  } 
+  
+  
   
   
   
