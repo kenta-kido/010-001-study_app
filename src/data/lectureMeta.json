@@ -1,0 +1,41 @@
+{
+    "lecture01": {
+      "title": "Data Mining (IVDA) (2025So)",
+      "lectures": [
+        { "number": 1, "title": "IVDM Einfuehrung" },
+        { "number": 2, "title": "Datenaufbereitung" },
+        { "number": 3, "title": "Entscheidungsbaeume" },
+        { "number": 4, "title": "Regression und Clustering" },
+        { "number": 5, "title": "Dimensionsreduktion" },
+        { "number": 6, "title": "Evaluation" },
+        { "number": 7, "title": "IVDA: Perceptron" },
+        { "number": 8, "title": "IVDA SVM" },
+        { "number": 9, "title": "IVDA KNN 2" },
+        { "number": 10, "title": "Design" },
+        { "number": 11, "title": "Validierung" },
+        { "number": 12, "title": "-" },
+        { "number": 13, "title": "-" },
+        { "number": 14, "title": "-" }
+      ]
+    },
+    "lecture02": {
+      "title": "Information Visualization (IVDA) (2025So)",
+      "lectures": [
+        { "number": 1, "title": "InfoVis 1: Einführung in die Informationsvisualisierung" },
+        { "number": 2, "title": "InfoVis 1: Daten und Aufgaben" },
+        { "number": 3, "title": "InfoVis 1: Datentransformation" },
+        { "number": 4, "title": "InfoVis 1: Wahrnehmung" },
+        { "number": 5, "title": "InfoVis 1: Multi-Dimensional Data" },
+        { "number": 6, "title": "InfoVis 1: Zeitabhängige Daten" },
+        { "number": 7, "title": "InfoVis 1: Graphen" },
+        { "number": 8, "title": "InfoVis 1: Bäume" },
+        { "number": 9, "title": "InfoVis 1: Visuelle Abbildung" },
+        { "number": 10, "title": "InfoVis 1: Ansichtstransformationen" },
+        { "number": 11, "title": "-" },
+        { "number": 12, "title": "-" },
+        { "number": 13, "title": "-" },
+        { "number": 14, "title": "-" }
+      ]
+    }
+  }
+  

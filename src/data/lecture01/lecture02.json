@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "questionDe": "Nennen Sie drei Gründe, warum Data Mining eingesetzt wird.",
+    "questionDe": "(s.2) Nennen Sie drei Gründe, warum Data Mining eingesetzt wird.",
     "questionJa": "Data Miningが用いられる理由を3つ挙げよ。",
     "answerDe": [
       "Überbordernde Menge an Daten",
@@ -14,17 +14,125 @@
       "有用かつ隠れた情報の抽出"
     ],
     "explanationDe": [
-      "Data Mining wird eingesetzt, weil die heutige Datenmenge die menschliche Analysefähigkeit übersteigt.",
-      "Die überbordende Menge an Daten macht automatisierte Methoden notwendig.",
-      "Ziel ist die Extraktion von Informationen, die für Unternehmen oder Forschung wichtig sind."
+      "In der heutigen digitalen Welt werden täglich riesige Datenmengen erzeugt – z. B. durch soziale Netzwerke, Online-Shopping oder Sensoren in Autos. Kein Mensch kann all diese Daten manuell auswerten.",
+      "Deshalb braucht man automatisierte Verfahren wie Data Mining, die helfen, aus diesen riesigen Datenmengen sinnvolle Informationen herauszufiltern.",
+      "Zum Beispiel kann ein Online-Händler mithilfe von Data Mining erkennen, welche Produkte oft zusammen gekauft werden, um gezielte Empfehlungen zu geben oder Lagerbestände zu planen."
     ],
     "explanationJa": [
-      "現代のデータ量は人間の分析能力を超えているため、自動化が必要とされます。",
-      "データの増加と分析のギャップを埋めるために用いられます。",
-      "Data Miningは、ビジネスや研究に役立つ情報を抽出する手法です。"
+      "現代では、SNSの投稿、ネットショッピングの履歴、車のセンサーなどから、毎日膨大なデータが生成されています。人間だけではそれをすべて手作業で分析するのは不可能です。",
+      "そこでData Miningのような自動的な分析技術が必要になります。大量のデータから意味のある情報を取り出す手段として役立ちます。",
+      "例えば、ネット通販サイトでは、Data Miningによって『この商品を買った人は他に何を買ったか』を分析し、レコメンド機能や在庫管理に活用されます。"
+    ]
+  },
+  {
+    "id": 2,
+    "questionDe": "(s.2) Nennen Sie zwei Methoden, wie Data Mining Muster in Daten erkennt.",
+    "questionJa": "Data Miningがデータ中のパターンを発見するための手法を2つ挙げよ。",
+    "answerDe": [
+      "Mustererkennung in den Daten",
+      "Nutzung von verschiedenen Data Mining Verfahren (semi-)automatisch"
     ],
-    "originalSlideText": "...",
-    "questionImage": "lecture01/lecture01_q1.png",
-    "explanationImage": "lecture01/lecture01_ex1.png"
+    "answerJa": [
+      "データ内のパターン認識",
+      "様々なData Mining手法による（半）自動的な探索"
+    ],
+    "explanationDe": [
+      "Mustererkennung bedeutet, dass der Computer typische Strukturen in den Daten erkennt, z. B. dass ältere Menschen bestimmte Medikamente häufiger einnehmen.",
+      "Data Mining verwendet dafür Algorithmen wie Entscheidungsbäume oder Clustering, die automatisch solche Muster finden.",
+      "Zum Beispiel könnte ein Entscheidungsbaum aus Patientendaten ableiten: 'Wenn der Blutdruck hoch ist und das Alter über 60, dann besteht ein erhöhtes Risiko für Herzprobleme'."
+    ],
+    "explanationJa": [
+      "パターン認識とは、コンピュータがデータの中からよく見られる共通の傾向や構造を見つけ出すことを意味します。例えば「高齢者は特定の薬をよく使用する」といった傾向などです。",
+      "Data Miningでは、決定木（Decision Tree）やクラスタリング（Clustering）などのアルゴリズムを用いて、こうしたパターンを自動的に見つけ出します。",
+      "例えば、医療データから『血圧が高く、年齢が60歳以上の場合、心疾患のリスクが高い』といったルールを導き出すことができます。"
+    ]
+  },
+  {
+    "id": 3,
+    "questionDe": "(s.3) Nennen Sie vier Anforderungen an ein gültiges Data-Mining-Muster.",
+    "questionJa": "Data Miningにおける有効なパターンの条件を4つ挙げよ。",
+    "answerDe": [
+      "Automatisch oder semi-automatisch gefunden",
+      "Muss nützliche Informationen enthalten",
+      "Ermöglicht nicht triviale Aussagen über neue Daten",
+      "Datenbasis muss groß sein"
+    ],
+    "answerJa": [
+      "自動または半自動で得られる",
+      "有用な情報を含んでいる",
+      "新たなデータに対して非自明な予測が可能",
+      "大量のデータに基づいている"
+    ],
+    "explanationDe": [
+      "Ein Muster ist dann wertvoll, wenn es automatisch entdeckt wird, ohne dass der Mensch alle Daten manuell durchsuchen muss.",
+      "Es sollte auch nützlich sein – z. B. ein Muster, das zeigt, dass Schüler, die viel Mathematik lernen, bessere Noten in Physik bekommen.",
+      "Außerdem muss das Muster Aussagen über neue Daten ermöglichen, nicht nur über die, mit denen es erstellt wurde.",
+      "Damit solche Muster verlässlich sind, braucht man viele Daten, damit sich zufällige Effekte ausgleichen."
+    ],
+    "explanationJa": [
+      "価値のあるパターンとは、人の手を使わず自動的に見つけられるものでなければなりません。",
+      "また、そのパターン自体が有益である必要があります。例えば『数学をたくさん勉強する生徒は、物理でも良い成績を取りやすい』という傾向などです。",
+      "そのパターンが新しいデータにも当てはまり、予測に役立つことが重要です。",
+      "そのためには、十分な量のデータを使って偶然の影響を排除し、信頼できるパターンを見つける必要があります。"
+    ]
+  },
+  {
+    "id": 4,
+    "questionDe": "(s.3) Nennen Sie zwei Arten von Methoden im Data Mining und erklären Sie den Unterschied.",
+    "questionJa": "Data Miningにおける手法の種類を2つ挙げ、それらの違いを説明せよ。",
+    "answerDe": [
+      "Black Box",
+      "Transparente Box"
+    ],
+    "answerJa": [
+      "ブラックボックス",
+      "透明なボックス"
+    ],
+    "explanationDe": [
+      "Eine 'Black Box'-Methode ist ein Verfahren, bei dem die internen Abläufe schwer nachvollziehbar sind – wie z. B. bei tiefen neuronalen Netzen. Man erhält ein Ergebnis, versteht aber nicht unbedingt, wie es zustande kam.",
+      "Eine 'Transparente Box'-Methode dagegen zeigt offen, wie Entscheidungen zustande kommen – z. B. durch Entscheidungsbäume, bei denen jede Regel erklärbar ist.",
+      "Beispiel: Bei der Kreditvergabe liefert ein neuronales Netz möglicherweise nur das Ergebnis 'Kredit abgelehnt', während ein Entscheidungsbaum die genauen Gründe zeigt, etwa 'zu niedriges Einkommen'."
+    ],
+    "explanationJa": [
+      "『ブラックボックス』型の手法とは、内部で何が起きているかが分かりにくいモデルのことです。例えば深層ニューラルネットワークは結果は出すけれど、どうしてその結果になったのかが分かりづらいです。",
+      "一方『透明なボックス』型の手法では、どのようにして判断が下されたのかを明示的に知ることができます。例えば決定木（Decision Tree）は、どの条件によってどの判断がされたかを説明できます。",
+      "例：銀行のローン審査では、ブラックボックスモデルだと『ローン却下』という結果だけが出て理由がわからないが、決定木なら『年収が基準以下』などの明確な理由が分かります。"
+    ],
+    "originalSlideText": "• Methodenarten:\n• Black Box: Innere Abläufe sind nicht einfach nachvollziehbar\n• Transparente Box: Zeigt die Struktur eines Musters offen und nachvollziehbar an"
+  },
+  {
+    "id": 5,
+    "questionDe": "(s.4) Nennen Sie drei Eigenschaften strukturierter Muster.",
+    "questionJa": "構造化されたパターンの特徴を3つ挙げよ。",
+    "answerDe": [
+      "Bilden die Struktur eindeutig ab",
+      "Sind untersuchbar und begründbar",
+      "Sind nützlich für zukünftige Entscheidungen"
+    ],
+    "answerJa": [
+      "構造を明確に表現している",
+      "調査・説明が可能である",
+      "将来の意思決定に役立つ"
+    ],
+    "explanationDe": [
+      "Strukturierte Muster sind wie Regeln oder Formeln, die man nachvollziehen kann – zum Beispiel: 'Wenn die Temperatur unter 0°C fällt, gefriert Wasser'.",
+      "Solche Muster sind nicht nur sichtbar, sondern man kann auch erklären, warum sie gelten, und sie erneut testen.",
+      "Sie sind besonders nützlich, weil man mit ihnen zukünftige Situationen einschätzen kann – z. B. bei der Vorhersage von Kundenverhalten oder bei der Diagnose in der Medizin."
+    ],
+    "explanationJa": [
+      "構造化されたパターンは、数式やルールのように、意味が明確で説明可能なパターンのことです。例：『気温が0℃を下回ると水は凍る』というようなもの。",
+      "そのようなパターンは目に見えるだけでなく、なぜそうなるのかを説明でき、再び検証することもできます。",
+      "こうしたパターンは、将来の出来事を予測したり、医療やマーケティングでの判断材料として活用することができます。"
+    ]
   }
+  
+  
+   
+  
+  
+
+
+
+
+
 ]
