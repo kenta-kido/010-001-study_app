@@ -178,7 +178,127 @@
       "また、入力ミスや古い情報が含まれている場合には、誤った結論を導いてしまう可能性があります。"
     ],
     "originalSlideText": "• Probleme:\n• Regeln bilden nur den Datensatz ab\n• Vollständige Datensätze sind aber nicht die Norm\n• Reale Datensätze weisen Lücken aufgrund von Messfehlern auf\n• Reale Daten beinhalten Fehler"
+  },
+  {
+    "id": 9,
+    "questionDe": "(s.7) Nennen Sie zwei Probleme bei der Nutzung zu vieler Regeln im Data Mining.",
+    "questionJa": "Data Miningでルールが多すぎるときに発生する問題を2つ挙げよ。",
+    "answerDe": [
+      "Anzahl der Regeln sollte nicht größer als die Anzahl der Datenpunkte sein",
+      "Die vollständige Aufzählung aller Regeln ist oft nicht erreichbar"
+    ],
+    "answerJa": [
+      "ルールの数がデータ数を超えてはならない",
+      "すべてのルールを網羅するのは現実的でない"
+    ],
+    "explanationDe": [
+      "Wenn die Anzahl der Regeln größer ist als die Anzahl der Datenpunkte, führt dies zu Überanpassung und unbrauchbaren Resultaten.",
+      "Es ist oft rechnerisch unmöglich oder ineffizient, alle möglichen Regeln zu erzeugen und zu analysieren – daher ist eine sinnvolle Auswahl notwendig."
+    ],
+    "explanationJa": [
+      "ルールの数がデータの件数を上回ると、過学習が起きやすくなり、汎用性のないモデルになります。",
+      "すべてのルールを作成・検討するのは計算的に不可能または非常に非効率なため、実用的なルールだけを抽出する必要があります。"
+    ],
+    "originalSlideText": "• Die Anzahl der Regeln sollte nicht größer als die Anzahl der Datenpunkte sein\n• Die Aufzählung aller Regeln ist oft nicht erreichbar\n→ Filtern einer Menge von Beschreibungen"
+  },
+  {
+    "id": 10,
+    "questionDe": "(s.7) Nennen Sie drei Herausforderungen bei der Beschreibung und Auswahl von Mustern.",
+    "questionJa": "パターンの記述および選択に関して発生する課題を3つ挙げよ。",
+    "answerDe": [
+      "Bias: Wie beschreibt man die Daten?",
+      "Bias: In welcher Reihenfolge sucht man?",
+      "Overfitting durch ungeeignete Regelbildung"
+    ],
+    "answerJa": [
+      "バイアス：どのようにデータを記述するか",
+      "バイアス：どの順序で探索するか",
+      "不適切なルール形成による過学習"
+    ],
+    "explanationDe": [
+      "Die Art und Weise, wie Daten beschrieben werden (z. B. mit logischen Ausdrücken oder Einschränkungen), kann beeinflussen, welche Muster gefunden werden.",
+      "Auch die Reihenfolge der Regelgenerierung (Top-down oder Bottom-up) kann dazu führen, dass bestimmte Muster bevorzugt oder übersehen werden.",
+      "Overfitting entsteht, wenn Regeln zu sehr auf Trainingsdaten zugeschnitten sind und sich nicht verallgemeinern lassen."
+    ],
+    "explanationJa": [
+      "データをどう記述するか（例えば論理式や制約条件の使い方）によって、発見できるパターンに影響を与える可能性があります。",
+      "ルールをどの順序で生成するか（トップダウンかボトムアップか）によって、特定のパターンが優先されたり見逃されたりすることがあります。",
+      "過学習（Overfitting）は、ルールが訓練データに過剰に適合し、新しいデータには対応できなくなる現象です。"
+    ],
+    "originalSlideText": "• Bias\n• Wie beschreibt man die Daten?\n• In welcher Reihenfolge sucht man?\n• Overfitting?"
+  },
+  {
+    "id": 11,
+    "questionDe": "(s.8) Nennen Sie zwei Probleme bei der Beschreibung von Mustern.",
+    "questionJa": "パターンを記述する際に発生する問題点を2つ挙げよ。",
+    "answerDe": [
+      "Sprache weist Einschränkungen auf",
+      "Kein logisches ODER möglich"
+    ],
+    "answerJa": [
+      "使用する言語に制約がある",
+      "論理的なORが表現できない"
+    ],
+    "explanationDe": [
+      "Die Beschreibungssprache beeinflusst, welche Muster überhaupt erkannt werden können. Wenn die Sprache zu eingeschränkt ist, bleiben interessante Zusammenhänge unentdeckt.",
+      "Ein typisches Beispiel ist, dass kein logisches ODER erlaubt ist. Das bedeutet, dass man z. B. nicht formulieren kann: 'Wenn Alter > 60 ODER Bluthochdruck vorhanden → Risiko hoch'."
+    ],
+    "explanationJa": [
+      "どのような言語（表現方法）でパターンを記述するかによって、見つけられるパターンが制限されてしまうことがあります。",
+      "例えば、論理的なOR（または）が使えないと、『年齢が60歳を超えるまたは高血圧がある場合にリスクが高い』といった条件が表現できません。"
+    ],
+    "originalSlideText": "• Beschreibungsprobleme\n• Weist die Sprache Einschränkungen auf, welche Muster erkannt werden können?\n• z. B. kein ODER"
+  },
+  {
+    "id": 12,
+    "questionDe": "(s.8) Welche Rolle spielt Vorwissen bei der Mustersuche im Data Mining?",
+    "questionJa": "Data Miningにおけるパターン探索において、事前知識はどのような役割を果たすか？",
+    "answerDe": [
+      "Nutzung von Vorwissen hilft bei der Einteilung des Suchraums"
+    ],
+    "answerJa": [
+      "事前知識は検索空間の限定に役立つ"
+    ],
+    "explanationDe": [
+      "Vorwissen (z. B. aus der Domäne) kann verwendet werden, um irrelevante Bereiche im Suchraum auszuschließen und die Suche gezielter zu gestalten.",
+      "Das reduziert die Komplexität und steigert die Qualität der gefundenen Muster."
+    ],
+    "explanationJa": [
+      "ドメイン知識などの事前知識を使うことで、無関係な領域を除外して、効率的に意味のあるパターンを見つけることができます。",
+      "これにより計算コストが下がり、より良質なパターンが得られやすくなります。"
+    ],
+    "originalSlideText": "• Nutzung von Vorwissen\n• Einteilung des Suchraums?"
+  },
+  {
+    "id": 13,
+    "questionDe": "(s.9) Nennen Sie zwei Probleme, die durch Suchbias beim Data Mining entstehen können.",
+    "questionJa": "Data Miningにおける探索バイアスにより生じる問題を2つ挙げよ。",
+    "answerDe": [
+      "Schwierigkeiten, den gesamten Suchraum abzuarbeiten",
+      "Reihenfolge kann das Ergebnis beeinflussen"
+    ],
+    "answerJa": [
+      "探索空間全体を網羅するのが困難",
+      "探索の順序が結果に影響を与える"
+    ],
+    "explanationDe": [
+      "Ein Suchbias bedeutet, dass nicht alle möglichen Muster gleich gut gefunden werden können – manche bleiben unentdeckt.",
+      "Wenn man z. B. mit einer Top-Down-Strategie beginnt, werden zuerst grobe Muster untersucht, wodurch feingliedrige Zusammenhänge übersehen werden könnten."
+    ],
+    "explanationJa": [
+      "探索バイアスとは、すべての可能なパターンを均等に探索できるわけではなく、特定のものが見落とされやすいことを意味します。",
+      "例えば、トップダウンの探索を行うと、最初に大まかなパターンに注目するため、細かな関連性を見逃すことがあります。"
+    ],
+    "originalSlideText": "• Suchbias\n• Schwierigkeiten, den gesamten Suchraum abzuarbeiten\n• Nutzung von Heuristiken\n• Reihenfolge kann wichtig sein"
   }
+
+  
+  
+  
+
+  
+
+  
 
   
   
