@@ -126,7 +126,7 @@
       "これらの条件に基づいて、ハードレンズやソフトレンズ、またはレンズなしといった推奨がなされます。"
     ],
     "originalSlideText": "Alter Fehlsichtigkeit Hornhaut-verkrümmung Tränen-produktion EmpfohleneLinsen\nJung Kurzsichtig nein reduziert keine\nJung Kurzsichtig nein normal weich\nJung Kurzsichtig ja reduziert keine\nJung Kurzsichtig ja normal hart\nJung weitsichtig nein reduziert keine\nJung weitsichtig nein normal weiche\n… … … … …",
-    "questionImage": "lecture01/lecture02_q1.png"
+    "questionImage": "lecture01/lecture02_q01.png"
   },
   {
     "id": 7,
@@ -151,7 +151,7 @@
       "このようなルールは、決定木（Decision Tree）として可視化でき、新しいデータにも適用しやすいです。"
     ],
     "originalSlideText": "• Extrahierte Regeln:\n• Wenn Tränenproduktion = reduziert → Empfehlung = keine\n• Ansonsten:\n• Wenn Alter = jung und Hornhautverkrümmung = nein → weich\n• Darstellbar als Entscheidungsbaum",
-    "explanationImage": "lecture01/lecture02_ex1.png"
+    "explanationImage": "lecture01/lecture02_ex01.png"
   },
   {
     "id": 8,
@@ -290,8 +290,100 @@
       "例えば、トップダウンの探索を行うと、最初に大まかなパターンに注目するため、細かな関連性を見逃すことがあります。"
     ],
     "originalSlideText": "• Suchbias\n• Schwierigkeiten, den gesamten Suchraum abzuarbeiten\n• Nutzung von Heuristiken\n• Reihenfolge kann wichtig sein"
+  },
+  {
+    "id": 13,
+    "questionDe": "(s.9) Nennen Sie zwei Probleme, die durch Suchbias beim Data Mining entstehen können.",
+    "questionJa": "Data Miningにおける探索バイアスにより生じる問題を2つ挙げよ。",
+    "answerDe": [
+      "Schwierigkeiten, den gesamten Suchraum abzuarbeiten",
+      "Reihenfolge kann das Ergebnis beeinflussen"
+    ],
+    "answerJa": [
+      "探索空間全体を網羅するのが困難",
+      "探索の順序が結果に影響を与える"
+    ],
+    "explanationDe": [
+      "Suchbias bedeutet, dass nicht alle möglichen Muster mit gleicher Wahrscheinlichkeit gefunden werden – einige bleiben unentdeckt, weil der Suchraum zu groß oder ungünstig durchsucht wird.",
+      "Beispiel: Wenn man bei der Regelgenerierung mit einem sehr allgemeinen Muster beginnt (Top-down), könnte man spezifische, aber interessante Regeln übersehen, wie z. B. 'Kunden über 60 kaufen häufig Hörgeräte'.",
+      "Auch die Reihenfolge, in der man sucht (z. B. zuerst Alter, dann Einkommen), kann dazu führen, dass manche Muster gar nicht erst betrachtet werden."
+    ],
+    "explanationJa": [
+      "探索バイアスとは、すべての可能なパターンを平等に見つけられるわけではなく、一部のパターンが見落とされることを指します。これは探索空間が非常に広いか、探索の方法が偏っているときに起きます。",
+      "例えば、ルールを作るときに『年齢などの大きな属性』から始めるトップダウン方式では、『60歳以上の顧客は補聴器をよく購入する』といった細かく重要なルールを見逃してしまうかもしれません。",
+      "また、『最初に年齢→次に収入』という順番で探すと、その順番に現れない関係性を見逃す可能性もあります。"
+    ],
+    "originalSlideText": "• Suchbias\n• Schwierigkeiten, den gesamten Suchraum abzuarbeiten\n• Nutzung von Heuristiken\n• Reihenfolge kann wichtig sein"
+  },
+  {
+    "id": 14,
+    "questionDe": "(s.9) Nennen Sie zwei Strategien zur Mustersuche im Data Mining.",
+    "questionJa": "Data Miningにおけるパターン探索の戦略を2つ挙げよ。",
+    "answerDe": [
+      "Top-Down",
+      "Bottom-Up"
+    ],
+    "answerJa": [
+      "トップダウン",
+      "ボトムアップ"
+    ],
+    "explanationDe": [
+      "Beim Top-Down-Ansatz beginnt man mit allgemeinen Regeln und verfeinert sie schrittweise. Dies ist einfach zu implementieren, kann aber spezifische Muster übersehen.",
+      "Beispiel: Man startet mit der Regel 'Kunden über 60 kaufen selten Elektronik' und verfeinert sie zu 'Kunden über 60 mit hohem Einkommen kaufen Smartphones'.",
+      "Beim Bottom-Up-Ansatz beginnt man mit konkreten Einzelfällen (z. B. ein bestimmter Kaufvorgang) und generalisiert von dort aus. Dies kann genauere Regeln liefern, ist aber rechenintensiv."
+    ],
+    "explanationJa": [
+      "トップダウン方式では、まず大まかなルールから始め、それを徐々に細かくしていきます。この方法は扱いやすいですが、細かなパターンを見逃す可能性があります。",
+      "例として『60歳以上の顧客は電子機器をあまり買わない』というルールから始め、それを『高所得の60歳以上の顧客はスマートフォンを買う』と細かくしていくような流れです。",
+      "一方ボトムアップ方式では、個別の例（例えばある顧客の購買履歴）から始めて、共通点を探して一般化していきます。こちらは精度が高いですが、計算量が多くなりがちです。"
+    ],
+    "originalSlideText": "• Reihenfolge kann wichtig sein\n• Top down\n• Bottom up"
+  },
+  {
+    "id": 15,
+    "questionDe": "(s.9) Was ist eine Heuristik und warum wird sie im Data Mining eingesetzt?",
+    "questionJa": "ヒューリスティックとは何か、またなぜData Miningで用いられるのか？",
+    "answerDe": [
+      "Eine Heuristik ist eine Näherungsmethode zur Lösung komplexer Probleme"
+    ],
+    "answerJa": [
+      "ヒューリスティックとは、複雑な問題をおおよそ解くための近似的な方法である"
+    ],
+    "explanationDe": [
+      "Heuristiken helfen, große Suchräume effizient zu durchsuchen, ohne alle Möglichkeiten prüfen zu müssen.",
+      "Beispiel: Statt alle Kundenprofile zu vergleichen, konzentriert sich ein Algorithmus nur auf die jüngsten Transaktionen, weil diese typischerweise relevanter für das Kaufverhalten sind.",
+      "Solche Strategien sparen Rechenzeit und ermöglichen es, brauchbare Muster in vertretbarer Zeit zu finden – auch wenn sie nicht immer optimal sind."
+    ],
+    "explanationJa": [
+      "ヒューリスティックとは、すべての可能性を調べるのではなく、経験則などを用いておおよその解を素早く求めるための方法です。",
+      "例：顧客全体のすべての購入履歴を見るのではなく、最近の購入だけを重点的に見ることで、時間を節約して有効なパターンを見つけようとすることが挙げられます。",
+      "このような方法は必ずしも最適解を保証するわけではありませんが、現実的な時間内に十分役立つ結果を得ることができます。"
+    ],
+    "originalSlideText": "• Nutzung von Heuristiken"
+  },
+  {
+    "id": 16,
+    "questionDe": "(s.9) Was ist eine instanzbasierte Methode im Data Mining?",
+    "questionJa": "Data Miningにおけるインスタンスベースの手法とは何か？",
+    "answerDe": [
+      "Instanzbasierte Methoden lernen einzelne Beispiele und generalisieren daraus"
+    ],
+    "answerJa": [
+      "インスタンスベースの手法は、個別の例から学習し、それをもとに一般化する"
+    ],
+    "explanationDe": [
+      "Diese Methoden speichern konkrete Beispiele (Instanzen) und vergleichen neue Daten direkt mit diesen bekannten Fällen.",
+      "Ein klassisches Beispiel ist der k-nächste-Nachbarn-Algorithmus: Um eine neue Kundengruppe zu klassifizieren, sucht man z. B. die 5 ähnlichsten bisherigen Kunden und leitet die Vorhersage daraus ab.",
+      "Solche Methoden sind einfach und flexibel, aber können bei sehr großen Datenmengen ineffizient werden."
+    ],
+    "explanationJa": [
+      "この手法では、抽象的なルールを作るのではなく、個々の具体的な例（インスタンス）を記憶し、それと新しいデータを直接比較します。",
+      "代表的なのはk近傍法（k-NN）で、新しい顧客がどのグループに属するかを判断する際、最も似ている過去の顧客5人を探し、その傾向から分類します。",
+      "この方法はシンプルで柔軟ですが、データが多すぎると検索に時間がかかるという課題があります。"
+    ],
+    "originalSlideText": "• Instanz basierte Methode lernen einzelne Beispiele und generalisieren"
   }
-
+  
   
   
   

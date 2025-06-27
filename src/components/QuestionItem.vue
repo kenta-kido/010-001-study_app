@@ -53,7 +53,7 @@
           <!-- 解説画像 -->
           <div v-if="question.explanationImage">
             <img
-              :src="`/images/${question.explanationImage}`"
+              :src="`./images/${question.explanationImage}`"
               class="img-fluid rounded my-2 border"
               alt="explanation image"
             />
