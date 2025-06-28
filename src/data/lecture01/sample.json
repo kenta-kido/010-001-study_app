@@ -24,8 +24,8 @@
       "Data Miningは、ビジネスや研究に役立つ情報を抽出する手法です。"
     ],
     "originalSlideText": "• Warum?\n\n• Überbordernde Menge an Daten\n• Wachsende Lücke zwischen Produktion und Auswertung der Daten\n\n• Ziel:\n• Extraktion von nützlichen und versteckten Informationen\n\n• Methode:\n• Mustererkennung in den Daten\n• Nutzung von verschiedenen Data Mining Verfahren, um die Muster in den Daten (semi-)automatisch zu finden",
-    "questionImage": "lecture01/lecture01_q1.png",
-    "explanationImage": "lecture01/lecture01_ex1.png"
+    "questionImage": "lecture01/lecture01_q01.png",
+    "explanationImage": "lecture01/lecture01_ex01.png"
   },
   {
     "id": 2,
@@ -52,7 +52,7 @@
       "将来の意思決定や予測の基礎として利用できます。"
     ],
     "originalSlideText": "• Strukturierte Muster\n\n• Bilden die Struktur eindeutig ab\n• Sind untersuchbar\n• Sind begründbar\n• Sind nützlich für zukünftige Entscheidungen",
-    "questionImage": "lecture01/lecture01_q2.png",
-    "explanationImage": "lecture01/lecture01_ex2.png"
+    "questionImage": "lecture01/lecture01_q01.png",
+    "explanationImage": "lecture01/lecture01_ex01.png"
   }
 ]
