@@ -545,7 +545,77 @@
     ],
     "originalSlideText": "• Davies Bouldin Index\n\nk   | Davies Bouldin Index\n3   | 1,06957\n4   | 1,16492\n5   | 1,02300\n6   | 1,00282\n7   | 1,06513\n8   | 1,02402\n9   | 1,02164\n\n– Wähle k mit kleinstem Index: 6",
     "questionImage": "lecture01/lecture05_q01.png"
+  },
+  {
+    "id": 18,
+    "questionDe": "(s.38) Erklären Sie die Berechnung und Bedeutung des Modified Hubert Γ Index.",
+    "questionJa": "（スライド38）Modified Hubert Γ 指数の計算方法とその意味を説明せよ。",
+    "answerDe": [
+      "Nutzt eine Clusterzuweisung L(i), die jedes Objekt einem Cluster zuordnet",
+      "Verwendet zwei Matrizen: X(i,j) misst Abstand der Objekte, Y(i,j) misst Abstand ihrer Clusterzentren",
+      "Berechnet Γ als Summe der Produkte von X(i,j) und Y(i,j)",
+      "Komplexität: O(n²·m²), unabhängig von k"
+    ],
+    "answerJa": [
+      "各データ点 i をクラスタ k に割り当てるクラスタインジケータ L(i) を使用",
+      "2つの行列 X(i,j)（点同士の距離）と Y(i,j)（クラスタ中心の距離）を用いる",
+      "X(i,j) と Y(i,j) の積を全ての i, j 組について足し合わせて Γ を計算",
+      "計算量は O(n²·m²)、クラスタ数 k には依存しない"
+    ],
+    "explanationDe": [
+      "Der Modified Hubert Γ Index ist ein Maß zur Bewertung eines Clusterings, indem er die Beziehung zwischen den Datenpunkten und ihren zugehörigen Clustern analysiert.",
+      "Zunächst wird jedem Objekt i ein Cluster k zugewiesen, also L(i) = k.",
+      "Dann werden zwei Matrizen erstellt: X(i,j) misst den absoluten Abstand zwischen den Datenpunkten i und j. Y(i,j) misst den Abstand zwischen den Zentroiden (Mittelpunkten) der Cluster, zu denen i und j gehören.",
+      "Indem man das Produkt X(i,j) * Y(i,j) für alle Punktpaare aufsummiert, erhält man einen Wert Γ, der angibt, wie gut die Zuordnung mit den Distanzen übereinstimmt.",
+      "Ein hohes Γ kann darauf hinweisen, dass ähnliche Punkte tendenziell im gleichen Cluster landen.",
+      "Beispiel: Wenn zwei Punkte sehr nah beieinander liegen (kleines X), aber deren Clusterzentren weit auseinander (großes Y), dann deutet dies auf eine schlechte Clustereinteilung hin – der Γ-Wert fällt entsprechend ungünstig aus."
+    ],
+    "explanationJa": [
+      "Modified Hubert Γ 指数は、データ点の間の距離と、それらが属するクラスタの中心間の距離との関係からクラスタリングの質を評価する指標です。",
+      "まず、各データ点 i に対してクラスタ番号 k を割り当てる関数 L(i) を使い、i がどのクラスタに属するかを決定します。",
+      "次に2つの行列を作成します。X(i,j) はデータ点 i と j のユークリッド距離（または他の距離）を表します。Y(i,j) は、それぞれの点が属するクラスタの中心（重心）間の距離を表します。",
+      "これらの X(i,j) × Y(i,j) の積をすべての i, j 組について足し合わせた値が Γ です。",
+      "この値が高いほど、データ点の距離とクラスタ中心の距離がよく一致しており、クラスタリングがデータの構造をよく反映していると解釈されます。",
+      "例えば、似た特徴を持つユーザー（距離が近い）が異なるクラスタに分類されていれば、対応する Y(i,j) は大きくなり、Γ の値は悪くなります。"
+    ],
+    "originalSlideText": "• Modified Hubert Γ\n\n– Clusterindikator: L(i) = k\n  Objekt i gehört zu Cluster k\n\n– Matrizen:\n  X(i,j) = |d_i – d_j|\n  Y(i,j) = |z_L(i) – z_L(j)|\n\n– Modified Hubert Γ:\n  Γ = Σ_{i=1}^{n–1} Σ_{j=i+1}^{n} (X(i,j) · Y(i,j))\n\n– Komplexität\n  – O(n · n · m · m) = O(n² · m²)\n  – unabhängig von k",
+    "explanationImage": "lecture01/lecture05_ex04.png",
+    "questionImage": ""
+  },
+  {
+    "id": 19,
+    "questionDe": "(s.39) Wie bestimmt man anhand des Modified Hubert Γ Index die optimale Anzahl an Clustern?",
+    "questionJa": "（スライド39）グラフを用いて、Modified Hubert Γ 指数を使った最適なクラスタ数の決定方法を説明せよ。",
+    "answerDe": [
+      "Berechne den Hubert Γ Index für verschiedene k-Werte",
+      "Trage die Werte in eine Tabelle und ein Diagramm ein",
+      "Wähle das k mit dem größten Anstieg des Γ-Wertes"
+    ],
+    "answerJa": [
+      "複数のクラスタ数 k に対して Modified Hubert Γ 値を計算する",
+      "結果を表とグラフで確認する",
+      "Γ 値が最も大きく増加した k を選ぶ"
+    ],
+    "explanationDe": [
+      "Der Modified Hubert Γ Index hilft bei der Auswahl der optimalen Anzahl von Clustern.",
+      "In diesem Beispiel wurden Γ-Werte für k von 3 bis 9 berechnet. Diese Werte wurden in einer Tabelle dargestellt und als Linie im Diagramm geplottet.",
+      "Die Strategie: Man sucht den größten Sprung nach oben – also den Punkt, an dem der Index am stärksten ansteigt.",
+      "In diesem Fall zeigt sich ein großer Anstieg von k = 4 (0,97873 · 10¹¹) auf k = 5 (1,11428 · 10¹¹). Daher wird k = 5 als optimale Clusteranzahl ausgewählt.",
+      "Diese Methode basiert auf der Annahme, dass ein deutlicher Anstieg auf eine starke Verbesserung der Clusterstruktur hinweist."
+    ],
+    "explanationJa": [
+      "Modified Hubert Γ 指数は、クラスタリングの結果の評価に基づいて、最適なクラスタ数を選ぶために使われます。",
+      "このスライドでは、クラスタ数 k = 3〜9 に対して Γ の値を計算し、それを表とグラフにして比較しています。",
+      "最も注目すべきなのは、Γ 値が大きく上昇するポイントです。そこが最もクラスタ構造が改善されたタイミングと見なされます。",
+      "具体的には、k = 4 の値（0.97873×10¹¹）から k = 5（1.11428×10¹¹）への上昇が最も大きいため、k = 5 が最適とされます。",
+      "これは『エルボー法』に似た考え方で、急激な変化点を最適と見なします。"
+    ],
+    "originalSlideText": "• Davies Bouldin Index\n\n| k | Modified Hubert Γ |\n|---|---------------------|\n| 3 | 1,01844 · 10¹¹       |\n| 4 | 0,97873 · 10¹¹       |\n| 5 | 1,11428 · 10¹¹       |\n| 6 | 1,15922 · 10¹¹       |\n| 7 | 1,15276 · 10¹¹       |\n| 8 | 1,08876 · 10¹¹       |\n| 9 | 1,10869 · 10¹¹       |\n\n– Wähle k nach dem größten Anstieg: 5",
+    "explanationImage": "",
+    "questionImage": "lecture01/lecture05_q02.png"
   }
+  
+  
   
   
   
