@@ -653,30 +653,168 @@
       "これにより、異なる単位をもつ特徴量や、相関を含む特徴量の扱いにおいても、適切な距離が計算できます。"
     ],
     "originalSlideText": "- Bemerkungen\n  – M: Co-Varianz Matrix\n  – Invariant bezüglich Verschiebungen\n  – Invariant bezüglich Skalierung"
+  },
+  {
+    "id": 25,
+    "questionDe": "(s.18) Nennen Sie die vier Initialisierungsschritte beim Aufbau eines k-d-Baums.",
+    "questionJa": "k-d木を構築する際の初期化ステップを4つ挙げよ。",
+    "answerDe": [
+      "Sortiere Punkte für jedes Attribut",
+      "i ← 1",
+      "Erzeuge Knoten",
+      "Starte Rekursion"
+    ],
+    "answerJa": [
+      "各属性ごとにデータ点をソートする",
+      "i を 1 に初期化する",
+      "ノードを生成する",
+      "再帰処理を開始する"
+    ],
+    "explanationDe": [
+      "Beim Aufbau eines k-d-Baums wird zuerst für jedes Attribut (Merkmal) die Punktmenge sortiert, um spätere Teilungen effizient zu machen.",
+      "Danach wird die Attributindexvariable i auf 1 gesetzt, um beim ersten Schritt mit dem ersten Merkmal zu beginnen.",
+      "Ein Wurzelknoten (Startknoten) wird erstellt, in dem die erste Teilung gespeichert wird.",
+      "Dann startet die rekursive Aufteilung der Punktmenge basierend auf den Attributwerten – dies bildet die Struktur des Baums."
+    ],
+    "explanationJa": [
+      "k-d木を作る際は、まず各特徴量ごとにデータ点を並び替えておくことで、後の分割処理が効率的になります。",
+      "次に、どの特徴量で分割するかを表すインデックス i を 1（最初の特徴）に初期化します。",
+      "最初のノード（根ノード）を作成し、そこに最初の分割点が格納されます。",
+      "その後、再帰的にデータを分割していく処理が始まり、これにより木構造が構築されます。"
+    ],
+    "originalSlideText": "- Initialisierung\n  1. Sortiere Punkte für jedes Attribut\n  2. i ← 1\n  3. Erzeuge Knoten\n  4. Starte Rekursion"
+  },
+  {
+    "id": 26,
+    "questionDe": "(s.18) Beschreiben Sie vier Schritte der rekursiven Konstruktion eines k-d-Baums.",
+    "questionJa": "k-d木の再帰的な構築における4つの処理を説明せよ。",
+    "answerDe": [
+      "Teile Punkte bezüglich Attribut i in zwei Teilmengen (Median)",
+      "Trage Teilwert t in aktuellen Knoten ein",
+      "Erzeuge linken Kindknoten mit zugewiesenen Punkten",
+      "Erzeuge rechten Kindknoten mit zugewiesenen Punkten"
+    ],
+    "answerJa": [
+      "i 番目の特徴に基づいて点を2つに分割（中央値を使用）",
+      "分割値 t を現在のノードに記録する",
+      "左側の子ノードを作り、そのデータ点を割り当てる",
+      "右側の子ノードを作り、そのデータ点を割り当てる"
+    ],
+    "explanationDe": [
+      "In jedem rekursiven Schritt wird das aktuelle Attribut i verwendet, um die Datenpunkte anhand ihres Medians in zwei gleich große Gruppen aufzuteilen.",
+      "Der Wert, an dem geteilt wird (Teilungswert t), wird im aktuellen Knoten gespeichert.",
+      "Für jede Teilmenge wird ein Kindknoten erzeugt: einer für die kleinere, einer für die größere Hälfte.",
+      "Falls genügend Datenpunkte vorhanden sind, wird der Prozess rekursiv fortgesetzt – i wird dabei um 1 erhöht (zyklisch über die Attribute)."
+    ],
+    "explanationJa": [
+      "各再帰ステップでは、i番目の特徴量を基準に、データ点を中央値で2つに分けます。",
+      "この分割点（しきい値）tは、現在のノードに記録され、検索の基準となります。",
+      "分割後、それぞれの部分集合に対応する子ノード（左と右）を生成し、それぞれの点を割り当てます。",
+      "十分なデータ点が残っている場合、iの値を1つ増やして再帰的に同様の処理を行います（特徴量を順番にローテーションさせる）。"
+    ],
+    "originalSlideText": "- Rekursion\n  1. Teile alle Datenpunkte bezüglich Attribut i in zwei gleich große Teilmengen (verwende Median)\n  2. Trage Unterteilungswert t in aktuellen Knoten ein\n  3. Erzeuge linken Kindknoten\n     1. Weise ihm seine Datenpunkte zu\n     2. Falls Anzahl der Datenpunkte größer als Schwellwert:\n        1. i ← i + 1\n        2. Rekursiver Aufruf\n  4. Erzeuge rechten Kindknoten\n     1. Weise ihm seine Datenpunkte zu\n     2. Falls Anzahl der Datenpunkte größer als Schwellwert:\n        1. i ← i + 1\n        2. Rekursiver Aufruf"
+  },
+  {
+    "id": 27,
+    "questionDe": "(s.19) Nennen Sie vier Eigenschaften von Ball Trees im Vergleich zu k-d-Bäumen.",
+    "questionJa": "Ball Treeの特徴をk-d木と比較して4つ挙げよ。",
+    "answerDe": [
+      "k-d-Bäume sind aufgrund ihrer Ecken nicht ideal",
+      "Daten sind in der Fläche nicht gleichmäßig verteilt",
+      "Ball Trees zerlegen den Raum in überlappende Sphären",
+      "Raum wird rekursiv in kleinere Sphären unterteilt – vergleichbar wie k-d-Baum"
+    ],
+    "answerJa": [
+      "k-d木は端（コーナー）の構造が原因で最適とは言えない",
+      "データは空間内に均等には分布していないことが多い",
+      "Ball Treeは重なり合う球（スフィア）に空間を分割する",
+      "空間を再帰的に小さな球に分割していく点で、k-d木と同様の構造を持つ"
+    ],
+    "explanationDe": [
+      "k-d-Bäume teilen den Raum entlang von Achsen, was eckige Teilräume erzeugt – ungeeignet für viele reale Datenverteilungen.",
+      "Da Daten in der Praxis oft ungleich verteilt sind, stoßen eckige Regionen schnell an ihre Grenzen.",
+      "Ball Trees verwenden überlappende Sphären, um den Raum zu unterteilen. Dies ermöglicht eine flexiblere Anpassung an die Verteilung.",
+      "Wie beim k-d-Baum erfolgt die Teilung rekursiv – der Raum wird in immer kleinere (aber runde) Einheiten zerlegt. Das führt zu einer baumartigen Struktur."
+    ],
+    "explanationJa": [
+      "k-d木では軸に沿って空間を分割するため、角ばった領域になり、非軸方向に偏ったデータには不向きです。",
+      "実データはしばしば偏って分布しており、等間隔な分割は適しません。",
+      "Ball Treeでは球体を使って空間を分割するため、データの分布により自然にフィットします。",
+      "k-d木と同様に、Ball Treeも再帰的に空間を小さな領域に分割していくため、ツリー構造になります。ただし、Ball Treeではその単位が『球』であるという違いがあります。"
+    ],
+    "originalSlideText": "- k-d-Bäume sind aufgrund ihrer Ecken nicht ideal\n- Daten sind in der Fläche nicht gleichmäßig verteilt\n- Nutzung von Sphären:\n  – Zerlege den Raum in rekursiv kleiner werdende überlappende Sphären\n  – Vergleichbar wie k-d-Baum"
+  },
+  {
+    "id": 28,
+    "questionDe": "(s.19) Beschreiben Sie in sechs Schritten, wie ein Ball Tree aufgebaut wird.",
+    "questionJa": "Ball Treeの構築手順を6ステップで説明せよ。",
+    "answerDe": [
+      "Wähle einen Punkt möglichst entfernt vom Mittelpunkt",
+      "Wähle einen zweiten möglichst weit entfernten vom ersten",
+      "Ordne alle Punkte dem näheren der beiden Punkte zu",
+      "Berechne den Zentroid der beiden Mengen",
+      "Nutze den Zentroid als Mittelpunkt und den Abstand zum entferntesten Punkt als Radius",
+      "Zerlege die Teilmenge rekursiv weiter"
+    ],
+    "answerJa": [
+      "中心から最も遠い点を1つ選ぶ",
+      "その点からさらに最も遠い点をもう1つ選ぶ",
+      "すべての点を、2つの代表点のうち近い方に割り当てる",
+      "2つのグループそれぞれの重心（重み付き平均）を計算する",
+      "重心を球の中心とし、最も遠い点までの距離を半径とする",
+      "各部分集合を再帰的にさらに分割する"
+    ],
+    "explanationDe": [
+      "Im ersten Schritt wird ein Startpunkt möglichst weit vom geometrischen Mittelpunkt gewählt, um eine gute Trennung zu erreichen.",
+      "Dann wird der Punkt gesucht, der vom ersten möglichst weit entfernt ist – so entstehen zwei möglichst getrennte Gruppen.",
+      "Alle Datenpunkte werden dem näheren der beiden Punkte zugewiesen.",
+      "Anschließend wird für jede Gruppe der Schwerpunkt (Zentroid) berechnet – also der Mittelwert aller enthaltenen Punkte.",
+      "Die Zentren dieser Gruppen werden als Mittelpunkt der Sphären genommen, die Radien bestimmen sich durch den Abstand zum am weitesten entfernten Punkt.",
+      "Dieser Vorgang wird rekursiv auf jeder Teilmenge wiederholt, bis z. B. eine minimale Anzahl Punkte erreicht ist."
+    ],
+    "explanationJa": [
+      "最初に、全データの重心（平均点）から最も離れている点を1つ選びます。これにより空間を大きく分けられるようにします。",
+      "次に、1つ目の点から最も離れている別の点を選びます。これで、空間を2つの代表点により分ける準備が整います。",
+      "すべてのデータ点を、この2つの点のどちらに近いかで2グループに分けます。",
+      "それぞれのグループについて、重心（全点の平均ベクトル）を計算します。",
+      "この重心を球の中心とし、そこから最も遠い点までの距離をその球の半径とします。",
+      "この処理を各部分集合に対して再帰的に繰り返し、データ構造としてのBall Treeを構築していきます。"
+    ],
+    "originalSlideText": "- Aufbau:\n  – Wähle einen Punkt möglichst entfernt vom Mittelpunkt\n  – Wähle einen zweiten möglichst weit entfernt vom ersten\n  – Ordne alle Punkte dem nächsten der beiden Punkte zu\n  – Berechne den Zentroid der beiden Mengen\n  – Nutze den Zentroid als Sphärenmittelpunkt und die Distanz zum entferntesten Punkt als Radius\n  – Zerlege die Teilmenge rekursiv weiter"
+  },
+  {
+    "id": 29,
+    "questionDe": "(s.20–24) Erklären Sie, wie der Ball Tree sich rekursiv über mehrere Ebenen aufbaut.",
+    "questionJa": "Ball Treeが複数のレベルにわたってどのように再帰的に構築されるかを説明せよ。",
+    "answerDe": [
+      "Level 1: Ein großer Ball umschließt alle Datenpunkte",
+      "Level 2: Der große Ball wird in zwei kleinere überlappende Bälle unterteilt",
+      "Level 3: Jeder Teilball wird weiter in kleinere Bälle unterteilt",
+      "Level 4: Weitere Aufteilung in noch kleinere, lokalere Bälle",
+      "Level 5: Tiefe Baumstruktur mit fein aufgelösten Regionen"
+    ],
+    "answerJa": [
+      "レベル1：すべてのデータ点を囲む大きな球を1つ作成",
+      "レベル2：その球を2つの重なり合う球に分割",
+      "レベル3：各球をさらに小さな球に分割していく",
+      "レベル4：より小さく、局所的な球に分割される",
+      "レベル5：木構造がより深くなり、細かい領域が得られる"
+    ],
+    "explanationDe": [
+      "Auf Level 1 sehen wir einen großen Kreis (Ball), der alle Datenpunkte im Raum abdeckt – dies ist die Wurzel des Ball Trees.",
+      "In Level 2 wird dieser Raum in zwei überlappende Bälle unterteilt. Diese bilden die ersten Kindknoten im Baum (links orange dargestellt).",
+      "Auf Level 3 wird jeder dieser beiden Bälle wiederum in kleinere Bälle zerlegt, was die Struktur tiefer und feiner macht.",
+      "In Level 4 sehen wir mehr lokalisierte Sphären (z. B. grüne oder blaue), die kleinere Regionen innerhalb der Datendichte erfassen.",
+      "Level 5 illustriert, wie rekursive Teilung eine feingranulare Zerlegung des Raums ermöglicht – die Baumstruktur rechts zeigt die Hierarchie deutlich."
+    ],
+    "explanationJa": [
+      "スライド20では、すべてのデータ点を1つの大きな円（球）で囲んでいます。これはBall Treeの根ノードにあたります。",
+      "スライド21では、空間が2つの重なった球に分割され、それぞれが子ノードになります（色分けで表現）。",
+      "スライド22では、前の球をさらに小さな球に分割しており、ツリー構造の深さが1段増しています。",
+      "スライド23では、各局所領域における詳細な球（青など）が登場し、データの密度に応じた分割が行われています。",
+      "スライド24では、最も細かいレベルまで分割され、左側の空間上では多数の小球、右側の木構造では紫の葉ノードに至るまで階層が明確に表現されています。"
+    ],
+    "originalSlideText": "A ball-tree: level 1\nA ball-tree: level 2\nA ball-tree: level 3\nA ball-tree: level 4\nA ball-tree: level 5",
+    "explanationImage": "lecture01/lecture04_ex05.png"  
   }
-  
-
-  
-  
-
-  
-  
-  
-  
-
-  
-  
-  
-    
-  
-  
-  
-   
-  
-
-  
-  
-  
-  
-  
 ]

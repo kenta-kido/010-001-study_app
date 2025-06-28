@@ -1,30 +1,570 @@
 [
   {
     "id": 1,
-    "questionDe": "Nennen Sie drei Gründe, warum Data Mining eingesetzt wird.",
-    "questionJa": "Data Miningが用いられる理由を3つ挙げよ。",
+    "questionDe": "(s.25) Was versteht man unter Clustering und welche Bedingungen gelten dafür?",
+    "questionJa": "クラスタリングとは何か？また、どのような条件が課されるか？",
     "answerDe": [
-      "Überbordernde Menge an Daten",
-      "Wachsende Lücke zwischen Produktion und Auswertung der Daten",
-      "Extraktion von nützlichen und versteckten Informationen"
+      "Gegeben: eine Menge von Objekten D = {d₁, ..., dₙ}",
+      "Gesucht: Klassen K = {C₁, ..., Cₖ}, wobei k ≪ n",
+      "Bedingungen:",
+      "⋃ᵢ Cᵢ = D (Vereinigung ergibt die ganze Menge)",
+      "Cᵢ ∩ Cⱼ = ∅ für i ≠ j (Disjunktheit – keine Überlappung)"
     ],
     "answerJa": [
-      "膨大なデータ量",
-      "データ生成と分析のギャップの拡大",
-      "有用かつ隠れた情報の抽出"
+      "与えられるもの：オブジェクトの集合 D = {d₁, ..., dₙ}",
+      "求めるもの：クラス集合 K = {C₁, ..., Cₖ}（k は n よりずっと小さい）",
+      "条件：",
+      "すべてのクラスの和集合が元の集合 D を構成すること（∪Cᵢ = D）",
+      "異なるクラス同士は重なりがないこと（Cᵢ ∩ Cⱼ = ∅, i ≠ j）"
     ],
     "explanationDe": [
-      "Data Mining wird eingesetzt, weil die heutige Datenmenge die menschliche Analysefähigkeit übersteigt.",
-      "Die überbordende Menge an Daten macht automatisierte Methoden notwendig.",
-      "Ziel ist die Extraktion von Informationen, die für Unternehmen oder Forschung wichtig sind."
+      "Clustering bedeutet, dass man eine große Menge von Objekten (z. B. Datenpunkten) in kleinere Gruppen (Cluster) unterteilt.",
+      "Diese Gruppen sollen so beschaffen sein, dass jedes Objekt genau einem Cluster zugeordnet ist (keine Überlappung).",
+      "Das Ziel ist es, die gesamte Menge D durch disjunkte Teilmengen C₁ bis Cₖ zu partitionieren.",
+      "Beispiel: Bei einer Kundendatenbank mit 1000 Kunden möchte man 5 Kundengruppen finden – jede Gruppe enthält ähnliche Kunden, und jede Person ist nur in einer Gruppe."
     ],
     "explanationJa": [
-      "現代のデータ量は人間の分析能力を超えているため、自動化が必要とされます。",
-      "データの増加と分析のギャップを埋めるために用いられます。",
-      "Data Miningは、ビジネスや研究に役立つ情報を抽出する手法です。"
+      "クラスタリングとは、多数のデータ（オブジェクト）を意味のあるグループ（クラスタ）に分けることです。",
+      "このとき、各データ点は1つのクラスタにだけ属するようにし、クラスタ同士は重なりません（排他的）。",
+      "全体のデータ集合 D は、クラスタ C₁〜Cₖ の和集合になります。",
+      "例：1000人の顧客データがあるとき、それを購買傾向などによって5つのグループに分けたい。この場合、各顧客はどれか1つのグループに所属し、全員がどこかに分類されます。"
     ],
-    "originalSlideText": "...",
-    "questionImage": "lecture01/lecture01_q1.png",
-    "explanationImage": "lecture01/lecture01_ex1.png"
+    "originalSlideText": "- Clustering\n  – Gegeben: Sei D = {d₁, ..., dₙ} eine Menge von Objekten.\n  – Gesucht: Klassen K = {C₁, ..., Cₖ}, k ≪ n\n  – Bedingungen:\n    – D = ⋃ Cᵢ\n    – ∀i ≠ j: Cᵢ ∩ Cⱼ = ∅ (Partitionierung)",
+    "explanationImage": "lecture01/lecture05_ex01.png"  
+  },
+  {
+    "id": 2,
+    "questionDe": "(s.25) Nennen Sie vier Motivationen für Clustering.",
+    "questionJa": "クラスタリングを行う動機・目的を4つ挙げよ。",
+    "answerDe": [
+      "Suche nach Gemeinsamkeiten und Unterschieden",
+      "Suche nach zusätzlicher Struktur in den Daten",
+      "Ersetzen von Datenmengen durch Repräsentanten",
+      "Analyse der Cluster anstelle einzelner Datenpunkte"
+    ],
+    "answerJa": [
+      "共通点や相違点の発見",
+      "データ内の追加的な構造の探索",
+      "複数のデータ点を代表点で置き換える",
+      "個別のデータ点ではなくクラスタ単位で分析する"
+    ],
+    "explanationDe": [
+      "Clustering hilft, Gruppen von ähnlichen Objekten zu identifizieren – das erleichtert die Analyse großer Datenmengen.",
+      "Durch Clustering entdeckt man oft verborgene Strukturen oder Muster, die in Rohdaten nicht sichtbar sind.",
+      "Statt alle Datenpunkte zu verarbeiten, kann man jeden Cluster durch einen typischen Vertreter (z. B. Schwerpunkt) beschreiben.",
+      "Man fokussiert sich auf die Analyse von Gruppenverhalten statt auf individuelle Datenpunkte – z. B. Marketing-Cluster anstelle einzelner Kunden."
+    ],
+    "explanationJa": [
+      "クラスタリングは、似た性質のデータをグループ化することで、大量の情報を整理しやすくします。",
+      "データに隠れているパターンや構造を見つけ出す手がかりにもなります。",
+      "各クラスタを代表する値（例えば重心）で表すことで、計算量や表現を簡素化できます。",
+      "個々のデータを扱う代わりに、クラスタごとに傾向や特徴を分析することが可能になります（例：顧客全体ではなく『若年層』『高齢層』などのグループで解析）。"
+    ],
+    "originalSlideText": "- Motivation:\n  – Suche nach Gemeinsamkeiten und Unterschieden\n  – Suche nach zusätzlicher Struktur in den Daten\n  – Ersetzen von Mengen von Datenpunkten (die Cluster) durch ihre Repräsentanten\n  – Analyse der Cluster anstelle der Datenpunkte"
+  },
+  {
+    "id": 2,
+    "questionDe": "(s.29–30) Nennen Sie vier verschiedene Arten von Clustering-Methoden.",
+    "questionJa": "クラスタリングの代表的な手法を4つ挙げよ。",
+    "answerDe": [
+      "1. Divisive Clustering",
+      "2. Hierarchisches Clustering",
+      "3. Überlappendes Clustering",
+      "4. Probabilistisches Clustering"
+    ],
+    "answerJa": [
+      "1. 分割型クラスタリング（Divisive Clustering）",
+      "2. 階層的クラスタリング（Hierarchical Clustering）",
+      "3. 重なり合うクラスタリング（Overlapping Clustering）",
+      "4. 確率的クラスタリング（Probabilistic Clustering）"
+    ],
+    "explanationDe": [
+      "Es gibt verschiedene Clustering-Ansätze, je nach Zielsetzung und Datenstruktur.",
+      "Diese vier Methoden unterscheiden sich z. B. darin, ob sie scharfe Grenzen ziehen, Hierarchien aufbauen oder Wahrscheinlichkeiten verwenden.",
+      "In den nächsten Aufgaben werden sie jeweils im Detail erklärt."
+    ],
+    "explanationJa": [
+      "クラスタリングにはさまざまな手法がありますが、主に4つの代表的なアプローチがあります。",
+      "それぞれ、データの扱いやクラスタの構成方法が異なります（例：明確な境界を引くか、階層構造をとるか、確率で分類するかなど）。",
+      "次の問題でこれらを一つずつ詳しく見ていきます。"
+    ],
+    "originalSlideText": "- Divisive Clustering\n- Hierarchisches Clustering\n- Überlappendes Clustering\n- Probabilistisches Clustering"
+  },
+  {
+    "id": 3,
+    "questionDe": "(s.29) Erklären Sie das Divisive Clustering.",
+    "questionJa": "分割型クラスタリング（Divisive Clustering）とは何かを説明せよ。",
+    "answerDe": [
+      "Unterteilt den Raum in Teilbereiche",
+      "Zieht klare Grenzen zwischen den Clustern",
+      "Beispiel: k-means Clustering"
+    ],
+    "answerJa": [
+      "空間を複数の領域に分割する",
+      "クラスタ間に明確な境界線を引く",
+      "例：k-meansクラスタリング"
+    ],
+    "explanationDe": [
+      "Beim divisiven Clustering wird der Raum direkt in mehrere Cluster unterteilt.",
+      "Das Verfahren beginnt oft mit allen Punkten in einem Cluster und trennt diesen rekursiv weiter.",
+      "Typisches Beispiel ist k-means, bei dem die Datenpunkte auf k Cluster aufgeteilt werden, sodass die Punkte innerhalb eines Clusters möglichst ähnlich sind.",
+      "Im Bild auf der Folie sieht man, wie durch das Ziehen von Trennlinien (Grenzen) die Punkte d, e, j usw. zu einem Cluster gruppiert werden."
+    ],
+    "explanationJa": [
+      "分割型クラスタリングは、データ空間を直接いくつかの領域に分けてクラスタを作る方法です。",
+      "すべてのデータをまず1つにまとめ、そこから繰り返し分割していく手法なども含まれます。",
+      "代表的な例がk-meansクラスタリングで、これはあらかじめ指定したk個のクラスタにデータを分ける方法です。",
+      "スライドの図では、直線を引いてデータを分割することで、それぞれのクラスタ（d,e,jなど）に分類している様子が示されています。"
+    ],
+    "originalSlideText": "- Divisive Clustering\n- Unterteilung des Raumes\n- Zeichne Grenzen zwischen Clustern\n- Beispiel: k-means clustering"
+  },
+  {
+    "id": 4,
+    "questionDe": "(s.29) Was ist hierarchisches Clustering?",
+    "questionJa": "階層的クラスタリング（Hierarchisches Clustering）とは何かを説明せよ。",
+    "answerDe": [
+      "Erzeugt eine Baumstruktur",
+      "Verwendet Dendrogramme zur Visualisierung",
+      "Beispiele: Agglomerativ oder Divisiv"
+    ],
+    "answerJa": [
+      "木構造（ツリー構造）を生成する",
+      "デンドログラム（樹形図）で表現される",
+      "例：凝集型（Agglomerative）、分割型（Divisive）"
+    ],
+    "explanationDe": [
+      "Beim hierarchischen Clustering wird eine Struktur in Form eines Baums (Dendrogramm) aufgebaut.",
+      "Dabei können zwei Vorgehensweisen unterschieden werden: agglomerativ (von unten nach oben) oder divisiv (von oben nach unten).",
+      "In der Grafik sieht man ein Beispiel für ein Dendrogramm, das zeigt, wie Datenpunkte schrittweise zusammengefasst werden (z. B. g und a, dann c dazugenommen, usw.)."
+    ],
+    "explanationJa": [
+      "階層的クラスタリングでは、クラスタを木構造（ツリー構造）として表現します。",
+      "データポイントを一つずつまとめていく「凝集型（Agglomerative）」や、大きなクラスタを分割していく「分割型（Divisive）」の2つのアプローチがあります。",
+      "スライドのデンドログラムでは、例えばgとaが最初に一緒にされ、それにcが追加されるなど、データが段階的にまとめられる様子が示されています。"
+    ],
+    "originalSlideText": "- Hierarchisches Clustering\n- Erzeugt einen Baum\n- Verwende Dendrogramme zur Darstellung\n- Beispiele:\n  - Hierarchical Agglomerative Clustering\n  - Divisive Hierarchical Clustering"
+  },
+  {
+    "id": 5,
+    "questionDe": "(s.30) Was versteht man unter überlappendem Clustering?",
+    "questionJa": "重なり合うクラスタリングとは何かを説明せよ。",
+    "answerDe": [
+      "Ein Objekt kann zu mehreren Clustern gleichzeitig gehören",
+      "Darstellung häufig mit Venn-Diagrammen"
+    ],
+    "answerJa": [
+      "1つのデータ点が複数のクラスタに属することがある",
+      "ベン図などで視覚的に表現される"
+    ],
+    "explanationDe": [
+      "Beim überlappenden Clustering dürfen sich Cluster überlappen, d. h. ein Datenpunkt kann in mehreren Clustern gleichzeitig vorkommen.",
+      "Dies ist sinnvoll, wenn sich bestimmte Merkmale überlagern, z. B. bei Textdaten oder sozialen Netzwerken.",
+      "Im Beispielbild sieht man, dass Punkte wie 'j' und 'g' in mehreren überlappenden Bereichen vorkommen."
+    ],
+    "explanationJa": [
+      "重なり合うクラスタリングでは、1つのデータが複数のクラスタに同時に属することができます。",
+      "これは例えば、ある人が『スポーツ好き』でも『本好き』でもあるようなケースに使われます（ソーシャルネットワークやテキスト分析など）。",
+      "スライドのベン図では、点jやgなどが2つ以上のクラスタ領域に含まれていることが視覚的に示されています。"
+    ],
+    "originalSlideText": "- Überlappendes Clustering\n- Darstellung: Venn-Diagramm"
+  },
+  {
+    "id": 6,
+    "questionDe": "(s.30) Was ist probabilistisches Clustering?",
+    "questionJa": "確率的クラスタリングとは何かを説明せよ。",
+    "answerDe": [
+      "Jedes Objekt wird mit Wahrscheinlichkeiten verschiedenen Clustern zugewiesen",
+      "Die Wahrscheinlichkeiten pro Objekt summieren sich zu 1"
+    ],
+    "answerJa": [
+      "各データ点は複数のクラスタに属する確率を持つ",
+      "各行の確率の合計は1になる"
+    ],
+    "explanationDe": [
+      "Beim probabilistischen Clustering gehört ein Punkt nicht fest zu einem Cluster, sondern wird mit Wahrscheinlichkeiten verschiedenen Clustern zugewiesen.",
+      "Typische Verfahren sind z. B. das EM-Verfahren oder Gaussian Mixture Models.",
+      "Im Beispiel ist z. B. für Punkt 'a' angegeben: 0.4 für Cluster 1, 0.1 für Cluster 2, 0.5 für Cluster 3 – insgesamt ergibt das 1."
+    ],
+    "explanationJa": [
+      "確率的クラスタリングでは、データ点は必ずしも1つのクラスタに厳密に属するわけではなく、複数のクラスタに属する確率を持ちます。",
+      "例えばEMアルゴリズムやガウス混合モデル（GMM）などが代表的な手法です。",
+      "スライドの表では、例えばaという点はクラスタ1に属する確率が0.4、クラスタ2に0.1、クラスタ3に0.5で、合計は1になります。"
+    ],
+    "originalSlideText": "- Probabilistisches Clustering\n- Weise jedem Element eine Wahrscheinlichkeit zu, mit der es zu den Clustern gehört\n- Die Wahrscheinlichkeiten summieren sich zu 1"
+  },
+  {
+    "id": 7,
+    "questionDe": "(s.31) Erklären Sie den k-means Clustering Algorithmus ausführlich.",
+    "questionJa": "k-meansクラスタリングアルゴリズムの手順を丁寧に説明せよ。",
+    "answerDe": [
+      "1. Lege die gewünschte Anzahl an Clustern k fest.",
+      "2. Wähle zufällig k Datenpunkte als Startzentren (Cluster-Zentren).",
+      "3. Berechne für jeden Datenpunkt den Abstand zu allen k Zentren.",
+      "4. Weise jeden Datenpunkt dem nächstgelegenen Zentrum zu (z. B. mit euklidischem Abstand).",
+      "5. Berechne für jedes Cluster das neue Zentrum als Mittelwert der zugewiesenen Punkte.",
+      "6. Wiederhole Schritte 3–5, bis sich die Cluster-Zuordnung nicht mehr ändert (stabiler Zustand*).",
+      "* Ein stabiler Zustand bedeutet, dass die Zuweisung der Instanzen zu den Clustern unverändert bleibt."
+    ],
+    "answerJa": [
+      "1. 分類したいクラスタの数 k を決める。",
+      "2. データからランダムに k 個の点を選び、それらを初期クラスタ中心（クラスタの代表点）とする。",
+      "3. 各データ点について、全てのクラスタ中心との距離を計算する。",
+      "4. 各データ点を、最も近いクラスタ中心に割り当てる（ユークリッド距離などを使用）。",
+      "5. 各クラスタに属する点の平均を計算し、新しいクラスタ中心とする。",
+      "6. 割り当てが変化しなくなるまで（＝クラスタが安定するまで*）、手順3〜5を繰り返す。",
+      "* クラスタが安定するとは、各データ点の所属が変わらず、中心も変化しないことを意味します。"
+    ],
+    "explanationDe": [
+      "Der k-means Algorithmus ist ein häufig genutztes Verfahren zum Clustern von Daten.",
+      "Er arbeitet iterativ: Anfangs werden k Startpunkte zufällig gewählt. Diese gelten als die aktuellen Cluster-Zentren.",
+      "Dann wird jeder Datenpunkt dem Zentrum zugewiesen, dem er am nächsten liegt. Dabei wird meist der euklidische Abstand verwendet.",
+      "Sobald alle Punkte einem Cluster zugeordnet sind, werden die neuen Zentren als Mittelwert der Punkte innerhalb jedes Clusters berechnet.",
+      "Dieser Vorgang wird so lange wiederholt, bis sich die Zuordnung der Punkte zu Clustern nicht mehr ändert. Dann spricht man von einem stabilen Zustand.",
+      "Ein stabiler Zustand bedeutet, dass die Zuweisung der Instanzen zu den Clustern unverändert bleibt.",
+      "Die rechnerische Komplexität pro Iteration liegt bei Schritt 3: O(k·n·m), und bei Schritt 5: O(k·n·m)."
+    ],
+    "explanationJa": [
+      "k-meansクラスタリングは、もっともよく使われるクラスタリングアルゴリズムの1つです。",
+      "最初に、全データからランダムに k 個の点を選び、それらをクラスタの中心として設定します（初期化）。",
+      "次に、各データ点について、どのクラスタ中心が最も近いかを調べ、もっとも近いクラスタに割り当てます。",
+      "割り当てが終わったら、各クラスタに属する点の平均（重心）を計算して、新しいクラスタ中心に置き換えます。",
+      "この手順（割り当て→中心更新）を繰り返し、クラスタの割り当てが変わらなくなる（＝安定）まで継続します。",
+      "クラスタが安定するとは、各データ点の所属が変わらず、中心も変化しないことを意味します。",
+      "このアルゴリズムの各繰り返しにかかる計算量は、手順3と手順5でそれぞれ O(k·n·m)（クラスタ数 k、データ数 n、次元数 m に比例）です。"
+    ],
+    "originalSlideText": "- k-means Clustering Algorithmus\n1. Spezifiziere die Anzahl der Cluster: k\n2. Wähle zufällig k Punkte z1, ..., zk: Cluster-Zentren\n3. Weise alle Instanzen ihrem nächsten Cluster-Zentrum zu\n4. Metrik: z. B. Euklid’sche Distanz\n5. Berechne das neue Zentrum (mean)\n6. Falls Cluster nicht stabil → Schritt 3\n- Cluster sind stabil: Die Zuweisung der Instanzen zu den Clustern bleibt unverändert\n- Komplexität Schritt 3: O(k · n · m)\n- Komplexität Schritt 5: O(k · n · m)"
+  },
+  {
+    "id": 8,
+    "questionDe": "(s.31) Wie ist die Komplexität des k-means Algorithmus?",
+    "questionJa": "k-meansクラスタリングの計算量はどのように見積もられるか？",
+    "answerDe": [
+      "Die Komplexität des k-means Algorithmus hängt von der Anzahl der Cluster k, der Anzahl der Datenpunkte n und der Dimensionalität m ab.",
+      "Pro Iteration: ",
+      "– Schritt 3 (Zuweisung der Punkte zu Clustern): O(k · n · m)",
+      "– Schritt 5 (Berechnung der neuen Zentren): O(k · n · m)",
+      "Bei T Iterationen ergibt sich die Gesamtkosten: O(T · k · n · m)"
+    ],
+    "answerJa": [
+      "k-meansアルゴリズムの計算量は、クラスタ数 k、データ数 n、次元数 m に依存します。",
+      "各繰り返しごとに：",
+      "– ステップ3（各データ点を最も近いクラスタ中心に割り当てる）: O(k・n・m)",
+      "– ステップ5（クラスタ中心の更新）: O(k・n・m)",
+      "反復回数を T とすると、全体の計算量は O(T・k・n・m) となります。"
+    ],
+    "explanationDe": [
+      "Bei k-means wird in jeder Iteration zunächst für jeden der n Datenpunkte der Abstand zu jedem der k Cluster-Zentren berechnet.",
+      "Da jeder Punkt m-dimensionale Merkmale hat, ergibt das eine Kostenabschätzung von O(k · n · m) für Schritt 3.",
+      "Anschließend werden in Schritt 5 für jedes Cluster die neuen Zentren als Mittelwerte der zugewiesenen Punkte berechnet, was ebenfalls O(k · n · m) kostet.",
+      "Die Gesamtkomplexität hängt linear von der Anzahl der Iterationen T ab, also: O(T · k · n · m)."
+    ],
+    "explanationJa": [
+      "k-meansでは、各データ点についてすべてのクラスタ中心との距離を計算する必要があります（ステップ3）。",
+      "データ数が n、クラスタ数が k、次元が m のとき、このステップには O(k・n・m) の時間がかかります。",
+      "また、クラスタ中心の更新（ステップ5）でも同様に O(k・n・m) の計算量が必要です。",
+      "この処理を T 回繰り返すため、最終的な計算量は O(T・k・n・m) となります。"
+    ],
+    "originalSlideText": "- Komplexität Schritt 3: O(k · n · m)\n- Komplexität Schritt 5: O(k · n · m)"
+  },
+  {
+    "id": 9,
+    "questionDe": "(s.32) Wie kann man die Qualität des k-means Clusterings messen?",
+    "questionJa": "k-meansクラスタリングの品質はどのように評価されるか？",
+    "answerDe": [
+      "Die Qualität wird durch die Summe der quadrierten Abstände der Datenpunkte zu ihren jeweiligen Clusterzentren gemessen.",
+      "Formel: q = ∑(i=1 bis k) ∑(j=1 bis nᵢ) (dᵢⱼ − zᵢ)²",
+      "Dabei ist:",
+      "– zᵢ: das Zentrum des i-ten Clusters",
+      "– dᵢⱼ: der j-te Punkt im i-ten Cluster",
+      "– nᵢ: Anzahl der Punkte im i-ten Cluster"
+    ],
+    "answerJa": [
+      "クラスタリングの品質は、各クラスタ内のデータ点とそのクラスタ中心との距離の2乗の合計によって評価されます。",
+      "数式: q = Σ(i=1〜k) Σ(j=1〜nᵢ) (dᵢⱼ − zᵢ)²",
+      "ここで：",
+      "– zᵢ：クラスタ i の中心（重心）",
+      "– dᵢⱼ：クラスタ i に属する j 番目のデータ点",
+      "– nᵢ：クラスタ i に属するデータ点の数"
+    ],
+    "explanationDe": [
+      "Das Ziel des k-means Algorithmus ist es, die Punkte so zu gruppieren, dass sie möglichst nahe bei ihren Clusterzentren liegen.",
+      "Ein kleinerer q-Wert bedeutet, dass die Datenpunkte gut zu ihren Clustern passen.",
+      "Beispiel: Wenn du Kunden basierend auf ihrem Kaufverhalten gruppierst, zeigt ein niedriger q-Wert, dass ähnliche Kunden in denselben Gruppen sind."
+    ],
+    "explanationJa": [
+      "k-meansの目的は、データ点がクラスタの中心にできるだけ近くなるようにグループ分けすることです。",
+      "qの値が小さいほど、データ点は自分のクラスタ中心に近く、よいクラスタリングであることを意味します。",
+      "例：買い物の傾向で顧客をクラスタに分ける場合、qが小さければ、似た購買行動をする顧客が同じグループにまとまっていると判断できます。"
+    ],
+    "originalSlideText": "– Qualität\n– Berechne\nq = ∑ ∑ (dᵢⱼ − zᵢ)²\n– zᵢ: Zentrum des i-ten Clusters\n– dᵢⱼ: j-ter Punkt des i-ten Clusters\n– nᵢ = |Cᵢ|",
+    "explanationImage": "lecture01/lecture05_ex02.png"
+  },
+  {
+    "id": 10,
+    "questionDe": "(s.32) Welche Probleme hat der k-means Algorithmus? Nenne 5 Einflussfaktoren.",
+    "questionJa": "k-meansアルゴリズムの問題点は何か？結果に影響を与える要因を5つ挙げよ。",
+    "answerDe": [
+      "1. Der Algorithmus berechnet nur ein lokales Minimum von q, kein globales.",
+      "2. Die Ergebnisse hängen ab von:",
+      "   – der Anzahl der Cluster k",
+      "   – der Auswahl der Startzentren",
+      "   – der 'empty-cluster'-Strategie",
+      "   – der Größe und Varianz der Cluster",
+      "   – der Wahl des entferntesten Punktes vom Zentrum"
+    ],
+    "answerJa": [
+      "1. k-meansはqの局所的な最小値しか見つけられず、全体として最良（グローバル最小）な結果を保証できません。",
+      "2. 結果は以下の5つの要因に影響されます：",
+      "   – クラスタ数kの選び方",
+      "   – 初期クラスタ中心の選び方",
+      "   – 空クラスタ（データが割り当てられないクラスタ）への対応戦略",
+      "   – 各クラスタのデータ数やばらつき（分散）",
+      "   – クラスタ中心から最も遠い点を次の中心に選ぶかどうか"
+    ],
+    "explanationDe": [
+      "k-means ist stark abhängig von der Wahl der Anfangswerte. Schlechte Startzentren führen oft zu schlechten Clustern.",
+      "Beispiel: Wenn alle Startzentren zufällig nahe beieinander liegen, könnten viele Punkte falsch zugeordnet werden."
+    ],
+    "explanationJa": [
+      "k-meansは初期の中心点の選び方に大きく依存するため、選び方が悪いと不適切なクラスタができることがあります。",
+      "例：初期中心が近すぎると、あるエリアだけにクラスタが集中し、他のエリアが適切に分類されません。"
+    ],
+    "originalSlideText": "– Problematik\n– Berechnet ein lokales Minimum q …\n– Ergebnis ist abhängig von k, Startzentren, empty-Cluster Strategie usw."
+  },
+  {
+    "id": 11,
+    "questionDe": "(s.33) Wie kann man das Ergebnis des k-means Algorithmus verbessern?",
+    "questionJa": "k-meansクラスタリングの結果を改善するにはどうすればよいか？",
+    "answerDe": [
+      "Führe den k-means Algorithmus mehrfach mit unterschiedlichen Startzentren aus.",
+      "Wähle das Ergebnis mit dem geringsten Wert für die Qualitätsfunktion q."
+    ],
+    "answerJa": [
+      "k-meansクラスタリングを異なる初期中心で複数回実行し、",
+      "その中で品質評価値qが最も小さい結果を採用する。"
+    ],
+    "explanationDe": [
+      "Da das Ergebnis stark von den Startzentren abhängt, kann eine zufällige Wahl zu schlechten Clustern führen.",
+      "Wenn man k-means zum Beispiel 10-mal ausführt und das beste (kleinste q) nimmt, verbessert sich die Stabilität.",
+      "Beispiel: Beim Clustern von Kunden kann man verschiedene Startpunkte ausprobieren und das beste Clustering auswählen."
+    ],
+    "explanationJa": [
+      "k-meansの結果は初期クラスタ中心に依存するため、1回の実行では不安定な場合があります。",
+      "そこで異なる初期値で何度かk-meansを実行し、最もq（クラスタ内距離の合計）が小さい結果を選ぶと良いです。",
+      "例：顧客をクラスタに分ける際、10回実行して最もグループが明確な結果を採用する方法がよく使われます。"
+    ],
+    "originalSlideText": "– Verbesserung: Lasse k-means mehrfach mit verschiedenen Startzentren laufen\n– Wähle Ergebnis mit geringstem q"
+  },
+  {
+    "id": 12,
+    "questionDe": "(s.33) Was ist k-means++ und wie verbessert es den Algorithmus? Nenne 3 Aspekte.",
+    "questionJa": "k-means++とは何か？アルゴリズムをどのように改善するのか。3つ挙げよ。",
+    "answerDe": [
+      "1. Wähle den ersten Startpunkt zufällig.",
+      "2. Wähle weitere Startpunkte mit einer Wahrscheinlichkeit proportional zur Entfernung zu bestehenden Zentren.",
+      "3. Erhöht die Konvergenzgeschwindigkeit und Genauigkeit."
+    ],
+    "answerJa": [
+      "1. 最初のクラスタ中心はランダムに選ぶ。",
+      "2. 次の中心は、既に選ばれた中心から遠い点を高い確率で選ぶ。",
+      "3. これにより収束速度と精度が向上する。"
+    ],
+    "explanationDe": [
+      "k-means++ wählt die Startzentren gezielter aus als das klassische k-means, das alle Punkte rein zufällig wählt.",
+      "Punkte, die weit von bestehenden Zentren entfernt sind, haben eine höhere Chance, ausgewählt zu werden.",
+      "Das führt zu besser verteilten Startpunkten und schnelleren, genaueren Ergebnissen."
+    ],
+    "explanationJa": [
+      "通常のk-meansは初期中心を完全にランダムに選ぶが、k-means++はより賢く選びます。",
+      "すでに選ばれた中心から遠く離れた点を優先的に次の中心として選ぶことで、クラスタ中心が偏りにくくなります。",
+      "その結果、計算の収束が早くなり、分類の精度も向上します。"
+    ],
+    "originalSlideText": "– k-means++:\n– Wähle ersten Startpunkt zufällig\n– Wähle nächste Punkt mit Wahrscheinlichkeit proportional zur Entfernung\n– Erhöht: Konvergenzgeschwindigkeit, Genauigkeit"
+  },
+  {
+    "id": 13,
+    "questionDe": "(s.34) Wie kann man eine geeignete Anzahl k der Cluster im k-means bestimmen? Nenne 3 Methoden.",
+    "questionJa": "k-meansクラスタリングにおいて、クラスタ数kを適切に決める方法を3つ挙げよ。",
+    "answerDe": [
+      "1. Nutze die Faustregel: k = Wurzel(n / 2)",
+      "2. Nutze Expertenwissen aus der Domäne.",
+      "3. Teste verschiedene Werte für k (z. B. von k−2 bis k+2) und vergleiche die Ergebnisse."
+    ],
+    "answerJa": [
+      "1. 経験則により k = √(n / 2) とする。",
+      "2. 専門領域の知識を使って適切なクラスタ数を見積もる。",
+      "3. 初期値の周辺でkを変化させ（例：k−2〜k+2）、結果を比較して最適な値を選ぶ。"
+    ],
+    "explanationDe": [
+      "Eine einfache Faustregel für k ist die Wurzel von n durch 2.",
+      "Besser ist jedoch die Nutzung von Vorwissen über die Daten.",
+      "Alternativ kann man k in einem Bereich testen und die beste Lösung wählen."
+    ],
+    "explanationJa": [
+      "クラスタ数kを決めるには、まず簡単な経験則として「データ数nの半分の平方根」があります。",
+      "ただし、より信頼できる方法は、対象となる分野の知識（例：医療では患者のタイプ数など）をもとにkを見積もることです。",
+      "さらに、kの周辺値でいくつか試し、クラスタの分布や性能指標を比較して決定する方法も実用的です。"
+    ],
+    "originalSlideText": "1. Schätzung der Anzahl der Cluster [MKB1979]\nk = √(n / 2)\n2. Nutze Domänenwissen zur Abschätzung der Anzahl der Cluster\n3. Variiere Anzahl der Cluster k"
+  },
+  {
+    "id": 14,
+    "questionDe": "(s.34) Wie kann man die Qualität eines Clustering-Ergebnisses bewerten? Nenne 4 mögliche Indizes.",
+    "questionJa": "クラスタリングの結果の良さを評価するにはどうすればよいか？4つの指標を挙げよ。",
+    "answerDe": [
+      "1. Davies-Bouldin Index",
+      "2. Modified Hubert Γ",
+      "3. Dunn Index",
+      "4. Silhouette Coefficient"
+    ],
+    "answerJa": [
+      "1. デービス・ボールディン指数（Davies-Bouldin Index）",
+      "2. 修正ハバートΓ（Modified Hubert Γ）",
+      "3. ダン指数（Dunn Index）",
+      "4. シルエット係数（Silhouette Coefficient）"
+    ],
+    "explanationDe": [
+      "Ein Problem ist, dass bei größerem k das Ergebnis oft besser aussieht, obwohl es überfitten kann.",
+      "Der optimale Fall wäre: k = n ⇒ q = 0, aber das ist nicht sinnvoll.",
+      "Deshalb nutzt man Cluster-Indizes wie den Silhouette Coefficient, der interne Qualität bewertet.",
+      "Diese helfen zu entscheiden, ob die Cluster gut voneinander getrennt und intern kompakt sind."
+    ],
+    "explanationJa": [
+      "クラスタ数kを大きくすればするほど、クラスタ内の距離は小さくなり、一見良い結果に見えてしまう（過学習の危険）。",
+      "理論上はk=nならクラスタ内距離q=0になるが、それは意味がない。",
+      "そこでDavies-Bouldin指数やSilhouette係数など、クラスタのまとまりや分離の良さを測る指標が使われる。",
+      "これにより、内部評価で「本当に意味のあるクラスタ分け」ができたかを確認できる。"
+    ],
+    "originalSlideText": "Evaluation: Optimal k=n ⇒ q=0, aber nicht sinnvoll\nMögliche Lösung: Cluster Indices\n– Davies-Bouldin, Hubert, Dunn, Silhouette",
+    "explanationImage": "lecture01/lecture05_ex03.png"
+  },
+  {
+    "id": 1,
+    "questionDe": "(s.34) Erklären Sie den Aufbau des Davies-Bouldin Index zur Bewertung von Clustering-Ergebnissen.",
+    "questionJa": "（スライド34）クラスタリング結果を評価するためのDavies-Bouldin Indexの構成を説明せよ。",
+    "answerDe": [
+      "Der Index besteht aus zwei Hauptkomponenten: Kohäsion und Trennung.",
+      "Kohäsion S_i misst die mittlere Abweichung der Punkte im Cluster i von ihrem Zentrum.",
+      "Trennung M_{i,j} misst den Abstand zwischen den Zentren der Cluster i und j.",
+      "Das Verhältnis R_{i,j} = (S_i + S_j) / M_{i,j} ist ein Maß für die Ähnlichkeit der Cluster i und j.",
+      "Für jeden Cluster i wird D_i = max_{j ≠ i} R_{i,j} bestimmt.",
+      "Der Davies-Bouldin Index ist der Durchschnitt aller D_i: DB = (1/k) * Σ D_i."
+    ],
+    "answerJa": [
+      "Davies-Bouldin Indexはクラスタの評価のための指標であり、主に「まとまり」と「分離度」の2要素から構成される。",
+      "S_iはクラスタiの内部にある点が、そのクラスタの中心からどれだけ離れているか（平均的な距離）を表す。",
+      "M_{i,j}はクラスタiとjの中心点間の距離を表す。",
+      "R_{i,j} = (S_i + S_j) / M_{i,j} はクラスタiとjの類似度を表し、小さいほど良い。",
+      "各クラスタiについて、最も類似度が高い他クラスタとのR_{i,j}（最悪ケース）をD_iと定義する。",
+      "Davies-Bouldin Indexは全クラスタのD_iの平均で定義され、値が小さいほどクラスタリングの質が良いとされる。"
+    ],
+    "explanationDe": [
+      "Der Davies-Bouldin Index bewertet, wie gut ein Clustering gelungen ist, indem er misst, wie eng Punkte innerhalb eines Clusters beieinanderliegen (Kohäsion) und wie weit Cluster voneinander entfernt sind (Trennung).",
+      "Zum Beispiel: Wenn in einem Cluster alle Punkte dicht um das Zentrum gruppiert sind (kleines S_i), und gleichzeitig die Zentren verschiedener Cluster weit auseinanderliegen (großes M_{i,j}), ergibt sich ein kleiner R_{i,j}-Wert – was wünschenswert ist.",
+      "Für jedes Cluster wird dann der 'schlechteste Fall' (größter R_{i,j}) betrachtet, um D_i zu bestimmen.",
+      "Am Ende berechnet man den Durchschnitt aller D_i-Werte. Je kleiner der DB-Wert, desto besser ist das Clustering.",
+      "Beispiel: Drei gut getrennte Cluster mit engen internen Punkten liefern typischerweise einen DB-Wert unter 1.0, während überlappende Cluster höhere Werte haben."
+    ],
+    "explanationJa": [
+      "Davies-Bouldin Index（DBI）は、クラスタリング結果がどれだけ良好かを判断するための指標です。",
+      "この評価は、①クラスタ内部のまとまり（コヒージョン）と、②クラスタ間の分離度（セパレーション）を使って行われます。",
+      "たとえば、クラスタAの中の点がその中心から近ければS_Aは小さく、クラスタAとBの中心が十分離れていればM_{A,B}は大きくなります。その結果、R_{A,B}の値は小さくなり、「AとBは良く分かれていて、それぞれまとまりがある」と評価できます。",
+      "このR_{i,j}をすべてのクラスタペアに対して計算し、各クラスタiごとに最も悪い（最大の）R_{i,j}を選んでD_iとします。",
+      "そして最後に、すべてのD_iの平均を取った値がDavies-Bouldin Indexです。",
+      "DBIの値が小さいほど、クラスタ内のまとまりが良く、クラスタ同士も良く分離されていると判断できます。実際のクラスタリング評価では、DBIが1.0以下なら良好とされることが多いです。"
+    ],
+    "originalSlideText": "• Davies Bouldin Index\n– Kohäsion\n  S_i = ((1 / n_i) * Σ_{j=1}^{n_i} |d_{i,j} − z_i|^p)^{1/p}\n– Trennung\n  M_{i,j} = ||z_i − z_j||_p = (Σ_{k=1}^m |z_{i,k} − z_{j,k}|^p)^{1/p}\n– Maß für Qualität des Clusterings für i und j\n  R_{i,j} = (S_i + S_j) / M_{i,j}\n– Schlechtester Wert für i\n  D_i = max_{j≠i} {R_{i,j}}\n– Davies-Bouldin Index\n  DB := (1 / k) * Σ_{i=1}^k D_i",
+    "explanationImage": "lecture01/lecture05_ex04.png"
+  },
+  {
+    "id": 2,
+    "questionDe": "(s.35) Geben Sie die Berechnungskomplexitäten der einzelnen Bestandteile des Davies-Bouldin Index an.",
+    "questionJa": "（スライド35）Davies-Bouldin Index の各構成要素における計算量を挙げよ。",
+    "answerDe": [
+      "S_i: O(n · m)",
+      "M_{i,j}: O(m)",
+      "R_{i,j}: O(n · m)",
+      "D_i: O(k · n · m)",
+      "DB: O(k² · n · m)"
+    ],
+    "answerJa": [
+      "S_i：O(n × m)",
+      "M_{i,j}：O(m)",
+      "R_{i,j}：O(n × m)",
+      "D_i：O(k × n × m)",
+      "DB：O(k² × n × m)"
+    ],
+    "explanationDe": [
+      "Die Komplexität des Davies-Bouldin Index ergibt sich aus der Berechnung mehrerer Komponenten:",
+      "- S_i: Die Kohäsion eines Clusters i wird durch die mittlere Distanz seiner n_i Punkte zum Zentrum berechnet. Da jeder Punkt m Dimensionen hat, ergibt sich O(n · m).",
+      "- M_{i,j}: Die Trennung zwischen zwei Clustern wird als Abstand der Zentren berechnet. Jedes Zentrum hat m Dimensionen, also ist die Komplexität O(m).",
+      "- R_{i,j}: Die Berechnung dieses Wertes benötigt die vorherigen S_i und M_{i,j}-Werte, daher ist der Aufwand O(n · m).",
+      "- D_i: Für jeden Cluster muss das Maximum über k Vergleiche gebildet werden, was zu O(k · n · m) führt.",
+      "- DB: Da D_i für jedes der k Cluster berechnet werden muss, ergibt sich insgesamt eine Komplexität von O(k² · n · m)."
+    ],
+    "explanationJa": [
+      "Davies-Bouldin Index の計算にはいくつかのステップがあり、それぞれに計算量（どれだけの計算コストがかかるか）が異なります：",
+      "- S_i（クラスタ内の平均距離）：n 個のデータポイントを m 次元空間で計算するので O(n × m)。",
+      "- M_{i,j}（クラスタ間の中心点距離）：m 次元で2つの中心点の距離を計算するだけなので O(m)。",
+      "- R_{i,j}（クラスタ i と j の類似度）：S_i, S_j, M_{i,j} を使って計算されるため、全体で O(n × m)。",
+      "- D_i（クラスタ i における最悪の類似度）：k 個のクラスタ全てとの比較が必要で、それぞれに O(n × m) かかるので O(k × n × m)。",
+      "- DB（Davies-Bouldin Index）：全ての D_i（k 個）を計算するので O(k² × n × m)。",
+      "例えば、100個のデータ（n=100）、10次元（m=10）、5個のクラスタ（k=5）の場合、DBI全体の計算コストは O(25 × 100 × 10) = O(25,000) となる。"
+    ],
+    "originalSlideText": "• Davies Bouldin Index\n– Komplexität\n  – S_i: O(n · m)\n  – M_{i,j}: O(m)\n  – R_{i,j}: O(n · m + n · m + m) = O(n · m)\n  – D_i: O(k · n · m)\n  – DB: O(k · k · n · m) = O(k² · n · m)"
+  },
+  {
+    "id": 3,
+    "questionDe": "(s.36) Wie bestimmt man mit Hilfe des Davies-Bouldin Index die optimale Anzahl an Clustern anhand der Tabelle und des Diagramms?",
+    "questionJa": "（スライド36）グラフを用いて、Davies-Bouldin Index による最適なクラスタ数の決定方法を説明せよ。",
+    "answerDe": [
+      "Berechne den Davies-Bouldin Index für verschiedene k-Werte",
+      "Trage die Werte in einer Tabelle und einem Diagramm auf",
+      "Wähle das k mit dem kleinsten Indexwert",
+      "Im Beispiel ist der kleinste Wert bei k = 6"
+    ],
+    "answerJa": [
+      "さまざまなクラスタ数 k に対して Davies-Bouldin Index を計算する",
+      "得られた値を表やグラフにまとめて比較する",
+      "最も Davies-Bouldin Index が小さい k を選ぶ",
+      "この例では、最小値は k = 6 のときに得られる"
+    ],
+    "explanationDe": [
+      "Der Davies-Bouldin Index misst die Qualität eines Clusterings – je kleiner der Wert, desto besser ist die Trennung und Kompaktheit der Cluster.",
+      "Man berechnet den Index für verschiedene Werte von k (Anzahl der Cluster), z. B. k = 3 bis k = 9.",
+      "Die berechneten Werte werden in einer Tabelle dargestellt und zur besseren Visualisierung in einem Diagramm geplottet.",
+      "Im Diagramm erkennt man, dass der niedrigste Wert des Index bei k = 6 liegt – dies ist also die optimale Anzahl an Clustern für diesen Datensatz.",
+      "Beispiel: Wenn man einen Datensatz mit Kundenprofilen analysiert, kann man anhand des niedrigsten Indexwertes erkennen, dass sich die Kunden am besten in 6 Gruppen segmentieren lassen."
+    ],
+    "explanationJa": [
+      "Davies-Bouldin Index はクラスタリングの質を測る指標で、値が小さいほど、クラスタ同士がよく分かれており、内部ではまとまりがあることを示します。",
+      "このスライドでは、k（クラスタ数）を3〜9まで変えて、各値に対する Davies-Bouldin Index を計算しています。",
+      "その結果は左の表に、また右のグラフに視覚的に描かれています。",
+      "グラフを見ると、k = 6 のときに Index の値が最小になっているため、このデータに最も適したクラスタ数は6だと判断できます。",
+      "たとえば、ある商品の購入履歴から顧客をグルーピングしたいとき、Indexが最小となるk=6を使えば、顧客を6つの代表的なパターンに分けられるという意味になります。"
+    ],
+    "originalSlideText": "• Davies Bouldin Index\n\nk   | Davies Bouldin Index\n3   | 1,06957\n4   | 1,16492\n5   | 1,02300\n6   | 1,00282\n7   | 1,06513\n8   | 1,02402\n9   | 1,02164\n\n– Wähle k mit kleinstem Index: 6",
+    "questionImage": "lecture01/lecture05_q01.png"
   }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
 ]
