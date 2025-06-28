@@ -439,7 +439,7 @@
     "explanationImage": "lecture01/lecture05_ex03.png"
   },
   {
-    "id": 1,
+    "id": 15,
     "questionDe": "(s.34) Erklären Sie den Aufbau des Davies-Bouldin Index zur Bewertung von Clustering-Ergebnissen.",
     "questionJa": "（スライド34）クラスタリング結果を評価するためのDavies-Bouldin Indexの構成を説明せよ。",
     "answerDe": [
@@ -477,7 +477,7 @@
     "explanationImage": "lecture01/lecture05_ex04.png"
   },
   {
-    "id": 2,
+    "id": 16,
     "questionDe": "(s.35) Geben Sie die Berechnungskomplexitäten der einzelnen Bestandteile des Davies-Bouldin Index an.",
     "questionJa": "（スライド35）Davies-Bouldin Index の各構成要素における計算量を挙げよ。",
     "answerDe": [
@@ -514,7 +514,7 @@
     "originalSlideText": "• Davies Bouldin Index\n– Komplexität\n  – S_i: O(n · m)\n  – M_{i,j}: O(m)\n  – R_{i,j}: O(n · m + n · m + m) = O(n · m)\n  – D_i: O(k · n · m)\n  – DB: O(k · k · n · m) = O(k² · n · m)"
   },
   {
-    "id": 3,
+    "id": 17,
     "questionDe": "(s.36) Wie bestimmt man mit Hilfe des Davies-Bouldin Index die optimale Anzahl an Clustern anhand der Tabelle und des Diagramms?",
     "questionJa": "（スライド36）グラフを用いて、Davies-Bouldin Index による最適なクラスタ数の決定方法を説明せよ。",
     "answerDe": [
