@@ -1094,7 +1094,195 @@
   "originalSlideText": "T-DISTRIBUTED STOCHASTIC NEIGHBORHOOD EMBEDDING (T-SNE)\n- t-SNE ist eine weitere Methode zur Dimensionsreduktion\n- Daten werden in eine 2 dimensionale Ebene eingebettet\n- T-SNE versucht die lokale Verteilung der Daten zu bewahren\n- Häufig im Bereich des Maschinellen Lernens eingesetzt",
   "explanationImage": "",
   "questionImage": ""
+},
+{
+  "id": 34,
+  "questionDe": "(s26) Was ist UMAP und wie unterscheidet es sich von t-SNE?",
+  "questionJa": "UMAPとは何か、またt-SNEとどう異なるかを説明しなさい。",
+  "answerDe": [
+    "UMAP steht für Uniform Manifold Approximation and Projection for Dimension Reduction.",
+    "Ähnlich zu t-SNE, aber mit folgenden Unterschieden:",
+    "- Verwendet bedingte Wahrscheinlichkeiten, aber ohne Normalisierung.",
+    "- Unterstützt andere Distanzmetriken als Euklid.",
+    "- Führt während der Einbettung keine Normalisierung durch.",
+    "- Nutzt nearest neighbor statt perplexity."
+  ],
+  "answerJa": [
+    "UMAPは、Uniform Manifold Approximation and Projectionの略で、次元削減のための手法です。",
+    "t-SNEに似ていますが、以下の点で異なります：",
+    "- 条件付き確率を使いますが、それを正規化しません。",
+    "- ユークリッド距離以外の距離尺度も使えます。",
+    "- 埋め込みの際に正規化を行いません。",
+    "- perplexityの代わりに「最近傍」（nearest neighbor）を用います。"
+  ],
+  "explanationDe": [
+    "UMAP ist ein modernes Verfahren zur Dimensionsreduktion und wird häufig verwendet, um große, komplexe Datensätze visuell zu analysieren.",
+    "Im Gegensatz zu t-SNE basiert UMAP stärker auf mathematischen Grundlagen der Topologie und nutzt Graphentheorie.",
+    "Es berechnet bedingte Wahrscheinlichkeiten basierend auf der lokalen Nachbarschaft der Datenpunkte.",
+    "Diese Wahrscheinlichkeiten werden jedoch nicht wie bei t-SNE normalisiert.",
+    "Ein weiterer Unterschied ist, dass UMAP anstelle von perplexity die Anzahl der nächsten Nachbarn verwendet, um die lokale Struktur zu erfassen.",
+    "Beispiel: In einem Datensatz über Tierarten kann UMAP ähnliche Tiere basierend auf ihren Merkmalen in einem 2D-Raum gruppieren, wobei die Beziehung in der Nachbarschaft genauer berücksichtigt wird."
+  ],
+  "explanationJa": [
+    "UMAPは、次元削減のための最新の手法で、大規模で複雑なデータの視覚化によく使われます。",
+    "t-SNEに似ていますが、より数学的な基礎（トポロジーやグラフ理論）に基づいています。",
+    "UMAPでは、各データ点の近傍（最近傍）との関係に基づいた条件付き確率を計算しますが、それらを正規化しません。",
+    "また、距離の測定にユークリッド距離以外も使え、柔軟性があります。",
+    "t-SNEではperplexity（類似度を制御するパラメータ）を使いますが、UMAPは「最近傍」の数を指定します。",
+    "例：動物の特徴（体重、体長、生息地など）を使って、似た動物が2次元上で近くに表示されるようにすることができます。"
+  ],
+  "originalSlideText": "UMAP\n- UMAP: Uniform Manifold Approximation and Projection for Dimension Reduction\n- Ähnlich zu t-SNE, hat aber entscheidende Unterschiede\n- Berechnet auch bedingte Wahrscheinlichkeiten, diese werden aber nicht normalisiert\n- Kann andere Distanzmetriken als Euklid nutzen\n- Normalisiert auch nicht während der Einbettung\n- Nutzt nearest neighbor statt perplexity",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 35,
+  "questionDe": "(s27) Welche speziellen Merkmale weist UMAP bei der Einbettung auf?",
+  "questionJa": "UMAPの埋め込み処理における特徴を説明しなさい。",
+  "answerDe": [
+    "Verwendet bei der Einbettung eine andere Initialisierung, Verteilungsfunktion und Vergleichsmaß:",
+    "- Graph Laplacian",
+    "- Binary Cross Entropy",
+    "Nutzt Stochastic Gradient Descent statt regulärem Verfahren",
+    "Bietet Performanzvorteile"
+  ],
+  "answerJa": [
+    "埋め込み処理の際、UMAPは初期化、分布関数、比較指標を独自に設定：",
+    "- グラフ・ラプラシアン（Graph Laplacian）を使用",
+    "- バイナリ交差エントロピー（Binary Cross Entropy）を使用",
+    "通常の方法ではなく、確率的勾配降下法（Stochastic Gradient Descent）を用いる",
+    "これにより処理の高速化（パフォーマンス上の利点）がある"
+  ],
+  "explanationDe": [
+    "UMAP unterscheidet sich von anderen Dimensionsreduktionsverfahren auch in der Art der Einbettung.",
+    "Statt eine feste Initialisierung oder eine Standardverteilung wie bei PCA oder t-SNE zu verwenden, nutzt UMAP z. B. den Graph Laplacian als Grundlage für die Anfangsstruktur.",
+    "Für die Optimierung wird die Binary Cross Entropy als Kostenfunktion eingesetzt, was gut zu kategorialen Daten passt.",
+    "Außerdem verwendet UMAP den Stochastic Gradient Descent (SGD), ein iteratives Optimierungsverfahren, das sich besonders gut für große Datensätze eignet.",
+    "Dies führt zu schnelleren Berechnungen im Vergleich zu klassischen Methoden.",
+    "Beispiel: Bei der Analyse von Textdaten kann UMAP schneller zu einer sinnvollen Visualisierung führen als andere Methoden."
+  ],
+  "explanationJa": [
+    "UMAPは、他の次元削減手法と比べて、埋め込み（低次元への写像）の方法にいくつかの特徴があります。",
+    "まず、初期化には「グラフ・ラプラシアン」と呼ばれる構造的情報を反映させた方法を使います。",
+    "また、類似度の比較に用いる関数として、「バイナリ交差エントロピー」という、2つの確率分布の違いを測る関数を用いています。",
+    "さらに、データの位置を最適化する際には、通常の最急降下法ではなく、計算効率の高い「確率的勾配降下法（SGD）」を使用します。",
+    "これにより、UMAPは大規模データでも高速に処理できる利点があります。",
+    "例：テキストデータのような高次元データでも、UMAPを使えば比較的短時間で2次元に視覚化できます。"
+  ],
+  "originalSlideText": "UMAP\n- Nutzt bei der Einbettung eine andere Initialisierung, Verteilungsfunktion sowie Vergleichsmaß\n  - Graph Laplacian\n  - Binary Cross Entropy\n- Nutzt den Stochastic Gradient Descent statt dem regulären\n  - Performanzvorteil",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 36,
+  "questionDe": "(s28) Welche Vorteile bietet UMAP durch seine veränderten Rechenschritte?",
+  "questionJa": "UMAPは処理方法を工夫することでどのような利点を持っていますか？",
+  "answerDe": [
+    "Kann wesentlich mehr Datenpunkte verarbeiten",
+    "Verzicht auf Logarithmen",
+    "Verzicht auf Normalisierung",
+    "Verwendet SGD (Stochastic Gradient Descent) bei der Einbettung",
+    "Konserviert auch globale Strukturen in der Einbettung"
+  ],
+  "answerJa": [
+    "より多くのデータ点を処理できる",
+    "対数計算を使用しない",
+    "データの正規化を行わない",
+    "埋め込み時に確率的勾配降下法（SGD）を使用する",
+    "グローバルな構造も埋め込み時に保持される"
+  ],
+  "explanationDe": [
+    "Dank seiner optimierten Methode kann UMAP mit sehr großen Datensätzen effizient umgehen.",
+    "Zum Beispiel werden keine logarithmischen Umrechnungen oder aufwändige Normalisierungen durchgeführt, was Zeit und Speicher spart.",
+    "Durch den Einsatz von Stochastic Gradient Descent (SGD) wird die Einbettung effizient optimiert.",
+    "Im Gegensatz zu t-SNE, das primär lokale Nachbarschaften bewahrt, gelingt es UMAP auch, globale Muster in der Datenstruktur zu erhalten.",
+    "Ein typisches Beispiel: In einem Datensatz mit mehreren Klassen kann UMAP sowohl kleine Gruppen als auch die große Gesamtstruktur gut abbilden."
+  ],
+  "explanationJa": [
+    "UMAPは、計算上の工夫により、大規模なデータセットを効率的に処理できるのが特徴です。",
+    "例えば、t-SNEでは必要だった対数変換や正規化を省くことで、処理速度とメモリ効率が向上します。",
+    "また、確率的勾配降下法（SGD）を使用して、埋め込み（次元削減）を効率的に行います。",
+    "さらに、UMAPは局所的な構造だけでなく、データ全体の大きな構造（グローバル構造）も保つことができるため、より意味のある低次元表現が可能です。",
+    "例：分類問題において、小さなグループ（クラス）間の距離だけでなく、全体の配置バランスも反映できます。"
+  ],
+  "originalSlideText": "UMAP\n- Kann durch diese Veränderungen wesentlich mehr Datenpunkte verarbeiten\n  - Keine Logarithmen\n  - Keine Normalisierung\n  - SGD bei der Einbettung\n- Konserviert auch globale Strukturen in der Einbettung",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 37,
+  "questionDe": "(s26–28) Erklären Sie den Ablauf von UMAP!",
+  "questionJa": "（試験）UMAPの手順を説明しなさい",
+  "answerDe": [
+    "Berechne bedingte Wahrscheinlichkeiten basierend auf Distanzen zwischen Punkten (unter Verwendung von nearest neighbors).",
+    "Verwende keine Normalisierung oder Logarithmen.",
+    "Berechne Ähnlichkeiten im ursprünglichen Raum und projiziere sie in einen niedrigdimensionalen Raum.",
+    "Nutze SGD (Stochastic Gradient Descent) zur Optimierung der Einbettung.",
+    "Verwende Binary Cross Entropy als Verlustfunktion."
+  ],
+  "answerJa": [
+    "データ点間の距離に基づいて条件付き確率を計算する（近傍点のみを使用）。",
+    "データの正規化や対数変換は行わない。",
+    "元の空間での類似度を低次元空間に写像する。",
+    "埋め込みの最適化には確率的勾配降下法（SGD）を用いる。",
+    "損失関数としてバイナリクロスエントロピーを使用する。"
+  ],
+  "explanationDe": [
+    "UMAP beginnt damit, lokale Strukturen im Datenraum über Wahrscheinlichkeiten darzustellen, die durch den Abstand zu nächsten Nachbarn entstehen.",
+    "Diese Wahrscheinlichkeiten werden nicht normalisiert (wie z.B. bei t-SNE), was die Rechenzeit reduziert.",
+    "Danach wird eine niedrigdimensionale Darstellung gesucht, die diese Wahrscheinlichkeiten bestmöglich erhält.",
+    "Dazu wird ein sogenannter Stochastic Gradient Descent (SGD) verwendet, um die Positionen der Punkte im neuen Raum zu optimieren.",
+    "Die Verlustfunktion, die minimiert wird, ist die Binary Cross Entropy zwischen den Ähnlichkeiten im Original- und Zielraum."
+  ],
+  "explanationJa": [
+    "UMAPはまず、各データ点の周囲の点（近傍）との距離に基づいて、確率的な類似度を計算します。",
+    "t-SNEとは異なり、これらの確率を正規化しないため、計算負荷が軽減されます。",
+    "次に、その類似度をなるべく保ったまま、低次元空間へデータを写像します。",
+    "このとき、確率的勾配降下法（SGD）を使って、低次元空間でのデータ配置を調整します。",
+    "最適化では、元の類似度と写像後の類似度の差をバイナリクロスエントロピーで測定し、それを最小化します。"
+  ],
+  "originalSlideText": "- Berechnet auch bedingte Wahrscheinlichkeiten, diese werden aber nicht normalisiert\n- Nutzt nearest neighbor statt perplexity\n- SGD bei der Einbettung\n- Binary Cross Entropy\n- Performanzvorteil",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 38,
+  "questionDe": "(s26–28) Wie wird UMAP für Dimensionsreduktion verwendet?",
+  "questionJa": "（試験）UMAPはどのように次元削減に利用されますか",
+  "answerDe": [
+    "UMAP projiziert hochdimensionale Daten in einen Raum mit weniger Dimensionen (z. B. 2D oder 3D).",
+    "Dabei bleibt die lokale Struktur (z. B. Cluster) erhalten.",
+    "Auch globale Strukturen können besser bewahrt werden als bei t-SNE.",
+    "Geeignet für große Datensätze (>10.000 Punkte)."
+  ],
+  "answerJa": [
+    "UMAPは高次元データを2次元や3次元のような低次元空間に写像します。",
+    "このとき、元のデータの局所構造（クラスターなど）をできるだけ保ちます。",
+    "t-SNEと異なり、データ全体の大きな構造（グローバル構造）も比較的よく保持されます。",
+    "また、10,000点以上の大規模データにも対応可能です。"
+  ],
+  "explanationDe": [
+    "Das Ziel der Dimensionsreduktion ist es, komplexe Datensätze verständlich darzustellen.",
+    "UMAP schafft das, indem es benachbarte Punkte im ursprünglichen Raum auch im Zielraum nahe beieinander platziert.",
+    "Zum Beispiel: In einem Datensatz mit verschiedenen Kundensegmenten bleiben die Gruppen in der 2D-Darstellung erhalten.",
+    "Gleichzeitig kann UMAP auch globale Muster wie eine gesamte Verteilung erkennen – z. B. dass einige Gruppen weiter auseinanderliegen.",
+    "Dank des sparsamen Rechenaufwands eignet sich UMAP für große Datensätze, was es besonders in der Praxis nützlich macht."
+  ],
+  "explanationJa": [
+    "次元削減の目的は、高次元の複雑なデータを、わかりやすく可視化や分析できるようにすることです。",
+    "UMAPは、元の空間で近い関係にあるデータ点を、低次元空間でも近くに配置することで、局所的な構造を保ちます。",
+    "例えば、顧客データにおける異なるセグメント（グループ）が2次元空間上で分かれて可視化されるようになります。",
+    "さらにUMAPは、グループ間の距離感など、データ全体の構造もある程度保持できる点で優れています。",
+    "また、計算効率が良く、大量のデータでも扱えるため、実際の業務や研究でも広く活用されています。"
+  ],
+  "originalSlideText": "- UMAP: Uniform Manifold Approximation and Projection for Dimension Reduction\n- Konserviert auch globale Strukturen in der Einbettung\n- Kann durch diese Veränderungen wesentlich mehr Datenpunkte verarbeiten",
+  "explanationImage": "",
+  "questionImage": ""
 }
+
+
+
+
 
 
 
