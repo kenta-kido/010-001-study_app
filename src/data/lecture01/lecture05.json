@@ -613,28 +613,730 @@
     "originalSlideText": "• Davies Bouldin Index\n\n| k | Modified Hubert Γ |\n|---|---------------------|\n| 3 | 1,01844 · 10¹¹       |\n| 4 | 0,97873 · 10¹¹       |\n| 5 | 1,11428 · 10¹¹       |\n| 6 | 1,15922 · 10¹¹       |\n| 7 | 1,15276 · 10¹¹       |\n| 8 | 1,08876 · 10¹¹       |\n| 9 | 1,10869 · 10¹¹       |\n\n– Wähle k nach dem größten Anstieg: 5",
     "explanationImage": "",
     "questionImage": "lecture01/lecture05_q02.png"
-  }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
+  },
+  {
+    "id": 20,
+    "questionDe": "(s.40–41) Erklären Sie das grundlegende Prinzip des Dunn-Index.",
+    "questionJa": "Dunn Indexの基本的な仕組みを説明せよ。",
+    "answerDe": [
+      "Dunn-Index misst das Verhältnis zwischen Cluster-Trennung und Cluster-Kohäsion",
+      "Großer Wert bedeutet gut getrennte und kompakte Cluster",
+      "Formel: minimaler Abstand zwischen Clustern geteilt durch maximale Ausdehnung eines Clusters"
+    ],
+    "answerJa": [
+      "Dunn Indexは、クラスタ間の分離度とクラスタ内の密集度の比を測る指標である",
+      "値が大きいほど、クラスタがよく分かれており、内部がまとまっていることを示す",
+      "計算式：クラスタ間の最小距離 ÷ クラスタ内の最大の広がり（凝集度）"
+    ],
+    "explanationDe": [
+      "Der Dunn-Index bewertet die Qualität einer Clusterstruktur, indem er zwei zentrale Aspekte ins Verhältnis setzt: (1) wie weit die Cluster voneinander entfernt sind (Trennung) und (2) wie kompakt jedes Cluster für sich ist (Kohäsion).",
+      "Je höher der Dunn-Index, desto besser ist die Clustering-Ergebnis: Die Cluster sind dann sowohl gut voneinander getrennt als auch intern dicht.",
+      "Beispiel: Angenommen, wir haben drei Cluster: A, B und C. Wenn die Abstände zwischen den Clustern groß sind (z. B. 10 Einheiten zwischen A und B) und gleichzeitig die Punkte innerhalb jedes Clusters eng beieinanderliegen (z. B. maximal 2 Einheiten), dann ergibt sich ein hoher Dunn-Index, etwa 10 / 2 = 5.",
+      "Im Gegensatz dazu, wenn sich Cluster stark überlappen oder intern sehr weit gestreut sind, wird der Dunn-Index klein – was auf eine schlechte Trennung hinweist."
+    ],
+    "explanationJa": [
+      "Dunn Indexは、クラスタリング結果の良し悪しを評価するための指標で、2つの要素を比べて計算されます： (1)クラスタどうしの距離（どれだけ離れているか）、(2)クラスタ内部のまとまり（どれだけ密集しているか）です。",
+      "この2つの要素の比、つまり「クラスタ間の最小距離 ÷ クラスタ内の最大の広がり」で計算され、値が大きいほど良いクラスタリング結果とされます。",
+      "例：3つのクラスタA, B, Cがあり、AとBの間の最小距離が10、A内の最も離れた2点の距離が2だった場合、Dunn Indexは 10 ÷ 2 = 5 になります。これは、クラスタ間の分離が良く、各クラスタが内部でまとまっている（＝良い）ことを意味します。",
+      "一方、もしクラスタどうしが近すぎたり、クラスタ内の点がばらけすぎていると、Dunn Indexは小さくなり、クラスタリングの質は悪いと判断されます。"
+    ],
+    "originalSlideText": "- Berechnung\n  DI_k = (min_{1 ≤ i < j ≤ k} δ(C_i, C_j)) / (max_{1 ≤ l ≤ k} Δ_l)\n- δ(C_i, C_j): Abstand zwischen Clustern i und j\n- Δ_l: Kohäsion des Clusters l\n- Komplexität: abhängig von δ(C_i, C_j) und Δ_l",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 21,
+    "questionDe": "(s.42) Wie bestimmt man die optimale Clusteranzahl mit dem Dunn-Index anhand der grafischen Darstellung?",
+    "questionJa": "（スライド42）Dunnインデックスとそのグラフを用いて最適なクラスタ数をどのように決定するか？",
+    "answerDe": [
+      "Berechne den Dunn-Index für verschiedene k-Werte",
+      "Wähle den k-Wert mit dem kleinsten Dunn-Index"
+    ],
+    "answerJa": [
+      "さまざまなクラスタ数 k に対して Dunn インデックスを計算する",
+      "最も Dunn インデックスが小さい k を選択する"
+    ],
+    "explanationDe": [
+      "Der Dunn-Index ist ein Maß für die Qualität einer Clusterlösung: Er kombiniert Informationen über die Trennung der Cluster und deren Kompaktheit.",
+      "In der Grafik sind die berechneten Dunn-Indizes für verschiedene Werte von k (Anzahl der Cluster) dargestellt.",
+      "Je kleiner der Dunn-Index, desto besser ist typischerweise die Clusterung – weil die Cluster gut getrennt und intern kompakt sind.",
+      "In diesem Beispiel hat k = 6 den kleinsten Wert (~0,00055217), was darauf hinweist, dass 6 Cluster eine besonders gute Trennung und Kohärenz aufweisen.",
+      "Beispiel: Wenn du Datenpunkte aus verschiedenen Regionen (z.B. Kunden aus Städten) clustern möchtest, zeigt dir der niedrigste Dunn-Wert, wie du diese am besten aufteilst."
+    ],
+    "explanationJa": [
+      "Dunnインデックスは、クラスタの分離度（どれだけ離れているか）と凝集度（どれだけ密集しているか）を組み合わせて評価する指標です。",
+      "このスライドのグラフには、クラスタ数 k を3から9まで変化させたときのDunnインデックスの値が描かれています。",
+      "一般的に、Dunnインデックスが小さいほど、クラスタが互いに離れていて、各クラスタ内のデータがよくまとまっていると考えられます。",
+      "この例では、k=6 のときに Dunnインデックスが最も小さく（約0.00055217）、このクラスタ数が最も良い分割であると考えられます。",
+      "例：複数の都市の顧客をクラスタリングしたいとき、Dunnインデックスが最も小さくなるクラスタ数が、顧客の分布の特徴を最もよく表しています。"
+    ],
+    "originalSlideText": "• Dunn Index\n\n| k | Dunn Index |\n|---|-------------|\n| 3 | 3,00291 · 10⁻⁵ |\n| 4 | 3,67348 · 10⁻⁵ |\n| 5 | 1,95366 · 10⁻⁵ |\n| 6 | 0,55217 · 10⁻⁵ |\n| 7 | 3,67917 · 10⁻⁵ |\n| 8 | 2,71530 · 10⁻⁵ |\n| 9 | 3,25993 · 10⁻⁵ |\n\n– Wähle k mit dem kleinsten Index: 6",
+    "explanationImage": "",
+    "questionImage": "lecture01/lecture05_q03.png"
+  },
+  {
+    "id": 22,
+    "questionDe": "Wie funktioniert der Algorithmus zum Aufbau eines k-d-Baums zur Nearest-Neighbor-Suche?",
+    "questionJa": "k-d木（k-d-Baum）を用いた最近傍探索の構築アルゴリズムはどのように動作しますか？",
+    "answerDe": [
+      "1. Sortiere Punkte für jedes Attribut",
+      "2. Beginne mit Attribut i = 1",
+      "3. Erzeuge Knoten und starte Rekursion",
+      "4. Teile die Daten anhand des Medians",
+      "5. Speichere den Unterteilungswert im aktuellen Knoten",
+      "6. Erzeuge linken und rechten Kindknoten rekursiv, wenn nötig"
+    ],
+    "answerJa": [
+      "1. 各属性ごとにデータ点をソートする",
+      "2. 属性iを1に初期化する",
+      "3. ノードを作成し、再帰を開始する",
+      "4. データを中央値で分割する",
+      "5. 分割値を現在のノードに記録する",
+      "6. 必要に応じて、左と右の子ノードを再帰的に生成する"
+    ],
+    "explanationDe": [
+      "Der Aufbau eines k-d-Baums ist ein rekursiver Algorithmus zur effizienten Suche von nächstgelegenen Nachbarn (Nearest Neighbor).",
+      "Zunächst werden die Datenpunkte für jedes Attribut (z. B. x, y, z) sortiert. Dann beginnt man mit dem ersten Attribut (i = 1) und erstellt den Wurzelknoten.",
+      "In der Rekursion wird die Datenmenge entlang des aktuellen Attributs i anhand des Medians in zwei gleich große Teilmengen geteilt. Dieser Medianwert wird im Knoten gespeichert – er dient als Entscheidungskriterium für spätere Suchen.",
+      "Für jede Teilmenge werden Kindknoten erzeugt: zunächst der linke Kindknoten mit allen Punkten kleiner oder gleich dem Median, dann der rechte mit den größeren.",
+      "Falls eine Teilmenge noch mehr Punkte enthält als ein gewisser Schwellenwert, wird die Rekursion aufgerufen, wobei das nächste Attribut verwendet wird (i ← i + 1). Ist i größer als die Anzahl der Attribute, beginnt man wieder bei 1.",
+      "So entsteht ein binärer Baum, in dem die Datenpunkte auf Basis ihrer Koordinaten hierarchisch organisiert sind. Dies ermöglicht effiziente Nachbarschaftsabfragen in hohen Dimensionen."
+    ],
+    "explanationJa": [
+      "k-d木（k-dimensional tree）は、最近傍探索（Nearest Neighbor Search）を効率的に行うための木構造です。このスライドでは、その構築アルゴリズムを説明しています。",
+      "まず、すべてのデータ点を各属性（たとえばx軸、y軸、z軸など）ごとにソートします。そして、初期の分割軸（i = 1）で処理を開始します。",
+      "再帰処理では、現在の属性iに沿ってデータを中央値で2つに分けます。たとえば、x軸で分割するなら、xの値が中央値より小さいか大きいかで分けます。この分割点（中央値）は、木のノードに記録されます。",
+      "その後、左の子ノードには小さいグループ、右の子ノードには大きいグループを再帰的に割り当てていきます。分割対象のデータが多い場合は、次の属性（i ← i + 1）を使って再帰的に同じ手続きを続けます。属性の数を超えたら、1に戻ります。",
+      "このようにして、空間を交互に分割していくことで、データ点を効率よく分類する木構造ができ、検索処理を高速化できます。"
+    ],
+    "originalSlideText": "Nearest Neighbor\n\n• Algorithmus Aufbau k-d-Baum\n\n– Initialisierung\n  1. Sortiere Punkte für jedes Attribut\n  2. i ← 1\n  3. Erzeuge Knoten\n  4. Starte Rekursion\n\n– Rekursion\n  1. Teile alle Datenpunkte bezüglich Attribut i in zwei gleich große Teilmengen (verwende Median)\n  2. Trage Unterteilungswert t in aktuellen Knoten ein\n  3. Erzeuge linken Kindknoten\n     1. Weise ihm seine Datenpunkte zu\n     2. Falls Anzahl der Datenpunkte größer als Schwellwert\n         1. i ← i + 1\n         2. Rekursiver Aufruf\n  4. Erzeuge rechten Kindknoten\n     1. Weise ihm seine Datenpunkte zu\n     2. Falls Anzahl der Datenpunkte größer als Schwellwert\n         1. i ← i + 1\n         2. Rekursiver Aufruf",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 23,
+    "questionDe": "Was beschreibt der Silhouette Coefficient bei der Clusteranalyse?",
+    "questionJa": "クラスタ分析においてシルエット係数（Silhouette Coefficient）は何を示しますか？",
+    "answerDe": [
+      "Er misst, wie gut ein Punkt zu seinem eigenen Cluster passt im Vergleich zu anderen Clustern.",
+      "Er basiert auf den Abständen zu Punkten im eigenen und im nächstgelegenen fremden Cluster.",
+      "Wird für jeden Punkt berechnet mit einem Wert zwischen -1 und 1."
+    ],
+    "answerJa": [
+      "シルエット係数は、あるデータ点が自分のクラスタにどれだけ適しているかを測る指標です。",
+      "自分のクラスタ内の点との距離と、最も近い別クラスタとの距離を比較します。",
+      "各点について -1〜1 の値で計算されます。"
+    ],
+    "explanationDe": [
+      "Der Silhouette Coefficient s(d_i) beschreibt für jeden Datenpunkt d_i, wie ähnlich er seinem eigenen Cluster C_i ist im Vergleich zum nächsten benachbarten Cluster C_n.",
+      "Die Formel lautet: s(d_i) = (d(d_i, C_n) – d(d_i, C_i)) / max{d(d_i, C_n), d(d_i, C_i)}.",
+      "Hierbei ist d(d_i, C) die durchschnittliche Distanz von d_i zu allen Punkten im Cluster C. Je näher s(d_i) bei 1 liegt, desto besser passt der Punkt zu seinem eigenen Cluster.",
+      "Ein Wert nahe 0 bedeutet, dass der Punkt sich zwischen zwei Clustern befindet. Ein negativer Wert weist darauf hin, dass der Punkt möglicherweise falsch zugeordnet wurde."
+    ],
+    "explanationJa": [
+      "シルエット係数 s(d_i) は、各データ点 d_i がどれだけ自分のクラスタにうまく収まっているかを評価するための指標です。",
+      "具体的には、d_i が属するクラスタ C_i 内の他の点との平均距離と、最も近い別のクラスタ C_n との平均距離を比較して計算します。",
+      "数式：s(d_i) = (d(d_i, C_n) – d(d_i, C_i)) / max{d(d_i, C_n), d(d_i, C_i)}",
+      "s(d_i) が1に近いほど自分のクラスタに適していることを意味し、0に近いと境界にあり、負の値は誤ってクラスタリングされている可能性を示します。"
+    ],
+    "originalSlideText": "Erzeugung von Clustern\n• Silhouette Coefficient\n– Berechnung\n  s(d_i) = (d(d_i, C_n) – d(d_i, C_i)) / max{d(d_i, C_i), d(d_i, C_n)}\n  – Abstand zwischen d_i und einem Cluster C:\n    d(d_i, C) = (1 / n_C) * ∑_{d_j ∈ C} d(d_i, d_j)\n  – C_i: Cluster von d_i\n  – C_n = argmin_{C ≠ C_i} d(d_i, C): Cluster, der Element mit kleinstem Abstand zu d_i enthält",
+    "explanationImage": "lecture01/lecture05_ex06.png",
+    "questionImage": ""
+  },
+  {
+  "id": 24,
+  "questionDe": "(s.44) Was beschreibt der Silhouette Coefficient in der Clusteranalyse und wie wird er berechnet?",
+  "questionJa": "クラスタ分析におけるシルエット係数とは何で、どのように計算されますか？",
+  "answerDe": [
+    "Misst, wie gut ein Punkt zu seinem eigenen Cluster passt im Vergleich zu anderen.",
+    "Wird mit s(d_i) = (d(d_i, C_n) – d(d_i, C_i)) / max{d(d_i, C_n), d(d_i, C_i)} berechnet.",
+    "Verwendet Durchschnittsabstände zu eigenem und nächstem fremdem Cluster."
+  ],
+  "answerJa": [
+    "ある点が自分のクラスタにどれだけ適しているかを他のクラスタと比較して測る指標。",
+    "計算式：s(d_i) = (d(d_i, C_n) – d(d_i, C_i)) / max{d(d_i, C_n), d(d_i, C_i)}",
+    "自分のクラスタと最も近い他クラスタへの平均距離を使う。"
+  ],
+  "explanationDe": [
+    "Der Silhouette Coefficient s(d_i) bewertet für jeden Punkt d_i, wie gut seine Zugehörigkeit zu einem bestimmten Cluster ist.",
+    "Dazu wird die durchschnittliche Distanz zu Punkten im eigenen Cluster C_i berechnet sowie zu Punkten im nächsten benachbarten Cluster C_n.",
+    "Die Formel s(d_i) = (d(d_i, C_n) – d(d_i, C_i)) / max{d(d_i, C_n), d(d_i, C_i)} ergibt einen Wert zwischen -1 und 1.",
+    "Ein hoher Wert bedeutet, dass d_i gut in sein Cluster passt und weit von anderen Clustern entfernt ist."
+  ],
+  "explanationJa": [
+    "シルエット係数 s(d_i) は、各データ点 d_i がどのクラスタに適切に属しているかを評価する指標です。",
+    "具体的には、自分のクラスタ C_i 内の他の点との平均距離と、最も近い別クラスタ C_n との平均距離を用いて、式：s(d_i) = (d(d_i, C_n) – d(d_i, C_i)) / max{…} により算出されます。",
+    "値は -1〜1の範囲で、1に近いほどクラスタリングが良好であることを意味します。"
+  ],
+  "originalSlideText": "• Silhouette Coefficient\n– Berechnung\n  s(d_i) = (d(d_i, C_n) – d(d_i, C_i)) / max{d(d_i, C_i), d(d_i, C_n)}\n  – Abstand zwischen d_i und einem Cluster C:\n    d(d_i, C) = (1 / n_C) * ∑_{d_j ∈ C} d(d_i, d_j)\n  – C_i: Cluster von d_i\n  – C_n = argmin_{C ≠ C_i} d(d_i, C): Cluster, der Element mit kleinstem Abstand zu d_i enthält",
+  "explanationImage": "lecture01/lecture05_ex07.png",
+  "questionImage": ""
+},
+{
+  "id": 25,
+  "questionDe": "(s.44) Wie werden Silhouette-Werte interpretiert und zur Bewertung der Clusterqualität genutzt?",
+  "questionJa": "シルエット係数の値はどのように解釈され、クラスタの質の評価にどう使われますか？",
+  "answerDe": [
+    "s > 0,75 → starke Trennung",
+    "0,5 < s ≤ 0,75 → normale Clusterung",
+    "0,25 < s ≤ 0,5 → schwach",
+    "0 < s ≤ 0,25 → keine sinnvolle Trennung"
+  ],
+  "answerJa": [
+    "s > 0.75：クラスタが明確に分離されている（強い）",
+    "0.5 < s ≤ 0.75：通常レベルのクラスタリング",
+    "0.25 < s ≤ 0.5：クラスタがあいまい（弱い）",
+    "0 < s ≤ 0.25：クラスタ構造が成立していない"
+  ],
+  "explanationDe": [
+    "Der Silhouette-Wert s(d_i) kann zwischen -1 und 1 liegen, wird in der Praxis aber meist zwischen 0 und 1 verwendet.",
+    "Je höher der Wert, desto besser ist die Zuordnung des Punkts zu seinem Cluster.",
+    "Allgemeine Interpretation:\n• 0,75–1: starke Trennung → gut strukturierte Cluster\n• 0,5–0,75: akzeptabel\n• 0,25–0,5: eher schwach → Clustergrenzen unklar\n• 0–0,25: kaum Struktur → möglicherweise willkürlich"
+  ],
+  "explanationJa": [
+    "シルエット係数の値 s(d_i) は -1〜1 の間をとりますが、実際には 0〜1 を重視して評価します。",
+    "値が高いほど、クラスタへの所属が明確であるとされます。",
+    "評価の目安は以下の通りです：\n・0.75〜1：クラスタが明確に分離されている（強い構造）\n・0.5〜0.75：普通のクラスタ構造\n・0.25〜0.5：やや曖昧\n・0〜0.25：ほとんどクラスタとして機能していない可能性"
+  ],
+  "originalSlideText": "– Auswertung\n  0,75 < s(i) ≤ 1 → strong\n  0,5 < s(i) ≤ 0,75 → normal\n  0,25 < s(i) ≤ 0,5 → weak\n  0 < s(i) ≤ 0,25 → no",
+  "explanationImage": "lecture01/lecture05_ex08.png",
+  "questionImage": ""
+},
+{
+  "id": 26,
+  "questionDe": "(s.45) Was zeigt der Silhouette Coefficient und wie interpretiert man das gezeigte Diagramm?",
+  "questionJa": "シルエット係数とは何か、また図の意味をどのように解釈すればよいか？",
+  "answerDe": [
+    "Der Silhouette-Koeffizient misst die Qualität der Clusterzuweisung eines Punkts.",
+    "Werte nahe 1 bedeuten gute Clusterzugehörigkeit.",
+    "Werte nahe 0 oder negativ deuten auf schlechte oder falsche Zuordnung hin.",
+    "Im Diagramm erkennt man: die meisten Punkte haben hohe Werte, einige wenige sehr niedrige."
+  ],
+  "answerJa": [
+    "シルエット係数は、各データ点がどれだけ適切なクラスタに属しているかを評価する指標である。",
+    "値が1に近いほど、その点は正しくクラスタに分類されていることを意味する。",
+    "値が0または負の場合は、その点が間違ったクラスタに分類されている可能性がある。",
+    "図からは、多くの点が高い係数（=良好な分類）を持っていることがわかるが、一部に非常に低い点も見られる。"
+  ],
+  "explanationDe": [
+    "Der Silhouette Coefficient bewertet, wie gut ein Punkt zu seinem eigenen Cluster passt, im Vergleich zu den anderen Clustern.",
+    "Für jeden Punkt wird ein Wert zwischen -1 und 1 berechnet:",
+    "- Ein Wert nahe 1 bedeutet, der Punkt ist gut innerhalb seines Clusters positioniert.",
+    "- Ein Wert nahe 0 bedeutet, der Punkt liegt auf der Grenze zwischen zwei Clustern.",
+    "- Ein negativer Wert bedeutet, der Punkt wäre in einem anderen Cluster besser aufgehoben.",
+    "Das Diagramm zeigt die Silhouette-Werte aller Punkte: die meisten liegen bei 0,9 oder höher, was auf eine sehr gute Clusterung hinweist.",
+    "Beispiel: Bei der Kundensegmentierung zeigt ein Wert von 0,95, dass der Kunde klar einem bestimmten Profil zugeordnet werden kann."
+  ],
+  "explanationJa": [
+    "シルエット係数は、あるデータ点が自分のクラスタにどれだけ適切に属しているかを数値で示す評価指標です。",
+    "この値は -1 から 1 の間をとり、以下のように解釈します：",
+    "- 1 に近い：非常に適切なクラスタに分類されている",
+    "- 0 に近い：クラスタの境界に近く、分類が曖昧",
+    "- 負の値：他のクラスタに分類すべきだった可能性がある",
+    "このスライドのグラフでは、ほとんどの点の値が 0.9 以上と非常に高く、クラスタリングがうまくいっていることを示しています。",
+    "例：顧客のクラスタリングにおいて、シルエット係数が 0.95 の顧客は、そのクラスタ（たとえば『高級志向・頻繁な購入者』など）に非常によく合致していると解釈できます。"
+  ],
+  "originalSlideText": "• Silhouette Coefficient\n\n[グラフ表示]",
+  "explanationImage": "",
+  "questionImage": "lecture01/lecture05_q04.png"
+},
+{
+  "id": 27,
+  "questionDe": "(s.46) Wie kann das k-means Clustering effizienter gemacht werden?",
+  "questionJa": "k-meansクラスタリングを効率化する方法にはどのようなものがありますか？",
+  "answerDe": [
+    "Durch Raumteilungsverfahren wie k-d-Bäume oder Ball-Trees",
+    "Durch Parallelisierung der Berechnungen"
+  ],
+  "answerJa": [
+    "k-d木やBall-Treeなどの空間分割法を使う",
+    "計算処理を並列化することで高速化する"
+  ],
+  "explanationDe": [
+    "Die klassische k-means-Methode kann bei großen Datenmengen langsam werden, da in jeder Iteration alle Punkte mit allen Zentren verglichen werden müssen.",
+    "Eine Möglichkeit zur Beschleunigung ist die Nutzung von Raumteilungsverfahren wie k-d-Bäumen (k-dimensional trees) oder Ball-Trees. Diese strukturieren den Raum so, dass unnötige Distanzberechnungen vermieden werden können, indem Punkte effizient nach ihrer Lage im Raum gruppiert werden.",
+    "Zum Beispiel erlaubt ein k-d-Baum eine schnelle Suche nach dem nächsten Zentrum durch rekursive Raumteilung.",
+    "Ball-Trees arbeiten ähnlich, sind aber besser für hochdimensionale Daten geeignet.",
+    "Ein weiterer Beschleunigungsansatz ist die Parallelisierung: verschiedene Threads oder Rechenkerne führen Teile der Berechnungen gleichzeitig aus – z. B. die Distanzberechnungen oder die Zuweisung von Punkten zu Clustern.",
+    "Beide Methoden zusammen – Raumteilung und Parallelisierung – können k-means erheblich schneller machen, insbesondere bei großen Datensätzen."
+  ],
+  "explanationJa": [
+    "k-meansクラスタリングは、大量のデータに対して繰り返し全ての点とクラスタ中心の距離を計算する必要があり、処理が重くなります。",
+    "この問題を解決する1つの方法は、「空間分割法」の導入です。k-d木（k-dimensional tree）やBall-Treeのようなデータ構造を使うことで、空間内のデータ点を構造的に分割し、無駄な距離計算を省けます。",
+    "k-d木は、空間を再帰的に分割することで最近傍検索を高速に行えます。一方、Ball-Treeは高次元データに適しており、球状の領域に基づいて分割を行います。",
+    "もう一つの高速化手法は「並列化（パラレル処理）」です。複数のスレッドやCPUコアで、距離計算やクラスタへの割り当てなどを同時に実行することで、計算時間を大きく短縮できます。",
+    "これらの手法を組み合わせることで、大規模なデータに対してもk-meansを高速に実行できます。"
+  ],
+  "originalSlideText": "Erzeugung von Clustern\n• k-means Clustering\n– Beschleunigung [HD2015]:\n  – Raumteilungsverfahren\n    – k-d-Bäume (k-dimensionale Bäume)\n    – Ball-Trees [WFH2011]\n  – Parallelisierung",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 28,
+  "questionDe": "(s.47) Wie hilft ein k-d-Baum bei der Beschleunigung von k-means Clustering?",
+  "questionJa": "k-d木はどのようにして k-meansクラスタリングの高速化に役立ちますか？",
+  "answerDe": [
+    "k: Anzahl der Dimensionen (entspricht der Anzahl der Attribute m)",
+    "Aufbau: O(k · n · log n)",
+    "Sortiere n Punkte nach k Attributen"
+  ],
+  "answerJa": [
+    "k：次元数（属性数 m に相当）",
+    "構築：O(k・n・log n)",
+    "n個の点をk個の属性でソートする"
+  ],
+  "explanationDe": [
+    "Ein k-d-Baum (k-dimensionaler Baum) ist eine Datenstruktur, die verwendet wird, um Punkte im k-dimensionalen Raum effizient zu organisieren.",
+    "Beim k-means Clustering müssen in jeder Iteration die Datenpunkte dem nächstgelegenen Clusterzentrum zugeordnet werden. Das bedeutet viele Distanzvergleiche.",
+    "Ein k-d-Baum hilft, diese Vergleiche effizienter zu gestalten, indem er die Punkte rekursiv nach Attributen sortiert und in einem Baum speichert.",
+    "Beim Aufbau des Baums werden n Punkte entlang k Attributen sortiert – das ergibt die Komplexität O(k · n · log n).",
+    "Ein Beispiel: Wenn man 10.000 Punkte mit 3 Attributen (x, y, z) hat, werden diese im Baum so organisiert, dass man bei der Clustereinteilung nicht jeden Punkt mit jedem Zentrum vergleichen muss, sondern gezielt suchen kann."
+  ],
+  "explanationJa": [
+    "k-d木（k-dimensional tree）は、k次元空間内の点を効率的に管理・検索するための構造です。",
+    "k-meansクラスタリングでは、各データ点を最も近いクラスタ中心に割り当てる必要があり、そのために多くの距離計算が必要です。",
+    "k-d木は、各点を属性（次元）ごとにソートし、再帰的に空間を分割することで、クラスタ中心との距離比較を効率化します。",
+    "構築時には、n個の点をk個の属性（たとえばx, y, zなど）で並べ替えて木構造を作るため、計算量は O(k・n・log n) になります。",
+    "例えば、3次元空間にある1万点をクラスタリングする場合、全組み合わせを調べるよりも、k-d木を使うことで近傍探索を高速化できるのです。"
+  ],
+  "originalSlideText": "– k-d-Bäume (k-dimensionale Bäume)\n  – k: Anzahl der Dimensionen\n    – entspricht der Anzahl der Attribute m\n  – Aufbau: O(k · n · log n)\n    – Sortiere n Punkte nach k Attributen",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 29,
+  "questionDe": "(s.47) Wann lohnt sich der Einsatz von k-d-Bäumen im k-means Clustering zur Nearest-Neighbor-Suche?",
+  "questionJa": "k-meansクラスタリングにおいて、k-d木による最近傍探索はどのような場合に有効ですか？",
+  "answerDe": [
+    "Nearest-Neighbor-Suche: O(n · log n)",
+    "Sinnvoll bei vielen Datenpunkten",
+    "Langsam für m > 8 [HD2015]"
+  ],
+  "answerJa": [
+    "最近傍探索：O(n・log n)",
+    "データ点が多い場合に有効",
+    "次元数が8を超えると遅くなる（HD2015）"
+  ],
+  "explanationDe": [
+    "Die Nearest-Neighbor-Suche ist ein zentraler Bestandteil von k-means, da jeder Punkt dem nächstgelegenen Clusterzentrum zugewiesen werden muss.",
+    "Mit einem k-d-Baum kann diese Suche mit einer Komplexität von O(n · log n) durchgeführt werden – das ist wesentlich schneller als eine naive lineare Suche in O(n).",
+    "Diese Methode ist besonders vorteilhaft, wenn die Anzahl der Datenpunkte (n) sehr groß ist – also bei Massendaten.",
+    "Allerdings ist die Effizienz des k-d-Baums stark von der Dimensionalität abhängig. Für Daten mit hoher Dimension (>8 laut HD2015) wird die Struktur ineffektiv.",
+    "Dies liegt am sogenannten 'Fluch der Dimensionalität', bei dem die Raumaufteilung durch den Baum in höheren Dimensionen kaum noch Vorteile bringt."
+  ],
+  "explanationJa": [
+    "k-meansクラスタリングでは、各データ点を最近傍のクラスタ中心に割り当てる必要があり、その計算は重要なステップです。",
+    "k-d木を使えば、この最近傍探索を O(n・log n) の計算量で実行できます。これは、すべての中心との距離を1つずつ調べる O(n) よりも高速です。",
+    "この方法は、特にデータ点の数が多い（n が大きい）場合に有効です。",
+    "ただし、次元数（属性数）が増えると、木構造による空間分割の効果が薄れます。HD2015では、次元が8を超えるとこの手法の性能が大きく低下するとされています。",
+    "これは「次元の呪い（Curse of Dimensionality）」と呼ばれる現象で、高次元ではデータが空間に拡散し、分割の意味が薄れることに起因します。"
+  ],
+  "originalSlideText": "– Nearest-Neighbor-Suche: O(n · log n)\n– Sinnvoll bei\n  – Vielen Datenpunkten\n  – Wenigen Dimensionen\n    (Langsam für m > 8 [HD2015])",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 30,
+  "questionDe": "(s.48) Warum ist es schwer zu sagen, welches Clustering das richtige ist, und welche weiteren Entscheidungen müssen getroffen werden?",
+  "questionJa": "どのクラスタリングが正しいかを判断するのが難しいのはなぜで、どんな追加の判断が必要になりますか？",
+  "answerDe": [
+    "Frage: Welches Clustering ist die richtige?",
+    "→ Im Allgemeinen nicht entscheidbar",
+    "Zusatzfragen:",
+    "– Welches Verfahren soll gewählt werden?",
+    "– Welche Parameter sollen für das Verfahren gewählt werden?",
+    "– Wie viele Cluster sollen gewählt werden?"
+  ],
+  "answerJa": [
+    "問い：どのクラスタリングが正しいか？",
+    "→ 一般には決めることができない",
+    "追加の問い：",
+    "– どのクラスタリング手法を選ぶべきか？",
+    "– その手法に必要なパラメータはどう設定するか？",
+    "– いくつのクラスタに分けるべきか？"
+  ],
+  "explanationDe": [
+    "In der Clusteranalyse gibt es oft keine objektiv 'richtige' Lösung. Verschiedene Verfahren können auf denselben Datensatz unterschiedliche Gruppierungen erzeugen.",
+    "Ein klassisches Beispiel ist k-means: Mit k = 3 und k = 5 entstehen ganz unterschiedliche Clusterstrukturen. Welche davon besser ist, hängt vom Kontext und dem Ziel ab.",
+    "Neben der Verfahrenswahl müssen weitere Entscheidungen getroffen werden: Welcher Algorithmus eignet sich für die Datenstruktur – z. B. k-means für kugelförmige Cluster, DBSCAN für dichtebasierte Cluster?",
+    "Auch Parameter spielen eine zentrale Rolle: Bei k-means z. B. die Anzahl k der Cluster. Bei DBSCAN z. B. ε (Radius) und die minimale Punktanzahl.",
+    "Die Anzahl der Cluster ist meist unbekannt und muss z. B. durch Validierungsmaße wie den Davies-Bouldin Index abgeschätzt werden.",
+    "Diese Vielzahl an Entscheidungen macht Clusteranalyse zu einem explorativen Prozess."
+  ],
+  "explanationJa": [
+    "クラスタ分析では、どのクラスタリング結果が“正しい”と断定することは一般にはできません。同じデータに対して異なる手法を使うと、異なるクラスタ構造が得られることが多いからです。",
+    "典型的な例が k-means クラスタリングです。クラスタ数 k によって結果が大きく変わります。たとえば、k=3 と k=5 では、まったく異なるクラスタが生成されます。どちらが良いかは、分析目的やデータの性質によって異なります。",
+    "また、単に手法を選ぶだけでなく、次のような追加判断も必要になります：\n・どのアルゴリズムがデータ構造に適しているか（例：k-means は球状クラスタ向き、DBSCAN は密度ベース）\n・その手法にどんなパラメータが必要か（k-meansならクラスタ数k、DBSCANならεと最小点数）",
+    "クラスタ数が事前にわからない場合も多く、Davies-Bouldin Index などの評価指標を用いて、どの分割がより妥当かを判断します。",
+    "このようにクラスタリングは、様々な選択肢と試行錯誤が伴う探索的プロセスです。"
+  ],
+  "originalSlideText": "Erzeugung von Clustern\n\n– Frage: Welches Clustering ist die richtige?\n  – Im Allgemeinen nicht entscheidbar\n\n– Zusatzfragen\n  – Welches Verfahren soll gewählt werden?\n  – Welche Parameter sollen für das Verfahren gewählt werden?\n  – Wie viele Cluster sollen gewählt werden?",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 31,
+  "questionDe": "(s.49) Wie funktioniert das Evidence Accumulation Clustering nach FJ2002?",
+  "questionJa": "Evidence Accumulation Clustering（FJ2002）はどのような仕組みで動作しますか？",
+  "answerDe": [
+    "Unterteile: Mehrfaches k-means mit unterschiedlichen Initialisierungen",
+    "Verbinde: Berechne co_assoc(i,j) = votes_{i,j} / N",
+    "Vereinigung: Nutze minimalen Spannbaum mit Schwellwert t zur Clusterbildung"
+  ],
+  "answerJa": [
+    "分割（Split）：k-means を複数回（初期値を変えて）実行",
+    "結合（Combine）：co_assoc(i,j) = votes_{i,j} / N を計算",
+    "統合（Merge）：最小全域木としきい値 t によりクラスタを決定"
+  ],
+  "explanationDe": [
+    "Das Evidence Accumulation Clustering kombiniert mehrere k-means-Ergebnisse, um robustere Cluster zu erhalten.",
+    "Im ersten Schritt (Split) wird k-means N-mal mit verschiedenen Startwerten durchgeführt, sodass unterschiedliche Gruppierungen entstehen.",
+    "Im zweiten Schritt (Combine) wird gezählt, wie oft zwei Datenpunkte i und j im selben Cluster liegen. Daraus wird der Co-Association-Wert co_assoc(i,j) berechnet: votes_{i,j} / N.",
+    "Diese Co-Association-Matrix ist eine Art Ähnlichkeitsmatrix: Je höher der Wert, desto häufiger wurden i und j gemeinsam gruppiert.",
+    "Im letzten Schritt (Merge) wird ein Minimaler Spannbaum (Minimum Spanning Tree) auf dieser Matrix berechnet. Durch Setzen eines Schwellwerts t werden Kanten entfernt, um Cluster zu identifizieren.",
+    "Diese Methode ist nützlich, wenn man die Stabilität von Clustern über mehrere Läufe hinweg analysieren möchte."
+  ],
+  "explanationJa": [
+    "Evidence Accumulation Clustering（証拠蓄積クラスタリング）は、k-meansを複数回行い、安定したクラスタ構造を抽出する手法です。",
+    "まず「分割（Split）」段階で、k-meansをN回、異なる初期化で実行します。これにより、複数のクラスタリング結果が得られます。",
+    "次に「結合（Combine）」段階では、データ点iとjが何回同じクラスタになったか（votes_{i,j}）を数え、全体の回数Nで割って共起頻度（co_assoc(i,j)）を計算します。",
+    "このco-association行列は、データ点同士の“似ている度合い”を表す類似度行列となります。",
+    "最後に「統合（Merge）」段階で、この行列を基に最小全域木（Minimum Spanning Tree）を構築し、しきい値t以上の距離を持つエッジを切ることでクラスタを形成します。",
+    "この手法は、複数回のクラスタリング結果から一貫性のあるクラスタを抽出したい場合に有効です。"
+  ],
+  "originalSlideText": "Erzeugung von Clustern\n\n• Evidence Accumulation [FJ2002]\n\n– Unterteile (Split)\n  – Unterteile die Daten in mehrere Kugel-förmige Cluster\n  – Berechne N-mal k-means mit unterschiedlichen Initialisierungen\n\n– Verbinde (Combine)\n  – Berechne\n    co_assoc(i,j) = votes_{i,j} / N\n  – votes_{i,j}: Anzahl der Durchläufe bei denen i und j im gleichen Cluster liegen\n\n– Vereinige (Merge)\n  – Verwende Minimalen Spannbaum mit Schwellwert t um Cluster zu bestimmen",
+  "explanationImage": "lecture01/lecture05_ex09.png",
+  "questionImage": ""
+},
+{
+  "id": 32,
+  "questionDe": "(s.50) Wie funktioniert der Algorithmus für Evidence Accumulation nach FJ2002 im Detail?",
+  "questionJa": "Evidence Accumulation（FJ2002）のアルゴリズムは具体的にどのように動作しますか？",
+  "answerDe": [
+    "Führe k-means N-mal aus mit unterschiedlichen Startzentren",
+    "Aktualisiere co_assoc(i,j) bei jedem Lauf: +1/N",
+    "Vereine Cluster für Paare (i,j), wenn co_assoc(i,j) ≥ t",
+    "Nicht zugewiesene Objekte → eigene Einzel-Cluster"
+  ],
+  "answerJa": [
+    "k-means を N回（初期化を変えて）実行",
+    "各回ごとに co_assoc(i,j) に 1/N を加算して更新",
+    "co_assoc(i,j) がしきい値 t 以上なら、iとjの属するクラスタを結合",
+    "どのクラスタにも属さない点は単独クラスタとする"
+  ],
+  "explanationDe": [
+    "Der Evidence Accumulation Algorithmus läuft in mehreren Phasen ab.",
+    "1. Wiederhole N-mal:\n  – Wähle k zufällige Startzentren\n  – Führe k-means Clustering durch\n  – Für alle Paare (i,j), die im gleichen Cluster sind: co_assoc(i,j) += 1/N",
+    "So entsteht eine Co-Assoziationsmatrix, in der jeder Wert zwischen 0 und 1 angibt, wie häufig zwei Punkte zusammen gruppiert wurden.",
+    "2. Betrachte alle Punktpaare (i,j). Wenn co_assoc(i,j) ≥ t (Schwellwert), werden ihre Cluster vereinigt.",
+    "3. Punkte, die am Ende zu keinem Cluster gehören, bilden ein eigenes 1-Element-Cluster.",
+    "Diese Methode hilft, über viele Läufe stabile Clusterbeziehungen zu identifizieren und ist weniger abhängig von einzelnen Initialisierungen."
+  ],
+  "explanationJa": [
+    "Evidence Accumulation のアルゴリズムは、複数回のクラスタリング結果から“信頼できるクラスタ関係”を抽出することを目的としています。",
+    "1. 最初に、k-meansを N 回実行します（毎回、クラスタ中心をランダムに初期化）。\n　– 各実行で、同じクラスタに入った点 i, j に対して co_assoc(i,j) に 1/N を加算します。\n　– こうして、ペアごとの共起頻度（0〜1）を蓄積した行列が得られます。",
+    "2. 次に、すべての点ペア (i,j) について、co_assoc(i,j) がしきい値 t 以上であれば、iとjのクラスタを統合します。",
+    "3. 最後に、どのクラスタにも属さなかった点は、1要素のクラスタとして個別に扱います。",
+    "このアルゴリズムは、k-meansのような初期値に敏感な手法から得られる結果のばらつきを補正し、より安定したクラスタを見つけるために有効です。"
+  ],
+  "originalSlideText": "Erzeugung von Clustern\n• Evidence Accumulation [FJ2002]\n– Algorithmus\n– N-mal\n  – Wähle k Cluster-Zentren\n  – Berechne Clustering mit k-means\n  – Aktualisiere die Co-Assoziationsmatrix\n    co_assoc(i,j) ← co_assoc(i,j) + 1/N\n– Für alle Paare (i,j)\n  – Falls t ≤ co_assoc(i,j) vereinige die Cluster in denen i und j liegen\n– Für alle Objekte, die nicht in einem Cluster liegen\n  – Bilde ein-elementigen Cluster mit diesem Objekt",
+  "explanationImage": "lecture01/lecture05_ex10.png",
+  "questionImage": ""
+},
+{
+  "id": 33,
+  "questionDe": "(s.51) Was zeigt die Assoziationsmatrix im Rahmen von Evidence Accumulation anhand dieses Beispiels?",
+  "questionJa": "この例において、Evidence Accumulation によるアソシエーション行列は何を示していますか？",
+  "answerDe": [
+    "Sie basiert auf 4 Durchläufen von k-means mit k = 2.",
+    "Jeder Eintrag gibt an, wie oft zwei Objekte gemeinsam im selben Cluster waren.",
+    "Werte sind zwischen 0 (nie zusammen) und 1 (immer zusammen)."
+  ],
+  "answerJa": [
+    "この行列は k = 2 での k-means を4回実行した結果に基づいています。",
+    "各セルの値は、対応する2つのオブジェクトが同じクラスタになった割合を示します。",
+    "値は 0（常に別クラスタ）から 1（常に同じクラスタ）の間です。"
+  ],
+  "explanationDe": [
+    "In diesem Beispiel wurde k-means mit k = 2 insgesamt 4-mal ausgeführt, jeweils mit unterschiedlicher Initialisierung.",
+    "In jeder Spalte der linken Tabelle ist das Clustering-Ergebnis eines Laufs dargestellt (1 oder 2 = Cluster-ID).",
+    "Die rechte Matrix zeigt, wie oft zwei Objekte im selben Cluster waren. Beispiel: d₁ und d₃ waren in 3 von 4 Läufen zusammen → Wert = 0,75.",
+    "Diese Matrix ist symmetrisch und hat Einsen auf der Diagonalen, da jedes Objekt immer mit sich selbst im selben Cluster ist.",
+    "Sie dient als Grundlage für das finale Clustering: Durch Setzen eines Schwellenwerts t kann man entscheiden, welche Objekte als zusammengehörig betrachtet werden sollen."
+  ],
+  "explanationJa": [
+    "この例では、k-means（クラスタ数 k = 2）を初期化を変えて4回実行しています。その結果が左の表で、各データ点（d₁〜d₇）が各回にどのクラスタに属したかを示しています。",
+    "右側のアソシエーション行列（共起行列）は、任意の2点が4回のうち何回同じクラスタに分類されたかを割合（0〜1）で示したものです。",
+    "たとえば、d₁とd₃の値は 0.75 → 4回中3回同じクラスタだったという意味です。",
+    "この行列は対称であり、対角要素はすべて1になります（自分自身とは常に同じクラスタ）。",
+    "このアソシエーション行列を使い、しきい値 t を設定して、共通度が高いペアを同じクラスタとして最終クラスタリングを構築します。"
+  ],
+  "originalSlideText": "Erzeugung von Clustern\n• Evidence Accumulation [FJ2002]\n– Ergebnis 4-mal k-means mit k = 2\n– Assoziationsmatrix",
+  "explanationImage": "",
+  "questionImage": "lecture01/lecture05_q05.png"
+},
+{
+  "id": 34,
+  "questionDe": "(s.52) Wie beeinflusst der Schwellenwert t das Clustering-Ergebnis bei Evidence Accumulation?",
+  "questionJa": "Evidence Accumulation において、しきい値 t を変えるとクラスタリング結果はどう変化しますか？",
+  "answerDe": [
+    "0 ≤ t ≤ 0,25: Alle Objekte in einem Cluster",
+    "0,25 < t ≤ 0,75: Zwei Cluster {d₁,d₂,d₃,d₄} und {d₅,d₆,d₇}",
+    "0,75 < t ≤ 1: Drei Cluster {d₁,d₂}, {d₃,d₄}, {d₅,d₆,d₇}"
+  ],
+  "answerJa": [
+    "0 ≤ t ≤ 0.25：全データが1つのクラスタにまとめられる",
+    "0.25 < t ≤ 0.75：2つのクラスタに分割される（{d₁〜d₄}, {d₅〜d₇}）",
+    "0.75 < t ≤ 1：3つのクラスタに分かれる（{d₁,d₂}, {d₃,d₄}, {d₅,d₆,d₇}）"
+  ],
+  "explanationDe": [
+    "Die Co-Assoziationsmatrix zeigt, wie oft zwei Objekte gemeinsam gruppiert wurden.",
+    "Ein Schwellenwert t wird verwendet, um zu entscheiden, ab welchem Wert zwei Objekte als zusammengehörig gelten.",
+    "Bei kleinem t (z. B. ≤ 0,25) reicht bereits ein schwacher Zusammenhang, um Objekte zu einem Cluster zu verbinden – Ergebnis: ein großer Cluster.",
+    "Bei mittlerem t (z. B. 0,5) werden nur deutlich ähnliche Objekte zusammengefasst – zwei Cluster entstehen.",
+    "Bei hohem t (z. B. > 0,75) werden nur sehr stark assoziierte Paare gruppiert – die Cluster werden feiner, es entstehen mehr Gruppen.",
+    "Dieses Vorgehen ermöglicht es, durch Variation von t verschiedene Detailstufen im Clustering zu untersuchen."
+  ],
+  "explanationJa": [
+    "co-association 行列では、各データ点のペアがどれだけ頻繁に同じクラスタになったかを記録しています。",
+    "この値に対して、しきい値 t を設定し、それ以上の共起度をもつペア同士を同じクラスタとして扱います。",
+    "t が小さい（たとえば t ≤ 0.25）場合は、共通度が低くても同じクラスタとみなされるため、すべての点が1つのクラスタにまとめられます。",
+    "t が中程度（たとえば 0.5）の場合は、より強い結びつきが必要となり、クラスタが2つに分かれます。",
+    "t が大きい（たとえば > 0.75）場合は、非常に密接なペアしか同じクラスタとされないため、クラスタがさらに細かく分割され、3つのクラスタに分かれます。",
+    "このように、しきい値 t を変えることで、クラスタリングの“粒度”を調整できます。"
+  ],
+  "originalSlideText": "Erzeugung von Clustern\n• Evidence Accumulation [FJ2002]\n– Ergebnis 4-mal k-means mit k = 2\n– Ergebnis\n  – 0 ≤ t ≤ 0,25:\n    {d₁, d₂, d₃, d₄, d₅, d₆, d₇}\n  – 0,25 < t ≤ 0,75:\n    {d₁, d₂, d₃, d₄}, {d₅, d₆, d₇}\n  – 0,75 < t ≤ 1:\n    {d₁, d₂}, {d₃, d₄}, {d₅, d₆, d₇}",
+  "explanationImage": "",
+  "questionImage": "lecture01/lecture05_q06.png"
+},
+{
+  "id": 35,
+  "questionDe": "(s.53) Welche Speicherprobleme entstehen bei Evidence Accumulation und welche Alternativen gibt es?",
+  "questionJa": "Evidence Accumulation ではどのようなメモリ上の問題があり、それに対する代替策は何ですか？",
+  "answerDe": [
+    "Die Co-Assoziationsmatrix braucht O(n²) Speicher",
+    "Alternative: Cluster-Zugehörigkeit pro Lauf speichern (O(n·k))",
+    "Verwende Hamming-Distanz zur Gruppierung"
+  ],
+  "answerJa": [
+    "co-association 行列は O(n²) のメモリを消費する",
+    "代替案：各実行ごとのクラスタ所属情報のみを保存（O(n·k)）",
+    "クラスタベクトル間のハミング距離でグループ化を行う"
+  ],
+  "explanationDe": [
+    "Ein Nachteil der Evidence Accumulation Methode ist der hohe Speicherbedarf: Die Co-Assoziationsmatrix benötigt O(n²) Platz, da sie für jedes Objektpaar (i,j) einen Eintrag enthält.",
+    "Dies wird bei großen n (Anzahl der Datenpunkte) unpraktisch.",
+    "Eine Alternative besteht darin, für jedes Objekt nur zu speichern, in welchen Clustern es in den verschiedenen Durchläufen lag (Speicherbedarf: O(n·k), wenn k = Anzahl der Durchläufe).",
+    "Diese Informationen können als sogenannte Cluster-Vektoren betrachtet werden.",
+    "Die Hamming-Distanz zwischen zwei Vektoren gibt dann an, wie ähnlich zwei Objekte bezüglich ihrer Clusterzugehörigkeit sind.",
+    "Wenn zwei Objekte in allen Durchläufen immer im selben Cluster waren (Hamming-Distanz = 0), können sie zusammen gruppiert werden."
+  ],
+  "explanationJa": [
+    "Evidence Accumulation 手法の課題の1つは、co-association 行列のメモリ使用量が O(n²) にもなることです。これは、すべてのオブジェクトのペア (i, j) に対して値を保存する必要があるため、大規模データでは非効率になります。",
+    "この問題に対しての代替案として、各データ点が各クラスタリング実行時にどのクラスタに所属していたかという情報（クラスタ所属ベクトル）を保存する方法があります。これは O(n·k) のメモリで済みます（n: データ数、k: 実行回数）。",
+    "このベクトル同士の“似ている度合い”を測るために、ハミング距離を使用します。ハミング距離とは、2つのベクトルで異なる位置の数を数える距離のことです。",
+    "たとえば、すべての実行で同じクラスタに分類されていた2点のハミング距離は 0 になります。これを基準にして、似たクラスタ履歴をもつ点をグループ化できます。",
+    "この方法は、メモリ消費を抑えつつ、Evidence Accumulation の基本的な考え方を活かす実用的な手法です。"
+  ],
+  "originalSlideText": "• Evidence Accumulation [FJ2002]\n– Bemerkungen\n  – Zur Unterteilung können beliebige Cluster-Verfahren benutzt werden\n  – Die Matrix benötigt O(n²) Speicher\n    → ungünstig bei großem n\n  – Alternative\n    – Speichere für jeden Durchlauf in welchem Cluster das Objekt liegt (Speicher: O(n · k))\n    – Berechne Hamming-Distanz der Clustervektoren\n    – Hamming Distanz 1 gruppiert alle Objekte, welche in allen Durchläufen im jeweils gleichen Cluster waren",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 36,
+  "questionDe": "(s.54) Was zeigt das Beispiel für Consensus Clustering mit k-means?",
+  "questionJa": "この k-means を用いた Consensus Clustering の例は何を示していますか？",
+  "answerDe": [
+    "4 Läufe k-means mit k = 2",
+    "Consensus Clustering ergibt 3 Cluster",
+    "C₁ = {d₁, d₂}, C₂ = {d₃, d₄}, C₃ = {d₅, d₆, d₇}"
+  ],
+  "answerJa": [
+    "k = 2 で k-means を4回実行",
+    "最終的に3つのクラスタが得られた",
+    "C₁ = {d₁, d₂}、C₂ = {d₃, d₄}、C₃ = {d₅, d₆, d₇}"
+  ],
+  "explanationDe": [
+    "Consensus Clustering kombiniert mehrere Clustering-Ergebnisse, um robuste Gruppen zu identifizieren.",
+    "In diesem Beispiel wurde k-means viermal mit k = 2 durchgeführt. Die Tabelle zeigt, zu welchem Cluster (1 oder 2) jedes Objekt in jedem Lauf gehörte.",
+    "Obwohl k = 2 verwendet wurde, ergeben sich am Ende durch Analyse der Gruppenkonsistenz drei stabile Cluster:",
+    "– C₁ = {d₁, d₂}: Diese zwei Objekte waren immer zusammen in einem Cluster.",
+    "– C₂ = {d₃, d₄}: Auch diese waren stets gemeinsam gruppiert.",
+    "– C₃ = {d₅, d₆, d₇}: Diese drei wechselten häufiger zwischen Clustern, bildeten aber intern eine stabile Gruppe.",
+    "Consensus Clustering erkennt solche stabilen Muster, unabhängig von der Clusteranzahl k im Ausgangsverfahren."
+  ],
+  "explanationJa": [
+    "コンセンサス・クラスタリングは、複数回のクラスタリング結果から共通性の高いグループ（安定したクラスタ）を見つけ出す手法です。",
+    "この例では、k = 2 を指定して k-means を4回実行し、それぞれのデータ点がどのクラスタに属したかを記録しています（左の表）。",
+    "その結果を基に、以下のような安定したクラスタ構造が見出されました：",
+    "・C₁ = {d₁, d₂}：常に同じクラスタに属していた",
+    "・C₂ = {d₃, d₄}：一貫してペアでクラスタ化された",
+    "・C₃ = {d₅, d₆, d₇}：頻繁にクラスタが変わるが、この3つの間には一貫性が見られた",
+    "このように、k-means での個別の結果よりも、複数回の実行を通して見えてくる“共通のクラスタ構造”を抽出するのがこの手法の目的です。"
+  ],
+  "originalSlideText": "Erzeugung von Clustern\n• Consensus Clustering\n\n– k-means\n  – 4 Läufe\n  – k = 2\n\n– Ergebnis\n  – 3 Cluster\n    – C₁ = {d₁, d₂}\n    – C₂ = {d₃, d₄}\n    – C₃ = {d₅, d₆, d₇}",
+  "explanationImage": "",
+  "questionImage": "lecture01/lecture05_q07.png"
+},
+{
+  "id": 37,
+  "questionDe": "(s.55) Was ist der Unterschied zwischen agglomerativem und divisivem hierarchischem Clustering?",
+  "questionJa": "凝集型（agglomerativ）と分割型（divisiv）の階層的クラスタリングの違いは何ですか？",
+  "answerDe": [
+    "Agglomerativ: Bottom-up Technik, Start mit m Einzelobjekten",
+    "Divisiv: Top-down Technik, Start mit einer Gesamtklasse",
+    "Unterschied liegt im Anfangszustand und Richtung der Gruppierung"
+  ],
+  "answerJa": [
+    "凝集型：Bottom-up（下から上へ）の手法で、各点を個別クラスタとして開始",
+    "分割型：Top-down（上から下へ）の手法で、全体を1つのクラスタとして開始",
+    "違いはクラスタリングの開始状態と統合・分割の方向にある"
+  ],
+  "explanationDe": [
+    "Hierarchisches Clustering umfasst zwei Hauptvarianten: agglomerativ (bottom-up) und divisiv (top-down).",
+    "Beim agglomerativen Verfahren startet man mit g = m, d. h. jedes Objekt ist seine eigene Klasse: Cᵢ⁰ = {dᵢ}. Dann werden sukzessive die ähnlichsten Cluster zusammengeführt.",
+    "Beim divisiven Verfahren startet man mit g = 1, d. h. alle Objekte sind anfangs in einem gemeinsamen Cluster C₁⁰ = {d₁, ..., dₘ}. Dieses Cluster wird dann schrittweise in kleinere Gruppen aufgeteilt.",
+    "Die beiden Verfahren erzeugen am Ende beide eine Hierarchie von Clustern (z. B. dargestellt als Dendrogramm), aber sie arbeiten in entgegengesetzter Richtung."
+  ],
+  "explanationJa": [
+    "階層的クラスタリングには、大きく分けて「凝集型（agglomerative）」と「分割型（divisive）」の2つのアプローチがあります。",
+    "凝集型（bottom-up）では、最初に各データ点をそれぞれ1つのクラスタ（Cᵢ⁰ = {dᵢ}）とし、それらを類似度に基づいて徐々に統合していきます。",
+    "分割型（top-down）では、全体を1つのクラスタ（C₁⁰ = {d₁, ..., dₘ}）として始め、類似度などに基づいて徐々に細かく分割していきます。",
+    "どちらも最終的にはクラスタの階層構造（例：デンドログラム）を作成しますが、クラスタ形成の方向性が正反対です。"
+  ],
+  "originalSlideText": "Erzeugung von Clustern\n• Hierarchical Agglomerative Clustering\n  – Bottom-Up Technik\n  – Anfangszustand:\n    – Jedes Objekt ist in einer eigenen Klasse\n    – g = m\n    – ∀i: Cᵢ⁰ = {dᵢ}\n    – G⁰ := {C₁⁰, ..., Cg⁰}\n\n• Divisive Hierarchical Clustering\n  – Top-Down Technik\n  – Anfangszustand:\n    – Alle Objekte sind in einer Klasse\n    – g = 1\n    – G⁰ = {C₁⁰} = {{d₁, ..., dₘ}}",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 38,
+  "questionDe": "(s.56) Wie funktioniert der nächste Schritt beim agglomerativen bzw. divisiven hierarchischen Clustering?",
+  "questionJa": "凝集型・分割型の階層クラスタリングにおける次のステップはどのように行われますか？",
+  "answerDe": [
+    "Agglomerativ: Wähle Ähnlichkeitsmaß s, vereine ähnlichste Klassen",
+    "Divisiv: Wähle Abstandsmaß t, teile eine Klasse in zwei maximal getrennte Gruppen"
+  ],
+  "answerJa": [
+    "凝集型：類似度指標 s を用いて、最も似ている2クラスを統合する",
+    "分割型：距離指標 t を用いて、1つのクラスを2つに最大限離して分割する"
+  ],
+  "explanationDe": [
+    "Beim agglomerativen Clustering wird in jedem Schritt ein Ähnlichkeitsmaß s verwendet, um die zwei aktuell ähnlichsten Cluster Cⱼ⁰ und Cₖ⁰ zu bestimmen.",
+    "Diese beiden Cluster werden zu einem neuen Cluster Cⱼ¹ vereinigt: Cⱼ¹ = Cⱼ⁰ ∪ Cₖ⁰.",
+    "Die Clusterliste G¹ wird aktualisiert, indem Cⱼ⁰ und Cₖ⁰ entfernt und Cⱼ¹ hinzugefügt wird.",
+    "Beim divisiven Clustering wird in jedem Schritt ein Abstandsmaß t verwendet, um einen bestehenden Cluster C₁⁰ in zwei Teilmengen C₁₁¹ und C₁₂¹ aufzuteilen.",
+    "Diese zwei Teilmengen müssen disjunkt sein (keine Überlappung) und die Trennung t(C₁₁¹, C₁₂¹) soll maximal sein – also möglichst stark voneinander getrennt.",
+    "Beide Methoden erzeugen hierarchische Clusterstrukturen, arbeiten aber in entgegengesetzter Richtung und nutzen unterschiedliche Kriterien zur Entscheidung, welche Gruppen zusammengeführt oder aufgeteilt werden."
+  ],
+  "explanationJa": [
+    "凝集型クラスタリング（Agglomerative）では、各ステップで類似度指標 s を用いて、現在最も似ている2つのクラス（Cⱼ⁰とCₖ⁰）を選び、それらを統合します。",
+    "統合後の新しいクラスタは Cⱼ¹ = Cⱼ⁰ ∪ Cₖ⁰ として定義され、クラスタ集合 G¹ は更新されます。",
+    "一方、分割型クラスタリング（Divisive）では、距離指標 t を用いて、既存の1つのクラス（C₁⁰）を2つの非重複なグループ（C₁₁¹とC₁₂¹）に分割します。",
+    "このとき、2つのグループの間の距離（t(C₁₁¹, C₁₂¹)）が最大になるように分割を行います。つまり、最も異なるように分けます。",
+    "このように、凝集型と分割型はそれぞれ“最も近いものを統合”または“最も離れたように分割”するという反対の方向から階層構造を構築します。"
+  ],
+  "originalSlideText": "Erzeugung von Clustern\n• Hierarchical Agglomerative Clustering\n  – Wähle ein Ähnlichkeitsmaß s\n  – Vereinige die beiden ähnlichsten Klassen:\n    – Seien j ≠ k: s(Cⱼ⁰, Cₖ⁰) maximal\n    – Cⱼ¹ = Cⱼ⁰ ∪ Cₖ⁰\n    – G¹ = G⁰ \\ {Cⱼ⁰, Cₖ⁰} ∪ Cⱼ¹\n\n• Divisive Hierarchical Clustering\n  – Wähle ein Abstandsmaß t\n  – Unterteile C₁⁰ in zwei Klassen:\n    – G¹ := {C₁₁¹, C₁₂¹}\n    – C₁₁¹ ∪ C₁₂¹ = D\n    – C₁₁¹ ∩ C₁₂¹ = ∅\n    – t(C₁₁¹, C₁₂¹) ist maximal",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 39,
+  "questionDe": "(s.57) Wie sehen die Endzustände beim agglomerativen und divisiven hierarchischen Clustering aus?",
+  "questionJa": "凝集型および分割型の階層クラスタリングにおける終了状態はどのようになりますか？",
+  "answerDe": [
+    "Agglomerativ: Endzustand ist eine einzige Klasse",
+    "Divisiv: Endzustand sind m Einzelklassen",
+    "Endzustände entsprechen jeweils dem Anfangszustand des anderen Verfahrens"
+  ],
+  "answerJa": [
+    "凝集型：すべてのデータが1つのクラスタに統合された状態で終了",
+    "分割型：各データ点が1つずつのクラスタに分かれた状態で終了",
+    "両者の終了状態は、それぞれ相手の開始状態と一致する"
+  ],
+  "explanationDe": [
+    "Beim Hierarchical Agglomerative Clustering werden die Datenpunkte schrittweise zu größeren Gruppen zusammengeführt, bis alle Objekte in einer einzigen Klasse enthalten sind.",
+    "Dieser Endzustand besteht also aus genau einem Cluster Gᵐ = {C₁ᵐ} = {{d₁, ..., dₘ}}.",
+    "Interessanterweise entspricht dieser Endzustand dem Anfangszustand des Divisive Hierarchical Clustering, das genau umgekehrt funktioniert.",
+    "Beim Divisive Clustering startet man mit einer einzigen Klasse und teilt sie schrittweise auf, bis jede Klasse genau ein Objekt enthält: Gᵐ = {C₁ᵐ, ..., Cgᵐ}, wobei Cᵢᵐ = {dᵢ}.",
+    "Dieser Endzustand entspricht wiederum dem Anfangszustand des Agglomerative Clustering.",
+    "Beide Verfahren durchlaufen also die gleiche Menge an Zwischenzuständen, aber in entgegengesetzter Reihenfolge."
+  ],
+  "explanationJa": [
+    "階層的クラスタリングにおいて、凝集型と分割型ではプロセスの方向が逆であるため、終了状態も対照的です。",
+    "凝集型クラスタリング（Hierarchical Agglomerative）は、すべてのデータを1つのクラスタに統合するまで繰り返します。最終的なクラスタ集合は Gᵐ = {C₁ᵐ} = {{d₁, ..., dₘ}} となり、これは分割型の開始状態と同じです。",
+    "一方、分割型クラスタリング（Divisive）は、最初は全体が1つのクラスタで、そこから徐々に分割していきます。最終的には、各データ点が1つのクラスタに属する形になり、Gᵐ = {C₁ᵐ, ..., Cgᵐ}（各 Cᵢᵐ = {dᵢ}）になります。",
+    "この終了状態は、凝集型クラスタリングの開始状態と一致しています。",
+    "つまり、両者は異なる方向から出発して、同じ階層構造を異なる順序で構築していると言えます。"
+  ],
+  "originalSlideText": "Erzeugung von Clustern\n• Hierarchical Agglomerative Clustering\n  – Wiederhole bis nur noch eine Klasse vorhanden ist:\n    – Gᵐ = {C₁ᵐ} = {{d₁, ..., dₘ}}\n  – Endzustand entspricht Ausgangszustand des „Divisive Hierarchical Clustering”\n\n• Divisive Hierarchical Clustering\n  – Wiederhole bis jede Klasse genau ein Objekt enthält:\n    – g = m\n    – ∀i: Cᵢᵐ = {dᵢ}\n    – Gᵐ := {C₁ᵐ, ..., Cgᵐ}\n  – Endzustand entspricht Ausgangszustand des „Hierarchical Agglomerative Clustering”",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 40,
+  "questionDe": "(s.58) Welche Abstandsmaße werden beim agglomerativen Clustering verwendet?",
+  "questionJa": "凝集型クラスタリングで使われる距離（リンク関数）はどのようなものですか？",
+  "answerDe": [
+    "Oft wird die euklidische Distanz verwendet",
+    "Single Linkage: minimale Distanz zwischen Punkten zweier Cluster",
+    "Complete Linkage: maximale Distanz zwischen Punkten zweier Cluster",
+    "Achtung: euklidische Distanz ist nicht skalierungsinvariant"
+  ],
+  "answerJa": [
+    "よく使われるのはユークリッド距離（ただしスケーリングに不変ではない）",
+    "Single Linkage：2つのクラスタ間で最も近い点同士の距離",
+    "Complete Linkage：2つのクラスタ間で最も遠い点同士の距離"
+  ],
+  "explanationDe": [
+    "Beim Hierarchical Agglomerative Clustering ist die Wahl des Abstandsmaßes entscheidend für die Bildung der Clusterstruktur.",
+    "Die euklidische Distanz ist ein häufig genutztes Maß. Sie misst den Luftlinienabstand zwischen zwei Punkten im Merkmalsraum. Allerdings ist sie nicht invariant gegenüber Skalierung – d.h., wenn ein Attribut stärker gewichtet (z. B. in anderen Einheiten) vorliegt, kann dies die Clusterbildung verzerren.",
+    "Zur Bestimmung des Abstands zwischen zwei Clustern werden sogenannte Linkage-Methoden eingesetzt:",
+    "- Single Linkage: t_SL(Cₖ, Cₗ) ist die kürzeste Distanz zwischen einem Punkt aus Cluster Cₖ und einem Punkt aus Cluster Cₗ (‚nächstes Paar‘). Dadurch entstehen oft längliche, kettenartige Cluster.",
+    "- Complete Linkage: t_CL(Cₖ, Cₗ) ist die größte Distanz zwischen allen Punktpaaren zweier Cluster. Diese Methode erzeugt tendenziell kompakte, runde Cluster.",
+    "Je nach Problemstellung und Datenverteilung kann die Wahl der Linkage-Methode das Ergebnis stark beeinflussen."
+  ],
+  "explanationJa": [
+    "階層的凝集クラスタリングでは、クラスタ間の距離の定義（リンク関数）が結果に大きな影響を与えます。",
+    "よく使われるユークリッド距離は、2点間の直線距離（通常の長さ）を測るものですが、各次元（特徴量）のスケールの違いに敏感である点に注意が必要です（例：年齢と収入など単位の異なるデータ）。",
+    "クラスタ間の距離を決める方法として、以下の2つが紹介されています：",
+    "- Single Linkage（単一連結法）：2つのクラスタ間で最も近い2点の距離をクラスタ間距離とする。細長く連なったようなクラスタ構造になる傾向があります。",
+    "- Complete Linkage（完全連結法）：2つのクラスタ間で最も遠い2点の距離をクラスタ間距離とする。よりコンパクトで丸みを帯びたクラスタを作りやすくなります。",
+    "どのリンク関数を使うかは、データの特性や目的に応じて選択することが重要です。"
+  ],
+  "originalSlideText": "Erzeugung von Clustern\n• Hierarchical Agglomerative Clustering\n  – Oft: Euklid’sche Distanz\n  – Beachte: nicht invariant bezüglich Skalierung\n\n– Maße:\n  – Single Linkage:\n    t_SL(Cₖ, Cₗ) := min_{dᵢ ∈ Cₖ, dⱼ ∈ Cₗ} (||dᵢ − dⱼ||₂)\n  – Complete Linkage:\n    t_CL(Cₖ, Cₗ) := max_{dᵢ ∈ Cₖ, dⱼ ∈ Cₗ} (||dᵢ − dⱼ||₂)",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 41,
+  "questionDe": "(s.59) Wie lässt sich eine Clusterhierarchie darstellen und welche Unterschiede zeigen sich zwischen Linkage-Methoden?",
+  "questionJa": "クラスタの階層構造はどのように可視化され、リンク法（結合法）によってどのような違いが見られますか？",
+  "answerDe": [
+    "Die Clusterhierarchie wird als Dendrogramm dargestellt",
+    "Single Linkage führt zu langen, kettenartigen Clustern",
+    "Complete Linkage ergibt kompaktere Cluster"
+  ],
+  "answerJa": [
+    "クラスタの階層構造はデンドログラム（樹形図）で表現される",
+    "Single Linkageでは細長く連なったクラスタ構造になる",
+    "Complete Linkageではよりコンパクトなクラスタが形成される"
+  ],
+  "explanationDe": [
+    "Ein Dendrogramm ist eine Baumstruktur, die die Hierarchie der Clusterbildung bei einem hierarchischen Verfahren darstellt.",
+    "Auf der horizontalen Achse sieht man die Datenpunkte, auf der vertikalen Achse den Abstands- bzw. Ähnlichkeitswert, bei dem Cluster zusammengeführt wurden.",
+    "Im linken Bild sieht man das Dendrogramm für Single Linkage: Hier werden Objekte sukzessive zu einem Cluster verbunden, sobald ein einzelnes Paar nahe beieinander liegt – das führt zu langen, kettenartigen Clustern.",
+    "Im rechten Bild ist das Dendrogramm für Complete Linkage dargestellt: Hier bestimmt das maximal entfernte Punktpaar den Clusterabstand, was zu gleichmäßigeren, runderen Clustern führt.",
+    "Die Wahl der Linkage-Methode beeinflusst also maßgeblich die resultierende Clusterstruktur und deren Interpretierbarkeit."
+  ],
+  "explanationJa": [
+    "デンドログラム（樹形図）は、階層的クラスタリングによって生成されたクラスタ階層を可視化する方法です。",
+    "横軸にはデータ点、縦軸にはクラスタが結合された距離や類似度の値が示され、どのクラスタがどの順で結びつけられたかが視覚的に把握できます。",
+    "左図はSingle Linkage（単一連結法）によるデンドログラムで、2点のうち最も近い距離に基づいてクラスタを形成するため、細長く連なったようなクラスタ（チェーン構造）が生まれやすくなります。",
+    "右図はComplete Linkage（完全連結法）によるデンドログラムで、最も遠い点同士の距離でクラスタ間距離を定義するため、全体によりバランスの取れた、丸みを帯びたクラスタになります。",
+    "このように、同じデータでも使用するリンク関数によってクラスタ構造が大きく変わるため、可視化して確認することは非常に重要です。"
+  ],
+  "originalSlideText": "Erzeugung von Clustern\n• Darstellung der erzeugtem Clusterhierarchie als Dendrogramm [Mar1986]",
+  "explanationImage": "lecture01/lecture05_ex11.png",
+  "questionImage": ""
+}
 ]

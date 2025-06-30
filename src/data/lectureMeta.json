@@ -12,8 +12,8 @@
         { "number": 8, "title": "IVDA: Perceptron" },
         { "number": 9, "title": "IVDA SVM" },
         { "number": 10, "title": "IVDA KNN 2" },
-        { "number": 11, "title": "Design" },
-        { "number": 12, "title": "Validierung" },
+        { "number": 11, "title": "Validierung" },
+        { "number": 12, "title": "-" },
         { "number": 13, "title": "-" },
         { "number": 14, "title": "-" }
       ]
@@ -31,7 +31,7 @@
         { "number": 8, "title": "InfoVis 1: Bäume" },
         { "number": 9, "title": "InfoVis 1: Visuelle Abbildung" },
         { "number": 10, "title": "InfoVis 1: Ansichtstransformationen" },
-        { "number": 11, "title": "-" },
+        { "number": 11, "title": "Design" },
         { "number": 12, "title": "-" },
         { "number": 13, "title": "-" },
         { "number": 14, "title": "-" }
