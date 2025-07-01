@@ -637,7 +637,7 @@
 {
   "id": 22,
   "questionDe": "(s2-26) Erkläre den grundlegenden Ablauf der SVM und die Rolle der Support-Vektoren.",
-  "questionJa": "SVMの基本的な流れを説明し、サポートベクターがどのような役割を果たすかを述べよ。",
+  "questionJa": "(試験類題)SVMの基本的な流れを説明し、サポートベクターがどのような役割を果たすかを述べよ。",
   "answerDe": [
     "SVM sucht eine Hyperebene, die Klassen optimal trennt",
     "Ziel ist die maximale Margin zwischen den Klassen",
