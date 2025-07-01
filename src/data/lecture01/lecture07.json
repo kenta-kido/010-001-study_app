@@ -1416,7 +1416,7 @@
   "questionImage": ""
 },
 {
-  "id": 34,
+  "id": 44,
   "questionDe": "(s28) Erklären Sie die Idee hinter der informational loss function für Wahrscheinlichkeitsvorhersagen.",
   "questionJa": "確率予測における informational loss function（情報損失関数）の考え方を説明せよ。",
   "answerDe": [
@@ -1452,7 +1452,7 @@
   "questionImage": ""
 },
 {
-  "id": 35,
+  "id": 45,
   "questionDe": "(s29) Wie wird der Erwartungswert der informational loss function berechnet und welche Probleme können dabei auftreten?",
   "questionJa": "informational loss functionの期待値の求め方と、それに関連する問題点を説明せよ。",
   "answerDe": [
@@ -1486,46 +1486,531 @@
     "その対策として、Laplace推定（1を足す平滑化）などを用いて、確率がゼロにならないように調整します。"
   ],
   "originalSlideText": "- Vorhersage von Wahrscheinlichkeiten: Informational Loss Function\n– Beispiel:\n– Kopf oder Zahl braucht 1 bit\n– −log₂ ½ = 1\n– Erwarteter Wert\n– ∑ₖ −pⱼ′ · log₂ pⱼ\n– pⱼ′ ist die wahre Wahrscheinlichkeit für die Klasse j\n– Ausprägung ist minimal, wenn pⱼ = pⱼ′\n– Entropie: Durchschnittliche Information\n– Probleme:\n– Wenn die Wahrscheinlichkeit 0 ist, wird der Information loss ∞\n– Auch bekannt als zero-frequency problem\n– Mögliche Lösung:\n– Laplace estimator",
+  "explanationImage": "lecture01/lecture08_ex03.png",
+  "questionImage": ""
+},
+{
+  "id": 46,
+  "questionDe": "(s30) Welche Unterschiede bestehen zwischen der quadratischen Verlustfunktion und der informational loss function?",
+  "questionJa": "二乗誤差損失関数と情報損失関数の違いを挙げよ。",
+  "answerDe": [
+    "Quadratische Verlustfunktion berücksichtigt alle Wahrscheinlichkeiten.",
+    "Information loss function bezieht sich nur auf die Wahrscheinlichkeit der tatsächlichen Klasse.",
+    "Obere Schranke bei quadratischer Verlustfunktion: 2.",
+    "Information loss function hat keine obere Schranke."
+  ],
+  "answerJa": [
+    "二乗誤差損失関数（quadratische Verlustfunktion）はすべてのクラスの確率を考慮する。",
+    "情報損失関数（information loss function）は実際に発生したクラスの確率のみを使う。",
+    "二乗誤差損失には上限（最大値）2がある。",
+    "情報損失関数には上限がない（理論上無限大になり得る）。"
+  ],
+  "explanationDe": [
+    "Die quadratische Verlustfunktion berechnet den Fehler anhand aller Wahrscheinlichkeiten – auch der falschen Klassen. Das kann sinnvoll sein, wenn man das gesamte Wahrscheinlichkeitsprofil bewerten möchte.",
+    "Die informational loss function (z. B. −log₂(p)) bezieht sich ausschließlich auf die Wahrscheinlichkeit der tatsächlich eingetretenen Klasse. Dadurch ist sie direkter auf den 'Ernstfall' fokussiert.",
+    "Ein praktischer Unterschied: Der Wert der quadratischen Verlustfunktion ist nach oben durch 2 begrenzt. Bei der informational loss function gibt es hingegen keine obere Grenze – der Verlust kann sehr groß werden, z. B. wenn p = 0.001 → −log₂(0.001) ≈ 10.",
+    "Dies bedeutet: Die informational loss function bestraft schlechte Vorhersagen härter und ist empfindlicher gegenüber unsicheren Aussagen."
+  ],
+  "explanationJa": [
+    "二乗誤差損失関数では、正解クラスだけでなく、すべてのクラスに対する予測確率のずれを元に損失を計算します。",
+    "これに対して、情報損失関数（たとえば −log₂(p)）は、正解クラスの予測確率だけに注目して損失を計算します。",
+    "また、二乗誤差損失関数では損失値の上限が2に制限されますが、情報損失関数には上限がなく、確率が非常に小さいときには損失が非常に大きくなる（例：p=0.001 → −log₂(0.001) ≈ 10）。",
+    "そのため、情報損失関数の方が、予測の信頼性が低いときに大きな罰を与えるようになっています。"
+  ],
+  "originalSlideText": "- Vorhersage von Wahrscheinlichkeiten\n– Welche Verlustfunktion sollte man nutzen?\n– Unterschiede:\nQuadratische Verlustfunktion:\n• Beachtet alle Wahrscheinlichkeiten\n• Obere Schranke: 2\nInformation loss function:\n• Basiert nur auf den Wahrscheinlichkeiten der aktuell auftretenden Klassen\n• Keine obere Schranke",
   "explanationImage": "",
   "questionImage": ""
+},
+{
+  "id": 47,
+  "questionDe": "(s31) Warum können klassische Evaluierungen bei unausgeglichenen Daten problematisch sein?",
+  "questionJa": "不均衡なデータセットに対して、従来の評価方法が問題になるのはなぜか？",
+  "answerDe": [
+    "Klassische Evaluierungen berücksichtigen oft nur die Anzahl der korrekten Vorhersagen (z. B. Fehlerrate).",
+    "Falsch klassifizierte Daten, besonders bei kleinen Klassen, werden ignoriert.",
+    "Ein Modell kann bei starker Klassenunbalance (z. B. 97 % eine Klasse) auch dann gut abschneiden, wenn es immer nur die Mehrheitsklasse vorhersagt.",
+    "Das Ergebnis wirkt dann korrekt (z. B. 97 %), obwohl das Modell keine sinnvolle Unterscheidung trifft."
+  ],
+  "answerJa": [
+    "従来の評価指標（例：誤分類率）は、正解数に偏っており、誤って分類されたデータや少数派のクラスに注意を払わない。",
+    "データに偏りがある場合（例えば97%が同じクラス）、常にそのクラスを予測するだけで高い正解率（97%）が得られてしまう。",
+    "しかし、そのモデルは実質的に学習をしていないに等しく、有益な予測ができていない。",
+    "本当に知りたいのは、出現頻度の低いが重要なクラス（例：病気の陽性など）をどれだけ正確に予測できるかである。"
+  ],
+  "explanationDe": [
+    "Im Beispiel auf der Folie tritt eine Klasse (z. B. negatives Testergebnis) in 97 % der Fälle auf. Ein Modell, das immer diese Klasse vorhersagt, erscheint korrekt.",
+    "Aber: In den übrigen 3 % liegt das eigentlich interessante Verhalten – z. B. ein positives Testergebnis.",
+    "Wenn diese 3 % ignoriert werden, kann das Modell keine nützlichen Entscheidungen unterstützen.",
+    "Deshalb ist es wichtig, alternative Metriken zu verwenden, die auch die Leistung bei kleinen Klassen erfassen (z. B. Sensitivität, Precision/Recall, F1-Score)."
+  ],
+  "explanationJa": [
+    "スライドの例では、あるクラス（例えば陰性）が97%を占めており、モデルが常にそれを予測すれば97%の正解率を達成できる。",
+    "しかし、残りの3%にこそ本当に重要な情報（たとえば陽性）が含まれていることが多い。",
+    "このような場合、単純な正解率ではモデルの本当の性能を評価できない。",
+    "したがって、感度（リコール）やF1スコアなど、少数クラスの性能も評価できる指標を使うべきである。"
+  ],
+  "originalSlideText": "- Berechnung der Kosten\n– Vorgestellte Evaluierungen beachten nicht falsch klassifizierte Daten\n– Das kann zu fragwürdigen Ergebnissen führen!\n– Annahme: Ein Ergebnis tritt in 97% der Fälle auf\n– Das Modell sagt dieses Ergebnis immer voraus\n– Ergebnis ist zu 97% korrekt\n– Sind die Fälle, in denen das Ergebnis nicht auftritt vielleicht interessanter?",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 48,
+  "questionDe": "(s32) Welche Kennzahlen kann man aus der Konfusionsmatrix berechnen?",
+  "questionJa": "混同行列（Konfusionsmatrix）から導出される代表的な評価指標は何か？",
+  "answerDe": [
+    "True Positive Rate (TPR) = TP / (TP + FN): Anteil der korrekt als positiv klassifizierten positiven Fälle.",
+    "False Positive Rate (FPR) = FP / (FP + TN): Anteil der fälschlich als positiv klassifizierten negativen Fälle.",
+    "Accuracy = (TP + TN) / (TP + TN + FP + FN): Anteil aller korrekt klassifizierten Fälle."
+  ],
+  "answerJa": [
+    "True Positive Rate（真陽性率、感度）= TP / (TP + FN)：実際に陽性であるもののうち、正しく陽性と判定された割合。",
+    "False Positive Rate（偽陽性率）= FP / (FP + TN)：実際には陰性なのに、誤って陽性と判定された割合。",
+    "Accuracy（正解率）= (TP + TN) / (TP + TN + FP + FN)：全予測のうち、正しく判定された割合。"
+  ],
+  "explanationDe": [
+    "Die Konfusionsmatrix besteht aus vier Feldern: TP (true positive), FP (false positive), FN (false negative), TN (true negative).",
+    "Diese vier Werte erlauben die Berechnung vieler Leistungskennzahlen.",
+    "True Positive Rate wird auch Sensitivität genannt – wichtig z. B. bei medizinischen Tests.",
+    "Accuracy kann bei unausgeglichenen Klassen irreführend sein, da sie stark von der Mehrheitsklasse beeinflusst wird."
+  ],
+  "explanationJa": [
+    "混同行列とは、実際のクラスと予測されたクラスの関係を整理した表で、4つの要素（TP, FP, FN, TN）から成る。",
+    "これらを用いてさまざまな性能指標を計算できる。",
+    "True Positive Rate（感度）は、例えば病気の検査において重要で、実際に病気の人を正しく検出できる割合を示す。",
+    "Accuracy（正解率）は全体的な性能を示すが、クラスに偏りがある場合（例：陽性が非常に少ないなど）は過大評価になりやすい。"
+  ],
+  "originalSlideText": "- True positive rate: TP / (TP + FN)\n- False positive rate: FP / (FP + TN)\n- Accuracy: (TP + TN) / (TP + TN + FP + FN)",
+  "explanationImage": "lecture01/lecture08_ex04.png",
+  "questionImage": ""
+},
+{
+  "id": 49,
+  "questionDe": "(s33) Wie wird eine Konfusionsmatrix bei Multiklassen-Vorhersagen genutzt?",
+  "questionJa": "多クラス分類において、混同行列（confusion matrix）はどのように利用されるか？",
+  "answerDe": [
+    "Bei Multiklassen-Vorhersagen wird eine zweidimensionale Konfusionsmatrix verwendet.",
+    "Jede Zelle in der Matrix gibt an, wie viele Instanzen einer tatsächlichen Klasse (Zeile) einer vorhergesagten Klasse (Spalte) zugeordnet wurden.",
+    "Gute Ergebnisse zeigen hohe Werte auf der Diagonalen und niedrige Werte außerhalb.",
+    "Die Matrix erlaubt den Vergleich mit Zufallsvorhersagen."
+  ],
+  "answerJa": [
+    "多クラス分類では、2次元の混同行列（confusion matrix）を使用する。",
+    "行は実際のクラス、列は予測されたクラスを表し、それぞれのセルには該当するインスタンスの数が入る。",
+    "正しい予測が多い場合、対角線上（実際のクラスと予測が一致）に大きな値が並び、対角線以外（誤分類）は小さくなる。",
+    "このような行列は、ランダムな予測との比較にも役立つ。"
+  ],
+  "explanationDe": [
+    "Eine Konfusionsmatrix bei Multiklassen erlaubt es, die Leistung eines Modells detailliert zu analysieren.",
+    "Die diagonalen Einträge zeigen korrekte Vorhersagen – je höher, desto besser.",
+    "Abweichungen von der Diagonale zeigen Fehler – besonders relevant, wenn einige Klassen häufiger falsch klassifiziert werden.",
+    "Ein Vergleich gegen eine Zufallsvorhersage zeigt, ob das Modell sinnvoller arbeitet als bloßes Raten."
+  ],
+  "explanationJa": [
+    "多クラス分類では、例えば3クラスなら3×3の行列で、全クラス間の予測精度を詳細に可視化できる。",
+    "行列の対角線上（左上から右下）は、正しく分類されたインスタンス数を示す。",
+    "対角線以外は、誤って他のクラスに分類されたケースであり、どのクラスで誤りが起きやすいか分析できる。",
+    "また、ランダムな予測結果と比較することで、モデルが有効かどうかの判断にも活用される。"
+  ],
+  "originalSlideText": "- Multiklassen Vorhersage: Nutzung einer 2 dimensionalen confusion Matrix\n- Jede Zelle repräsentiert die Anzahl der Instanzen mit:\n    - Zeile: tatsächliche Klasse\n    - Spalte: vorhergesagte Klasse\n- Gute Ergebnisse:\n    - Große Zahlen auf der Diagonalen\n    - Kleine Zahlen außerhalb\n- Kann gut gegen Zufallsvorhersagen verglichen werden",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 50,
+  "questionDe": "(s34) Was misst die Kappa-Statistik in der Evaluierung und wie wird sie berechnet?",
+  "questionJa": "評価においてカッパ統計量（Kappa-Statistik）は何を測定し、どのように計算されるか？",
+  "answerDe": [
+    "Die Kappa-Statistik misst, wie viel besser ein Modell vorhersagt als reines Raten.",
+    "Sie berechnet sich mit der Formel: (p - r) / (m - r)",
+    "Dabei ist:",
+    "- p: tatsächliche Anzahl korrekter Vorhersagen",
+    "- m: maximale Anzahl korrekter Vorhersagen",
+    "- r: erwartete Anzahl zufällig korrekter Vorhersagen",
+    "Ein Wert von 100 % bedeutet perfekte Vorhersage, 0 % entspricht der Zufallsrate."
+  ],
+  "answerJa": [
+    "カッパ統計量（Kappa-Statistik）は、モデルがランダムな予測よりもどれだけ良い予測をしているかを示す指標である。",
+    "計算式は：(p - r) / (m - r)",
+    "ここで：",
+    "- p：実際の正解予測数",
+    "- m：最大可能な正解数（完璧な予測）",
+    "- r：ランダムに予測した場合の期待される正解数",
+    "100% は完全な予測を意味し、0% はランダムと同等の性能を意味する。"
+  ],
+  "explanationDe": [
+    "Die Kappa-Statistik korrigiert die Vorhersagegenauigkeit, indem sie zufällige Übereinstimmungen berücksichtigt.",
+    "Zum Beispiel kann ein Modell in einem unausgeglichenen Datensatz 97 % Genauigkeit erreichen, einfach durch Vorhersage der Mehrheit.",
+    "Kappa erkennt, dass dies nicht über Zufall hinausgeht und gibt in diesem Fall einen Wert nahe 0.",
+    "So lässt sich die Aussagekraft der Vorhersage objektiver einschätzen."
+  ],
+  "explanationJa": [
+    "カッパ統計量は、精度だけでは見えない、モデルの“本当の意味での性能”を測る方法である。",
+    "例えば、97%のデータが1つのクラスに偏っている場合、すべてそれを予測すれば精度は97%だが、意味のある予測とは言えない。",
+    "Kappaはこのような偏りを考慮し、ランダムな予測と比べてどれほど意味があるかを数値化する。",
+    "したがって、高いKappa値は「ただのラッキーではなく、有意義な予測ができている」ことを示す。"
+  ],
+  "originalSlideText": "- Kappa Statistik: (p - r)/(m - r)\n  - p: Vorhersagen\n  - m: Maximal erfolgreiche Vorhersagen\n  - r: Zufällige erfolgreiche Vorhersagen\n- Maximaler Wert: 100%\n- Zufallsvorhersage ergibt 0%\n- Beispiel vom Anfang: Kappa Wert würde bei 0% liegen\n- Kosten sind aber immer noch nicht berücksichtigt!",
+  "explanationImage": "lecture01/lecture08_ex05.png",
+  "questionImage": ""
+},
+{
+  "id": 51,
+  "questionDe": "(s35) Was versteht man unter kostensensitiver Klassifikation und wie wird sie bei der Evaluierung berücksichtigt?",
+  "questionJa": "コスト感受性分類とは何か？そして評価時にどのように考慮されるのか？",
+  "answerDe": [
+    "Bei der kostensensitiven Klassifikation wird berücksichtigt, dass falsche Entscheidungen unterschiedliche Kosten verursachen können.",
+    "Eine Kostenmatrix zeigt für jede Kombination aus tatsächlicher und vorhergesagter Klasse die anfallenden Kosten.",
+    "Diese Matrix wird nicht bei der Vorhersage, aber bei der Evaluierung verwendet.",
+    "Für die Evaluierung werden alle relevanten Zellen der Kostenmatrix aufaddiert, um die Gesamtkosten zu berechnen."
+  ],
+  "answerJa": [
+    "コスト感受性分類とは、分類の誤りごとに異なる損失（コスト）が発生することを考慮した評価方法である。",
+    "各セル（実際のクラス × 予測クラス）にコストを割り当てた『コスト行列』を使う。",
+    "この行列は予測時には使われないが、モデルの評価時に用いられる。",
+    "テストインスタンスに対して、該当するセルのコストを合計し、総コストとして評価する。"
+  ],
+  "explanationDe": [
+    "In der Praxis sind manche Fehler gravierender als andere, z. B. eine falsche Krebsdiagnose.",
+    "Ein einfaches Beispiel: Falsch-negativ (Krankheit nicht erkannt) kann gefährlicher sein als falsch-positiv (fälschlich als krank erkannt).",
+    "Durch eine Kostenmatrix lassen sich diese Unterschiede abbilden und das Modell realitätsnäher evaluieren.",
+    "So kann man Modelle bevorzugen, die zwar weniger akkurat, aber aus Sicht der Gesamtkosten besser sind."
+  ],
+  "explanationJa": [
+    "実社会では、分類ミスの重要度は同じではない。例えば：",
+    "- がん患者を見逃す（偽陰性）は、誤って陽性と判断する（偽陽性）よりも重大な結果を招く。",
+    "そのようなケースでは『コスト行列』を使って、各誤分類に重みをつけて評価する。",
+    "モデルの精度（accuracy）だけでなく、実際に発生する損害の合計を評価指標とすることで、より現実的で適切なモデル選択ができる。"
+  ],
+  "originalSlideText": "- Kostensensitive Klassifikation\n  - Nutzung einer Kostenmatrix\n  - Jede Zelle repräsentiert die Kosten\n  - Unterschiedliche Zellen können unterschiedliche Kosten haben\n- Kosten werden bei der Vorhersage ignoriert, aber bei der Evaluierung berücksichtigt\n- Summiere alle Zellen der Kostenmatrix für eine Testinstanz auf",
+  "questionImage": "",
+  "explanationImage": ""
+},
+{
+  "id": 52,
+  "questionDe": "(s36) Wie funktioniert kostensensitive Klassifikation mit Wahrscheinlichkeiten?",
+  "questionJa": "確率を用いたコスト感受性分類はどのように機能するか？",
+  "answerDe": [
+    "Man verwendet eine Kostenmatrix, die für jede Kombination aus wahrer und vorhergesagter Klasse die Fehlerkosten enthält.",
+    "Für jede mögliche Klassenvorhersage berechnet man den Erwartungswert der Kosten, basierend auf den geschätzten Wahrscheinlichkeiten der Klassen.",
+    "Die Vorhersage erfolgt dann für die Klasse, die den geringsten Erwartungswert der Fehlerkosten ergibt.",
+    "Dies entspricht der Auswahl der Klasse mit der geringsten gewichteten Fehlerrate."
+  ],
+  "answerJa": [
+    "コスト行列を使って、真のクラスと予測クラスの組み合わせごとの誤りコストを定義する。",
+    "各クラスに対する予測確率（例: クラスa, b, cに対して pa, pb, pc）を使って、各クラスに分類した場合の期待誤りコスト（期待値）を計算する。",
+    "最も誤りコストが低くなるクラスを最終的な予測として選ぶ。",
+    "これは『最も確率が高いクラス』を選ぶのとは異なり、『総合的に誤りが少ないクラス』を選ぶ戦略である。"
+  ],
+  "explanationDe": [
+    "Beispiel: Die Kostenmatrix ist [[0,1,1], [1,0,1], [1,1,0]].",
+    "Wenn die geschätzten Wahrscheinlichkeiten z.B. pa=0.1, pb=0.6, pc=0.3 sind, berechnet man für jede Vorhersage die erwarteten Kosten:",
+    "- Für Vorhersage a: Fehlerkosten = pb + pc = 0.6 + 0.3 = 0.9",
+    "- Für Vorhersage b: Fehlerkosten = pa + pc = 0.1 + 0.3 = 0.4",
+    "- Für Vorhersage c: Fehlerkosten = pa + pb = 0.1 + 0.6 = 0.7",
+    "→ Also sollte Klasse b vorhergesagt werden, da hier die Fehlerkosten am niedrigsten sind."
+  ],
+  "explanationJa": [
+    "例：コスト行列 [[0,1,1], [1,0,1], [1,1,0]] を使う。",
+    "予測確率が pa=0.1, pb=0.6, pc=0.3 のとき、各クラスの誤りコストは以下のように計算される：",
+    "- クラスaを予測 → コスト: pb + pc = 0.6 + 0.3 = 0.9",
+    "- クラスbを予測 → コスト: pa + pc = 0.1 + 0.3 = 0.4",
+    "- クラスcを予測 → コスト: pa + pb = 0.1 + 0.6 = 0.7",
+    "→ 最も誤りが少ない（=最もコストが低い）クラスbを予測するのが最適。"
+  ],
+  "originalSlideText": "- Vorhersage der Klasse mit den geringsten Fehlerkosten\n- Gegeben: Kostenmatrix und Wahrscheinlichkeiten\n- Multipliziere Wahrscheinlichkeitsvektor mit entsprechender Spalte der Kostenmatrix\n- Wähle Klasse mit minimalem Erwartungswert der Kosten",
+  "questionImage": "",
+  "explanationImage": ""
+},
+{
+  "id": 53,
+  "questionDe": "(s37) Wie funktioniert kostensensitive Klassifikation durch Anpassung während des Trainings?",
+  "questionJa": "トレーニング中の調整によるコスト感受性分類はどのように機能するか？",
+  "answerDe": [
+    "Die Kostenmatrix wird in der Trainingsphase verwendet, nicht bei der Vorhersage.",
+    "Eine einfache Methode ist es, Instanzen zu duplizieren oder ihre Häufigkeit im Trainingsdatensatz zu variieren.",
+    "Viele Lernmethoden erlauben es, Instanzen zu gewichten – z.B. höhere Gewichtung für Instanzen mit hohen Fehlklassifikationskosten.",
+    "Die Instanzgewichte können entsprechend der relativen Kosten von False Positives und False Negatives angepasst werden."
+  ],
+  "answerJa": [
+    "トレーニング段階でコスト行列を使用し、予測時にはコストを考慮しない。",
+    "単純な方法として、インスタンスの重複やデータセット内での出現頻度の変更がある（コストに応じて多く登場させる）。",
+    "多くの学習アルゴリズムでは、インスタンスごとの重み付けが可能。",
+    "誤分類（偽陽性や偽陰性）の相対的なコストに応じてインスタンスの重みを調整できる。"
+  ],
+  "explanationDe": [
+    "Beispiel: Wenn das Klassifizieren einer positiven Instanz als negativ sehr teuer ist, kann man diese positiven Instanzen öfter ins Training einfügen.",
+    "Oder man nutzt Lernalgorithmen, die Instanzengewichtung unterstützen (z.B. Entscheidungsbäume, SVMs mit Gewichtung).",
+    "Das Ziel ist, das Modell so zu trainieren, dass Fehler mit hohen Kosten vermieden werden."
+  ],
+  "explanationJa": [
+    "例：陽性データを陰性と誤判定することが高コストな場合、その陽性データを訓練セットに多く含める。",
+    "または、重み付け可能な学習アルゴリズム（例：決定木や重み付きSVM）を使用し、各データの重みをコストに応じて調整する。",
+    "目的は、コストの高い誤りが起こりにくいモデルを育てること。"
+  ],
+  "originalSlideText": "- Nutzung der Kostenmatrix während der Trainingsphase\n- Simple Methode: Variiere die Größen der Instanzen im Trainingsdatensatz\n- Viele Lernmethoden erlauben gewichtete Instanzen",
+  "questionImage": "",
+  "explanationImage": ""
+},
+{
+  "id": 54,
+  "questionDe": "(s38) Wie kann man numerische Vorhersagen evaluieren?",
+  "questionJa": "数値予測はどのように評価すればよいか？",
+  "answerDe": [
+    "Auch bei numerischen Vorhersagen gelten die gleichen Grundprinzipien der Evaluation.",
+    "Man vergleicht die vorhergesagten Werte (zum Beispiel: p1, p2, ..., pn) mit den tatsächlichen Werten (a1, a2, ..., an).",
+    "Dabei muss die Messung der Fehlerrate an numerische Daten angepasst werden, etwa durch mathematische Fehlermaße."
+  ],
+  "answerJa": [
+    "数値予測にも評価の基本的な考え方は当てはまる。",
+    "予測値（例えば p1, p2, ..., pn）と実際の値（a1, a2, ..., an）を比較する。",
+    "その際、誤差の測定は数値データに合わせて、数式による評価指標（例えば平均絶対誤差など）を使って行う必要がある。"
+  ],
+  "explanationDe": [
+    "Bei Klassifikationen prüft man einfach, ob das Ergebnis richtig oder falsch war. Aber bei numerischen Vorhersagen ist das nicht ausreichend.",
+    "Hier muss man messen, wie stark die Vorhersage vom tatsächlichen Wert abweicht. Das heißt, man berechnet den Fehler zwischen dem vorhergesagten und dem tatsächlichen Wert.",
+    "Typische Fehlermaße sind zum Beispiel: absoluter Fehler (Differenz zwischen Vorhersage und Realität), quadratischer Fehler (Fehler wird quadriert), oder Mittelwert der Fehler.",
+    "Solche Maße geben eine quantitative Aussage darüber, wie gut oder schlecht das Modell ist."
+  ],
+  "explanationJa": [
+    "分類の場合は、予測が正しいかどうかで判断できるが、数値予測の場合は単純な正誤判定では不十分である。",
+    "数値予測では『どのくらい外れているか』を測る必要がある。つまり、予測値と実際の値の差（誤差）を数値で評価する。",
+    "代表的な誤差の測定法として、絶対誤差（予測値と実測値の差）、二乗誤差（差を2乗する）などがある。",
+    "これらの手法により、モデルの予測精度を具体的に把握することができる。"
+  ],
+  "originalSlideText": "- Evaluierung numerischer Vorhersagen\n- Grundideen funktionieren auch hier\n- Messung der Fehlerrate muss angepasst werden:\n  - Vorhergesagte Werte in den Testinstanzen: p₁, ..., pₙ\n  - Tatsächliche Werte: a₁, ..., aₙ",
+  "questionImage": "",
+  "explanationImage": ""
+},
+{
+  "id": 55,
+  "questionDe": "(s39) Was ist der mittlere quadratische Fehler und wofür wird er verwendet?",
+  "questionJa": "平均二乗誤差とは何か？どのような場面で使われるか？",
+  "answerDe": [
+    "Der mittlere quadratische Fehler (engl. Mean Squared Error, MSE) ist eine Kennzahl zur Bewertung der Qualität numerischer Vorhersagen.",
+    "Er berechnet sich, indem man für jede Instanz die Differenz zwischen dem vorhergesagten Wert (p) und dem tatsächlichen Wert (a) quadriert, diese quadrierten Abweichungen summiert und durch die Anzahl n der Instanzen teilt.",
+    "Eine alternative Darstellung ist die Wurzel des mittleren quadratischen Fehlers (engl. Root Mean Squared Error, RMSE), bei der zusätzlich die Quadratwurzel gezogen wird."
+  ],
+  "answerJa": [
+    "平均二乗誤差（MSE）は、数値予測の精度を評価するための指標である。",
+    "各データに対して、予測値（p）と実測値（a）の差を2乗し、それをすべてのデータで足し合わせ、データ数nで割ったもの。",
+    "また、平方根をとった『二乗平均平方根誤差（RMSE）』もよく用いられる。"
+  ],
+  "explanationDe": [
+    "Der mittlere quadratische Fehler ist eine sehr häufig verwendete Methode zur Bewertung von Regressionsmodellen.",
+    "Durch das Quadrieren der Abweichungen werden größere Fehler stärker gewichtet, weshalb MSE empfindlich auf Ausreißer reagiert.",
+    "Die Wurzel des mittleren quadratischen Fehlers (RMSE) hat den Vorteil, dass das Ergebnis dieselbe Einheit wie der ursprüngliche Wert hat, was die Interpretation erleichtert.",
+    "Mathematisch gesehen ist RMSE besser handhabbar, weil er nicht durch die Quadrate verzerrt wird."
+  ],
+  "explanationJa": [
+    "平均二乗誤差（MSE）は、回帰モデルの評価によく使われる指標である。",
+    "誤差を2乗するため、大きな誤差（外れ値）に対して敏感に反応する特性がある。",
+    "平方根をとったRMSEは、元の予測値と同じ単位になるため、解釈しやすくなる。",
+    "また、RMSEは数式上も扱いやすく、現場でよく使われている。"
+  ],
+  "originalSlideText": "- Evaluierung numerischer Vorhersagen\n- Mittlerer quadratischer Fehler:\n  (Summe von (p - a)^2 über n Instanzen geteilt durch n)\n  - Wird sehr häufig genutzt\n  - Reagiert empfindlich auf Ausreißer\n- Wurzel der mittleren Fehlerquadratsumme:\n  - Hat die gleiche Dimension wie der vorhergesagte Wert\n  - Mathematisch unproblematischer",
+  "questionImage": "",
+  "explanationImage": "lecture01/lecture08_ex06.png"
+},
+{
+  "id": 56,
+  "questionDe": "(s40) Was ist der mittlere absolute Fehler und wann ist er nützlich?",
+  "questionJa": "平均絶対誤差（MAE）とは何か？どのような場合に有用か？",
+  "answerDe": [
+    "Der mittlere absolute Fehler (MAE) ist der Durchschnitt der absoluten Abweichungen zwischen vorhergesagten und tatsächlichen Werten.",
+    "Er wird berechnet, indem man für jede Instanz den absoluten Unterschied |p - a| bildet, diese summiert und durch die Anzahl n der Instanzen teilt.",
+    "Er ist robust gegenüber Ausreißern, da keine Quadrierung der Fehler erfolgt."
+  ],
+  "answerJa": [
+    "平均絶対誤差（MAE）は、予測値と実際の値の差の絶対値の平均をとった指標である。",
+    "すべてのデータにおいて |p - a| を計算し、それらを足し合わせてデータ数 n で割ることで求められる。",
+    "誤差を2乗しないため、外れ値の影響を受けにくいという特徴がある。"
+  ],
+  "explanationDe": [
+    "MAE ist eine häufig verwendete Bewertungsgröße für Regressionsmodelle, insbesondere wenn Ausreißer vorhanden sind.",
+    "Da MAE keine Quadrierung beinhaltet, werden große Fehler nicht übermäßig stark gewichtet.",
+    "Dies macht MAE robuster, aber unter Umständen auch weniger empfindlich für große Fehler."
+  ],
+  "explanationJa": [
+    "MAEは、回帰モデルの性能評価においてよく用いられる指標の1つ。",
+    "誤差の2乗を行わないため、大きな誤差が他と同じように扱われ、全体に与える影響が抑えられる。",
+    "そのため、外れ値が含まれる場合にRMSEよりも適しているとされる。"
+  ],
+  "originalSlideText": "- Mittlerer absoluter Fehler: Summe |p_j - a_j| / n\n- Unempfindlich gegen Ausreißer",
+  "questionImage": "",
+  "explanationImage": "lecture01/lecture08_ex07.png"
+},
+{
+  "id": 57,
+  "questionDe": "(s41) Was ist der relative quadratische Fehler und warum wird er verwendet?",
+  "questionJa": "相対二乗誤差とは何か？なぜ使われるのか？",
+  "answerDe": [
+    "Der relative quadratische Fehler vergleicht die Fehler eines Modells mit der Streuung der tatsächlichen Werte.",
+    "Er zeigt, wie viel schlechter oder besser ein Modell im Vergleich zu einer einfachen Mittelwertvorhersage ist.",
+    "Er wird berechnet, indem man die quadrierten Vorhersagefehler durch die quadrierten Abweichungen der wahren Werte vom Mittelwert teilt."
+  ],
+  "answerJa": [
+    "相対二乗誤差は、モデルの予測誤差を、実際のデータのばらつき（分散）と比較する指標です。",
+    "つまり、単に平均値を使って予測した場合と比べて、モデルの精度がどれほど優れているか・劣っているかを示します。",
+    "予測値と実際の値の差の2乗を合計し、それを実データの平均からの差の2乗和で割って求めます。"
+  ],
+  "explanationDe": [
+    "Ein Wert < 1 bedeutet: das Modell ist besser als eine triviale Mittelwertvorhersage.",
+    "Ein Wert > 1 bedeutet: das Modell ist schlechter als einfach der Mittelwert.",
+    "Sehr hilfreich, um zu beurteilen, ob sich ein Modell überhaupt lohnt."
+  ],
+  "explanationJa": [
+    "値が1未満の場合、モデルは平均値を使った単純な予測よりも良いということになります。",
+    "1を超える場合は、むしろ単純に平均値を返す方がマシという意味になります。",
+    "この指標は、モデルがどの程度意味のある性能を持つかを判断するのに役立ちます。"
+  ],
+  "originalSlideText": "- Relativer-quadratischer Fehler: Summe (p_j - a_j)^2 / Summe (a_j - ȧ)^2\n- Relativ zu den Ergebnissen eines simplen Klassifikators",
+  "questionImage": "",
+  "explanationImage": "lecture01/lecture08_ex08.png"
+},
+{
+  "id": 58,
+  "questionDe": "(s41) Was ist die Wurzel des relativen quadratischen Fehlers und wie unterscheidet sie sich vom relativen Fehler?",
+  "questionJa": "相対二乗誤差の平方根とは何か？通常の相対誤差と何が違うのか？",
+  "answerDe": [
+    "Die Wurzel des relativen quadratischen Fehlers ist einfach die Quadratwurzel des relativen Fehlers.",
+    "Durch die Wurzel kommt man zurück zur ursprünglichen Einheit der Werte.",
+    "So kann man den Fehler direkter interpretieren – z.B. in derselben Einheit wie das Ergebnis (z. B. kg, Euro, Punkte)."
+  ],
+  "answerJa": [
+    "相対二乗誤差の平方根は、相対二乗誤差に平方根をとったものです。",
+    "平方根をとることで、誤差の単位が元のデータと同じになります（たとえばkgや点数など）。",
+    "これにより、モデルの誤差の大きさがより直感的に理解できるようになります。"
+  ],
+  "explanationDe": [
+    "Die Quadratwurzel hilft, übermäßig große Fehler zu glätten.",
+    "Oft wird diese Metrik gewählt, weil sie aussagekräftiger und interpretierbarer ist.",
+    "Sie entspricht der Idee des RMSE (Root Mean Squared Error)."
+  ],
+  "explanationJa": [
+    "平方根を取ることで、極端に大きな誤差（外れ値）の影響を和らげることができます。",
+    "予測精度を現実的なスケールで比較しやすくなるため、実務でよく使われます。",
+    "RMSE（平均二乗誤差の平方根）と同様の考え方です。"
+  ],
+  "originalSlideText": "- Wurzel des relativen quadratischen Fehlers: sqrt(Summe (p_j - a_j)^2 / Summe (a_j - ȧ)^2)",
+  "questionImage": "",
+  "explanationImage": ""
+},
+{
+  "id": 59,
+  "questionDe": "(s41) Was ist der relative absolute Fehler und wann ist er sinnvoll?",
+  "questionJa": "相対絶対誤差とは何か？どのような時に有効か？",
+  "answerDe": [
+    "Der relative absolute Fehler ist das Verhältnis der Summe der absoluten Vorhersagefehler zur Summe der absoluten Abweichungen vom Mittelwert.",
+    "Er zeigt, ob ein Modell besser vorhersagt als eine triviale Mittelwertstrategie.",
+    "Kein Quadrieren der Fehler – daher robuster gegen Ausreißer."
+  ],
+  "answerJa": [
+    "相対絶対誤差は、予測値と実際値との差の絶対値の合計を、実際値とその平均との差の絶対値の合計で割ったものです。",
+    "モデルが単純に平均値を返す予測よりも優れているかどうかを判断するために使われます。",
+    "誤差を二乗しないため、外れ値に対しても頑健です。"
+  ],
+  "explanationDe": [
+    "Ein Wert < 1 → Modell besser als Durchschnitt.",
+    "Ein Wert > 1 → Modell schlechter als Mittelwert.",
+    "Gut geeignet bei Daten mit Ausreißern oder unregelmäßiger Streuung."
+  ],
+  "explanationJa": [
+    "この値が1未満であれば、モデルの方が単純平均よりも良い予測をしていることになります。",
+    "1を超えると、平均を使った予測の方が正確だという意味になります。",
+    "データにばらつきや外れ値がある場合でも、相対絶対誤差は安定して使えます。"
+  ],
+  "originalSlideText": "- Relativer absoluter Fehler: Summe |p_j - a_j| / Summe |a_j - ȧ|",
+  "questionImage": "",
+  "explanationImage": "lecture01/lecture08_ex09.png"
+},
+{
+  "id": 60,
+  "questionDe": "(s42) Was misst der Korrelationskoeffizient bei numerischen Vorhersagen?",
+  "questionJa": "数値予測における相関係数は何を測定するか？",
+  "answerDe": [
+    "Er misst die Stärke des linearen Zusammenhangs zwischen vorhergesagten und tatsächlichen Werten.",
+    "Der Wert liegt zwischen -1 (perfekte negative Korrelation) und 1 (perfekte positive Korrelation).",
+    "Ein Wert von 0 bedeutet keine lineare Korrelation."
+  ],
+  "answerJa": [
+    "相関係数は、予測値と実測値の間にどの程度の直線的な関係があるかを測定する指標です。",
+    "値の範囲は -1（完全な負の相関）から 1（完全な正の相関）までです。",
+    "値が 0 の場合は、直線的な相関関係がないことを意味します。"
+  ],
+  "explanationDe": [
+    "Ein Wert von 1 bedeutet, dass die vorhergesagten Werte genau proportional zu den tatsächlichen Werten sind – also eine perfekte Vorhersage im Trend.",
+    "Ein Wert von -1 zeigt eine perfekte negative Beziehung: Wenn der echte Wert steigt, sinkt die Vorhersage im gleichen Maße.",
+    "Ein Wert von 0 bedeutet, dass es keinen linearen Zusammenhang gibt – die Vorhersagewerte schwanken unabhängig von den echten Werten.",
+    "Der Korrelationskoeffizient ist unabhängig von der Skalierung. Wenn man z.B. alle Vorhersagewerte mit 10 multipliziert, bleibt der Wert gleich."
+  ],
+  "explanationJa": [
+    "相関係数が 1 のときは、予測値と実際の値が完全に比例している（傾き1の直線関係）ことを意味します。",
+    "相関係数が -1 のときは、予測値と実際の値が逆の動きをしながらも、完全に一直線上に並んでいる状態です。",
+    "相関係数が 0 の場合、予測と実測の値に直線的な関係がないことを示します（例：予測は当てずっぽうに近い）。",
+    "また、この値はスケーリングの影響を受けません。予測値をすべて2倍しても、相関係数の値は変わりません。"
+  ],
+  "originalSlideText": "- 1: Perfekte Korrelation\n- 0: Keine Korrelation\n- -1: Perfekte negative Korrelation\n- Unabhängig von Skalierung",
+  "questionImage": "",
+  "explanationImage": ""
+},
+{
+  "id": 60,
+  "questionDe": "(s42) Was misst der Korrelationskoeffizient bei numerischen Vorhersagen?",
+  "questionJa": "数値予測における相関係数は何を測定するか？",
+  "answerDe": [
+    "Er misst die Stärke des linearen Zusammenhangs zwischen vorhergesagten und tatsächlichen Werten.",
+    "Der Wert liegt zwischen -1 (perfekte negative Korrelation) und 1 (perfekte positive Korrelation).",
+    "Ein Wert von 0 bedeutet keine lineare Korrelation."
+  ],
+  "answerJa": [
+    "相関係数は、予測値と実測値の間にどの程度の直線的な関係があるかを測定する指標です。",
+    "値の範囲は -1（完全な負の相関）から 1（完全な正の相関）までです。",
+    "値が 0 の場合は、直線的な相関関係がないことを意味します。"
+  ],
+  "explanationDe": [
+    "Ein Wert von 1 bedeutet, dass die vorhergesagten Werte genau proportional zu den tatsächlichen Werten sind – also eine perfekte Vorhersage im Trend.",
+    "Ein Wert von -1 zeigt eine perfekte negative Beziehung: Wenn der echte Wert steigt, sinkt die Vorhersage im gleichen Maße.",
+    "Ein Wert von 0 bedeutet, dass es keinen linearen Zusammenhang gibt – die Vorhersagewerte schwanken unabhängig von den echten Werten.",
+    "Der Korrelationskoeffizient ist unabhängig von der Skalierung. Wenn man z.B. alle Vorhersagewerte mit 10 multipliziert, bleibt der Wert gleich."
+  ],
+  "explanationJa": [
+    "相関係数が 1 のときは、予測値と実際の値が完全に比例している（傾き1の直線関係）ことを意味します。",
+    "相関係数が -1 のときは、予測値と実際の値が逆の動きをしながらも、完全に一直線上に並んでいる状態です。",
+    "相関係数が 0 の場合、予測と実測の値に直線的な関係がないことを示します（例：予測は当てずっぽうに近い）。",
+    "また、この値はスケーリングの影響を受けません。予測値をすべて2倍しても、相関係数の値は変わりません。"
+  ],
+  "originalSlideText": "- 1: Perfekte Korrelation\n- 0: Keine Korrelation\n- -1: Perfekte negative Korrelation\n- Unabhängig von Skalierung",
+  "questionImage": "",
+  "explanationImage": "lecture01/lecture08_ex10.png"
+},
+{
+  "id": 62,
+  "questionDe": "(s44) Wovon hängt die Wahl der Fehlermessart bei numerischen Vorhersagen ab?",
+  "questionJa": "数値予測における誤差評価方法の選択は何に依存するか？",
+  "answerDe": [
+    "Die Wahl der Fehlermessart hängt vom konkreten Anwendungsfall ab.",
+    "Man muss entscheiden, welche Art von Fehler minimiert werden soll.",
+    "Auch die Kosten verschiedener Fehlerarten müssen berücksichtigt werden."
+  ],
+  "answerJa": [
+    "どの誤差指標を使うかは、具体的な応用目的によって決まります。",
+    "どのタイプの誤差を最小化すべきかを判断する必要があります。",
+    "誤差の種類ごとのコスト（損失）も考慮する必要があります。"
+  ],
+  "explanationDe": [
+    "Beispiel: In einer medizinischen Vorhersage könnte ein kleiner Fehler in eine Richtung schwerwiegender sein als in die andere Richtung.",
+    "In einem Preisvorhersagemodell könnten sowohl Über- als auch Unterschätzungen gleich wichtig sein – dort ist z.B. der mittlere absolute Fehler sinnvoll.",
+    "Oft führen verschiedene Fehlermessarten (z. B. MAE, RMSE, Korrelation) zu ähnlichen Schlussfolgerungen – aber nicht immer!",
+    "Deshalb ist es wichtig, die Fehlerart bewusst auf die Fragestellung abzustimmen."
+  ],
+  "explanationJa": [
+    "例えば医療の予測では、過小評価（見逃し）の方が過大評価（誤診）よりも大きな問題となる場合があります。",
+    "商品の価格予測では、高く見積もっても安く見積もっても同じくらいの影響があるため、絶対誤差を使うのが適していることもあります。",
+    "多くの場合、どの誤差指標を使っても似たような評価結果が得られますが、例外もあります。",
+    "したがって、どの誤差が本当に重要なのか、目的や文脈に応じて慎重に選ぶ必要があります。"
+  ],
+  "originalSlideText": "- Sinn des berechnete Maßes hängt von der Anwendung ab:\n   - Was soll minimiert werden?\n   - Was sind die Kosten der verschiedenen Fehlerarten?\n- Meistens liefern alle Fehlermessarten das gleiche Ergebnis",
+  "questionImage": "",
+  "explanationImage": ""
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-  
-  
 ]
