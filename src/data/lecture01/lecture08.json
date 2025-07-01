@@ -226,13 +226,858 @@
     "originalSlideText": "McCulloch Pitts Neuron\n– n binäre Eingangssignale x_1 bis x_n\n– Schwellwert θ > 0\n– Realisierung logischer Funktionen (AND, OR)\n– Erweiterung: hemmende Signale y_1 bis y_m\n– Ausgabe = 0 wenn y_j = 1\n– Verallgemeinerung mit Gewichten\n– Beispiel: 0,2 x1 + 0,4 x2 + 0,3 x3 ≥ 0,7",
     "explanationImage": "",
     "questionImage": ""
-  }
-  
-  
-  
-  
-  
-  
-  
-  
+  },
+  {
+    "id": 9,
+    "questionDe": "(s16) Was ist ein Perceptron und welche Eigenschaften hat es?",
+    "questionJa": "Perceptronとは何で、どのような特徴があるか？",
+    "answerDe": [
+      "Ein Outputneuron pro unabhängigem Netzbereich",
+      "Zur Vereinfachung nur ein Output pro Netz",
+      "Ursprünglich für Hardware gedacht",
+      "Später zu Multilayer-Perceptrons erweitert"
+    ],
+    "answerJa": [
+      "各出力ニューロンは独立したネット領域を持つ",
+      "簡略化のために各ネットは1つの出力を持つ",
+      "当初はハードウェアとして設計された",
+      "後に多層Perceptronへと拡張された"
+    ],
+    "explanationDe": [
+      "Ein Perceptron ist ein einfaches künstliches neuronales Netz, das 1958 von Rosenblatt entwickelt wurde. Es besteht aus einer Eingabeschicht und einer Ausgabeschicht.",
+      "Jedes Ausgabeneuron verarbeitet die Eingaben durch gewichtete Verbindungen und entscheidet, ob es aktiviert wird.",
+      "In frühen Versionen hatte jedes Netz nur ein einziges Ausgabeneuron, um das Modell zu vereinfachen.",
+      "Das ursprüngliche Ziel war eine Umsetzung auf Hardware – also nicht nur Software-Modelle, sondern echte elektrische Schaltungen.",
+      "Später wurde das Konzept erweitert, indem man mehrere Schichten hinzufügte. Diese Multilayer-Perceptrons sind die Grundlage moderner neuronaler Netzwerke."
+    ],
+    "explanationJa": [
+      "Perceptronは、1958年にローゼンブラットによって提案された単純な人工ニューラルネットワークです。入力層と出力層から構成されます。",
+      "各出力ニューロンは入力からの重み付き信号を受け取り、ある基準（しきい値）を超えると活性化されます。",
+      "初期のモデルでは、各ネットワークが1つの出力ニューロンのみを持っていました。これはモデルを簡単に保つためです。",
+      "当初はソフトウェアではなく、実際の電子回路としてハードウェアで実装されることを想定していました。",
+      "その後、隠れ層を追加することで多層Perceptron（Multilayer Perceptron）が登場し、現在のニューラルネットワークの基盤となっています。"
+    ],
+    "originalSlideText": "Perceptron (Rosenblatt 1958)\n– Jedes Outputneuron hat einen eigenen unabhängigen Netzbereich\n– Zur Vereinfachung hat jedes Netz im folgenden nur einen Output\n– War historisch als Hardwareimplementierung gedacht\n– Später auf Multilayer Perceptrons erweitert",
+    "explanationImage": "lecture01/lecture09_ex01.png",
+    "questionImage": ""
+  },
+  {
+    "id": 10,
+    "questionDe": "(s16) Welche Bestandteile hat ein einfaches Perzeptron?",
+    "questionJa": "単純なPerceptronはどのような構成要素を持つか？",
+    "answerDe": [
+      "Inputschicht: Enthält mehrere Eingangssignale (x1 bis x4), die Merkmale der Eingabedaten darstellen.",
+      "Gewichtete Verbindungen: Jede Verbindung zwischen Eingabe- und Ausgabeneuron hat ein Gewicht (z. B. w11, w12).",
+      "Ausgabeschicht: Neuronen (o1 bis o3) berechnen eine gewichtete Summe der Eingänge.",
+      "Aktivierung: Ein Neuron wird aktiv (gibt 1 aus), wenn die gewichtete Summe einen Schwellwert übersteigt."
+    ],
+    "answerJa": [
+      "入力層：複数の入力信号（x1〜x4）を持ち、それぞれがデータの特徴を表す。",
+      "重み付き接続：各入力と出力の間には重み（例：w11, w12）が設定され、影響の大きさを示す。",
+      "出力層：ニューロン（o1〜o3）が、受け取った信号に重みをかけて合計する。",
+      "活性化：合計がしきい値を超えたとき、ニューロンが活性化（出力が1）される。"
+    ],
+    "explanationDe": [
+      "Ein Perzeptron besteht aus einer Inputschicht mit mehreren Eingangssignalen (z. B. x1 bis x4), die bestimmte Merkmale eines Eingabedatensatzes beschreiben – etwa Pixel eines Bildes oder Messwerte von Sensoren.",
+      "Zwischen Input- und Outputschicht gibt es gewichtete Verbindungen. Die Gewichte (z. B. w11, w43) bestimmen, wie stark jedes Eingangssignal das Ergebnis beeinflusst.",
+      "Die Ausgabeneuronen summieren die gewichteten Eingangssignale. Diese Summe wird mit einem Schwellwert verglichen.",
+      "Die Aktivierung entscheidet, ob ein Neuron 'feuert' – also eine 1 ausgibt – oder nicht (0). Ein Neuron wird aktiv, wenn die gewichtete Summe seiner Eingänge größer oder gleich dem Schwellwert ist.",
+      "Beispiel: Wenn x1 = 1, x2 = 1, und die Gewichte w11 = 0.5, w21 = 0.5 betragen, dann ist die gewichtete Summe 1.0. Wenn der Schwellwert 0.8 ist, wird das Neuron aktiviert und gibt 1 aus – z. B. für die Entscheidung 'Ja, das ist eine Katze auf dem Bild'."
+    ],
+    "explanationJa": [
+      "Perceptronは、入力層に複数の信号（x1〜x4）を持ち、それぞれが画像の特徴やセンサーの測定値などを表します。",
+      "各入力は重み（例：w11, w43）を持っており、これはその入力が出力にどれだけ影響を与えるかを示します。",
+      "出力層のニューロンは、それぞれの入力に対応する重みをかけた値を合計します。そしてその合計が「しきい値」以上であれば活性化され、出力が1になります。",
+      "『活性化』とは、ニューロンが信号を出す状態になることです。出力が1であれば「はい」、0であれば「いいえ」のような意味を持ちます。",
+      "例：x1 = 1、x2 = 1、重みw11 = 0.5、w21 = 0.5とすると、合計は1.0になります。しきい値が0.8であればニューロンは活性化され、1を出力します。たとえば「これは猫の画像である」と判断するケースです。"
+    ],
+    "originalSlideText": "Abbildung: Inputschicht (x1–x4), Gewichtungen (w_ij), Outputschicht (o1–o3), Aktivierung bei Schwellenüberschreitung",
+    "explanationImage": "",
+    "questionImage": "lecture01/lecture09_q01.png"
+  },
+  {
+    "id": 11,
+    "questionDe": "(s17) Wie ist ein künstliches Neuron im Allgemeinen aufgebaut?",
+    "questionJa": "人工ニューロンは一般的にどのような構造をしているか？",
+    "answerDe": [
+      "Eingaben (x1 bis xn) mit zugehörigen Gewichtungen (w1j bis wnj)",
+      "Übertragungsfunktion: Bildung der gewichteten Summe (netj)",
+      "Aktivierungsfunktion φ vergleicht mit dem Schwellwert θj",
+      "Ausgabe oj je nach Aktivierung"
+    ],
+    "answerJa": [
+      "入力（x1〜xn）にはそれぞれ重み（w1j〜wnj）がある",
+      "伝達関数によって重み付き入力の合計（netj）を計算する",
+      "活性化関数φが合計をしきい値θjと比較する",
+      "活性化の有無によって出力ojが決まる"
+    ],
+    "explanationDe": [
+      "Ein künstliches Neuron erhält mehrere Eingangssignale (x1 bis xn), die jeweils mit einem Gewicht (w1j bis wnj) multipliziert werden. Diese Gewichte bestimmen den Einfluss jedes Eingabewertes.",
+      "Die Übertragungsfunktion berechnet die gewichtete Summe aller Eingänge: netj = x1*w1j + x2*w2j + ... + xn*wnj.",
+      "Diese Summe (netj) wird an die Aktivierungsfunktion φ weitergegeben. Sie vergleicht netj mit einem Schwellwert θj.",
+      "Wenn netj ≥ θj ist, wird das Neuron aktiviert und gibt den Wert 1 aus (oj = 1), sonst bleibt es inaktiv (oj = 0).",
+      "Beispiel: Wenn ein Bild mehrere Merkmale enthält (z. B. x1 = 'rund', x2 = 'klein') und die gewichtete Summe dieser Merkmale groß genug ist, könnte das Neuron 'aktiviert' werden, um etwa 'Ball erkannt' auszugeben."
+    ],
+    "explanationJa": [
+      "人工ニューロンは、複数の入力信号（x1〜xn）を受け取り、それぞれに重み（w1j〜wnj）が設定されています。この重みは、各入力が出力にどれほど影響を与えるかを示します。",
+      "伝達関数（または加算関数）は、すべての入力に重みをかけて合計（netj）を求めます。たとえば netj = x1*w1j + x2*w2j + ... + xn*wnj のように計算します。",
+      "その合計値 netj は活性化関数φに渡され、設定されたしきい値θjと比較されます。",
+      "もしnetjがθj以上であれば、ニューロンは活性化されて出力1（oj = 1）を返します。そうでなければ出力は0（oj = 0）になります。",
+      "例：画像の特徴として「丸い（x1）」「小さい（x2）」などが入力され、それらの合計が十分大きければ「これはボールだ」と判断するためにニューロンが活性化され、出力が1になります。"
+    ],
+    "originalSlideText": "Genereller Aufbau\nGewichtungen, Eingaben x1…xn, Übertragungsfunktion (Summe), Aktivierungsfunktion φ, Schwellwert θj, Ausgabe oj",
+    "explanationImage": "lecture01/lecture09_ex02.png",
+    "questionImage": ""
+  },
+  {
+    "id": 12,
+    "questionDe": "(s18) Was ist eine Schwellenwertfunktion und wie funktioniert sie?",
+    "questionJa": "しきい値関数とは何で、どのように機能するか？",
+    "answerDe": [
+      "Nimmt nur die Werte 0 und 1 an",
+      "Schwellwert entscheidet über Aktivierung",
+      "Funktioniert nach dem Alles-oder-Nichts-Prinzip"
+    ],
+    "answerJa": [
+      "出力は0か1のどちらかのみをとる",
+      "しきい値によって活性化が決まる",
+      "すべてかゼロかの動作（All-or-Nothing）をする"
+    ],
+    "explanationDe": [
+      "Die Schwellenwertfunktion (auch Heaviside-Funktion genannt) ist eine einfache Aktivierungsfunktion, die nur zwei Ausgaben erlaubt: 0 oder 1.",
+      "Wenn der Eingabewert v kleiner als 0 ist, gibt die Funktion 0 zurück. Wenn v größer oder gleich 0 ist, gibt sie 1 zurück.",
+      "Das bedeutet: Nur wenn die Eingabe stark genug ist (über dem Schwellwert liegt), wird das Neuron aktiviert.",
+      "Diese Art der Funktion wird als Alles-oder-Nichts-Funktion beschrieben, da es keine Zwischenwerte gibt.",
+      "Beispiel: Wenn v = -0,2 → Ausgabe 0 (nicht aktiv), aber bei v = 0,3 → Ausgabe 1 (aktiv)."
+    ],
+    "explanationJa": [
+      "しきい値関数（またはHeaviside関数）は、最も基本的な活性化関数で、出力は0または1のみになります。",
+      "入力値vが0未満のときは出力が0、0以上のときは出力が1になります。",
+      "つまり、入力がしきい値を超えるとニューロンが活性化され、そうでなければ非活性のままです。",
+      "このように、「出力するかしないか」という2択の動作であることから、『全か無か（All-or-Nothing）』型の関数と呼ばれます。",
+      "例：v = -0.2 の場合は出力0（非活性）、v = 0.3 の場合は出力1（活性）になります。"
+    ],
+    "originalSlideText": "Schwellenwertfunktion:\n– Nimmt nur die Werte 0 und 1 an\n– Schwellwert bestimmt die Aktivierung\n– Alles oder Nichts Funktionsweise\nφ^hlm(v) = {1 wenn v ≥ 0, 0 wenn v < 0}",
+    "explanationImage": "lecture01/lecture09_ex03.png",
+    "questionImage": ""
+  },
+  {
+    "id": 13,
+    "questionDe": "(s19) Was ist eine stückweise lineare Aktivierungsfunktion und wie funktioniert sie?",
+    "questionJa": "区分的線形活性化関数とは何で、どのように機能するか？",
+    "answerDe": [
+      "Abbildung eines begrenzten Intervalls mit linearer Funktion",
+      "Außerhalb des Intervalls konstante Werte (0 oder 1)",
+      "Funktion nimmt Werte zwischen 0 und 1 an"
+    ],
+    "answerJa": [
+      "一定範囲内を線形関数で表現する活性化関数",
+      "範囲外は一定の値（0または1）を取る",
+      "出力値は0から1の間の値をとる"
+    ],
+    "explanationDe": [
+      "Die stückweise lineare Funktion ist eine Aktivierungsfunktion, die für Werte innerhalb eines Intervalls linear ansteigt.",
+      "Genauer: Für Werte v zwischen -0,5 und 0,5 wächst die Ausgabe linear von 0 auf 1 an.",
+      "Für v ≤ -0,5 ist die Ausgabe konstant 0, für v ≥ 0,5 konstant 1.",
+      "Das bedeutet, die Funktion begrenzt die Ausgabe auf den Bereich zwischen 0 und 1 und sorgt für eine sanfte Übergangsphase.",
+      "Beispiel: Bei v = 0 ist der Ausgabewert 0,5 (Mitte des Intervalls), bei v = 0,3 ist der Ausgabewert etwa 0,8."
+    ],
+    "explanationJa": [
+      "区分的線形関数は、ある範囲内で入力に対して出力が線形に変化する活性化関数です。",
+      "具体的には、入力vが-0.5から0.5の範囲では、出力が0から1まで直線的に増加します。",
+      "入力が-0.5以下のときは出力は0、0.5以上のときは出力は1で一定となります。",
+      "この関数は出力値を0〜1に制限し、滑らかな切り替えを実現しています。",
+      "例：v=0のとき出力は0.5（中間点）、v=0.3のときは約0.8となります。"
+    ],
+    "originalSlideText": "Stückweise lineare Funktion:\n– Abbildung eines begrenzten Intervalls mit einer linearen Funktion\n– Außerhalb konstante Werte\nφ^pwl(v) = {1 wenn v ≥ 1/2, v+1/2 wenn -1/2 < v < 1/2, 0 wenn v ≤ -1/2}",
+    "explanationImage": "lecture01/lecture09_ex04.png",
+    "questionImage": ""
+  },
+  {
+    "id": 14,
+    "questionDe": "(s20) Was ist die Sigmoidfunktion und welche Eigenschaften hat sie?",
+    "questionJa": "シグモイド関数とは何で、どのような特徴を持つか？",
+    "answerDe": [
+      "Wurde lange Zeit als Standard-Aktivierungsfunktion verwendet",
+      "Hat eine glatte, S-förmige Kurve",
+      "Steigungsparameter alpha kann angepasst werden",
+      "Gibt Werte zwischen 0 und 1 aus"
+    ],
+    "answerJa": [
+      "長い間、標準的な活性化関数として使われてきた",
+      "滑らかでS字型の曲線を持つ",
+      "傾き（alpha）を調整できる",
+      "出力値は0から1の間をとる"
+    ],
+    "explanationDe": [
+      "Die Sigmoidfunktion ist eine nichtlineare Aktivierungsfunktion, die eine S-förmige Kurve beschreibt.",
+      "Sie wird definiert als: φ_alpha(v) = 1 / (1 + exp(-alpha * v)), wobei alpha die Steilheit der Kurve bestimmt.",
+      "Durch Variation von alpha kann die Funktion steiler oder flacher gemacht werden, was das Lernverhalten eines neuronalen Netzes beeinflusst.",
+      "Historisch wurde die Sigmoidfunktion häufig verwendet, da sie Werte zwischen 0 und 1 ausgibt und dadurch gut für Wahrscheinlichkeitsinterpretationen geeignet ist.",
+      "Allerdings wurde sie in neueren Netzwerken teilweise durch andere Funktionen wie ReLU ersetzt, da sie Probleme mit verschwindenden Gradienten hat."
+    ],
+    "explanationJa": [
+      "シグモイド関数は非線形の活性化関数で、滑らかなS字型の曲線を描きます。",
+      "数式は φ_alpha(v) = 1 / (1 + exp(-alpha * v)) で表され、alphaは曲線の傾きを調整するパラメータです。",
+      "alphaを変えることで曲線の急勾配具合を変えられ、ニューラルネットの学習挙動に影響します。",
+      "歴史的には、出力が0から1の間で値を取るため、確率的な解釈がしやすく標準的な活性化関数として多用されてきました。",
+      "しかし、勾配消失問題などの課題から、最近のネットワークではReLUなど他の関数が使われることも増えています。"
+    ],
+    "originalSlideText": "Sigmoid Funktion:\n– Wurden lange als Standardfunktion genutzt\n– Steigungsmaß alpha kann modifiziert werden\nφ^sig_α(v) = 1 / (1 + exp(-αv))",
+    "explanationImage": "lecture01/lecture09_ex05.png",
+    "questionImage": ""
+  },
+  {
+    "id": 15,
+    "questionDe": "(s21) Was ist die Rectifier (ReLU) Funktion und wie funktioniert sie?",
+    "questionJa": "Rectifier（ReLU）関数とは何で、どのように機能するか？",
+    "answerDe": [
+      "ReLU steht für 'rectified linear activation unit'",
+      "Abwandlung der stückweisen linearen Funktion",
+      "Nur der positive Teil des Inputs wird linear abgebildet",
+      "Ausgabe ist max(0, v)"
+    ],
+    "answerJa": [
+      "ReLUは『整流線形活性化単位』の略",
+      "区分的線形関数の一種の変形",
+      "入力の正の部分のみを線形にマッピングする",
+      "出力は max(0, v) で表される"
+    ],
+    "explanationDe": [
+      "Die ReLU-Funktion gibt für negative Eingaben 0 aus und für positive Eingaben den Wert der Eingabe selbst zurück.",
+      "Das heißt, für v < 0 ist die Ausgabe 0, und für v ≥ 0 ist die Ausgabe gleich v.",
+      "Diese Funktion ist einfach und effektiv, da sie Nichtlinearität einführt, aber gleichzeitig Rechenaufwand gering hält.",
+      "ReLU ist eine der beliebtesten Aktivierungsfunktionen in modernen neuronalen Netzwerken, da sie das Problem des verschwindenden Gradienten verringert.",
+      "Beispiel: Für v = -2 ist die Ausgabe 0, für v = 3 ist die Ausgabe 3."
+    ],
+    "explanationJa": [
+      "ReLU関数は、入力が負のときは出力を0にし、正のときは入力値そのものを出力します。",
+      "つまり、v < 0 の場合は出力0、v ≥ 0 の場合は出力vとなります。",
+      "この関数は単純で計算コストが低く、非線形性を持たせるのに効果的です。",
+      "現代のニューラルネットワークで広く使われている活性化関数で、勾配消失問題の緩和に役立っています。",
+      "例：v = -2 のときは出力0、v = 3 のときは出力3となります。"
+    ],
+    "originalSlideText": "Rectifier (ReLU) Funktion\n– rectified linear activation unit\n– Abwandlung der stückweisen linearen Funktion\n– Nur positiver Teil wird linear abgebildet\nφ(v) = max(0, v)",
+    "explanationImage": "lecture01/lecture09_ex06.png",
+    "questionImage": ""
+  },
+  {
+    "id": 16,
+    "questionDe": "(s22) Welche Eigenschaften hat ein Outputneuron in einem neuronalen Netz und wie bildet es eine Trennlinie zwischen zwei Klassen?",
+    "questionJa": "ニューラルネットの出力ニューロンにはどんな特徴があり、2つのクラスの境界線をどのように作るか？",
+    "answerDe": [
+      "Hat einen Schwellwert s",
+      "Berechnet Aktivität aus Inputs und Gewichten",
+      "Nutzt Aktivierungsfunktion zur Berechnung des Outputs",
+      "Historisch wurde oft die Sprungfunktion verwendet",
+      "Erzeugt eine lineare Trennlinie zwischen zwei Klassen",
+      "Trennlinie kann als Ungleichung x2 ≥ (θ/w2) - (w1/w2) x1 dargestellt werden"
+    ],
+    "answerJa": [
+      "しきい値sを持つ",
+      "入力と重みから活性度を計算する",
+      "活性化関数を使って出力を決定する",
+      "歴史的にステップ関数（スイッチ的な活性化）が使われてきた",
+      "2つのクラスを分ける直線（線形分離境界）を作る",
+      "境界線は不等式 x2 ≥ (θ/w2) - (w1/w2) x1 として表せる"
+    ],
+    "explanationDe": [
+      "Ein Outputneuron in einem neuronalen Netz hat einen Schwellwert s, der bestimmt, ab wann das Neuron aktiviert wird.",
+      "Die Aktivität des Neurons wird aus den Eingängen und den entsprechenden Gewichten berechnet, indem die gewichtete Summe gebildet wird.",
+      "Anschließend wird eine Aktivierungsfunktion angewandt, um zu entscheiden, ob das Neuron 'feuert' (z. B. Ausgabe 1) oder nicht (Ausgabe 0).",
+      "Historisch wurde hierfür oft die Sprungfunktion (Schwellenwertfunktion) verwendet, die eine klare Trennung zwischen aktiv und inaktiv ermöglicht.",
+      "Dadurch entsteht im Eingaberaum eine lineare Trennlinie, die zwei Klassen J (Ja) und N (Nein) separiert.",
+      "Mathematisch kann man diese Trennlinie umstellen, sodass x2 abhängig von x1 durch eine lineare Gleichung oder Ungleichung beschrieben wird: x2 ≥ (θ/w2) - (w1/w2) x1."
+    ],
+    "explanationJa": [
+      "ニューラルネットの出力ニューロンは、しきい値sを持ち、これを超えると活性化されます。",
+      "入力値と重みの積の合計を計算し、その値を基に活性化関数で出力が決まります。",
+      "歴史的には、この活性化にステップ関数（スイッチのように0か1かの判断をする関数）がよく使われてきました。",
+      "この仕組みにより、入力空間において2つのクラスを分ける線形の境界線（トレーニング平面）が形成されます。",
+      "この境界線は数式で表現可能で、x2はx1の関数として x2 ≥ (θ/w2) - (w1/w2) x1 という形になります。"
+    ],
+    "originalSlideText": "Outputneuron hat:\n– Schwellwert s\n– Aktivität a aus den Inputs und Gewichten\n– Nutzt Aktivierungsfunktion, um den Output zu berechnen\n– Historisch wurde die Sprungfunktion verwendet\n– Bildet eine Trennlinie zwischen 2 Klassen\n– Umgestellt nach x2: x2 ≥ (θ/w2) - (w1/w2) x1",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 17,
+    "questionDe": "(s23) Wie bildet ein Outputneuron eine lineare Trennlinie zwischen zwei Klassen und wie sieht ein Beispiel dafür aus?",
+    "questionJa": "出力ニューロンはどのようにして2クラス間の線形分離境界を作り、具体例はどのようなものか？",
+    "answerDe": [
+      "Erzeugt eine lineare Ungleichung: w1 x1 + w2 x2 ≥ θ",
+      "Umgestellt nach x2: x2 ≥ (θ/w2) - (w1/w2) x1",
+      "Beispiel: 0.9 x1 + 0.8 x2 ≥ 0.6",
+      "Umgestellt: x2 ≥ 3/4 - (9/8) x1",
+      "Diese Ungleichung beschreibt die Trennlinie, die die Klassen J und N separiert"
+    ],
+    "answerJa": [
+      "線形不等式 w1 x1 + w2 x2 ≥ θ を用いて境界線を作る",
+      "x2について整理すると x2 ≥ (θ/w2) - (w1/w2) x1 となる",
+      "具体例：0.9 x1 + 0.8 x2 ≥ 0.6",
+      "整理すると x2 ≥ 3/4 - (9/8) x1 となる",
+      "この不等式がクラスJとNを分ける線形境界線を表す"
+    ],
+    "explanationDe": [
+      "Das Outputneuron erzeugt eine lineare Entscheidung anhand der gewichteten Summe seiner Eingänge verglichen mit dem Schwellwert θ.",
+      "Mathematisch lässt sich die Entscheidung als Ungleichung darstellen, die eine Gerade im zweidimensionalen Raum definiert.",
+      "Durch Umstellen der Gleichung nach x2 erhält man eine Funktion, die auf der x1-Achse basiert und angibt, ab welchem Wert x2 zur Klasse J oder N gehört.",
+      "Im Beispiel mit den Gewichten 0.9 und 0.8 und dem Schwellwert 0.6 beschreibt die Gleichung die Trennlinie zwischen den Klassen.",
+      "Im Diagramm trennt die Linie die Klasse J (oberhalb) von Klasse N (unterhalb)."
+    ],
+    "explanationJa": [
+      "出力ニューロンは、入力に重みをかけた合計としきい値θを比較して線形な判断をします。",
+      "この判断は2次元空間上の直線（線形不等式）で表されます。",
+      "不等式をx2について整理すると、x1の関数として表現され、どの値からx2がクラスJまたはNに分類されるかがわかります。",
+      "例として、重み0.9と0.8、しきい値0.6の場合、この不等式がクラスの分割線となります。",
+      "図では、この線がクラスJ（上側）とクラスN（下側）を分けています。"
+    ],
+    "originalSlideText": "Lineare Trennlinie:\nw1 x1 + w2 x2 ≥ θ\nUmgestellt nach x2:\nx2 ≥ (θ/w2) - (w1/w2) x1\nBeispiel:\n0.9 x1 + 0.8 x2 ≥ 0.6\nx2 ≥ 3/4 - (9/8) x1",
+    "explanationImage": "lecture01/lecture09_ex07.png",
+    "questionImage": ""
+  },
+  {
+    "id": 18,
+    "questionDe": "(s24) Wie können neuronale Netze die logischen Funktionen AND, OR, NAND und NOR durch lineare Trennung darstellen?",
+    "questionJa": "ニューラルネットはAND、OR、NAND、NORの論理関数をどのように線形分離で表現できるか？",
+    "answerDe": [
+      "AND: Punkte, bei denen beide Eingänge 1 sind, werden durch eine Gerade getrennt",
+      "OR: Punkte, bei denen mindestens ein Eingang 1 ist, liegen auf einer Seite der Trennlinie",
+      "NAND: Umkehrung von AND, auch linear trennbar",
+      "NOR: Umkehrung von OR, ebenfalls linear trennbar"
+    ],
+    "answerJa": [
+      "AND: 両方の入力が1の点が直線で区切られている",
+      "OR: どちらか一方の入力が1の点がトレーニング線の一側にある",
+      "NAND: ANDの否定で、こちらも線形分離可能",
+      "NOR: ORの否定で、こちらも線形分離可能"
+    ],
+    "explanationDe": [
+      "Neuronale Netze mit einem einzelnen Perzeptron können einfache logische Funktionen wie AND, OR, NAND und NOR modellieren.",
+      "Diese Funktionen sind linear trennbar, das heißt, es gibt eine Gerade, die die verschiedenen Ausgabewerte (0 oder 1) sauber trennt.",
+      "Im Diagramm repräsentieren schwarze Punkte die Klasse 1 und weiße Punkte die Klasse 0.",
+      "Die Trennlinien in den Abbildungen zeigen, wie die Eingabepaare (x1, x2) entsprechend der logischen Funktion klassifiziert werden."
+    ],
+    "explanationJa": [
+      "単純なPerceptronは、AND、OR、NAND、NORといった基本的な論理関数を表現できます。",
+      "これらの関数は線形分離可能であり、異なるクラス（0または1）を分ける直線が存在します。",
+      "図では、黒丸がクラス1（True）、白丸がクラス0（False）を示しています。",
+      "トレーニング線は入力ペア（x1、x2）を論理関数に基づいて分類していることを示しています。"
+    ],
+    "originalSlideText": "AND, OR, NAND, NOR als lineare Trennungsfunktionen",
+    "explanationImage": "lecture01/lecture09_ex08.png",
+    "questionImage": ""
+  },
+  {
+    "id": 19,
+    "questionDe": "(s25) Wie funktioniert das Lernverfahren in neuronalen Netzen und welche Voraussetzungen gibt es?",
+    "questionJa": "ニューラルネットの学習手法はどのように動作し、どんな前提条件があるか？",
+    "answerDe": [
+      "Gegeben ist ein Trainingsdatensatz mit zwei disjunkten Mengen x und y",
+      "Gesucht wird eine trennende Hyperebene basierend auf den Gewichten",
+      "Die Hyperebene teilt die Daten in die Klassen x und y",
+      "Problem: x und y müssen linear trennbar sein"
+    ],
+    "answerJa": [
+      "2つの互いに重ならないデータ集合xとyを含む訓練データセットが与えられる",
+      "重みに基づいて、これらを分ける境界となる超平面を探す",
+      "超平面はxとyの2つのクラスを分割する",
+      "前提条件としてxとyは線形に分離可能である必要がある"
+    ],
+    "explanationDe": [
+      "Beim Lernverfahren eines neuronalen Netzes wird ein Trainingsdatensatz verwendet, der in zwei klare Gruppen (Klassen) aufgeteilt ist, beispielsweise Klasse x und Klasse y.",
+      "Das Ziel ist es, eine Hyperebene zu finden – eine Art Grenze – die diese beiden Klassen voneinander trennt, so dass alle Punkte von Klasse x auf einer Seite und alle von Klasse y auf der anderen Seite liegen.",
+      "Diese Hyperebene wird durch die Gewichtungen des neuronalen Netzes definiert und ist entscheidend dafür, wie das Netz neue, unbekannte Daten klassifiziert.",
+      "Wichtig ist dabei, dass die beiden Klassen tatsächlich linear trennbar sind, das heißt, dass es möglich ist, sie durch eine gerade Linie oder Fläche ohne Überschneidungen zu trennen.",
+      "Wenn die Daten nicht linear trennbar sind, reicht dieses einfache Lernverfahren nicht aus und es werden komplexere Modelle benötigt."
+    ],
+    "explanationJa": [
+      "ニューラルネットの学習では、まず訓練データセットが2つのはっきり分かれたグループ（クラス）、例えばクラスxとクラスyに分けられています。",
+      "学習の目的は、この2つのクラスを分ける境界線や境界面（超平面）を見つけることです。この境界により、クラスxのデータは一方の側に、クラスyのデータはもう一方の側に配置されます。",
+      "この境界線はニューラルネットの重みによって決まり、この重みを調整することで新しい未知のデータを正しく分類できるようになります。",
+      "重要なのは、2つのクラスが線形に分離可能であることです。つまり、直線や平面できれいに分けられる状態でなければ、この学習方法はうまく機能しません。",
+      "もし線形分離できない場合は、この単純な方法では対応できず、より複雑なモデルや多層ネットワークが必要になります。"
+    ],
+    "originalSlideText": "Lernverfahren\n– Gegeben ist ein Trainingsdatensatz\n  – Daten sind disjunkt in 2 Menge x und y aufgeteilt\n  – Gesucht wird eine trennende Hyperebene\n  – Basiert auf den Gewichten\n  – Teilt x und y auf\n– Problem: x und y müssen linear trennbar sein!",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 20,
+    "questionDe": "(s26) Wie funktioniert das Lernverfahren der Delta Regel in neuronalen Netzen?",
+    "questionJa": "ニューラルネットのデルタ学習規則の学習手法はどのように動作するか？",
+    "answerDe": [
+      "Beim Training werden Eingabedaten dem Netz gezeigt",
+      "Der korrekte Output für Beispiele ist bekannt (supervised learning)",
+      "Vergleich zwischen Soll- und Ist-Zustand im Output",
+      "Bei Abweichungen werden Schwellwert und Gewichte angepasst",
+      "Anpassung nur bei differenzierbaren Aktivierungsfunktionen möglich",
+      "Gewichts- und Schwellwertanpassung kann nach jedem Input oder nach jeder Epoche erfolgen",
+      "Epoche = kompletter Durchlauf aller Trainingsdaten"
+    ],
+    "answerJa": [
+      "訓練時にネットに入力データを与える",
+      "入力データに対する正しい出力が既知（教師あり学習）",
+      "実際の出力と正解を比較する",
+      "誤差があれば重みとしきい値を調整する",
+      "微分可能な活性化関数にのみ適用可能",
+      "重みの調整は入力ごと、またはエポックごとに行える",
+      "エポックとは全訓練データの1回分の処理"
+    ],
+    "explanationDe": [
+      "Die Delta Regel ist ein grundlegendes Lernverfahren für neuronale Netze, das im überwachten Lernen eingesetzt wird.",
+      "Während des Trainings werden dem Netz Eingabebeispiele präsentiert, deren korrekte Ausgaben (Labels) bekannt sind.",
+      "Das Netz berechnet eine Ausgabe, die mit der Soll-Ausgabe verglichen wird. Bei Abweichungen wird ein Fehler ermittelt.",
+      "Dieser Fehler wird genutzt, um die Gewichte und den Schwellwert des Neurons so anzupassen, dass der Fehler minimiert wird.",
+      "Die Methode funktioniert nur, wenn die Aktivierungsfunktion differenzierbar ist, da der Gradient zur Anpassung berechnet werden muss.",
+      "Die Anpassung kann nach jedem einzelnen Input-Datum erfolgen (Online-Lernen) oder nach der Verarbeitung aller Trainingsdaten (Batch-Lernen) – ein kompletter Durchlauf wird Epoche genannt.",
+      "Durch diesen Prozess lernt das Netz, seine Parameter so zu verändern, dass die Ausgaben immer besser zu den gewünschten Ergebnissen passen."
+    ],
+    "explanationJa": [
+      "デルタ学習規則は、教師あり学習で使われるニューラルネットの基本的な学習方法です。",
+      "訓練では、入力とそれに対応する正解出力をネットに与えます。",
+      "ネットの出力と正解を比較し、誤差を計算します。",
+      "この誤差に基づいて、ニューロンの重みやしきい値を調整し、誤差が小さくなるようにします。",
+      "この方法は活性化関数が微分可能であることが条件で、誤差の微分を使って重みを更新します。",
+      "重みの更新は1つ1つの入力ごとに行うことも、全データの1回分の処理（エポック）ごとにまとめて行うこともできます。",
+      "こうした調整を繰り返すことで、ネットは徐々に望ましい出力に近づけることを学習します。"
+    ],
+    "originalSlideText": "Lernverfahren Delta Regel\n– Beim Training werden die Daten dem Netz als Input gezeigt\n– Output für die Beispiele bekannt (supervised)\n– Vergleich von Soll und Ist Zustand im Output\n– Bei Abweichung werden Schwellwert und Gewichte adaptiert\n– Nur auf differenzierbare Aktivierungsfunktionen anwendbar\n– Anpassung nach jedem Input oder nach jeder Epoche möglich\n– Epoche = Ein Durchlauf aller Trainingsdaten",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 21,
+    "questionDe": "(s27) Wie funktioniert die Delta-Regel für das Lernen in neuronalen Netzen und was bedeuten die einzelnen Terme in der Formel?",
+    "questionJa": "ニューラルネットの学習におけるデルタ則はどのように動作し、式の各項は何を意味するか？",
+    "answerDe": [
+      "Δw_j_i = α (t_j - y_j) g'(h_j) x_i beschreibt die Gewichtsanpassung",
+      "α ist die konstante Lernrate, die bestimmt, wie stark die Gewichte angepasst werden",
+      "g(x) ist die Aktivierungsfunktion, g' deren Ableitung",
+      "t_j ist die Sollausgabe (gewünschtes Ziel)",
+      "y_j ist die Ist-Ausgabe des Neurons",
+      "h_j ist die gewichtete Summe aller Eingaben: h_j = Σ x_i w_j_i",
+      "x_i ist der Input i",
+      "Die gleiche Formel wird auch für die Anpassung des Schwellwertes verwendet"
+    ],
+    "answerJa": [
+      "Δw_j_i = α (t_j - y_j) g'(h_j) x_i は重みの更新を表す式",
+      "αは学習率で、重みの調整の大きさを決める定数",
+      "g(x)は活性化関数、g'はその微分（傾き）",
+      "t_jは目標となる正しい出力",
+      "y_jは実際にニューロンが出した出力",
+      "h_jは入力に重みをかけて合計した値（h_j = Σ x_i w_j_i）",
+      "x_iはi番目の入力信号",
+      "同じ式がしきい値の調整にも使われる"
+    ],
+    "explanationDe": [
+      "Die Delta-Regel gibt an, wie die Gewichte in einem neuronalen Netz während des Trainings angepasst werden, um den Fehler zwischen Soll- und Ist-Ausgabe zu minimieren.",
+      "Der Term (t_j - y_j) ist der Fehler zwischen gewünschter und tatsächlicher Ausgabe des Neurons.",
+      "Die Ableitung der Aktivierungsfunktion g'(h_j) gibt an, wie empfindlich das Neuron auf Änderungen der gewichteten Summe h_j reagiert.",
+      "Die Lernrate α bestimmt, wie schnell die Gewichte geändert werden – zu große Werte können instabil machen, zu kleine Werte verzögern das Lernen.",
+      "Die Eingabe x_i beeinflusst, wie stark das Gewicht w_j_i angepasst wird; wenn der Eingangswert null ist, ändert sich das Gewicht nicht.",
+      "Dieser Prozess wird für alle Gewichte wiederholt und sorgt so dafür, dass das Netz seine Ausgabe Schritt für Schritt verbessert.",
+      "Zusätzlich wird die gleiche Methode verwendet, um den Schwellwert des Neurons anzupassen."
+    ],
+    "explanationJa": [
+      "デルタ則は、ニューラルネットの訓練中に重みをどのように調整して誤差を減らすかを示す式です。",
+      "(t_j - y_j) は、正解の出力と実際の出力の差（誤差）を表します。",
+      "活性化関数の微分 g'(h_j) は、ニューロンの出力が入力の重み付き和 h_j の変化にどれだけ敏感かを示します。",
+      "学習率 α は重みの変化の大きさを決める定数で、大きすぎると学習が不安定になり、小さすぎると学習が遅くなります。",
+      "入力 x_i は、その入力がどれだけ重みの調整に影響するかを示します。入力が0ならば、その重みは変わりません。",
+      "この処理は全ての重みで繰り返され、ネットワークが少しずつ正しい出力に近づくよう学習します。",
+      "さらに同じ式を使って、ニューロンのしきい値（バイアス）も調整します。"
+    ],
+    "originalSlideText": "Lernverfahren Delta Regel\nΔw_j_i = α (t_j - y_j) g'(h_j) x_i\nAlpha: konstante Lernrate\ng(x) ist die Aktivierungsfunktion\ng' ist die Ableitung von g\nt_j ist die Sollausgabe\ny_j ist die Istausgabe\nh_j = Σ x_i w_j_i\ny_j = g(h_j)\nDie gleiche Formel wird auf den Schwellwert angewendet",
+    "explanationImage": "lecture01/lecture09_ex09.png",
+    "questionImage": ""
+  },
+  {
+  "id": 22,
+  "questionDe": "(s28) Wie wird der Schwellwert im Lernverfahren der Delta Regel behandelt?",
+  "questionJa": "デルタ学習則ではしきい値をどのように扱うか？",
+  "answerDe": [
+    "Der Schwellwert θ wird als ein zusätzliches Gewicht betrachtet",
+    "Dieses zusätzliche Gewicht wird mit einem konstanten Eingang x_0 = 1 multipliziert",
+    "Dadurch kann die Ungleichung umgeschrieben werden als Summe aller gewichteteten Eingänge minus θ ≥ 0",
+    "Das ermöglicht eine einheitliche Behandlung von Gewicht und Schwellwert bei der Gewichtsanpassung"
+  ],
+  "answerJa": [
+    "しきい値θは追加の重みとして扱われる",
+    "この追加の重みは定数入力x_0 = 1に掛けられる",
+    "不等式は「すべての重み付き入力の合計－θ ≥ 0」として書き換えられる",
+    "これにより、重みとしきい値を同じように調整できる"
+  ],
+  "explanationDe": [
+    "Im Lernverfahren der Delta Regel wird der Schwellwert θ nicht separat behandelt, sondern als ein spezielles Gewicht w_0 interpretiert.",
+    "Dieses Gewicht w_0 wird mit einem fixen Eingang x_0 = 1 multipliziert, so dass es Teil der gewichteten Summe der Eingaben wird.",
+    "Dadurch kann man die ursprüngliche Ungleichung ∑ w_i x_i ≥ θ in die Form ∑ w_i x_i - θ ≥ 0 umschreiben.",
+    "Mit dieser Umformung ist der Schwellwert in die Gewichtsanpassung integriert, was die Berechnung und Anpassung vereinfacht."
+  ],
+  "explanationJa": [
+    "デルタ学習則では、しきい値θは別扱いせず、特別な重みw_0として扱います。",
+    "この重みw_0は定数入力x_0 = 1にかけられ、入力の重み付き和の一部となります。",
+    "これにより、元の不等式 ∑ w_i x_i ≥ θ を ∑ w_i x_i - θ ≥ 0 という形に変形できます。",
+    "この変形により、しきい値も他の重みと同じように調整可能になり、計算がシンプルになります。"
+  ],
+  "originalSlideText": "Lernverfahren Delta Regel\nDer Schwellwert ist damit auch nur ein Gewicht!\nΣ w_i x_i ≥ θ\nΣ w_i x_i - θ ≥ 0\nmit x_0 = 1, w_0 = -θ",
+  "explanationImage": "lecture01/lecture09_ex10.png",
+  "questionImage": ""
+},
+{
+  "id": 23,
+  "questionDe": "(s29) Wie funktioniert die Delta-Regel Lernverfahren anhand eines Beispiels mit initialem Schwellwert und Lernfaktor?",
+  "questionJa": "デルタ学習則の学習手順を、初期しきい値と学習率を用いた具体例で説明してください。",
+  "answerDe": [
+    "Initialer Schwellwert ist -1",
+    "Lernfaktor (Alpha) ist 0.2",
+    "Trainingsbeispiele enthalten alle Kombinationen von Eingang1 und Eingang2 mit zugehörigem Ausgang",
+    "Gewichte (ω0, ω1, ω2) werden Schritt für Schritt angepasst",
+    "Die Tabellen zeigen die Gewichtswerte für jede Kombination von Eingängen im Verlauf des Trainings"
+  ],
+  "answerJa": [
+    "初期しきい値は -1 に設定されている",
+    "学習率（アルファ）は 0.2",
+    "訓練例は入力1と入力2のすべての組み合わせと対応する出力を含む",
+    "重み（ω0, ω1, ω2）は訓練の進行に従って逐次調整される",
+    "表は各入力組み合わせに対する重みの変化を示している"
+  ],
+  "explanationDe": [
+    "In diesem Beispiel wird das Lernverfahren der Delta-Regel mit einem initialen Schwellwert von -1 und einem Lernfaktor von 0.2 demonstriert.",
+    "Die Trainingsdaten umfassen alle Kombinationen von zwei Eingängen (0 und 1) mit den jeweiligen Soll-Ausgaben.",
+    "Die Gewichte ω0, ω1 und ω2 werden jeweils für jeden Trainingsfall angepasst, um die Differenz zwischen Soll- und Ist-Ausgabe zu minimieren.",
+    "Die beiden Tabellen zeigen die Entwicklung der Gewichte für alle vier möglichen Eingangskombinationen während des Trainings.",
+    "Dieses Beispiel verdeutlicht, wie das neuronale Netz durch schrittweise Anpassung der Gewichte lernt, die korrekten Ausgaben zu erzeugen."
+  ],
+  "explanationJa": [
+    "この例では、デルタ学習則を使い、初期しきい値を -1、学習率を0.2に設定しています。",
+    "訓練データは、2つの入力（0または1）の全組み合わせと、それに対応する正しい出力を含んでいます。",
+    "重みω0、ω1、ω2は各訓練データごとに更新され、正解出力との誤差を小さくするよう調整されます。",
+    "2つの表は、訓練中に各入力パターンに対して重みがどのように変化していくかを示しています。",
+    "この具体例によって、ニューラルネットがどのように重みの調整を通して学習していくかがわかりやすく示されています。"
+  ],
+  "originalSlideText": "Lernverfahren Delta Regel\nInitialer Schwellwert -1\nLernfaktor 0.2\nEingangsausgabe-Tabelle\nGewichtstabelle vor und nach Training",
+  "explanationImage": "lecture01/lecture09_ex11.png",
+  "questionImage": ""
+},
+{
+  "id": 24,
+  "questionDe": "(s30) Was besagt der Satz über Konvergenz und Korrektheit der Delta Regel und welche Probleme können dabei auftreten?",
+  "questionJa": "デルタ則の収束性と正確性に関する定理は何を示し、どのような問題が起こりうるか？",
+  "answerDe": [
+    "Wenn ein Perzeptron eine Klasseneinteilung lernen kann, dann lernt es diese mit der Delta Regel in endlich vielen Schritten",
+    "Problem: Man kann nicht sicher sagen, ob genug Epochen gelernt wurden oder das Problem nicht erlernbar ist",
+    "Es gibt keine obere Schranke für die Lerndauer",
+    "Es besteht die Gefahr von Overfitting"
+  ],
+  "answerJa": [
+    "もしパーセプトロンがあるクラス分けを学習可能ならば、デルタ則を使って有限のステップ数でその学習を終えることができる",
+    "ただし、十分なエポック数を学習したのか、それともその問題自体が学習不可能なのかを途中で判断することはできない",
+    "学習にかかる時間の上限は存在しない",
+    "また、過学習（オーバーフィッティング）の問題もある"
+  ],
+  "explanationDe": [
+    "Der Satz zur Konvergenz und Korrektheit der Delta Regel garantiert, dass ein Perzeptron jede linear trennbare Klassifikation in einer endlichen Anzahl von Schritten lernen kann.",
+    "Das bedeutet, wenn das Problem lösbar ist, wird das Netz mit genügend Trainingsschritten die richtige Klassifikation erreichen.",
+    "Das Problem ist jedoch, dass man während des Trainings nicht sicher feststellen kann, ob bereits genügend Epochen absolviert wurden oder ob das Problem überhaupt nicht linear trennbar und damit nicht lösbar ist.",
+    "Folglich gibt es keine garantierte obere Grenze für die Trainingsdauer, was das Training potenziell sehr lang machen kann.",
+    "Außerdem kann es passieren, dass das Netz zu lange trainiert und dabei die Trainingsdaten zu genau lernt, was als Overfitting bezeichnet wird und die Generalisierung auf neue Daten verschlechtert."
+  ],
+  "explanationJa": [
+    "デルタ則の収束性と正確性に関する定理は、パーセプトロンが線形に分離可能な問題に対して、有限のステップで正しいクラス分けを学習できることを保証します。",
+    "つまり、問題が解けるものであれば、十分な学習回数を経てネットワークは正しい分類結果を出すようになります。",
+    "しかし、学習中にどこまで学習を進めれば十分なのか、あるいは問題自体が線形分離できず学習不可能なのかを判別することはできません。",
+    "そのため、学習時間に上限がなく、学習が長期化する可能性があります。",
+    "さらに、学習が進みすぎると、訓練データに過剰適合（オーバーフィッティング）し、新しいデータに対する性能が低下するリスクもあります。"
+  ],
+  "originalSlideText": "Lernverfahren Delta Regel\nKovergenz und Korrektheit\nSatz: Wenn ein Perzeptron eine Klasseneinteilung lernen kann, dann lernt es diese mit der Delta Regel in endlich vielen Schritten\nProblem: Falls das Perzeptron das Modell nicht erlernt, kann man nicht entscheiden:\n- Ob genügend Epochen gelernt wurde oder\n- Das Problem nicht erlernbar ist\n-> Es gibt keine obere Schranke für die Lerndauer\n-> Overfitting Problematik",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 25,
+  "questionDe": "(s31) Wie lässt sich das Lernverfahren der Delta Regel geometrisch interpretieren?",
+  "questionJa": "デルタ学習則の学習手順は幾何学的にどのように解釈できるか？",
+  "answerDe": [
+    "Die Gewichte werden als Vektor im Merkmalsraum betrachtet",
+    "Anfangssituation: Gewichtsvektor trennt die Klassen nicht korrekt",
+    "Bei jeder Korrektur wird der Gewichtsvektor so angepasst, dass er näher an die korrekte Trennung heranrückt",
+    "Dies wird durch Addition eines korrigierenden Vektors (basierend auf dem Input) visualisiert",
+    "Nach mehreren Korrekturen nähert sich der Gewichtsvektor der optimalen Trennung an"
+  ],
+  "answerJa": [
+    "重みは特徴空間内のベクトルとして捉えられる",
+    "初期状態では重みベクトルはクラスを正しく分離していない",
+    "修正のたびに、重みベクトルは正しい分離に近づくように調整される",
+    "調整は入力に基づく補正ベクトルの加算として表現される",
+    "複数回の修正を経て、重みベクトルは最適な分離線に近づく"
+  ],
+  "explanationDe": [
+    "Das Lernverfahren der Delta Regel kann geometrisch interpretiert werden, indem man die Gewichte als Vektor im Merkmalsraum betrachtet.",
+    "Anfangs trennt der Gewichtsvektor die Datenpunkte möglicherweise nicht korrekt, das heißt, die Trennlinie ist nicht optimal.",
+    "Jede Korrektur durch das Lernverfahren entspricht einer Verschiebung des Gewichtsvektors in Richtung eines Vektors, der auf dem aktuellen Eingabevektor basiert.",
+    "Diese Verschiebung bewegt die Trennlinie näher an die korrekte Trennung der Klassen.",
+    "Nach mehreren solcher Anpassungen konvergiert der Gewichtsvektor zu einer Position, die eine gute Trennung zwischen den Klassen ermöglicht."
+  ],
+  "explanationJa": [
+    "デルタ学習則は、重みを特徴空間内のベクトルとして考えることで幾何学的に理解できます。",
+    "最初は重みベクトルがデータを正しく分離していない状態です。",
+    "学習のたびに、入力データに基づく補正ベクトルを重みベクトルに加えることで、分離線が正しい方向へ動きます。",
+    "この操作を繰り返すことで、重みベクトルはクラスを適切に分ける位置に近づいていきます。",
+    "つまり、デルタ則の学習は重みベクトルの空間内での調整と移動として捉えることができます。"
+  ],
+  "originalSlideText": "Lernverfahren Delta Regel\nGeometrische Interpretation nach Rojas",
+  "explanationImage": "lecture01/lecture09_ex12.png",
+  "questionImage": ""
+},
+{
+  "id": 26,
+  "questionDe": "(s25-30) Wie funktioniert das Lernverfahren der Delta Regel im Detail, welche Rolle spielt der Schwellwert und welche Probleme können dabei auftreten?",
+  "questionJa": "（試験類題）デルタ学習則の大まかな流れはどうなっているか、しきい値の役割は何か、またどんな問題点があるかを教えてください。",
+  "answerDe": [
+    "Das Lernverfahren zeigt dem Netz Trainingsdaten mit bekannten korrekten Ausgaben (supervised learning).",
+    "Das Netz berechnet eine Ausgabe basierend auf aktuellen Gewichten und dem Schwellwert.",
+    "Die Differenz zwischen Soll- und Ist-Ausgabe wird berechnet (Fehler).",
+    "Gewichte und Schwellwert werden angepasst, um den Fehler zu minimieren, mithilfe der Ableitung der Aktivierungsfunktion und einem Lernfaktor.",
+    "Der Schwellwert wird als zusätzliches Gewicht behandelt, multipliziert mit einem konstanten Eingang (z.B. 1).",
+    "Dieser Prozess wird wiederholt (Epochen) bis das Netz gut generalisiert oder ein Abbruchkriterium erreicht wird.",
+    "Probleme: Es ist oft unklar, ob genug trainiert wurde oder das Problem nicht lösbar ist.",
+    "Lernzeit hat keine obere Grenze, und es besteht Risiko von Overfitting."
+  ],
+  "answerJa": [
+    "デルタ学習則では、正解ラベル付きの訓練データをネットに与えます（教師あり学習）。",
+    "ネットは現在の重みとしきい値を使い出力を計算します。",
+    "出力の目標値（正解）との差（誤差）を求めます。",
+    "誤差を減らすために、活性化関数の微分や学習率を用いて重みとしきい値を調整します。",
+    "しきい値は定数入力と結びついた一つの重みとして扱われます。",
+    "この調整を繰り返し（エポック）、十分に性能が出るか停止条件に達するまで続けます。",
+    "問題点として、十分に学習したのか、あるいは問題自体が解決不能なのか途中で判断が難しいことがあります。",
+    "学習時間に上限はなく、過学習のリスクもあります。"
+  ],
+  "explanationDe": [
+    "Das Lernverfahren der Delta Regel ist ein iterativer Prozess im überwachten Lernen, bei dem das Netz wiederholt Eingabedaten mit bekannten Ausgaben erhält.",
+    "Zu Beginn berechnet das Netz eine Ausgabe basierend auf aktuellen Gewichten und dem Schwellwert, welcher als ein spezielles Gewicht mit einem konstanten Eingang betrachtet wird.",
+    "Die Differenz zwischen der berechneten Ausgabe und der korrekten Zielausgabe ergibt den Fehler.",
+    "Dieser Fehler wird genutzt, um Gewichte und Schwellwert schrittweise zu korrigieren. Die Anpassung erfolgt mithilfe der Ableitung der Aktivierungsfunktion, was ermöglicht, den Fehler effizient zu minimieren.",
+    "Der Lernprozess wird über mehrere Durchläufe (Epochen) wiederholt, wobei das Netz seine Parameter so verändert, dass die Vorhersagen immer genauer werden.",
+    "Ein praktisches Problem ist jedoch, dass es oft schwierig ist zu bestimmen, wann das Netz ausreichend trainiert ist oder ob das Problem überhaupt lösbar ist.",
+    "Es gibt keine festgelegte obere Grenze für die Trainingsdauer, was zu sehr langen Trainingszeiten führen kann.",
+    "Zudem besteht das Risiko des Overfittings, bei dem das Netz die Trainingsdaten zu genau lernt und dadurch an Generalisierungsfähigkeit verliert."
+  ],
+  "explanationJa": [
+    "デルタ学習則は、教師あり学習における反復的なプロセスで、ネットワークに正解ラベル付きの入力データを何度も提示します。",
+    "ネットワークは現在の重みとしきい値（しきい値は定数入力に結び付けられた特別な重みとみなす）を使って出力を計算します。",
+    "計算された出力と正しい目標出力との差が誤差となります。",
+    "この誤差を活性化関数の微分を用いて効果的に減らすために、重みとしきい値を少しずつ修正します。",
+    "この調整作業を何度も繰り返し（エポック）、ネットワークはより正確な予測ができるように学習していきます。",
+    "しかし、どの時点で十分に学習できたか、あるいはそもそも問題が解けるものか途中で判断するのは難しい場合があります。",
+    "学習時間には上限がなく、長時間の学習になる可能性があります。",
+    "さらに、訓練データに過剰に適合してしまうオーバーフィッティングのリスクも存在します。"
+  ],
+  "originalSlideText": "Lernverfahren Delta Regel\n– Beim Training werden die Daten dem Netz als Input gezeigt\n– Output für die Beispiele bekannt (supervised)\n– Vergleich von Soll und Ist Zustand im Output\n– Bei Abweichung werden Schwellwert und Gewichte adaptiert\n– Nur auf differenzierbare Aktivierungsfunktionen anwendbar\n– Anpassung nach jedem Input oder nach jeder Epoche möglich\n– Epoche = Ein Durchlauf aller Trainingsdaten\n\nLernverfahren Delta Regel\nDer Schwellwert ist damit auch nur ein Gewicht!\n\nSatz: Wenn ein Perzeptron eine Klasseneinteilung lernen kann, dann lernt es diese mit der Delta Regel in endlich vielen Schritten\nProblem: Falls das Perzeptron das Modell nicht erlernt, kann man nicht entscheiden:\n- Ob genügend Epochen gelernt wurde oder\n- Das Problem nicht erlernbar ist\n-> Es gibt keine obere Schranke für die Lerndauer\n-> Overfitting Problematik",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 27,
+  "questionDe": "(s32) Warum ist das XOR-Problem mit einfachen künstlichen Neuronen nicht lösbar?",
+  "questionJa": "なぜXOR問題は単純な人工ニューロンでは解けないのか？",
+  "answerDe": [
+    "XOR ist nicht linear trennbar",
+    "Die Ungleichungen für die Gewichte widersprechen sich",
+    "Kein Satz von Gewichten und Schwellwert kann alle Bedingungen gleichzeitig erfüllen",
+    "Deshalb kann ein einzelnes künstliches Neuron das XOR-Problem nicht lösen"
+  ],
+  "answerJa": [
+    "XOR問題は線形分離不可能である",
+    "重みとしきい値に関する不等式が矛盾している",
+    "どんな重みとしきい値の組み合わせも全ての条件を満たせない",
+    "そのため単一の人工ニューロンではXOR問題を解けない"
+  ],
+  "explanationDe": [
+    "Das XOR-Problem zeigt eine Funktion, bei der die Ausgabe 1 ist, wenn genau eines der beiden Eingänge 1 ist, ansonsten 0.",
+    "Die Datenpunkte des XOR sind im zweidimensionalen Raum nicht durch eine einzige gerade Linie trennbar.",
+    "Die Bedingungen für die Gewichtung und den Schwellwert führen zu widersprüchlichen Ungleichungen, die keine Lösung zulassen.",
+    "Ein einfaches Perzeptron kann daher diese Funktion nicht modellieren, was zeigt, dass komplexere Netzwerke notwendig sind."
+  ],
+  "explanationJa": [
+    "XOR問題は、2つの入力のうちどちらか一方が1の場合に出力が1となる関数です。",
+    "この入力データは2次元空間上で直線一つでは分離できません（線形分離不可能）。",
+    "重みやしきい値の条件は矛盾した不等式となり、同時に満たすことができません。",
+    "そのため、単純なパーセプトロンではXOR問題を解決できず、より複雑なニューラルネットワークが必要となります。"
+  ],
+  "originalSlideText": "XOR Problem\nTriviales Problem ist mit künstlichen Neuronen nicht lösbar!\nw_1 x_1 + w_2 x_2 ≥ θ\nBedingungen führen zu Widerspruch",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 28,
+  "questionDe": "(s33) Was sind die Probleme und Lösungen für das XOR-Problem in künstlichen neuronalen Netzen?",
+  "questionJa": "人工ニューラルネットにおけるXOR問題の課題と解決策は何か？",
+  "answerDe": [
+    "1969 von Minsky und Papert veröffentlicht, dass künstliche Neuronen das XOR-Problem nicht lösen können",
+    "Folgerung war, dass künstliche Neuronen eine Sackgasse darstellen",
+    "Forschung zu neuronalen Netzen wurde daraufhin etwa 15 Jahre eingestellt",
+    "Lösungen sind mehrschichtige Perzeptrons (Feedforward-Netze)",
+    "Verwendung nichtlinearer Trennfunktionen"
+  ],
+  "answerJa": [
+    "1969年にミンスキーとパパートによって、単純な人工ニューロンではXOR問題を解けないことが示された",
+    "その結果、人工ニューロンは行き詰まりとみなされた",
+    "このためニューラルネットの研究は約15年間停滞した",
+    "解決策として、多層パーセプトロン（フィードフォワードネットワーク）が提案された",
+    "非線形の分離関数を用いることで問題を解決"
+  ],
+  "explanationDe": [
+    "Das XOR-Problem zeigte die Grenzen einfacher künstlicher Neuronen auf, da es nicht linear trennbar ist.",
+    "Minsky und Papert veröffentlichten 1969 diese Erkenntnis und führten daraus die Schlussfolgerung, dass künstliche Neuronen für viele Probleme nicht geeignet seien.",
+    "Diese Sichtweise führte dazu, dass die Forschung an neuronalen Netzen für etwa 15 Jahre zurückging.",
+    "Die Lösung wurde später mit der Einführung von mehrschichtigen Perzeptrons und nichtlinearen Aktivierungsfunktionen gefunden, die komplexere Muster erkennen können.",
+    "Dadurch konnten auch nicht linear trennbare Probleme wie XOR gelöst werden."
+  ],
+  "explanationJa": [
+    "XOR問題は単純な人工ニューロンの限界を示しました。XORは線形に分離できないためです。",
+    "1969年、ミンスキーとパパートはこの事実を公表し、多くの問題に対して単純な人工ニューロンは適さないと結論づけました。",
+    "この見解により、ニューラルネットの研究は約15年間停滞しました。",
+    "その後、多層パーセプトロンや非線形活性化関数の導入により、より複雑なパターンの認識が可能となりました。",
+    "これによって、XORのような線形分離不可能な問題も解決できるようになりました。"
+  ],
+  "originalSlideText": "XOR Problem\n1969 publiziert von Minsky und Papert\nFolgerung: künstliche neuronen sind eine Sackgasse\nForschung wurde daraufhin ca 15 Jahre eingestellt\nLösungen sind:\nMehrschichtige Perzeptrons (Feedforward Netze)\nNichtlineare Trennfunktionen",
+  "explanationImage": "lecture01/lecture09_ex13.png",
+  "questionImage": ""
+},
+{
+  "id": 29,
+  "questionDe": "(s34) Was sind die Vorteile künstlicher neuronaler Netze?",
+  "questionJa": "人工ニューラルネットの利点は何ですか？",
+  "answerDe": [
+    "Sehr gute Mustererkennung",
+    "Verarbeitung von verrauschten, unvollständigen und widersprüchlichen Eigenschaften",
+    "Möglicher multimodaler Input (Zahlen, Farben, Töne, Sprache etc.)",
+    "Erstellt ein Modell ohne Hypothesen des Nutzers",
+    "Fehlertolerant",
+    "Einfach im Produktivbetrieb zu nutzen"
+  ],
+  "answerJa": [
+    "非常に高いパターン認識能力",
+    "ノイズがある、不完全な、矛盾する特徴の処理が可能",
+    "多様なモダリティの入力が可能（数値、色、音声、言語など）",
+    "ユーザーの仮説なしにモデルを構築できる",
+    "誤差に強い（フォールトトレラント）",
+    "実運用環境で使いやすい"
+  ],
+  "explanationDe": [
+    "Künstliche neuronale Netze zeichnen sich durch ihre Fähigkeit aus, komplexe Muster in Daten zu erkennen, selbst wenn die Daten verrauscht oder unvollständig sind.",
+    "Sie können widersprüchliche Informationen verarbeiten und sind nicht auf eine spezielle Art von Daten beschränkt, sondern können verschiedene Datentypen wie Zahlen, Farben, Töne und Sprache verarbeiten.",
+    "Ein weiterer Vorteil ist, dass sie Modelle ohne vorgegebene Hypothesen des Nutzers erstellen, was die Flexibilität erhöht.",
+    "Durch ihre Fehlertoleranz können sie auch bei Fehlern in den Daten robuste Ergebnisse liefern.",
+    "Zudem sind sie oft einfach in produktiven Systemen einzusetzen und können dort effektiv genutzt werden."
+  ],
+  "explanationJa": [
+    "人工ニューラルネットは、データに含まれる複雑なパターンを検出する能力に優れており、ノイズや欠損があっても対応可能です。",
+    "矛盾した情報も処理でき、特定のデータ形式に限定されず、数値、色、音声、言語など多様な入力に対応できます。",
+    "また、ユーザーが事前に仮説を立てなくてもモデルを自動的に構築できるため、柔軟性があります。",
+    "誤差に強く、データに誤りがあっても安定した結果を出せます。",
+    "さらに、実際の運用環境で利用しやすく、多くの分野で効果的に活用されています。"
+  ],
+  "originalSlideText": "Vorteile künstlicher neuronaler Netze\n– Sehr gute Mustererkennung\n– Verarbeitung von Inputs mit\n  – Verrauschten Eigenschaften\n  – Unvollständigen Eigenschaften\n  – Widersprüchlichen Eigenschaften\n– Möglicher multimodaler Input (Zahlen, Farben, Töne, Sprache, etc)\n– Erstellt ein Modell ohne Hypothesen des Nutzers\n– Fehlertolerant\n– Im Produktivbetrieb einfach zu nutzen",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 30,
+  "questionDe": "(s34) Nenne mindestens sechs Vorteile künstlicher neuronaler Netze und erläutere diese konkret.",
+  "questionJa": "人工ニューラルネットの利点を少なくとも6つ挙げ、それぞれ具体的に説明せよ。",
+  "answerDe": [
+    "Sehr gute Mustererkennung",
+    "Verarbeitung von verrauschten Eigenschaften",
+    "Verarbeitung von unvollständigen Eigenschaften",
+    "Verarbeitung von widersprüchlichen Eigenschaften",
+    "Möglicher multimodaler Input (Zahlen, Farben, Töne, Sprache etc.)",
+    "Erstellt ein Modell ohne Hypothesen des Nutzers",
+    "Fehlertolerant",
+    "Einfach im Produktivbetrieb zu nutzen"
+  ],
+  "answerJa": [
+    "非常に高いパターン認識能力",
+    "ノイズのある特徴の処理が可能",
+    "欠損している特徴の処理が可能",
+    "矛盾する特徴の処理が可能",
+    "多様な入力形式に対応可能（数値、色、音、言語など）",
+    "ユーザーが事前に仮説を立てなくてもモデルを自動構築可能",
+    "誤差や一部の故障に強い（フォールトトレラント）",
+    "実際の運用環境での導入・利用が容易"
+  ],
+  "explanationDe": [
+    "Künstliche neuronale Netze sind in der Lage, sehr komplexe Muster in Daten zu erkennen, was sie besonders nützlich für Anwendungen wie Bilderkennung oder Sprachverarbeitung macht.",
+    "Sie können auch mit verrauschten Daten umgehen, also wenn Messungen oder Eingaben fehlerhaft oder unscharf sind, ohne dass die Leistung stark leidet.",
+    "Unvollständige Daten, bei denen manche Merkmale fehlen, können ebenfalls verarbeitet werden, was in realen Situationen häufig vorkommt.",
+    "Auch wenn Eingabedaten widersprüchliche oder uneinheitliche Merkmale enthalten, können neuronale Netze diese Informationen oft noch sinnvoll verarbeiten.",
+    "Sie sind flexibel gegenüber verschiedenen Arten von Eingabedaten, beispielsweise Zahlenwerte, Farbwerte, akustische Signale oder natürliche Sprache.",
+    "Ein weiterer Vorteil ist, dass sie ohne explizite Vorannahmen oder Hypothesen des Anwenders lernen, das heißt sie müssen nicht vorher wissen, welche Merkmale wichtig sind.",
+    "Neuronale Netze sind fehlertolerant, das heißt sie können auch bei Fehlern oder Ausfällen einzelner Neuronen weiterhin gute Ergebnisse liefern.",
+    "Schließlich sind sie in der Praxis oft leicht einzusetzen, da viele Frameworks und Werkzeuge verfügbar sind, die eine Integration in produktive Systeme ermöglichen."
+  ],
+  "explanationJa": [
+    "人工ニューラルネットは非常に複雑なパターンを認識できるため、画像認識や音声認識などの分野で強みを発揮します。",
+    "ノイズが混入したデータでも性能を大きく落とさず処理できるため、現実の測定誤差や不完全なデータに強いです。",
+    "特徴の一部が欠けている不完全なデータも扱えるため、多様な現実環境に対応可能です。",
+    "入力データに矛盾があっても、それを含めて意味のある処理を行えることが多いです。",
+    "数値、色、音声、言語など、様々な形式の入力を扱える柔軟性があります。",
+    "ユーザーが事前にどの特徴が重要かを仮定しなくても、自動で適切なモデルを学習できる点も大きな利点です。",
+    "故障や誤差に強い設計のため、一部のニューロンに問題があっても安定した結果が得られます。",
+    "多くの開発ツールやライブラリが揃っており、実運用環境への導入や運用が容易です。"
+  ],
+  "originalSlideText": "Vorteile künstlicher neuronaler Netze\n– Sehr gute Mustererkennung\n– Verarbeitung von Inputs mit\n  – Verrauschten Eigenschaften\n  – Unvollständigen Eigenschaften\n  – Widersprüchlichen Eigenschaften\n– Möglicher multimodaler Input (Zahlen, Farben, Töne, Sprache, etc)\n– Erstellt ein Modell ohne Hypothesen des Nutzers\n– Fehlertolerant\n– Im Produktivbetrieb einfach zu nutzen",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 31,
+  "questionDe": "(s35) Nenne mindestens sechs Nachteile künstlicher neuronaler Netze und erläutere diese genauer.",
+  "questionJa": "人工ニューラルネットの欠点を少なくとも6つ挙げ、それぞれ詳しく説明せよ。",
+  "answerDe": [
+    "Lange Trainingszeiten, die sich über Monate erstrecken können",
+    "Lernerfolg ist nicht garantiert",
+    "Generalisierbarkeit auf neue Daten ist nicht garantiert",
+    "Großer Bedarf an vielen Trainingsdaten",
+    "Komplexes Blackbox-Verfahren, das schwer zu interpretieren ist",
+    "Evaluierung des Netzes ist schwierig",
+    "Anzahl der Knoten und Kanten kann schnell sehr groß werden",
+    "Löst nur das Problem mit einem Modell, gibt aber keine Hinweise auf wichtige Merkmale"
+  ],
+  "answerJa": [
+    "学習に非常に長い時間がかかることがあり、数か月に及ぶこともある",
+    "必ずしも学習が成功するとは限らない",
+    "未知のデータに対してうまく一般化できる保証がない",
+    "大量の訓練データが必要となる",
+    "複雑でブラックボックス的な手法のため、内部の動作を理解しづらい",
+    "ネットワークの評価が難しい",
+    "ノードやエッジの数が急速に増大することがある",
+    "問題を一つのモデルとして解くが、重要な特徴が何かの手がかりを与えない"
+  ],
+  "explanationDe": [
+    "Neuronale Netze können sehr lange Trainingszeiten benötigen, besonders bei großen Datenmengen und komplexen Modellen.",
+    "Ein Lernerfolg ist nicht garantiert, da das Training in lokalen Minima stecken bleiben kann.",
+    "Die Fähigkeit, auf neuen, unbekannten Daten gut zu generalisieren, ist oft nicht sichergestellt.",
+    "Zur effektiven Modellierung sind oft große Mengen an Trainingsdaten erforderlich.",
+    "Die internen Prozesse sind oft undurchsichtig, was die Interpretation der Ergebnisse erschwert.",
+    "Die Bewertung und Validierung der Modelle ist kompliziert und erfordert viel Aufwand.",
+    "Mit zunehmender Komplexität wachsen die Anzahl der Knoten (Neuronen) und Kanten (Verbindungen) schnell an, was die Berechnung teuer macht.",
+    "Das Modell löst zwar das Problem, liefert aber keine Einsichten darüber, welche Merkmale besonders wichtig sind."
+  ],
+  "explanationJa": [
+    "ニューラルネットは特に大規模データや複雑なモデルの場合、学習に非常に長い時間がかかることがあります。",
+    "学習が必ず成功するとは限らず、局所最適解に陥るリスクもあります。",
+    "未知のデータに対してうまく一般化できる保証はなく、過学習の懸念もあります。",
+    "効果的なモデルを作るためには大量の訓練データが必要になることが多いです。",
+    "内部の動作がブラックボックスで分かりづらく、結果の解釈が難しいです。",
+    "モデルの評価や検証には大きな労力が必要です。",
+    "モデルの複雑さが増すと、ノードや接続の数が急激に増え、計算コストが高くなります。",
+    "問題は解決できても、どの特徴量が重要かの情報は提供されません。"
+  ],
+  "originalSlideText": "Nachteile künstlicher neuronaler Netze\n– Lange Trainingszeiten (bis zu Monaten)\n– Lernerfolg ist nicht garantiert\n– Generalisierbarkeit ist nicht garantiert\n– Viele Daten sind notwendig\n– Komplexes Blackbox Verfahren\n– Evaluierung des Netzes ist schwierig\n– Anzahl der Knoten und Kanten kann schnell sehr groß werden\n– Löst „nur“ das Problem mit einem Modell, liefert aber keine Hinweise auf die wichtiges Features",
+  "explanationImage": "",
+  "questionImage": ""
+}
 ]

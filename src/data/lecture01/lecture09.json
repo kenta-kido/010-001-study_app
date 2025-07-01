@@ -1,30 +1,678 @@
 [
   {
     "id": 1,
-    "questionDe": "Nennen Sie drei Gründe, warum Data Mining eingesetzt wird.",
-    "questionJa": "Data Miningが用いられる理由を3つ挙げよ。",
+    "questionDe": "(s2) Was ist eine Support Vector Machine (SVM)?",
+    "questionJa": "Support Vector Machine (SVM)とはどのような手法か？",
     "answerDe": [
-      "Überbordernde Menge an Daten",
-      "Wachsende Lücke zwischen Produktion und Auswertung der Daten",
-      "Extraktion von nützlichen und versteckten Informationen"
+      "Eine Klassifikationsmethode, welche auf Stützvektoren basiert",
+      "Teilt den Raum mit einer Hyperebene",
+      "Multiple Hyperebenen sind möglich, deshalb wird die Hyperebene mit der größten Breite gewählt (Maximum margin method)"
     ],
     "answerJa": [
-      "膨大なデータ量",
-      "データ生成と分析のギャップの拡大",
-      "有用かつ隠れた情報の抽出"
+      "サポートベクター（支持ベクトル）に基づく分類手法",
+      "データを超平面（Hyperebene）で分割して分類する",
+      "複数の超平面が可能なため、最も幅の広い超平面を選ぶ（最大マージン法）"
     ],
     "explanationDe": [
-      "Data Mining wird eingesetzt, weil die heutige Datenmenge die menschliche Analysefähigkeit übersteigt.",
-      "Die überbordende Menge an Daten macht automatisierte Methoden notwendig.",
-      "Ziel ist die Extraktion von Informationen, die für Unternehmen oder Forschung wichtig sind."
+      "Die Support Vector Machine (SVM) ist eine häufig verwendete Methode zur Klassifikation, bei der es darum geht, zwei oder mehr Klassen (zum Beispiel zwei Arten von Objekten) möglichst optimal voneinander zu trennen. Die Trennung geschieht mithilfe einer sogenannten Hyperebene. Im zweidimensionalen Raum (wie in der Abbildung dargestellt) ist dies einfach eine gerade Linie, im dreidimensionalen Raum wäre es eine Fläche, und in höheren Dimensionen spricht man allgemein von einer Hyperebene.",
+      "Da es oft mehrere Hyperebenen gibt, die die Datenpunkte korrekt trennen, muss entschieden werden, welche die beste ist. Die SVM entscheidet sich für diejenige Hyperebene, bei der der Abstand (die sogenannte „Margin“) zu den am nächsten liegenden Datenpunkten beider Klassen maximal ist. Diese am nächsten liegenden Datenpunkte heißen Stützvektoren („Support Vectors“).",
+      "Ein einfaches Beispiel: Stellen wir uns vor, wir möchten Äpfel und Orangen basierend auf Farbe und Größe voneinander unterscheiden. Die SVM sucht dann eine Trennlinie (Hyperebene), bei der der Abstand zu den nächsten Äpfeln und Orangen möglichst groß ist, um zukünftige Früchte möglichst zuverlässig zu klassifizieren."
     ],
     "explanationJa": [
-      "現代のデータ量は人間の分析能力を超えているため、自動化が必要とされます。",
-      "データの増加と分析のギャップを埋めるために用いられます。",
-      "Data Miningは、ビジネスや研究に役立つ情報を抽出する手法です。"
+      "Support Vector Machine（SVM）は、機械学習の分類問題でよく使われる手法のひとつです。SVMの目的は、2つ（またはそれ以上）の異なるグループに属するデータを、最も効率的に分けることです。そのために、「超平面（Hyperebene）」という境界線を利用します。2次元では直線、3次元では平面、それ以上の次元では「超平面」と一般的に呼びます。",
+      "データを分類する際に、複数の超平面がデータを正しく分類できることがあります。そのためSVMでは、複数ある候補の中から、両方のグループの最も近いデータ点との距離（これを「マージン」と呼ぶ）が最も大きくなる超平面を選びます。このときの最も近い位置にあるデータ点が「サポートベクター（支持ベクトル）」です。",
+      "具体例を挙げて説明すると、リンゴとミカンを色とサイズに基づいて分類したい場合を考えてみましょう。SVMは「リンゴグループ」と「ミカングループ」を最も余裕をもって分けられる境界線を探します。こうすることで、まだ分類していない新しい果物が現れた際にも、より正確に分類できる可能性が高くなります。"
     ],
-    "originalSlideText": "...",
-    "questionImage": "lecture01/lecture01_q1.png",
-    "explanationImage": "lecture01/lecture01_ex1.png"
-  }
+    "originalSlideText": "SUPPORT VECTOR MACHINE\n– Klassifikationsmethode, welche auf Stützvektoren basiert\n– Teilt dabei den Raum mit einer Hyperebene\n– Aber: Multiple Hyperebenen sind gleich gut auf den Trainingsdaten\n→ Suche nach der Hyperebene mit der größten Breite\n– Maximum margin method",
+    "explanationImage": "lecture01/lecture10_ex01.png",
+    "questionImage": ""
+  },
+  {
+    "id": 2,
+    "questionDe": "(s3, s4) Welche Voraussetzungen müssen erfüllt sein, um eine SVM als linearen Klassifikator verwenden zu können?",
+    "questionJa": "SVMを線形分類器として使うにはどのような条件が必要か？",
+    "answerDe": [
+      "Klassen müssen linear separierbar sein"
+    ],
+    "answerJa": [
+      "分類対象のクラスが線形分離可能（直線で分割可能）であること"
+    ],
+    "explanationDe": [
+      "Damit eine Support Vector Machine (SVM) als linearer Klassifikator genutzt werden kann, müssen die Klassen linear separierbar sein.",
+      "Linear separierbar bedeutet, dass sich die Klassen durch eine gerade Linie (in 2D) oder eine Hyperebene (in höheren Dimensionen) eindeutig voneinander trennen lassen.",
+      "In der Praxis sind Datenpunkte aber oft komplex verteilt, sodass lineare Trennung häufig nicht möglich ist.",
+      "Daher verwendet man oft den sogenannten 'Kernel-Trick'.",
+      "Dabei werden die Daten in einen höherdimensionalen Raum überführt, in dem eine lineare Trennung leichter möglich ist."
+    ],
+    "explanationJa": [
+      "SVMを線形分類器として使うには、「データが線形分離可能（linear separierbar）」である必要があります。",
+      "線形分離可能とは、クラス間が直線（または超平面）で明確に分割できることを意味します。",
+      "しかし、実際のデータは複雑で、直線や平面で簡単に分けられることはあまりありません。",
+      "そこで、しばしば「カーネルトリック（Kernel-Trick）」という手法を利用します。",
+      "これはデータをより高次元の空間に変換して、線形分離可能な状態にする手法です。"
+    ],
+    "originalSlideText": "SUPPORT VECTOR MACHINE\n– Eine SVM ist also im simplen Fall ein linearer Klassifikator\n– Benötigt linear separierbare Klassen\n   – Meistens aber nicht vorhanden!\n   – Nutzung des sog. „Kernel Tricks“",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 3,
+    "questionDe": "(s4) Warum optimiert die SVM zum breitesten Rand?",
+    "questionJa": "SVMが最大マージン（最も広い幅）を持つ境界を選ぶのはなぜか？",
+    "answerDe": [
+      "Objekte, die leicht von typischen Mustern abweichen, werden trotzdem korrekt klassifiziert"
+    ],
+    "answerJa": [
+      "多少典型的なパターンから外れたデータでも正しく分類できるため"
+    ],
+    "explanationDe": [
+      "Die SVM optimiert ihre Hyperebene, sodass der Abstand (die Margin) zu den nächstliegenden Datenpunkten maximal wird.",
+      "Dies bedeutet, dass kleine Fehler oder Abweichungen weniger Einfluss auf die Klassifikation haben.",
+      "Wäre die Grenze zu eng, könnten kleine Schwankungen schnell zu Fehlklassifikationen führen.",
+      "Ein breiter Abstand sorgt dagegen dafür, dass das Modell robuster gegenüber Datenabweichungen ist.",
+      "Ein konkretes Beispiel wäre eine automatische Erkennung von Spam-E-Mails: Ein großer Rand sorgt dafür, dass ungewöhnliche, aber nicht eindeutig spamartige E-Mails trotzdem richtig klassifiziert werden."
+    ],
+    "explanationJa": [
+      "SVMは境界線（超平面）と最も近いデータ点との距離（マージン）が最大になるように境界線を決定します。",
+      "これにより、データに多少の誤差や変動があっても分類結果が安定します。",
+      "もし境界が狭すぎると、データに少しでも揺れがあると誤分類される可能性が高まります。",
+      "境界が広ければ、多少パターンから外れたデータがあっても正しく分類できます。",
+      "例えば、スパムメールの自動分類においては、境界を広く設定することで、やや通常と異なるメールでも正しく分類できるようになります。"
+    ],
+    "originalSlideText": "SUPPORT VECTOR MACHINE\n– Warum Optimierung zum breitesten Rand?\n   – Objekte, die leicht abweichen, werden trotzdem richtig klassifiziert",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 4,
+    "questionDe": "(s5, s6) Welchen Einfluss hat die Breite der Margin auf die Klassifikationsergebnisse bei SVM?",
+    "questionJa": "SVMにおいてマージン（境界の幅）の広さは分類結果にどのような影響を与えるか？",
+    "answerDe": [
+      "Eine breitere Margin führt zu robusteren Klassifikationen",
+      "Eine schmale Margin reagiert empfindlich auf kleine Veränderungen oder Ausreißer"
+    ],
+    "answerJa": [
+      "マージンが広いと分類結果が安定しやすくなる",
+      "マージンが狭いと小さな変化や外れ値に敏感で、分類結果が変わりやすくなる"
+    ],
+    "explanationDe": [
+      "Die Margin (Abstand zwischen Hyperebene und Datenpunkten) beeinflusst stark die Stabilität der Klassifikation bei einer SVM.",
+      "Ist die Margin breit (wie im rechten Bild auf Folie 5), sind die Klassen eindeutig und stabil getrennt, und kleine Veränderungen einzelner Punkte beeinflussen die Klassifikationsgrenze kaum.",
+      "Bei einer schmalen Margin (wie im linken Bild auf Folie 5) ist die Klassifikationsgrenze sehr nah an einzelnen Datenpunkten, sodass schon geringe Abweichungen oder einzelne Ausreißer dazu führen können, dass neue Daten falsch klassifiziert werden.",
+      "Folie 6 zeigt genau diesen Effekt: Einzelne abweichende Datenpunkte (rot bzw. blau hervorgehoben) beeinflussen bei der schmalen Margin (linkes Bild) die Klassifikationsgrenze stärker als bei der breiten Margin (rechtes Bild)."
+    ],
+    "explanationJa": [
+      "SVMにおける「マージン（境界の幅）」は分類の安定性に大きく影響します。",
+      "右側（スライド5枚目）のようにマージンが広い場合、クラス間の距離が十分あるため、少々データにばらつきがあっても分類結果は安定します。",
+      "一方で左側（スライド5枚目）のようにマージンが狭いと、境界線がデータ点のすぐ近くにあるため、小さなデータの変化や外れ値が分類結果に大きな影響を与えます。",
+      "スライド6枚目はその典型的な例を示しており、赤色や青色で示された一部の外れ値が、狭いマージン（左側）の境界線には大きく影響していますが、広いマージン（右側）の境界線には影響が少ないことが分かります。"
+    ],
+    "originalSlideText": "SUPPORT VECTOR MACHINE\n– Aber:\n– Objekte, die leicht abweichen, beeinflussen bei schmaler Margin die Klassifikationsgrenze stärker als bei breiter Margin",
+    "explanationImage": "lecture01/lecture10_ex02.png",
+    "questionImage": ""
+  },
+  {
+    "id": 5,
+    "questionDe": "(s7) Wie funktioniert die Identifikation der Stützvektoren bei einer SVM?",
+    "questionJa": "SVMにおいてサポートベクター（支持ベクトル）はどのように特定されるのか？",
+    "answerDe": [
+      "Identifikation der Datenpunkte nahe der Hyperebene",
+      "Datenpunkte am Rand ihrer Klasse",
+      "Nutzung der konvexen Hülle"
+    ],
+    "answerJa": [
+      "超平面付近に位置するデータ点を特定する",
+      "各クラスの境界にあるデータ点を特定する",
+      "凸包（コンベックスハル）を利用する"
+    ],
+    "explanationDe": [
+      "Bei einer Support Vector Machine (SVM) sind Stützvektoren jene Datenpunkte, die entscheidend für die Lage der Hyperebene sind.",
+      "Es handelt sich dabei um Punkte, die sehr nah an der Trennungslinie (Hyperebene) liegen oder genau am Rand der jeweiligen Klasse platziert sind.",
+      "Um diese wichtigen Datenpunkte zu finden, nutzt man das Konzept der konvexen Hülle (eine Art minimaler 'Hülle' um eine Klasse von Datenpunkten).",
+      "Dabei sucht man gezielt nach denjenigen Punkten auf den konvexen Hüllen der Klassen, die am dichtesten beieinander liegen.",
+      "Diese Punkte bestimmen letztendlich die optimale Lage der Hyperebene."
+    ],
+    "explanationJa": [
+      "Support Vector Machine (SVM)において、サポートベクター（支持ベクトル）とは分類の境界を決める際に特に重要なデータ点です。",
+      "具体的には、分類の境界線（超平面）に非常に近くにあるデータ点や、各クラスの端に位置するデータ点がサポートベクターになります。",
+      "サポートベクターを特定する際には、「凸包（とつほう、コンベックスハル）」という考え方が利用されます。",
+      "凸包とは、データ群を囲む最小の凸状の領域のことです。",
+      "この凸包の中で特にクラス間の距離が近いデータ点を選び出すことで、最適な境界線（超平面）の位置が決定されます。"
+    ],
+    "originalSlideText": "SUPPORT VECTOR MACHINE\nGenereller Ablauf:\n– Identifikation der sog. Stützvektoren\n– Datenpunkte, die nah an der zu findenden Hyperebene liegen\n– Datenpunkte, die am Rand ihrer Klasse liegen\n– Nutzung der konvexen Hülle\n– Was passiert, wenn die konvexen Hüllen der Daten überlappen?\n– Berechnung der Datenpunkte auf den konvexen Hüllen, die möglichst nah bei einander liegen\n– Es gibt immer mindestens einen Stützvektor pro Klassen im Datensatz, meistens mehrere",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 6,
+    "questionDe": "(s7) Was passiert, wenn die konvexen Hüllen der Klassen überlappen?",
+    "questionJa": "各クラスの凸包が重なる場合はどうなるか？",
+    "answerDe": [
+      "Berechnung derjenigen Punkte auf den überlappenden konvexen Hüllen, die möglichst nah beieinander liegen",
+      "Diese Punkte werden zu Stützvektoren"
+    ],
+    "answerJa": [
+      "重なっている凸包上で、クラス間で最も近接したデータ点を計算する",
+      "これらのデータ点がサポートベクターとなる"
+    ],
+    "explanationDe": [
+      "Wenn sich die konvexen Hüllen (die Bereiche, welche die Klassen jeweils minimal einschließen) zweier Klassen überlappen, bedeutet dies, dass die Klassen nicht eindeutig trennbar sind.",
+      "In diesem Fall werden gezielt diejenigen Datenpunkte bestimmt, welche innerhalb der überlappenden Bereiche am dichtesten beieinander liegen.",
+      "Diese Punkte werden dann zu entscheidenden Stützvektoren, da sie die Grenze zwischen den Klassen maßgeblich definieren.",
+      "Dadurch wird eine möglichst optimale und stabile Trennung der Klassen erreicht, obwohl diese nicht eindeutig separierbar sind."
+    ],
+    "explanationJa": [
+      "各クラスの凸包（クラスを包む最小の凸領域）が重なっている場合、これはクラス同士がはっきりとは分けられないことを意味します。",
+      "このような状況では、重なった凸包の中で、異なるクラスのデータが最も近くに位置する点を特定します。",
+      "このクラス間で最も近接したデータ点がサポートベクターとなり、境界線を決定する重要な役割を果たします。",
+      "こうすることで、クラスが明確に分離できない場合でも可能な限り最適で安定した分類境界を見つけることができます。"
+    ],
+    "originalSlideText": "Was passiert, wenn die konvexen Hüllen der Daten überlappen?\n– Berechnung der Datenpunkte auf den konvexen Hüllen, die möglichst nah bei einander liegen",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 7,
+    "questionDe": "(s8) Wie hängen die Stützvektoren und die optimale Hyperebene bei einer SVM zusammen?",
+    "questionJa": "SVMにおいてサポートベクターと最適な超平面はどのように関連しているか？",
+    "answerDe": [
+      "Die Stützvektoren definieren direkt die Lage der optimalen Hyperebene",
+      "Die optimale Hyperebene hat maximalen Abstand (Margin) zu diesen Stützvektoren"
+    ],
+    "answerJa": [
+      "サポートベクターは最適な超平面の位置を直接決定する",
+      "最適な超平面とは、これらのサポートベクターから最大の距離（マージン）が取れるように配置されたものである"
+    ],
+    "explanationDe": [
+      "Stützvektoren sind bei der Support Vector Machine jene Datenpunkte, welche sich am nächsten zur optimalen Hyperebene befinden.",
+      "Sie bestimmen direkt, wo genau die optimale Hyperebene liegt, da die optimale Grenze stets so gewählt wird, dass der Abstand zu diesen Stützvektoren maximal wird.",
+      "Im Beispiel auf der Folie (s8) erkennt man, dass die optimale Hyperebene exakt zwischen den nächstliegenden Punkten (den Stützvektoren) beider Klassen verläuft und dabei den größtmöglichen Abstand zu diesen Punkten gewährleistet.",
+      "Andere Datenpunkte innerhalb einer Klasse, die weiter entfernt liegen, beeinflussen die Lage der optimalen Hyperebene nicht direkt."
+    ],
+    "explanationJa": [
+      "SVMにおけるサポートベクターとは、分類の境界（超平面）に最も近い位置にあるデータ点です。",
+      "最適な超平面は、これらサポートベクターとの距離が最大になるように決定されます。",
+      "スライド（s8）の例を見ると、最適な超平面が2つのクラスそれぞれのサポートベクターのちょうど真ん中を通り、それらとの距離（マージン）を最大化するように引かれていることがわかります。",
+      "これらのサポートベクター以外の、境界線から離れた場所にあるデータ点は、最適な超平面の位置決定には直接影響を与えません。"
+    ],
+    "originalSlideText": "SUPPORT VECTOR MACHINE\nmaximum margin hyperplane\nsupport vectors",
+    "explanationImage": "lecture01/lecture10_ex03.png",
+    "questionImage": ""
+  },
+  {
+    "id": 8,
+    "questionDe": "(s9, s10) Wie wird die optimale Hyperebene bei einer SVM mathematisch definiert?",
+    "questionJa": "SVMにおける最適な超平面は数学的にどのように定義されるか？",
+    "answerDe": [
+      "Maximierung der Margin (2/||w||)",
+      "Hyperebene definiert durch die Gleichung: w・x + b = 0",
+      "Datenpunkte jeder Klasse erfüllen Bedingungen w・x + b ≥ 1 bzw. w・x + b ≤ -1"
+    ],
+    "answerJa": [
+      "マージン（2/||w||）を最大化することで定義される",
+      "超平面は w・x + b = 0 の数式で定義される",
+      "各クラスのデータ点は w・x + b ≥ 1（クラス1）、または w・x + b ≤ -1（クラス2）という条件を満たす"
+    ],
+    "explanationDe": [
+      "Die optimale Hyperebene einer SVM ist mathematisch so definiert, dass die Margin (der Abstand zwischen den Stützvektoren beider Klassen) maximal wird.",
+      "Diese Margin ergibt sich mathematisch zu 2 dividiert durch die Norm des Vektors w (2/||w||).",
+      "Die Hyperebene selbst wird durch die Gleichung w・x + b = 0 beschrieben, wobei w ein Gewichtsvektor und b ein Verschiebungsparameter ist.",
+      "Für jeden Punkt x in der ersten Klasse gilt die Bedingung w・x + b ≥ 1, während für jeden Punkt x in der zweiten Klasse gilt w・x + b ≤ -1.",
+      "Diese Bedingungen stellen sicher, dass die Klassen klar getrennt sind und die Margin maximal bleibt."
+    ],
+    "explanationJa": [
+      "SVMにおける最適な超平面は、両クラスのサポートベクター間の距離（マージン）が最大になるように数学的に定義されます。",
+      "このマージンは数学的には「2をベクトルwのノルム(||w||)で割ったもの（2/||w||）」として表されます。",
+      "超平面自体は数式で w・x + b = 0 と表され、ここで w は重みベクトル、b は位置を調整するためのパラメータです。",
+      "1つ目のクラスに属するデータ点xは w・x + b ≥ 1 を満たし、2つ目のクラスに属するデータ点xは w・x + b ≤ -1 を満たします。",
+      "これらの条件によって、2つのクラスが明確に分離され、かつマージンが最大化されることが保証されます。"
+    ],
+    "originalSlideText": "SUPPORT VECTOR MACHINE\nmax 2/||w||\ns.t.\n(w·x + b) ≥ 1, ∀x of class 1\n(w·x + b) ≤ -1, ∀x of class 2\nw·x + b = 0",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 9,
+    "questionDe": "(s11) Wie erfolgt die Berechnung der Parameter b und w bei einer SVM?",
+    "questionJa": "SVMにおけるパラメータbとwはどのように計算されるか？",
+    "answerDe": [
+      "Mittels einer eingeschränkten quadratischen Optimierungsfunktion",
+      "Verwendung von Lagrange-Multiplikatoren",
+      "Die Lösung liefert ein globales Minimum"
+    ],
+    "answerJa": [
+      "制約付きの二次最適化問題を解くことで求められる",
+      "ラグランジュ乗数法を使用する",
+      "得られる解は唯一の大域的最小解（グローバルミニマム）となる"
+    ],
+    "explanationDe": [
+      "Die Parameter w (Gewichtsvektor) und b (Bias oder Verschiebung) der optimalen Hyperebene bei einer Support Vector Machine werden durch eine mathematische Optimierung bestimmt.",
+      "Diese Optimierung ist eingeschränkt, da bestimmte Bedingungen erfüllt sein müssen, nämlich dass alle Datenpunkte korrekt klassifiziert werden (Margin-Bedingungen).",
+      "Dazu nutzt man häufig die Methode der Lagrange-Multiplikatoren, welche solche Einschränkungen berücksichtigt und in die Berechnung einfließen lässt.",
+      "Die Optimierung ist quadratisch, was bedeutet, dass die Zielfunktion (hier: Minimierung von ½ ||w||²) eine eindeutige optimale Lösung (globales Minimum) besitzt.",
+      "Dadurch ist sichergestellte, dass das Ergebnis der Optimierung immer eindeutig und optimal ist."
+    ],
+    "explanationJa": [
+      "SVMにおいて最適な超平面を定義するためのパラメータw（重みベクトル）とb（バイアス、位置調整用）は、数学的な最適化計算を通じて決定されます。",
+      "この計算は「制約付き最適化問題」となっており、すべてのデータが正しく分類されるように一定の条件（マージン条件）を満たす必要があります。",
+      "具体的には「ラグランジュ乗数法」という手法を用いることで、これらの制約条件を考慮しながらパラメータを計算します。",
+      "この最適化問題は二次関数（½||w||² を最小化）を用いているため、明確にただ一つの最適解（グローバルミニマム）を持ちます。",
+      "これにより、計算結果は常に唯一の最適解が得られることが保証されています。"
+    ],
+    "originalSlideText": "SUPPORT VECTOR MACHINE\n– Berechnung von b und w nun mittels einer Optimierungsfunktion\n– Sie ist eingeschränkt\n  → Berechung mittels Lagrange Multiplikator\n– Sie ist quadratisch\n  → Es existiert genau ein (globales) Minimum\nmin ½||w||²\ns.t. yᵢ(w·xᵢ + b) ≥ 1, ∀xᵢ",
+    "explanationImage": "lecture01/lecture10_ex04.png",
+    "questionImage": ""
+  },
+  {
+  "id": 10,
+  "questionDe": "(s12) Warum ist es sinnvoll, bei einer SVM einen Fehlergrad C zuzulassen?",
+  "questionJa": "SVMにおいて誤差許容度Cを導入するのはなぜ有効なのか？",
+  "answerDe": [
+    "Breiteste Margin bei 100% Korrektheit kann zu schlechterer Generalisierung führen",
+    "C erlaubt Tradeoff zwischen Genauigkeit auf Trainingsdaten und Flexibilität der Hyperebene",
+    "Fehler in Trainingsdaten wirken sich weniger stark aus"
+  ],
+  "answerJa": [
+    "訓練データで100%の正確さを求めると汎化性能が下がる可能性がある",
+    "Cは訓練データの正確さと超平面の自由度とのバランスを調整する",
+    "訓練データ中の誤りの影響を小さくできる"
+  ],
+  "explanationDe": [
+    "In der Praxis ist es oft nicht sinnvoll, eine Support Vector Machine so zu trainieren, dass sie alle Trainingsdaten zu 100% korrekt klassifiziert.",
+    "Eine zu strikte Trennung kann zu einer Überanpassung (Overfitting) führen, bei der das Modell neue, unbekannte Daten schlecht klassifiziert.",
+    "Deshalb wird ein sogenannter Fehlergrad C eingeführt.",
+    "Dieser erlaubt es, einzelne Fehler im Training zu tolerieren, wenn dadurch die allgemeine Trennbarkeit (und damit die Generalisierungsfähigkeit) verbessert wird.",
+    "C steuert also den Kompromiss zwischen Korrektheit auf den Trainingsdaten und der Flexibilität der Entscheidungsebene.",
+    "Außerdem reduziert C den Einfluss von falsch annotierten oder verrauschten Trainingspunkten, die ansonsten das Modell stark beeinflussen würden."
+  ],
+  "explanationJa": [
+    "現実のデータでは、すべての訓練データを100%正確に分類することが常に望ましいわけではありません。",
+    "あまりにも厳密に分離しようとすると、未知のデータに対する性能が落ちる（過学習）おそれがあります。",
+    "この問題に対応するために、誤差許容度Cというパラメータが導入されます。",
+    "Cを使うことで、いくつかの訓練データの誤分類を許容し、その代わりに全体としてより良い分類境界を作ることができます。",
+    "つまり、Cは「訓練データに対する正確性」と「超平面の柔軟性（汎化能力）」とのバランスを取る役割を果たします。",
+    "また、Cがあることで、アノテーションミスやノイズを含むデータの影響が小さくなり、より頑健な分類器が構築できます。"
+  ],
+  "originalSlideText": "SUPPORT VECTOR MACHINE\n– Breiteste Margin bei 100% Korrektheit kann zu schlechteren Klassifikatoren führen\n– Nutzung eines erlaubten Fehlergrads C\n– Dieser definiert den Tradeoff zwischen Korrektheit auf den Trainingsdaten und dem Freiheitsgrad für die Hyperebene\n– Daten müssen generell linear trennbar sein\n– Nah beieinanderliegende Daten können so besser getrennt werden\n– Fehler in den annotierten Trainingsdaten haben einen geringeren Einfluss",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 11,
+  "questionDe": "(s13) Wie beeinflusst der Parameter C die Entscheidungsebene einer SVM?",
+  "questionJa": "SVMにおけるパラメータCは分類境界にどのような影響を与えるか？",
+  "answerDe": [
+    "Kleine C-Werte → breitere Margin, mehr Toleranz gegenüber Fehlern",
+    "Große C-Werte → schmalere Margin, strikte Trennung der Trainingsdaten"
+  ],
+  "answerJa": [
+    "Cが小さいと → マージンが広くなり、誤分類をある程度許容する",
+    "Cが大きいと → マージンが狭くなり、訓練データを厳密に分離しようとする"
+  ],
+  "explanationDe": [
+    "Der Parameter C in einer Support Vector Machine steuert den Kompromiss zwischen einer möglichst großen Margin und einer möglichst fehlerfreien Klassifikation der Trainingsdaten.",
+    "Bei kleinen C-Werten (z. B. C = 0.01) erlaubt das Modell einige Fehlklassifikationen, bevorzugt aber eine breite Margin und damit bessere Generalisierung.",
+    "Das sieht man in der oberen linken Grafik, wo die Trennungslinie zwar nicht alle Punkte perfekt trennt, aber robust bleibt.",
+    "Bei großen C-Werten (z. B. C = 10.00) wird das Modell sehr strikt: Es versucht, möglichst alle Trainingsdaten korrekt zu klassifizieren, auch wenn das zu einer sehr engen Margin führt.",
+    "In der unteren rechten Grafik sieht man, dass die Trennlinie sehr nah an den Daten liegt und kaum Spielraum lässt – was die Gefahr von Überanpassung (Overfitting) erhöht."
+  ],
+  "explanationJa": [
+    "SVMにおけるパラメータCは、「マージンの広さ」と「訓練データの正確な分類」のどちらを優先するかのバランスを調整する役割を持ちます。",
+    "Cが小さい（例：C = 0.01）の場合、いくつかの誤分類を許容する代わりにマージンを広く保とうとします。これにより汎化性能が高まる傾向があります。",
+    "これは左上の図に見られるように、完全に分類されていない点があるものの、全体として安定した境界になっています。",
+    "一方、Cが大きい（例：C = 10.00）と、訓練データをすべて正確に分離しようとするため、マージンが非常に狭くなります。",
+    "右下の図では、境界がデータ点に非常に近くなっており、外れ値やノイズに敏感になり、過学習のリスクが高まります。"
+  ],
+  "originalSlideText": "SUPPORT VECTOR MACHINE\nC = 0.01, C = 0.10, C = 1.00, C = 10.00",
+  "explanationImage": "lecture01/lecture10_ex05.png",
+  "questionImage": ""
+},
+{
+  "id": 12,
+  "questionDe": "(s15) Wie wirkt sich der Fehlergrad C auf die Optimierung in der SVM aus?",
+  "questionJa": "SVMにおける誤差許容度Cは最適化にどのような影響を与えるか？",
+  "answerDe": [
+    "Der Algorithmus maximiert die Margin und hält C möglichst klein",
+    "Er minimiert nicht direkt die Anzahl der Fehlklassifikationen",
+    "Optimiert wird stattdessen die Summe der Abstände (Slack-Variablen) zur Hyperebene"
+  ],
+  "answerJa": [
+    "アルゴリズムはマージンを最大化しつつ、Cをできるだけ小さく保とうとする",
+    "誤分類の数そのものは最適化の対象ではない",
+    "代わりに、超平面からの距離（スラック変数）の合計を最小化するように最適化する"
+  ],
+  "explanationDe": [
+    "Der Fehlergrad C in der SVM erlaubt es, dass einige Datenpunkte auf der falschen Seite der Hyperebene liegen dürfen.",
+    "Das Ziel ist es, die Margin maximal zu halten und dabei möglichst wenige und möglichst kleine Verletzungen dieser Margin zuzulassen.",
+    "Anstatt die Anzahl der Fehlklassifikationen zu minimieren (was rechnerisch sehr aufwendig – NP-hart – wäre), wird die Summe der sogenannten Slack-Variablen ξᵢ minimiert.",
+    "Diese Variablen geben an, wie stark einzelne Punkte gegen die Trennbedingung verstoßen.",
+    "Die Optimierungsfunktion wird daher angepasst: Sie kombiniert die Margin-Minimierung (½||w||²) mit der Bestrafung für Abweichungen (C * Σξᵢ)."
+  ],
+  "explanationJa": [
+    "SVMにおける誤差許容度Cは、一部のデータが超平面の誤った側に位置しても許容するための仕組みです。",
+    "アルゴリズムの目標は、マージンを最大限に広く保ちつつ、制約違反（誤分類）をできる限り少なく、小さく抑えることです。",
+    "直接的に誤分類数を最小化することは計算上非常に難しく（NP困難）、実用的ではありません。",
+    "そのため、代わりに「スラック変数（ξᵢ）」という誤差の度合いを表す量の合計（Σξᵢ）を最小化するように最適化が行われます。",
+    "これにより最適化関数も変わり、「½||w||² + C * Σξᵢ」のように、マージンの広さと誤差の大きさの両方をバランスよく考慮する形になります。"
+  ],
+  "originalSlideText": "SUPPORT VECTOR MACHINE\n– Fehlergrad C\n– Der Algorithmus versucht C bei 0 zu halten, während es die Margin maximiert.\n– Optimiert dabei nicht die Zahl der Fehlklassifikation\n   – Dies wäre NP-hart\n– Minimiert die Summe der Abstände zur Hyperebene\n– Anpassung der Einschränkung\n   yᵢ(w·xᵢ + b) ≥ 1 – ξᵢ, ∀xᵢ\n   ξᵢ ≥ 0\n– Anpassung der Optimierungsfunktion\n   min ½||w||² + CΣξᵢ",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 13,
+  "questionDe": "(s16) Was bedeutet die duale Form der SVM und wozu dient sie?",
+  "questionJa": "SVMの双対形式（デュアル形式）とは何を意味し、何のために使われるのか？",
+  "answerDe": [
+    "Der Normalenvektor w kann als Linearkombination der Trainingsbeispiele dargestellt werden",
+    "Ermöglicht genauere Beschreibung der Klassifikationsregel"
+  ],
+  "answerJa": [
+    "法線ベクトルwは、訓練データの線形結合として表現できる",
+    "分類規則（判別関数）をより明確に表現できる"
+  ],
+  "explanationDe": [
+    "In der dualen Formulierung der Support Vector Machine wird der zuvor berechnete Normalenvektor w nicht direkt verwendet.",
+    "Stattdessen stellt man ihn als Linearkombination der Trainingsdatenpunkte dar, die sogenannten Stützvektoren.",
+    "Das bedeutet: w = Σ αᵢ yᵢ xᵢ, wobei αᵢ die gelernten Koeffizienten sind.",
+    "Diese Darstellung erlaubt es, die Klassifikationsregel f(x) besser zu formulieren: f(x) = sgn(Σ αᵢ yᵢ (xᵢ · x) + b).",
+    "Hierbei beschreibt (xᵢ · x) das Skalarprodukt zwischen einem Trainingspunkt xᵢ und einem Testpunkt x.",
+    "Durch diese Formulierung lassen sich nicht nur lineare Probleme beschreiben, sondern sie bildet auch die Grundlage für den Kernel-Trick in nichtlinearen SVMs."
+  ],
+  "explanationJa": [
+    "SVMの双対形式（デュアル形式）では、分類に使われる法線ベクトルwを直接使うのではなく、訓練データ点（サポートベクター）の線形結合として表現します。",
+    "具体的には、w = Σ αᵢ yᵢ xᵢ の形で表され、αᵢは学習によって得られた重みです。",
+    "この形式により、分類関数（判別関数）f(x) = sgn(Σ αᵢ yᵢ (xᵢ・x) + b) が定義されます。",
+    "ここで(xᵢ・x)は訓練データxᵢと新しいデータxとの間の内積（スカラー積）を表します。",
+    "この表現を使うことで、単なる線形分類だけでなく、非線形なSVMにも拡張できる「カーネルトリック」の応用が可能になります。"
+  ],
+  "originalSlideText": "SUPPORT VECTOR MACHINE\n– Duale Form\n– Der vorher berechnete Normalenvektor kann auch als Linearkombination der Trainingsbeispiele dual dargestellt werden\nw = Σ αᵢ yᵢ xᵢ\n– Damit kann man die Klassifikationsregel besser beschreiben:\nf(x) = sgn(Σ αᵢ yᵢ (xᵢ, x) + b)\n– b und alphaᵢ sind die erlernten Parameter\n– yᵢ ist die Klasse des Stützvektors xᵢ\n– x ist der Vektor einer Testinstanz\n– Berechnung des Skalarprodukts zwischen xᵢ und x",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 14,
+  "questionDe": "(s17) Warum reicht eine lineare SVM für viele reale Datensätze nicht aus?",
+  "questionJa": "なぜ現実の多くのデータに対して線形SVMでは不十分なのか？",
+  "answerDe": [
+    "SVMs klassifizieren ursprünglich nur linear trennbare Daten",
+    "Reale Daten sind meist nicht linear trennbar",
+    "Deshalb wird der Kernel-Trick eingesetzt"
+  ],
+  "answerJa": [
+    "SVMは基本的に線形分離可能なデータしか分類できない",
+    "現実のデータはほとんどの場合、線形分離が難しい",
+    "そのため、カーネルトリックが用いられる"
+  ],
+  "explanationDe": [
+    "Eine einfache lineare SVM kann nur dann gut arbeiten, wenn sich die Daten durch eine gerade Linie oder Hyperebene trennen lassen – das nennt man lineare Trennbarkeit.",
+    "In der Praxis ist diese Voraussetzung selten erfüllt, weil reale Daten meist komplex verteilt sind und sich nicht durch eine einfache Linie trennen lassen.",
+    "Wie die Grafik auf der Folie zeigt, sind die roten und blauen Punkte zwar in Gruppen organisiert, aber eine einzige gerade Linie kann sie nicht perfekt trennen.",
+    "Daher verwendet man den sogenannten Kernel-Trick, um die Daten in einen höherdimensionalen Raum abzubilden, wo eine lineare Trennung möglich wird."
+  ],
+  "explanationJa": [
+    "単純な線形SVMは、データが直線や超平面で分けられる場合にしかうまく機能しません。これを「線形分離可能」と呼びます。",
+    "しかし、現実のデータは複雑な分布をしていることが多く、直線では分けられないケースが多くあります。",
+    "スライドの図では、赤と青の点がまとまって分布しているものの、1本の直線で完全に分けることは困難です。",
+    "このような場合には、カーネルトリックを使ってデータをより高次元の空間に写像し、その空間で線形に分離できるようにします。"
+  ],
+  "originalSlideText": "SUPPORT VECTOR MACHINE\n– Nicht linear trennbare Daten\n– SVMs können bisher wie das einfache Perceptron nur lineare trennbare Daten klassifizieren!\n– In der Realität sind die Datensätze aber meistens nicht linear trennbar\n→ Nutzung des „Kernel Tricks“",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 15,
+  "questionDe": "(s19, s20) Wie kann man nicht linear trennbare Daten mit SVM klassifizieren?",
+  "questionJa": "線形分離できないデータをSVMでどのように分類するか？",
+  "answerDe": [
+    "Transformation des Datensatzes mittels einer nicht linearen Kernelfunktion",
+    "Erweiterung des Merkmalsraums (z. B. durch x₁², x₂², √2x₁x₂)",
+    "Hyperebene wird im höherdimensionalen Raum berechnet"
+  ],
+  "answerJa": [
+    "非線形カーネル関数を用いてデータを変換する",
+    "特徴空間を拡張する（例：x₁², x₂², √2x₁x₂ など）",
+    "高次元空間で超平面を求めて分類する"
+  ],
+  "explanationDe": [
+    "Wenn Daten nicht linear trennbar sind, kann man sie durch eine nicht lineare Transformation in einen höherdimensionalen Raum überführen.",
+    "In diesem Raum sind die Daten oft linear trennbar.",
+    "Die Transformation erfolgt durch eine sogenannte Kernelfunktion, zum Beispiel durch Berechnung neuer Merkmale wie x₁², x₂² und √2x₁x₂.",
+    "Dadurch entsteht ein neuer Merkmalsraum (z. B. mit X₁, X₂, X₃), in dem die Datenpunkte linear trennbar sind, wie in der 3D-Grafik auf Folie 19 gezeigt.",
+    "Nach dieser Transformation kann man wie bei einer linearen SVM eine optimale Hyperebene im neuen Raum berechnen.",
+    "Auch Testinstanzen werden in denselben Raum transformiert und dann klassifiziert."
+  ],
+  "explanationJa": [
+    "データが線形分離できない場合、それを非線形な写像によって高次元空間に変換することで、線形に分けられるようにすることができます。",
+    "この変換はカーネル関数と呼ばれる手法によって行われます。たとえば、x₁²やx₂²、√2x₁x₂のような新しい特徴量を作ることで、元の特徴空間を拡張します。",
+    "こうして得られた新しい特徴空間（X₁, X₂, X₃など）では、データが直線（または超平面）で分割可能になります。",
+    "スライド19の3Dグラフのように、もともと分離できなかった赤と青の点が、新しい空間では平面で分けられるようになります。",
+    "この変換後、従来のSVMと同じように最適な超平面を求めて分類を行います。",
+    "新しい入力データ（テストインスタンス）も同じ方法で変換され、分類されます。"
+  ],
+  "originalSlideText": "SUPPORT VECTOR MACHINE\n– Nicht linear trennbare Daten\n– Transformiere den Datensatz mittels einer nicht linearen Kernel Funktion\n– Beispiel:\n   X₁ = x₁²\n   X₂ = x₂²\n   X₃ = √2x₁x₂\n– Nach der Transformation berechnet man die Hyperebene im hochdimensionalen aber linear trennbaren Raum\n– Testinstanzen werden auch transformiert und dann klassifiziert",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 16,
+  "questionDe": "(s21) Welche Kernel-Funktionen kann man bei SVMs für nicht linear trennbare Daten verwenden?",
+  "questionJa": "線形分離できないデータに対してSVMで使用できるカーネル関数にはどのような種類があるか？",
+  "answerDe": [
+    "Homogenes Polynom: k(xᵢ, xⱼ) = (xᵢ·xⱼ)^d",
+    "Inhomogenes Polynom: k(xᵢ, xⱼ) = (xᵢ·xⱼ + 1)^d",
+    "Gaußsche RBF: k(xᵢ, xⱼ) = exp(–γ||xᵢ – xⱼ||²)"
+  ],
+  "answerJa": [
+    "同次多項式カーネル: k(xᵢ, xⱼ) = (xᵢ・xⱼ)^d",
+    "非同次多項式カーネル: k(xᵢ, xⱼ) = (xᵢ・xⱼ + 1)^d",
+    "ガウスRBF（Radial Basis Function）カーネル: k(xᵢ, xⱼ) = exp(–γ||xᵢ – xⱼ||²)"
+  ],
+  "explanationDe": [
+    "Um nicht linear trennbare Daten mit einer SVM zu klassifizieren, nutzt man sogenannte Kernel-Funktionen.",
+    "Diese Funktionen ermöglichen es, die Daten in einen höherdimensionalen Raum zu projizieren, ohne die Koordinaten explizit berechnen zu müssen.",
+    "Ein homogener Polynomial-Kernel hat die Form (xᵢ·xⱼ)^d. Er berücksichtigt nur das Produkt der Eingabedaten.",
+    "Ein inhomogener Polynomial-Kernel erweitert dies mit einem konstanten Term: (xᵢ·xⱼ + 1)^d. Dadurch kann er flexibler auf Verschiebungen reagieren.",
+    "Eine besonders beliebte Funktion ist der Gaußsche RBF-Kernel: exp(–γ||xᵢ – xⱼ||²).",
+    "Er misst die Ähnlichkeit zwischen zwei Punkten und ermöglicht es, sehr komplexe Entscheidungsgrenzen zu modellieren.",
+    "Man beginnt oft mit einem kleinen γ-Wert und erhöht ihn schrittweise, wodurch sich die Anzahl der sogenannten Pseudodimensionen erhöht und die Klassifikationsgenauigkeit steigen kann."
+  ],
+  "explanationJa": [
+    "線形分離できないデータをSVMで分類するためには、カーネル関数と呼ばれる手法が用いられます。",
+    "カーネル関数は、データを高次元空間に写像することで、線形分離を可能にしますが、その写像を明示的に計算せずに済むのが特徴です。",
+    "同次多項式カーネルは (xᵢ・xⱼ)^d という形で、入力ベクトル間の内積をd乗したものです。",
+    "非同次多項式カーネルは (xᵢ・xⱼ + 1)^d のように、定数項1を加えることで、より柔軟にデータの位置ずれに対応できます。",
+    "特に人気なのがガウスRBF（Radial Basis Function）カーネルで、式は exp(–γ||xᵢ – xⱼ||²) です。",
+    "これは2点間の距離に基づいて類似度を測るもので、非常に複雑な境界も表現可能です。",
+    "通常、γ（ガンマ）パラメータを小さな値からスタートし、徐々に増やすことで分類器の表現力（擬似的な次元数）と精度が向上します。"
+  ],
+  "originalSlideText": "SUPPORT VECTOR MACHINE\n– Nicht linear trennbare Daten\n– Es gibt verschiedene Kernel zum Transformieren\n   – Homogen Polynomial  k(xᵢ, xⱼ) = (xᵢ·xⱼ)^d\n   – Inhomogen Polynomial  k(xᵢ, xⱼ) = (xᵢ·xⱼ + 1)^d\n– Gaußsche radiale Basisfunktion  k(xᵢ, xⱼ) = exp(–γ||xᵢ – xⱼ||²)\n– Starte mit einem niedrigen Parameter und erhöhe die Anzahl an Pseudodimensionen, bis die Genauigkeit des Klassifikators steigt",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 17,
+  "questionDe": "(s24) Wie hilft der Kernel-Trick, die Rechenkomplexität bei nicht linear trennbaren Daten zu reduzieren?",
+  "questionJa": "線形分離できないデータに対して、カーネルトリックはどのように計算量を削減するのか？",
+  "answerDe": [
+    "Berechnung des Skalarprodukts im Ursprungsraum",
+    "Anschließendes Potenzieren ersetzt aufwendige Rechenoperationen im höherdimensionalen Raum",
+    "Nur 4 Rechenschritte nötig: 2 Multiplikationen, 1 Addition, 1 Potenzierung"
+  ],
+  "answerJa": [
+    "もとの空間で内積（スカラー積）を計算する",
+    "その後にべき乗することで、高次元空間での複雑な演算を省略できる",
+    "必要な演算はわずか4回：掛け算2回、足し算1回、2乗1回"
+  ],
+  "explanationDe": [
+    "Der Kernel-Trick ermöglicht es, nicht linear trennbare Daten so zu behandeln, als ob sie in einem höherdimensionalen Raum linear trennbar wären – und das, ohne die Daten tatsächlich in diesen Raum zu transformieren.",
+    "Ein Beispiel dafür ist der in der Folie gezeigte Polynomial-Kernel: K(xᵢ, xⱼ) = (xᵢ·xⱼ)².",
+    "Man berechnet zunächst das Skalarprodukt der beiden Vektoren im Ursprungsraum, also xᵢ·xⱼ.",
+    "Anschließend quadriert man das Ergebnis – diese einfache Rechenweise ersetzt das explizite Rechnen in einem 3-dimensionalen Raum, wie es die Umformungen (1)–(4) zeigen.",
+    "Dadurch spart man viele Rechenschritte: Statt mehrere Komponenten zu berechnen und aufsummieren, benötigt man nur 4 einfache Operationen.",
+    "Dies macht SVMs mit Kernel effizient und praktisch anwendbar, auch bei komplexen nichtlinearen Problemen."
+  ],
+  "explanationJa": [
+    "カーネルトリックは、線形分離できないデータを、実際に高次元空間に変換せずに、まるで高次元で線形分離できるかのように扱う方法です。",
+    "スライドではその一例として、2次の多項式カーネル：K(xᵢ, xⱼ) = (xᵢ・xⱼ)² が示されています。",
+    "まず元の空間で2つのベクトルの内積（xᵢ・xⱼ）を計算し、それを2乗するだけで、高次元空間での複雑な計算を代替できます。",
+    "スライドにある式変形（1）～（4）では、実際に変換された空間での特徴量の計算が省略できることが示されています。",
+    "この方法では、掛け算2回、足し算1回、2乗1回の計4回の演算のみで済み、非常に効率的です。",
+    "このように、カーネルトリックはSVMを非線形問題にも適用可能にし、かつ計算効率も大きく向上させる重要な技術です。"
+  ],
+  "originalSlideText": "SUPPORT VECTOR MACHINE\n– Nicht linear trennbare Daten\n– Es geht aber besser:\n  K(xᵢ, xⱼ) = (xᵢ · xⱼ)²\n– Man berechnet das Skalarprodukt im Ursprungsraum und potenziert dieses mit der Anzahl der Dimensionen des transformierten Raums\n– Damit benötigt man für das Beispiel nur noch 2 Multiplikationen für das Skalarprodukt und eine weitere für die Quadrierung\n– Eine Addition im Skalarprodukt\n→ 4 Operationen",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 18,
+  "questionDe": "(s24) Was zeigt das Rechenbeispiel zum Kernel K(xᵢ, xⱼ) = (xᵢ · xⱼ)²?",
+  "questionJa": "K(xᵢ, xⱼ) = (xᵢ・xⱼ)² というカーネルの計算例は何を示しているか？",
+  "answerDe": [
+    "Das Skalarprodukt im Ursprungsraum genügt für die Berechnung",
+    "Es sind nur 4 einfache Operationen nötig",
+    "Keine explizite Transformation in den höheren Raum notwendig"
+  ],
+  "answerJa": [
+    "元の空間でのスカラー積のみで計算できる",
+    "必要な演算はわずか4つ",
+    "高次元空間への変換を明示的に行う必要がない"
+  ],
+  "explanationDe": [
+    "Das Rechenbeispiel auf der Folie zeigt, wie man durch die Verwendung des Kernel-Tricks komplexe Berechnungen in höheren Dimensionen vermeiden kann.",
+    "Statt die Daten explizit in einen Raum mit drei Dimensionen zu transformieren, reicht es aus, das Skalarprodukt xᵢ·xⱼ im Ursprungsraum zu berechnen und anschließend zu quadrieren.",
+    "Die Schritte (1) bis (4) zeigen, dass dies rechnerisch gleichwertig zu einer vollständigen Transformation ist.",
+    "So spart man Berechnungen: Man benötigt nur 2 Multiplikationen, 1 Addition und 1 Potenzierung – also 4 Operationen insgesamt.",
+    "Diese Technik macht die Anwendung von nichtlinearen SVMs deutlich effizienter und schneller."
+  ],
+  "explanationJa": [
+    "スライドの計算例は、カーネルトリックによって高次元空間での複雑な計算を回避できることを示しています。",
+    "本来なら3次元に変換してからスカラー積を計算する必要がありますが、元の空間でのスカラー積（xᵢ・xⱼ）を計算して2乗するだけで同じ結果が得られます。",
+    "手順（1）〜（4）は、これが数式的に正当であることを段階的に示しています。",
+    "この方法により、必要な演算は掛け算2回、足し算1回、2乗1回の計4回だけで済みます。",
+    "このように、カーネルトリックは非線形SVMを高速かつ効率的にするための非常に重要な手法です。"
+  ],
+  "originalSlideText": "SUPPORT VECTOR MACHINE\n– Nicht linear trennbare Daten\n– Es geht aber besser:\n  K(𝑥ᵢ, 𝑥ⱼ) = (𝑥ᵢ · 𝑥ⱼ)²\n– Man berechnet das Skalarprodukt im Ursprungsraum und potenziert dieses mit der Anzahl der Dimensionen des transformierten Raums\n– Damit benötigt man für das Beispiel nur noch 2 Multiplikationen für das Skalarprodukt und eine weitere für die Quadrierung\n– Eine Addition im Skalarprodukt\n→ 4 Operationen\n\nK(𝑥ᵢ, 𝑥ⱼ) = (𝑥ᵢ · 𝑥ⱼ)²\n    = (𝑥ᵢ₁𝑥ⱼ₁ + 𝑥ᵢ₂𝑥ⱼ₂)²        (1)\n    = 𝑥ᵢ₁²𝑥ⱼ₁² + 𝑥ᵢ₂²𝑥ⱼ₂² + 2𝑥ᵢ₁𝑥ᵢ₂𝑥ⱼ₁𝑥ⱼ₂  (2,3)\n    = (𝑥ᵢ₁², 𝑥ᵢ₂², √2𝑥ᵢ₁𝑥ᵢ₂) · (𝑥ⱼ₁², 𝑥ⱼ₂², √2𝑥ⱼ₁𝑥ⱼ₂) (4)",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 19,
+  "questionDe": "(s25) Was sind die zentralen Eigenschaften und Vorteile einer Support Vector Machine (SVM)?",
+  "questionJa": "SVM（サポートベクターマシン）の主な特徴と利点は何か？",
+  "answerDe": [
+    "Optimiert die trennende Hyperebene zwischen den Klassen",
+    "Liefert stabiles Ergebnis (globales Minimum)",
+    "Kernel-Trick erlaubt Klassifikation nichtlinearer Daten",
+    "Skalarprodukt kann im Ursprungsraum berechnet werden",
+    "Optimierung beschränkt sich auf Stützvektoren",
+    "Robust gegenüber Änderungen der Trainingsdaten (nur bei neuen Stützvektoren)",
+    "Weniger anfällig für Ausreißer"
+  ],
+  "answerJa": [
+    "クラス間を分ける最適な超平面を計算する",
+    "最適化問題により安定した結果（グローバルミニマム）を得られる",
+    "カーネルトリックにより非線形データも分類可能",
+    "スカラー積は元の空間で計算できる",
+    "最適化はサポートベクターのみに限定されるため計算が簡単",
+    "訓練データの変化に対して頑健（サポートベクターが変わらなければ分類器は変わらない）",
+    "外れ値に対して影響を受けにくい"
+  ],
+  "explanationDe": [
+    "Die Support Vector Machine (SVM) ist ein leistungsfähiger Klassifikationsalgorithmus, der eine optimale Trennung zwischen zwei Klassen durch eine sogenannte Hyperebene findet.",
+    "Das Optimierungsproblem besitzt genau ein globales Minimum, wodurch die Lösung stabil und wiederholbar ist.",
+    "Durch den Kernel-Trick kann die SVM auch nichtlinear trennbare Daten effektiv klassifizieren, indem sie die Daten in einen höherdimensionalen Raum abbildet.",
+    "Dabei muss das Skalarprodukt der Vektoren nicht im höherdimensionalen Raum berechnet werden, sondern kann effizient im Ursprungsraum durchgeführt werden.",
+    "Die Berechnung beschränkt sich auf die sogenannten Stützvektoren – das sind die Datenpunkte, die der Trennlinie am nächsten liegen.",
+    "Nur wenn sich diese Stützvektoren ändern, ändert sich der Klassifikator. Änderungen an anderen Daten haben keinen Einfluss.",
+    "Daher ist die SVM weniger empfindlich gegenüber Ausreißern oder verrauschten Trainingsdaten."
+  ],
+  "explanationJa": [
+    "サポートベクターマシン（SVM）は、2つのクラスを最適に分けるための超平面（境界）を見つける強力な分類アルゴリズムです。",
+    "この最適化問題はただ1つのグローバルミニマムを持つため、結果が安定していて再現性も高いです。",
+    "また、カーネルトリックを用いることで、線形では分離できないような複雑なデータも分類可能になります。",
+    "カーネルトリックでは高次元空間でのスカラー積を、元の空間で計算することができ、計算効率も良好です。",
+    "最適化の対象は分類において重要な点（サポートベクター）に限定されるため、無駄がありません。",
+    "訓練データが多少変化しても、サポートベクターが変わらなければ分類器は変わらず、モデルは非常に頑健です。",
+    "そのため、外れ値（アウトライヤー）やノイズにも強いという特徴があります。"
+  ],
+  "originalSlideText": "SUPPORT VECTOR MACHINE\n– Zusammenfassung\n– SVM optimiert die trennende Hyperebene zwischen den Klassen\n– Ergebnis ist stabil, das da Optimierungsproblem nur ein globales Minimum hat\n– Kernel Trick erlaubt die Klassifikation nicht linearer Daten\n– Skalarproduktberechnung kann im Ursprungsraum durchgeführt werden\n– Beschränkung auf Stützvektoren vereinfacht die Optimierung\n– Veränderungen der Trainingsdaten führen nur bei neuen Stützvektoren zu anderen Klassifikatoren\n→ weniger anfällig auf Outlier",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 20,
+  "questionDe": "(s26) Welche Eigenschaften hat das Kernel-Perceptron in der dualen Form?",
+  "questionJa": "双対形式のカーネル付きPerceptronにはどのような特徴があるか？",
+  "answerDe": [
+    "Verwendet Kernel-Funktion K zur Transformation der Daten",
+    "Klassifikation erfolgt durch sgn(Σ αᵢ yᵢ K(xᵢ, x))",
+    "Rechenaufwand steigt mit Anzahl der Trainingsdaten, da jedes αᵢ gespeichert werden muss"
+  ],
+  "answerJa": [
+    "データの変換にカーネル関数Kを使用する",
+    "分類は sgn(Σ αᵢ yᵢ K(xᵢ, x)) によって行われる",
+    "全ての訓練データに対してαᵢが必要なため、データ数が増えると計算量が増加する"
+  ],
+  "explanationDe": [
+    "Das Kernel-Perceptron erweitert das klassische Perceptron, indem es eine Kernel-Funktion K verwendet, um nicht linear trennbare Daten zu klassifizieren.",
+    "Anstelle einer direkten linearen Gewichtung der Merkmale erfolgt die Klassifikation in der dualen Form über das Skalarprodukt im transformierten Raum.",
+    "Dies geschieht mit der Formel: sgn(Σ αᵢ yᵢ K(xᵢ, x)), wobei xᵢ Trainingsdaten sind, x der Eingabepunkt, yᵢ die Klassen und αᵢ die Lernparameter.",
+    "Die Kernel-Funktion K erlaubt eine implizite Abbildung in höhere Dimensionen, ohne diese explizit zu berechnen.",
+    "Ein Nachteil ist jedoch, dass für jeden Trainingspunkt ein αᵢ gespeichert werden muss.",
+    "Somit steigt der Rechenaufwand linear mit der Anzahl der Trainingsbeispiele."
+  ],
+  "explanationJa": [
+    "カーネルPerceptronは、通常のPerceptronを拡張して、カーネル関数Kを使うことで非線形データも分類できるようにしたものです。",
+    "特徴量を直接重み付けするのではなく、変換された空間でのスカラー積に基づいて分類を行います。",
+    "具体的には、分類関数は sgn(Σ αᵢ yᵢ K(xᵢ, x)) という形で表され、xᵢは訓練データ、xは入力、yᵢはクラスラベル、αᵢは学習で得たパラメータです。",
+    "カーネル関数Kにより、高次元空間への写像を明示的に計算することなく行うことができます。",
+    "ただし、この手法には欠点もあり、全ての訓練データに対してαᵢを保持する必要があるため、データ数が増えると計算負荷も増大します。",
+    "そのため、データが多い場合は計算コストに注意する必要があります。"
+  ],
+  "originalSlideText": "SUPPORT VECTOR MACHINE\n– Perceptron\n– Der Kerneltrick der SVM ist auch beim Perceptron anwendbar:\n    ∑ wᵢxᵢ\n– Ist in der dualen Form:\n    sgn ∑ αᵢyᵢK(xᵢ, x)\n– K ist hier die Kernelfunktion zum transformieren der Daten\n– Rechenbedarf steigt mit der Anzahl der Trainingsdaten, da jeder Datensatz ein alpha hat",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 22,
+  "questionDe": "(s2-26) Erkläre den grundlegenden Ablauf der SVM und die Rolle der Support-Vektoren.",
+  "questionJa": "SVMの基本的な流れを説明し、サポートベクターがどのような役割を果たすかを述べよ。",
+  "answerDe": [
+    "SVM sucht eine Hyperebene, die Klassen optimal trennt",
+    "Ziel ist die maximale Margin zwischen den Klassen",
+    "Nur Support-Vektoren bestimmen die Trennlinie",
+    "Kernelfunktion erlaubt nichtlineare Trennung"
+  ],
+  "answerJa": [
+    "SVMはクラスを最もよく分ける超平面（決定境界）を求める",
+    "目的はクラス間のマージン（間隔）を最大にすること",
+    "分類境界はサポートベクターのみで決定される",
+    "カーネル関数により非線形な分離も可能"
+  ],
+  "explanationDe": [
+    "Der grundlegende Ablauf der SVM beginnt damit, dass Trainingsdaten in einem Merkmalsraum dargestellt werden.",
+    "Dann wird eine Hyperebene gesucht, die die Klassen mit möglichst großem Abstand (Margin) voneinander trennt.",
+    "Dabei gibt es oft mehrere mögliche Trennlinien – die SVM wählt diejenige mit der größten Margin, um eine robuste Klassifikation zu gewährleisten.",
+    "Support-Vektoren sind die Datenpunkte, die am nächsten an der Trennlinie liegen – sie bestimmen somit direkt die Lage der optimalen Hyperebene.",
+    "Alle anderen Trainingspunkte spielen bei der endgültigen Klassifikation keine Rolle.",
+    "Wenn die Daten nicht linear trennbar sind, kommt der sogenannte Kernel-Trick zum Einsatz.",
+    "Dieser ermöglicht es, die Daten in einen höherdimensionalen Raum zu transformieren, wo eine lineare Trennung möglich ist.",
+    "Die Berechnung basiert auf Skalarprodukten der transformierten Merkmale, ohne dass diese explizit berechnet werden müssen."
+  ],
+  "explanationJa": [
+    "SVM（サポートベクターマシン）は、まず訓練データを特徴空間にマッピングします。",
+    "次に、クラスを分離するための超平面（境界線）を探します。",
+    "このとき、クラス間の間隔（マージン）を最大にするような境界を選ぶのがSVMの特徴です。",
+    "複数の境界が同じくらい良さそうな場合でも、最もマージンが広いものを選ぶことで汎化性能を高めます。",
+    "ここで重要な役割を果たすのがサポートベクターです。",
+    "サポートベクターとは、境界に最も近いデータ点であり、これらが分類境界を決定します。",
+    "他のデータ点は境界の位置に影響を与えません。",
+    "データが線形分離できない場合は、カーネルトリックを使って、データを高次元空間に写像します。",
+    "これにより、複雑な境界でも線形な形で分離可能となり、SVMは非線形な分類も実現できます。"
+  ],
+  "originalSlideText": "SUPPORT VECTOR MACHINE\n– Klassifikationsmethode, welche auf Stützvektoren basiert\n– Teilt den Raum mit einer Hyperebene\n– Suche nach der Hyperebene mit der größten Breite\n– Maximum margin method\n– Nur Support-Vektoren bestimmen die optimale Hyperebene\n– Kernel Trick erlaubt nichtlineare Trennung",
+  "explanationImage": "",
+  "questionImage": ""
+}
 ]
