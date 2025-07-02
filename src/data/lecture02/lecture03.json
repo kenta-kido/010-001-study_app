@@ -347,13 +347,255 @@
     "originalSlideText": "Dynamische Abfragen\nSchnittstellen\n▶ Button (Knöpfe)\n  ▶ Für die Auswahl von (kategorischen) Werten\n▶ Radiobutton (Radioknöpfe)\n  ▶ Für die exklusive Auswahl von (kategorischen) Werten\n▶ Slider (Schieberegler)\n  ▶ Auswahl von\n    ▶ einem Wert\n    ▶ einer Menge von Werten\n      ▶ Ordinal oder quantitativ\n      ▶ Minimum und Maximum",
     "explanationImage": "",
     "questionImage": ""
-  }
-
-  
-  
-  
-  
-  
-  
-  
+  },
+  {
+    "id": 8,
+    "questionDe": "(s13) Was bewirken Filter bei der Auswahl von Datenpunkten?",
+    "questionJa": "フィルターを使うとデータポイントの選択にどのような効果があるか？",
+    "answerDe": [
+      "Filter reduzieren die Anzahl der Datenpunkte",
+      "Nur Datenpunkte mit bestimmten Attributwerten werden verwendet"
+    ],
+    "answerJa": [
+      "フィルターはデータポイントの数を減らす",
+      "特定の属性値を持つデータポイントのみが使用される"
+    ],
+    "explanationDe": [
+      "Filter helfen dabei, große Datenmengen gezielt zu analysieren, indem nur relevante Datenpunkte berücksichtigt werden.",
+      "Zum Beispiel: Wenn man in einem Datensatz mit Kundendaten nur Personen anzeigen möchte, die zwischen 30 und 40 Jahre alt sind, kann man einen Altersfilter setzen.",
+      "Dadurch werden alle anderen Personen automatisch ausgeschlossen, und die Analyse wird fokussierter und übersichtlicher."
+    ],
+    "explanationJa": [
+      "フィルターは、膨大なデータの中から必要なデータのみを抽出するために使われます。",
+      "例えば、顧客データから30〜40歳の人だけを見たい場合、「年齢」にフィルターをかけることで、他の年齢の人を除外できます。",
+      "これにより、分析の焦点が定まり、処理も簡単になります。"
+    ],
+    "originalSlideText": "► Filter reduzieren die Anzahl der Datenpunkte\n► Nur Datenpunkte, welche für ein Attribut\n  ► dem ausgewählten Wert entsprechen\n  ► den ausgewählten Werten entsprechen\n  ► im ausgewählten Wertebereich liegen\n  werden verwendet",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 9,
+    "questionDe": "(s13) Welche Bedingungen müssen Datenpunkte erfüllen, um nach dem Filtern verwendet zu werden?",
+    "questionJa": "フィルター後にデータポイントが使用されるには、どんな条件を満たす必要があるか？",
+    "answerDe": [
+      "Dem ausgewählten Wert entsprechen",
+      "Den ausgewählten Werten entsprechen",
+      "Im ausgewählten Wertebereich liegen"
+    ],
+    "answerJa": [
+      "選択された1つの値に一致する",
+      "選択された複数の値に一致する",
+      "選択された値の範囲に含まれる"
+    ],
+    "explanationDe": [
+      "Ein Datenpunkt wird nur verwendet, wenn er eine bestimmte Bedingung im Hinblick auf ein Attribut erfüllt:",
+      "1. Er entspricht genau einem gewählten Wert (z. B. 'Kategorie = A').",
+      "2. Er gehört zu einer ausgewählten Menge von Werten (z. B. 'Kategorie = A oder B').",
+      "3. Er liegt innerhalb eines definierten Zahlenbereichs (z. B. 'Wert zwischen 10 und 20')."
+    ],
+    "explanationJa": [
+      "データポイントがフィルター後に使用されるには、ある属性について以下のいずれかの条件を満たす必要があります：",
+      "1. 特定の1つの値と一致する（例：「カテゴリ = A」）。",
+      "2. 複数の指定された値のいずれかと一致する（例：「カテゴリ = AまたはB」）。",
+      "3. 指定された数値範囲に含まれる（例：「値が10〜20の間」）。"
+    ],
+    "originalSlideText": "► Nur Datenpunkte, welche für ein Attribut\n  ► dem ausgewählten Wert entsprechen\n  ► den ausgewählten Werten entsprechen\n  ► im ausgewählten Wertebereich liegen\n  werden verwendet",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 10,
+    "questionDe": "(s13) Welche Filterelemente eignen sich für welche Art von Attributwerten?",
+    "questionJa": "どのフィルターUIがどの種類の属性値に適しているか？",
+    "answerDe": [
+      "Slider – 1 Wert",
+      "Radiobutton – 1 Wert",
+      "Togglebutton – Mehrere Werte (Nominal)",
+      "Range-Slider – Mehrere Werte (Numerisch, Range)"
+    ],
+    "answerJa": [
+      "スライダー：1つの値",
+      "ラジオボタン：1つの値",
+      "トグルボタン：複数の値（名義属性）",
+      "レンジスライダー：複数の値（数値属性、範囲）"
+    ],
+    "explanationDe": [
+      "Je nach Typ des Attributs sind unterschiedliche UI-Elemente geeignet:",
+      "– Ein Slider oder Radiobutton wird verwendet, wenn nur ein einzelner Wert ausgewählt werden soll (z. B. Jahr = 2020).",
+      "– Togglebuttons sind sinnvoll bei nominalen Attributen mit mehreren Optionen (z. B. Beruf = Lehrer, Arzt, Ingenieur).",
+      "– Range-Slider sind ideal für numerische Attribute, bei denen ein Wertebereich eingestellt wird (z. B. Alter zwischen 20 und 40)."
+    ],
+    "explanationJa": [
+      "属性の種類によって、適したフィルターUIが異なります：",
+      "– スライダーやラジオボタンは1つの値を選ぶときに使用（例：年 = 2020）。",
+      "– トグルボタンは、複数の名義属性（例：職業 = 教師、医者、エンジニアなど）を選ぶときに適しています。",
+      "– レンジスライダーは、数値属性に対して範囲指定をするときに使います（例：年齢20〜40歳）。"
+    ],
+    "originalSlideText": "Element       | Attributwerte\nSlider         | 1\nRadiobutton    | 1\nTogglebutton   | Mehrere (Nominal)\nRange-Slider   | Mehrere (Numerisch, Range)",
+    "explanationImage": "lecture02/lecture03_ex01.png",
+    "questionImage": ""
+  },
+  {
+  "id": 11,
+  "questionDe": "(s14) Was zeigt die Abbildung zum Alpha-Slider und wie funktioniert er?",
+  "questionJa": "Alpha-Sliderの図は何を示しており、どのように動作するか？",
+  "answerDe": [
+    "Er erlaubt die dynamische Auswahl eines Wertes (z. B. Wortanfangsbuchstabe)",
+    "Der Slider bewegt sich über Buchstabenbereiche (z. B. A–Z)",
+    "Die aktuelle Auswahl wird als Text angezeigt"
+  ],
+  "answerJa": [
+    "値（例えば、単語の最初の文字）を動的に1つ選ぶためのUI",
+    "スライダーはA〜Zの文字範囲を移動できる",
+    "現在選択された値がテキストとして表示される"
+  ],
+  "explanationDe": [
+    "Der Alpha-Slider ist ein Interaktionselement, mit dem man gezielt einen Wert aus einer alphabetischen Liste auswählen kann – zum Beispiel Wörter nach ihrem Anfangsbuchstaben filtern.",
+    "Im gezeigten Beispiel wird der Buchstabenbereich 'H–J' gewählt, wodurch der Begriff 'Hunt for Red October' als Ergebnis erscheint.",
+    "Die Auswahl geschieht über einen Schieberegler (Slider thumb), der über die Buchstabenbereiche gleitet. Das System zeigt dann dynamisch passende Ergebnisse als Text an."
+  ],
+  "explanationJa": [
+    "Alpha-Sliderは、アルファベット順のリスト（例：単語）から1つの値を選ぶためのインタフェースです。例えば、単語の頭文字で検索・フィルタする際に使われます。",
+    "この図では、「H〜J」の範囲が選ばれており、それに該当する「Hunt for Red October」という結果がテキスト出力として表示されています。",
+    "ユーザーはスライダーを動かして任意の文字範囲を選び、結果がリアルタイムで変化するのが特徴です。"
+  ],
+  "originalSlideText": "Abbildung: Dynamische Auswahl nach Worten (ein Wert): Alpha-Slider [OLS1993]",
+  "explanationImage": "lecture02/lecture03_ex02.png",
+  "questionImage": ""
+},
+{
+  "id": 12,
+  "questionDe": "(s15) Was ist der Unterschied zwischen dem verbesserten Alpha-Slider und dem ursprünglichen Alpha-Slider?",
+  "questionJa": "改良版Alpha-Sliderは、元のAlpha-Sliderとどう違うのか？",
+  "answerDe": [
+    "Er bietet eine visuell differenziertere Auswahl",
+    "Die Auswahlregion hat eine trichterförmige Darstellung",
+    "Mehr Kontextinformationen durch gestufte Tiefenanzeige"
+  ],
+  "answerJa": [
+    "視覚的により細かく選択できるようになっている",
+    "選択範囲が「じょうご（漏斗）」のような形で表示される",
+    "深さの段階的表示により、より多くの候補が見える"
+  ],
+  "explanationDe": [
+    "Der verbesserte Alpha-Slider erweitert den ursprünglichen Ansatz, indem er die Auswahl visuell detaillierter darstellt.",
+    "Die trichterartige Form hilft, angrenzende Buchstabenbereiche mit anzuzeigen, was die Orientierung verbessert.",
+    "Zum Beispiel: Bei der Auswahl des Bereichs H–J erscheinen auch benachbarte Bereiche abgeschwächt, was hilft, Übergänge oder ähnliche Begriffe wie 'Gone with the Wind' besser einzuordnen."
+  ],
+  "explanationJa": [
+    "改良版Alpha-Sliderは、元のバージョンに比べて視覚的な情報が強化されています。",
+    "図のように選択範囲が「じょうご型」で表示されることで、周囲の文字範囲の情報もぼんやり見えるようになっています。",
+    "例えば「H〜J」を選んだ場合、その周囲（FやKなど）の範囲も少し表示され、選択の文脈や類似語の見つけやすさが向上します。"
+  ],
+  "originalSlideText": "Abbildung: Dynamische Auswahl nach Worten (ein Wert): Verbesserter Alpha-Slider [Ahl1996]",
+  "explanationImage": "lecture02/lecture03_ex03.png",
+  "questionImage": ""
+},
+{
+  "id": 13,
+  "questionDe": "(s16) Wie funktioniert ein Range-Slider zur Filterung von Daten?",
+  "questionJa": "Range-Sliderはどのようにデータをフィルターするのか？",
+  "answerDe": [
+    "Zwei Schieberegler (Thumbs) setzen untere und obere Grenze",
+    "Nur Daten im ausgewählten Bereich (Real data range) werden verwendet"
+  ],
+  "answerJa": [
+    "2つのスライダー（下限と上限）で範囲を指定する",
+    "指定された範囲内のデータ（リアルデータレンジ）のみが使用される"
+  ],
+  "explanationDe": [
+    "Ein Range-Slider besteht aus zwei verschiebbaren Griffen (Thumbs), mit denen die minimale und maximale Grenze eines Wertebereichs festgelegt werden.",
+    "Im dargestellten Beispiel ist der gesamte Bereich von 0 bis 100 sichtbar, aber nur der Bereich zwischen den beiden schwarzen Balken (Real data range) wird für die Filterung verwendet.",
+    "Beispiel: Wenn man nur Kunden mit einem Einkommen zwischen 40.000 und 60.000 Euro analysieren möchte, kann man diesen Bereich mit dem Range-Slider festlegen."
+  ],
+  "explanationJa": [
+    "Range-Sliderは、2つのつまみ（スライダーハンドル）を使って、数値の下限と上限を設定するUIです。",
+    "図では、全体の範囲（0〜100）が示されていますが、実際に使用されるのは、黒いバーで示された「リアルデータレンジ」の部分だけです。",
+    "例えば「年収が4万〜6万円の人だけを分析したい」といったときに、この範囲をRange-Sliderで指定することで、該当データだけを抽出できます。"
+  ],
+  "originalSlideText": "Abbildung: Range-Slider (Filter): untere und obere Schranke",
+  "explanationImage": "lecture02/lecture03_ex04.png",
+  "questionImage": ""
+},
+{
+  "id": 14,
+  "questionDe": "(s22) Was ist ein Data Visualization Slider und wie unterstützt er dynamische Abfragen?",
+  "questionJa": "Data Visualization Sliderとは何で、どのように動的な問い合わせ（ダイナミッククエリ）を支援するのか？",
+  "answerDe": [
+    "Er kombiniert Werteauswahl mit visueller Datenverteilung",
+    "Benutzer sehen sofort, wie viele Datenpunkte in welchem Bereich liegen",
+    "Filtergrenzen (low/high thumb) lassen sich direkt anpassen"
+  ],
+  "answerJa": [
+    "値の選択とデータ分布の可視化を組み合わせたインターフェース",
+    "どの範囲にどれだけのデータがあるかを視覚的に確認できる",
+    "上下限スライダー（low/high thumb）で直接フィルター範囲を調整できる"
+  ],
+  "explanationDe": [
+    "Ein Data Visualization Slider erweitert den klassischen Range-Slider, indem er die Verteilung der Daten (z. B. als Kurve oder Histogramm) im Hintergrund anzeigt.",
+    "Dadurch kann der Benutzer gezielter filtern, z. B. indem er einen Bereich mit besonders hoher Datendichte auswählt.",
+    "Beispiel: Wenn die meisten Werte zwischen 40 und 70 liegen, sieht man das sofort in der Grafik und kann diesen Bereich gezielt auswählen, ohne die Verteilung schätzen zu müssen."
+  ],
+  "explanationJa": [
+    "Data Visualization Sliderは、通常のRange-Sliderに「データ分布の可視化」を加えたものです。",
+    "背景にヒストグラムやカーブなどでデータの分布を表示し、それを見ながらフィルター範囲（上下限）を調整できます。",
+    "たとえば、データの大部分が40〜70に集中していると視覚的にわかるので、その範囲を簡単に選ぶことができ、直感的な操作が可能になります。"
+  ],
+  "originalSlideText": "Abbildung: Data Visualization Slider",
+  "explanationImage": "lecture02/lecture03_ex05.png",
+  "questionImage": ""
+},
+{
+  "id": 15,
+  "questionDe": "(s23) Nenne drei Vorteile dynamischer Abfragen.",
+  "questionJa": "動的クエリの利点を3つ挙げよ。",
+  "answerDe": [
+    "Schnelleres Arbeiten",
+    "Erforschen der Daten",
+    "„Natürliche“ Art der Interaktion"
+  ],
+  "answerJa": [
+    "作業をより速く進められる",
+    "データの探索がしやすい",
+    "“自然”で直感的なインタラクションができる"
+  ],
+  "explanationDe": [
+    "Dynamische Abfragen ermöglichen sofortige Reaktionen auf Benutzereingaben, z. B. durch Schieberegler. Das macht die Arbeit schneller.",
+    "Nutzer können Daten interaktiv erkunden, indem sie Filter live anpassen, ohne Zwischenschritte wie das Absenden eines Formulars.",
+    "Diese Form der Interaktion fühlt sich für viele Nutzer natürlicher an, da sie direkt auf Änderungen reagieren können – ähnlich wie bei physischen Reglern oder Apps."
+  ],
+  "explanationJa": [
+    "動的クエリでは、例えばスライダーを動かすと結果が即座に変わるため、操作が速くなります。",
+    "ユーザーはフィルターを自由に動かしながらリアルタイムで結果を確認でき、データ探索がしやすくなります。",
+    "操作が直感的で、物理的なつまみを動かすような“自然”な感覚でインタラクションできる点も利点です。"
+  ],
+  "originalSlideText": "► Vorteile\n  ► Schnelleres Arbeiten\n  ► Erforschen der Daten\n  ► “Natürliche” Art der Interaktion",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 16,
+  "questionDe": "(s23) Nenne zwei Nachteile dynamischer Abfragen.",
+  "questionJa": "動的クエリの欠点を2つ挙げよ。",
+  "answerDe": [
+    "Schnittstellen benötigen viel Platz auf dem Bildschirm",
+    "Integration von Daten und Bedienung ist erforderlich"
+  ],
+  "answerJa": [
+    "ユーザーインターフェースが画面上のスペースを多く使う",
+    "データと操作を統合した設計が必要になる"
+  ],
+  "explanationDe": [
+    "Dynamische Interfaces wie Slider oder Filter brauchen oft viel Platz, besonders wenn mehrere gleichzeitig angezeigt werden.",
+    "Zusätzlich ist eine enge Kopplung von Bedienungselementen und Visualisierung notwendig, was die Entwicklung und Gestaltung aufwändiger macht."
+  ],
+  "explanationJa": [
+    "スライダーやフィルターなどの動的インタフェースは、複数表示すると画面を多く占有してしまいます。",
+    "また、データ表示と操作を密接に結びつける必要があり、UI/UX設計や開発が複雑になります。"
+  ],
+  "originalSlideText": "► Nachteile\n  ► Schnittstellen benötigen viel Platz auf dem Bildschirm\n    ► Integration von Daten und Bedienung",
+  "explanationImage": "",
+  "questionImage": ""
+} 
 ]
