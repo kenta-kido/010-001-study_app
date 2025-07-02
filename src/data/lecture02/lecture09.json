@@ -486,21 +486,369 @@
   "originalSlideText": "Ausgangssituation: Tabelle mit n Datenpunkten und m Attributen. Problem: Mehr Daten als Darstellungsfläche.",
   "explanationImage": "lecture02/lecture09_ex08.png",
   "questionImage": ""
+},
+{
+  "id": 17,
+  "questionDe": "(s25) Welche Lösungsalternativen gibt es bei zu vielen Datenpunkten oder Attributen?",
+  "questionJa": "データ点または属性が多すぎる場合の解決策は何か？",
+  "answerDe": [
+    "Reduktion der Datenpunkte durch Einschränkung der Attributwerte (Datenauswahl, Interaktion).",
+    "Reduktion der Attribute durch Attributauswahl, Projektion, Clustering oder Dimensionsreduktion."
+  ],
+  "answerJa": [
+    "属性値の制限（データ選択やインタラクション）によるデータ点の削減。",
+    "属性選択、射影、クラスタリング、次元削減による属性の削減。"
+  ],
+  "explanationDe": [
+    "Wenn zu viele Datenpunkte oder Attribute vorhanden sind, kann man die Datenmenge reduzieren.",
+    "Dies geschieht entweder durch die Auswahl einer relevanten Teilmenge von Datenpunkten (z.B. durch Interaktion),",
+    "oder durch Reduktion der Anzahl von Attributen mittels Verfahren wie Dimensionsreduktion oder Clustering."
+  ],
+  "explanationJa": [
+    "データ点や属性が多すぎる場合には、データの量を削減する必要がある。",
+    "これは、関連するデータ点のみを選択する（たとえばインタラクションによって）か、",
+    "または次元削減やクラスタリングなどの手法によって属性の数を減らすことによって行われる。"
+  ],
+  "originalSlideText": "Lösungsalternativen: Reduktion der Datenpunkte oder Reduktion der Attribute (z. B. Attributauswahl, Dimensionsreduktion).",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 18,
+  "questionDe": "(s26) Was ist eine orthogonale Projektion in der Merkmalsextraktion?",
+  "questionJa": "特徴抽出における直交射影とは何か？",
+  "answerDe": "Verwende nur die Attribute für die Analyse, welche für die Analyse notwendig sind.",
+  "answerJa": "分析に必要な属性のみを使用する。",
+  "explanationDe": [
+    "Orthogonale Projektion bedeutet, dass nur bestimmte Achsen (Attribute) für die Analyse verwendet werden.",
+    "Die Daten werden direkt entlang dieser ausgewählten Originalachsen dargestellt, z. B. in einer Scatterplot-Matrix.",
+    "Es ist eine direkte und intuitive Projektion, aber sie erfordert Vorwissen über relevante Attribute."
+  ],
+  "explanationJa": [
+    "直交射影では、元のデータの中から必要な属性だけを使って分析を行います。",
+    "たとえば散布図行列のように、『身長』『体重』などの軸をそのまま使って可視化します。",
+    "シンプルで意味の解釈がしやすい反面、どの属性が重要か事前に知っておく必要があります。"
+  ],
+  "originalSlideText": "Orthogonale Projektion … Verwende nur die Attribute für die Analyse, welche für die Analyse notwendig sind.",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 19,
+  "questionDe": "(s26) Warum ist eine orthogonale Projektion bei explorativer Datenanalyse nicht immer möglich?",
+  "questionJa": "なぜ直交射影は探索的データ分析において常に適しているとは限らないのか？",
+  "answerDe": "Bei erforschender Datenanalyse nicht (immer) möglich.",
+  "answerJa": "探索的データ分析では（常に）可能とは限らない。",
+  "explanationDe": [
+    "Orthogonale Projektion verlangt, dass man schon weiß, welche Attribute wichtig sind.",
+    "In der explorativen Analyse hat man diese Information jedoch oft noch nicht.",
+    "Deshalb kann man nicht immer sinnvoll auswählen, welche Achsen man darstellen soll."
+  ],
+  "explanationJa": [
+    "直交射影では、事前にどの属性が重要か知っている必要があります。",
+    "しかし、探索的データ分析では、まずパターンや関係を探す段階なので、重要な属性がまだわかっていないことが多いです。",
+    "そのため、直交射影がうまく使えない場合があります。"
+  ],
+  "originalSlideText": "Bei erforschender Datenanalyse nicht (immer) möglich",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 20,
+  "questionDe": "(s26) Was passiert bei schräger Projektion?",
+  "questionJa": "斜め射影では何が行われるか？",
+  "answerDe": "Projiziere Daten in den neuen Raum.",
+  "answerJa": "データを新しい空間に投影する。",
+  "explanationDe": [
+    "Bei schräger Projektion werden die Daten mathematisch transformiert.",
+    "Man erstellt 1–3 neue orthogonale Attribute (Achsen), in denen die Daten dargestellt werden.",
+    "Beispiel: Mit einem Verfahren wie Hauptkomponentenanalyse (PCA) entstehen neue kombinierte Achsen.",
+    "Die ursprünglichen Achsen werden dabei nicht direkt verwendet."
+  ],
+  "explanationJa": [
+    "斜め射影では、元の属性を数学的に変換して、新しい軸を作ります（例：主成分分析）。",
+    "1〜3個の新しい属性を作成し、そこにデータを投影します。",
+    "この新しい空間では、元の軸の組み合わせによって、より特徴的な構造や関係が見えやすくなります。"
+  ],
+  "originalSlideText": "Schräge Projektion … Erzeuge 1–3 neue orthogonale Attribute … Projiziere Daten in den neuen Raum",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 21,
+  "questionDe": "(s26) Wobei hilft Grand Tour und Projection Pursuit?",
+  "questionJa": "Grand TourやProjection Pursuitは何を助けるか？",
+  "answerDe": "Unterstützt erforschende Analyse.",
+  "answerJa": "探索的分析を支援する。",
+  "explanationDe": [
+    "Grand Tour erzeugt eine kontinuierliche Abfolge von Projektionen aus dem hochdimensionalen Raum.",
+    "Projection Pursuit sucht gezielt nach Projektionen, die interessante Strukturen wie Cluster oder Ausreißer zeigen.",
+    "Beide Verfahren sind hilfreich, wenn man nicht weiß, welche Attribute man wählen soll."
+  ],
+  "explanationJa": [
+    "Grand Tourは多次元空間を回転させながら、2次元投影を連続的に表示する方法です。",
+    "Projection Pursuitは、最も情報量が多い方向（例：分散が大きい）を自動的に探します。",
+    "どの軸を使えばよいかわからない探索的分析の初期段階で、構造の発見に役立ちます。"
+  ],
+  "originalSlideText": "Grand Tour und Projection Pursuit … Unterstützt erforschende Analyse",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 22,
+  "questionDe": "(s27) Was sind typische Eigenschaften von Projektionen in der Merkmalsextraktion?",
+  "questionJa": "特徴抽出における射影の典型的な性質は何か？",
+  "answerDe": "Wähle d ∈ {2,3} Attribute.",
+  "answerJa": "d ∈ {2,3}の属性を選ぶ。",
+  "explanationDe": [
+    "Bei einer Projektion wählt man typischerweise 2 oder 3 Attribute (d=2 oder 3), um sie in einem 2D- oder 3D-Raum darzustellen.",
+    "Das ist sinnvoll, weil man solche Räume gut visualisieren kann, z. B. in Scatterplots."
+  ],
+  "explanationJa": [
+    "射影では通常、2〜3個の属性を選んで2次元や3次元の空間にデータを表示します。",
+    "これは散布図や3Dグラフなどで視覚的にわかりやすいため、よく使われる方法です。"
+  ],
+  "originalSlideText": "Wähle d ∈ {2,3} Attribute",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 23,
+  "questionDe": "(s27) Was ist das Problem bei Projektionen mit wenigen Attributen?",
+  "questionJa": "少ない属性で射影するときの問題点は何か？",
+  "answerDe": "Führt in der Regel zu vielen \"gleichen\" Datenpunkten → Overplotting.",
+  "answerJa": "多くの「同じ」データ点が生じ、オーバープロットになる。",
+  "explanationDe": [
+    "Wenn man nur wenige Attribute (z. B. 2) verwendet, landen viele Datenpunkte an derselben Position.",
+    "Dies nennt man Overplotting – Punkte überdecken sich und sind nicht mehr unterscheidbar."
+  ],
+  "explanationJa": [
+    "少数の属性（例えば2つ）だけで射影すると、たくさんのデータ点が同じ場所に重なってしまいます。",
+    "このように点が重なって見えなくなる現象をオーバープロットと呼びます。",
+    "可視化の効果が下がり、情報が読み取れなくなります。"
+  ],
+  "originalSlideText": "Führt in der Regel zu vielen \"gleichen\" Datenpunkten → Overplotting",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 24,
+  "questionDe": "(s27) Welche Herausforderung gibt es bei der Attributauswahl für Projektionen?",
+  "questionJa": "射影のための属性選びにおける課題は何か？",
+  "answerDe": "Berücksichtigt die Werte und die Verteilung der Werte der Datenpunkte nicht.",
+  "answerJa": "値や値の分布が考慮されない。",
+  "explanationDe": [
+    "Oft werden Attribute manuell ausgewählt, ohne zu prüfen, wie ihre Werte verteilt sind.",
+    "Ein Attribut mit nur einer Kategorie oder schiefer Verteilung kann zu schlechter Visualisierung führen.",
+    "Die Herausforderung besteht darin, Attribute zu wählen, die informative und vielfältige Projektionen ermöglichen."
+  ],
+  "explanationJa": [
+    "属性を選ぶときに、値の種類や分布が偏っていると、視覚的に意味のある射影が得られないことがあります。",
+    "たとえば、ほとんどの値が同じで一部しか異ならない場合、図にしても特徴が見えにくくなります。",
+    "よって、どの属性を使うかを選ぶこと自体が難しい課題になります。"
+  ],
+  "originalSlideText": "Berücksichtigt die Werte und die Verteilung der Werte der Datenpunkte nicht",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 25,
+  "questionDe": "(s28) Was passiert bei der Dimensionsreduktion mit den gegebenen Attributen?",
+  "questionJa": "次元削減では、もともとの属性はどうなるのか？",
+  "answerDe": "Ersetze gegebene Attribute A = {A₁,...,Aₘ} durch eine Menge von weniger Attributen D = {D₁,...,D_d}, d ≪ m.",
+  "answerJa": "元の属性 A = {A₁,...,Aₘ} を、より少ない属性 D = {D₁,...,D_d} に置き換える（d ≪ m）。",
+  "explanationDe": [
+    "Beim Prozess der Dimensionsreduktion geht es darum, eine große Anzahl von Attributen (z. B. 100) durch eine viel kleinere Menge zu ersetzen (z. B. 2 oder 3).",
+    "Dadurch wird die Datenmenge kompakter und besser visualisierbar."
+  ],
+  "explanationJa": [
+    "次元削減では、元々たくさんある属性（例えば100個）を、少数の新しい属性（例：2〜3個）に置き換えます。",
+    "これによりデータが簡潔になり、視覚化しやすくなります。"
+  ],
+  "originalSlideText": "Ersetze gegebene Attribute A = {A₁,...,Aₘ} durch eine Menge von weniger Attributen D = {D₁,...,D_d}, d ≪ m",
+  "explanationImage": "lecture02/lecture09_ex09.png",
+  "questionImage": ""
+},
+{
+  "id": 26,
+  "questionDe": "(s28) Wie groß ist die Ziel-Dimension d bei der Dimensionsreduktion typischerweise?",
+  "questionJa": "次元削減での目標次元 d の一般的な値は？",
+  "answerDe": "Meist: d ∈ {2, 3}",
+  "answerJa": "通常は d ∈ {2, 3}。",
+  "explanationDe": [
+    "Die reduzierte Anzahl an Attributen wird oft auf 2 oder 3 beschränkt, damit man sie in 2D- oder 3D-Grafiken darstellen kann.",
+    "Das erleichtert die Visualisierung erheblich."
+  ],
+  "explanationJa": [
+    "削減後の次元数は通常2または3です。これは2次元や3次元の図で視覚化しやすいためです。",
+    "例えば、PCA（主成分分析）などの手法では、第一主成分と第二主成分の2つで可視化されることが多いです。"
+  ],
+  "originalSlideText": "Meist: d ∈ {2, 3}",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 27,
+  "questionDe": "(s28) Welche Alternativen gibt es bei der Dimensionsreduktion?",
+  "questionJa": "次元削減にはどのような方法の選択肢があるか？",
+  "answerDe": "D ⊆ A entspricht Projektion, D ∩ A = ∅: neue Attribute berechnet, Kombination aus beidem.",
+  "answerJa": "D ⊆ A は射影に相当する。D ∩ A = ∅ は新しい属性を計算する。両方の組み合わせもあり得る。",
+  "explanationDe": [
+    "Es gibt zwei Hauptansätze:",
+    "1. D ⊆ A: Wähle eine Teilmenge der ursprünglichen Attribute → klassische Projektion.",
+    "2. D ∩ A = ∅: Die neuen Attribute (D) werden aus den alten (A) berechnet → z. B. PCA.",
+    "Manchmal kombiniert man beide Methoden."
+  ],
+  "explanationJa": [
+    "主に2つの方法があります：",
+    "① D ⊆ A：もともとの属性の中から一部だけ選ぶ → これは射影（projection）と同じ。",
+    "② D ∩ A = ∅：元の属性とは別の新しい属性を作る → 例えばPCAのように、新しい軸を計算する。",
+    "③ 両者の組み合わせも可能です。"
+  ],
+  "originalSlideText": "Alternativen: D ⊆ A entspricht Projektion, D ∩ A = ∅ → neue Attribute, Kombination aus beidem",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 28,
+  "questionDe": "(s29) Was passiert beim Divisive Clustering mit den Datenpunkten?",
+  "questionJa": "Divisive Clustering ではデータポイントはどう扱われるか？",
+  "answerDe": "Die Cluster sind disjunkt. Jeder Datenpunkt liegt in genau einem Cluster.",
+  "answerJa": "クラスタは互いに重ならず（disjunkt）、各データポイントはちょうど1つのクラスタに属する。",
+  "explanationDe": [
+    "Beim Divisive Clustering wird die Datenmenge in klar getrennte Gruppen (Cluster) unterteilt.",
+    "Jeder Datenpunkt gehört genau zu einem dieser Cluster – es gibt keine Überschneidungen."
+  ],
+  "explanationJa": [
+    "Divisive Clustering では、全てのデータがはっきりと分かれたクラスタに分類される。",
+    "つまり、1つのデータ点が複数のクラスタに属することはなく、必ず1つだけに入る。"
+  ],
+  "originalSlideText": "Divisive Clustering → Die Cluster sind disjunkt. Jeder Datenpunkt liegt in genau einem Cluster.",
+  "explanationImage": "file-7XNtWb86e4pcMDuFuvJEVY",
+  "questionImage": ""
+},
+{
+  "id": 28,
+  "questionDe": "(s29) Was passiert beim Divisive Clustering mit den Datenpunkten?",
+  "questionJa": "Divisive Clustering ではデータポイントはどのように扱われますか？",
+  "answerDe": "Die Cluster sind disjunkt. Jeder Datenpunkt liegt in genau einem Cluster.",
+  "answerJa": "クラスタは互いに重ならず（disjunkt）、各データポイントは必ず1つのクラスタに所属します。",
+  "explanationDe": [
+    "Beim Divisive Clustering wird die gesamte Datenmenge zunächst als ein Cluster betrachtet.",
+    "Dann wird dieser Cluster Schritt für Schritt in kleinere, nicht überlappende Cluster zerlegt.",
+    "Beispiel: Stell dir vor, du hast 100 Kunden. Das System teilt sie zuerst in zwei Gruppen basierend auf Einkommen: <50.000€ und ≥50.000€.",
+    "Dann wird jede Gruppe weiter aufgeteilt, z. B. nach Alter oder Ausgabeverhalten – sodass am Ende jeder Kunde genau einer Gruppe (Cluster) zugeordnet ist."
+  ],
+  "explanationJa": [
+    "Divisive Clustering では、まずすべてのデータを1つのクラスタと見なします。",
+    "その後、いくつかの基準（たとえば年齢や収入など）に基づいて、クラスタを段階的に分割していきます。",
+    "たとえば、ある顧客データをまず「若年層」「中年層」「高齢層」に分け、その後さらに「支出の多い・少ない」などで分類すると、最終的にすべての顧客が1つのクラスタにだけ属する状態になります。"
+  ],
+  "originalSlideText": "Divisive Clustering → Die Cluster sind disjunkt. Jeder Datenpunkt liegt in genau einem Cluster.",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 29,
+  "questionDe": "(s29) Welches neue Attribut wird beim Clustering oft eingeführt?",
+  "questionJa": "クラスタリングではどのような新しい属性が導入されますか？",
+  "answerDe": "Ein neues Attribut Aₘ₊₁: die Klasse (das Cluster) des Objektes.",
+  "answerJa": "新しい属性 Aₘ₊₁ が追加され、各データにそのクラスタ（クラス）が記録されます。",
+  "explanationDe": [
+    "Nach dem Clustering wird jedem Objekt ein zusätzliches Attribut zugewiesen: die Cluster-ID oder Klasse.",
+    "Dieses Attribut zeigt, zu welchem Cluster ein Objekt gehört.",
+    "Beispiel: Wenn du Studenten nach Studienrichtung (Informatik, Medizin, Jura) clustert, bekommt jeder Student ein neues Feld → Aₘ₊₁ = 'Informatik' oder 'Jura'."
+  ],
+  "explanationJa": [
+    "クラスタリングを行った後は、各データがどのクラスタに属するかを示す新しい属性（例えば Aₘ₊₁）を追加します。",
+    "この属性は、たとえば「クラスタ1」「クラスタ2」などのように各データにラベル付けするものです。",
+    "例：学生データを『理系』『文系』にクラスタリングした場合、Aₘ₊₁ = '理系' や '文系' といった情報が各行に追加されます。"
+  ],
+  "originalSlideText": "Berechne neues Attribut Aₘ₊₁: die Klasse (das Cluster) des Objektes.",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 30,
+  "questionDe": "(s29) Was ist Hierarchical Clustering?",
+  "questionJa": "Hierarchical Clustering（階層的クラスタリング）とは何ですか？",
+  "answerDe": "Die Cluster bilden eine Hierarchie. Cluster und Datenpunkte werden zu neuen Clustern zusammengefasst.",
+  "answerJa": "クラスタが階層構造を作り、データ点とクラスタがさらに上位のクラスタにまとめられていきます。",
+  "explanationDe": [
+    "Beim Hierarchical Clustering wird eine Baumstruktur aufgebaut (auch Dendrogramm genannt).",
+    "Zuerst werden ähnliche Datenpunkte zu kleinen Clustern gruppiert.",
+    "Dann werden diese kleinen Cluster zu größeren Clustern zusammengefasst – das geht so weiter, bis es nur noch einen Hauptcluster gibt.",
+    "Beispiel: Du gruppierst Bücher nach Genre, dann Untergenre, dann nach Autor – so entsteht eine hierarchische Struktur."
+  ],
+  "explanationJa": [
+    "Hierarchical Clustering（階層的クラスタリング）では、まず似たデータ同士を小さなクラスタにまとめます。",
+    "次に、それらのクラスタをさらにまとめて、より大きなクラスタを形成します。これを繰り返すことで、ツリー状の階層構造（デンドログラム）ができます。",
+    "例：本を『ジャンル』→『サブジャンル』→『著者』の順に分類するように、データの分類が階層的になります。"
+  ],
+  "originalSlideText": "Hierarchical Clustering: Die Cluster bilden eine Hierarchie. Cluster und Datenpunkte werden zu neuen Clustern zusammengefasst.",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 31,
+  "questionDe": "(s30) Was ist das Ergebnis eines Clusterings?",
+  "questionJa": "クラスタリングの結果として得られるものは何ですか？",
+  "answerDe": "Ein neues Attribut pro Clustering, das die Zugehörigkeit jedes Datenpunktes zu einem Cluster beschreibt.",
+  "answerJa": "クラスタリングのたびに、各データがどのクラスタに属するかを示す新しい属性が追加されます。",
+  "explanationDe": [
+    "Wenn man Daten clustert, erhält jeder Datenpunkt eine zusätzliche Information: zu welchem Cluster er gehört.",
+    "Dieses neue Attribut (z. B. 'Cluster-ID') kann wie andere Datenattribute weiterverwendet oder visualisiert werden.",
+    "Beispiel: Wenn du Kundendaten in 3 Gruppen (A, B, C) clustert, bekommt jeder Kunde ein neues Feld → Cluster = A/B/C."
+  ],
+  "explanationJa": [
+    "クラスタリングを行うと、各データ点に『どのクラスタに属しているか』という新しい属性が追加されます。",
+    "この属性は『クラスタID』などと呼ばれ、他の属性と同様に分析や可視化に利用できます。",
+    "例：顧客を「高所得者」「中所得者」「低所得者」にクラスタリングすると、各顧客に「クラスタ=中所得者」などの情報が追加されます。"
+  ],
+  "originalSlideText": "Neues Attribut pro Clustering. Zugehörigkeit jedes Datenpunktes zu einem der Cluster dieses neuen Attributs.",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 32,
+  "questionDe": "(s30) Wie kann man die Cluster darstellen?",
+  "questionJa": "クラスタの情報はどのように表示・可視化できますか？",
+  "answerDe": "Zusätzlich zu den anderen Attributen oder anstelle der Attribute.",
+  "answerJa": "他の属性とあわせて表示することも、属性の代わりにクラスタ情報のみを表示することもできます。",
+  "explanationDe": [
+    "Clusterinformationen können z. B. in Scatterplots oder Tabellen dargestellt werden.",
+    "Man kann die Cluster-ID als Farbe, Symbol oder Gruppierung darstellen.",
+    "Beispiel: In einer Punktwolke werden alle Punkte eines Clusters mit der gleichen Farbe gezeigt."
+  ],
+  "explanationJa": [
+    "クラスタ情報は、例えば散布図や表などの可視化で色や形を使って表現できます。",
+    "クラスタを属性の1つとして追加表示したり、他の属性の代わりにクラスタのみを表示することもできます。",
+    "例：散布図で同じクラスタに属する点を同じ色で塗り分けることで、クラスタの分布が視覚的に把握しやすくなります。"
+  ],
+  "originalSlideText": "Darstellung der Cluster → Zusätzlich zu den anderen Attributen / Anstelle der Attribute.",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 33,
+  "questionDe": "(s30) Welche Interaktionsmöglichkeiten bietet Clustering?",
+  "questionJa": "クラスタリングの後にはどのようなインタラクションが可能になりますか？",
+  "answerDe": "Man kann einen Cluster auswählen und dessen Inhalte anzeigen, oder mehrere Cluster miteinander vergleichen.",
+  "answerJa": "クラスタを選択してその中身を確認したり、複数のクラスタを比較したりできます。",
+  "explanationDe": [
+    "Durch Clustering entstehen neue Interaktionen im Visualisierungssystem.",
+    "Man kann z. B. einen bestimmten Cluster anklicken und nur dessen Objekte analysieren.",
+    "Auch der Vergleich mehrerer Cluster, z. B. im Boxplot oder Balkendiagramm, ist möglich.",
+    "Beispiel: Du klickst auf 'Cluster 1' und siehst nur die Datenpunkte dieses Clusters in der Grafik oder Tabelle."
+  ],
+  "explanationJa": [
+    "クラスタリング後には新しいインタラクションが可能になります。",
+    "たとえば、あるクラスタをクリックして、その中のデータだけを表示することができます。",
+    "また、複数のクラスタを並べて比較することもできます（例：クラスタごとの平均年齢を棒グラフで比較）。",
+    "例：『クラスタ2』を選択すると、そのクラスタに属する商品だけがリストに表示されるようになります。"
+  ],
+  "originalSlideText": "Auswahl eines Clusters und Anzeige seines Inhaltes. Vergleich mehrerer Cluster und ihrer Inhalte.",
+  "explanationImage": "",
+  "questionImage": ""
 }
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
 ]
