@@ -1,30 +1,359 @@
 [
   {
     "id": 1,
-    "questionDe": "Nennen Sie drei Gründe, warum Data Mining eingesetzt wird.",
-    "questionJa": "Data Miningが用いられる理由を3つ挙げよ。",
+    "questionDe": "(s4) Welches Problem wird durch Interaktion in der Informationsvisualisierung gelöst, und welche vier Auswahlmöglichkeiten hat der Benutzer dabei?",
+    "questionJa": "情報視覚化において、インタラクションはどんな問題を解決するためにあり、ユーザーはどの4つの選択が可能か？",
     "answerDe": [
-      "Überbordernde Menge an Daten",
-      "Wachsende Lücke zwischen Produktion und Auswertung der Daten",
-      "Extraktion von nützlichen und versteckten Informationen"
+      "Problem: Datenmenge ist meist größer als verfügbare Darstellungsfläche.",
+      "Lösung: Interaktion des Benutzers durch...",
+      "1. Auswahl der Daten",
+      "2. Auswahl der Attribute",
+      "3. Auswahl der Darstellung",
+      "4. Auswahl der Ansicht"
     ],
     "answerJa": [
-      "膨大なデータ量",
-      "データ生成と分析のギャップの拡大",
-      "有用かつ隠れた情報の抽出"
+      "問題：データ量が表示領域よりも大きいことが多い。",
+      "解決方法：ユーザーによるインタラクション：",
+      "1. 表示するデータの選択",
+      "2. 表示する属性の選択",
+      "3. 表現方法（可視化形式）の選択",
+      "4. 表示ビューの選択"
     ],
     "explanationDe": [
-      "Data Mining wird eingesetzt, weil die heutige Datenmenge die menschliche Analysefähigkeit übersteigt.",
-      "Die überbordende Menge an Daten macht automatisierte Methoden notwendig.",
-      "Ziel ist die Extraktion von Informationen, die für Unternehmen oder Forschung wichtig sind."
+      "In der Informationsvisualisierung ist der verfügbare Bildschirmplatz oft zu klein, um alle Daten gleichzeitig darzustellen – insbesondere bei großen oder hochdimensionalen Datensätzen.",
+      "Dieses Problem wird durch Benutzerinteraktion gelöst: Der Nutzer entscheidet, welche Daten (z. B. eine Teilmenge), welche Attribute (z. B. nur 'Alter' und 'Einkommen'), welche Darstellungsform (z. B. Balkendiagramm, Streudiagramm) und welche Ansicht (z. B. Zoom, Filter, Ausschnitt) dargestellt werden sollen.",
+      "Beispiel: In einem Dashboard kann der Benutzer nur Kunden aus einem bestimmten Land anzeigen lassen (Auswahl der Daten), nur das Alter und Geschlecht betrachten (Attribute), als Liniendiagramm visualisieren (Darstellung), und auf einen bestimmten Zeitraum zoomen (Ansicht)."
     ],
     "explanationJa": [
-      "現代のデータ量は人間の分析能力を超えているため、自動化が必要とされます。",
-      "データの増加と分析のギャップを埋めるために用いられます。",
-      "Data Miningは、ビジネスや研究に役立つ情報を抽出する手法です。"
+      "情報視覚化においては、すべてのデータを一度に画面に表示するのは難しい。特に、大規模データや多次元データでは顕著である。",
+      "この問題を解決するために、ユーザーが自らインタラクション（操作）を行うことで、表示内容を絞り込むことができる。",
+      "具体的には、どのデータを表示するか（例：特定の地域のみ）、どの属性を取り出すか（例：年齢と性別のみ）、どの可視化形式を使うか（例：棒グラフか散布図か）、どのビューに注目するか（例：一部の期間にズーム）を選択することができる。"
     ],
-    "originalSlideText": "...",
-    "questionImage": "lecture01/lecture01_q1.png",
-    "explanationImage": "lecture01/lecture01_ex1.png"
+    "originalSlideText": "Interaktion\nProblem\n▶ Datenmenge meist größer als verfügbare Darstellungsfläche\nLösung\n▶ Interaktion des Benutzers\n  ▶ Auswahl der Daten\n  ▶ Auswahl der Attribute\n  ▶ Auswahl der Darstellung\n  ▶ Auswahl der Ansicht",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 2,
+    "questionDe": "(s5) Welche zeitlichen Anforderungen gelten für Interaktionen in der Informationsvisualisierung, und welche drei Reaktionszeit-Bereiche gibt es?",
+    "questionJa": "情報視覚化におけるインタラクションにはどんな時間的要求があるか？また、3種類の反応時間区分を挙げなさい。",
+    "answerDe": [
+      "Interaktion ist ein Echtzeit-Prozess.",
+      "Reaktion muss schnell genug sein, damit der Benutzer keine Zeit mit nutzlosem und frustrierendem Warten verliert.",
+      "Reaktion darf nicht zu schnell sein, damit keine Information übersehen wird.",
+      "Drei Reaktionszeiten:",
+      "1. 0,1 Sekunden – Animationen, Schieberegler (Slider), Ton",
+      "2. 1 Sekunde – Systemantworten, Dialoge",
+      "3. 10 Sekunden – Berechnungen"
+    ],
+    "answerJa": [
+      "インタラクションはリアルタイムのプロセスである。",
+      "反応は、ユーザーが無駄でストレスのある待ち時間を感じない程度に速くあるべきである。",
+      "一方で速すぎても、情報を見逃す可能性がある。",
+      "3つの反応時間の分類：",
+      "1. 0.1秒 – アニメーション、スライダー、音",
+      "2. 1秒 – システム応答、ダイアログ操作",
+      "3. 10秒 – 計算処理"
+    ],
+    "explanationDe": [
+      "**Reaktion in Echtzeit:** Interaktive Systeme in der Informationsvisualisierung müssen dem Nutzer unmittelbare Rückmeldung geben, sonst wirkt das System träge und unbrauchbar.",
+      "",
+      "**Nicht zu langsam:** Wenn eine visuelle Rückmeldung länger als eine Sekunde dauert, entsteht Frustration oder Unsicherheit. Beispiel: Wenn ein Filter bei einem Diagramm erst nach 3 Sekunden greift, denkt der Nutzer eventuell, es sei nicht angekommen.",
+      "",
+      "**Aber auch nicht zu schnell:** Bei sehr schnellen Reaktionen (z. B. 0,01 Sekunden) kann es sein, dass Nutzer Übergänge nicht wahrnehmen und wichtige Informationen übersehen.",
+      "",
+      "**0,1 Sekunden:** Diese Reaktionszeit ist ideal für kontinuierliche Interaktionen wie das Bewegen eines Sliders, das Anspielen eines Tons oder flüssige Animationen.",
+      "",
+      "**1 Sekunde:** Bei einfachen Benutzeraktionen, wie dem Bestätigen eines Dialogs oder einem Button-Klick, ist eine Reaktion innerhalb einer Sekunde notwendig, damit der Dialog als flüssig empfunden wird.",
+      "",
+      "**10 Sekunden:** Diese Grenze gilt für komplexe Berechnungen. Dauert etwas länger, sollte visuelles Feedback (z. B. Ladebalken, Spinner) gegeben werden.",
+      "",
+      "**Zusatz:** Diese Zeiten orientieren sich an bekannten usability-Richtlinien (z. B. Nielsen) und sind entscheidend für wahrgenommene Systemqualität."
+    ],
+    "explanationJa": [
+      "■ **リアルタイム性の重要性**：情報視覚化では、ユーザー操作に対して即座に応答があることが求められる。そうでなければ、操作が無視されたと誤解される可能性がある。",
+      "",
+      "■ **遅すぎると問題**：応答が1秒以上かかると、ユーザーは不安や不満を感じる。たとえば、フィルターを設定しても画面がすぐ変わらないと『動作していない？』と疑われる。",
+      "",
+      "■ **速すぎても注意**：反応が速すぎると、ユーザーが変化に気づかない可能性がある。情報の出現や遷移を認識できる程度の時間が必要。",
+      "",
+      "■ **0.1秒以内**：アニメーション、スライダー、音の再生など、即座に動きが返ってくる必要がある操作。",
+      "",
+      "■ **1秒以内**：システムの応答、ボタン押下、簡単なダイアログ処理など、操作の応答として自然に感じられる限界時間。",
+      "",
+      "■ **10秒以内**：計算処理などの重い処理は10秒までが限界。それ以上かかる場合は、読み込み中のインジケーター（例：スピナーやバー）を表示すべき。",
+      "",
+      "■ **補足**：これらの分類は、Nielsenなどのユーザビリティ原則に基づいており、ユーザー体験の質を決定づける重要な指標である。"
+    ],
+    "originalSlideText": "Interaktion: Zeitaspekte\n▶ Interaktion ist ein Echtzeit-Prozeß\n▶ Wie schnell muss eine Reaktion erfolgen?\n  ▶ Schnell genug, dass der Benutzer keine Zeit mit nutzlosem und frustrierendem Warten verliert\n  ▶ Nicht zu schnell, so dass keine Information übersehen wird\n▶ Drei Arten von Reaktionszeit\n  ▶ 0,1 Sekunden: Animationen, Schieberegler (Slider), Ton\n  ▶ 1 Sekunde: Systemantworten, Dialoge\n  ▶ 10 Sekunden: Berechnungen",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 3,
+    "questionDe": "(s6) Wie unterstützt Informationsvisualisierung bei dynamischen Abfragen, z. B. bei der Suche nach einem Haus mit unklaren Kriterien?",
+    "questionJa": "例えば住宅購入のように条件があいまいな場合、情報視覚化はどのように動的なクエリを支援するか？",
+    "answerDe": [
+      "Unzureichendes Wissen führt zu unklar formulierten Problemen.",
+      "Beispiel: Haus-Suche mit Vorgaben wie Preis (~200.000 €), Zimmerzahl, Nähe zu Schule, aber auch unbekannte Faktoren wie Parks oder Mietpotenzial.",
+      "Informationsvisualisierung hilft bei:",
+      "1. Formulierung des Problems – Präzisierung einer vagen Fragestellung",
+      "2. Lösung des Problems – gezielte Suche nach passenden Ergebnissen",
+      "3. Unterstützung des Übergangs zwischen beiden"
+    ],
+    "answerJa": [
+      "知識不足により、問題の定義があいまいになることがある。",
+      "例：住宅探し（価格：約20万ユーロ、部屋数：3、学校の近さなどは分かっているが、公園の存在や賃貸のしやすさなどは不明）。",
+      "情報視覚化は以下の支援を行う：",
+      "1. 問題の定式化（あいまいな問いを明確に）",
+      "2. 問題の解決（条件に合う答えを視覚的に探索）",
+      "3. 両者の橋渡し（問いと答えの間を行き来しやすくする）"
+    ],
+    "explanationDe": [
+      "**1. Unklare Fragestellung als Ausgangspunkt:** Oft kennt der Nutzer einige Kriterien (z. B. Preis, Lage, Zimmeranzahl), aber viele andere relevante Faktoren sind ihm nicht bewusst (z. B. Einfluss eines nahegelegenen Parks auf den Preis). Dadurch bleibt das Problem vage formuliert.",
+      "",
+      "**2. Rolle der Informationsvisualisierung:** Visualisierung erlaubt es dem Nutzer, interaktiv mit den Daten zu arbeiten – z. B. durch Filter, Karten oder dynamische Diagramme. So können verborgene Zusammenhänge entdeckt werden, etwa dass Häuser in der Nähe von Parks systematisch teurer sind.",
+      "",
+      "**3. Präzisierung des Problems:** Wenn der Nutzer visuell erkennt, dass bestimmte Faktoren wichtig sind, kann er seine Suchkriterien gezielter formulieren – z. B. „nur Häuser in Schulnähe mit unterdurchschnittlichem Preis, aber ohne Nähe zum Park“. Die Fragestellung wird also präziser.",
+      "",
+      "**4. Lösung durch visuelles Feedback:** Durch dynamische Filterung und Hervorhebung sieht der Nutzer sofort, welche Objekte passen und wo noch Auswahl besteht.",
+      "",
+      "**5. Übergang zwischen Problemformulierung und Lösung:** Visualisierung schafft eine Brücke – sie erlaubt es, schrittweise von einer unscharfen Problemstellung zur konkreten Lösung zu gelangen, und flexibel wieder zurückzukehren, wenn nötig."
+    ],
+    "explanationJa": [
+      "■ **1. 問題があいまいな状態が出発点**：ユーザーは、いくつかの条件（価格、部屋数、学校の近さなど）を意識しているが、他にも重要な要因（例：公園の近さが価格に与える影響など）に気づいていないことが多い。",
+      "",
+      "■ **2. 情報視覚化の役割**：視覚化によって、ユーザーはデータと対話的に関われる。地図、グラフ、フィルターを用いて、隠れていた関係性や重要な要因（例：パーク近隣の価格上昇）を視覚的に把握できるようになる。",
+      "",
+      "■ **3. 問題の明確化（定式化）**：視覚化を通じて『自分が何を知りたいのか』『何を重視すべきか』が明確になる。たとえば『公園よりも価格を優先しよう』というように、問いがより具体的になる。",
+      "",
+      "■ **4. 解決支援**：動的なフィルターや視覚的なハイライトにより、自分の条件に合致する物件が即座にわかり、より効率的に意思決定できる。",
+      "",
+      "■ **5. 問題と答えの橋渡し**：視覚化は、問いの定義と答えの発見のあいだをスムーズに行き来できるようにする“思考の橋”の役割を果たす。問題が変わればすぐに視点を切り替えることもできる。"
+    ],
+    "originalSlideText": "Dynamische Abfragen\n▶ Unzureichendes Wissen führt zu unklar formuliertem Problem\n▶ Man sucht etwa ein Haus\n  ▶ ≈ 200.000 Euro\n  ▶ 3 Zimmer\n  ▶ Nähe zu guter Schule\n  ▶ Unbekannte Faktoren\n    ▶ Beliebter Park spielt wesentliche Rolle bei Preisen\n    ▶ Mieter sind leicht zu finden\n▶ Informationsvisualisierung hilft bei\n  ▶ Formulierung des Problems\n    ▶ Vage Fragestellung → Präzisierung der Frage\n  ▶ Lösung des Problems\n    ▶ Suche nach einer Antwort\n  ▶ Übergang zwischen beiden Aspekten",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 4,
+    "questionDe": "(s7) Welche Probleme können bei einer klassischen Datenbankabfrage wie im gezeigten SQL-Beispiel auftreten, und welche zentrale Frage bleibt offen?",
+    "questionJa": "このスライドに示されたような従来のSQLによるデータベース検索ではどのような問題があるか？また、検索結果に対してどんな重要な問いが残されるか？",
+    "answerDe": [
+      "Eine klassische Datenbankabfrage (z. B. mit SQL) liefert oft:",
+      "– 0 Treffer (zu streng)",
+      "– sehr viele Treffer (z. B. 1543 Treffer, unübersichtlich)",
+      "– aber meist keine Hinweise zur Erweiterung oder Eingrenzung der Suchanfrage.",
+      "Zentrale offene Frage: Wieviel mehr oder weniger sollte angezeigt werden?"
+    ],
+    "answerJa": [
+      "従来のデータベース検索（例：SQL）では以下のような問題が起こる：",
+      "– 結果が0件（条件が厳しすぎる）",
+      "– 結果が多すぎて使えない（例：1543件の一覧）",
+      "– どのように条件を調整すればよいかのヒントが得られない",
+      "→ 重要な問い：もっと緩く／厳しくすべきか？どの程度？"
+    ],
+    "explanationDe": [
+      "**Problem bei SQL-Anfragen:** Die klassische Form der Datenabfrage (z. B. über SQL) liefert entweder eine leere Ergebnisliste oder eine große, schwer überschaubare Trefferliste.",
+      "Dabei fehlen oft Informationen darüber, wie sich das Ergebnis ändern würde, wenn man einzelne Parameter minimal verändert – z. B. ob man bei 210.000 € statt 200.000 € plötzlich 300 weitere Häuser sehen würde.",
+      "",
+      "**Frage der Nutzer:** 'Wie viel mehr oder weniger würde ich sehen, wenn ich die Filter leicht ändere?' – Diese Information bleibt bei reinen Textanfragen unsichtbar.",
+      "",
+      "**Informationsvisualisierung als Lösung:** Visuelle Rückmeldungen (z. B. Histogramme, Vorschau, dynamische Schieberegler) könnten diese Lücke schließen, indem sie schon bei der Eingabe Rückmeldung über Datenverteilungen und mögliche Resultate geben.",
+      "→ Das unterstützt explorative und iterative Suchstrategien – nicht nur starre Anfragen."
+    ],
+    "explanationJa": [
+      "■ **SQLなどの静的検索の問題**：条件を明示的に指定するSQLなどの形式では、結果が『ゼロ（該当なし）』か『多すぎて扱えない（例：1543件）』になりがちである。",
+      "",
+      "■ **問題の本質**：こうした検索では『条件を少し緩める／厳しくすることでどう変わるか』というヒントが一切得られない。",
+      "たとえば『価格上限を+1万ユーロにしたら何件増えるか？』という感覚的な見積もりが難しい。",
+      "",
+      "■ **ユーザーの問い**：『もう少し条件を緩めたら何件見つかる？』という探索的なニーズには応えられない。",
+      "",
+      "■ **情報視覚化の役割**：たとえばスライダーやヒストグラムで事前にデータの分布や候補件数の見通しがわかれば、検索条件をより柔軟かつ効果的に調整できる。",
+      "→ これにより、ユーザーは試行錯誤しながら答えに近づくことができる（探索的・動的な検索）。"
+    ],
+    "originalSlideText": "Dynamische Abfragen\n▶ Datenbankanfrage (SQL)\n  SELECT Hausadresse\n  FROM Datenbank\n  WHERE Preis <= 200.000\n    AND Schlafzimmer >= 3\n▶ Ergebnis\n  ▶ 0 Treffer\n  ▶ 1543 Treffer (als Liste)\n▶ Meist keine Hinweise zur Erweiterung oder Eingrenzung der Suchanfrage\n▶ Frage\n  ▶ Wieviel mehr oder weniger sollte angezeigt werden?",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 5,
+    "questionDe": "(s8) Nennen Sie mindestens fünf Nachteile üblicher Datenbankanfragen laut der Folie.",
+    "questionJa": "このスライドに基づいて、従来のデータベース検索の欠点を5つ以上挙げなさい。",
+    "answerDe": [
+      "1. Suchsprache lernen kann lange dauern",
+      "2. Tippfehler werden nicht (immer) toleriert",
+      "3. Zu viele oder zu wenige Treffer ohne Kenntnis der Datenbank",
+      "4. Kein Indikator, wie die Anfrage zu ändern ist",
+      "5. Keine Interaktivität: Änderung der Anfrage dauert (Eingabe, Antwort)",
+      "6. Nützlicher Kontext ist verborgen",
+      "7. Der Anwender kann keine interne Vorstellung von den Daten erzeugen"
+    ],
+    "answerJa": [
+      "1. 検索言語（SQLなど）の習得に時間がかかる",
+      "2. タイプミスが許容されない場合が多い",
+      "3. データベース構造が分からないと結果が0件または多すぎる",
+      "4. 条件の変更方法に関するヒントがない",
+      "5. インタラクティブ性がなく、変更→入力→応答に時間がかかる",
+      "6. 有益な文脈情報（データの分布など）が見えない",
+      "7. ユーザーがデータの全体像を把握・想像できない"
+    ],
+    "explanationDe": [
+      "**1. Komplexität der Sprache:** SQL oder ähnliche Suchsprachen setzen technisches Wissen voraus. Das Lernen dauert und ist fehleranfällig.",
+      "",
+      "**2. Keine Fehlertoleranz:** Schon ein kleiner Tippfehler (z. B. „Schlafzimer“ statt „Schlafzimmer“) führt zu keinem Treffer – anders als in Suchmaschinen mit Autovervollständigung.",
+      "",
+      "**3. Mangelndes Feedback:** Ohne Wissen über die Datenstruktur weiß der Nutzer nicht, ob seine Anfrage zu viele oder zu wenige Ergebnisse liefert.",
+      "",
+      "**4. Fehlende Interaktivität:** Bei jeder Änderung muss die Anfrage manuell umgeschrieben und neu gesendet werden – das unterbricht den explorativen Denkprozess.",
+      "",
+      "**5. Fehlender Kontext:** Der Nutzer sieht keine Information darüber, wie die Werte im Datensatz verteilt sind – also z. B. wie viele Häuser es mit 2, 3 oder 4 Zimmern gibt.",
+      "",
+      "**6. Keine mentale Modellbildung:** Da alles in Textform und ohne visuelle Orientierung erfolgt, kann sich der Nutzer kein inneres Bild vom Datenraum machen.",
+      "",
+      "**Fazit:** Diese Probleme zeigen, warum visuelle, interaktive Alternativen wie dynamische Filter und visuelle Suchschnittstellen so wichtig sind."
+    ],
+    "explanationJa": [
+      "■ **1. 言語の習得が必要**：SQLのような検索言語は、文法の理解や構文の正確さが求められ、初学者にとっては障壁が高い。",
+      "",
+      "■ **2. タイプミスに非寛容**：ほんの小さな綴り間違いでも検索に失敗することがあり、結果が0件になってしまう。",
+      "",
+      "■ **3. フィードバック不足**：データ構造や値の分布が事前に分からないため、条件が厳しすぎたり緩すぎたりして、結果が極端になる。",
+      "",
+      "■ **4. インタラクションの欠如**：条件変更のたびに書き換え・再入力・再実行が必要となり、探索の流れが分断される。",
+      "",
+      "■ **5. 文脈の不可視性**：例として、部屋数が3以上の住宅がどのくらいあるか、どこで価格が急増するかなどの傾向が一切見えない。",
+      "",
+      "■ **6. データの全体像がつかめない**：可視化がないため、ユーザーが『このデータはこういう構造なんだな』といった直感的な把握ができない。",
+      "",
+      "■ **結論**：こうした理由から、視覚的で対話的な検索手段（例：スライダーや動的フィルター）が必要とされる。"
+    ],
+    "originalSlideText": "Nachteile üblicher Datenbankanfragen\n▶ Suchsprache lernen kann lange dauern\n▶ Tippfehler werden nicht (immer) toleriert\n▶ Zu viele oder zu wenige Treffer, wenn man die Datenbank nicht kennt\n▶ Kein Indikator, wie die Anfrage zu ändern ist\n▶ Keine Interaktivität: die Veränderung der Suchanfrage erfordert Zeit (Änderung, Eintippen, Antwort)\n▶ Nützlicher Kontext ist verborgen\n▶ Der Anwender kann keine interne Vorstellung von den Daten erzeugen",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 6,
+    "questionDe": "(s9) Welche Anforderungen und welche generische Aufgabenstellung gelten für dynamische Abfragen laut der Folie?",
+    "questionJa": "このスライドによると、動的な検索（Dynamische Abfragen）に求められる要件と、背後にある一般的な課題構造とは何か？",
+    "answerDe": [
+      "Anforderungen:",
+      "1. Interaktive Antworten (≤ 0,1 Sekunden)",
+      "2. Gleichzeitige Darstellung von Abfrage und Ergebnis",
+      "3. Dynamisches Erforschen nach dem „Was wäre, wenn...?“-Prinzip",
+      "Generische Aufgabe:",
+      "– Gegeben: Menge von Objekten, Menge von Attributen, je ein Wert pro Objekt und Attribut",
+      "– Ziele:",
+      "  • Finde das optimale Objekt",
+      "  • Finde eine kleine Menge von Objekten zur weiteren Analyse"
+    ],
+    "answerJa": [
+      "要件：",
+      "1. インタラクティブな応答（0.1秒以内）",
+      "2. クエリと結果がほぼ同時に表示されること",
+      "3. 「もし～なら？」という試行探索が可能なこと",
+      "汎用的な課題構造：",
+      "– 与えられている：複数のデータオブジェクト、それぞれに複数の属性、各属性に対して1つの値",
+      "– 目的：",
+      "  • 最適なオブジェクトを見つける",
+      "  • 詳しく調べるべき少数のオブジェクトを見つける"
+    ],
+    "explanationDe": [
+      "**1. Reaktionszeit (≤ 0,1 Sekunde):** Damit Nutzer Veränderungen (z. B. an Filtern oder Schiebereglern) als unmittelbar wahrnehmen, muss das System innerhalb von 100 ms reagieren. So bleibt der mentale Kontext erhalten.",
+      "",
+      "**2. Gleichzeitige Darstellung:** Nutzer sollten sofort sehen, wie sich ihre Abfrage auf das Ergebnis auswirkt – ohne zwischen mehreren Fenstern oder Schritten zu wechseln.",
+      "",
+      "**3. Exploratives Denken fördern:** Das Prinzip „Was wäre, wenn ich diesen Wert ändere?“ ist zentral für dynamische Abfragen – sie erlauben spielerisches Ausprobieren, ohne explizites Schreiben von Suchanfragen.",
+      "",
+      "**Generische Struktur:**",
+      "- Die Daten bestehen aus einer **Menge von Objekten (z. B. Häuser, Produkte)**,",
+      "- und einer **Menge von Attributen** (z. B. Preis, Größe, Lage),",
+      "- wobei jedes Objekt zu jedem Attribut genau einen Wert hat.",
+      "",
+      "**Ziel 1: Optimales Objekt finden:** z. B. das günstigste, größte oder passendste Haus.",
+      "**Ziel 2: Engere Auswahl treffen:** Nutzer will eine kleine, überschaubare Teilmenge sehen, die für vertiefte Analyse oder Vergleich sinnvoll ist."
+    ],
+    "explanationJa": [
+      "■ **1. 応答時間（0.1秒以内）**：ユーザーがスライダーなどを動かした際、即座に反応がなければ思考の流れが途切れてしまう。100ミリ秒以内の反応速度は「操作→結果の一体化」を保つために重要である。",
+      "",
+      "■ **2. クエリと結果の同時表示**：検索条件を変えるたびに別画面や別操作を挟むのではなく、条件の変更と同時に結果が視覚的に反映されることが理想。",
+      "",
+      "■ **3. “What-if?” 探索**：『この条件を少し変えたらどうなる？』というような試行錯誤型の探索が可能であることが、動的クエリの最大の利点。これにより発見的・探索的なインタラクションが促される。",
+      "",
+      "■ **汎用的な構造**：",
+      "- 複数のデータオブジェクト（例：家、製品など）と、",
+      "- それぞれに定義された複数の属性（例：価格、広さ、場所など）があり、",
+      "- 各オブジェクトはすべての属性に1つずつ値を持っている。",
+      "",
+      "■ **目的1：最適なオブジェクトの特定**（例：条件に最も合致する1件）",
+      "■ **目的2：候補の絞り込み**（例：詳しく調査すべき5件を残す）",
+      "→ このような探索支援が、視覚的かつ動的なインタフェースにより実現される。"
+    ],
+    "originalSlideText": "Dynamische Abfragen\nAnforderungen\n▶ Interaktive Antworten (≤ 0,1 sec)\n▶ Mehr oder weniger gleichzeitige Darstellung von Abfrage und Ergebnis\n▶ Dynamisches Erforschen: „Was wäre, wenn...?“-Prinzip\nGenerische Aufgabe\n▶ Gegeben\n  ▶ Eine Menge von Objekten (Datenpunkten)\n  ▶ Eine Menge von Attributen\n  ▶ Genau ein Wert für jedes Objekt und für jedes Attribut\n▶ Ziele\n  ▶ Finde das optimale Objekt\n  ▶ Finde eine kleine Anzahl von Objekten, die näher studiert werden können",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 7,
+    "questionDe": "(s12) Welche drei Schnittstellenkomponenten für dynamische Abfragen werden in der Folie vorgestellt und wie unterscheiden sie sich in ihrer Funktion?",
+    "questionJa": "このスライドで紹介されている3種類のインターフェース部品（Schnittstellenkomponenten）は何か？また、それぞれの機能の違いを説明しなさい。",
+    "answerDe": [
+      "1. Button (Knöpfe):",
+      "– Für die Auswahl von (kategorischen) Werten",
+      "",
+      "2. Radiobutton (Radioknöpfe):",
+      "– Für die exklusive Auswahl von (kategorischen) Werten",
+      "",
+      "3. Slider (Schieberegler):",
+      "– Für die Auswahl von:",
+      "  • einem Wert",
+      "  • einer Menge von Werten (z. B. Intervall mit Minimum und Maximum)",
+      "  • ordinalen oder quantitativen Werten"
+    ],
+    "answerJa": [
+      "1. ボタン（Button）：",
+      "– カテゴリ値の選択に使用（複数選択も可能）",
+      "",
+      "2. ラジオボタン（Radiobutton）：",
+      "– カテゴリ値の排他的選択（1つだけ選ぶ）に使用",
+      "",
+      "3. スライダー（Slider）：",
+      "– 値の選択に使用：",
+      "  • 1つの数値を選ぶ場合",
+      "  • 範囲（最小～最大）を選ぶ場合",
+      "  • 順序尺度または量的データの選択に適している"
+    ],
+    "explanationDe": [
+      "**1. Button:** Wird eingesetzt, wenn Nutzer **mehrere Kategorien gleichzeitig** auswählen dürfen. Beispiel: Auswahl von mehreren Verkehrsmitteln („Auto“, „Bus“, „Fahrrad“).",
+      "",
+      "**2. Radiobutton:** Diese Komponente erlaubt nur die **exklusive Auswahl** – also genau eine Option. Beispiel: Auswahl von Geschlecht („männlich“, „weiblich“, „divers“), wobei immer nur eines aktiv ist.",
+      "",
+      "**3. Slider:** Schieberegler sind geeignet für numerische oder geordnete Werte.",
+      "- Ein einfacher Slider erlaubt die Auswahl eines bestimmten Wertes (z. B. Mindestanzahl Schlafzimmer).",
+      "- Ein Doppel-Slider kann ein Intervall festlegen (z. B. Preis von 200.000 € bis 300.000 €).",
+      "– Eignet sich für **ordinale Daten** (z. B. Bewertungsskala) und **quantitative Daten** (z. B. Entfernung in km)."
+    ],
+    "explanationJa": [
+      "■ **1. ボタン（Button）**：複数のカテゴリを同時に選ぶ場合に使う。例：『自転車』『バス』『車』の中から複数選択して交通手段を指定する。",
+      "",
+      "■ **2. ラジオボタン（Radiobutton）**：1つしか選べないカテゴリに使用する。例：『男性』『女性』『その他』の中から1つだけ性別を選ぶ場合。",
+      "",
+      "■ **3. スライダー（Slider）**：数値や順序がある値に使う。次のような使い分けがある：",
+      "- 1つのスライダー：特定の値を1つ選ぶ（例：最低限必要な部屋数）",
+      "- 2つのスライダー：値の範囲を選ぶ（例：価格帯、通勤時間）",
+      "- 対応するデータ型：順序尺度（例：満足度1～5）や量的データ（例：距離、年齢など）"
+    ],
+    "originalSlideText": "Dynamische Abfragen\nSchnittstellen\n▶ Button (Knöpfe)\n  ▶ Für die Auswahl von (kategorischen) Werten\n▶ Radiobutton (Radioknöpfe)\n  ▶ Für die exklusive Auswahl von (kategorischen) Werten\n▶ Slider (Schieberegler)\n  ▶ Auswahl von\n    ▶ einem Wert\n    ▶ einer Menge von Werten\n      ▶ Ordinal oder quantitativ\n      ▶ Minimum und Maximum",
+    "explanationImage": "",
+    "questionImage": ""
   }
+
+  
+  
+  
+  
+  
+  
+  
 ]
