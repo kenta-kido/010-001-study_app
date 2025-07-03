@@ -1,5 +1,22 @@
 [
-
-
-  
+    {
+        "id": 1,
+        "questionDe": "Not yet",
+        "questionJa": "Not yet",
+        "answerDe": [
+          "-"
+        ],
+        "answerJa": [
+          "-"
+        ],
+        "explanationDe": [
+          "-"
+        ],
+        "explanationJa": [
+          "-"
+        ],
+        "originalSlideText": "-",
+        "questionImage": "",
+        "explanationImage": ""
+      }
 ]
