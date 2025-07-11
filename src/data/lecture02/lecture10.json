@@ -1,30 +1,1643 @@
 [
   {
     "id": 1,
-    "questionDe": "Nennen Sie drei Gründe, warum Data Mining eingesetzt wird.",
-    "questionJa": "Data Miningが用いられる理由を3つ挙げよ。",
+    "questionDe": "(s4) Warum ist Skalierbarkeit bei der Datenvisualisierung ein fundamentales Problem?",
+    "questionJa": "なぜデータの可視化においてスケーラビリティが本質的な問題となるのか？",
     "answerDe": [
-      "Überbordernde Menge an Daten",
-      "Wachsende Lücke zwischen Produktion und Auswertung der Daten",
-      "Extraktion von nützlichen und versteckten Informationen"
+      "Bildschirmauflösungen haben begrenzte Pixelanzahl (z. B. HD: 2 Mio. Pixel, UHD: 8 Mio. Pixel)",
+      "Ein typischer Datensatz kann Millionen Werte enthalten (z. B. 650.000 Einträge × 11 Attribute = 7 Mio. Werte)"
     ],
     "answerJa": [
-      "膨大なデータ量",
-      "データ生成と分析のギャップの拡大",
-      "有用かつ隠れた情報の抽出"
+      "画面解像度には表示できるピクセル数に限りがある（例：HDは約200万ピクセル、UHDでも約830万ピクセル）",
+      "典型的なデータセットには何百万もの値が含まれる（例：65万件×11属性＝約715万値）"
     ],
     "explanationDe": [
-      "Data Mining wird eingesetzt, weil die heutige Datenmenge die menschliche Analysefähigkeit übersteigt.",
-      "Die überbordende Menge an Daten macht automatisierte Methoden notwendig.",
-      "Ziel ist die Extraktion von Informationen, die für Unternehmen oder Forschung wichtig sind."
+      "Ein Bildschirm kann nur eine bestimmte Anzahl an Pixeln anzeigen. Bei HD sind das etwa 2 Millionen Pixel, bei UHD etwa 8 Millionen.",
+      "Ein realer Datensatz kann aber deutlich mehr Informationen enthalten – z. B. 650.000 Datensätze mit je 11 Attributen, also über 7 Millionen Werte.",
+      "Das bedeutet, nicht alle Daten können gleichzeitig angezeigt werden, was Skalierbarkeit zu einem zentralen Problem macht."
     ],
     "explanationJa": [
-      "現代のデータ量は人間の分析能力を超えているため、自動化が必要とされます。",
-      "データの増加と分析のギャップを埋めるために用いられます。",
-      "Data Miningは、ビジネスや研究に役立つ情報を抽出する手法です。"
+      "画面には表示できるピクセル数に限界があります。HD解像度では約200万ピクセル、UHDでも約830万ピクセルです。",
+      "一方で、現実のデータセットはそれを大きく超える情報量を持ちます。例えば、65万件のデータにそれぞれ11個の属性がある場合、約715万の値になります。",
+      "そのため、すべてのデータを一度に表示することはできず、スケーラビリティ（拡張性）が大きな課題になります。"
     ],
-    "originalSlideText": "...",
-    "questionImage": "lecture01/lecture01_q1.png",
-    "explanationImage": "lecture01/lecture01_ex1.png"
-  }
+    "originalSlideText": "Fundamentales Problem: Skalierbarkeit\n► HD Auflösung\n  1920 × 1080 = 2.073.600 Pixel\n► UHD Auflösung\n  3840 × 2160 = 8.294.400 Pixel\n► Beispiel-Datensatz\n  650.000 Einträge, 11 Attribute\n  → 7.150.000 Werte",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 2,
+    "questionDe": "(s4) Welche Probleme und Ursachen ergeben sich bei der Darstellung großer Datensätze?",
+    "questionJa": "大規模なデータセットを表示する際に生じる問題とその原因は何か？",
+    "answerDe": [
+      "Datensätze sind zu groß und zu komplex für eine vollständige Darstellung",
+      "Benutzer kann nur einen Teil der Daten gleichzeitig sehen",
+      "Fokus des Benutzers auf Objekte ändert sich ständig",
+      "Ursachen: zu viele Einträge, zu viele Attribute pro Eintrag"
+    ],
+    "answerJa": [
+      "データセットが大きすぎて複雑なため、画面にすべてを表示できない",
+      "ユーザーは同時に一部しか見ることができない",
+      "ユーザーの注目する対象が常に変化する",
+      "原因：エントリ数が多すぎる、1つのエントリに属性が多すぎる"
+    ],
+    "explanationDe": [
+      "Große und komplexe Datensätze passen oft nicht komplett auf einen Bildschirm. Selbst bei hoher Auflösung kann man nur einen Ausschnitt sehen.",
+      "Dadurch kann der Nutzer nicht alle Informationen gleichzeitig erfassen und muss ständig navigieren.",
+      "Zudem wechselt der Fokus ständig – z. B. wenn man von einer Kundengruppe zu einer anderen springt oder neue Filter anwendet.",
+      "Die Ursachen liegen meist darin, dass es sehr viele verschiedene Einträge gibt oder jeder Eintrag viele Attribute enthält – z. B. bei einer Kundenliste mit Name, Alter, Adresse, Kaufhistorie usw."
+    ],
+    "explanationJa": [
+      "大きくて複雑なデータセットは、画面に全体を収めることができません。高解像度の画面でも一部しか見えません。",
+      "そのため、ユーザーは必要な情報すべてを同時に把握できず、画面を移動しながら使う必要があります。",
+      "また、ユーザーが注目する対象は常に変わるため、表示内容の焦点も動き続けます（例：ある顧客グループから別のグループに切り替える場合など）。",
+      "このような問題の原因は、エントリ数が多いか、各エントリが多くの属性を持っていることです（例：名前、年齢、住所、購入履歴などを含む顧客データ）。"
+    ],
+    "originalSlideText": "► Probleme\n  ► Datensätze sind\n    ► zu groß\n    ► zu komplex\n    um komplett auf dem Bildschirm dargestellt zu werden\n  ► Der Benutzer kann nur einen Teil der Daten gleichzeitig sehen\n  ► Der Fokus auf bestimmte Objekte ändert sich stetig\n► Gründe\n  ► Zu viele verschiedene Einträge\n  ► Zu viele Attribute pro Eintrag",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 3,
+    "questionDe": "(s5) Was ist eine graphische Ansichtstransformation in der Informationsvisualisierung?",
+    "questionJa": "情報の可視化におけるグラフィカルなビュー変換とは何か？",
+    "answerDe": [
+      "Verwendung von Aggregation zur Darstellung vieler Datenpunkte"
+    ],
+    "answerJa": [
+      "多数のデータを集約（アグリゲーション）して視覚的に表示する手法"
+    ],
+    "explanationDe": [
+      "Eine graphische Ansichtstransformation verändert die visuelle Darstellung der Daten, ohne dass der Nutzer eingreifen muss.",
+      "Ein typisches Beispiel ist die Aggregation: Statt jeden einzelnen Datenpunkt anzuzeigen, werden ähnliche Werte zusammengefasst – z. B. Durchschnittswerte oder Häufigkeiten in einem Balkendiagramm.",
+      "Das hilft, komplexe oder große Datenmengen übersichtlich darzustellen."
+    ],
+    "explanationJa": [
+      "グラフィカルなビュー変換とは、ユーザーの操作なしにデータの視覚的な表示方法を変える手法です。",
+      "代表例はアグリゲーション（集約）で、似たような値をまとめて表示します（例：平均値、合計、ヒストグラムや棒グラフなど）。",
+      "こうすることで、データが多すぎる場合でも、全体像を分かりやすく表示することができます。"
+    ],
+    "originalSlideText": "► Graphische Ansichtstransformation\n  ► Aggregation",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+  "id": 4,
+  "questionDe": "(s5) Welche Arten der interaktiven Ansichtstransformation gibt es?",
+  "questionJa": "インタラクティブなビュー変換にはどのような種類があるか？",
+  "answerDe": [
+    "„Location probes“ wie direkte Auswahl und magische Linsen",
+    "Scrolling",
+    "Kontrolle des Standpunktes: Verschiebung (pan), Zoom, Überblick & Detail",
+    "Fokus und Kontext durch Verzerrung"
+  ],
+  "answerJa": [
+    "ロケーションプローブ（直接選択・マジックレンズなど）",
+    "スクロールによる移動",
+    "視点のコントロール（パン・ズーム・概要と詳細の切り替え）",
+    "フォーカス＋コンテキスト表示（歪みを使う）"
+  ],
+  "explanationDe": [
+    "Interaktive Ansichtstransformationen ermöglichen es dem Benutzer, die Darstellung aktiv zu beeinflussen.",
+    "„Location probes“ wie direkte Auswahl oder magische Linsen helfen, gezielt Informationen hervorzuheben – z. B. durch eine Lupe.",
+    "Durch Scrollen oder Verschieben (pan) kann man sich in großen Datenräumen bewegen.",
+    "Zoom erlaubt die Vergrößerung oder Verkleinerung von Details. Oft wird zwischen Übersicht (Gesamtbild) und Detail (Einzelaspekte) gewechselt.",
+    "Fokus-und-Kontext-Ansätze verwenden Verzerrung, um einen Bereich hervorzuheben, während der Kontext erhalten bleibt – z. B. Fish-Eye-Ansichten."
+  ],
+  "explanationJa": [
+    "インタラクティブなビュー変換では、ユーザーが表示を操作することによって、データの見え方を変えることができます。",
+    "ロケーションプローブには、直接選択やマジックレンズ（拡大鏡のような効果）などがあり、特定の情報を強調表示するのに使われます。",
+    "スクロールやパン操作で広いデータ空間を移動できます。",
+    "ズーム操作で表示の拡大・縮小が可能で、全体（Overview）と詳細（Detail）を切り替えながら見ることができます。",
+    "フォーカス＋コンテキスト表示では、関心のある部分を強調しつつ、周辺情報（コンテキスト）も保持するために、歪み（例：魚眼レンズ効果）などが使われます。"
+  ],
+  "originalSlideText": "► Interaktive Ansichtstransformation\n  ► “Location probes”\n    ► Direkte Auswahl\n    ► Magische Linsen\n  ► Scrolling\n  ► Kontrolle des Standpunktes\n    ► Verschiebung (pan)\n    ► Vergrößerung/Verkleinerung (zoom)\n    ► Überblick und Detail\n  ► Fokus und Kontext\n    ► Verzerrung",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 5,
+  "questionDe": "(s6) Was ist die Motivation und Lösungsidee hinter dem Konzept der 'Information Mural' laut [JS1998]?",
+  "questionJa": "JS1998による『Information Mural』という手法の動機とその解決策は何か？",
+  "answerDe": [
+    "Motivation: Zu viele Datenpunkte für die verfügbare Bildschirmauflösung",
+    "Motivation: Keine Möglichkeit zur Interaktion",
+    "Lösung: Einsatz von Techniken aus der Computergrafik wie Shading und Anti-Aliasing"
+  ],
+  "answerJa": [
+    "動機：画面のピクセル数よりもデータ点が多すぎる",
+    "動機：インタラクション（操作）が不可能な状況",
+    "解決策：コンピュータグラフィックスの技術（シェーディングやアンチエイリアス）の利用"
+  ],
+  "explanationDe": [
+    "Das Konzept der 'Information Mural' wurde eingeführt, um große Mengen von Daten auch ohne Interaktionsmöglichkeiten visualisieren zu können.",
+    "Ein Problem ist, dass es oft mehr Datenpunkte gibt als Pixel auf dem Bildschirm – z. B. bei sehr großen Datensätzen.",
+    "Wenn Interaktion wie Zoomen oder Filtern keine Option ist (z. B. in gedruckten Medien), muss man andere Wege finden, um die Daten verständlich darzustellen.",
+    "Die Lösung liegt in der Verwendung visueller Glättungstechniken aus der Computergrafik wie Shading (Abstufung von Farben) und Anti-Aliasing (Kantenglättung), um überladene Darstellungen verständlicher zu machen."
+  ],
+  "explanationJa": [
+    "『Information Mural』は、操作（インタラクション）なしで大量のデータを可視化するために提案された手法です。",
+    "たとえば、画面のピクセル数よりもデータ点の数が多い場合、すべてを一度に正確に表示するのは困難です。",
+    "また、印刷物や限られた表示環境では、ズームやフィルターなどの操作ができないことがあります。",
+    "このような状況では、コンピュータグラフィックスの技術（シェーディング：色のグラデーション、アンチエイリアス：ギザギザを滑らかにする処理）を使って、情報をなめらかかつ分かりやすく表示します。"
+  ],
+  "originalSlideText": "Aggregation\nInformation Mural [JS1998]\n► Motivation\n  ► Mehr Datenpunkte als Pixel\n  ► Interaktion keine Option\n► Lösung\n  ► Verwende Techniken aus der Computergraphik\n    ► Shading\n    ► Anti-Aliasing",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 6,
+  "questionDe": "(s7) Wie funktioniert die Darstellung von Datenpunkten im 'Information Mural'-Ansatz nach JS1998?",
+  "questionJa": "JS1998による『Information Mural』手法では、データポイントはどのように表示されるのか？",
+  "answerDe": [
+    "Datenpunkt = Tropfen Tinte",
+    "Pixel = Behälter mit bestimmter Tintenmenge (Dichte)",
+    "Tinte wird auf benachbarte Pixel verteilt, wenn zu viele Punkte in einen Behälter fallen",
+    "Dichte wird über Graustufen oder Farbe dargestellt"
+  ],
+  "answerJa": [
+    "データポイント＝インクのしずくとして表現される",
+    "ピクセル＝一定量のインクを保持できる容器として扱われる（密度）",
+    "インクが一つの容器に収まりきらない場合は、隣接する容器に分散される",
+    "密度はグレースケールまたは色で表現される"
+  ],
+  "explanationDe": [
+    "Im 'Information Mural'-Modell wird ein Datenpunkt als ein Tropfen Tinte dargestellt. Diese Tropfen fallen in einen Pixelbehälter auf dem Bildschirm.",
+    "Ein Pixel kann aber nur eine bestimmte Anzahl von Tropfen aufnehmen. Diese Anzahl bestimmt die Dichte an dieser Stelle.",
+    "Wenn mehrere Datenpunkte in denselben Bereich fallen, wird die Tinte auf umliegende Pixel verteilt, damit kein einzelner überfüllt wird.",
+    "Die resultierende Dichte der Tinte kann dann durch visuelle Mittel wie Graustufen (hell/dunkel) oder Farbverläufe sichtbar gemacht werden.",
+    "So entsteht ein übersichtliches Bild großer Datenmengen, selbst wenn keine Interaktion möglich ist."
+  ],
+  "explanationJa": [
+    "『Information Mural』のモデルでは、各データポイントはインクのしずくとして表現されます。そのしずくは画面上のピクセル（容器）に落とされます。",
+    "ただし、ピクセルには保持できるインクの量（＝データ点の数）に限りがあります。この量が“密度”となります。",
+    "もし1つのピクセルに収まりきらない場合は、隣のピクセルにも分散して配置され、表示が偏らないようにします。",
+    "密度の表現には、濃淡のあるグレースケールや色の濃さが使われます。これによって、多数のデータを一度に視覚的に捉えることが可能になります。",
+    "この手法は、特にユーザーの操作ができない環境（例：印刷）で有効です。"
+  ],
+  "originalSlideText": "Aggregation\nInformation Mural [JS1998]\n► Abbildung\n  ► Datenpunkt: Tropfen Tinte\n  ► Pixel: Behälter mit maximaler\n     Anzahl von Tropfen (Dichte)\n► Datenpunkte (Tinte) passen nicht alle\n   in einen Behälter\n   → verteile die Tinte auf benachbarte\n   Behälter\n► Dichte\n  ► Graustufen\n  ► Farbe",
+  "explanationImage": "lecture02/lecture10_ex01.png",
+  "questionImage": ""
+},
+{
+  "id": 7,
+  "questionDe": "(s7) Was zeigt das Beispiel der 'Execution Mural'-Darstellung laut CMS1999?",
+  "questionJa": "CMS1999による『Execution Mural』の例では何が示されているか？",
+  "answerDe": [
+    "Visualisierung der Ausführung von objekt-orientiertem Code",
+    "Darstellung vieler Klassen und Methodenaufrufe in kompakter Form",
+    "Farbkodierung zur Hervorhebung von Mustern und Aktivitäten"
+  ],
+  "answerJa": [
+    "オブジェクト指向コードの実行を視覚化した例",
+    "多数のクラスやメソッド呼び出しをコンパクトに表示",
+    "パターンやアクティビティを色分けして強調表示している"
+  ],
+  "explanationDe": [
+    "Dieses Beispiel zeigt eine konkrete Anwendung des allgemeinen Konzepts 'Information Mural' – nämlich die 'Execution Mural'-Technik von CMS1999.",
+    "Während das Information Mural eine Methode zur Darstellung großer Datenmengen ohne Interaktion ist, überträgt das Execution Mural diesen Ansatz auf die Programmausführung.",
+    "Die Visualisierung zeigt zeitliche Abläufe der Ausführung von objekt-orientiertem Code: Jede horizontale Linie repräsentiert eine Klasse oder ein Objekt, und farbliche Markierungen heben Aktivitäten oder Zustände hervor.",
+    "Die Darstellung hilft dabei, Muster wie Schleifen, häufige Aufrufe oder ungewöhnliche Abläufe zu erkennen, auch bei sehr großem Programmumfang.",
+    "Durch die Farbverläufe und die kompakte Ansicht lässt sich ein 'visueller Überblick' über die Programmlogik gewinnen, ganz im Sinne der Idee des Information Mural."
+  ],
+  "explanationJa": [
+    "この図は、Information Muralという一般的な手法を応用した具体例である『Execution Mural』（CMS1999）を示しています。",
+    "Information Muralがインタラクションなしに大量データを表示する手法であるのに対し、Execution Muralはこの考え方をソフトウェアの実行可視化に応用したものです。",
+    "この図では、横軸にクラスやオブジェクト、縦軸に時間的な実行の流れが表現されており、色（赤・黄・青など）を使って特定の動作や状態（例：頻繁な呼び出し、ループなど）を強調しています。",
+    "コードが膨大な場合でも、パターンや異常を視覚的に素早く把握できるようにすることが目的です。",
+    "このように、Execution MuralはInformation Muralの原則（全体俯瞰・密度可視化）を保ちつつ、特定領域（プログラム実行）に適用した応用例です。"
+  ],
+  "originalSlideText": "Abbildung: Ausführung von Objekt-Orientiertem Code [CMS1999]",
+  "explanationImage": "",
+  "questionImage": "lecture02/lecture10_q01.png"
+},
+{
+  "id": 8,
+  "questionDe": "(s11) Was versteht man unter direkter Auswahl in der Informationsvisualisierung?",
+  "questionJa": "情報可視化における『直接選択（Direkte Auswahl）』とは何か？",
+  "answerDe": [
+    "Einfachste Methode zur Veränderung der Ansicht",
+    "Auswahl eines oder mehrerer Objekte durch den Nutzer",
+    "Hervorhebung der ausgewählten Objekte",
+    "Anzeige zusätzlicher Informationen über diese Objekte",
+    "Beispiel: Brushing"
+  ],
+  "answerJa": [
+    "ビュー（視点）を変える最も基本的な方法",
+    "ユーザーが1つまたは複数のオブジェクトを選択する",
+    "選択されたオブジェクトが強調表示される",
+    "選ばれたオブジェクトに関する追加情報が表示される",
+    "例：ブラッシング（Brushing）"
+  ],
+  "explanationDe": [
+    "Die direkte Auswahl ist eine einfache und intuitive Möglichkeit, bestimmte Datenpunkte in einer Visualisierung zu fokussieren.",
+    "Man kann z. B. mit der Maus ein oder mehrere Objekte auswählen. Diese werden dann farblich hervorgehoben oder grafisch verändert dargestellt.",
+    "Gleichzeitig können weitere Informationen zu diesen Objekten eingeblendet werden – z. B. genaue Werte oder Metadaten.",
+    "Ein typisches Beispiel ist 'Brushing': Wenn man in einer Ansicht Punkte auswählt, werden dieselben Punkte in anderen Ansichten ebenfalls hervorgehoben, um Zusammenhänge sichtbar zu machen.",
+    "Die Grafik auf der rechten Seite zeigt z. B., wie durch Auswahl im 'Time vs Price'-Plot dieselben Objekte auch im 'Time vs Bedrooms'-Plot hervorgehoben werden."
+  ],
+  "explanationJa": [
+    "直接選択とは、可視化内の特定のデータポイントに注目するための、シンプルかつ直感的な方法です。",
+    "たとえばマウス操作で1つまたは複数のオブジェクトを選ぶと、それらが強調（色づけなど）されて表示されます。",
+    "同時に、選ばれたオブジェクトに関する追加情報（数値や属性など）が表示されることもあります。",
+    "代表的な例が『ブラッシング（Brushing）』です。あるビューで選んだオブジェクトが、他のビューでもハイライトされることで、関連性や傾向がわかりやすくなります。",
+    "スライド右の図では、『Time × Price』のプロットで選んだ赤い点が、『Time × Bedrooms』のビューでも対応して強調表示されています。"
+  ],
+  "originalSlideText": "Direkte Auswahl\n► Einfachste Möglichkeit Ansichten zu verändern\n► Man wählt ein Objekt oder eine Gruppe von Objekten aus\n  ► Die ausgewählten Objekte werden hervorgehoben\n  ► Zusätzliche Information über diese Objekte wird angezeigt\n► Beispiele\n  ► Brushing",
+  "explanationImage": "lecture02/lecture10_ex02.png",
+  "questionImage": ""
+},
+{
+  "id": 9,
+  "questionDe": "(s12) Welche Varianten der direkten Auswahl werden in der Informationsvisualisierung verwendet?",
+  "questionJa": "情報可視化において『直接選択』にはどのようなバリエーションがあるか？",
+  "answerDe": [
+    "Brushing",
+    "Pop-up Window",
+    "Mouse-Over"
+  ],
+  "answerJa": [
+    "ブラッシング（Brushing）",
+    "ポップアップウィンドウ（Pop-up Window）",
+    "マウスオーバー（Mouse-Over）"
+  ],
+  "explanationDe": [
+    "Direkte Auswahl ist eine Methode, bei der der Benutzer interaktiv Objekte auswählt, um sie hervorzuheben oder mehr Informationen zu erhalten.",
+    "Es gibt verschiedene Varianten davon:",
+    "– Beim Brushing werden ausgewählte Objekte gleichzeitig in mehreren Visualisierungen markiert.",
+    "– Bei einem Pop-up-Fenster erscheint ein kleines Infofenster mit Detailinformationen, sobald ein Objekt ausgewählt wird.",
+    "– Beim Mouse-Over wird die Zusatzinformation angezeigt, sobald man mit dem Mauszeiger über ein Objekt fährt – ohne zu klicken.",
+    "Die rechte Grafik zeigt ein praktisches Beispiel: Wenn der Nutzer einen Film auswählt, erscheinen unten Details wie Titel, Schauspieler, Regisseur und ein Bild im Pop-up-Stil."
+  ],
+  "explanationJa": [
+    "『直接選択（Direkte Auswahl）』は、ユーザーが視覚化内のオブジェクトを選んで強調表示したり、追加情報を表示させたりするインタラクティブな手法です。",
+    "その中にはさまざまな形式があります：",
+    "– ブラッシング（Brushing）：1つのビューで選択された項目が、他のビューでもハイライトされる方式",
+    "– ポップアップウィンドウ（Pop-up）：オブジェクトを選択すると詳細情報が小さなウィンドウとして表示される",
+    "– マウスオーバー（Mouse-Over）：マウスを重ねるだけで追加情報が表示される（クリック不要）",
+    "右の図では、ある映画を選択すると、ポスター画像や出演者、監督などの情報がポップアップとして表示されています。"
+  ],
+  "originalSlideText": "Direkte Auswahl\n► Einfachste Möglichkeit Ansichten zu verändern\n► Man wählt ein Objekt oder eine Gruppe von Objekten aus\n  ► Die ausgewählten Objekte werden hervorgehoben\n  ► Zusätzliche Information über diese Objekte wird angezeigt\n► Beispiele\n  ► Brushing\n  ► Pop-up Window\n  ► Mouse-Over",
+  "explanationImage": "lecture02/lecture10_ex03.png",
+  "questionImage": ""
+},
+{
+  "id": 10,
+  "questionDe": "(s13) Welche Eigenschaften und Probleme sind mit dem Scrollen in Visualisierungen verbunden?",
+  "questionJa": "可視化におけるスクロール操作にはどんな特徴と問題があるか？",
+  "answerDe": [
+    "Scrollleisten sind kleine Balken, meist rechts oder unten",
+    "Sie zeigen die Position relativ zur gesamten Darstellung (Text oder Bild)",
+    "Sie ermöglichen schnelle Navigation durch große Inhalte",
+    "Probleme: Der Großteil der Darstellung ist nicht sichtbar",
+    "Der Kontext geht verloren"
+  ],
+  "answerJa": [
+    "スクロールバーは通常、右端または下端に配置される細いバーである",
+    "全体の中で現在の表示位置を示す役割を持つ（テキストや画像）",
+    "長い内容を高速で移動できる手段として使われる",
+    "問題点：全体の大部分が見えなくなる",
+    "文脈（前後関係）が把握しづらくなる"
+  ],
+  "explanationDe": [
+    "Scrollleisten sind typische Elemente in Visualisierungen und Benutzeroberflächen, um durch große Mengen an Text oder Bildern zu navigieren.",
+    "Sie sind oft schmale Balken am rechten oder unteren Rand, die anzeigen, welcher Ausschnitt des Gesamtinhalts gerade sichtbar ist.",
+    "Zwar ermöglichen sie eine schnelle Bewegung, doch dabei bleibt der größte Teil der Information ausgeblendet.",
+    "Ein wesentliches Problem ist, dass man durch Scrollen oft den Kontext verliert – z. B. die Beziehung zwischen vorherigen und nachfolgenden Inhalten.",
+    "Das Beispielbild auf der rechten Seite zeigt, wie nur ein kleiner Ausschnitt sichtbar ist, während der Rest verborgen bleibt."
+  ],
+  "explanationJa": [
+    "スクロールバーは、長いテキストや画像を表示する際によく使われるインターフェース要素です。",
+    "通常は画面の右端や下端に細いバーとして表示され、全体の中で現在どの部分を見ているのかを示します。",
+    "ユーザーはこのバーを使って素早く上下・左右に移動できますが、大部分の情報が画面外に隠れてしまいます。",
+    "最大の問題点は、スクロール操作によってコンテキスト（前後関係）が失われやすいことです。たとえば、前に何を見ていたかがすぐには分からなくなる場合があります。",
+    "スライド右の図では、全体の情報のうち中央のごく一部だけが表示されており、それ以外はすべて隠れてしまっている様子が示されています。"
+  ],
+  "originalSlideText": "Scrolling\n► Kleine Balken, meist rechts oder unten\n► Position relativ zur gesamten Darstellung (Text oder Bild)\n► Möglichkeit zur beschleunigten Bewegung durch die Darstellung (Text oder Bild)\n► Probleme\n  ► Der größte Teil der Darstellung ist verborgen.\n  ► Der Kontext ist unsichtbar.",
+  "explanationImage": "lecture02/lecture10_ex04.png",
+  "questionImage": ""
+},
+{
+  "id": 11,
+  "questionDe": "(s14) Was versteht man unter Zooming in der Informationsvisualisierung?",
+  "questionJa": "情報可視化における『ズーミング（Zooming）』とは何か？",
+  "answerDe": [
+    "Vergrößerung oder Verkleinerung eines Bildausschnitts",
+    "Fokus auf kleinere oder größere Bereiche je nach Zoomstufe"
+  ],
+  "answerJa": [
+    "画像やビューの一部を拡大・縮小する操作",
+    "ズームレベルに応じて、より小さいまたは大きな範囲に焦点を当てる"
+  ],
+  "explanationDe": [
+    "Zooming bedeutet, dass man einen Bildausschnitt vergrößert oder verkleinert, um Details besser zu sehen oder einen Überblick zu bekommen.",
+    "Je stärker man zoomt, desto kleiner wird der sichtbare Ausschnitt – man sieht mehr Details, aber verliert Kontext.",
+    "Wird herausgezoomt, sieht man einen größeren Bereich mit weniger Detailinformationen.",
+    "In der linken Abbildung sieht man eine Reihe von sich vergrößernden Rechtecken, die nacheinander kleinere (oder größere) Bereiche fokussieren."
+  ],
+  "explanationJa": [
+    "ズーミングとは、表示範囲の一部を拡大・縮小して見る操作を指します。",
+    "ズームインすると、より詳細な情報を確認できる一方で、全体の文脈は見えづらくなります。",
+    "ズームアウトすると、広い範囲を俯瞰できますが、細部は見えなくなります。",
+    "スライド左側の図では、番号付きの四角が徐々に小さくなっており、それぞれが拡大された領域を表しています。"
+  ],
+  "originalSlideText": "Abbildung: Zooming (Vergrößerung, Verkleinerung): Zunehmende Vergrößerung (Verkleinerung) eines kleiner (größer) werdenden Ausschnitts eines Bildes",
+  "explanationImage": "lecture02/lecture10_ex05.png",
+  "questionImage": ""
+},
+{
+  "id": 12,
+  "questionDe": "(s14) Was ist unter Panning in der Informationsvisualisierung zu verstehen?",
+  "questionJa": "情報可視化における『パンニング（Panning）』とは何か？",
+  "answerDe": [
+    "Verschiebung eines Fensters über ein größeres Bild",
+    "Kontinuierliche Bewegung durch zweidimensionale Inhalte"
+  ],
+  "answerJa": [
+    "大きな画像やビューの中で、表示範囲を移動させる操作",
+    "2次元空間を連続的にスクロールするように動かすこと"
+  ],
+  "explanationDe": [
+    "Panning beschreibt das Verschieben des Sichtfensters über eine größere Fläche – wie das Bewegen eines Rahmens über eine Landkarte.",
+    "Dabei bleibt der Zoomfaktor gleich, aber man schaut auf andere Bildbereiche.",
+    "Diese Technik ist besonders nützlich, wenn man ein großes Bild hat, das nicht auf einmal dargestellt werden kann.",
+    "In der rechten Abbildung sieht man ein Fenster, das sich von links nach rechts über das Bild bewegt – die Position, nicht der Maßstab, ändert sich."
+  ],
+  "explanationJa": [
+    "パンニングとは、拡大縮小せずに表示範囲を水平・垂直に移動する操作です。地図をスクロールして見渡すようなイメージです。",
+    "ズームレベルは変わらず、見ている場所だけが変わるのが特徴です。",
+    "画面に収まりきらない大きな画像や図を閲覧する際に効果的です。",
+    "スライド右側の図では、複数の同じサイズの枠が左から右へ順番に動いており、表示領域の移動（パン）を表しています。"
+  ],
+  "originalSlideText": "Abbildung: Panning (Verschiebung): Kontinuierliches Verschieben eines Fensters (Ansicht) über ein zwei-dimensionales, größeres Bild",
+  "explanationImage": "lecture02/lecture10_ex06.png",
+  "questionImage": ""
+},
+{
+  "id": 13,
+  "questionDe": "(s15) Wie kann man durch Kombination von Zooming und Panning den Fokus von einem Objekt (A) auf ein anderes (B) verlagern?",
+  "questionJa": "ズーミングとパンニングを組み合わせることで、どうやって視点をオブジェクトAからBへ移動できるか？",
+  "answerDe": [
+    "Zunächst auf A zoomen, um Details zu erkennen",
+    "Dann herauszoomen, um den Überblick zurückzugewinnen",
+    "Anschließend das Sichtfenster verschieben (panning)",
+    "Schließlich auf B hineinzoomen"
+  ],
+  "answerJa": [
+    "まずAにズームインして詳細を見る",
+    "次にズームアウトして全体像を把握する",
+    "その後、表示範囲をパン操作でBの方向に移動する",
+    "最後にBにズームインして新たな詳細に焦点を合わせる"
+  ],
+  "explanationDe": [
+    "Die Abbildung zeigt, wie man durch eine Kombination aus Zooming und Panning den Fokus in einer Visualisierung gezielt von einem Objekt A zu einem anderen Objekt B verschiebt.",
+    "Zunächst wird auf A hineingezoomt, um Details zu betrachten. Danach zoomt man heraus, um das gesamte Bild besser zu erfassen und Orientierung zu gewinnen.",
+    "Durch Panning wird das Sichtfeld von A nach B verschoben, ohne den Maßstab zu ändern.",
+    "Schließlich wird auf B hineingezoomt, um dort erneut in die Details zu gehen.",
+    "Diese Technik ist hilfreich, wenn der direkte Sprung zwischen A und B zu abrupt oder verwirrend wäre – stattdessen wird ein flüssiger, kontextbewahrender Übergang ermöglicht."
+  ],
+  "explanationJa": [
+    "この図は、ズーミングとパンニングを組み合わせることで、視点（フォーカス）をAからBへと自然に移動させる手順を示しています。",
+    "まずAを拡大して詳細を観察し、その後ズームアウトして全体の構造を把握します。",
+    "次に、表示範囲（視野）をパン操作で右方向（AからB）にスライドさせます。",
+    "最後にBにズームインして、再び詳細な情報に注目します。",
+    "このように段階的に移動することで、視点の移動による混乱を避けながら、文脈を維持したまま別の対象に焦点を移せます。"
+  ],
+  "originalSlideText": "Abbildung: Fokuswechsel von A nach B [FB1995]",
+  "explanationImage": "lecture02/lecture10_ex07.png",
+  "questionImage": ""
+},
+{
+  "id": 14,
+  "questionDe": "(s16) Welche drei Schritte sind notwendig, um mit Zooming und Panning den Fokus von A nach B zu verlagern?",
+  "questionJa": "ズーミングとパンニングを使ってAからBへ視点を移すには、どの3つのステップが必要か？",
+  "answerDe": [
+    "1. Verkleinerung bis A und B sichtbar sind (zoom out)",
+    "2. Verschiebung mit dem Ziel, B im Zentrum des Fensters zu haben (pan)",
+    "3. Vergrößerung, um mehr Details von B zu sehen (zoom in)"
+  ],
+  "answerJa": [
+    "1. AとBの両方が見えるまでズームアウトする",
+    "2. Bをウィンドウの中央に来るようにパン操作で移動する",
+    "3. Bの詳細を見るためにズームインする"
+  ],
+  "explanationDe": [
+    "Diese Folie beschreibt präzise, wie der Wechsel des Fokus von einem Objekt A zu einem Objekt B mithilfe von Zooming und Panning funktioniert.",
+    "Im ersten Schritt wird herausgezoomt, um sowohl A als auch B gleichzeitig sehen zu können.",
+    "Im zweiten Schritt wird das Sichtfeld verschoben (Pan), sodass B in der Mitte des Fensters liegt.",
+    "Im dritten Schritt wird auf B hineingezoomt, um es im Detail betrachten zu können.",
+    "Diese Technik hilft, den Kontext beim Navigieren in großen Informationsräumen nicht zu verlieren. Das begleitende Diagramm zeigt diesen Ablauf als 'Space-Scale Diagramm'."
+  ],
+  "explanationJa": [
+    "このスライドは、ズーミングとパンニングを組み合わせて、視点をオブジェクトAからBに移すための具体的な3ステップを示しています。",
+    "まず最初にズームアウトして、AとBの両方を同時に視野に入れます。",
+    "次に、パン操作によってBが画面中央に来るように表示位置を移動します。",
+    "最後にBをズームインして、より詳細な情報に注目します。",
+    "このように段階を踏んで視点を移動することで、ユーザーは文脈を失わずに別の対象に焦点を移せます。右の図はこの流れを「Space-Scale Diagram（空間スケール図）」として視覚的に示しています。"
+  ],
+  "originalSlideText": "Zooming & Panning\nFokuswechsel\n1. Verkleinerung bis A und B sichtbar sind (zoom out)\n2. Verschiebung mit dem Ziel, B im Zentrum des Fensters zu haben (pan)\n3. Vergrößerung, um mehr Details von B zu sehen (zoom in)\nAbbildung: Space-Scale-Diagramms [FB1995]",
+  "explanationImage": "lecture02/lecture10_ex08.png",
+  "questionImage": ""
+},
+{
+  "id": 15,
+  "questionDe": "(s17) Was versteht man unter 'semantischem Zoom' im Vergleich zum normalen Zoom?",
+  "questionJa": "通常のズームと比較して、『セマンティックズーム（semantic zoom）』とは何か？",
+  "answerDe": [
+    "Normaler Zoom verändert nur die Geometrie (Größe, Position)",
+    "Semantischer Zoom verändert zusätzlich die Form und Art der dargestellten Information",
+    "Beispiel: Detailliertere Angaben über ein Objekt bei stärkerem Zoom"
+  ],
+  "answerJa": [
+    "通常のズームは表示の大きさや位置（ジオメトリ）だけを変える",
+    "セマンティックズームでは、それに加えて形や情報の種類自体も変化する",
+    "例：ズームインするとオブジェクトの詳細な属性が新たに表示される"
+  ],
+  "explanationDe": [
+    "Beim klassischen Zoom wird lediglich die Geometrie verändert – also Objekte werden größer oder kleiner, bleiben aber inhaltlich gleich.",
+    "Der semantische Zoom hingegen passt die dargestellte Information an die Zoomstufe an.",
+    "Das bedeutet: Je stärker man hineinzoomt, desto mehr (und genauere) Informationen werden sichtbar.",
+    "Im Diagramm sieht man zuerst viele Schiffe mit einfacher Darstellung (oben), dann bei näherem Zoom genauere Informationen wie Name, Tonnenzahl und Bereitschaftsstufe (Mitte), und ganz unten noch mehr Details wie Kapitän, Codefarbe, Flugzeuge usw.",
+    "Dies hilft, sowohl Überblick als auch Tiefeninformation situationsgerecht darzustellen."
+  ],
+  "explanationJa": [
+    "通常のズーム（幾何学的ズーム）では、オブジェクトの大きさや位置が変わるだけで、表示される情報の中身は変わりません。",
+    "それに対してセマンティックズームでは、ズームレベルに応じて情報の内容や形式も変化します。",
+    "たとえば、ズームインすると、ただの船のアイコンだったものに『船名・燃料残量・指揮官・所属』などの詳細情報が表示されるようになります。",
+    "スライド右の図では、上部では多数の簡易な船のアイコンが並んでいますが、段階的にズームすることで中段・下段ではより多くのテキスト情報が付加されていきます。",
+    "このように、全体俯瞰と詳細情報を使い分けられるのがセマンティックズームの特長です。"
+  ],
+  "originalSlideText": "Zooming & Panning\nSemantischer Zoom\n► Zoom: nur Geometrie\n► Semantic Zoom:\n  ► Geometrie\n    ► Form\n    ► Art der Information\n    ► [Spence2001]",
+  "explanationImage": "lecture02/lecture10_ex09.png",
+  "questionImage": ""
+},
+{
+  "id": 16,
+  "questionDe": "(s18) Wie veranschaulicht das Beispiel 'Powers of Ten' das Konzept des semantischen Zooms?",
+  "questionJa": "『Powers of Ten』という例は、セマンティックズームの概念をどのように表現しているか？",
+  "answerDe": [
+    "Jeder Zoom-Schritt zeigt eine neue Bedeutungsebene",
+    "Nicht nur Maßstab, sondern auch Informationsart ändert sich",
+    "Beispiel: Galaxie → Erde → Mensch → Zellen → Moleküle"
+  ],
+  "answerJa": [
+    "各ズーム段階で新たな意味・内容の情報が現れる",
+    "単に拡大・縮小するだけでなく、情報の種類自体が変わる",
+    "例：銀河 → 地球 → 人間 → 細胞 → 分子 へとズーム"
+  ],
+  "explanationDe": [
+    "Das Beispiel 'Powers of Ten' zeigt besonders anschaulich, wie sich mit zunehmendem Zoom nicht nur die Größe, sondern auch die Informationsbedeutung verändert.",
+    "Im ersten Bild sieht man einen großen Bereich im Weltall mit Galaxien. Mit jedem Zoom-Schritt wird auf einen kleineren Ausschnitt fokussiert: auf die Erde, dann auf eine Stadt, ein Haus, einen Menschen, Hautzellen bis hin zu molekularer Struktur.",
+    "Dabei wird nicht einfach nur größer skaliert – vielmehr zeigt jeder Ausschnitt andere Informationen: astronomische, geografische, biologische oder chemische.",
+    "Das ist das Wesen des semantischen Zooms: Die Darstellung passt sich nicht nur der Größe, sondern auch dem Informationsgehalt an."
+  ],
+  "explanationJa": [
+    "『Powers of Ten』は、ズームするごとに見える情報の意味や内容が変化していくというセマンティックズームの考え方をとても直感的に示しています。",
+    "最初は銀河のような宇宙空間から始まり、ズームインするごとに地球→都市→建物→人物→皮膚→細胞→分子へとスケールダウンしていきます。",
+    "ズームするたびに単に「拡大」されるのではなく、そこに表示される情報のタイプ（天文学→地理→生物→化学）そのものが変化していくのがポイントです。",
+    "これこそがセマンティックズームの本質であり、「どのスケールでどの情報を示すべきか」を動的に切り替える技術です。"
+  ],
+  "originalSlideText": "Zooming & Panning\nSemantischer Zoom\nAbbildung: [http://micro.magnet.fsu.edu/primer/java/scienceopticsu/powersof10/]",
+  "explanationImage": "",
+  "questionImage": "lecture02/lecture10_q02.png"
+},
+{
+  "id": 17,
+  "questionDe": "(s19) Was ist das 'Visual Information-Seeking Mantra' von Ben Shneiderman?",
+  "questionJa": "Ben Shneidermanによる『Visual Information-Seeking Mantra』とは何か？",
+  "answerDe": [
+    "Overview first – Überblick zuerst",
+    "Zoom and filter – Vergrößern/Verkleinern & Filtern",
+    "Details-on-demand – Details auf Nachfrage"
+  ],
+  "answerJa": [
+    "まずは全体像（Overview first）",
+    "ズームとフィルターで絞り込み（Zoom and filter）",
+    "必要に応じて詳細を表示（Details-on-demand）"
+  ],
+  "explanationDe": [
+    "Das 'Visual Information-Seeking Mantra' ist ein Grundprinzip für die Gestaltung interaktiver Informationsvisualisierungen.",
+    "Es wurde von Ben Shneiderman formuliert und besteht aus drei aufeinanderfolgenden Phasen:",
+    "1. Zuerst soll dem Nutzer ein Überblick über die gesamten Daten präsentiert werden (Overview first).",
+    "2. Danach kann der Nutzer durch Zooming und Filtern gezielt Bereiche eingrenzen, die ihn interessieren.",
+    "3. Schließlich kann er sich bei Bedarf Details zu einzelnen Datenpunkten anzeigen lassen (Details-on-demand).",
+    "Dieses Prinzip unterstützt effizientes, schrittweises Erkunden großer Datenmengen und ist heute ein Standard im Visualisierungsdesign."
+  ],
+  "explanationJa": [
+    "『Visual Information-Seeking Mantra（視覚的情報探索のマントラ）』は、対話型データ可視化の設計における基本原則で、Ben Shneiderman によって提唱されました。",
+    "このマントラは次の3つの段階で構成されています：",
+    "1. まずは全体像を把握する（Overview first）：ユーザーに全体の構造を提示する。",
+    "2. 興味のある部分を拡大・フィルタして絞り込む（Zoom and filter）：関心のある範囲を明確にする。",
+    "3. 必要に応じて詳細を見る（Details-on-demand）：選択した項目に対して詳細情報を表示する。",
+    "このように段階的に探索を進めることで、複雑なデータでも無理なく理解・分析できるようになります。現在では多くの可視化ツールでこの原則が採用されています。"
+  ],
+  "originalSlideText": "Überblick und Detail\n“Visual Information-Seeking Mantra” von Ben Shneiderman\nOverview first           Überblick\nZoom and filter          Vergrößern/Verkleinern & Filtern\nDetails-on-demand        Details auf Nachfrage",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 18,
+  "questionDe": "(s20) Welche Vorgehensweisen zur Informationserschließung gibt es laut Informatik, und wie unterscheiden sie sich?",
+  "questionJa": "情報科学における代表的な情報探索のアプローチにはどのような種類があり、それぞれどのように異なるか？",
+  "answerDe": [
+    "Top-Down: Beginne mit dem Überblick (Shneiderman Mantra)",
+    "Bottom-Up: Starte bei den Details und untersuche die Umgebung",
+    "Middle-Out: Beginne auf mittlerer Ebene und untersuche sowohl Umfeld (up) als auch Details (down)"
+  ],
+  "answerJa": [
+    "トップダウン：全体像から始めて徐々に詳細へ（Shneidermanのマントラ）",
+    "ボトムアップ：詳細から入り、周囲の情報を探索する",
+    "ミドルアウト：適切な中間レベルから始めて、上位構造（up）と詳細（down）の両方を調べる"
+  ],
+  "explanationDe": [
+    "In der Informatik und Visualisierung gibt es verschiedene Strategien, wie man sich Informationen erschließen kann.",
+    "Beim Top-Down-Ansatz beginnt man mit einem Überblick über das Gesamtsystem und zoomt schrittweise in relevante Details hinein. Dies entspricht dem Shneiderman-Mantra.",
+    "Der Bottom-Up-Ansatz funktioniert umgekehrt: Man startet mit konkreten Einzelheiten (z. B. einem Datenpunkt oder Anomalie) und untersucht dann deren Kontext.",
+    "Beim Middle-Out-Ansatz beginnt man auf einer mittleren Abstraktionsebene, die weder zu grob noch zu detailliert ist. Von dort aus kann man gezielt nach oben (Übersicht) oder unten (Detailtiefe) navigieren.",
+    "Welche Strategie am besten geeignet ist, hängt vom Ziel, der Datenmenge und der Benutzererfahrung ab."
+  ],
+  "explanationJa": [
+    "情報可視化や情報科学の分野では、情報にどのようにアクセスして理解していくかの戦略がいくつかあります。",
+    "トップダウン型は、まず全体像から出発し、そこから徐々に必要な詳細へと掘り下げていく方法で、Shneidermanの『Visual Information-Seeking Mantra』に対応します。",
+    "ボトムアップ型は逆に、詳細情報から入って、それがどのような文脈や背景の中にあるかを探索していく方法です（例：異常なデータから全体傾向を探る）。",
+    "ミドルアウト型は、中間のレベル（例えばサマリービューやカテゴリ）から始めて、必要に応じて上（全体像）にも下（詳細）にも移動していく柔軟な方式です。",
+    "どの戦略を使うかは、データの構造や目的、ユーザーの経験によって最適なものが変わります。"
+  ],
+  "originalSlideText": "Überblick und Detail\nVorgehensweisen in der Informatik\nTop-Down          Shneiderman Mantra\nBottom-Up         Starte mit den Details und erforsche die Umgebung\nMiddle-Out        Starte auf einer “angemessenen” Detailebene\n                  und erforsche Umgebung (up) und Details (down)",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 19,
+  "questionDe": "(s21) Warum ist das Zusammenspiel von Überblick und Detail in der Informationsvisualisierung wichtig?",
+  "questionJa": "情報可視化において『概要（Überblick）』と『詳細（Detail）』の組み合わせが重要なのはなぜか？",
+  "answerDe": [
+    "Zentrale Frage: Wie kann man dem Benutzer helfen, interessante Daten zu finden und zu fokussieren?",
+    "Überblick zeigt globale Muster und unterstützt:",
+    "– beim Finden interessanter Objekte",
+    "– bei der Navigation durch die Daten",
+    "– bei der Festlegung von Analyse-Richtungen",
+    "Detail ist entscheidend für die tiefere Analyse dieser Objekte"
+  ],
+  "answerJa": [
+    "中心的な問い：ユーザーが興味深いデータをどうやって見つけ、注目できるようにするか？",
+    "概要（Überblick）は全体的なパターンを示し、以下の点でユーザーを支援する：",
+    "– 興味のあるオブジェクトを見つけるため",
+    "– データ内をナビゲーションするため",
+    "– 分析の方向性を決めるため",
+    "詳細（Detail）は、その興味深いオブジェクトを深く分析するために不可欠である"
+  ],
+  "explanationDe": [
+    "In der Informationsvisualisierung geht es häufig darum, aus großen Datenmengen sinnvolle Einsichten zu gewinnen.",
+    "Ein zentrales Ziel ist es, dem Benutzer zu helfen, interessante oder relevante Informationen zu identifizieren (finden) und sich darauf zu konzentrieren (fokussieren).",
+    "Der Überblick (z. B. in Form einer Gesamtkarte, Heatmap oder Clusteransicht) hilft, globale Muster und Ausreißer zu erkennen.",
+    "Er ermöglicht es dem Nutzer, sich zu orientieren und gezielt zu bestimmten Objekten zu navigieren.",
+    "Sobald ein interessantes Objekt gefunden wurde, ist die Detailansicht nötig, um es im Kontext zu analysieren – z. B. mit genauen Attributwerten, Zeitverläufen oder Vergleichsdaten."
+  ],
+  "explanationJa": [
+    "情報可視化の目的は、膨大なデータの中から有益な発見を導くことです。",
+    "そのためには、ユーザーが『どこを見るべきか』『何に注目すべきか』を判断できるように支援する必要があります。",
+    "まず、全体像（Überblick）を示すことで、ユーザーが全体の傾向や異常を捉えられるようにします（例：ヒートマップやクラスタービュー）。",
+    "そこから、特定の興味ある対象を見つけて、その周辺にナビゲートできるようになります。",
+    "最終的に、選ばれた対象については詳細（Detail）を表示し、属性値や時系列の変化、他との比較などを通して深い分析を行うことができます。"
+  ],
+  "originalSlideText": "► Zentrale Frage:\nWie kann man dem Benutzer ermöglichen, interessante Daten\n► zu finden\n► zu fokussieren\n► Überblick\n  ► Zeigt globale Muster\n  ► Hilft\n    ► interessante Objekte zu finden\n    ► bei der Navigation durch die Daten\n    ► die Richtung der Aktivitäten festzulegen\n► Detail\n  ► Wichtig für die Analyse von interessanten Objekten",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 20,
+  "questionDe": "(s22) Welche prinzipiellen Vorgehensweisen gibt es für die Darstellung von Überblick und Detail?",
+  "questionJa": "『概要（Überblick）』と『詳細（Detail）』を表示する際の基本的な手法にはどのようなものがあるか？",
+  "answerDe": [
+    "Platz: Gleichzeitige Darstellung durch Aufteilung des Bildschirms",
+    "Zeit: Abwechselnde Darstellung durch Umschalten im selben Bereich",
+    "Beide Methoden haben Vor- und Nachteile, abhängig von der Bildschirmgröße"
+  ],
+  "answerJa": [
+    "空間的手法（Platz）：画面を分割して概要と詳細を同時に表示する",
+    "時間的手法（Zeit）：同じ画面領域で概要と詳細を切り替えて表示する",
+    "どちらの方法にも長所と短所があり、画面サイズに依存する"
+  ],
+  "explanationDe": [
+    "Um Überblick und Detail in einer Visualisierung zu kombinieren, gibt es zwei grundlegende Strategien:",
+    "1. Platz-orientierte Methode: Der Bildschirm wird in Abschnitte unterteilt – z. B. oben Überblick, unten Details. So kann beides gleichzeitig sichtbar sein.",
+    "2. Zeit-orientierte Methode: Es wird nur ein Bereich verwendet, in dem der Nutzer zwischen Überblick und Detailansicht hin- und herschalten kann.",
+    "Beide Ansätze haben Vor- und Nachteile: Die Platz-basierte Methode benötigt mehr Bildschirmfläche, ist aber schneller im Vergleich. Die Zeit-basierte Methode spart Platz, erfordert aber mehr Interaktion.",
+    "Die Wahl hängt stark von der verfügbaren Bildschirmgröße und dem Nutzungskontext ab – etwa ob auf einem Smartphone oder großen Monitor gearbeitet wird."
+  ],
+  "explanationJa": [
+    "情報可視化で概要と詳細の両方を扱う際には、基本的に次の2つの戦略があります：",
+    "1. 空間ベースの手法（Platz）：画面を分割して、たとえば上部に概要、下部に詳細を同時に表示する方式です。両方を一度に見られるメリットがあります。",
+    "2. 時間ベースの手法（Zeit）：同じ画面領域を使い、ユーザーが概要と詳細を切り替えて表示します。画面スペースを節約できますが、操作の手間が増えます。",
+    "どちらにも利点と欠点があり、特に画面サイズ（例：スマホか大画面か）によって適切な手法が変わります。",
+    "たとえば大きなディスプレイなら空間分割、小さな端末なら時間的切り替えが好まれます。"
+  ],
+  "originalSlideText": "► Idealerweise werden beide Aspekte zur Verfügung gestellt\n► Prinzipielle Vorgehensweisen\n  ► Platz\n    ► Gleichzeitige Darstellung von Überblick und Detail\n    ► Verwende Teile des Bildschirms für den Überblick und andere für Details\n  ► Zeit\n    ► Wechsel zwischen Überblick und Detail\n    ► Gleicher Platz wird für beide verwendet\n► Beide Vorgehensweisen haben Vor- und Nachteile\n  ► In Abhängigkeit von der Bildschirmgröße",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 21,
+  "questionDe": "(s23) Welche Arten von Überblick-und-Detail-Darstellungen beschreibt die Taxonomie von PCS1995?",
+  "questionJa": "PCS1995による『概要と詳細』表示の分類にはどのような種類があるか？",
+  "answerDe": [
+    "1. Nur Details",
+    "2. Ein Fenster mit Vergrößern und Ersetzen",
+    "3. Ein koordiniertes Paar",
+    "4. Kacheln, mehrere Ebenen",
+    "5. Freie Vergrößerung und mehrfache Überlappung",
+    "6. Bi-Fokus vergrößert",
+    "7. Fish-Auge"
+  ],
+  "answerJa": [
+    "1. 詳細のみを表示",
+    "2. 拡大と置き換えができる単一ウィンドウ",
+    "3. 同期された2つの表示（ペア）",
+    "4. 複数階層のタイル表示",
+    "5. 自由な拡大と複数の重なり",
+    "6. 中心と周辺を同時に拡大（Bi-Focus）",
+    "7. 魚眼レンズのような歪み表示（Fish-Eye）"
+  ],
+  "explanationDe": [
+    "Die Taxonomie von PCS1995 klassifiziert verschiedene Ansätze zur Darstellung von Überblick und Detail in interaktiven Visualisierungen:",
+    "1. Nur Details – keine Übersicht vorhanden, Fokus liegt vollständig auf Einzelinformationen.",
+    "2. Fenster mit Vergrößern und Ersetzen – ein Fenster zeigt Detailansicht anstelle der Übersicht.",
+    "3. Koordiniertes Paar – zwei Fenster zeigen Übersicht und Detail gleichzeitig, synchronisiert.",
+    "4. Kachelansicht – mehrere Ansichten auf unterschiedlichen Ebenen nebeneinander.",
+    "5. Freie Vergrößerung – Benutzer kann beliebig vergrößern; Bereiche können sich überlappen.",
+    "6. Bi-Fokus – zwei Detailbereiche werden stark vergrößert, der Rest bleibt im Überblick.",
+    "7. Fish-Eye – ein Bereich ist stark vergrößert, der Kontext bleibt sichtbar aber verzerrt."
+  ],
+  "explanationJa": [
+    "PCS1995のタクソノミーでは、『概要（Overview）と詳細（Detail）』の可視化方法について7つのタイプを分類しています：",
+    "1. 詳細のみ：全体像なしで、詳細だけを表示する。",
+    "2. 拡大＋置換型：画面内の1つの領域で拡大した内容を表示し、元の概要と入れ替える。",
+    "3. 同期ペア：2つのビュー（例：全体と詳細）を同期させて並べて表示する。",
+    "4. タイル／多層型：複数の異なる階層をタイル状に表示して比較できる。",
+    "5. 自由拡大＋重なり：ユーザーが自由に拡大し、ビューが重なることもある。",
+    "6. バイフォーカス：2つのフォーカス領域を拡大して、周囲をそのまま保つ。",
+    "7. 魚眼レンズ：中央を拡大して強調し、周囲を歪ませてコンテキストを保つ。"
+  ],
+  "originalSlideText": "Überblick und Detail\nTaxonomy [PCS1995]\n1. Nur Details\n2. Ein Fenster mit Vergrößern und Ersetzen\n3. Ein koordiniertes Paar\n4. Kacheln, mehrere Ebenen\n5. Freie Vergrößerung und mehrfache Überlappung\n6. Bi-Fokus vergrößert\n7. Fish-Auge",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 22,
+  "questionDe": "(s24) Was bedeutet der 'Nur Details'-Ansatz in Überblick-und-Detail-Darstellungen?",
+  "questionJa": "『詳細のみ（Nur Details）』型の表示方法とはどのようなものか？",
+  "answerDe": [
+    "Es gibt kein separates Übersichtsfenster.",
+    "Der Nutzer sieht nur einen kleinen Ausschnitt und navigiert durch horizontales und vertikales Verschieben.",
+    "Funktioniert nur gut bei geringer Vergrößerung."
+  ],
+  "answerJa": [
+    "概要ビューは存在せず、常に詳細表示だけを行う。",
+    "水平方向や垂直方向にスクロールして画面を移動する。",
+    "高倍率ズームには不向きで、低倍率での使用に適している。"
+  ],
+  "explanationDe": [
+    "Beim 'Nur Details'-Ansatz gibt es keine kombinierte Darstellung von Übersicht und Detail.",
+    "Der Nutzer kann nur einen kleinen Ausschnitt der gesamten Daten auf einmal sehen.",
+    "Um andere Bereiche zu betrachten, muss er den sichtbaren Ausschnitt verschieben – durch horizontales und vertikales Scrollen.",
+    "Dieser Ansatz ist nur bei geringer Vergrößerung sinnvoll, da der Kontext schnell verloren geht.",
+    "Ein Beispiel ist eine Bildbearbeitungssoftware oder ein Kartendienst ohne Miniaturansicht (Overview Map)."
+  ],
+  "explanationJa": [
+    "『詳細のみ（Nur Details）』は、概要ビューがなく、ユーザーは常に詳細の一部しか見られない方式です。",
+    "他の場所を見るには、水平または垂直に画面をスクロールする必要があります。",
+    "これは、画像編集ソフトや旧来の地図アプリなどによく見られる手法です。",
+    "拡大率が高くなると、現在位置や全体構造が分かりにくくなるという欠点があります。",
+    "したがって、この方法は低倍率での使用に限定されることが多いです。"
+  ],
+  "originalSlideText": "1. Nur Details\n► Ein Fenster mit horizontalem und vertikalem Verschieben\n► Funktioniert nur mit geringen Vergrößerungen",
+  "explanationImage": "lecture02/lecture10_ex10.png",
+  "questionImage": ""
+},
+{
+  "id": 23,
+  "questionDe": "(s25) Was versteht man unter dem Konzept 'Ein Fenster mit Vergrößern und Ersetzen' bei der Darstellung von Überblick und Detail?",
+  "questionJa": "『拡大と置換を伴うウィンドウ』という手法は、「概要と詳細」表示の中で何を意味するか？",
+  "answerDe": [
+    "Es gibt eine globale Übersicht mit einem auswählbaren Bereich.",
+    "Der ausgewählte Bereich wird vergrößert dargestellt und ersetzt die Übersicht.",
+    "Benutzer können Position und Zoom-Stufe anpassen."
+  ],
+  "answerJa": [
+    "全体を表示するビューがあり、その中から拡大したい領域を選べる。",
+    "選ばれた領域が拡大表示され、元の表示と置き換わる。",
+    "ユーザーは位置やズームの倍率を調整できる。"
+  ],
+  "explanationDe": [
+    "Diese Methode zeigt zunächst eine vollständige Übersicht an – zum Beispiel eine Landkarte oder ein Diagramm.",
+    "Der Benutzer kann in dieser Gesamtansicht mit der Maus oder einem Auswahlrahmen einen Bereich markieren, den er genauer betrachten möchte.",
+    "Sobald der Bereich ausgewählt ist, wird nur dieser Teil stark vergrößert dargestellt. Dabei ersetzt er die bisherige Übersicht im Fenster.",
+    "Der Benutzer hat oft die Möglichkeit, den vergrößerten Bereich zu verschieben (pannen) oder den Zoomfaktor anzupassen.",
+    "Dies ist besonders nützlich, wenn man sich auf bestimmte Details konzentrieren möchte, ohne dabei von der Komplexität der Gesamtansicht überwältigt zu werden."
+  ],
+  "explanationJa": [
+    "この手法では、最初に全体の概要が表示されます（例：地図やネットワーク図など）。",
+    "ユーザーはその全体図の中から、拡大したい特定のエリアを選択することができます（選択範囲をマウスで囲むなど）。",
+    "選択されたエリアは拡大されて表示され、元の全体表示と入れ替わります（＝置換）。",
+    "このとき、ユーザーは拡大表示するエリアの位置を動かしたり（パン）、ズーム倍率を変えたりできます。",
+    "これは、広い情報空間から特定の部分に注目したいときに役立ちます。全体のノイズを減らして、詳細情報に集中できます。"
+  ],
+  "originalSlideText": "2. Ein Fenster mit Vergrößern und Ersetzen\n► Globale Ansicht mit einem wählbaren Gebiet für Vergrößerungen\n► Variationen erlauben dem Benutzer:\n  ► Verschiebungen\n  ► Anpassung des vergrößerten Gebietes\n  ► Anpassung der Vergrößerungsstufen",
+  "explanationImage": "lecture02/lecture10_ex11.png",
+  "questionImage": ""
+},
+{
+  "id": 24,
+  "questionDe": "(s25) Welche Herausforderung kann beim Konzept 'Ein Fenster mit Vergrößern und Ersetzen' auftreten?",
+  "questionJa": "『拡大と置換を伴うウィンドウ』という手法には、どのような問題点や注意点があるか？",
+  "answerDe": [
+    "Der plötzliche Wechsel der Ansicht kann zur Desorientierung führen."
+  ],
+  "answerJa": [
+    "拡大によってコンテキスト（文脈）が切り替わるため、ユーザーが迷子になる可能性がある。"
+  ],
+  "explanationDe": [
+    "Wenn die vergrößerte Ansicht die ursprüngliche Übersicht vollständig ersetzt, verliert der Benutzer möglicherweise die Orientierung.",
+    "Man weiß dann nicht mehr genau, wo im Gesamtbild man sich gerade befindet.",
+    "Besonders bei großen oder komplexen Daten kann das dazu führen, dass man den Überblick verliert und unnötig viel navigieren muss, um zurückzufinden.",
+    "Deshalb ist es wichtig, eine visuelle Verbindung zur Übersicht zu behalten – z. B. durch Mini-Maps oder Rücksprung-Funktionen."
+  ],
+  "explanationJa": [
+    "拡大によって画面が切り替わると、それまで表示されていた全体図が消えてしまいます。",
+    "そのため、現在どの位置を見ているのか、全体の中でどこにいるのかが分からなくなってしまう（＝迷子になる）ことがあります。",
+    "特に地図や大きなグラフなど、情報空間が広い場合には、この問題が顕著になります。",
+    "そのため、ミニマップや、元の全体図に戻る機能など、コンテキストを保つ工夫が重要です。"
+  ],
+  "originalSlideText": "► Wechsel des Kontextes kann Desorientieren",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 25,
+  "questionDe": "(s26) Was ist ein 'koordiniertes Paar' im Kontext von Überblick und Detail?",
+  "questionJa": "『連携したペア（koordiniertes Paar）』とは、「概要と詳細」の文脈で何を意味するか？",
+  "answerDe": [
+    "Eine Kombination von zwei separaten Ansichten: Überblick und lokal vergrößerte Ansicht."
+  ],
+  "answerJa": [
+    "概要とローカルに拡大された詳細ビューの2つの分離した表示を組み合わせたもの。"
+  ],
+  "explanationDe": [
+    "Ein 'koordiniertes Paar' besteht laut (s26) aus zwei separaten Ansichten, die kombiniert werden:",
+    "► eine Übersicht, die das Gesamtbild zeigt",
+    "► eine lokal vergrößerte Ansicht, die Details eines Ausschnitts präsentiert.",
+    "Beide Fenster sind miteinander verbunden: Wenn man sich im Detailfenster bewegt, wird der Bereich in der Übersicht angezeigt (z. B. durch ein Rechteck)."
+  ],
+  "explanationJa": [
+    "(s26) によると、『連携したペア（koordiniertes Paar）』とは、2つの個別のビュー（表示）を組み合わせたものです：",
+    "► 全体像を見せるための『概要ビュー（Überblick）』",
+    "► 一部を拡大した『ローカル拡大ビュー（lokal vergrößerte Ansicht）』",
+    "これらのビューは連動していて、拡大ビューで見ている部分が概要ビューでも矩形などで示されるようになっています。"
+  ],
+  "originalSlideText": "3. Ein koordiniertes Paar\n► Kombination von zwei separaten Ansichten\n  ► Überblick\n  ► Lokal vergrößerte Ansicht",
+  "explanationImage": "lecture02/lecture10_ex12.png",
+  "questionImage": ""
+},
+{
+  "id": 26,
+  "questionDe": "(s26) Welche Designfragen ergeben sich bei einem koordinierten Paar?",
+  "questionJa": "『連携したペア』に関して、どのような設計上の課題・検討点があるか？",
+  "answerDe": [
+    "Wie groß sollen die Fenster sein?",
+    "Wo sollen die Fenster platziert werden?"
+  ],
+  "answerJa": [
+    "ウィンドウの大きさをどうするか？",
+    "ウィンドウの配置をどこにするか？"
+  ],
+  "explanationDe": [
+    "(s26) weist darauf hin, dass unterschiedliche Implementierungen viel Platz entweder für den Überblick oder für die Details reservieren.",
+    "Dadurch entstehen zwei wichtige Designfragen:",
+    "► Wie groß sollen die Fenster für Überblick und Detail sein?",
+    "► Wo im Layout sollen sie platziert werden (z. B. nebeneinander, übereinander)?",
+    "Diese Entscheidungen beeinflussen die Benutzerfreundlichkeit erheblich."
+  ],
+  "explanationJa": [
+    "(s26) によれば、実装によっては『概要表示』に多くのスペースを割くものもあれば、『詳細表示』に重点を置くものもあります。",
+    "このため、設計において次の2点が重要な検討事項になります：",
+    "► ウィンドウのサイズ（どのくらいの大きさにするか）",
+    "► ウィンドウの配置（左右に並べるか、上下か、別枠かなど）",
+    "この判断はユーザーの視認性や操作性に大きく影響します。"
+  ],
+  "originalSlideText": "► Einige Implementierungen reservieren viel Platz für den Überblick, andere für Details\n► Fragen\n  ► Wie groß sollen die Fenster sein?\n  ► Wo sollen die Fenster platziert werden?",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 27,
+  "questionDe": "Was versteht man unter dem Layouttyp 'Kacheln, mehrere Ebenen'? (s27)",
+  "questionJa": "『タイル表示・複数レベル（Kacheln, mehrere Ebenen）』とは何か？",
+  "answerDe": [
+    "► Kombination von globaler Ansicht (Überblick), Zwischenansicht und Detail-Ansicht",
+    "► Ansichten nicht überlappend"
+  ],
+  "answerJa": [
+    "► グローバルビュー（概要）、中間ビュー、詳細ビューの組み合わせ",
+    "► 各ビューは重ならない（非オーバーラップ）"
+  ],
+  "explanationDe": [
+    "Laut (s27) handelt es sich bei 'Kacheln, mehrere Ebenen' um eine Benutzeroberfläche, in der drei verschiedene Ansichten nebeneinander dargestellt werden:",
+    "► Die globale Ansicht (Überblick) zeigt den Gesamtkontext.",
+    "► Eine Zwischenansicht dient als Übergangsstufe mit mittlerem Zoomniveau.",
+    "► Eine Detail-Ansicht liefert den größten Zoom und zeigt konkrete Informationen.",
+    "Alle drei Ansichten sind nicht überlappend angeordnet, d.h. jede hat ihren eigenen Bereich auf dem Bildschirm."
+  ],
+  "explanationJa": [
+    "(s27) によれば、『Kacheln, mehrere Ebenen』は3種類のビューを横並びに表示するインターフェースです：",
+    "► グローバルビュー（Überblick）：全体のコンテキストを表示。",
+    "► 中間ビュー（Zwischenansicht）：中程度の拡大率で、遷移段階を示す。",
+    "► 詳細ビュー（Detail-Ansicht）：最大拡大率で詳細情報を表示。",
+    "これらのビューは互いに重ならず、それぞれ独立した表示領域を持ちます。"
+  ],
+  "originalSlideText": "► Kombination von\n  ► Globale Ansicht (Überblick)\n  ► Eine Zwischenansicht\n  ► Eine Detail-Ansicht\n► Ansichten nicht überlappend",
+  "explanationImage": "lecture02/lecture10_ex13.png",
+  "questionImage": ""
+},
+{
+  "id": 28,
+  "questionDe": "Wie funktioniert die Verbindung der Ansichten bei 'Kacheln, mehrere Ebenen'? (s27)",
+  "questionJa": "『Kacheln, mehrere Ebenen』におけるビューの連携方法は？",
+  "answerDe": [
+    "► Rahmen zeigt den vergrößerten Ausschnitt an",
+    "► Panning in einer Ansicht beeinflusst die anderen Ansichten"
+  ],
+  "answerJa": [
+    "► 枠（Rahmen）が詳細表示の範囲を示す",
+    "► 一つのビューでのパン操作が他のビューにも影響する"
+  ],
+  "explanationDe": [
+    "Wie in (s27) angegeben, sind die Ansichten miteinander verbunden:",
+    "► In der globalen oder Zwischenansicht zeigt ein Rahmen, welcher Bereich gerade in der Detailansicht zu sehen ist.",
+    "► Wenn der Benutzer eine Ansicht verschiebt (panning), aktualisieren sich die anderen Ansichten entsprechend.",
+    "Dies hilft, den Überblick über die Position zu behalten und eine konsistente Navigation zu ermöglichen."
+  ],
+  "explanationJa": [
+    "(s27) に示されているように、ビュー間には次のような連携があります：",
+    "► グローバルビューや中間ビュー内にある枠が、詳細ビューの表示範囲を明示する。",
+    "► あるビューでパン操作を行うと、他のビューもそれに応じて表示を更新する。",
+    "これにより、位置関係を把握しやすく、視覚的なナビゲーションがスムーズになります。"
+  ],
+  "originalSlideText": "► Verbindung zweier Ansichten\n  ► Rahmen zeigt den vergrößerten Ausschnitt an\n  ► Panning in einer Ansicht beeinflußt die anderen Ansichten",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 29,
+  "questionDe": "Was bedeutet 'Freie Vergrößerung und mehrfache Überlappung' im Kontext von Überblick und Detail? (s28)",
+  "questionJa": "『自由な拡大と複数の重なり（Freie Vergrößerung und mehrfache Überlappung）』とは何か？",
+  "answerDe": [
+    "► Zuerst nur Überblick",
+    "► Auswahl von",
+    "  ► Gebiet zur Vergrößerung",
+    "  ► Ort für Detail-Ansicht"
+  ],
+  "answerJa": [
+    "► 最初に全体の概要（Überblick）を表示",
+    "► 次に以下をユーザーが選択：",
+    "  ► 拡大したい領域（Gebiet）",
+    "  ► 詳細ビューを表示する場所（Ort）"
+  ],
+  "explanationDe": [
+    "(s28) beschreibt eine Methode, bei der zuerst eine Übersichtsansicht gezeigt wird.",
+    "Danach kann der Benutzer interaktiv entscheiden, welcher Ausschnitt vergrößert wird und wo das resultierende Detailfenster auf dem Bildschirm erscheint.",
+    "Diese Technik erlaubt es, mehrere Detailansichten gleichzeitig zu öffnen – auch überlappend."
+  ],
+  "explanationJa": [
+    "(s28) によると、まず概要ビュー（Überblick）を表示し、",
+    "その後ユーザーが拡大したい領域（Gebiet）と、詳細ウィンドウをどこに表示するか（Ort）を選ぶ方式。",
+    "この方法では、複数の詳細ビューを同時に表示でき、重ねて配置することも可能です。"
+  ],
+  "originalSlideText": "► Zuerst nur Überblick\n► Auswahl\n  ► Gebiet zur Vergrößerung\n  ► Ort für Detail-Ansicht",
+  "explanationImage": "lecture02/lecture10_ex14.png",
+  "questionImage": ""
+},
+{
+  "id": 30,
+  "questionDe": "Welche Vor- und Nachteile hat das Layout 'Freie Vergrößerung und mehrfache Überlappung'? (s28)",
+  "questionJa": "『自由な拡大と複数の重なり』の利点と欠点は？",
+  "answerDe": [
+    "► Vorteil:",
+    "  ► Flexibles Layout",
+    "► Nachteil:",
+    "  ► Fenster müssen manuell angeordnet werden"
+  ],
+  "answerJa": [
+    "► 利点：",
+    "  ► 柔軟なレイアウトが可能",
+    "► 欠点：",
+    "  ► ウィンドウの配置をユーザーが手動で行う必要がある"
+  ],
+  "explanationDe": [
+    "(s28) nennt als Vorteil die hohe Flexibilität: Der Benutzer kann mehrere Fenster frei positionieren.",
+    "Allerdings bringt diese Freiheit auch Nachteile mit sich – insbesondere die Notwendigkeit, die Fenster manuell zu ordnen, was bei vielen Fenstern unübersichtlich werden kann."
+  ],
+  "explanationJa": [
+    "(s28) によると、この手法の利点は『柔軟なレイアウト』が可能なことです。",
+    "一方で、欠点として『ウィンドウを手動で配置する必要がある』点が挙げられ、複数の詳細ビューを扱うと整理が難しくなる可能性があります。"
+  ],
+  "originalSlideText": "► Vorteil:\n  ► Flexibles Layout\n► Nachteil:\n  ► Fenster müssen manuell angeordnet werden",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 31,
+  "questionDe": "Was ist unter 'Bi-Fokus vergrößert' zu verstehen? (s29)",
+  "questionJa": "『Bi-Fokus vergrößert（二重焦点の拡大表示）』とは何か？",
+  "answerDe": [
+    "► “Vergrößerungsglas”",
+    "► Die vergrößerte Ansicht schwebt über der Übersicht",
+    "► Problem:",
+    "  ► Benachbarte Objekte werden verdeckt"
+  ],
+  "answerJa": [
+    "► 『拡大鏡（Vergrößerungsglas）』のようなもの",
+    "► 拡大表示は概要（Übersicht）の上に重なって表示される",
+    "► 問題点：",
+    "  ► 周囲のオブジェクトが隠れてしまう"
+  ],
+  "explanationDe": [
+    "(s29) beschreibt die Technik 'Bi-Fokus vergrößert' als ein interaktives 'Vergrößerungsglas'.",
+    "Dabei wird ein Teil der Übersichtsansicht vergrößert und als schwebendes Fenster über dem Original dargestellt.",
+    "Ein zentrales Problem ist jedoch, dass dieses Fenster benachbarte Informationen verdecken kann, was zur Orientierungslosigkeit führt."
+  ],
+  "explanationJa": [
+    "(s29) によると、『Bi-Fokus vergrößert』とは、インタラクティブな『拡大鏡』のような機能です。",
+    "概要表示の中から一部を拡大し、その部分を上に重ねて表示します。",
+    "このときの課題は、拡大部分が他の周囲の情報を覆ってしまい、ユーザーが全体構造を把握しづらくなる点です。"
+  ],
+  "originalSlideText": "► “Vergrößerungsglas”\n► Die vergrößerte Ansicht schwebt über der Übersicht\n► Problem:\n  ► Benachbarte Objekte werden verdeckt",
+  "explanationImage": "lecture02/lecture10_ex15.png",
+  "questionImage": ""
+},
+{
+  "id": 32,
+  "questionDe": "Was bedeutet 'Fish-Auge' im Kontext von Überblick und Detail? (s30)",
+  "questionJa": "『Fish-Auge（魚眼レンズ）』とは、Überblick und Detail（概観と詳細）の文脈でどういう意味か？",
+  "answerDe": [
+    "► Fish-Auge",
+    "► Das vergrößerte Bild ist verzerrt, so dass der Fokus auf dem am stärksten vergrößerten Gebiet liegt",
+    "► Alles wird in einer Ansicht dargestellt",
+    "► Problem:",
+    "  ► Die Verzerrung kann zu Desorientierung führen"
+  ],
+  "answerJa": [
+    "► Fish-Auge（魚眼レンズ）",
+    "► 拡大された画像は歪められ、最も拡大された領域にフォーカスが当たるように表示される",
+    "► すべての情報が一つのビュー（画面）内で表現される",
+    "► 問題点：",
+    "  ► 歪みが強く、ユーザーが方向感覚を失いやすい（Desorientierung）"
+  ],
+  "explanationDe": [
+    "Im 'Fish-Auge'-Modell (s30) wird eine Technik verwendet, bei der ein Bild so verzerrt wird, dass der Fokusbereich stark vergrößert erscheint.",
+    "Alle anderen Bereiche werden entsprechend komprimiert dargestellt, um alles auf einem Bildschirm zu zeigen.",
+    "Diese Methode ermöglicht eine gleichzeitige Sicht auf Überblick und Details, allerdings kann die starke Verzerrung zu Orientierungsschwierigkeiten führen."
+  ],
+  "explanationJa": [
+    "『Fish-Auge（魚眼レンズ）』とは、魚眼カメラのように画像を中央に向かって極端に歪め、",
+    "最も注目したい部分（フォーカス）を強調して表示する視覚技法です（s30）。",
+    "これにより、ユーザーは一画面で概要と詳細の両方を見ることができますが、",
+    "周囲の情報が圧縮・歪曲されるため、位置関係の把握が難しくなる欠点があります。"
+  ],
+  "originalSlideText": "► Fish-Auge\n► Das vergrößerte Bild ist verzerrt, so dass der Fokus auf dem am stärksten vergrößerten Gebiet liegt\n► Alles wird in einer Ansicht dargestellt\n► Problem:\n  ► Die Verzerrung kann zu Desorientierung führen",
+  "explanationImage": "lecture02/lecture10_ex16.png",
+  "questionImage": ""
+},
+{
+  "id": 34,
+  "questionDe": "Was sind laut Baldonado et al. [BWK2000] die drei Aspekte eines Modells zur effizienten Nutzung mehrerer Sichten? (s32)",
+  "questionJa": "Baldonadoら [BWK2000] による複数ビュー利用のための3つの視点とは？",
+  "answerDe": [
+    "► Designkonzepte",
+    "  ► Ein Schlüssel ist die Verwendung von mehreren Sichten",
+    "  ► Frage: Wie kann man diese Sichten effizient nutzen?",
+    "► Baldonado et al. [BWK2000] schlagen ein Modell mit drei Aspekten vor:",
+    "  ► Selection (Auswahl)",
+    "    ► Wann sollten mehrere Ansichten verwendet werden?",
+    "  ► Presentation (Darstellung)",
+    "    ► Wie sollten mehrere Ansichten dargestellt werden?",
+    "  ► Interaction (Interaktion)",
+    "    ► Wie beeinflusst die Interaktion mit einer Darstellung eine andere Darstellung?",
+    "    ► Hängt mit dem Aspekt der Darstellung zusammen"
+  ],
+  "answerJa": [
+    "► デザインコンセプト：",
+    "  ► 複数のビュー（Sichten）の活用が鍵となる",
+    "  ► 問い：これらのビューをいかに効率よく使うか？",
+    "► Baldonadoら [BWK2000] によるモデルには以下の3側面がある：",
+    "  ► Selection（選択）",
+    "    ► いつ複数のビューを使うべきか？",
+    "  ► Presentation（表示）",
+    "    ► 複数のビューをどう表示すべきか？",
+    "  ► Interaction（相互作用）",
+    "    ► あるビューとの操作が他のビューにどう影響するか？",
+    "    ► 表示の設計と関連する"
+  ],
+  "explanationDe": [
+    "Diese Folie (s32) präsentiert ein Designkonzept für die Nutzung mehrerer Sichten.",
+    "Laut Baldonado et al. besteht ein gutes Modell zur Nutzung mehrerer Ansichten aus drei Aspekten: Auswahl, Darstellung und Interaktion.",
+    "Dabei wird betont, dass die Interaktion eng mit der Darstellung verknüpft ist."
+  ],
+  "explanationJa": [
+    "このスライド（s32）では、複数のビューを効果的に活用するための設計コンセプトが示されています。",
+    "Baldonadoら [BWK2000] は、効率的なビューの使用には、①選択（Selection）、②表示（Presentation）、③相互作用（Interaction）の3つの視点が必要だと述べています。",
+    "特に「相互作用」は、表示設計と密接に関連しており、ビュー間のリンクや同期動作などに関係します。"
+  ],
+  "originalSlideText": "► Designkonzepte\n  ► Ein Schlüssel ist die Verwendung von mehreren Sichten\n  ► Frage: Wie kann man diese Sichten effizient nutzen?\n► Baldonado et al. [BWK2000] schlagen ein Modell mit drei Aspekten vor\n  ► Selection (Auswahl)\n    ► Wann sollten mehrere Ansichten verwendet werden?\n  ► Presentation (Darstellung)\n    ► Wie sollten mehrere Ansichten dargestellt werden?\n  ► Interaction (Interaktion)\n    ► Wie beeinflusst die Interaktion mit einer Darstellung eine andere Darstellung?\n    ► Hängt mit dem Aspekt der Darstellung zusammen",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 35,
+  "questionDe": "(s33–36) Nach welchen vier Regeln entscheidet man, ob mehrere Ansichten verwendet werden sollen? (BWK2000)",
+  "questionJa": "BWK2000によると、複数の視点（Ansichten）を使うべきかどうかを判断するための4つのルールとは何か？",
+  "answerDe": [
+    "Rule of Diversity (Regel der Verschiedenheit)",
+    "Rule of Complementarity (Regel der gegenseitigen Ergänzung)",
+    "Rule of Decomposition (Regel der Unterteilung)",
+    "Rule of Parsimony (Regel der Sparsamkeit)"
+  ],
+  "answerJa": [
+    "多様性のルール（Rule of Diversity）",
+    "補完性のルール（Rule of Complementarity）",
+    "分解のルール（Rule of Decomposition）",
+    "簡素性のルール（Rule of Parsimony）"
+  ],
+  "explanationDe": [
+    "BWK2000 nennt vier Regeln, die helfen zu entscheiden, wann mehrere Ansichten eingesetzt werden sollten:",
+    "1. Regel der Verschiedenheit: Wenn verschiedene Attribute, Modelle, Benutzerprofile oder Abstraktionsebenen betrachtet werden.",
+    "2. Regel der gegenseitigen Ergänzung: Wenn sich durch Vergleich mehrerer Ansichten Korrelationen oder Unterschiede erkennen lassen.",
+    "3. Regel der Unterteilung: Wenn komplexe Daten in verständliche Einheiten aufgeteilt werden sollen.",
+    "4. Regel der Sparsamkeit: Nur dann mehrere Ansichten verwenden, wenn es wirklich notwendig ist."
+  ],
+  "explanationJa": [
+    "BWK2000では、複数の視点（Ansichten）を使用すべきかどうかを判断するための4つのルールが定められています：",
+    "1. 多様性のルール：異なる属性やモデル、ユーザープロファイル、抽象化レベルが存在する場合は、複数の視点での表示が適しています。",
+    "2. 補完性のルール：異なる視点を比較することで、相関関係や違いなど新たな情報を見出せる場合に有効です。",
+    "3. 分解のルール：複雑な情報を複数の簡潔なブロックに分けて表示することで、理解を促進します。",
+    "4. 簡素性のルール：必要最小限の視点だけを使うことで、無駄な複雑さを避けることが重要です。"
+  ],
+  "originalSlideText": "Rule of diversity (Regel der Verschiedenheit)\n  Unterschiedliche:\n    – Attribute\n    – Modelle\n    – Benutzerprofile\n    – Abstraktionsebenen\n\nRule of complementarity (Regel der gegenseitigen Ergänzung)\n  Erkennung von:\n    – Korrelationen\n    – Unterschieden\n  zwischen verschiedenen Ansichten\n\nRule of Decomposition (Regel der Unterteilung)\n  Verteilung komplexer Daten auf verschiedene Ansichten um:\n    – handhabbare Blöcke zu erhalten\n    – Einsichten in die Wechselbeziehung zwischen Dimensionen zu erhalten\n\nRule of Parsimony (Regel der Sparsamkeit)\n  – Verwende mehrere Ansichten sparsam",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 36,
+  "questionDe": "(s33) Was bedeutet die 'Rule of Diversity' laut BWK2000?",
+  "questionJa": "BWK2000による『多様性のルール（Rule of Diversity）』とは何か？",
+  "answerDe": [
+    "Mehrere Ansichten sind sinnvoll bei unterschiedlichen:",
+    "– Attributen",
+    "– Modellen",
+    "– Benutzerprofilen",
+    "– Abstraktionsebenen"
+  ],
+  "answerJa": [
+    "複数の視点を使うべきなのは、次のような違いがあるとき：",
+    "– 属性（データの項目）",
+    "– モデル（分析手法やデータの見方）",
+    "– ユーザープロファイル（利用者の立場や目的）",
+    "– 抽象化レベル（データの詳細度や視点の階層）"
+  ],
+  "explanationDe": [
+    "Die 'Rule of Diversity' empfiehlt, mehrere Ansichten zu verwenden, wenn die Informationen sich in verschiedenen Dimensionen unterscheiden.",
+    "Zum Beispiel zeigt die Abbildung verschiedene Kartenansichten mit unterschiedlichen Detaillierungsgraden – von einer groben Übersicht bis zur lokalen Detailansicht.",
+    "Solche Ansichten sind sinnvoll, wenn Benutzer verschiedene Aufgaben oder Perspektiven haben, z. B. strategische Planung vs. Navigation im Gelände.",
+    "Ebenso können verschiedene Datenattribute oder abstrakte Modelle separat visualisiert werden, um die Komplexität zu reduzieren."
+  ],
+  "explanationJa": [
+    "『多様性のルール』では、情報の持つ性質が異なる場合に複数の視点を使うことが推奨されます。",
+    "このスライドでは、同じ地理情報が「広域図」「中間図」「詳細図」という3つの異なる抽象レベルで表示されています。これは、属性や視点が異なる例です。",
+    "たとえば全体の位置関係を把握したいときは広域図、現地での道を探すなら詳細図が便利です。",
+    "また、ユーザーの目的（例：管理者と現場作業者）や使用するモデルが違うとき、それぞれに適した表示を用意することで、効率的な理解が可能になります。"
+  ],
+  "originalSlideText": "Rule of diversity (Regel der Verschiedenheit)\n  Unterschiedliche:\n    – Attribute\n    – Modelle\n    – Benutzerprofile\n    – Abstraktionsebenen",
+  "explanationImage": "lecture02/lecture10_ex17.png",
+  "questionImage": ""
+},
+{
+  "id": 37,
+  "questionDe": "(s34) Was beschreibt die 'Rule of Complementarity' laut BWK2000?",
+  "questionJa": "BWK2000による『補完性のルール（Rule of Complementarity）』とは何か？",
+  "answerDe": [
+    "Mehrere Ansichten unterstützen das Erkennen von:",
+    "– Korrelationen",
+    "– Unterschieden"
+  ],
+  "answerJa": [
+    "複数の視点を用いることで、次のようなことがわかりやすくなる：",
+    "– 相関関係",
+    "– 違いの発見"
+  ],
+  "explanationDe": [
+    "Die 'Rule of Complementarity' (Regel der gegenseitigen Ergänzung) empfiehlt die Verwendung mehrerer Ansichten, wenn diese sich gegenseitig ergänzen.",
+    "Zum Beispiel können in einer Matrixdarstellung verschiedene Dimensionen wie Preis, Zeit und Anzahl der Schlafzimmer einander gegenübergestellt werden.",
+    "So lassen sich Zusammenhänge wie Preissteigerungen über die Zeit oder Unterschiede zwischen Gruppen besser erkennen.",
+    "Die Kombination der Ansichten liefert also mehr Informationen als jede einzelne für sich allein."
+  ],
+  "explanationJa": [
+    "『補完性のルール』は、異なる視点が互いに補い合って新たな気づきをもたらすときに、それらを組み合わせて用いるべきとする考え方です。",
+    "スライドの例では、価格・時間・部屋数などの要素がマトリクス形式で可視化され、視点ごとの比較が可能になっています。",
+    "たとえば価格と時間の関係（相関）や、グループごとの違いが一目でわかるようになります。",
+    "それぞれの視点単独では得られない情報が、組み合わせることで明確になるのがポイントです。"
+  ],
+  "originalSlideText": "Rule of complementarity\n(Regel der gegenseitigen Ergänzung)\n  Erkennung von:\n    – Korrelationen\n    – Unterschieden\nzwischen verschiedenen Ansichten",
+  "explanationImage": "lecture02/lecture10_ex18.png",
+  "questionImage": ""
+},
+{
+  "id": 38,
+  "questionDe": "(s35) Was besagt die 'Rule of Decomposition' laut BWK2000?",
+  "questionJa": "BWK2000による『分割のルール（Rule of Decomposition）』とは何か？",
+  "answerDe": [
+    "Verteilung komplexer Daten auf mehrere Ansichten, um:",
+    "– handhabbare Blöcke zu erhalten",
+    "– Wechselbeziehungen zwischen Dimensionen sichtbar zu machen"
+  ],
+  "answerJa": [
+    "複雑なデータを複数の視点に分割することで：",
+    "– 扱いやすい単位にする",
+    "– 次元間の関係性を明確にする"
+  ],
+  "explanationDe": [
+    "Die 'Rule of Decomposition' empfiehlt, komplexe Informationen aufzuteilen und über mehrere Ansichten zu verteilen.",
+    "So kann jede Ansicht sich auf einen bestimmten Aspekt konzentrieren, was die Komplexität reduziert.",
+    "Im Beispiel werden Preis, Zeit und Schlafzimmeranzahl in separaten Scatterplots dargestellt.",
+    "Dies hilft dabei, die Beziehungen zwischen diesen Dimensionen gezielter zu analysieren."
+  ],
+  "explanationJa": [
+    "『分割のルール』は、複雑な情報をいくつかの異なる視点に分けて表示することを推奨する考え方です。",
+    "こうすることで、各視点が特定の側面に集中でき、全体の複雑さを軽減できます。",
+    "スライドでは「価格」「時間」「部屋数」などの次元を別々の散布図に分けて表示しており、",
+    "それぞれの関係性（例えば、価格と部屋数の関係など）を明確に読み取れるようになります。"
+  ],
+  "originalSlideText": "Rule of Decomposition\n(Regel der Unterteilung)\n  Verteilung komplexer Daten auf verschiedene Ansichten um\n    – handhabbare Blöcke zu erhalten\n    – Einsichten in die Wechselbeziehung zwischen Dimensionen zu erhalten",
+  "explanationImage": "lecture02/lecture10_ex18.png",
+  "questionImage": ""
+},
+{
+  "id": 39,
+  "questionDe": "(s36) Was bedeutet die 'Rule of Parsimony' laut BWK2000?",
+  "questionJa": "BWK2000による『節約のルール（Rule of Parsimony）』とは何か？",
+  "answerDe": [
+    "Mehrere Ansichten nur sparsam verwenden"
+  ],
+  "answerJa": [
+    "複数の視点（ビュー）は必要最小限にとどめる"
+  ],
+  "explanationDe": [
+    "Die 'Rule of Parsimony' empfiehlt, mehrere Ansichten nur dann zu verwenden, wenn sie wirklich notwendig sind.",
+    "Zu viele parallele Darstellungen können Benutzer verwirren und die Übersichtlichkeit verringern.",
+    "Im gezeigten Beispiel reichen drei Scatterplots aus, um die wichtigsten Beziehungen zu zeigen – mehr wären unnötig."
+  ],
+  "explanationJa": [
+    "『節約のルール』では、複数の視点（ビュー）の使用は必要最低限に抑えるべきだとされています。",
+    "あまりに多くの視点を同時に見せると、ユーザーが混乱したり、全体の見通しが悪くなる可能性があります。",
+    "スライドの例では、「価格」「時間」「部屋数」の3つの散布図で十分な情報が得られています。これ以上増やすと、かえって逆効果になります。"
+  ],
+  "originalSlideText": "Rule of Parsimony\n(Regel der Sparsamkeit)\n  – Verwende mehrere Ansichten sparsam",
+  "explanationImage": "lecture02/lecture10_ex18.png",
+  "questi,onImage": ""
+},
+{
+  "id": 46,
+  "questionDe": "(s37–39) Nach welchen vier Regeln sollten mehrere Ansichten dargestellt werden? (BWK2000)",
+  "questionJa": "BWK2000によると、複数の視点（Ansichten）をどのように表示（Darstellung）すべきかを示す4つのルールとは？",
+  "answerDe": [
+    "Rule of space/time resource optimization (Regel der Optimierung von Zeit und Platz Ressourcen)",
+    "Rule of consistency (Regel der Einheitlichkeit)",
+    "Rule of self-evidence (Regel der Selbsterklärung)",
+    "Rule of attention management (Regel der Aufmerksamkeitssteuerung)"
+  ],
+  "answerJa": [
+    "時間・空間リソース最適化のルール（Rule of space/time resource optimization）",
+    "一貫性のルール（Rule of consistency）",
+    "自己説明性のルール（Rule of self-evidence）",
+    "注意制御のルール（Rule of attention management）"
+  ],
+  "explanationDe": [
+    "BWK2000 gibt vier Empfehlungen, wie mehrere Ansichten visuell effektiv präsentiert werden können:",
+    "1. Zeit-/Platz-Ressourcenoptimierung: Zwischen dem Nutzen und dem Aufwand (z. B. Platz, Ladezeit) soll eine gute Balance gefunden werden.",
+    "2. Einheitlichkeit: Die Benutzeroberflächen und Zustände sollten über alle Ansichten hinweg konsistent gestaltet sein.",
+    "3. Selbsterklärung: Beziehungen zwischen Daten in unterschiedlichen Ansichten sollen klar erkennbar sein, z. B. durch Linien oder Farbverbindungen.",
+    "4. Aufmerksamkeitssteuerung: Nutzer sollen mithilfe visueller Mittel wie Hervorhebung oder Bewegung gezielt auf wichtige Ansichten gelenkt werden."
+  ],
+  "explanationJa": [
+    "BWK2000では、複数の視点を効果的に表示するための4つの表示ルールを定めています：",
+    "1. 時間・空間リソースの最適化：表示にかかるコスト（スペースや時間）とその価値（情報量）のバランスを取ることが重要です。",
+    "2. 一貫性の維持：全ての視点においてインターフェースや状態の見せ方を統一し、ユーザーの混乱を避けます。",
+    "3. 自己説明性：複数視点間のデータの関係が視覚的に分かるよう、線や色などで明示します。",
+    "4. 注意制御：重要な視点や情報にユーザーの注意を向けさせるように、視覚的な強調（例：動きや色）を用いるべきです。"
+  ],
+  "originalSlideText": "Rule of space/time resource optimization (Regel der Optimierung von Zeit und Platz Ressourcen)\n  ▶ Finde eine Balance zwischen:\n    – den Kosten und dem Nutzen\n    der Ansichten in\n    – zeitlicher oder räumlicher Anordnung\n\nRule of consistency (Regel der Einheitlichkeit)\n  ▶ Schnittstellen sollten einheitlich sein\n  ▶ Es sollten die gleichen Zustände dargestellt werden\n\nRule of self-evidence (Regel der Selbsterklärung)\n  ▶ Verwende visuelle Hinweise, um Beziehungen zwischen den Daten der verschiedenen Ansichten sichtbar zu machen\n\nRule of attention management (Regel der Aufmerksamkeitssteuerung)\n  ▶ Verwende Wahrnehmungstechniken, um den Fokus zur richtigen Zeit auf die richtige Ansicht zu lenken",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 41,
+  "questionDe": "(s37) Wie sollten mehrere Ansichten dargestellt werden laut der Rule of space/time resource optimization?",
+  "questionJa": "space/time resource optimization（時間・空間リソースの最適化）のルールに従って、複数の視点はどのように表示されるべきか？",
+  "answerDe": [
+    "Balance zwischen Kosten und Nutzen finden",
+    "Optimierung der Anordnung in zeitlicher oder räumlicher Dimension"
+  ],
+  "answerJa": [
+    "コストと利便性（有用性）のバランスを取る",
+    "時間的または空間的な配置の最適化を図る"
+  ],
+  "explanationDe": [
+    "Die Rule of space/time resource optimization empfiehlt, dass man bei der Darstellung mehrerer Ansichten eine gute Balance zwischen den Kosten (z. B. Rechenzeit, Bildschirmplatz) und dem Nutzen (z. B. bessere Erkenntnisse) findet.",
+    "Diese Balance kann sich sowohl auf den zeitlichen Aspekt beziehen (wie schnell kann man zwischen Ansichten wechseln?) als auch auf den räumlichen (wie viel Platz nimmt jede Ansicht auf dem Bildschirm ein?).",
+    "Beispiel: Wenn zu viele Fenster gleichzeitig geöffnet sind, wird es unübersichtlich. Wenn man hingegen nur ein Fenster zeigt und ständig zwischen Ansichten wechseln muss, geht Zeit verloren."
+  ],
+  "explanationJa": [
+    "space/time resource optimization（時間・空間リソースの最適化）のルールでは、複数の視点を表示する際に、コスト（例：画面スペース、切り替えの時間）とその視点から得られる利便性（理解や洞察など）とのバランスを取ることが推奨されます。",
+    "このバランスは「時間的な配置（視点の切り替えの速さや頻度）」や「空間的な配置（画面上での位置や広さ）」の両方に関わります。",
+    "例：画面に多くの視点を同時に表示すると場所を取りすぎて見づらくなり、一方で一つずつ切り替える形式だと切り替え操作に時間がかかって効率が落ちるという問題が発生します。"
+  ],
+  "originalSlideText": "Rule of space/time resource optimization\n(Regel der Optimierung von Zeit und Platz Ressourcen)\n  ▶ Finde eine Balance zwischen\n    ▶ den Kosten und\n    ▶ dem Nutzen\n  der Ansichten in\n    ▶ zeitlicher oder\n    ▶ räumlicher\nAnordnung",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 42,
+  "questionDe": "(s38) Wie sollten mehrere Ansichten dargestellt werden laut der Rule of consistency?",
+  "questionJa": "consistency（統一性）のルールに従って、複数の視点はどのように表示されるべきか？",
+  "answerDe": [
+    "Schnittstellen sollten einheitlich sein",
+    "Gleiche Zustände sollten dargestellt werden"
+  ],
+  "answerJa": [
+    "インターフェースは統一されるべきである",
+    "すべての視点で同じ状態を表示するべきである"
+  ],
+  "explanationDe": [
+    "Die Rule of consistency besagt, dass alle Ansichten ein einheitliches Erscheinungsbild haben sollten. Dazu gehört, dass die Benutzeroberfläche (z. B. Bedienelemente, Symbole, Farben) in allen Ansichten gleich ist.",
+    "Zudem sollten die verschiedenen Ansichten den gleichen Zustand oder die gleiche Phase der Daten anzeigen – z. B. dieselbe Zoomstufe oder denselben Zeitpunkt.",
+    "Beispiel: Wenn in einer Karte ein bestimmter Bereich herangezoomt wird, sollte auch in den anderen Fenstern derselbe Bereich oder zumindest die gleiche Zoomstufe berücksichtigt werden."
+  ],
+  "explanationJa": [
+    "consistency（統一性）のルールでは、複数の視点が一貫した見た目・操作性を持っている必要があります。たとえば、全てのビューでボタンの配置や色などが共通していれば、ユーザーにとって混乱が少なくなります。",
+    "さらに、全ての視点が同じ状態、つまり同じタイミングやズームレベルなどを表示していることも重要です。",
+    "例として、ある地図システムで拡大された範囲が他のビューにも同様に表示されていれば、情報のつながりを保ちながら閲覧することができます。"
+  ],
+  "originalSlideText": "Rule of consistency\n(Regel der Einheitlichkeit)\n  ▶ Schnittstellen sollten einheitlich sein\n  ▶ Es sollten die gleichen Zustände dargestellt werden",
+  "explanationImage": "lecture02/lecture10_ex17.png",
+  "questionImage": ""
+},
+{
+  "id": 43,
+  "questionDe": "(s39) Was besagt die Rule of self-evidence zur Darstellung mehrerer Ansichten?",
+  "questionJa": "複数の視点を表示する際、self-evidence（自己説明性）のルールは何を求めているか？",
+  "answerDe": [
+    "Verwende visuelle Hinweise, um Beziehungen zwischen den Daten der verschiedenen Ansichten sichtbar zu machen"
+  ],
+  "answerJa": [
+    "異なる視点間のデータの関係を視覚的に示すために、視覚的なヒントを用いること"
+  ],
+  "explanationDe": [
+    "Die Rule of self-evidence bedeutet, dass der Zusammenhang zwischen mehreren Darstellungen für Nutzer klar und sofort erkennbar sein sollte.",
+    "Das erreicht man durch visuelle Hinweise – zum Beispiel durch Linien, Farbcodierungen oder Hervorhebungen, die zeigen, welche Daten zusammengehören.",
+    "Wenn man z. B. ein Objekt in einer Ansicht auswählt, sollte dieses auch in anderen Ansichten sichtbar hervorgehoben sein. So erkennt der Nutzer intuitiv die Beziehung zwischen den Darstellungen."
+  ],
+  "explanationJa": [
+    "self-evidence（自己説明性）のルールは、複数の視点の間でデータがどのようにつながっているかを、利用者がすぐに理解できるようにすることを求めています。",
+    "そのために、視覚的なヒントを使うと良いです。たとえば、同じデータに対して線を引いたり、同じ色で表示したり、強調表示することで、関連性を示すことができます。",
+    "例えば、ある視点で選んだ項目が他の視点でも同じ色で示されれば、それが同じデータであることが直感的にわかります。"
+  ],
+  "originalSlideText": "Rule of self-evidence\n(Regel der Selbsterklärung)\n  ▶ Verwende visuelle Hinweise, um Beziehungen zwischen den Daten der verschiedenen Ansichten sichtbar zu machen",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 44,
+  "questionDe": "(s39) Was fordert die Rule of attention management bei der Darstellung mehrerer Ansichten?",
+  "questionJa": "複数の視点を表示する際、attention management（注意制御）のルールは何を求めているか？",
+  "answerDe": [
+    "Verwende Wahrnehmungstechniken, um den Fokus zur richtigen Zeit auf die richtige Ansicht zu lenken"
+  ],
+  "answerJa": [
+    "適切なタイミングで適切な視点に注意を向けるために、知覚に基づいた手法を用いること"
+  ],
+  "explanationDe": [
+    "Die Rule of attention management besagt, dass die Aufmerksamkeit des Nutzers gezielt gesteuert werden soll.",
+    "Durch den Einsatz von Wahrnehmungstechniken wie Animationen, Bewegung oder Hervorhebung kann man die Aufmerksamkeit zum richtigen Moment auf relevante Informationen lenken.",
+    "Zum Beispiel: Wenn ein neues Element erscheint, könnte es aufleuchten oder sich bewegen, damit der Nutzer es bemerkt."
+  ],
+  "explanationJa": [
+    "attention management（注意制御）のルールでは、ユーザーの注意を必要なタイミングで適切な場所に向けるよう誘導することが求められます。",
+    "そのために、アニメーションや動き、強調表示などの知覚に基づいた手法を使います。これにより、ユーザーは重要な情報に自然と注目できます。",
+    "例えば、新しい情報が表示されたときに、それが点滅したり動いたりすると、ユーザーはすぐにその変化に気づきます。"
+  ],
+  "originalSlideText": "Rule of attention management\n(Regel der Aufmerksamkeitssteuerung)\n  ▶ Verwende Wahrnehmungstechniken, um den Fokus zur richtigen Zeit auf die richtige Ansicht zu lenken",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 45,
+  "questionDe": "(s40) Welche drei Darstellungsformen zur Kombination von Fokus und Kontext werden unterschieden?",
+  "questionJa": "Fokusとコンテキストの統合に関する代表的な3つの表示手法は何か？",
+  "answerDe": [
+    "Zooming und Panning (zeitliche Trennung)",
+    "Overview and Detail (räumliche Trennung)",
+    "Fokus und Kontext (gleicher Raum und gleiche Zeit)"
+  ],
+  "answerJa": [
+    "ズーミングとパン（時間的分離）",
+    "全体表示と詳細表示の組合せ（空間的分離）",
+    "FokusとKontextの統合（同じ空間・同時表示）"
+  ],
+  "explanationDe": [
+    "Es gibt drei gängige Arten, Fokus und Kontext in der Darstellung zu kombinieren:",
+    "1. Zooming und Panning bedeutet, dass nur ein Bereich (Detail oder Überblick) zu einer Zeit sichtbar ist. Der Nutzer wechselt manuell zwischen Bereichen (zeitliche Trennung).",
+    "2. Overview and Detail zeigt beide Bereiche gleichzeitig, aber in getrennten Fenstern (räumliche Trennung).",
+    "3. Fokus und Kontext integriert beide in einem Fenster zur gleichen Zeit (gleicher Raum und gleiche Zeit), z. B. durch Verzerrungstechniken."
+  ],
+  "explanationJa": [
+    "Fokusとコンテキストを統合するための一般的な表示手法には次の3つがあります：",
+    "1. ズーミングとパンは、ユーザーが1つの領域（詳細または全体）を時間的に切り替えて見る方式です（時間的分離）。",
+    "2. Overview and Detailは、全体と詳細をそれぞれ別ウィンドウで表示する方式です（空間的分離）。",
+    "3. Fokus und Kontextは、両者を1つの画面内に同時に表示する方式です（同空間・同時表示）。例として魚眼レンズのような歪みを使った手法があります。"
+  ],
+  "originalSlideText": "► Zooming und Panning\n  ► Zeitliche Trennung\n► Overview and Detail\n  ► Räumliche Trennung\n► Fokus und Kontext\n  ► Integration der Ansichten\n  ► Gleicher Raum und gleiche Zeit",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 46,
+  "questionDe": "(s40) Welche Vorteile bietet die gleichzeitige Darstellung von Fokus und Kontext?",
+  "questionJa": "Fokusとコンテキストを同じウィンドウ・同じ時間で同時に表示することの利点は何か？",
+  "answerDe": [
+    "Leichter Wechsel zwischen beiden",
+    "Bessere Erkennung von Aktualisierungen der Anzeige"
+  ],
+  "answerJa": [
+    "FokusとKontextを簡単に切り替えられる",
+    "表示の更新がより認識しやすくなる"
+  ],
+  "explanationDe": [
+    "Wenn Fokus und Kontext gleichzeitig im gleichen Fenster gezeigt werden, kann der Nutzer schnell zwischen ihnen wechseln, ohne den Überblick zu verlieren.",
+    "Zudem erkennt man Aktualisierungen der Anzeige schneller, da beide Bereiche gleichzeitig sichtbar sind."
+  ],
+  "explanationJa": [
+    "Fokus（詳細）とコンテキスト（全体）を同時に表示することで、ユーザーは両者を簡単に見比べたり切り替えたりできます。",
+    "また、情報の変化（更新）にもすぐ気づくことができ、インタラクションがスムーズになります。"
+  ],
+  "originalSlideText": "► Gründe\n  ► Leichter Wechsel zwischen beiden\n  ► Bessere Erkennung von Aktualisierungen der Anzeige",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 47,
+  "questionDe": "(s40) Welche Herausforderungen entstehen bei Fokus-und-Kontext-Darstellungen?",
+  "questionJa": "Fokusとコンテキストの同時表示を実現する上での課題は何か？",
+  "answerDe": [
+    "Nahtloser Übergang zwischen Kontext (Overview) und Fokus (Detail)",
+    "Fokus und Kontext sind im gleichen Ausgabefenster"
+  ],
+  "answerJa": [
+    "コンテキスト（全体）とフォーカス（詳細）の間を自然に移行させる必要がある",
+    "両者を1つのウィンドウ内に統合して表示する必要がある"
+  ],
+  "explanationDe": [
+    "Die gleichzeitige Darstellung von Fokus und Kontext stellt hohe Anforderungen an das Design: Der Übergang zwischen Übersicht und Detailansicht soll flüssig und verständlich sein.",
+    "Da alles im selben Fenster geschieht, müssen visuelle Techniken wie Verzerrung (z. B. Fischauge) eingesetzt werden, um wichtige Informationen sichtbar zu halten."
+  ],
+  "explanationJa": [
+    "Fokusとコンテキストを1つの画面で同時に表示するためには、両者の間の移行が滑らかで違和感のないものでなければなりません。",
+    "そのため、魚眼レンズのような歪みを用いた表示や、視線誘導の工夫が必要になることがあります。"
+  ],
+  "originalSlideText": "► Herausforderung\n  ► Nahtloser Übergang zwischen\n    ► Kontext (Overview)\n    ► Fokus (Detail)\n  ► Fokus und Kontext sind im gleichen Ausgabefenster",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 48,
+  "questionDe": "(s41) Wie können Elemente unterschiedlich dargestellt werden, um Fokus und Kontext visuell hervorzuheben?",
+  "questionJa": "Fokusとコンテキストを視覚的に区別するために、要素をどのように異なる方法で表示できるか？",
+  "answerDe": [
+    "Fokus: ausgezeichnete Farbe, Rahmen, Standardfarbe",
+    "Kontext: Standardfarbe/andere Farben, keine Rahmen, grau, geringere Helligkeit/Sättigung"
+  ],
+  "answerJa": [
+    "Fokus：強調された色、枠線、標準色などで表示",
+    "コンテキスト：標準色や他の色、枠なし、グレーや明度・彩度を下げた表示"
+  ],
+  "explanationDe": [
+    "Zur Hervorhebung von Fokus gegenüber dem Kontext werden verschiedene visuelle Stilmittel eingesetzt.",
+    "Elemente im Fokus können durch auffällige Farben, Umrahmungen oder die Verwendung einer Standardfarbe hervorgehoben werden.",
+    "Elemente im Kontext werden dagegen durch unauffälligere Mittel wie graue Töne, weniger Helligkeit oder Sättigung sowie durch das Weglassen von Rahmen dargestellt.",
+    "Diese visuelle Differenzierung hilft dem Nutzer, schnell zwischen wichtigen (Fokus) und unterstützenden (Kontext) Informationen zu unterscheiden.",
+    "Ein Beispiel: In einer Parallelen-Koordinaten-Darstellung werden die aktuell ausgewählten Linien dunkel und kontrastreich gezeigt (Fokus), während die restlichen Linien in hellgrau erscheinen (Kontext)."
+  ],
+  "explanationJa": [
+    "Fokusとコンテキストを視覚的に区別するために、表示スタイルを工夫します。",
+    "フォーカス領域の要素は、鮮やかな色や枠線、強調された標準色で表示されることで目立ちます。",
+    "一方、コンテキスト領域の要素は、グレーや明度・彩度を落とした色、枠線なしなどの控えめな表示によって背景として扱われます。",
+    "このような視覚的な違いをつけることで、ユーザーはどの情報が注目すべきか（フォーカス）と、周辺情報（コンテキスト）をすばやく見分けられます。",
+    "例として、パラレル座標グラフにおいて選択中のデータ線（フォーカス）は黒くはっきり描かれ、それ以外（コンテキスト）は薄い灰色で背景的に表示されます。"
+  ],
+  "originalSlideText": "Hervorhebung\n► Unterschiedliche Darstellung von Elementen\nFokus                Kontext\n----------------------------------------\nausgezeichnete      Standardfarbe\nFarbe               andere Farben\nRahmen              keine Rahmen\nStandardfarbe       grau\n                    geringere Helligkeit\n                    geringere Sätturierung\nAbbildung: Parvis: Brushing",
+  "explanationImage": "lecture02/lecture10_ex19.png",
+  "questionImage": ""
+},
+{
+  "id": 49,
+  "questionDe": "(s42) Was bedeutet Unterdrückung im Kontext von Fokus und Kontext?",
+  "questionJa": "Fokusとコンテキストの文脈で「抑制（Unterdrückung）」とは何を意味するか？",
+  "answerDe": [
+    "Weglassen nicht benötigter Information",
+    "Effektiv, aber schwer umsetzbar"
+  ],
+  "answerJa": [
+    "不要な情報の省略（抑制）",
+    "効果的だが実現は困難なことが多い"
+  ],
+  "explanationDe": [
+    "Unterdrückung bedeutet in der Informationsvisualisierung, gezielt irrelevante oder weniger wichtige Informationen auszublenden, um den Fokus auf das Wesentliche zu lenken.",
+    "Zum Beispiel wird in technischen Zeichnungen oft nur das Nötigste gezeigt, damit der Betrachter nicht von unwichtigen Details abgelenkt wird (siehe rechte Abbildung: vereinfachte Darstellung).",
+    "Das kann sehr effektiv sein, ist aber in der Praxis oft schwer umzusetzen, da man entscheiden muss, was wirklich weggelassen werden kann, ohne wichtige Zusammenhänge zu verlieren."
+  ],
+  "explanationJa": [
+    "情報可視化における「抑制（Unterdrückung）」とは、重要でない情報や関連性の低い情報を意図的に省略し、ユーザーの注意を重要な要素に集中させる手法です。",
+    "例えば、技術図面ではすべてのパーツを詳細に描くのではなく、必要最小限の構成要素だけを示すことで、視認性と理解を向上させます（右図がその簡略化された例です）。",
+    "この方法は非常に効果的ですが、何を削除しても問題ないかを判断するのは難しく、実現が容易でないこともあります。"
+  ],
+  "originalSlideText": "Unterdrückung\n► Weglassen (Unterdrücken) nicht benötigter Information\n► Effektiv, aber oft schwierig zu realisieren\n► [Spence2001]",
+  "explanationImage": "lecture02/lecture10_ex20.png",
+  "questionImage": ""
+},
+{
+  "id": 50,
+  "questionDe": "(s43–48) Was sind die Grundkonzepte der Fisheye View nach Furnas (1981, 1986)?",
+  "questionJa": "Furnas（1981・1986）によるFisheye Viewの基本的な概念とは？",
+  "answerDe": [
+    "Fokus Punkt",
+    "Detailierungsgrad (LOD)",
+    "Abstand vom Fokuspunkt",
+    "Grad des Interesses (DOI)"
+  ],
+  "answerJa": [
+    "注目点（Focal Point）",
+    "詳細度（LOD: Level of Detail）",
+    "注目点からの距離",
+    "関心度（DOI: Degree of Interest）"
+  ],
+  "explanationDe": [
+    "Die Fisheye View wurde 1981 von Georges Furnas bei den Bell Laboratories eingeführt.",
+    "Zentrale Konzepte sind der Fokuspunkt und der LOD (Level of Detail), der angibt, wie wichtig ein Element global ist.",
+    "Zusätzlich fließt der Abstand zum Fokuspunkt ein. Beides ergibt den Grad des Interesses (DOI), berechnet durch DOI(f,x) = F(LOD(x), D(f,x)).",
+    "Ein hoher DOI bedeutet, dass Elemente z. B. vergrößert oder transformiert angezeigt werden. Nur Elemente mit einem ausreichend hohen DOI werden visualisiert.",
+    "Diese Darstellung hilft, wichtige Informationen hervorzuheben, während der Kontext erhalten bleibt – ähnlich wie bei einem Fischaugenobjektiv."
+  ],
+  "explanationJa": [
+    "Fisheye View（魚眼ビュー）は、Georges Furnasが1981年にBell Laboratoriesで提案した手法です。",
+    "基本概念は、注目点（Focal Point）を中心に、重要度（LOD）と距離（D）をもとに関心度（DOI）を計算し、表示方法を調整するというものです。",
+    "DOI(f,x) = F(LOD(x), D(f,x)) という数式で表され、LODが高い、距離が近いほど表示が強調されます。",
+    "DOIが高い要素のみが表示され、必要な情報だけを可視化できます。",
+    "この方式により、ユーザーは焦点の詳細情報に集中しつつ、全体のコンテキストも同時に把握することができます。"
+  ],
+  "originalSlideText": "Fisheye View [Furnas1981], [Furnas1986]\n► Georges Furnas\n► 1981\n► Bell Laboratories\n\nFocal Point\t\t\tFokus Punkt\nLevel of Detail (LOD)\t\t\tDetailierungsgrad\nDistance from Focal Point\t\tAbstand vom Fokuspunkt\nDegree of Interest (DOI)\t\tGrad des Interesses\n\n► DOI(f,x) = F(LOD(x), D(f,x))\n► Transformation, Vergrößerung\n► Nur Elemente mit DOI über Grenzwert sichtbar\n► Glatte Interpolation bei großem Abstand",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 51,
+  "questionDe": "(s49) Was ist ein Logical Fisheye View und wie wird er visualisiert?",
+  "questionJa": "Logical Fisheye Viewとは何か？またそれはどのように視覚化されるか？",
+  "answerDe": [
+    "Ein Logical Fisheye View zeigt wichtige Elemente (z. B. Knoten) vergrößert",
+    "Weniger wichtige bleiben klein und im Hintergrund sichtbar",
+    "Visualisierung basiert auf logischer Nähe, nicht physikalischer Distanz"
+  ],
+  "answerJa": [
+    "Logical Fisheye Viewでは、重要な要素（例：ノード）が強調表示される",
+    "重要でない要素は小さく背景に表示される",
+    "物理的な距離ではなく論理的な近さに基づいて視覚化される"
+  ],
+  "explanationDe": [
+    "Ein Logical Fisheye View ist eine Technik zur gleichzeitigen Darstellung von Fokus und Kontext in Netzwerken oder Strukturen.",
+    "Im dargestellten Beispiel werden ausgewählte Knoten (wie TS-242) stark vergrößert gezeigt, während benachbarte, weniger wichtige Knoten (z. B. TS-243 oder TS-240) verkleinert bleiben.",
+    "Das Layout basiert auf logischer Struktur: die Größe und Sichtbarkeit eines Knotens hängt von seiner Relevanz oder Entfernung im Netzwerkgraphen ab, nicht von seiner Position im Raum.",
+    "Diese Methode hilft dem Nutzer, relevante Details zu erkennen und gleichzeitig den Überblick über das Netzwerk zu behalten."
+  ],
+  "explanationJa": [
+    "Logical Fisheye Viewは、ネットワークや構造内で注目領域（Focus）と全体の流れ（Context）を同時に表現するための手法です。",
+    "この図では、TS-242のような注目すべきノードが大きく表示され、それに対してあまり重要でないノード（TS-243やTS-240など）は小さく表示されています。",
+    "この視覚化は空間的な距離ではなく、ネットワーク内での論理的なつながりや関係性に基づいています。",
+    "この方法により、ユーザーは関心のある部分の詳細を把握しながら、ネットワーク全体の構造も同時に理解できます。"
+  ],
+  "originalSlideText": "Logical Fisheye Views\nAbbildung: Knoten in Netzwerken (3D) [GGC1996]",
+  "explanationImage": "lecture02/lecture10_ex21.png",
+  "questionImage": ""
+},
+{
+  "id": 52,
+  "questionDe": "(s52) Welche zwei Typen von Fisheye Views gibt es und worin unterscheiden sie sich?",
+  "questionJa": "Fisheye Viewにはどのような2種類があり、それらはどのように異なるのか？",
+  "answerDe": [
+    "Logical Fisheye Views: basieren auf logischer Wichtigkeit, nicht räumlich",
+    "Graphical Fisheye Views: basieren auf räumlicher Verzerrung"
+  ],
+  "answerJa": [
+    "Logical Fisheye View：空間の歪みではなく、要素の論理的重要性に基づく",
+    "Graphical Fisheye View：表示の歪み（ズームなど）を用いた空間的な視覚化"
+  ],
+  "explanationDe": [
+    "Das ursprüngliche Fisheye-Konzept von Furnas (1981) war rein logisch – es bewertet Elemente je nach ihrer Wichtigkeit für den Nutzer, unabhängig von deren räumlicher Position.",
+    "1992 führten Sarkar und Brown eine visuelle Variante ein, die „graphical fisheye views“, bei denen wichtige Elemente durch räumliche Verzerrung hervorgehoben werden – z. B. durch Vergrößerung in der Mitte des Bildschirms.",
+    "Diese beiden Ansätze – logisch und grafisch – lassen sich auch kombinieren, um sowohl semantische Relevanz als auch visuelle Betonung zu vereinen."
+  ],
+  "explanationJa": [
+    "Furnas（1981）による元のFisheye Viewは、表示空間を変形せずに論理的な重要度に基づいて情報の表示を調整する「Logical Fisheye View」でした。",
+    "一方で、SarkarとBrown（1992）は、視覚的に表示を歪ませて重要な情報を目立たせる「Graphical Fisheye View（図形的Fisheye View）」を提案しました。",
+    "この2つの手法は、ユーザーの関心に応じた情報の強調と視覚的なズーム効果を組み合わせることで、より効果的な焦点とコンテキストの提示を可能にします。"
+  ],
+  "originalSlideText": "Fisheye View Typen\n► Das Originalkonzept ist ein logisches, kein räumliches\n► 1992 stellten Sarkar und Brown „graphical fisheye views“ mit räumlicher Verzerrung vor\n► Damit gibt es zwei Fisheye-Typen, die miteinander kombiniert werden können\n  ► Logical Fisheye Views\n  ► Graphical Fisheye Views (Verzerrung)",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 58,
+  "questionDe": "(s57) Was zeigt das Beispiel von Graphical Fisheye Views nach Sarkar und Brown (1992) anhand von Graphen?",
+  "questionJa": "SarkarとBrown（1992）のGraphical Fisheye Viewは、グラフ構造にどのような変換を加えるか？",
+  "answerDe": [
+    "Graphen werden visuell verzerrt, um den Fokus auf wichtige Knoten zu legen.",
+    "Knoten im Fokus (z. B. Knoten 48) werden vergrößert dargestellt.",
+    "Der Kontext bleibt erhalten, aber wird räumlich komprimiert."
+  ],
+  "answerJa": [
+    "グラフ構造に対して視覚的な歪みを加えることで、重要なノード（例：ノード48）を強調表示します。",
+    "焦点ノードは拡大され、より詳細に示されます。",
+    "その他のノードは圧縮されて表示されますが、全体の構造は維持されます。"
+  ],
+  "explanationDe": [
+    "Die linke Abbildung zeigt einen unverzerrten Graphen mit 100 Knoten.",
+    "Die rechte Abbildung wendet eine Graphical Fisheye View an, wobei der Knoten 48 im Fokus liegt.",
+    "Dies führt zu einer visuellen Vergrößerung des Fokusbereichs und einer Komprimierung der peripheren Knoten.",
+    "So kann der Benutzer sowohl Details als auch den strukturellen Kontext gleichzeitig wahrnehmen."
+  ],
+  "explanationJa": [
+    "左図は100個のノードを持つ通常のグラフです。",
+    "右図は同じグラフに対してGraphical Fisheye Viewを適用したもので、ノード48が注目点となっています。",
+    "注目されたノードが拡大され、周辺のノードは圧縮されながらも表示されています。",
+    "この視覚的な手法により、ユーザーは詳細情報と全体構造の両方を同時に把握できます。"
+  ],
+  "originalSlideText": "Abbildung: Graphical Fisheye Views [SB1992]: Graphen (2D)",
+  "explanationImage": "lecture02/lecture10_ex22.png",
+  "questionImage": ""
+},
+{
+  "id": 59,
+  "questionDe": "(s63) Welche Vorteile bietet der Fokus-und-Kontext-Ansatz in der Informationsvisualisierung?",
+  "questionJa": "情報可視化における「フォーカスとコンテキスト」手法の利点は何ですか？",
+  "answerDe": [
+    "Bildet die Struktur der Retina im Auge nach",
+    "Gute Navigationsmöglichkeiten zur Datenerkundung",
+    "Kann mit anderen Techniken kombiniert werden (z. B. Panning, Zooming)"
+  ],
+  "answerJa": [
+    "眼の網膜構造を模倣し、自然な視覚体験を実現する",
+    "データ探索のための優れたナビゲーション手段を提供する",
+    "パン（Panning）やズーム（Zooming）など、他の手法と組み合わせて使用可能である"
+  ],
+  "explanationDe": [
+    "Der Fokus-und-Kontext-Ansatz ermöglicht es, wichtige Details hervorzuheben, ohne den Gesamtkontext aus dem Blick zu verlieren.",
+    "Er unterstützt natürliche Navigation und kann flexibel mit anderen Visualisierungstechniken kombiniert werden."
+  ],
+  "explanationJa": [
+    "フォーカスとコンテキスト手法は、全体像を保ちつつ、重要な詳細を強調して表示できます。",
+    "直感的なナビゲーションが可能で、他の可視化手法と組み合わせやすいのも特徴です。"
+  ],
+  "originalSlideText": "► Vorteile\n► Fokus und Kontext geben den Aufbau der Retina im Auge wieder\n► Gute Navigationsmöglichkeiten, um Daten zu erforschen\n► Kann mit anderen Techniken kombiniert werden\n   ► Panning\n   ► Zooming"
+},
+{
+  "id": 60,
+  "questionDe": "(s63) Welche Nachteile hat der Fokus-und-Kontext-Ansatz in der Informationsvisualisierung?",
+  "questionJa": "情報可視化における「フォーカスとコンテキスト」手法の欠点は何ですか？",
+  "answerDe": [
+    "Verzerrung kann zu Desorientierung führen",
+    "Implementierung ist technisch aufwändig",
+    "Fokusänderungen erfordern Neuberechnung des DOI für alle Objekte"
+  ],
+  "answerJa": [
+    "視覚的な歪みにより、ユーザーが混乱（方向感覚を失う）する可能性がある",
+    "実装が複雑で技術的に負荷が高い",
+    "フォーカスを変更するたびに、すべてのオブジェクトに対してDOIの再計算が必要である"
+  ],
+  "explanationDe": [
+    "Trotz vieler Vorteile bringt der Fokus-und-Kontext-Ansatz technische Herausforderungen mit sich.",
+    "Besonders die Verzerrung und die nötige Rechenleistung für DOI-Aktualisierungen können problematisch sein."
+  ],
+  "explanationJa": [
+    "多くの利点がある一方で、この手法には課題もあります。",
+    "特に、表示の歪みがユーザーの混乱を招くことや、DOIの再計算による計算コストの高さが問題です。"
+  ],
+  "originalSlideText": "► Nachteile\n► Verzerrung kann stören (Desorientierung)\n► Die Implementierung kann aufwändig sein\n► Änderungen des Fokuspunktes erfordern die Neuberechnung des DOI für alle Objekte\n→ aufwändig"
+}
 ]
