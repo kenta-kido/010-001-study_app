@@ -1,22 +1,722 @@
 [
   {
     "id": 1,
-    "questionDe": "Not yet",
-    "questionJa": "Not yet",
+    "questionDe": "(s6) Welche Arten zeitbezogener Fragen kann man zu Objekten stellen?",
+    "questionJa": "オブジェクトに対してどのような種類の時間に関する問いが立てられるか？",
     "answerDe": [
-      "-"
+      "Existenz: Existiert ein Objekt zu einem bestimmten Zeitpunkt?",
+      "Zeitpunkt: Wann existiert ein Objekt?",
+      "Zeitintervall: Für welchen Zeitraum existiert ein Objekt?",
+      "Gleichzeitigkeit: Welche Objekte existieren zur gleichen Zeit?"
     ],
     "answerJa": [
-      "-"
+      "存在（Existenz）：あるオブジェクトが特定の時点に存在しているか？",
+      "時点（Zeitpunkt）：オブジェクトはいつ存在するか？",
+      "時間間隔（Zeitintervall）：オブジェクトはどの期間存在しているか？",
+      "同時性（Gleichzeitigkeit）：どのオブジェクトが同時に存在しているか？"
     ],
     "explanationDe": [
-      "-"
+      "Zeitbezogene Fragen helfen dabei, die Anwesenheit und Dauer eines Objekts zu analysieren.",
+      "Die Frage nach der Existenz bezieht sich auf einen einzelnen Zeitpunkt (z. B. „War das Objekt um 12:00 Uhr aktiv?“).",
+      "Zeitpunkt und Zeitintervall betreffen den Beginn und das Ende der Existenz.",
+      "Gleichzeitigkeit untersucht Überschneidungen in den Existenzzeiten mehrerer Objekte."
     ],
     "explanationJa": [
-      "-"
+      "時系列データでは、オブジェクトの存在に関するさまざまな問いを立てることが重要です。",
+      "「存在」は、特定の時点にオブジェクトがあったかどうか（例：12:00にセンサーは作動していたか？）を問います。",
+      "「時点」は、いつ存在していたのかを、「時間間隔」はどの期間存在していたかを示します。",
+      "「同時性」は、複数のオブジェクトが同時に存在していたかどうかを分析する視点です。"
     ],
-    "originalSlideText": "-",
-    "questionImage": "",
-    "explanationImage": ""
-  }
+    "originalSlideText": "▶ Existenz\n  ▶ Existiert ein Objekt zu einem bestimmten Zeitpunkt?\n▶ Zeitpunkt\n  ▶ Wann existiert ein Objekt?\n▶ Zeitintervall\n  ▶ Für welchen Zeitraum existiert ein Objekt?\n▶ Gleichzeitigkeit\n  ▶ Welche Objekte existieren zur gleichen Zeit?",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 2,
+    "questionDe": "(s6) Welche Fragen zum Verhalten von Objekten über die Zeit hinweg kann man stellen?",
+    "questionJa": "時間の経過に伴うオブジェクトの変化について、どのような問いがあるか？",
+    "answerDe": [
+      "Grad der Veränderung: Wie schnell und wie sehr ändert sich ein Objekt?",
+      "Reihenfolge: In welcher Reihenfolge erscheinen und verschwinden Objekte?",
+      "Zeitmuster: Wie oft und in welchem Rhythmus erscheint und verschwindet ein Objekt?"
+    ],
+    "answerJa": [
+      "変化の程度（Grad der Veränderung）：オブジェクトはどれだけ速く、どの程度変化するか？",
+      "順序（Reihenfolge）：オブジェクトはどの順番で出現し、消えるのか？",
+      "時間パターン（Zeitmuster）：オブジェクトはどの頻度・リズムで出現・消失するか？"
+    ],
+    "explanationDe": [
+      "Diese Fragen helfen zu verstehen, wie sich ein Objekt über die Zeit verändert.",
+      "Der Grad der Veränderung zeigt z. B. Geschwindigkeit oder Intensität von Änderungen.",
+      "Reihenfolgen sind bei Abläufen und Prozessmodellen wichtig – welches Objekt kommt zuerst, welches später?",
+      "Zeitmuster geben Hinweise auf Regelmäßigkeiten, wie z. B. tägliche, wöchentliche oder unregelmäßige Auftritte von Objekten."
+    ],
+    "explanationJa": [
+      "オブジェクトが時間とともにどのように変化するかを理解するための問いです。",
+      "「変化の程度」は、変化の速さや大きさ（例：色の変化速度、温度の増加量など）を捉えます。",
+      "「順序」は、出現や消失がどの順番で起きるか（プロセスの流れなど）に注目します。",
+      "「時間パターン」は、オブジェクトが規則的または不規則に現れたり消えたりする頻度やリズムを捉えます。"
+    ],
+    "originalSlideText": "▶ Grad der Veränderung\n  ▶ Wie schnell und wie sehr ändert sich ein Objekt?\n▶ Reihenfolge\n  ▶ In welcher Reihenfolge erscheinen und verschwinden Objekte?\n▶ Zeitmuster\n  ▶ Wie oft und in welchem Rhythmus erscheint und verschwindet ein Objekt?",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 3,
+    "questionDe": "(s6) Welche Bedeutung haben die Fragen von MacEachran (1995) für die Visualisierung zeitabhängiger Daten?",
+    "questionJa": "MacEachran（1995年）の時間的問いは、時系列データの可視化においてどのような意味を持つか？",
+    "answerDe": [
+      "Sie helfen dabei, die zeitliche Dimension von Objekten präzise zu analysieren und gezielt zu visualisieren.",
+      "Sie strukturieren typische Analysefragen für dynamische Prozesse."
+    ],
+    "answerJa": [
+      "これらの問いは、オブジェクトの時間的な性質を詳細に分析し、適切に可視化するための指針を与える。",
+      "動的プロセスの分析における典型的な問いを体系的に整理する役割がある。"
+    ],
+    "explanationDe": [
+      "MacEachrans Fragen decken zentrale zeitliche Aspekte ab, die bei der Visualisierung dynamischer Daten berücksichtigt werden müssen.",
+      "Sie bieten eine strukturierte Grundlage, um zu entscheiden, welche Visualisierungstechniken (z. B. Animation, Zeitachsen, Zeitdiagramme) für bestimmte Fragestellungen geeignet sind."
+    ],
+    "explanationJa": [
+      "MacEachranの問いは、動的データにおける時間の要素を網羅的にカバーしており、可視化設計において非常に有用です。",
+      "たとえば、出現順序を重視するならタイムライン、変化の速さを示すならアニメーションなど、目的に応じた可視化手法を選ぶための判断軸になります。"
+    ],
+    "originalSlideText": "Einleitung\nSpezifische Fragen [MacEachran1995]",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 4,
+    "questionDe": "(s7) Wie kann Zeit in der Informationsvisualisierung klassifiziert werden?",
+    "questionJa": "Informationsvisualisierungにおいて、時間はどのように分類されるか？",
+    "answerDe": [
+      "Ordinale Zeit: qualitative Zeitachse, geordnet",
+      "Diskrete Zeit: quantitative Zeitachse, Integer Skala",
+      "Kontinuierliche Zeit: quantitative Zeitachse, Reelle Skala"
+    ],
+    "answerJa": [
+      "順序的な時間（Ordinale Zeit）：質的な時間軸、順序関係のみを持つ",
+      "離散的な時間（Diskrete Zeit）：量的な時間軸、整数スケールで表される",
+      "連続的な時間（Kontinuierliche Zeit）：量的な時間軸、実数スケールで表される"
+    ],
+    "explanationDe": [
+      "Zeit kann auf drei Arten klassifiziert werden:",
+      "1. Ordinale Zeit: Hier geht es um die Reihenfolge von Ereignissen, z. B. zuerst A, dann B. Diese Zeitachse ist qualitativ und geordnet, aber ohne genaue Abstände.",
+      "2. Diskrete Zeit: Zeitpunkte sind in festen Abständen messbar, z. B. Tage, Stunden. Sie wird auf einer quantitativen Zeitachse mit ganzzahligen Werten dargestellt (Integer Skala).",
+      "3. Kontinuierliche Zeit: Zeit fließt ohne Unterbrechung. Zwischen zwei beliebigen Zeitpunkten gibt es unendlich viele weitere. Dargestellt mit einer reellen Skala (z. B. 12.5 Sekunden)."
+    ],
+    "explanationJa": [
+      "時間の分類には3つの主な形式があります：",
+      "1. 順序的時間（Ordinale Zeit）：出来事の順番だけが重要で、時間の長さや間隔は考慮されません（例：イベントAの後にB）。これは質的（qualitative）で、順序がある時間軸です。",
+      "2. 離散的時間（Diskrete Zeit）：一定の間隔で時間が分割されており、数値（整数）で表現されます（例：1日単位、1時間単位）。量的（quantitative）で、整数スケール（Integer Skala）です。",
+      "3. 連続的時間（Kontinuierliche Zeit）：時間は切れ目なく連続して流れ、任意の2時点の間にも無限の時間が存在します（例：12.3秒など）。量的（quantitative）で、実数スケール（Reelle Skala）で表現されます。"
+    ],
+    "originalSlideText": "Ordinale Zeit | qualitative Zeitachse | geordnet\nDiskrete Zeit | quantitative Zeitachse | Integer Skala\nKontinuierliche Zeit | quantitative Zeitachse | Reelle Skala",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 5,
+    "questionDe": "(s7) Welche Arten von Zeiteinheiten werden in der Informationsvisualisierung unterschieden?",
+    "questionJa": "Informationsvisualisierungでは、どのような種類の時間単位が区別されるか？",
+    "answerDe": [
+      "Diskret: Zeitpunkte ohne Dauer",
+      "Intervall: Zeitintervalle wie Tage, Jahre usw."
+    ],
+    "answerJa": [
+      "離散（Diskret）：持続時間のない時間点（例：特定の日や時刻）",
+      "間隔（Intervall）：日や年などの持続する時間範囲"
+    ],
+    "explanationDe": [
+      "In der Informationsvisualisierung unterscheidet man zwei Formen von Zeiteinheiten:",
+      "- Diskrete Zeitpunkte stellen einzelne, punktuelle Momente dar (z. B. 01.01.2020 um 12:00 Uhr). Sie haben keine Dauer.",
+      "- Zeitintervalle repräsentieren eine Spanne von Zeit mit Anfang und Ende (z. B. von Montag bis Freitag, vom Jahr 2000 bis 2020)."
+    ],
+    "explanationJa": [
+      "情報可視化においては、時間の捉え方として以下の2種類が区別されます：",
+      "・離散的時間（Diskret）：1つの時点（例：2020年1月1日12時）のように、持続時間のない瞬間です。",
+      "・時間間隔（Intervall）：ある期間（例：月曜から金曜、2000年〜2020年）を意味し、開始と終了がある持続的な時間です。"
+    ],
+    "originalSlideText": "Diskret | Zeitpunkte ohne Dauer\nIntervall | Zeitintervalle (Tage, Jahre, ...)",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 6,
+    "questionDe": "(s7) Welche zeitlichen Strukturen von Ereignissen gibt es?",
+    "questionJa": "出来事にはどのような時間的構造があるか？",
+    "answerDe": [
+      "Linear: Ereignisse bewegen sich in einer linearen Ordnung von Vergangenheit zu Zukunft",
+      "Zyklisch: Wiederkehrende Ereignisse (z. B. Wochentage, Jahreszeiten)",
+      "Geordnet: Ereignisse passieren nacheinander",
+      "Verzweigung: Alternative Ereignisse basierend auf Entscheidungen"
+    ],
+    "answerJa": [
+      "線形（Linear）：出来事が過去から未来へ一直線に進む",
+      "周期的（Zyklisch）：曜日や季節など、繰り返される出来事",
+      "順序的（Geordnet）：出来事が順番に起きる",
+      "分岐（Verzweigung）：選択によって異なる結果が発生する"
+    ],
+    "explanationDe": [
+      "Zeitliche Strukturen beschreiben die Art, wie Ereignisse im Zeitverlauf organisiert sind:",
+      "- Linear: Ein klassisches Modell, bei dem alles einem klaren Zeitstrahl folgt (z. B. Projektplan).",
+      "- Zyklisch: Ereignisse wiederholen sich regelmäßig (z. B. Wochenrhythmus, Jahreszeiten).",
+      "- Geordnet: Die Ereignisse folgen einer festen Reihenfolge, aber nicht unbedingt mit klarer Zeitangabe.",
+      "- Verzweigung: Der Verlauf hängt von Entscheidungen ab, z. B. in interaktiven Szenarien oder Simulationen."
+    ],
+    "explanationJa": [
+      "時間的構造とは、出来事が時間上でどのように展開されるかを示します。",
+      "・線形：過去から未来へ一直線に進む時間構造。例：タスクが順に進むプロジェクト管理。",
+      "・周期的：出来事が定期的に繰り返される構造。例：1週間のサイクル、四季など。",
+      "・順序的：出来事が順番に起きるが、時間の長さは問わない構造。",
+      "・分岐：選択によって進行が分かれる構造。例：シナリオ分岐のあるゲームや意思決定モデル。"
+    ],
+    "originalSlideText": "Linear | Ereignisse bewegen sich von einem Startpunkt in der Vergangenheit zu einem Endpunkt in der Zukunft in linearer Ordnung\nZyklisch | Wiederkehrende Ereignisse (Wochentage, Jahreszeiten, ...)\nGeordnet | Ereignisse passieren nacheinander\nVerzweigung | Es gibt alternative Ereignisse basierend auf Entscheidungen",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 7,
+    "questionDe": "(s8) Welche Dimensionen und Varianten visueller Darstellungen gibt es?",
+    "questionJa": "視覚的表現にはどのような次元や形式のバリエーションがあるか？",
+    "answerDe": [
+      "2D und 3D",
+      "Statisch und dynamisch (Animationen)",
+      "Uni-, Bi-, Tri-, und Multivariat"
+    ],
+    "answerJa": [
+      "2次元（2D）および3次元（3D）",
+      "静的または動的（アニメーション）",
+      "単変量（Uni-）、2変量（Bi-）、3変量（Tri-）、多変量（Multivariat）"
+    ],
+    "explanationDe": [
+      "Visuelle Darstellungen können in verschiedenen Dimensionen erfolgen:",
+      "- 2D: z. B. Linien- oder Balkendiagramme.",
+      "- 3D: z. B. 3D-Datenwolken oder Oberflächendiagramme.",
+      "Sie können statisch sein (ein einzelnes Bild) oder dynamisch (mit Animationen, z. B. zeitliche Veränderungen).",
+      "Je nach Anzahl der dargestellten Variablen spricht man von:",
+      "- Univariat: eine Variable (z. B. Temperatur über Zeit)",
+      "- Bivariat: zwei Variablen (z. B. Temperatur und Luftfeuchtigkeit)",
+      "- Trivariat: drei Variablen",
+      "- Multivariat: viele Variablen gleichzeitig"
+    ],
+    "explanationJa": [
+      "視覚表現には様々な形式があります：",
+      "・2次元（2D）：折れ線グラフ、棒グラフなど",
+      "・3次元（3D）：立体的な散布図や表面グラフなど",
+      "また、表現の形式には静的（1枚の画像として固定）と動的（アニメーションで変化を表現）があります。",
+      "さらに、扱う変数の数によって：",
+      "・単変量（Uni）：1つの変数（例：気温）",
+      "・2変量（Bi）：2つの変数（例：気温と湿度）",
+      "・3変量（Tri）：3つの変数",
+      "・多変量（Multivariat）：複数の変数を同時に表示するグラフも含まれます。"
+    ],
+    "originalSlideText": "▶ Jeder Klasse hat eigene, angepasste visuelle Darstellungen\n▶ 2D und 3D\n▶ Statisch und dynamisch (Animationen)\n▶ Uni-, Bi-, Tri-, und Multivariat",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 8,
+    "questionDe": "(s8) Was bedeutet datengetriebene visuelle Darstellung?",
+    "questionJa": "データ駆動型の視覚表現とはどういう意味か？",
+    "answerDe": [
+      "Sofortige Darstellung der Objekte"
+    ],
+    "answerJa": [
+      "データが得られたらすぐにオブジェクトを表示する方式"
+    ],
+    "explanationDe": [
+      "Bei datengetriebenen Visualisierungen werden Objekte sofort angezeigt, sobald die zugrundeliegenden Daten verfügbar sind.",
+      "Beispiel: Eine Sensoranzeige, die live die aktuelle Temperatur zeigt."
+    ],
+    "explanationJa": [
+      "データ駆動型の視覚表現とは、データが取得されたと同時にその結果を画面に表示する形式を指します。",
+      "たとえばセンサーからリアルタイムに取得した温度をすぐに表示するモニタなどが例です。"
+    ],
+    "originalSlideText": "▶ Daten getrieben\n▶ Sofortige Darstellung der Objekte",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 9,
+    "questionDe": "(s8) Was ist eine ereignisgetriebene visuelle Darstellung?",
+    "questionJa": "イベント駆動型の視覚表現とは何か？",
+    "answerDe": [
+      "Es werden nur (wichtige) Änderungen angezeigt"
+    ],
+    "answerJa": [
+      "重要な変化のみを表示する方式"
+    ],
+    "explanationDe": [
+      "Bei ereignisgetriebener Visualisierung wird nur dann etwas gezeigt, wenn sich ein relevanter Zustand ändert.",
+      "Beispiel: Eine Warnanzeige, die nur bei Überschreiten eines Grenzwerts erscheint."
+    ],
+    "explanationJa": [
+      "イベント駆動型の視覚表現では、状態に変化があったときだけ表示が更新されます。",
+      "例えば、温度がしきい値を超えたときだけ警告を出すシステムなどが該当します。"
+    ],
+    "originalSlideText": "▶ Ereignis getrieben\n▶ Es werden nur (wichtige) Änderungen angezeigt",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 10,
+    "questionDe": "(s9) Welche visuellen Variablen werden bei einem 2D-Liniengraphen typischerweise verwendet?",
+    "questionJa": "2Dの折れ線グラフでは、どのような視覚的変数が使われるのが一般的か？",
+    "answerDe": [
+      "x-Achse: Zeit",
+      "y-Achse: numerische Variable",
+      "Farbe: kategoriale Variable"
+    ],
+    "answerJa": [
+      "x軸：時間（時系列）",
+      "y軸：数値変数（例：シェア、売上、気温など）",
+      "色：カテゴリ変数（例：異なるブラウザやグループを区別）"
+    ],
+    "explanationDe": [
+      "In der Informationsvisualisierung sind 2D-Liniengraphen ein Standard zur Darstellung zeitabhängiger Daten.",
+      "Dabei gilt:",
+      "- Die x-Achse zeigt meist den Zeitverlauf (z. B. Jahre oder Monate).",
+      "- Die y-Achse stellt numerische Werte dar, etwa Prozentzahlen, Messwerte oder Häufigkeiten.",
+      "- Farben werden verwendet, um unterschiedliche Kategorien (z. B. Browsertypen wie Chrome, Firefox usw.) voneinander zu unterscheiden."
+    ],
+    "explanationJa": [
+      "情報可視化において、2Dの折れ線グラフは時系列データの可視化で最も一般的な手法のひとつです。",
+      "このグラフの要素は次のように構成されます：",
+      "・x軸は通常「時間軸」（例：年月など）を示します。",
+      "・y軸は「数値データ」（例：割合、温度、売上）を示します。",
+      "・線の色は「カテゴリ変数」（例：各種ブラウザや製品など）を区別するために使われます。"
+    ],
+    "originalSlideText": "▶ Standard sind 2D-Liniengraphen\n▶ x-Achse: Zeit\n▶ y-Achse: numerische Variable\n▶ Farbe: kategoriale Variable",
+    "explanationImage": "lecture02/lecture06_ex01.png",
+    "questionImage": ""
+  },
+  {
+    "id": 11,
+    "questionDe": "(s10) Was ist das Konzept von Stacked Zooming nach Javed (2010)?",
+    "questionJa": "Javed (2010)によるStacked Zoomingとはどのような概念か？",
+    "answerDe": [
+      "Mehrere Darstellungsebenen übereinander gestapelt",
+      "Detailinformationen durch Auswahlbereiche in oberen Ebenen",
+      "Interaktive Steuerung über Layer Control Box und Data Box"
+    ],
+    "answerJa": [
+      "複数の表示レベルを縦に積み重ねて構成される",
+      "上位レベルの選択エリアから下位に詳細情報をズーム表示",
+      "Layer Control BoxやData Boxなどのインタラクティブ操作機能を備える"
+    ],
+    "explanationDe": [
+      "Stacked Zooming ist eine Technik zur Visualisierung komplexer zeitabhängiger Daten.",
+      "Oben befindet sich eine Gesamtübersicht ('main chart'), aus der durch farbige Auswahlbereiche ('selection areas') einzelne Segmente ausgewählt werden können.",
+      "Diese Segmente werden weiter unten in separaten Zeilen ('main visualization window') detaillierter dargestellt.",
+      "Zusätzliche interaktive Elemente wie die 'layer control box' und 'data box' erlauben die Steuerung von Sichtbarkeit und Datenebenen."
+    ],
+    "explanationJa": [
+      "Stacked Zoomingは複雑な時系列データを階層的に視覚化する手法です。",
+      "最上部のチャート（main chart）は全体の俯瞰図を提供し、色付きの選択領域（selection areas）で注目部分を指定します。",
+      "その選択範囲に応じた詳細情報が下層のストリップ（main visualization window）で順次表示され、データのズーム分析が可能です。",
+      "さらに、レイヤーの表示制御やデータの確認は、右側のLayer Control BoxやData Boxで行うことができ、複数の視点を一画面で操作できます。"
+    ],
+    "originalSlideText": "Stacked Zooming [Javed2010]\nmain chart (top)\nselection areas\nmain visualization window\npresentation tree\ndata box\ncurrently selected strip\nlayer control box",
+    "explanationImage": "lecture02/lecture06_ex02.png",
+    "questionImage": ""
+  },
+  {
+    "id": 12,
+    "questionDe": "(s11) Wie funktioniert die Visualisierungstechnik TimeWheel?",
+    "questionJa": "TimeWheelという視覚化手法はどのように機能するか？",
+    "answerDe": [
+      "Zeitachse verläuft horizontal im Zentrum",
+      "Variable Achsen sind kreisförmig um die Zeitachse angeordnet",
+      "Linien verbinden Zeitpunkte mit den jeweiligen Merkmalswerten"
+    ],
+    "answerJa": [
+      "時間軸は中央に水平に配置される",
+      "変数軸は時間軸を囲むように円形に配置される",
+      "線が時間と各変数の値を結び、関係性を示す"
+    ],
+    "explanationDe": [
+      "Die TimeWheel-Technik zeigt multivariate zeitabhängige Daten in einer radialen Anordnung.",
+      "In der Mitte befindet sich die Zeitachse. Rundherum sind verschiedene Variablenachsen platziert (z. B. Temperatur, Luftfeuchtigkeit usw.).",
+      "Farbliche Linien verbinden für jeden Zeitpunkt die Zeitachse mit den jeweiligen Werten auf den Variablenachsen.",
+      "Die Farbsättigung kann reduziert werden, um Überlagerungen besser erkennbar zu machen."
+    ],
+    "explanationJa": [
+      "TimeWheelは多変量の時系列データを視覚化するための手法で、円形レイアウトを用いるのが特徴です。",
+      "中心には時間軸が水平に表示され、その周囲に各変数（例：温度、湿度など）の軸が放射状に配置されます。",
+      "各時点における値は、時間軸と変数軸を結ぶ線で表され、それによって時間と特徴量の関係が視覚的に示されます。",
+      "色の濃さ（reduced color intensity）によって重要度や重なりの度合いも表現できます。"
+    ],
+    "originalSlideText": "TimeWheel [TAS2004]\nFigure 9: Demonstration of the TimeWheel Technique: 6 Variable Axes are Arranged Circularly around an Exposed Centered Time Axis.\n- variable axes\n- time axis\n- lines connecting time and feature values\n- reduced color intensity",
+    "explanationImage": "lecture02/lecture06_ex03.png",
+    "questionImage": ""
+  },
+  {
+    "id": 13,
+    "questionDe": "(s14) Was ist das Prinzip der Wakame-Visualisierungstechnik nach FW2010?",
+    "questionJa": "FW2010によるWakameという視覚化手法の基本的な仕組みは？",
+    "answerDe": [
+      "Ausgangsbasis: 2D-Radardiagramm für Merkmalsausprägungen",
+      "Mehrere 2D-Profile werden entlang der Zeitachse übereinandergestapelt",
+      "Es entsteht ein 3D-Körper, der zeitliche Veränderungen visualisiert"
+    ],
+    "answerJa": [
+      "基本は、特徴量を示す2Dレーダーチャート（各時点）である",
+      "時間軸に沿って2Dチャートを積み重ねることで構造を形成",
+      "その結果、時系列変化が表面形状として3次元的に視覚化される"
+    ],
+    "explanationDe": [
+      "Die Wakame-Technik stellt multivariate zeitabhängige Daten in Form eines 3D-Volumens dar.",
+      "Zunächst wird für jeden Zeitpunkt ein Radardiagramm mit mehreren Merkmalen gezeichnet.",
+      "Diese Profile werden dann entlang einer senkrechten Zeitachse gestapelt.",
+      "So entsteht eine räumliche Darstellung, die Veränderungen über die Zeit deutlich macht – z. B. als Formveränderung eines Volumens."
+    ],
+    "explanationJa": [
+      "Wakameは、時系列における多変量データの変化を視覚的に示す3D可視化手法です。",
+      "まず、各時点での特徴量を示す2Dレーダーチャートを作成します。",
+      "これらのチャートを時間軸に沿って縦方向に積み上げることで立体形状を構成します。",
+      "この形状の変化を見ることで、データの時間的推移やパターンを直感的に理解できます。"
+    ],
+    "originalSlideText": "Wakame [FW2010]\nAbbildung: 2D radar chart\nAbbildung: Zeichnung auf einer Ebene in 3D; Zeit: Achse nach oben\nAbbildung: Profile in unterschiedlichen Höhen (abgetastete Werte) ergibt 3D Form",
+    "explanationImage": "lecture02/lecture06_ex04.png",
+    "questionImage": ""
+  },
+  {
+    "id": 14,
+    "questionDe": "(s15) Was sagt die Form in der Wakame-Visualisierung über die Daten aus?",
+    "questionJa": "Wakame視覚化において、3D形状の形はデータの何を意味しているか？",
+    "answerDe": [
+      "Wellenform: gleichzeitiger Anstieg und Abfall verschiedener Werte",
+      "Ausbuchtungen und Einbuchtungen: zeigen Korrelationen zwischen Dimensionen"
+    ],
+    "answerJa": [
+      "波のような形：ある値が上昇する一方で他の値が同時に下降していることを示す",
+      "突出やくぼみ：複数の次元間に相関関係があることを示す"
+    ],
+    "explanationDe": [
+      "In der Wakame-Visualisierung ist die äußere Form des 3D-Körpers nicht nur dekorativ, sondern bedeutungstragend.",
+      "Wenn bestimmte Merkmale gleichzeitig steigen und andere sinken, entsteht eine Wellenform.",
+      "Korrelierende Merkmale erzeugen konsistente Ein- oder Ausbuchtungen entlang der Zeitachse.",
+      "So lässt sich auf einen Blick erkennen, wie sich verschiedene Merkmale im zeitlichen Verlauf zueinander verhalten."
+    ],
+    "explanationJa": [
+      "Wakame視覚化において、3D形状の外観はデータの意味を表している。",
+      "例えば、波形になっている場合は、ある変数が増加していると同時に他の変数が減少していることを意味する。",
+      "また、形状の膨らみやへこみは、異なる変数間の相関（共通の変化傾向）を示す。",
+      "これにより、視覚的に時間とともに変化する複数の特徴量の関係性を把握できる。"
+    ],
+    "originalSlideText": "Abbildung: Bedeutung der Form;\nlinks: Welle → Werte steigen während andere gleichzeitig sinken;\nrechts: Aus- und Einbuchtungen zeigen die Korrelation mehrerer Dimensionen",
+    "explanationImage": "lecture02/lecture06_ex05.png",
+    "questionImage": ""
+  },
+  {
+    "id": 15,
+    "questionDe": "(s14–s19) Was ist Wakame als Visualisierungstechnik?",
+    "questionJa": "Wakameとはどのような視覚化手法か？",
+    "answerDe": [
+      "Wakame ist eine 3D-Visualisierungstechnik für multivariate Zeitreihendaten.",
+      "Sie verwendet gestapelte 2D-Radardiagramme entlang einer Zeitachse.",
+      "Die Höhe steht für Zeit, jede Ebene zeigt mehrere Merkmalsausprägungen.",
+      "Die Form des Körpers ergibt sich aus den Werten verschiedener Variablen."
+    ],
+    "answerJa": [
+      "Wakameは、多変量時系列データを3Dで可視化する手法である。",
+      "時間軸に沿って2Dレーダーチャートを積み重ねていく形式をとる。",
+      "縦方向が時間を示し、各断面は複数の変数の値を表している。",
+      "この積層により、変数の時間的変化が3次元形状として表現される。"
+    ],
+    "explanationDe": [
+      "Wakame kombiniert Raum, Zeit und mehrere Dimensionen in einer einzigen Darstellung.",
+      "Die Visualisierung basiert auf Profilen (Radar-Diagrammen), die in 3D extrudiert werden.",
+      "Eine Achse (meist Y) steht für die Zeit, die anderen Achsen für Merkmalsausprägungen.",
+      "Durch Formverlauf und Farbe kann man schnell Struktur und Muster erkennen."
+    ],
+    "explanationJa": [
+      "Wakameは、空間・時間・多次元データを統合して1つの3Dビューで表現する手法である。",
+      "基本的にはレーダーチャートを時間方向に押し出す（extrude）構造になっている。",
+      "縦軸が時間を表し、各層の形はその時点での特徴量の状態を示す。",
+      "形状の変化や色によって、時間的変化や構造的特徴が直感的に理解できる。"
+    ],
+    "originalSlideText": "Abbildungen: 2D radar chart → 3D extrudiert; Zeitachse nach oben; farbige Profile zeigen Merkmale im Verlauf.",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 16,
+    "questionDe": "(s14–s19) Wie unterstützt Wakame die Analyse multivariater Zeitreihendaten?",
+    "questionJa": "Wakameは多変量時系列データの分析にどのように役立つか？",
+    "answerDe": [
+      "Formmuster (z. B. Wellen) zeigen gleichzeitige Anstiege und Abfälle verschiedener Werte.",
+      "Ein- und Ausbuchtungen zeigen Korrelationen zwischen Variablen.",
+      "Interaktive Zeitpunkte lassen sich analysieren und vergleichen.",
+      "Fehlerhafte Komponenten und deren Einfluss auf Nachbarelemente werden sichtbar.",
+      "Übergänge zu 2D-Ansichten und Animationen erleichtern die explorative Analyse."
+    ],
+    "answerJa": [
+      "波形などの形は、変数の同時的な増減を示す。",
+      "突出やへこみは、変数間の相関を表す。",
+      "特定の時点を選んで詳細に分析したり、比較したりできる。",
+      "異常なセンサー値やその影響範囲も視覚的に把握できる。",
+      "3Dと2Dの切り替えやアニメーションにより探索的分析が促進される。"
+    ],
+    "explanationDe": [
+      "Die visuelle Form macht Beziehungen zwischen Variablen intuitiv erkennbar.",
+      "Wakame erlaubt die räumlich-zeitliche Analyse von Sensorwerten oder Systemzuständen.",
+      "Übergänge zwischen Perspektiven helfen beim Drill-down in Daten und beim Erkennen von Anomalien.",
+      "Durch Projektionen und interaktive Selektion können einzelne Zeitpunkte isoliert betrachtet werden."
+    ],
+    "explanationJa": [
+      "形状を見ることで、変数同士の関係性（相関や逆相関）を直感的に読み取れる。",
+      "センサー値やシステム状態の時空間的分析に適している。",
+      "視点の切り替えにより、詳細なデータ分析や異常検出が容易になる。",
+      "平面への投影や時間点の選択により、個別データの比較や観察が可能になる。"
+    ],
+    "originalSlideText": "Abbildungen: Bedeutung der Form, Auswahl von Zeitpunkten, Fehleranalyse, Übergang zwischen 3D- und 2D-Darstellung.",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 17,
+    "questionDe": "(s20) Was ist das Data-Vases-Verfahren als Visualisierungstechnik?",
+    "questionJa": "Data Vasesとはどのような視覚化手法か？",
+    "answerDe": [
+      "Data Vases ist eine Technik zur Visualisierung dicht gedrängter Zeitreihendaten.",
+      "Aus einem Linienprofil wird durch Spiegelung eine geschlossene, drachenförmige Fläche (‚Kite‘) gebildet.",
+      "Diese Flächen werden anschließend in Vasenform arrangiert, um Vergleichbarkeit und Mustererkennung zu erleichtern."
+    ],
+    "answerJa": [
+      "Data Vasesは、密集した時系列データを視覚的にわかりやすく表現する手法である。",
+      "折れ線グラフのプロファイルを、上下対称に反転して閉じた「凧型（Kite）」に変形する。",
+      "それらの凧型を連ねて配置することで、複数のデータの比較やパターンの可視化を可能にする。"
+    ],
+    "explanationDe": [
+      "Viele Zeitreihen gleichzeitig darzustellen, führt oft zu visuellem Durcheinander.",
+      "Durch die Transformation in symmetrische Flächen werden überlappende Linien vermieden.",
+      "Diese Transformation basiert auf: Originalprofil → Skalierung → Spiegelung → geschlossene Form."
+    ],
+    "explanationJa": [
+      "多数の時系列を一つのグラフに描くと視覚的に混乱しやすい。",
+      "Data Vasesでは、線グラフを上下に対称化して面として閉じることで、視認性を向上させる。",
+      "手順としては、元の線 → 値を半分に落とす → 反転コピー → 閉じた凧型の生成、となる。"
+    ],
+    "originalSlideText": "Abbildung: Links: Dichte Darstellung mehrerer Zeitreihen; Rechts: Übergang von einem Linienprofil zu einem „Drachen“",
+    "explanationImage": "lecture02/lecture06_ex05.png",
+    "questionImage": ""
+  },
+  {
+  "id": 18,
+  "questionDe": "(s20) Wie unterstützt Data Vases die Analyse von Zeitreihendaten?",
+  "questionJa": "Data Vasesは時系列データの分析にどのように役立つか？",
+  "answerDe": [
+    "Erlaubt gleichzeitige Darstellung vieler Zeitreihen ohne visuelle Überlagerung.",
+    "Macht Trends, Ausreißer und Muster leichter erkennbar.",
+    "Die Form (‚Kite‘) unterstützt visuelle Gruppierung und Vergleichbarkeit zwischen Einheiten."
+  ],
+  "answerJa": [
+    "多数の時系列データを同時に表示しても、線の重なりを回避できる。",
+    "傾向・外れ値・パターンの視覚的認識が容易になる。",
+    "凧型の形状によって、異なる観測単位の比較が直感的に行える。"
+  ],
+  "explanationDe": [
+    "Normale Liniendiagramme sind bei großen Datensätzen schwer lesbar.",
+    "Durch Umformung in flächige Symbole werden Datenmuster klarer sichtbar.",
+    "Diese Methode unterstützt vor allem explorative Datenanalyse bei vielen Einheiten."
+  ],
+  "explanationJa": [
+    "通常の折れ線グラフでは、多数のデータを扱うと読みにくくなる。",
+    "Data Vasesでは、形状の面としてデータを視覚化するため、パターンや変化が見やすくなる。",
+    "特に多数の観測対象を比較したい探索的分析に適している。"
+  ],
+  "originalSlideText": "Abbildung: Übergang von Zeitreihenlinien zu Drachenformen (Kites), um Muster zu zeigen.",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 19,
+  "questionDe": "(s21) Welche Informationen lassen sich aus dem Data Vases-Diagramm ablesen und wie unterstützt es die Datenanalyse?",
+  "questionJa": "Data Vasesはどのような情報を視覚的に示しており、それはどのようにデータ分析に役立つか？",
+  "answerDe": [
+    "Die Breite des Glyphen zeigt den absoluten Wert einer Variable zu einem bestimmten Zeitpunkt.",
+    "Die Form des Glyphen bildet den zeitlichen Trend ab.",
+    "Eine innere Form stellt den Durchschnitt der gesamten Daten dar.",
+    "Farben kennzeichnen geographische Regionen in North Carolina.",
+    "Ungewöhnliche Werte (Ausreißer) sind durch auffällige Formen visuell erkennbar.",
+    "Fehlende Werte werden durch Marker hervorgehoben."
+  ],
+  "answerJa": [
+    "グリフの幅はその時点での変数の絶対値を示す。",
+    "グリフの形状は時間的な変化傾向を表している。",
+    "内部の形は全体データの平均を示している。",
+    "色はノースカロライナ州内の地理的地域を示している。",
+    "外れ値は形の異常さによって視覚的に認識できる。",
+    "欠損値はマーカーで明示的に強調されている。"
+  ],
+  "explanationDe": [
+    "Data Vases stellen zahlreiche Zeitreihen kompakt und vergleichbar dar.",
+    "Alphabetische Sortierung erleichtert die Orientierung.",
+    "Die visuelle Darstellung hilft dabei, Trends, Ausreißer und Datenlücken schnell zu erkennen.",
+    "Die innere Vase zeigt Durchschnittswerte, wodurch Abweichungen besonders auffallen."
+  ],
+  "explanationJa": [
+    "Data Vasesは多数の時系列データをコンパクトかつ比較しやすい形で可視化する手法である。",
+    "地域名はアルファベット順に並べられており、視覚的比較を助ける。",
+    "傾向・外れ値・欠損データが視覚的にすぐ把握できるようになっている。",
+    "内部の平均形状と比べることで、異常な値が特に目立つようになる。"
+  ],
+  "originalSlideText": "Abbildung: Kite diagram-based Data Vases; alphabetische Anordnung von linke nach rechts; Farbe: geographische Region in North Carolina",
+  "explanationImage": "lecture02/lecture06_ex06.png",
+  "questionImage": ""
+},
+{
+  "id": 20,
+  "questionDe": "(s24) Wie funktioniert die People Garden-Visualisierung und was zeigt sie an?",
+  "questionJa": "People Garden視覚化はどのように機能し、何を示しているか？",
+  "answerDe": [
+    "People Garden zeigt Kommunikationsaktivität innerhalb einer Gruppe als Blume.",
+    "Jede neue Nachricht erzeugt ein neues Blütenblatt auf der rechten Seite.",
+    "Ältere Blätter wandern nach links, die Darstellung ist symmetrisch.",
+    "Die Farbintensität (Sättigung) der Blätter nimmt mit der Zeit ab.",
+    "Ein starker Farbunterschied zwischen benachbarten Blättern weist auf Aktivitätslücken hin."
+  ],
+  "answerJa": [
+    "People Gardenは、グループ内のメッセージ活動を花のような形で表現する。",
+    "新しいメッセージが届くと、右側に新しい花びらが追加される。",
+    "古い花びらは左に移動し、全体は左右対称に描画される。",
+    "花びらの色の濃さ（彩度）は、メッセージが送られてからの経過時間を示す。",
+    "隣接する花びらの色に大きな差がある場合、それはメッセージの空白期間を表している。"
+  ],
+  "explanationDe": [
+    "In der People Garden-Visualisierung wird jede Person in einer Gruppe durch eine Blume dargestellt.",
+    "Wenn jemand eine neue Nachricht sendet, erscheint ein neues Blütenblatt auf der rechten Seite.",
+    "Mit der Zeit bewegen sich ältere Blätter nach links und verlieren dabei an Farbintensität – sie verblassen.",
+    "Die Darstellung ist bewusst symmetrisch gestaltet, um ein harmonisches Gesamtbild zu schaffen.",
+    "Ein deutlicher Unterschied in der Sättigung nebeneinander liegender Blätter zeigt an, dass über eine gewisse Zeit keine Aktivität stattgefunden hat."
+  ],
+  "explanationJa": [
+    "People Gardenでは、グループの各メンバーを一輪の花で表現する。",
+    "メンバーがメッセージを投稿するたびに、新しい花びらが右側に追加される。",
+    "既存の花びらは時間経過とともに左へ移動し、色は徐々に薄くなる（時間が経過したことを意味する）。",
+    "このように、時間とともに花が成長し、活動の流れを直感的に把握できるようになる。",
+    "もし隣同士の花びらに色の濃さの大きな差がある場合、それはその間にメッセージが送られなかったこと（=活動のギャップ）を示している。"
+  ],
+  "originalSlideText": "Darstellung von Aktivität in einer Gruppe\nNeue Nachrichten → neue Blütenblätter\nÄltere Blütenblätter wandern nach links\nNeue Blütenblätter kommen rechts hinzu\nDarstellung: symmetrisch\nSaturierung\n→ Zeigt die Zeit seit der Nachricht an\n→ Im Laufe der Zeit verblassen die Blütenblätter\nEin starker Unterschied zeigt eine Lücke an",
+  "explanationImage": "lecture02/lecture06_ex07.png",
+  "questionImage": ""
+},
+{
+  "id": 21,
+  "questionDe": "(s25) Was zeigt der Vergleich der drei Nutzer in der People Garden-Darstellung?",
+  "questionJa": "People Gardenの可視化で、3人のユーザーA・B・Cを比較すると何が分かるか？",
+  "answerDe": [
+    "Alle Nutzer haben gleich viele Nachrichten geschrieben.",
+    "Die Zeiträume der Aktivitäten unterscheiden sich.",
+    "Die Anzahl der erhaltenen Antworten ist unterschiedlich.",
+    "Antworten werden in Blau, ursprüngliche Nachrichten in Magenta dargestellt."
+  ],
+  "answerJa": [
+    "3人ともメッセージ数は同じである。",
+    "活動期間（いつメッセージを送ったか）が異なる。",
+    "受け取った返信の数にも違いがある。",
+    "ピンクが元のメッセージ、青が返信を表している。"
+  ],
+  "explanationDe": [
+    "Obwohl alle drei Nutzer dieselbe Anzahl an Nachrichten gesendet haben, zeigen ihre Blüten verschiedene Formen.",
+    "Diese Unterschiede entstehen durch unterschiedliche Zeiträume der Aktivität (z.B. kürzerer oder längerer Zeitraum) und durch die Anzahl der erhaltenen Antworten.",
+    "Die untere Hälfte der Blume ist farblich kodiert: Magenta für ursprüngliche Nachrichten, Blau für erhaltene Antworten.",
+    "So kann man auf einen Blick erkennen, wie aktiv ein Nutzer war und wie viel Interaktion er erhalten hat."
+  ],
+  "explanationJa": [
+    "ユーザーA・B・Cはいずれも同じ数のメッセージを投稿しているが、花の形（可視化）は異なっている。",
+    "これは、投稿が集中した時期や期間の長さ、返信の数が異なるためである。",
+    "図の下部は色で分けられており、ピンクは自分が送信したメッセージ、青は受け取った返信を表す。",
+    "これにより、ユーザーの発言タイミングや、どれだけ他者とやり取りしたか（対話の多さ）を視覚的に捉えることができる。"
+  ],
+  "originalSlideText": "Drei Benutzer\nGleiche Anzahl von Nachrichten\nUnterschiedliche Zeiträume\nUnterschiedliche Anzahl von Antworten\nAbbildung: Unten: Magenta: ursprüngliche Nachrichten, Blau: Antworten",
+  "explanationImage": "lecture02/lecture06_ex08.png",
+  "questionImage": ""
+},
+{
+  "id": 22,
+  "questionDe": "(s28) Was zeigt die ThemeRiver-Darstellung in Bezug auf die Themenentwicklung?",
+  "questionJa": "ThemeRiverの可視化では、テーマの変化について何が分かるか？",
+  "answerDe": [
+    "Die Breite jedes farbigen Stroms zeigt die Häufigkeit eines Begriffs im Zeitverlauf.",
+    "Thematische Veränderungen und Ereignisse lassen sich visuell durch Veränderungen in der Flussbreite erkennen.",
+    "Ereignisse wie 'Iraq invades Kuwait' korrelieren mit einem plötzlichen Anstieg bestimmter Begriffe wie 'baghdad', 'iraq', 'kuwait'."
+  ],
+  "answerJa": [
+    "各色の帯の太さは、そのトピック（単語）の出現頻度を表している。",
+    "テーマの出現傾向や変化が、川の流れのような形で視覚的に把握できる。",
+    "「イラクがクウェートに侵攻」などの出来事と、特定のキーワード（例: baghdad, iraq, kuwait）の出現増加が一致している。"
+  ],
+  "explanationDe": [
+    "ThemeRiver visualisiert die Entwicklung mehrerer Themen über die Zeit.",
+    "Jedes Thema wird als farbiger Strom dargestellt, dessen Breite die Häufigkeit angibt.",
+    "Wenn sich historische Ereignisse ereignen (wie die Invasion Kuwaits), erscheinen neue Begriffe häufiger, was sich in einer Zunahme der Breite dieser Ströme widerspiegelt.",
+    "So können thematische Trends und deren Bezug zu realen Ereignissen leicht erkannt werden."
+  ],
+  "explanationJa": [
+    "ThemeRiverは、時系列に沿ったテーマ（話題）の頻度変化を視覚的に示す手法である。",
+    "それぞれの色の帯（ストリーム）は、あるキーワードの時間的出現を表しており、帯の太さが頻度の多さを示す。",
+    "たとえば1990年8月の『イラクのクウェート侵攻』という出来事の周辺では、baghdadやkuwaitなどの語の出現が急増し、対応する帯が急に太くなっている。",
+    "このように、トピックの出現傾向と重大イベントの関係性を視覚的に理解することができる。"
+  ],
+  "originalSlideText": "",
+  "explanationImage": "lecture02/lecture06_ex09.png",
+  "questionImage": ""
+},
+{
+  "id": 23,
+  "questionDe": "(s38) Welche Informationen werden durch die Karte und ihre visuelle Kodierung dargestellt?",
+  "questionJa": "この地図の可視化表現からどのような情報が読み取れるか？",
+  "answerDe": [
+    "Regionale Zuordnung von Schülern zu bestimmten Schulen",
+    "Zeitliche Entwicklung durch Ringe dargestellt",
+    "Farbintensität (Sättigung) zeigt Auslastung der Kapazität",
+    "Helligkeit der Fläche zeigt durchschnittliche Testergebnisse"
+  ],
+  "answerJa": [
+    "各地域がどの学校に割り当てられているか（円で示された学校）",
+    "複数の時間帯の変化はリング（同心円）で表現されている",
+    "色の濃さ（彩度）は各学校の収容率（容量使用率）を示している",
+    "色の明るさは地域ごとの平均試験成績を示している"
+  ],
+  "explanationDe": [
+    "Die Karte zeigt, welches Gebiet (farbig eingefärbt) zu welcher Schule gehört.",
+    "Die farbigen Kreise markieren die Schulen, wobei jede Farbe einer Schule entspricht.",
+    "Um die Schulen herum zeigen Ringe die Kapazitätsauslastung über verschiedene Zeiträume hinweg.",
+    "Je intensiver die Farbe, desto höher die Kapazitätsauslastung.",
+    "Die Helligkeit der Flächen zeigt die durchschnittlichen Prüfungsergebnisse an – hellere Bereiche stehen für bessere Leistungen."
+  ],
+  "explanationJa": [
+    "この可視化では、各地域がどの学校に割り当てられているかを色分けされた領域で示している。",
+    "中央の円は学校の位置を表しており、それぞれの色は対応する学校に一致している。",
+    "同心円のリングは時間の経過を示し、過去から現在にかけての変化を視覚的に表現している。",
+    "彩度が高い（色が濃い）ほど、その学校の収容率が高い（定員に近い）ことを意味している。",
+    "明度（色の明るさ）はその地域の生徒の平均試験成績を表しており、明るい色ほど成績が良い地域であることを示している。"
+  ],
+  "originalSlideText": "Zuordnung von Regionen zu Schulen (Kreise); Farbkodierung; Ringe: unterschiedliche Zeiträume; Sättigung: % Kapazität; Helligkeit: durchschnittliche Prüfungsergebnisse",
+  "explanationImage": "",
+  "questionImage": "lecture02/lecture06_q01.png"
+}
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 ]
