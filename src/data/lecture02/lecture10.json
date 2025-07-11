@@ -1563,7 +1563,7 @@
   "questionImage": ""
 },
 {
-  "id": 58,
+  "id": 53,
   "questionDe": "(s57) Was zeigt das Beispiel von Graphical Fisheye Views nach Sarkar und Brown (1992) anhand von Graphen?",
   "questionJa": "SarkarとBrown（1992）のGraphical Fisheye Viewは、グラフ構造にどのような変換を加えるか？",
   "answerDe": [
@@ -1593,7 +1593,7 @@
   "questionImage": ""
 },
 {
-  "id": 59,
+  "id": 54,
   "questionDe": "(s63) Welche Vorteile bietet der Fokus-und-Kontext-Ansatz in der Informationsvisualisierung?",
   "questionJa": "情報可視化における「フォーカスとコンテキスト」手法の利点は何ですか？",
   "answerDe": [
@@ -1617,7 +1617,7 @@
   "originalSlideText": "► Vorteile\n► Fokus und Kontext geben den Aufbau der Retina im Auge wieder\n► Gute Navigationsmöglichkeiten, um Daten zu erforschen\n► Kann mit anderen Techniken kombiniert werden\n   ► Panning\n   ► Zooming"
 },
 {
-  "id": 60,
+  "id": 55,
   "questionDe": "(s63) Welche Nachteile hat der Fokus-und-Kontext-Ansatz in der Informationsvisualisierung?",
   "questionJa": "情報可視化における「フォーカスとコンテキスト」手法の欠点は何ですか？",
   "answerDe": [
