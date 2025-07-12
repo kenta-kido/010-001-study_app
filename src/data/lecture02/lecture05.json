@@ -2055,7 +2055,243 @@
   "originalSlideText": "Tri-Variate Daten (2D)\n▶ Kombination aus Position, Farbe und/oder Größe\n▶ x- und y-Position: zwei Attribute\n▶ Farbe oder Größe: drittes Attribut\n▶ Nachteile:\n– Farbe nicht ordinal\n– Größe schwer vergleichbar\n– Überlagerung bei hoher Punktdichte\nAbbildung: Beispielbild",
   "explanationImage": "lecture02/lecture05_ex25.png",
   "questionImage": ""
+},
+{
+  "id": 60,
+  "questionDe": "(s71) Was sind multi-variate Daten und welche Arten von Zusammenhängen können auftreten?",
+  "questionJa": "多変量データ（multi-variate Daten）とは何か？どのような関係が考えられるか？",
+  "answerDe": [
+    "Multi-variate Daten: Datensätze mit mehr als drei Attributen",
+    "Beziehungen zwischen Attributen können sein:",
+    "– positiv korreliert",
+    "– negativ korreliert (anti-korreliert)",
+    "– nicht korreliert"
+  ],
+  "answerJa": [
+    "多変量データ：3つ以上の属性を持つデータセット",
+    "属性間の関係には以下がある：",
+    "– 正の相関（positiv korreliert）",
+    "– 負の相関／反相関（negativ bzw. anti-korreliert）",
+    "– 無相関（nicht korreliert）"
+  ],
+  "explanationDe": [
+    "Multi-variate Daten sind Daten, bei denen jedes Datenobjekt durch mehr als drei Attribute (Eigenschaften, Merkmale) beschrieben wird.",
+    "Beispiel: Ein Auto könnte durch die Attribute 'Preis', 'Gewicht', 'PS', 'Kraftstoffverbrauch' und 'CO₂-Ausstoß' beschrieben sein.",
+    "Zwischen diesen Attributen können unterschiedliche Beziehungen bestehen.",
+    "Wenn zwei Attribute gemeinsam steigen oder fallen, spricht man von positiver Korrelation – z. B. 'Gewicht' und 'Verbrauch'.",
+    "Bei negativer (oder Anti-)Korrelation steigt ein Attribut, während das andere sinkt – z. B. 'PS' steigt, 'Verbrauch' sinkt.",
+    "Fehlt jeglicher Zusammenhang, spricht man von keiner Korrelation – z. B. 'Farbe des Autos' und 'Kraftstoffverbrauch'.",
+    "Das Verständnis dieser Zusammenhänge ist zentral für die Interpretation multi-variater Visualisierungen."
+  ],
+  "explanationJa": [
+    "多変量データ（multi-variate Daten）とは、1つのデータ項目が3つ以上の属性（変数）によって表されるデータのことです。",
+    "たとえば、自動車のデータであれば「価格」「重量」「馬力（PS）」「燃費」「CO₂排出量」などがその属性になります。",
+    "このような複数の属性間には、いろいろな関係性（相関）が存在し得ます。",
+    "たとえば「重量」と「燃費」は一緒に増える傾向がある（正の相関：positiv korreliert）。",
+    "逆に「馬力」が高いと「燃費」が下がる場合は負の相関（反相関：anti-korreliert）です。",
+    "一方、属性同士に関連性が全く見られない場合は無相関（nicht korreliert）とされます。たとえば「車の色」と「燃費」などです。",
+    "これらの相関関係を把握することは、多変量データの可視化と分析において非常に重要です。"
+  ],
+  "originalSlideText": "Multi-variate Daten\n▶ Datensätze mit mehr als drei Attributen\n▶ Beziehungen zwischen Attributen:\n– positiv korreliert\n– negativ korreliert (anti-korreliert)\n– nicht korreliert",
+  "explanationImage": "lecture02/lecture05_ex26.png",
+  "questionImage": ""
+},
+{
+  "id": 61,
+  "questionDe": "(s72) Warum reichen Positionskodierungen bei mehr als drei Attributen nicht aus und welche Strategien gibt es dafür?",
+  "questionJa": "3つ以上の属性では位置による可視化が不十分になる理由と、それに対応する手法とは？",
+  "answerDe": [
+    "Problem: Mehr als drei Attribute können nicht mehr nur über die Position repräsentiert werden",
+    "Lösungen:",
+    "– Übertragung der Tri-Variaten Ansätze",
+    "   • Scatterplot-Matrizen",
+    "   • Repräsentation mittels anderer visueller Attribute (z. B. Größe)",
+    "– Alternative Methoden"
+  ],
+  "answerJa": [
+    "問題：3つを超える属性は、位置情報だけでは表現できない",
+    "対応策：",
+    "– Tri-variateの手法を応用する",
+    "   • Scatterplot-Matrix（散布図マトリクス）を使う",
+    "   • 他の視覚的属性（例：サイズ）による表現を用いる",
+    "– 代替的な手法を検討する"
+  ],
+  "explanationDe": [
+    "Wenn man mehr als drei Attribute visualisieren möchte, reicht die reine Positionskodierung (z. B. über x-, y- und z-Achse) nicht mehr aus.",
+    "Ab dem vierten Attribut müssen zusätzliche visuelle Kanäle oder Strategien verwendet werden.",
+    "Eine Lösung besteht darin, bestehende Techniken aus der Tri-Variaten-Visualisierung auf multi-variate Daten zu übertragen.",
+    "Beispielsweise können Scatterplot-Matrizen genutzt werden, um alle Attributpaare darzustellen.",
+    "Oder man kodiert zusätzliche Attribute über andere visuelle Eigenschaften, z. B. durch Farbe, Größe oder Form.",
+    "Darüber hinaus können auch alternative Methoden (z. B. Parallel Coordinates oder Heatmaps) eingesetzt werden, um komplexe Zusammenhänge darzustellen."
+  ],
+  "explanationJa": [
+    "3つ以上の属性を同時に視覚化する際、位置（x, y, z）だけでは表現の限界があります。",
+    "4つ目以降の属性は、別の方法で視覚化する必要があります。",
+    "その1つの方法が、Tri-variate（3変数）可視化で使われた手法の応用です。",
+    "たとえば、Scatterplot-Matrix（各属性ペアの散布図をマトリクス状に並べたもの）を使えば、ペアごとの関係性を確認できます。",
+    "また、追加の属性を「サイズ」や「色」などの視覚的属性で表現する方法もあります。",
+    "さらに、より適した「代替的な手法」（例：パラレル座標プロットやヒートマップ）を使うことで、高次元データの複雑な構造を理解しやすくすることも可能です。"
+  ],
+  "originalSlideText": "Multi-Variate Daten\n\n▶ Problem:\n  ▶ Mehr als drei Attribute können nicht mehr nur über die Position repräsentiert werden\n\n▶ Lösungen:\n  ▶ Übertragung der Tri-Variaten Ansätze\n    ▶ Scatterplot-Matrizen\n    ▶ Repräsentation mittels anderer visueller Attribute (z. B. Größe)\n  ▶ Alternative Methoden",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 62,
+  "questionDe": "(s74–75) Welche Haupttypen von Visualisierungsansätzen für multi-variate Daten gibt es und wie unterscheiden sie sich?",
+  "questionJa": "多変量データを可視化する代表的な手法にはどんな種類があり、それらはどのように異なるか？",
+  "answerDe": [
+    "1. Geometrische Ansätze (Projektion)",
+    "   – Scatterplot-Matrix (orthogonale Projektion)",
+    "   – Hyperslice",
+    "   – Prosection Views",
+    "2. Achsenbasierte Ansätze",
+    "   – z. B. Parallelkoordinaten",
+    "3. Heatmap"
+  ],
+  "answerJa": [
+    "1. 幾何学的アプローチ（投影型）",
+    "   – Scatterplot-Matrix（直交投影に相当）",
+    "   – Hyperslice（複数の断面を用いた可視化）",
+    "   – Prosection View（制限領域での断面可視化）",
+    "2. 軸ベースのアプローチ",
+    "   – 例：パラレル座標",
+    "3. ヒートマップ（Heatmap）"
+  ],
+  "explanationDe": [
+    "Bei multi-variaten Daten (mehr als drei Attribute) sind unterschiedliche Visualisierungsansätze nötig.",
+    "1. Geometrische Ansätze projizieren Daten in niedrigdimensionale Räume (z. B. 2D):",
+    "   – Die Scatterplot-Matrix zeigt alle paarweisen Kombinationen und entspricht orthogonaler Projektion.",
+    "   – Hyperslice erzeugt 2D-Schnitte durch den Raum ohne strikte Achsenzuordnung.",
+    "   – Prosection Views zeigen einen ausgewählten Bereich (Hypercube) und färben ihn gezielt.",
+    "2. Achsenbasierte Ansätze wie Parallelkoordinaten stellen jedes Attribut als Achse dar und verbinden Werte mit Linien.",
+    "3. Heatmaps verwenden Farben in einer Matrix zur Darstellung von Werten – besonders nützlich für tabellarische oder kategorische Daten.",
+    "Die Unterschiede liegen in Darstellbarkeit der Dimensionen, Interpretierbarkeit und Skalierbarkeit."
+  ],
+  "explanationJa": [
+    "3つ以上の属性を含む多変量データには、可視化のためのさまざまな手法があります。",
+    "1. 幾何学的アプローチ（投影型）では、データを2次元に投影して視覚化します：",
+    "   – Scatterplot-Matrixはすべての属性ペアに対して散布図を並べるもので、直交投影に対応します。",
+    "   – Hypersliceは、厳密な軸の割り当てをせず、一定の幅で2次元の断面を複数表示する手法です。",
+    "   – Prosection Viewは高次元空間の特定範囲（ハイパーキューブ）を選び、その投影部分を異なる色で可視化します。",
+    "2. 軸ベースのアプローチには、各属性に1本の軸を割り当て、複数の値を線でつなぐパラレル座標（Parallel Coordinates）などがあります。",
+    "3. ヒートマップは、値を色で表現するマトリクス形式の可視化で、特に大規模な表形式データに適しています。",
+    "これらの手法は、扱える次元数、読み取りやすさ、拡張性の点でそれぞれ特徴があります。"
+  ],
+  "originalSlideText": "1. Geometrische Ansätze (Projektion)\n   ▶ Scatterplot-Matrix\n     ▶ Entspricht orthogonaler Projektion\n   ▶ Hyperslice\n     ▶ Ohne strikte Festlegung auf orthogonale Projektionen\n     ▶ n² Schnitte fester Breite durch Daten legen\n   ▶ Prosection Views\n     ▶ Auswahl einer n-dimensionalen Teilmenge (Hypercube)\n     ▶ Wird bei Projektion mit anderer Farbe dargestellt\n2. Achsenbasierte Ansätze\n3. Heatmap",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 63,
+  "questionDe": "(s75–78) (mit Bild) Was ist eine Scatterplot-Matrix und welche Eigenschaften und Strukturen zeigt sie?",
+  "questionJa": "Scatterplot-Matrixとは何か？構造や特徴（対角・対称性・情報量など）は？",
+  "answerDe": [
+    "Scatterplot-Matrix: Matrix mit 2D-Streudiagrammen für alle Attributpaare",
+    "Diagonale: Histogramme oder Achsenbeschriftungen für einzelne Attribute",
+    "Symmetrisch zur Diagonalen (i,j entspricht j,i)",
+    "Erlaubt Erkennung von Korrelationen, Clustern, Ausreißern"
+  ],
+  "answerJa": [
+    "Scatterplot-Matrix：すべての属性ペアに対して2D散布図を並べたマトリクス形式の可視化手法",
+    "対角部分：各属性のヒストグラムや軸ラベルが表示される",
+    "行列は対称構造（i,jの要素はj,iと同じ情報）を持つ",
+    "相関、クラスタ、外れ値の視覚的な把握が可能"
+  ],
+  "explanationDe": [
+    "Eine Scatterplot-Matrix (auch SPLOM genannt) ist eine Sammlung von 2D-Streudiagrammen, die alle möglichen Attributpaare eines multi-variaten Datensatzes zeigt.",
+    "Wenn man z. B. 4 Attribute hat (A, B, C, D), enthält die Matrix 4 × 4 Felder. Jedes Feld (i,j) zeigt einen Scatterplot von Attribut i gegen j.",
+    "Die Diagonale (i = j) enthält typischerweise Histogramme oder Achsenbeschriftungen für jedes Attribut einzeln.",
+    "Die Matrix ist symmetrisch zur Diagonale, da der Scatterplot (A vs. B) dasselbe zeigt wie (B vs. A), nur gespiegelt.",
+    "Durch diese Darstellung lassen sich Korrelationen (z. B. lineare Beziehungen), Cluster (Gruppen) und Ausreißer leicht erkennen.",
+    "Beispiel: In einer SPLOM von Autodaten sieht man z. B., dass PS und Verbrauch stark korrelieren, während PS und Farbe keinen Zusammenhang zeigen."
+  ],
+  "explanationJa": [
+    "Scatterplot-Matrix（スキャッタープロットマトリクス）とは、多変量データに含まれるすべての属性ペアに対して、2次元の散布図を格子状に並べた可視化手法です。",
+    "例えば4つの属性（A, B, C, D）がある場合、4×4のマトリクスが作られ、各マス（i,j）に「属性i vs 属性j」の散布図が表示されます。",
+    "対角線（i = j）の部分は、通常、その属性単体の情報を表すヒストグラムや軸ラベルが表示されます。",
+    "この構造は対称的で、(A,B)の関係は(B,A)と同じ情報を持ちます（向きは反転）。",
+    "このようなマトリクス構成により、属性間の相関関係（例：直線的な関係）、クラスタ（似た値のグループ）、外れ値（他と離れた点）などが視覚的に簡単に把握できます。",
+    "例：自動車のデータを用いたSPLOMでは、「馬力（PS）」と「燃費（Verbrauch）」の間には強い相関が見える一方、「馬力」と「車の色（Farbe）」の間には何のパターンも見られないといった違いが視覚的に現れます。"
+  ],
+  "originalSlideText": "Scatterplot-Matrix\n▶ Für alle Attributpaare (i,j): 2D-Scatterplot\n▶ Diagonale: Histogramme oder Achsen\n▶ Symmetrie: (i,j) = (j,i)\n▶ Sichtbar: Korrelationen, Cluster, Ausreißer\n▶ Häufige Technik bei multi-variaten Daten",
+  "explanationImage": "lecture02/lecture05_ex27.png",
+  "questionImage": ""
+},
+{
+  "id": 64,
+  "questionDe": "(s75 & 80) (mit Bild) Was ist ein Hyperslice und wie funktioniert diese Projektion?",
+  "questionJa": "Hypersliceとは何か？どのように高次元データを2次元的に可視化するか？",
+  "answerDe": [
+    "Hyperslice: Darstellung von multi-variaten Daten durch 2D-Schnitte entlang Attributpaare",
+    "Für n Attribute entstehen n(n−1)/2 Teilansichten",
+    "Fokus liegt auf einem Datenpunkt (z. B. Mausposition)",
+    "Jeder Plot zeigt eine 2D-Scheibe mit fixierten übrigen Attributen"
+  ],
+  "answerJa": [
+    "Hyperslice：高次元データを2つずつの属性ペアに沿って2次元的に切り出して可視化する手法",
+    "n個の属性に対して、n(n−1)/2個のサブプロットが作成される",
+    "1つのデータ点（例：マウス位置）を中心に、他の属性を固定して断面を表示する",
+    "各図は選ばれた2属性の平面での断面図を示す"
+  ],
+  "explanationDe": [
+    "Der Hyperslice-Ansatz ist eine Technik zur Darstellung von hochdimensionalen (multi-variaten) Daten durch mehrere 2D-Schnitte.",
+    "Für jede Kombination von zwei Attributen wird eine eigene 2D-Ansicht erzeugt – die übrigen Attribute werden konstant gehalten (z. B. auf den Wert eines Fokuspunktes).",
+    "Wenn man z. B. 5 Attribute hat, ergeben sich 5×(5−1)/2 = 10 solche Slices.",
+    "Diese Darstellungen zeigen, wie sich der Zielwert (z. B. eine Funktion oder Datenpunkt) entlang jedes Attributpaares verändert.",
+    "Ein häufiges Anwendungsszenario ist, dass man mit der Maus einen Punkt auswählt (z. B. Mauszeiger), und für diesen Punkt werden dann alle 2D-Projektionen dargestellt.",
+    "So lassen sich lokale Strukturen, Gradienten oder Extremstellen erkennen – ähnlich wie bei medizinischen CT-Schnitten durch ein Organ."
+  ],
+  "explanationJa": [
+    "Hyperslice（ハイパースライス）は、多変量（高次元）データを2次元の断面に分割して視覚化する手法です。",
+    "具体的には、すべての属性ペア（例：a1とa2、a1とa3など）について、他のすべての属性の値を固定した状態で、2次元平面上に切り出された断面（スライス）を表示します。",
+    "たとえば5つの属性があれば、5×(5−1)/2 = 10個の2次元スライスが表示されます。",
+    "これらの図は、中心点（ユーザーが選んだ基準点）を通る方向の断面であり、データの「局所的な構造」や傾き、変化の方向を視覚的に把握するのに役立ちます。",
+    "医療画像（CTスキャン）で、ある臓器の断面をいろいろな方向からスライスして見るのと似た考え方です。",
+    "Hypersliceは、特に局所的な変動を分析したい場合や高次元関数の可視化に効果的です。"
+  ],
+  "originalSlideText": "Hyperslice\n▶ Für jede Kombination zweier Attribute (a_i, a_j):\n– 2D-Scheibe durch den Datenraum\n– Fixierung der restlichen Attribute (z. B. durch Mausposition)\n▶ Bei n Attributen: n(n−1)/2 Teilplots\n▶ Fokus auf lokalen Ausschnitt",
+  "explanationImage": "lecture02/lecture05_ex28.png",
+  "questionImage": ""
+},
+{
+  "id": 65,
+  "questionDe": "(s75 & 81) (mit Bild) Was sind Prosection Views und wie werden sie interpretiert?",
+  "questionJa": "Prosection Viewとは何か？どのようにデータ構造を切り出して解釈するのか？",
+  "answerDe": [
+    "Prosection View: 2D-Projektion eines höherdimensionalen Raums mit Filterung der restlichen Dimensionen",
+    "Nicht-fokussierte Dimensionen werden auf einen Bereich (z. B. ±ε) um den Fokuspunkt eingeschränkt",
+    "Ermöglicht gezielte Untersuchung lokaler Datenstrukturen in ausgewählten Attributpaaren"
+  ],
+  "answerJa": [
+    "Prosection View：高次元空間を2次元に投影し、他の次元を狭い範囲（例：±ε）に制限してスライスする手法",
+    "注目していない次元は、指定した範囲に収まるデータのみを可視化対象とする",
+    "特定の属性ペアの局所的な関係性を抽出・分析するのに適している"
+  ],
+  "explanationDe": [
+    "Prosection Views sind eine Methode zur Visualisierung hochdimensionaler Daten durch Kombination von Projektion und Selektion.",
+    "Im Gegensatz zum Hyperslice, der alle nicht-fokussierten Dimensionen fixiert, werden bei der Prosection die restlichen Dimensionen auf eine kleine Umgebung eines Fokuswerts eingeschränkt (z. B. ±ε).",
+    "Man erhält also eine 'Scheibe' im n-dimensionalen Raum, in der man sich gezielt auf einen lokalen Bereich konzentriert.",
+    "Diese reduzierte Menge wird dann auf zwei ausgewählte Attribute projiziert und als 2D-Scatterplot dargestellt.",
+    "So kann man z. B. in einem medizinischen Datensatz gezielt untersuchen, wie sich Blutdruck und Puls bei Patienten mit ähnlichem Alter und Gewicht verhalten.",
+    "Prosection Views ermöglichen eine flexible, fokussierte Analyse, bei der Zusammenhänge auch bei hoher Dimensionalität erkannt werden können."
+  ],
+  "explanationJa": [
+    "Prosection View（プロセクションビュー）は、高次元データを2次元的に可視化する手法の一つで、「投影」と「選択（フィルタリング）」を組み合わせて使います。",
+    "Hypersliceが他の属性を固定して断面を表示するのに対し、Prosectionではそれらをある範囲（±ε）に制限し、範囲内のデータだけを可視化に使います。",
+    "これにより、ある属性の組（例えば身長と体重）の関係を、特定の年齢層や血圧範囲に限定して観察する、といったことが可能になります。",
+    "このフィルタリングされたデータを2つの属性に投影して描画することで、局所的な構造や関係性にフォーカスした分析ができます。",
+    "例えば医療データで、60歳前後でBMIが一定の患者群における血圧と脈拍の関係を抽出して見る、といった応用が可能です。",
+    "Prosection Viewは、多次元空間の中の特定領域に注目して可視化するための強力な方法です。"
+  ],
+  "originalSlideText": "Prosection View\n▶ Projektion in zwei Dimensionen\n▶ Alle anderen Dimensionen werden auf einen kleinen Bereich (±ε) um einen Fokuspunkt beschränkt\n▶ Erlaubt Untersuchung lokaler Muster\n▶ Alternative zu Hyperslice: statt Fixierung → Einschränkung",
+  "explanationImage": "lecture02/lecture05_ex29.png",
+  "questionImage": ""
 }
+
+
+
+
 
 
 
