@@ -2163,7 +2163,7 @@
     "1. Geometrische Ansätze projizieren Daten in niedrigdimensionale Räume (z. B. 2D):",
     "   – Die Scatterplot-Matrix zeigt alle paarweisen Kombinationen und entspricht orthogonaler Projektion.",
     "   – Hyperslice erzeugt 2D-Schnitte durch den Raum ohne strikte Achsenzuordnung.",
-    "   – Prosection Views zeigen einen ausgewählten Bereich (Hypercube) und färben ihn gezielt.",
+    "   – Prosection Views zeigen einen Bereich (range/section) einer Zielprojektion und heben Datenpunkte hervor, die in anderen Dimensionen eingeschränkt sind.",
     "2. Achsenbasierte Ansätze wie Parallelkoordinaten stellen jedes Attribut als Achse dar und verbinden Werte mit Linien.",
     "3. Heatmaps verwenden Farben in einer Matrix zur Darstellung von Werten – besonders nützlich für tabellarische oder kategorische Daten.",
     "Die Unterschiede liegen in Darstellbarkeit der Dimensionen, Interpretierbarkeit und Skalierbarkeit."
@@ -2173,7 +2173,7 @@
     "1. 幾何学的アプローチ（投影型）では、データを2次元に投影して視覚化します：",
     "   – Scatterplot-Matrixはすべての属性ペアに対して散布図を並べるもので、直交投影に対応します。",
     "   – Hypersliceは、厳密な軸の割り当てをせず、一定の幅で2次元の断面を複数表示する手法です。",
-    "   – Prosection Viewは高次元空間の特定範囲（ハイパーキューブ）を選び、その投影部分を異なる色で可視化します。",
+    "   – Prosection Viewは、ある次元ペア（例：p1 と p2）の投影空間において、他の次元（例：p3）の値がある範囲内にあるデータだけを表示し、それによって関心領域を強調する手法です。",
     "2. 軸ベースのアプローチには、各属性に1本の軸を割り当て、複数の値を線でつなぐパラレル座標（Parallel Coordinates）などがあります。",
     "3. ヒートマップは、値を色で表現するマトリクス形式の可視化で、特に大規模な表形式データに適しています。",
     "これらの手法は、扱える次元数、読み取りやすさ、拡張性の点でそれぞれ特徴があります。"
