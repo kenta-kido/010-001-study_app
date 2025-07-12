@@ -35,7 +35,7 @@
   {
     "id": 2,
     "questionDe": "(s.25) Nennen Sie vier Motivationen für Clustering.",
-    "questionJa": "クラスタリングを行う動機・目的を4つ挙げよ。",
+    "questionJa": "★クラスタリングを行う動機・目的を4つ挙げよ。",
     "answerDe": [
       "Suche nach Gemeinsamkeiten und Unterschieden",
       "Suche nach zusätzlicher Struktur in den Daten",
@@ -43,10 +43,10 @@
       "Analyse der Cluster anstelle einzelner Datenpunkte"
     ],
     "answerJa": [
-      "共通点や相違点の発見",
-      "データ内の追加的な構造の探索",
-      "複数のデータ点を代表点で置き換える",
-      "個別のデータ点ではなくクラスタ単位で分析する"
+      "★共通点や相違点の発見",
+      "★データ内の追加的な構造の探索",
+      "★複数のデータ点を代表点で置き換える",
+      "★個別のデータ点ではなくクラスタ単位で分析する"
     ],
     "explanationDe": [
       "Clustering hilft, Gruppen von ähnlichen Objekten zu identifizieren – das erleichtert die Analyse großer Datenmengen.",
@@ -195,7 +195,7 @@
   {
     "id": 7,
     "questionDe": "(s.31) Erklären Sie den k-means Clustering Algorithmus ausführlich.",
-    "questionJa": "k-meansクラスタリングアルゴリズムの手順を丁寧に説明せよ。",
+    "questionJa": "★k-meansクラスタリングアルゴリズムの手順を丁寧に説明せよ。",
     "answerDe": [
       "1. Lege die gewünschte Anzahl an Clustern k fest.",
       "2. Wähle zufällig k Datenpunkte als Startzentren (Cluster-Zentren).",
@@ -206,13 +206,13 @@
       "* Ein stabiler Zustand bedeutet, dass die Zuweisung der Instanzen zu den Clustern unverändert bleibt."
     ],
     "answerJa": [
-      "1. 分類したいクラスタの数 k を決める。",
-      "2. データからランダムに k 個の点を選び、それらを初期クラスタ中心（クラスタの代表点）とする。",
-      "3. 各データ点について、全てのクラスタ中心との距離を計算する。",
-      "4. 各データ点を、最も近いクラスタ中心に割り当てる（ユークリッド距離などを使用）。",
-      "5. 各クラスタに属する点の平均を計算し、新しいクラスタ中心とする。",
-      "6. 割り当てが変化しなくなるまで（＝クラスタが安定するまで*）、手順3〜5を繰り返す。",
-      "* クラスタが安定するとは、各データ点の所属が変わらず、中心も変化しないことを意味します。"
+      "★1. 分類したいクラスタの数 k を決める。",
+      "★2. データからランダムに k 個の点を選び、それらを初期クラスタ中心（クラスタの代表点）とする。",
+      "★3. 各データ点について、全てのクラスタ中心との距離を計算する。",
+      "★4. 各データ点を、最も近いクラスタ中心に割り当てる（ユークリッド距離などを使用）。",
+      "★5. 各クラスタに属する点の平均を計算し、新しいクラスタ中心とする。",
+      "★6. 割り当てが変化しなくなるまで（＝クラスタが安定するまで*）、手順3〜5を繰り返す。",
+      "★* クラスタが安定するとは、各データ点の所属が変わらず、中心も変化しないことを意味します。"
     ],
     "explanationDe": [
       "Der k-means Algorithmus ist ein häufig genutztes Verfahren zum Clustern von Daten.",
@@ -237,7 +237,7 @@
   {
     "id": 8,
     "questionDe": "(s.31) Wie ist die Komplexität des k-means Algorithmus?",
-    "questionJa": "k-meansクラスタリングの計算量はどのように見積もられるか？",
+    "questionJa": "★k-meansクラスタリングの計算量はどのように見積もられるか？",
     "answerDe": [
       "Die Komplexität des k-means Algorithmus hängt von der Anzahl der Cluster k, der Anzahl der Datenpunkte n und der Dimensionalität m ab.",
       "Pro Iteration: ",
@@ -246,11 +246,11 @@
       "Bei T Iterationen ergibt sich die Gesamtkosten: O(T · k · n · m)"
     ],
     "answerJa": [
-      "k-meansアルゴリズムの計算量は、クラスタ数 k、データ数 n、次元数 m に依存します。",
+      "★k-meansアルゴリズムの計算量は、クラスタ数 k、データ数 n、次元数 m に依存します。",
       "各繰り返しごとに：",
-      "– ステップ3（各データ点を最も近いクラスタ中心に割り当てる）: O(k・n・m)",
-      "– ステップ5（クラスタ中心の更新）: O(k・n・m)",
-      "反復回数を T とすると、全体の計算量は O(T・k・n・m) となります。"
+      "★– ステップ3（各データ点を最も近いクラスタ中心に割り当てる）: O(k・n・m)",
+      "★– ステップ5（クラスタ中心の更新）: O(k・n・m)",
+      "★反復回数を T とすると、全体の計算量は O(T・k・n・m) となります。"
     ],
     "explanationDe": [
       "Bei k-means wird in jeder Iteration zunächst für jeden der n Datenpunkte der Abstand zu jedem der k Cluster-Zentren berechnet.",
@@ -269,7 +269,7 @@
   {
     "id": 9,
     "questionDe": "(s.32) Wie kann man die Qualität des k-means Clusterings messen?",
-    "questionJa": "k-meansクラスタリングの品質はどのように評価されるか？",
+    "questionJa": "★k-meansクラスタリングの品質はどのように評価されるか？",
     "answerDe": [
       "Die Qualität wird durch die Summe der quadrierten Abstände der Datenpunkte zu ihren jeweiligen Clusterzentren gemessen.",
       "Formel: q = ∑(i=1 bis k) ∑(j=1 bis nᵢ) (dᵢⱼ − zᵢ)²",
@@ -302,7 +302,7 @@
   {
     "id": 10,
     "questionDe": "(s.32) Welche Probleme hat der k-means Algorithmus? Nenne 5 Einflussfaktoren.",
-    "questionJa": "k-meansアルゴリズムの問題点は何か？結果に影響を与える要因を5つ挙げよ。",
+    "questionJa": "★k-meansアルゴリズムの問題点は何か？結果に影響を与える要因を5つ挙げよ。",
     "answerDe": [
       "1. Der Algorithmus berechnet nur ein lokales Minimum von q, kein globales.",
       "2. Die Ergebnisse hängen ab von:",
@@ -313,10 +313,10 @@
       "   – der Wahl des entferntesten Punktes vom Zentrum"
     ],
     "answerJa": [
-      "1. k-meansはqの局所的な最小値しか見つけられず、全体として最良（グローバル最小）な結果を保証できません。",
-      "2. 結果は以下の5つの要因に影響されます：",
-      "   – クラスタ数kの選び方",
-      "   – 初期クラスタ中心の選び方",
+      "★1. k-meansはqの局所的な最小値しか見つけられず、全体として最良（グローバル最小）な結果を保証できません。",
+      "★2. 結果は以下の5つの要因に影響されます：",
+      "   ★– クラスタ数kの選び方",
+      "   ★– 初期クラスタ中心の選び方",
       "   – 空クラスタ（データが割り当てられないクラスタ）への対応戦略",
       "   – 各クラスタのデータ数やばらつき（分散）",
       "   – クラスタ中心から最も遠い点を次の中心に選ぶかどうか"
@@ -334,14 +334,14 @@
   {
     "id": 11,
     "questionDe": "(s.33) Wie kann man das Ergebnis des k-means Algorithmus verbessern?",
-    "questionJa": "k-meansクラスタリングの結果を改善するにはどうすればよいか？",
+    "questionJa": "★k-meansクラスタリングの結果を改善するにはどうすればよいか？",
     "answerDe": [
       "Führe den k-means Algorithmus mehrfach mit unterschiedlichen Startzentren aus.",
       "Wähle das Ergebnis mit dem geringsten Wert für die Qualitätsfunktion q."
     ],
     "answerJa": [
-      "k-meansクラスタリングを異なる初期中心で複数回実行し、",
-      "その中で品質評価値qが最も小さい結果を採用する。"
+      "★k-meansクラスタリングを異なる初期中心で複数回実行し、",
+      "★その中で品質評価値qが最も小さい結果を採用する。"
     ],
     "explanationDe": [
       "Da das Ergebnis stark von den Startzentren abhängt, kann eine zufällige Wahl zu schlechten Clustern führen.",
@@ -358,7 +358,7 @@
   {
     "id": 12,
     "questionDe": "(s.33) Was ist k-means++ und wie verbessert es den Algorithmus? Nenne 3 Aspekte.",
-    "questionJa": "k-means++とは何か？アルゴリズムをどのように改善するのか。3つ挙げよ。",
+    "questionJa": "★k-means++とは何か？アルゴリズムをどのように改善するのか。3つ挙げよ。",
     "answerDe": [
       "1. Wähle den ersten Startpunkt zufällig.",
       "2. Wähle weitere Startpunkte mit einer Wahrscheinlichkeit proportional zur Entfernung zu bestehenden Zentren.",
@@ -384,11 +384,11 @@
   {
     "id": 13,
     "questionDe": "(s.34) Wie kann man eine geeignete Anzahl k der Cluster im k-means bestimmen? Nenne 3 Methoden.",
-    "questionJa": "k-meansクラスタリングにおいて、クラスタ数kを適切に決める方法を3つ挙げよ。",
+    "questionJa": "★k-meansクラスタリングにおいて、クラスタ数kを適切に決める方法を3つ挙げよ。",
     "answerDe": [
-      "1. Nutze die Faustregel: k = Wurzel(n / 2)",
-      "2. Nutze Expertenwissen aus der Domäne.",
-      "3. Teste verschiedene Werte für k (z. B. von k−2 bis k+2) und vergleiche die Ergebnisse."
+      "★1. Nutze die Faustregel: k = Wurzel(n / 2)",
+      "★2. Nutze Expertenwissen aus der Domäne.",
+      "★3. Teste verschiedene Werte für k (z. B. von k−2 bis k+2) und vergleiche die Ergebnisse."
     ],
     "answerJa": [
       "1. 経験則により k = √(n / 2) とする。",
@@ -412,8 +412,8 @@
     "questionDe": "(s.34) Wie kann man die Qualität eines Clustering-Ergebnisses bewerten? Nenne 4 mögliche Indizes.",
     "questionJa": "クラスタリングの結果の良さを評価するにはどうすればよいか？4つの指標を挙げよ。",
     "answerDe": [
-      "1. Davies-Bouldin Index",
-      "2. Modified Hubert Γ",
+      "★1. Davies-Bouldin Index",
+      "★2. Modified Hubert Γ",
       "3. Dunn Index",
       "4. Silhouette Coefficient"
     ],
@@ -441,7 +441,7 @@
   {
     "id": 15,
     "questionDe": "(s.34) Erklären Sie den Aufbau des Davies-Bouldin Index zur Bewertung von Clustering-Ergebnissen.",
-    "questionJa": "（スライド34）クラスタリング結果を評価するためのDavies-Bouldin Indexの構成を説明せよ。",
+    "questionJa": "★（スライド34）クラスタリング結果を評価するためのDavies-Bouldin Indexの構成を説明せよ。",
     "answerDe": [
       "Der Index besteht aus zwei Hauptkomponenten: Kohäsion und Trennung.",
       "Kohäsion S_i misst die mittlere Abweichung der Punkte im Cluster i von ihrem Zentrum.",
@@ -456,7 +456,7 @@
       "M_{i,j}はクラスタiとjの中心点間の距離を表す。",
       "R_{i,j} = (S_i + S_j) / M_{i,j} はクラスタiとjの類似度を表し、小さいほど良い。",
       "各クラスタiについて、最も類似度が高い他クラスタとのR_{i,j}（最悪ケース）をD_iと定義する。",
-      "Davies-Bouldin Indexは全クラスタのD_iの平均で定義され、値が小さいほどクラスタリングの質が良いとされる。"
+      "★Davies-Bouldin Indexは全クラスタのD_iの平均で定義され、値が小さいほどクラスタリングの質が良いとされる。"
     ],
     "explanationDe": [
       "Der Davies-Bouldin Index bewertet, wie gut ein Clustering gelungen ist, indem er misst, wie eng Punkte innerhalb eines Clusters beieinanderliegen (Kohäsion) und wie weit Cluster voneinander entfernt sind (Trennung).",
@@ -516,7 +516,7 @@
   {
     "id": 17,
     "questionDe": "(s.36) Wie bestimmt man mit Hilfe des Davies-Bouldin Index die optimale Anzahl an Clustern anhand der Tabelle und des Diagramms?",
-    "questionJa": "（スライド36）グラフを用いて、Davies-Bouldin Index による最適なクラスタ数の決定方法を説明せよ。",
+    "questionJa": "★（スライド36）グラフを用いて、Davies-Bouldin Index による最適なクラスタ数の決定方法を説明せよ。",
     "answerDe": [
       "Berechne den Davies-Bouldin Index für verschiedene k-Werte",
       "Trage die Werte in einer Tabelle und einem Diagramm auf",
@@ -526,8 +526,8 @@
     "answerJa": [
       "さまざまなクラスタ数 k に対して Davies-Bouldin Index を計算する",
       "得られた値を表やグラフにまとめて比較する",
-      "最も Davies-Bouldin Index が小さい k を選ぶ",
-      "この例では、最小値は k = 6 のときに得られる"
+      "★最も Davies-Bouldin Index が小さい k を選ぶ",
+      "★この例では、最小値は k = 6 のときに得られる"
     ],
     "explanationDe": [
       "Der Davies-Bouldin Index misst die Qualität eines Clusterings – je kleiner der Wert, desto besser ist die Trennung und Kompaktheit der Cluster.",
@@ -549,7 +549,7 @@
   {
     "id": 18,
     "questionDe": "(s.38) Erklären Sie die Berechnung und Bedeutung des Modified Hubert Γ Index.",
-    "questionJa": "（スライド38）Modified Hubert Γ 指数の計算方法とその意味を説明せよ。",
+    "questionJa": "★（スライド38）Modified Hubert Γ 指数の計算方法とその意味を説明せよ。",
     "answerDe": [
       "Nutzt eine Clusterzuweisung L(i), die jedes Objekt einem Cluster zuordnet",
       "Verwendet zwei Matrizen: X(i,j) misst Abstand der Objekte, Y(i,j) misst Abstand ihrer Clusterzentren",
@@ -585,7 +585,7 @@
   {
     "id": 19,
     "questionDe": "(s.39) Wie bestimmt man anhand des Modified Hubert Γ Index die optimale Anzahl an Clustern?",
-    "questionJa": "（スライド39）グラフを用いて、Modified Hubert Γ 指数を使った最適なクラスタ数の決定方法を説明せよ。",
+    "questionJa": "★（スライド39）グラフを用いて、Modified Hubert Γ 指数を使った最適なクラスタ数の決定方法を説明せよ。",
     "answerDe": [
       "Berechne den Hubert Γ Index für verschiedene k-Werte",
       "Trage die Werte in eine Tabelle und ein Diagramm ein",
@@ -594,7 +594,7 @@
     "answerJa": [
       "複数のクラスタ数 k に対して Modified Hubert Γ 値を計算する",
       "結果を表とグラフで確認する",
-      "Γ 値が最も大きく増加した k を選ぶ"
+      "★Γ 値が最も大きく増加した k を選ぶ"
     ],
     "explanationDe": [
       "Der Modified Hubert Γ Index hilft bei der Auswahl der optimalen Anzahl von Clustern.",
@@ -608,7 +608,7 @@
       "このスライドでは、クラスタ数 k = 3〜9 に対して Γ の値を計算し、それを表とグラフにして比較しています。",
       "最も注目すべきなのは、Γ 値が大きく上昇するポイントです。そこが最もクラスタ構造が改善されたタイミングと見なされます。",
       "具体的には、k = 4 の値（0.97873×10¹¹）から k = 5（1.11428×10¹¹）への上昇が最も大きいため、k = 5 が最適とされます。",
-      "これは『エルボー法』に似た考え方で、急激な変化点を最適と見なします。"
+      "★これは『エルボー法』に似た考え方で、急激な変化点を最適と見なします。"
     ],
     "originalSlideText": "• Davies Bouldin Index\n\n| k | Modified Hubert Γ |\n|---|---------------------|\n| 3 | 1,01844 · 10¹¹       |\n| 4 | 0,97873 · 10¹¹       |\n| 5 | 1,11428 · 10¹¹       |\n| 6 | 1,15922 · 10¹¹       |\n| 7 | 1,15276 · 10¹¹       |\n| 8 | 1,08876 · 10¹¹       |\n| 9 | 1,10869 · 10¹¹       |\n\n– Wähle k nach dem größten Anstieg: 5",
     "explanationImage": "",
@@ -647,14 +647,14 @@
   {
     "id": 21,
     "questionDe": "(s.42) Wie bestimmt man die optimale Clusteranzahl mit dem Dunn-Index anhand der grafischen Darstellung?",
-    "questionJa": "（スライド42）Dunnインデックスとそのグラフを用いて最適なクラスタ数をどのように決定するか？",
+    "questionJa": "★（スライド42）Dunnインデックスとそのグラフを用いて最適なクラスタ数をどのように決定するか？",
     "answerDe": [
       "Berechne den Dunn-Index für verschiedene k-Werte",
       "Wähle den k-Wert mit dem kleinsten Dunn-Index"
     ],
     "answerJa": [
       "さまざまなクラスタ数 k に対して Dunn インデックスを計算する",
-      "最も Dunn インデックスが小さい k を選択する"
+      "★最も Dunn インデックスが小さい k を選択する"
     ],
     "explanationDe": [
       "Der Dunn-Index ist ein Maß für die Qualität einer Clusterlösung: Er kombiniert Informationen über die Trennung der Cluster und deren Kompaktheit.",
@@ -666,7 +666,7 @@
     "explanationJa": [
       "Dunnインデックスは、クラスタの分離度（どれだけ離れているか）と凝集度（どれだけ密集しているか）を組み合わせて評価する指標です。",
       "このスライドのグラフには、クラスタ数 k を3から9まで変化させたときのDunnインデックスの値が描かれています。",
-      "一般的に、Dunnインデックスが小さいほど、クラスタが互いに離れていて、各クラスタ内のデータがよくまとまっていると考えられます。",
+      "★一般的に、Dunnインデックスが小さいほど、クラスタが互いに離れていて、各クラスタ内のデータがよくまとまっていると考えられます。",
       "この例では、k=6 のときに Dunnインデックスが最も小さく（約0.00055217）、このクラスタ数が最も良い分割であると考えられます。",
       "例：複数の都市の顧客をクラスタリングしたいとき、Dunnインデックスが最も小さくなるクラスタ数が、顧客の分布の特徴を最もよく表しています。"
     ],
@@ -677,7 +677,7 @@
   {
     "id": 22,
     "questionDe": "Wie funktioniert der Algorithmus zum Aufbau eines k-d-Baums zur Nearest-Neighbor-Suche?",
-    "questionJa": "k-d木（k-d-Baum）を用いた最近傍探索の構築アルゴリズムはどのように動作しますか？",
+    "questionJa": "★k-d木（k-d-Baum）を用いた最近傍探索の構築アルゴリズムはどのように動作しますか？",
     "answerDe": [
       "1. Sortiere Punkte für jedes Attribut",
       "2. Beginne mit Attribut i = 1",
@@ -687,12 +687,12 @@
       "6. Erzeuge linken und rechten Kindknoten rekursiv, wenn nötig"
     ],
     "answerJa": [
-      "1. 各属性ごとにデータ点をソートする",
-      "2. 属性iを1に初期化する",
-      "3. ノードを作成し、再帰を開始する",
-      "4. データを中央値で分割する",
-      "5. 分割値を現在のノードに記録する",
-      "6. 必要に応じて、左と右の子ノードを再帰的に生成する"
+      "★1. 各属性ごとにデータ点をソートする",
+      "★2. 属性iを1に初期化する",
+      "★3. ノードを作成し、再帰を開始する",
+      "★4. データを中央値で分割する",
+      "★5. 分割値を現在のノードに記録する",
+      "★6. 必要に応じて、左と右の子ノードを再帰的に生成する"
     ],
     "explanationDe": [
       "Der Aufbau eines k-d-Baums ist ein rekursiver Algorithmus zur effizienten Suche von nächstgelegenen Nachbarn (Nearest Neighbor).",
@@ -716,15 +716,15 @@
   {
     "id": 23,
     "questionDe": "Was beschreibt der Silhouette Coefficient bei der Clusteranalyse?",
-    "questionJa": "クラスタ分析においてシルエット係数（Silhouette Coefficient）は何を示しますか？",
+    "questionJa": "★クラスタ分析においてシルエット係数（Silhouette Coefficient）は何を示しますか？",
     "answerDe": [
       "Er misst, wie gut ein Punkt zu seinem eigenen Cluster passt im Vergleich zu anderen Clustern.",
       "Er basiert auf den Abständen zu Punkten im eigenen und im nächstgelegenen fremden Cluster.",
       "Wird für jeden Punkt berechnet mit einem Wert zwischen -1 und 1."
     ],
     "answerJa": [
-      "シルエット係数は、あるデータ点が自分のクラスタにどれだけ適しているかを測る指標です。",
-      "自分のクラスタ内の点との距離と、最も近い別クラスタとの距離を比較します。",
+      "★シルエット係数は、あるデータ点が自分のクラスタにどれだけ適しているかを測る指標です。",
+      "★自分のクラスタ内の点との距離と、最も近い別クラスタとの距離を比較します。",
       "各点について -1〜1 の値で計算されます。"
     ],
     "explanationDe": [
@@ -737,7 +737,7 @@
       "シルエット係数 s(d_i) は、各データ点 d_i がどれだけ自分のクラスタにうまく収まっているかを評価するための指標です。",
       "具体的には、d_i が属するクラスタ C_i 内の他の点との平均距離と、最も近い別のクラスタ C_n との平均距離を比較して計算します。",
       "数式：s(d_i) = (d(d_i, C_n) – d(d_i, C_i)) / max{d(d_i, C_n), d(d_i, C_i)}",
-      "s(d_i) が1に近いほど自分のクラスタに適していることを意味し、0に近いと境界にあり、負の値は誤ってクラスタリングされている可能性を示します。"
+      "★s(d_i) が1に近いほど自分のクラスタに適していることを意味し、0に近いと境界にあり、負の値は誤ってクラスタリングされている可能性を示します。"
     ],
     "originalSlideText": "Erzeugung von Clustern\n• Silhouette Coefficient\n– Berechnung\n  s(d_i) = (d(d_i, C_n) – d(d_i, C_i)) / max{d(d_i, C_i), d(d_i, C_n)}\n  – Abstand zwischen d_i und einem Cluster C:\n    d(d_i, C) = (1 / n_C) * ∑_{d_j ∈ C} d(d_i, d_j)\n  – C_i: Cluster von d_i\n  – C_n = argmin_{C ≠ C_i} d(d_i, C): Cluster, der Element mit kleinstem Abstand zu d_i enthält",
     "explanationImage": "lecture01/lecture05_ex06.png",
@@ -775,7 +775,7 @@
 {
   "id": 25,
   "questionDe": "(s.44) Wie werden Silhouette-Werte interpretiert und zur Bewertung der Clusterqualität genutzt?",
-  "questionJa": "シルエット係数の値はどのように解釈され、クラスタの質の評価にどう使われますか？",
+  "questionJa": "★シルエット係数の値はどのように解釈され、クラスタの質の評価にどう使われますか？",
   "answerDe": [
     "s > 0,75 → starke Trennung",
     "0,5 < s ≤ 0,75 → normale Clusterung",
@@ -843,7 +843,7 @@
 {
   "id": 27,
   "questionDe": "(s.46) Wie kann das k-means Clustering effizienter gemacht werden?",
-  "questionJa": "k-meansクラスタリングを効率化する方法にはどのようなものがありますか？",
+  "questionJa": "★k-meansクラスタリングを効率化する方法にはどのようなものがありますか？",
   "answerDe": [
     "Durch Raumteilungsverfahren wie k-d-Bäume oder Ball-Trees",
     "Durch Parallelisierung der Berechnungen"
@@ -914,8 +914,8 @@
   ],
   "answerJa": [
     "最近傍探索：O(n・log n)",
-    "データ点が多い場合に有効",
-    "次元数が8を超えると遅くなる（HD2015）"
+    "★データ点が多い場合に有効",
+    "★次元数が8を超えると遅くなる（HD2015）"
   ],
   "explanationDe": [
     "Die Nearest-Neighbor-Suche ist ein zentraler Bestandteil von k-means, da jeder Punkt dem nächstgelegenen Clusterzentrum zugewiesen werden muss.",
@@ -977,7 +977,7 @@
 {
   "id": 31,
   "questionDe": "(s.49) Wie funktioniert das Evidence Accumulation Clustering nach FJ2002?",
-  "questionJa": "Evidence Accumulation Clustering（FJ2002）はどのような仕組みで動作しますか？",
+  "questionJa": "★Evidence Accumulation Clustering（FJ2002）はどのような仕組みで動作しますか？",
   "answerDe": [
     "Unterteile: Mehrfaches k-means mit unterschiedlichen Initialisierungen",
     "Verbinde: Berechne co_assoc(i,j) = votes_{i,j} / N",
@@ -1011,7 +1011,7 @@
 {
   "id": 32,
   "questionDe": "(s.50) Wie funktioniert der Algorithmus für Evidence Accumulation nach FJ2002 im Detail?",
-  "questionJa": "Evidence Accumulation（FJ2002）のアルゴリズムは具体的にどのように動作しますか？",
+  "questionJa": "★Evidence Accumulation（FJ2002）のアルゴリズムは具体的にどのように動作しますか？",
   "answerDe": [
     "Führe k-means N-mal aus mit unterschiedlichen Startzentren",
     "Aktualisiere co_assoc(i,j) bei jedem Lauf: +1/N",
@@ -1046,7 +1046,7 @@
 {
   "id": 33,
   "questionDe": "(s.51) Was zeigt die Assoziationsmatrix im Rahmen von Evidence Accumulation anhand dieses Beispiels?",
-  "questionJa": "この例において、Evidence Accumulation によるアソシエーション行列は何を示していますか？",
+  "questionJa": "★この例において、Evidence Accumulation によるアソシエーション行列は何を示していますか？",
   "answerDe": [
     "Sie basiert auf 4 Durchläufen von k-means mit k = 2.",
     "Jeder Eintrag gibt an, wie oft zwei Objekte gemeinsam im selben Cluster waren.",
@@ -1112,14 +1112,14 @@
 {
   "id": 35,
   "questionDe": "(s.53) Welche Speicherprobleme entstehen bei Evidence Accumulation und welche Alternativen gibt es?",
-  "questionJa": "Evidence Accumulation ではどのようなメモリ上の問題があり、それに対する代替策は何ですか？",
+  "questionJa": "★Evidence Accumulation ではどのようなメモリ上の問題があり、それに対する代替策は何ですか？",
   "answerDe": [
     "Die Co-Assoziationsmatrix braucht O(n²) Speicher",
     "Alternative: Cluster-Zugehörigkeit pro Lauf speichern (O(n·k))",
     "Verwende Hamming-Distanz zur Gruppierung"
   ],
   "answerJa": [
-    "co-association 行列は O(n²) のメモリを消費する",
+    "★co-association 行列は O(n²) のメモリを消費する",
     "代替案：各実行ごとのクラスタ所属情報のみを保存（O(n·k)）",
     "クラスタベクトル間のハミング距離でグループ化を行う"
   ],
@@ -1145,7 +1145,7 @@
 {
   "id": 36,
   "questionDe": "(s.54) Was zeigt das Beispiel für Consensus Clustering mit k-means?",
-  "questionJa": "この k-means を用いた Consensus Clustering の例は何を示していますか？",
+  "questionJa": "★この k-means を用いた Consensus Clustering の例は何を示していますか？",
   "answerDe": [
     "4 Läufe k-means mit k = 2",
     "Consensus Clustering ergibt 3 Cluster",
@@ -1181,7 +1181,7 @@
 {
   "id": 37,
   "questionDe": "(s.55) Was ist der Unterschied zwischen agglomerativem und divisivem hierarchischem Clustering?",
-  "questionJa": "凝集型（agglomerativ）と分割型（divisiv）の階層的クラスタリングの違いは何ですか？",
+  "questionJa": "★凝集型（agglomerativ）と分割型（divisiv）の階層的クラスタリングの違いは何ですか？",
   "answerDe": [
     "Agglomerativ: Bottom-up Technik, Start mit m Einzelobjekten",
     "Divisiv: Top-down Technik, Start mit einer Gesamtklasse",
@@ -1275,10 +1275,10 @@
 {
   "id": 40,
   "questionDe": "(s.58) Welche Abstandsmaße werden beim agglomerativen Clustering verwendet?",
-  "questionJa": "凝集型クラスタリングで使われる距離（リンク関数）はどのようなものですか？",
+  "questionJa": "★凝集型クラスタリングで使われる距離（リンク関数）はどのようなものですか？",
   "answerDe": [
     "Oft wird die euklidische Distanz verwendet",
-    "Single Linkage: minimale Distanz zwischen Punkten zweier Cluster",
+    "★Single Linkage: minimale Distanz zwischen Punkten zweier Cluster",
     "Complete Linkage: maximale Distanz zwischen Punkten zweier Cluster",
     "Achtung: euklidische Distanz ist nicht skalierungsinvariant"
   ],

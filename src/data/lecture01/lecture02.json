@@ -396,7 +396,7 @@
   {
     "id": 16,
     "questionDe": "(s.9) Was ist eine instanzbasierte Methode im Data Mining?",
-    "questionJa": "Data Miningにおけるインスタンスベースの手法とは何か？",
+    "questionJa": "★Data Miningにおけるインスタンスベースの手法とは何か？",
     "answerDe": [
       "Instanzbasierte Methoden lernen einzelne Beispiele und generalisieren daraus"
     ],
@@ -418,7 +418,7 @@
   {
     "id": 17,
     "questionDe": "(s.10) Nennen Sie zwei Ursachen von Overfitting und eine Maßnahme zur Vermeidung.",
-    "questionJa": "過学習の原因を2つ、それを防ぐための対策を1つ挙げよ。",
+    "questionJa": "★過学習の原因を2つ、それを防ぐための対策を1つ挙げよ。",
     "answerDe": [
       "Zu genaue Trainingsdaten führen zu überspezifischen Modellen",
       "Alle Datenpunkte als Regel zu lernen ist zu spezifisch",
@@ -444,7 +444,7 @@
   {
     "id": 18,
     "questionDe": "(s.10) Wie kann Overfitting bei der Regelbildung im Data Mining vermieden werden? Nennen Sie eine Strategie und zwei Pruning-Techniken.",
-    "questionJa": "Data Miningにおけるルール生成において、過学習を防ぐにはどうすればよいか。1つの戦略と2つのプルーニング手法を挙げよ。",
+    "questionJa": "★Data Miningにおけるルール生成において、過学習を防ぐにはどうすればよいか。1つの戦略と2つのプルーニング手法を挙げよ。",
     "answerDe": [
       "Bottom-Up: Aufbau komplexer Regeln aus einfachen",
       "Forward-Pruning: Stop bei ausreichender Komplexität",
@@ -472,7 +472,7 @@
   {
     "id": 19,
     "questionDe": "(s.11) Was sind wichtige Eigenschaften von Konzeptbeschreibungen im Data Mining? Nennen Sie drei.",
-    "questionJa": "Data Miningにおける概念記述の重要な性質を3つ挙げよ。",
+    "questionJa": "★Data Miningにおける概念記述の重要な性質を3つ挙げよ。",
     "answerDe": [
       "Verständlich",
       "Nachvollziehbar und diskutierbar",
@@ -500,7 +500,7 @@
   {
     "id": 20,
     "questionDe": "(s.11) Erklären Sie den Unterschied zwischen Instanzen und Attributen im Data Mining.",
-    "questionJa": "Data Miningにおけるインスタンスと属性の違いを説明せよ。",
+    "questionJa": "★Data Miningにおけるインスタンスと属性の違いを説明せよ。",
     "answerDe": [
       "Instanzen sind konkrete Beispiele für ein Konzept",
       "Attribute beschreiben die Eigenschaften einer Instanz"
@@ -556,7 +556,7 @@
   {
     "id": 22,
     "questionDe": "(s.13) Was ist Klassifikation im Data Mining und wie funktioniert sie?",
-    "questionJa": "Data Miningにおける分類とは何か、どのように機能するか説明せよ。",
+    "questionJa": "★Data Miningにおける分類とは何か、どのように機能するか説明せよ。",
     "answerDe": [
       "Klassifikation ordnet Daten einer vordefinierten Klasse zu",
       "Beispiel: Kontaktlinsenempfehlung basierend auf Attributen",
@@ -610,7 +610,7 @@
   {
     "id": 24,
     "questionDe": "(s.15) Was ist Clustering im Data Mining und welche Herausforderungen bestehen dabei?",
-    "questionJa": "Data Miningにおけるクラスタリングとは何か、またその際の課題を述べよ。",
+    "questionJa": "★Data Miningにおけるクラスタリングとは何か、またその際の課題を述べよ。",
     "answerDe": [
       "Clustering gruppiert Daten ohne vordefinierte Klassen",
       "Herausforderungen: Finden der Cluster, Zuordnung neuer Instanzen",
@@ -638,7 +638,7 @@
   {
     "id": 25,
     "questionDe": "(s.16) Was versteht man unter numerischer Vorhersage im Data Mining und worauf kommt es dabei an?",
-    "questionJa": "Data Miningにおける数値予測とは何か、それを行う上で重要な点を述べよ。",
+    "questionJa": "★Data Miningにおける数値予測とは何か、それを行う上で重要な点を述べよ。",
     "answerDe": [
       "Variante der Klassifikation mit numerischem Ergebnis",
       "Vorhersage von konkreten Zahlenwerten statt Kategorien",
@@ -666,7 +666,7 @@
   {
     "id": 26,
     "questionDe": "(s.17) Was ist eine Instanz im Data Mining und wie ist sie aufgebaut?",
-    "questionJa": "Data Miningにおけるインスタンスとは何か、それはどのように構成されるか？",
+    "questionJa": "★Data Miningにおけるインスタンスとは何か、それはどのように構成されるか？",
     "answerDe": [
       "Eine Instanz ist ein einzelnes Beispiel eines Konzepts",
       "Instanzen sind durch Attribute beschrieben",
@@ -692,7 +692,7 @@
   {
     "id": 27,
     "questionDe": "(s.18–19) Wie werden relationale Datenbanken für maschinelles Lernen vorbereitet und was bedeutet Denormalisierung?",
-    "questionJa": "関係データベースは機械学習のためにどのように準備されるか。また、デノーマライゼーションとは何か？",
+    "questionJa": "★関係データベースは機械学習のためにどのように準備されるか。また、デノーマライゼーションとは何か？",
     "answerDe": [
       "Tabellen aus relationalen Datenbanken werden zu einer Instanz-Tabelle zusammengeführt",
       "Dabei findet eine Denormalisierung statt",
@@ -720,7 +720,7 @@
   {
     "id": 28,
     "questionDe": "(s.20) Welche Herausforderungen entstehen bei der Suche nach Relationen in Daten?",
-    "questionJa": "データ中の関係性の探索において発生する課題を挙げよ。",
+    "questionJa": "★データ中の関係性の探索において発生する課題を挙げよ。",
     "answerDe": [
       "Suche kann komplex werden, z. B. bei Vorfahren-Beziehungen",
       "Rekursion und lange Pfade sind schwer zu behandeln",
@@ -748,7 +748,7 @@
   {
     "id": 29,
     "questionDe": "(s.21) Nennen Sie drei Eigenschaften von Attributen im Data Mining.",
-    "questionJa": "Data Miningにおける属性（Attribute）の特徴を3つ挙げよ。",
+    "questionJa": "★Data Miningにおける属性（Attribute）の特徴を3つ挙げよ。",
     "answerDe": [
       "Feste, vordefinierte Menge von Merkmalen",
       "Können in verschiedenen Instanzen unterschiedlich gültig sein",
@@ -756,7 +756,7 @@
     ],
     "answerJa": [
       "固定されたあらかじめ定義された特徴量の集合である",
-      "インスタンスごとに有効な属性が異なる場合がある",
+      "★インスタンスごとに有効な属性が異なる場合がある",
       "属性間に依存関係がある場合がある"
     ],
     "explanationDe": [
@@ -768,7 +768,7 @@
     "explanationJa": [
       "属性とは、インスタンスの特徴を記述する項目です。例：年齢、車の車輪の数など。",
       "すべてのインスタンスに対してすべての属性が常に意味を持つわけではありません。たとえば、車輪の数は陸上車両にとって意味がありますが、船にとっては意味がありません。一方で船にはマストの数という属性が意味を持ちます。",
-      "このような場合、無関係な属性には「無効」などとマークをつけて処理するのが一般的です。",
+      "★このような場合、無関係な属性には「無効」などとマークをつけて処理するのが一般的です。",
       "また、属性同士に依存関係があることもあり、たとえば「旧姓」と「婚姻状況」などは関係性があります。"
     ],
     "originalSlideText": "• Feste, vordefinierte Menge von Merkmalen\n• Verschiedene Attribute können in verschiedenen Instanzen gültig sein\n• Beispiel Fahrzeuge\n  • Landfahrzeuge: Anzahl der Räder\n  • Schiffe: Anzahl der Masten\n• Standardlösung: Markiere Attribute als irrelevant, wenn sie nicht anwendbar sind\n• Es kann Abhängigkeiten zwischen Attributen geben\n  • „Geburtsname“ und „Familienstand“"
@@ -776,7 +776,7 @@
   {
     "id": 30,
     "questionDe": "(s.22) Nennen Sie drei Typen von Attributen im Data Mining und ein Beispiel je Typ.",
-    "questionJa": "Data Miningにおける属性の型を3つ挙げ、それぞれの例を示せ。",
+    "questionJa": "★Data Miningにおける属性の型を3つ挙げ、それぞれの例を示せ。",
     "answerDe": [
       "Kategorial – z. B. Apfel, Birne",
       "Ordinal – z. B. T-Shirt-Größe S, M, L",
@@ -804,7 +804,7 @@
   {
     "id": 31,
     "questionDe": "(s.24) Nennen Sie vier Gründe, warum Datenaufbereitung im Data Mining notwendig ist.",
-    "questionJa": "Data Miningにおいてデータ前処理が必要とされる理由を4つ挙げよ。",
+    "questionJa": "★Data Miningにおいてデータ前処理が必要とされる理由を4つ挙げよ。",
     "answerDe": [
       "Benötigt oft am meisten Zeit",
       "Daten sind meist von schlechter Qualität",
@@ -834,7 +834,7 @@
   {
     "id": 32,
     "questionDe": "(s.25) Was sind Herausforderungen bei der Verknüpfung von Datenquellen?",
-    "questionJa": "データソースの結合における課題を4つ挙げよ。",
+    "questionJa": "★データソースの結合における課題を4つ挙げよ。",
     "answerDe": [
       "Unterschiedliche Syntax und Zeitbereiche",
       "Abgleich von Primärschlüsseln",
@@ -864,7 +864,7 @@
   {
     "id": 33,
     "questionDe": "(s.26) Was sind zwei Herausforderungen bei der Speicherung spärlicher Daten?",
-    "questionJa": "疎なデータ（Sparse Data）の保存に関して2つの課題を挙げよ。",
+    "questionJa": "★疎なデータ（Sparse Data）の保存に関して2つの課題を挙げよ。",
     "answerDe": [
       "Tabellen sind nicht optimal für unvollständige Daten",
       "Speicherplatzprobleme bei Adjazenzmatrizen"
@@ -890,16 +890,16 @@
   {
     "id": 34,
     "questionDe": "(s.27) Was versteht man unter Normalisierung und Standardisierung in der Datenaufbereitung?",
-    "questionJa": "データ前処理における正規化（Normalisierung）と標準化（Standardisierung）とは何か？",
+    "questionJa": "★データ前処理における正規化（Normalisierung）と標準化（Standardisierung）とは何か？",
     "answerDe": [
       "Normalisierung skaliert Werte auf einen Bereich, z. B. [0,1]",
       "Standardisierung verwendet Mittelwert und Standardabweichung",
       "Kategorische Daten müssen besonders behandelt werden"
     ],
     "answerJa": [
-      "正規化は値を一定範囲（例：[0,1]）にスケーリングする処理",
+      "★正規化は値を一定範囲（例：[0,1]）にスケーリングする処理",
       "標準化は平均と標準偏差を使って変換する処理",
-      "カテゴリ変数は特別に扱う必要がある"
+      "★カテゴリ変数は特別に扱う必要がある"
     ],
     "explanationDe": [
       "Bei der Normalisierung werden numerische Werte in einen bestimmten Bereich transformiert, meist zwischen 0 und 1. Dies hilft, Ausreißer zu begrenzen und Werte vergleichbar zu machen.",
@@ -923,9 +923,9 @@
       "Fehlende Werte können selbst wichtige Information sein"
     ],
     "answerJa": [
-      "欠損値は異常な数値で符号化されることが多い",
+      "★欠損値は異常な数値で符号化されることが多い",
       "欠損の理由はさまざまである",
-      "欠損そのものが重要な情報を含む場合がある"
+      "★欠損そのものが重要な情報を含む場合がある"
     ],
     "explanationDe": [
       "Fehlende Werte werden häufig mit Werten wie -1, 999 oder leeren Strings codiert – dies kann zu Fehlern führen, wenn sie nicht erkannt werden.",
@@ -936,7 +936,7 @@
     "explanationJa": [
       "欠損値はしばしば「-1」「999」「空白」などの特別な値で符号化されますが、これに気づかないと誤って解析に用いてしまいます。",
       "欠損の理由には、『記録されなかった』『無関係』『意図的な省略』など様々なタイプがあります。",
-      "例えば、誕生日が記録されていないという事実自体が、『機密情報』などの意味を持っている場合があります。",
+      "★例えば、誕生日が記録されていないという事実自体が、『機密情報』などの意味を持っている場合があります。",
       "機械学習では、欠損を単に空欄として扱ってしまうことが多く、その意味が失われる可能性があります。"
     ],
     "originalSlideText": "• Missing values\n  • Werden oft mit out of range Einträgen codiert\n    • Numerisch: -1, 999, etc\n    • Kategorisch: \"\", \"-\"\n  • Unterschiedliche Arten von missing values:\n    • Unbekannt\n    • Nicht aufgezeichnet\n    • Irrelevant\n• Fehlende Werte müssen bewertet werden\n  • Was ist der Grund?\n  • Ist der fehlende Wert selber eine wichtige Information?\n  • ML Verfahren behandeln fehlende Werte meistens ohne Bedeutung"
@@ -944,7 +944,7 @@
   {
     "id": 36,
     "questionDe": "(s.29) Nennen Sie drei Arten fehlerhafter Daten.",
-    "questionJa": "誤ったデータ（Fehlerhafte Werte）の種類を3つ挙げよ。",
+    "questionJa": "★誤ったデータ（Fehlerhafte Werte）の種類を3つ挙げよ。",
     "answerDe": [
       "Falsch geschriebene oder unvollständige Namen",
       "Numerische Messfehler oder Duplikate",
@@ -970,7 +970,7 @@
   {
     "id": 37,
     "questionDe": "(s.30) Nennen Sie vier Gründe, warum die Datenaufbereitung vor der Analyse besonders wichtig ist.",
-    "questionJa": "分析の前にデータ前処理を行うことが特に重要な理由を4つ挙げよ。",
+    "questionJa": "★分析の前にデータ前処理を行うことが特に重要な理由を4つ挙げよ。",
     "answerDe": [
       "Datenaufbereitung ist extrem wichtig und aufwendig",
       "Analyse der Verteilungen hilft, Ausreißer zu erkennen",
@@ -979,9 +979,9 @@
     ],
     "answerJa": [
       "データ前処理は極めて重要であり、手間がかかる",
-      "分布の分析により外れ値を特定できる",
-      "適切なドキュメント化が必要",
-      "ドメイン知識が誤値の評価に役立つ"
+      "★分布の分析により外れ値を特定できる",
+      "★適切なドキュメント化が必要",
+      "★ドメイン知識が誤値の評価に役立つ"
     ],
     "explanationDe": [
       "Datenaufbereitung ist ein zentraler Schritt, der oft über Erfolg oder Misserfolg der Analyse entscheidet.",

@@ -2,16 +2,16 @@
   {
     "id": 1,
     "questionDe": "(s2–4) Warum sind mehrschichtige Perzeptrons notwendig, um das XOR-Problem zu lösen?",
-    "questionJa": "XOR問題を解決するために、なぜ多層パーセプトロンが必要なのか？",
+    "questionJa": "★XOR問題を解決するために、なぜ多層パーセプトロンが必要なのか？",
     "answerDe": [
       "XOR ist mit einfachen künstlichen Neuronen nicht linear trennbar",
       "Einzelnes Perzeptron kann XOR nicht korrekt klassifizieren",
       "Mehrschichtige Perzeptrons mit Hidden Layer ermöglichen nichtlineare Trennung"
     ],
     "answerJa": [
-      "XORは単純な人工ニューロンでは線形分離できない",
-      "単一のパーセプトロンではXORを正しく分類できない",
-      "中間層を持つ多層パーセプトロンにより非線形な分離が可能になる"
+      "★XORは単純な人工ニューロンでは線形分離できない",
+      "★単一のパーセプトロンではXORを正しく分類できない",
+      "★中間層を持つ多層パーセプトロンにより非線形な分離が可能になる"
     ],
     "explanationDe": [
       "Das XOR-Problem zeigt, dass einfache Perzeptrons nur linear trennbare Probleme lösen können.",
@@ -41,16 +41,16 @@
   {
     "id": 2,
     "questionDe": "(s4) Wie funktionieren mehrschichtige Perzeptrons zur Lösung nichtlinearer Probleme wie XOR?",
-    "questionJa": "XORのような非線形問題を解決するために、多層パーセプトロンはどのように機能するか？",
+    "questionJa": "★XORのような非線形問題を解決するために、多層パーセプトロンはどのように機能するか？",
     "answerDe": [
       "Einführung von zusätzlichen Schichten (Hidden Layer)",
       "Signal wird schrittweise vom Eingang zum Ausgang weitergeleitet",
       "Struktur: Feedforward-Netzwerk"
     ],
     "answerJa": [
-      "中間層（Hidden Layer）の導入",
+      "★中間層（Hidden Layer）の導入",
       "入力から出力へと信号を段階的に伝える",
-      "構造はフィードフォワード型ネットワーク"
+      "★構造はフィードフォワード型ネットワーク"
     ],
     "explanationDe": [
       "Mehrschichtige Perzeptrons (MLPs) bestehen aus einer Eingabeschicht, einer oder mehreren versteckten Schichten (Hidden Layers) und einer Ausgabeschicht.",
@@ -73,13 +73,13 @@
   {
     "id": 3,
     "questionDe": "(s5) Welche Netzwerktopologien gibt es bei neuronalen Netzen und wie funktionieren sie?",
-    "questionJa": "ニューラルネットワークにはどのようなトポロジー（接続構造）があり、それぞれどのように機能するか？",
+    "questionJa": "★ニューラルネットワークにはどのようなトポロジー（接続構造）があり、それぞれどのように機能するか？",
     "answerDe": [
       "Fully connected: Alle Neuronen einer Schicht sind mit allen Neuronen der nächsten Schicht verbunden",
       "Short Cuts: Einige Neuronen sind mit weiter entfernten Schichten verbunden"
     ],
     "answerJa": [
-      "全結合（Fully connected）：ある層のすべてのニューロンが次の層のすべてのニューロンと接続されている",
+      "★全結合（Fully connected）：ある層のすべてのニューロンが次の層のすべてのニューロンと接続されている",
       "ショートカット（Short Cuts）：一部のニューロンが離れた層のニューロンと直接接続されている"
     ],
     "explanationDe": [
@@ -104,15 +104,15 @@
   {
     "id": 4,
     "questionDe": "(s6) Warum reicht das Delta-Regel-Verfahren bei mehrschichtigen Netzen nicht aus?",
-    "questionJa": "多層ネットワークにおいて、デルタ則だけでは学習に不十分なのはなぜか？",
+    "questionJa": "★多層ネットワークにおいて、デルタ則だけでは学習に不十分なのはなぜか？",
     "answerDe": [
       "Delta-Regel berechnet nur den Gradienten auf einer Schicht",
       "Fehler verteilt sich jedoch über mehrere Schichten",
       "Gewichte in allen Layern müssen angepasst werden"
     ],
     "answerJa": [
-      "デルタ則は単一層における勾配しか計算できない",
-      "実際には誤差は複数の層にまたがって広がる",
+      "★デルタ則は単一層における勾配しか計算できない",
+      "★実際には誤差は複数の層にまたがって広がる",
       "すべての層の重みを調整する必要がある"
     ],
     "explanationDe": [
@@ -135,7 +135,7 @@
   {
     "id": 5,
     "questionDe": "(s6) Wie funktioniert das Backpropagation-Verfahren zur Gewichtsaktualisierung in neuronalen Netzen?",
-    "questionJa": "ニューラルネットワークにおける重み更新のためのBackpropagation（誤差逆伝播法）はどのように機能するか？",
+    "questionJa": "★ニューラルネットワークにおける重み更新のためのBackpropagation（誤差逆伝播法）はどのように機能するか？",
     "answerDe": [
       "Fehler wird von den Ausgängen zu den Eingängen rückwärts weitergegeben",
       "Trainingsdaten werden vorwärts durch das Netz propagiert",
@@ -143,10 +143,10 @@
       "Ermöglicht Anpassung der Gewichte in allen Schichten"
     ],
     "answerJa": [
-      "誤差は出力層から入力層へと逆向きに伝播される",
-      "訓練データは順方向にネットワークを通して伝えられる",
-      "その後、誤差がネットワークを逆方向に伝わっていく",
-      "これにより全ての層の重みを適切に更新できる"
+      "★誤差は出力層から入力層へと逆向きに伝播される",
+      "★訓練データは順方向にネットワークを通して伝えられる",
+      "★その後、誤差がネットワークを逆方向に伝わっていく",
+      "★これにより全ての層の重みを適切に更新できる"
     ],
     "explanationDe": [
       "Beim Backpropagation-Verfahren wird ein Trainingsbeispiel zunächst durch das Netzwerk vorwärts propagiert, um eine Vorhersage zu erzeugen.",
@@ -159,8 +159,8 @@
       "Backpropagation（誤差逆伝播法）は、まず訓練データを順方向にネットワークに通し、出力を得ます。",
       "次に、出力と正解ラベルとの誤差（損失）を計算します。",
       "その後、その誤差を出力層から入力層へと逆方向に伝播させます。",
-      "このとき、連鎖律（Chain Rule）を使って、各重みが誤差にどれだけ影響しているかを計算します。",
-      "これにより、各重みを誤差の寄与に応じて適切に更新できます。"
+      "★このとき、連鎖律（Chain Rule）を使って、各重みが誤差にどれだけ影響しているかを計算します。",
+      "★これにより、各重みを誤差の寄与に応じて適切に更新できます。"
     ],
     "originalSlideText": "– Idee: Propagiere den Fehler durch das Netz\n– Von den Ausgängen zu den Eingängen\n– Trainingsdaten werden vorwärts durch das Netz propagiert\n– Fehler werden rückwärts durch das Netz propagiert\n– Backpropagation",
     "explanationImage": "",
@@ -169,7 +169,7 @@
   {
     "id": 6,
     "questionDe": "(s7) Wie läuft der Backpropagation-Prozess in neuronalen Netzen konkret ab?",
-    "questionJa": "（試験）ニューラルネットにおけるBackpropagation（誤差逆伝播）の具体的な手順は？",
+    "questionJa": "★（試験）ニューラルネットにおけるBackpropagation（誤差逆伝播）の具体的な手順は？",
     "answerDe": [
       "Trainingsdaten werden durch das Netz propagiert",
       "Ausgabe wird evaluiert, Differenz wird als Fehler interpretiert",
@@ -179,8 +179,8 @@
     "answerJa": [
       "訓練データがネットワークを通って順方向に伝播される",
       "出力と正解の差が誤差として評価される",
-      "誤差が出力層から入力層へと逆方向に伝播される",
-      "誤差に関与した重みが調整される"
+      "★誤差が出力層から入力層へと逆方向に伝播される",
+      "★差に関与した重みが調整される"
     ],
     "explanationDe": [
       "Beim Backpropagation-Verfahren wird ein Datensatz zuerst durch das Netzwerk geleitet, um eine Vorhersage zu erzeugen.",
@@ -190,10 +190,10 @@
       "Ziel ist es, bei zukünftigen Eingaben eine genauere Vorhersage zu erreichen."
     ],
     "explanationJa": [
-      "Backpropagation（誤差逆伝播法）では、まず訓練データを使ってネットワークに順方向の信号を流し、出力を得ます。",
-      "その出力と正解との誤差を計算し、それをネットワーク内で誤差として扱います。",
-      "この誤差を出力層から入力層に向かって逆方向に伝播させます。",
-      "どの重みが誤差にどれだけ寄与したかを解析し、それに基づいて各重みを調整します。",
+      "★Backpropagation（誤差逆伝播法）では、まず訓練データを使ってネットワークに順方向の信号を流し、出力を得ます。",
+      "★その出力と正解との誤差を計算し、それをネットワーク内で誤差として扱います。",
+      "★この誤差を出力層から入力層に向かって逆方向に伝播させます。",
+      "★どの重みが誤差にどれだけ寄与したかを解析し、それに基づいて各重みを調整します。",
       "この調整により、次の学習でより正確な出力が得られるようになります。"
     ],
     "originalSlideText": "Backpropagation Ablauf:\n- Trainingsdaten werden durch das Netz propagiert\n- Ausgabe des Netzes wird evaluiert, die Differenz zwischen Soll und Ist wird als Fehler angenommen\n- Der Fehler wird von der Ausgabe zum Eingang propagiert\n- Die Gewichte der Verbindungen, die zu diesem Fehler geführt haben, werden angepasst",
@@ -203,16 +203,16 @@
   {
     "id": 7,
     "questionDe": "(s7) Worauf muss man bei der Anpassung des Netzes während des Lernens achten?",
-    "questionJa": "ネットワークの学習時における重み調整で注意すべき点は？",
+    "questionJa": "★ネットワークの学習時における重み調整で注意すべき点は？",
     "answerDe": [
       "Anpassung erfolgt auf den falsch klassifizierten Datensatz",
       "Netz darf sich nicht zu stark an einzelne Datenpunkte anpassen",
       "Lernrate steuert die Anpassung"
     ],
     "answerJa": [
-      "誤分類されたデータに対してネットワークが調整される",
-      "特定のデータに過剰に適応（過学習）しないように注意が必要",
-      "重みの調整には学習率（Lernrate）を用いて調整の度合いを制御する"
+      "★誤分類されたデータに対してネットワークが調整される",
+      "★特定のデータに過剰に適応（過学習）しないように注意が必要",
+      "★重みの調整には学習率（Lernrate）を用いて調整の度合いを制御する"
     ],
     "explanationDe": [
       "Wenn ein Datensatz falsch klassifiziert wurde, wird das Netz entsprechend angepasst.",
@@ -222,10 +222,10 @@
       "Eine zu hohe Lernrate kann zu instabiler Konvergenz führen, eine zu niedrige zu langsamer Lernfortschritt."
     ],
     "explanationJa": [
-      "誤分類されたデータに対してネットワークの重みが調整されます。",
-      "しかし、特定のデータに対して過剰に適応してしまうと、汎化能力が落ちる（過学習）リスクがあります。",
+      "★誤分類されたデータに対してネットワークの重みが調整されます。",
+      "★しかし、特定のデータに対して過剰に適応してしまうと、汎化能力が落ちる（過学習）リスクがあります。",
       "このような過学習を防ぐために、学習率（Lernrate）を使って重みの調整幅を制御します。",
-      "学習率が高すぎると収束が不安定になり、逆に低すぎると学習が遅くなるという問題があります。",
+      "★学習率が高すぎると収束が不安定になり、逆に低すぎると学習が遅くなるという問題があります。",
       "適切な学習率の設定が、効率的かつ安定した学習に重要です。"
     ],
     "originalSlideText": "– Anpassung des Netzes auf den falsch klassifizierten Datensatz\n– Dabei muss verhindert werden, dass das Netz sich überspezifisch an einzelnen Datenpunkten orientiert\n– Nutzung einer Lernrate, um die Anpassung der Gewichte zu steuern",
@@ -313,12 +313,12 @@
   {
     "id": 10,
     "questionDe": "(s25) Nenne einen Vorteil von Backpropagation in Feedforward-Netzen.",
-    "questionJa": "FeedforwardネットにおけるBackpropagationの利点を1つ挙げよ。",
+    "questionJa": "★FeedforwardネットにおけるBackpropagationの利点を1つ挙げよ。",
     "answerDe": [
       "Auch nicht lineare Funktionen können approximiert werden"
     ],
     "answerJa": [
-      "非線形関数も近似できる"
+      "★非線形関数も近似できる"
     ],
     "explanationDe": [
       "Durch den Einsatz von Backpropagation in mehrschichtigen Feedforward-Netzen können auch komplexe, nicht linear trennbare Zusammenhänge gelernt werden.",
@@ -335,16 +335,16 @@
   {
     "id": 11,
     "questionDe": "(s25) Nenne 3 Herausforderungen beim Einsatz von Backpropagation in Feedforward-Netzen.",
-    "questionJa": "FeedforwardネットにおけるBackpropagationの課題を3つ挙げよ。",
+    "questionJa": "★FeedforwardネットにおけるBackpropagationの課題を3つ挙げよ。",
     "answerDe": [
       "Lernerfolg ist nicht garantiert",
       "Kann sehr lange Trainingszeiten benötigen",
       "Topologie des Netzes hat Auswirkung auf den Lernerfolg"
     ],
     "answerJa": [
-      "学習が必ず成功するとは限らない",
-      "学習に非常に長い時間がかかる場合がある",
-      "ネットワークの構造が学習成功に影響する"
+      "★学習が必ず成功するとは限らない",
+      "★学習に非常に長い時間がかかる場合がある",
+      "★ネットワークの構造が学習成功に影響する"
     ],
     "explanationDe": [
       "Obwohl Backpropagation in der Theorie stark ist, kann der tatsächliche Lernerfolg ausbleiben, besonders bei komplexen Problemen.",
@@ -363,7 +363,7 @@
   {
     "id": 12,
     "questionDe": "(s25) Welche Vorteile bringen Pooling, Konvolution und komplexere Netztopologien beim Einsatz neuronaler Netze?",
-    "questionJa": "ニューラルネットワークにおいて、Pooling・畳み込み・より複雑なネットワーク構造を使う利点は何か？",
+    "questionJa": "★ニューラルネットワークにおいて、Pooling・畳み込み・より複雑なネットワーク構造を使う利点は何か？",
     "answerDe": [
       "Pooling und Konvolution beschleunigen das Training",
       "Sie verbessern die Ergebnisse",
@@ -380,9 +380,9 @@
       "Komplexere Netzwerke wie tiefe neuronale Netze oder ResNet können komplexere Zusammenhänge modellieren und dadurch genauere Ergebnisse liefern."
     ],
     "explanationJa": [
-      "プーリング（例：Max-Pooling）は入力データのサイズを縮小し、重要な情報だけを残して処理を効率化します。",
-      "畳み込み（CNNなど）では、画像などの局所的な特徴を捉えることで、より正確な予測が可能になります。",
-      "ResNetなどの複雑なネットワーク構造は、複雑な関係性をより良くモデル化でき、予測精度が向上します。"
+      "★プーリング（例：Max-Pooling）は入力データのサイズを縮小し、重要な情報だけを残して処理を効率化します。",
+      "★畳み込み（CNNなど）では、画像などの局所的な特徴を捉えることで、より正確な予測が可能になります。",
+      "★ResNetなどの複雑なネットワーク構造は、複雑な関係性をより良くモデル化でき、予測精度が向上します。"
     ],
     "originalSlideText": "– Weitere Mechanismen wie Pooling und Konvolution helfen bei der Beschleunigung und verbessern die Ergebnisse\n– Komplexere Netztopologien führen zu besseren Ergebnissen",
     "explanationImage": "",
@@ -391,7 +391,7 @@
   {
     "id": 13,
     "questionDe": "(s26) Welche Herausforderungen gibt es bei der Verarbeitung von Bilddaten in neuronalen Netzen und wie hilft Konvolution dabei?",
-    "questionJa": "ニューラルネットで画像データを処理する際の課題は何か？また、畳み込み（Konvolution）はそれにどう役立つか？",
+    "questionJa": "★ニューラルネットで画像データを処理する際の課題は何か？また、畳み込み（Konvolution）はそれにどう役立つか？",
     "answerDe": [
       "Kanten und Texturen sind wichtig, aber schwer direkt aus Pixeln zu erkennen",
       "Strukturen erfordern viele Neuronen",
@@ -399,10 +399,10 @@
       "Konvolution extrahiert relevante Merkmale wie Kanten und Texturen vorab"
     ],
     "answerJa": [
-      "エッジやテクスチャは重要だが、ピクセルから直接認識するのは難しい",
-      "構造を認識するには多くのニューロンが必要",
-      "色情報の組み合わせが複雑",
-      "畳み込み処理によってエッジやテクスチャなどの重要な特徴を事前に抽出できる"
+      "★エッジやテクスチャは重要だが、ピクセルから直接認識するのは難しい",
+      "★構造を認識するには多くのニューロンが必要",
+      "★色情報の組み合わせが複雑",
+      "★畳み込み処理によってエッジやテクスチャなどの重要な特徴を事前に抽出できる"
     ],
     "explanationDe": [
       "In Bilddaten sind Kanten und Texturen entscheidend, um Objekte zu erkennen, aber sie lassen sich aus einzelnen Pixeln nur schwer erfassen.",
@@ -494,7 +494,7 @@
   {
     "id": 17,
     "questionDe": "(s29) Nenne 5 Vorteile der Verwendung von Konvolution in neuronalen Netzen.",
-    "questionJa": "畳み込みをニューラルネットワークで使うことの利点を5つ挙げよ。",
+    "questionJa": "★畳み込みをニューラルネットワークで使うことの利点を5つ挙げよ。",
     "answerDe": [
       "1. Datenbereiche werden durch spezialisierte Filter auf wichtige Eigenschaften reduziert.",
       "2. Schnelleres Verarbeiten der Daten im Netzwerk.",
@@ -503,11 +503,11 @@
       "5. Robuster gegenüber Translation und Skalierung."
     ],
     "answerJa": [
-      "1. 特定のフィルターを用いてデータ領域を重要な特徴に要約できる。",
-      "2. 要約されたデータによりネットワーク内での処理が高速になる。",
-      "3. カーネルはネットワーク内でニューロンとして表現されるため、効率的な構造が可能。",
-      "4. ニューロン間で重みを共有することでパラメータ数が削減される。",
-      "5. 平行移動やスケーリングに対して頑健性がある。"
+      "★1. 特定のフィルターを用いてデータ領域を重要な特徴に要約できる。",
+      "★2. 要約されたデータによりネットワーク内での処理が高速になる。",
+      "★3. カーネルはネットワーク内でニューロンとして表現されるため、効率的な構造が可能。",
+      "★4. ニューロン間で重みを共有することでパラメータ数が削減される。",
+      "★5. 平行移動やスケーリングに対して頑健性がある。"
     ],
     "explanationDe": [
       "Konvolution fasst komplexe Bildbereiche mit Hilfe von Filtern zu Merkmalen zusammen, z. B. Kanten oder Texturen.",
@@ -530,7 +530,7 @@
   {
     "id": 18,
     "questionDe": "(s30) Welche 4 Vorteile bietet Pooling in neuronalen Netzen?",
-    "questionJa": "ニューラルネットワークにおいてプーリング層がもたらす4つの利点を挙げよ。",
+    "questionJa": "★ニューラルネットワークにおいてプーリング層がもたらす4つの利点を挙げよ。",
     "answerDe": [
       "1. Reduktion der Eingabedaten für die weitere Verarbeitung.",
       "2. Verringerung von Speicherbedarf und Rechenzeit.",
@@ -538,10 +538,10 @@
       "4. Invarianz gegenüber Translation und Positionsänderungen."
     ],
     "answerJa": [
-      "1. 次の処理のために入力データ量を削減する。",
-      "2. メモリ使用量と処理時間を削減する。",
-      "3. 重要な特徴（特徴量）を抽出する。",
-      "4. 平行移動や位置の違いに対して出力が安定する（不変性）。"
+      "★1. 次の処理のために入力データ量を削減する。",
+      "★2. メモリ使用量と処理時間を削減する。",
+      "★3. 重要な特徴（特徴量）を抽出する。",
+      "★4. 平行移動や位置の違いに対して出力が安定する（不変性）。"
     ],
     "explanationDe": [
       "Pooling ist ein Verfahren, das in Convolutional Neural Networks (CNNs) verwendet wird, um große Bilddatenmengen effizient zu verarbeiten.",
@@ -564,16 +564,16 @@
   {
     "id": 19,
     "questionDe": "(s31) Welche zwei Arten von Pooling gibt es und wie unterscheiden sie sich?",
-    "questionJa": "プーリングにはどのような2つの種類があり、それらはどのように異なるか？",
+    "questionJa": "★プーリングにはどのような2つの種類があり、それらはどのように異なるか？",
     "answerDe": [
       "1. Max Pooling: Der größte Wert in einem Datenbereich wird als Repräsentant übernommen.",
       "2. Average Pooling: Der Mittelwert der Werte in einem Datenbereich wird als Repräsentant übernommen.",
       "Max Pooling ist in der Regel performanter als Average Pooling."
     ],
     "answerJa": [
-      "1. Maxプーリング：データ領域の中で最大の値を代表値として採用する。",
-      "2. 平均（Average）プーリング：データ領域の平均値を代表値として採用する。",
-      "一般的に、Maxプーリングの方がAverageプーリングよりも高性能である（performanter）。"
+      "★1. Maxプーリング：データ領域の中で最大の値を代表値として採用する。",
+      "★2. 平均（Average）プーリング：データ領域の平均値を代表値として採用する。",
+      "★一般的に、Maxプーリングの方がAverageプーリングよりも高性能である（performanter）。"
     ],
     "explanationDe": [
       "Beim Pooling wird ein kleiner Bereich der Eingabedaten betrachtet – z. B. ein 2×2-Feld – und durch einen einzigen Wert ersetzt.",
@@ -697,7 +697,7 @@
 {
   "id": 23,
   "questionDe": "(s35) Nennen Sie 3 Merkmale von Recurrent Neural Networks (RNNs) und erläutern Sie ihren Nutzen bei der Verarbeitung von Sequenzen.",
-  "questionJa": "再帰型ニューラルネットワーク（RNN）の特徴を3つ挙げ、それがシーケンス処理においてどのように役立つかを説明せよ。",
+  "questionJa": "★再帰型ニューラルネットワーク（RNN）の特徴を3つ挙げ、それがシーケンス処理においてどのように役立つかを説明せよ。",
   "answerDe": [
     "RNNs erlauben Verbindungen zwischen Neuronen derselben oder vorherigen Schicht.",
     "Dadurch entstehen Zyklen im Netzwerk, was eine Verarbeitung von zeitlichen Abfolgen ermöglicht.",
@@ -705,8 +705,8 @@
     "RNNs sind im Vergleich zu Feedforward-Netzen schwerer zu trainieren."
   ],
   "answerJa": [
-    "RNN（再帰型ニューラルネットワーク）は、同じ層または前の層のニューロン同士が接続される構造を持つ。",
-    "この構造により、ネットワーク内にループ（循環）が生じ、時間的な情報を保持しながら処理できる。",
+    "★RNN（再帰型ニューラルネットワーク）は、同じ層または前の層のニューロン同士が接続される構造を持つ。",
+    "★この構造により、ネットワーク内にループ（循環）が生じ、時間的な情報を保持しながら処理できる。",
     "RNNは、画像認識や機械翻訳など、時系列や文のようなシーケンス情報のあるデータに特に有効である。",
     "ただし、通常のニューラルネットワークよりも学習が難しい傾向がある。"
   ],
@@ -729,7 +729,7 @@
 {
   "id": 24,
   "questionDe": "(s37) Was ist das Problem bei tiefen Netzen mit vielen Layern und wie hilft LSTM dieses Problem zu lösen?",
-  "questionJa": "層の多い深いニューラルネットワークにおける問題点は何か、それに対してLSTMはどのように対処するのか説明せよ。",
+  "questionJa": "★層の多い深いニューラルネットワークにおける問題点は何か、それに対してLSTMはどのように対処するのか説明せよ。",
   "answerDe": [
     "Bei tiefen Netzen wird der Fehler beim Backpropagation-Verfahren von hinten nach vorne immer weiter skaliert.",
     "Dies führt dazu, dass der Fehler entweder verschwindet (vanishing gradient) oder explodiert (exploding gradient).",
@@ -737,10 +737,10 @@
     "LSTM (Long Short Term Memory) ist eine Verbesserung, die dieses Skalierungsproblem adressiert und somit das Training tief verschachtelter Netze ermöglicht."
   ],
   "answerJa": [
-    "深い層を持つニューラルネットワークでは、誤差逆伝播の際に誤差が後ろから前にスケーリングされる。",
-    "この過程で、誤差が極端に小さくなる（勾配消失）か極端に大きくなる（勾配爆発）問題が生じる。",
-    "そのため、深層ネットワークは本来の能力を十分に発揮できない。",
-    "LSTM（Long Short Term Memory）はこのスケーリング問題を解決し、深いネットワークでも効果的に学習できるように改善された手法である。"
+    "★深い層を持つニューラルネットワークでは、誤差逆伝播の際に誤差が後ろから前にスケーリングされる。",
+    "★この過程で、誤差が極端に小さくなる（勾配消失）か極端に大きくなる（勾配爆発）問題が生じる。",
+    "★そのため、深層ネットワークは本来の能力を十分に発揮できない。",
+    "★LSTM（Long Short Term Memory）はこのスケーリング問題を解決し、深いネットワークでも効果的に学習できるように改善された手法である。"
   ],
   "explanationDe": [
     "Das sogenannte Vanishing-Gradient-Problem tritt auf, wenn in tiefen Netzen durch die wiederholte Ableitung der Fehlergradient mit jedem Layer kleiner wird.",
@@ -799,7 +799,7 @@
 {
   "id": 26,
   "questionDe": "(s39) Erkläre den Aufbau und das Trainingsprinzip von Generative Adversarial Networks (GANs). Welche Anwendungsmöglichkeiten gibt es?",
-  "questionJa": "GAN（敵対的生成ネットワーク）の構造と学習原理を説明せよ。また、その応用例を述べよ。",
+  "questionJa": "★GAN（敵対的生成ネットワーク）の構造と学習原理を説明せよ。また、その応用例を述べよ。",
   "answerDe": [
     "GANs bestehen aus zwei Netzen: einem Generator und einem Erkenner (Discriminator).",
     "Der Generator erzeugt Ausgaben aus Zufallsdaten.",
@@ -810,12 +810,12 @@
     "GANs werden u.a. für die Bild-, Text- oder Spiele-KI-Erzeugung eingesetzt."
   ],
   "answerJa": [
-    "GANは生成器（Generator）と識別器（Discriminator）の2つのネットワークで構成される。",
-    "生成器はランダムな入力からデータ（例：画像）を生成する。",
-    "識別器は本物のデータと生成されたデータを見分けるよう訓練される。",
-    "本物のデータを偽物と誤って分類した場合は、識別器が修正される。",
-    "生成されたデータを偽物と正しく分類された場合は、生成器が改善されるよう学習する。",
-    "この対抗的な関係により、両方のネットは繰り返し学習して精度を高める。",
+    "★GANは生成器（Generator）と識別器（Discriminator）の2つのネットワークで構成される。",
+    "★生成器はランダムな入力からデータ（例：画像）を生成する。",
+    "★識別器は本物のデータと生成されたデータを見分けるよう訓練される。",
+    "★本物のデータを偽物と誤って分類した場合は、識別器が修正される。",
+    "★生成されたデータを偽物と正しく分類された場合は、生成器が改善されるよう学習する。",
+    "★この対抗的な関係により、両方のネットは繰り返し学習して精度を高める。",
     "応用例には画像生成、テキスト生成、ゲームAIなどがある。"
   ],
   "explanationDe": [
@@ -842,7 +842,7 @@
 {
   "id": 40,
   "questionDe": "Welche Aspekte sind bei der Evaluierung von neuronalen Netzen zu beachten? Nenne mindestens 4 relevante Punkte.",
-  "questionJa": "ニューラルネットワークの評価において注意すべき点を4つ以上挙げよ。",
+  "questionJa": "★ニューラルネットワークの評価において注意すべき点を4つ以上挙げよ。",
   "answerDe": [
     "Ergebnisse können mit Hilfe von Trainings-, Evaluierungs- und Testdatensätzen überprüft werden.",
     "Die Evaluierung orientiert sich am Kapitel zur allgemeinen Modellbewertung.",
@@ -852,7 +852,7 @@
     "Auch die Verkettung mehrerer Netzwerke kann die Bewertung beeinflussen."
   ],
   "answerJa": [
-    "ニューラルネットワークの評価は、訓練データ、評価データ、テストデータを用いて行われる。",
+    "★ニューラルネットワークの評価は、訓練データ、評価データ、テストデータを用いて行われる。",
     "評価方法は、一般的なモデル評価の方法に準拠している。",
     "評価結果はネットワークのトポロジー（構造）に大きく依存する。",
     "トポロジーの選択は経験に基づくことが多い。",
@@ -882,7 +882,7 @@
 {
   "id": 41,
   "questionDe": "Nenne 4 Herausforderungen bei der Evaluierung und Nachvollziehbarkeit neuronaler Netze.",
-  "questionJa": "ニューラルネットワークの評価や説明可能性に関する課題を4つ挙げよ。",
+  "questionJa": "★ニューラルネットワークの評価や説明可能性に関する課題を4つ挙げよ。",
   "answerDe": [
     "Die Extraktion wichtiger Attribute und Eigenschaften ist schwierig.",
     "Konvolution und Übertragungsfunktionen fassen mehrere Attribute zusammen, sodass deren Einfluss nicht direkt sichtbar ist.",
@@ -890,10 +890,10 @@
     "Es bestehen Sicherheitsaspekte: Wer haftet für Fehlentscheidungen? Sind die Ergebnisse nachvollziehbar?"
   ],
   "answerJa": [
-    "重要な属性や特徴の抽出が難しい。",
-    "畳み込みや伝達関数が複数の属性をまとめて扱うため、個別の影響が直接には読み取れない。",
-    "ニューラルネットワークは複雑な関係をモデル化するため、その構造の公開は研究や実用上重要である。",
-    "安全性の観点からの課題もあり、誤った判断に対して誰が責任を負うのか、結果が説明可能かどうかが問われる。"
+    "★重要な属性や特徴の抽出が難しい。",
+    "★畳み込みや伝達関数が複数の属性をまとめて扱うため、個別の影響が直接には読み取れない。",
+    "★ニューラルネットワークは複雑な関係をモデル化するため、その構造の公開は研究や実用上重要である。",
+    "★安全性の観点からの課題もあり、誤った判断に対して誰が責任を負うのか、結果が説明可能かどうかが問われる。"
   ],
   "explanationDe": [
     "Neuronale Netze sind zwar leistungsfähig, jedoch ist ihre Funktionsweise schwer nachvollziehbar.",
@@ -914,16 +914,16 @@
 {
   "id": 42,
   "questionDe": "Nenne 3 zentrale Anliegen der Explainable Artificial Intelligence (XAI) und erläutere deren Bedeutung.",
-  "questionJa": "説明可能な人工知能（XAI）の3つの主要な目的を挙げ、それぞれの重要性を説明せよ。",
+  "questionJa": "★説明可能な人工知能（XAI）の3つの主要な目的を挙げ、それぞれの重要性を説明せよ。",
   "answerDe": [
     "Erstellung von erklärbaren Modellen mit gleichzeitig hoher Genauigkeit.",
     "Zugriffsmöglichkeiten im Modell für den Nutzer (Human in the Loop).",
     "Transparenz der genutzten Datenverarbeitung."
   ],
   "answerJa": [
-    "高い精度を保ちながらも説明可能なモデルの構築。",
-    "ユーザーがモデルの処理に関与できるような仕組み（Human in the Loop）。",
-    "データ処理の透明性を確保すること。"
+    "★高い精度を保ちながらも説明可能なモデルの構築。",
+    "★ユーザーがモデルの処理に関与できるような仕組み（Human in the Loop）。",
+    "★データ処理の透明性を確保すること。"
   ],
   "explanationDe": [
     "Explainable AI (XAI) ist ein relativ neues Forschungsfeld, das seit 2004 entwickelt wird.",
@@ -946,16 +946,16 @@
 {
   "id": 43,
   "questionDe": "(s47)Welche Herausforderungen und Vorteile bietet die visuelle Darstellung neuronaler Netze? Nenne mindestens 3 Aspekte.",
-  "questionJa": "ニューラルネットワークの視覚的な表現にはどのような課題と利点があるか。少なくとも3点を挙げよ。",
+  "questionJa": "★ニューラルネットワークの視覚的な表現にはどのような課題と利点があるか。少なくとも3点を挙げよ。",
   "answerDe": [
     "Darstellung als Graph mit Layern ermöglicht ein strukturelles Verständnis des Netzes.",
     "Kantengewichte können visuell kodiert werden (z. B. farblich nach Stärke), was hilft, starke oder schwache Pfade zu erkennen.",
     "Skalierungsprobleme entstehen bei sehr tiefen oder großen Netzwerken, da die Visualisierung unübersichtlich wird."
   ],
   "answerJa": [
-    "層構造を持つグラフとして可視化することで、ネットワークの構造的理解が可能となる。",
-    "エッジ（結合）の重みを強さによって色分けするなど、視覚的に表現できるため、強い経路や弱い経路を把握しやすい。",
-    "ネットワークが深くなったり大規模になると、視覚化が複雑になり、スケーリングの課題が生じる。"
+    "★層構造を持つグラフとして可視化することで、ネットワークの構造的理解が可能となる。",
+    "★エッジ（結合）の重みを強さによって色分けするなど、視覚的に表現できるため、強い経路や弱い経路を把握しやすい。",
+    "★ネットワークが深くなったり大規模になると、視覚化が複雑になり、スケーリングの課題が生じる。"
   ],
   "explanationDe": [
     "Neuronale Netze bestehen aus vielen verbundenen Einheiten (Neuronen), die typischerweise in Schichten (Layern) organisiert sind.",
@@ -1270,7 +1270,7 @@
 {
   "id": 54,
   "questionDe": "(s62) Wie läuft die TCAV-Methode zur Analyse neuronaler Netze ab? Nennen Sie die vier Hauptschritte und zwei wichtige Hinweise zur Anwendung.",
-  "questionJa": "（試験類題）ニューラルネットの解釈におけるTCAV（Testing with Concept Activation Vectors）の基本的な流れを4つのステップに分けて説明し、使用上の注意点を2つ挙げよ。",
+  "questionJa": "★（試験類題）ニューラルネットの解釈におけるTCAV（Testing with Concept Activation Vectors）の基本的な流れを4つのステップに分けて説明し、使用上の注意点を2つ挙げよ。",
   "answerDe": [
     "1. Training eines Netzes.",
     "2. Erstellen eines Konzeptes durch Beispiele mit zufälligen Bildern.",
@@ -1281,13 +1281,13 @@
     "6. Konzepte müssen statistisch getestet werden, ob sie signifikant sind."
   ],
   "answerJa": [
-    "1. ニューラルネットを訓練する。",
-    "2. 任意の画像を使って、ある概念（コンセプト）の例を準備する。",
-    "3. その概念に基づいてConcept Activation Vector（CAV）を計算する。",
-    "4. CAVの方向に対するモデル出力の勾配（方向微分）を用いて、CAVの影響度を測定する。",
+    "★1. ニューラルネットを訓練する。",
+    "★2. 任意の画像を使って、ある概念（コンセプト）の例を準備する。",
+    "★3. その概念に基づいてConcept Activation Vector（CAV）を計算する。",
+    "★4. CAVの方向に対するモデル出力の勾配（方向微分）を用いて、CAVの影響度を測定する。",
     "注意点:",
-    "5. CAVはネットワーク内の任意のレイヤーに適用可能である。",
-    "6. 概念が本当に意味あるものか、統計的に検定する必要がある。"
+    "★5. CAVはネットワーク内の任意のレイヤーに適用可能である。",
+    "★6. 概念が本当に意味あるものか、統計的に検定する必要がある。"
   ],
   "explanationDe": [
     "TCAV ist ein Verfahren zur Interpretation neuronaler Netze, indem untersucht wird, wie stark ein bestimmtes Konzept zur Klassifikation beiträgt.",
@@ -1304,7 +1304,7 @@
     "この方法はネットワークのどの層にも適用でき、また、概念が偶然ではなく有意に影響しているかどうかを統計的に検証する必要がある。"
   ],
   "originalSlideText": "- TCAV Ablauf\n  - Training eines Netzes\n  - Erstellen eines Konzeptes durch Beispiele mit zufälligen Bildern\n  - Berechnung von Concept Activation Vectors (CAV) auf den erstellten Konzepten\n  - Berechnung des Einflusses eines CAV durch die Richtungsableitung\n- Kann auf jeden Layer im Netz angewendet werden\n- Konzepte müssen statistisch getestet werden, ob sie signifikant sind",
-  "questionImage": "file-QJEhjrrbw2tfkcjPPw8W6S",
+  "questionImage": "",
   "explanationImage": ""
 }
 

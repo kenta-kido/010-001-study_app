@@ -2,7 +2,7 @@
   {
     "id": 1,
     "questionDe": "(s.3) Beschreiben Sie die Voraussetzungen und das Prinzip der linearen Regression.",
-    "questionJa": "線形回帰の前提条件と基本原理を説明せよ。",
+    "questionJa": "★線形回帰の前提条件と基本原理を説明せよ。",
     "answerDe": [
       "Funktioniert mit numerischen Werten",
       "Ergebnis und alle Attribute müssen numerisch sein",
@@ -10,8 +10,8 @@
     ],
     "answerJa": [
       "数値データに対して有効に機能する",
-      "目的変数とすべての属性が数値でなければならない",
-      "属性の線形結合として結果を表現する"
+      "★目的変数とすべての属性が数値でなければならない",
+      "★属性の線形結合として結果を表現する"
     ],
     "explanationDe": [
       "Lineare Regression ist ein einfaches, aber leistungsfähiges Verfahren zur Vorhersage numerischer Werte. Es basiert auf der Annahme, dass der Zielwert (Ergebnis) eine lineare Funktion der Eingabemerkmale ist.",
@@ -20,22 +20,22 @@
     ],
     "explanationJa": [
       "線形回帰は、数値の予測に用いられる基本的かつ強力な手法です。予測対象（目的変数）が入力属性の線形関数で表現できるという前提に基づいています。",
-      "前提条件として、予測対象の変数も、入力する属性もすべて数値データである必要があります。たとえば、年齢・身長・収入などの数値が該当します。",
-      "予測は x = Σ(wᵢ·aᵢ) のように計算されます。ここで aᵢ は各属性の値、wᵢ はそれに対応する重み（係数）です。a₀ = 1 は切片項（バイアス）を意味します。"
+      "★前提条件として、予測対象の変数も、入力する属性もすべて数値データである必要があります。たとえば、年齢・身長・収入などの数値が該当します。",
+      "★予測は x = Σ(wᵢ·aᵢ) のように計算されます。ここで aᵢ は各属性の値、wᵢ はそれに対応する重み（係数）です。a₀ = 1 は切片項（バイアス）を意味します。"
     ],
     "originalSlideText": "• Lineare Modelle\n– Funktionieren gut mit numerischen Werten\n– Numerische Vorhersage: Linear regression\n  • Vorbedingung: Ergebnis und alle Attribute sind numerisch\n• Das Ergebnis kann als Kombination der Attribute ausgedrückt werden:\n  x = Σ wᵢaᵢ\n  x: Ergebnis\n  a₀: 1\n  aᵢ: Wert des Attributs i\n  wᵢ: Vorberechnete Gewichte"
   },
   {
     "id": 2,
     "questionDe": "(s.4) Was ist das Ziel der linearen Regression und wie sieht das Ergebnis aus?",
-    "questionJa": "線形回帰の目的とその結果は何か？",
+    "questionJa": "★線形回帰の目的とその結果は何か？",
     "answerDe": [
       "Ziel: Minimierung der Vorhersagefehler (Fehlerquadratsumme)",
       "Ergebnis: Gewichte wᵢ, basierend auf Trainingsdaten"
     ],
     "answerJa": [
-      "目的：予測誤差（二乗誤差和）を最小化すること",
-      "結果：学習データに基づいて求められた重み wᵢ"
+      "★目的：予測誤差（二乗誤差和）を最小化すること",
+      "★結果：学習データに基づいて求められた重み wᵢ"
     ],
     "explanationDe": [
       "Bei der linearen Regression ist das Ziel, die Summe der quadratischen Abweichungen zwischen den tatsächlichen Ausgabewerten x⁽ⁱ⁾ und den vorhergesagten Werten Σwⱼaⱼ⁽ⁱ⁾ zu minimieren.",
@@ -57,7 +57,7 @@
   {
     "id": 3,
     "questionDe": "(s.5) Nennen Sie vier Eigenschaften der linearen Regression.",
-    "questionJa": "線形回帰の特徴を4つ挙げよ。",
+    "questionJa": "★線形回帰の特徴を4つ挙げよ。",
     "answerDe": [
       "Einfache Methode",
       "Wird oft in statistischen Analysen genutzt",
@@ -65,10 +65,10 @@
       "Funktioniert nicht bei nicht-linearen Abhängigkeiten"
     ],
     "answerJa": [
-      "シンプルな手法である",
+      "★シンプルな手法である",
       "統計分析でよく使われる",
-      "線形関係にあるデータにのみ適している",
-      "データが線形関係でない場合には機能しない"
+      "★線形関係にあるデータにのみ適している",
+      "★データが線形関係でない場合には機能しない"
     ],
     "explanationDe": [
       "Die lineare Regression ist leicht zu verstehen und umzusetzen, weshalb sie eine beliebte Methode ist.",
@@ -87,14 +87,14 @@
   {
     "id": 4,
     "questionDe": "(s.6) Wie funktioniert die multiresponse lineare Regression zur Klassifikation?",
-    "questionJa": "分類問題におけるマルチレスポンス線形回帰はどのように機能するか説明せよ。",
+    "questionJa": "★分類問題におけるマルチレスポンス線形回帰はどのように機能するか説明せよ。",
     "answerDe": [
       "Für jede Klasse wird eine eigene lineare Regression erstellt",
       "Trainingsbeispiele der Zielklasse erhalten Zielwert 1, andere 0",
       "Für unbekannte Instanz werden alle Regressionswerte berechnet und der höchste gewählt"
     ],
     "answerJa": [
-      "各クラスごとに個別の線形回帰モデルを構築する",
+      "★各クラスごとに個別の線形回帰モデルを構築する",
       "目的のクラスに属する訓練データには出力1を、その他には0を与える",
       "未知のインスタンスに対してはすべての線形表現を計算し、最も高い値のクラスを選択する"
     ],
@@ -119,14 +119,14 @@
   {
     "id": 5,
     "questionDe": "(s.7) Nennen Sie zwei Vorteile der multiresponse linearen Regression bei Klassifikationsproblemen.",
-    "questionJa": "分類問題におけるマルチレスポンス線形回帰の利点を2つ挙げよ。",
+    "questionJa": "★分類問題におけるマルチレスポンス線形回帰の利点を2つ挙げよ。",
     "answerDe": [
       "Kann als numerische Funktion für Mitgliedschaften zu jeder Klasse aufgefasst werden",
       "Bringt gute Ergebnisse in der Praxis"
     ],
     "answerJa": [
-      "各クラスに対する所属度を数値関数として扱える",
-      "実際の応用で良好な結果を示す"
+      "★各クラスに対する所属度を数値関数として扱える",
+      "★実際の応用で良好な結果を示す"
     ],
     "explanationDe": [
       "Die multiresponse lineare Regression berechnet für jede Klasse einen numerischen Wert. Dieser kann als Maß dafür gesehen werden, wie stark eine Eingabe zu einer bestimmten Klasse gehört.",
@@ -145,12 +145,12 @@
   {
     "id": 6,
     "questionDe": "(s.7) Nennen Sie einen Nachteil der multiresponse linearen Regression bei Klassifikationsproblemen.",
-    "questionJa": "分類問題におけるマルチレスポンス線形回帰の欠点を1つ挙げよ。",
+    "questionJa": "★分類問題におけるマルチレスポンス線形回帰の欠点を1つ挙げよ。",
     "answerDe": [
       "Mitgliedschaftswerte können außerhalb des [0, 1] Intervalls liegen"
     ],
     "answerJa": [
-      "所属度（確率のような値）が [0, 1] の範囲外になる可能性がある"
+      "★所属度（確率のような値）が [0, 1] の範囲外になる可能性がある"
     ],
     "explanationDe": [
       "Ein großer Nachteil besteht darin, dass die berechneten Werte nicht automatisch zwischen 0 und 1 liegen – was aber notwendig wäre, wenn man sie als Wahrscheinlichkeiten interpretieren möchte.",
@@ -159,15 +159,15 @@
     ],
     "explanationJa": [
       "大きな欠点は、出力される数値が確率のように見えても、0〜1の範囲外になることがある点です。",
-      "例えば、『犬』クラスに対するスコアが1.3と出た場合、確率であれば最大は1のはずなので、1.3という値は正しく解釈できません。",
-      "また、-0.2のようにマイナスの値になることもあり、これも確率としては不適切です。こうした数値は、結果を誤って解釈してしまう原因になります。"
+      "★例えば、『犬』クラスに対するスコアが1.3と出た場合、確率であれば最大は1のはずなので、1.3という値は正しく解釈できません。",
+      "★また、-0.2のようにマイナスの値になることもあり、これも確率としては不適切です。こうした数値は、結果を誤って解釈してしまう原因になります。"
     ],
     "originalSlideText": "- Hat zwei Nachteile:\n  – Mitgliedschaftswerte können außerhalb des [0, 1] Intervalls liegen und sind somit keine “ordentlichen” Wahrscheinlichkeiten"
   },
   {
     "id": 7,
     "questionDe": "(s.7) Erklären Sie, warum die Annahmen der least-squares Regression bei Klassifikationsaufgaben verletzt werden.",
-    "questionJa": "分類問題ではなぜ最小二乗回帰の前提が成立しないのかを説明せよ。",
+    "questionJa": "★分類問題ではなぜ最小二乗回帰の前提が成立しないのかを説明せよ。",
     "answerDe": [
       "Fehler sollen statistisch unabhängig sein",
       "Fehler sollen normalverteilt sein mit gleicher Standardabweichung",
@@ -175,9 +175,9 @@
       "Diese Annahmen gelten bei Klassifikation nicht"
     ],
     "answerJa": [
-      "誤差は統計的に独立であることが前提とされている",
-      "誤差は正規分布で、同じ標準偏差を持つ必要がある",
-      "分類問題の出力は0または1のみである",
+      "★誤差は統計的に独立であることが前提とされている",
+      "★誤差は正規分布で、★同じ標準偏差を持つ必要がある",
+      "★分類問題の出力は0または1のみである",
       "そのため、正規分布や独立性の仮定が成り立たない"
     ],
     "explanationDe": [
@@ -188,7 +188,7 @@
     ],
     "explanationJa": [
       "最小二乗法では、誤差（予測値と実測値の差）は『独立している』『正規分布に従う』『ばらつきが一定である』ことが前提です。",
-      "しかし、分類では目的変数が 0（例：買わない）か 1（例：買う）のように離散的な値しか取りません。そのため、誤差の分布は正規分布にはなりません。",
+      "★しかし、分類では目的変数が 0（例：買わない）か 1（例：買う）のように離散的な値しか取りません。そのため、誤差の分布は正規分布にはなりません。",
       "例えば、ある顧客が商品を購入するかどうか（0 または 1）を予測するモデルを考えると、出力も0か1に限られます。そのため誤差も限られた値に偏ってしまい、正規分布の仮定が破綻します。",
       "このように前提が崩れていると、モデルの性能が落ちたり、予測結果が歪んだりする原因になります。"
     ],
@@ -197,7 +197,7 @@
   {
     "id": 8,
     "questionDe": "(s.8) Erklären Sie die Transformation in der logistischen Regression.",
-    "questionJa": "ロジスティック回帰における変換処理を説明せよ。",
+    "questionJa": "★ロジスティック回帰における変換処理を説明せよ。",
     "answerDe": [
       "Baut ein lineares Modell auf einer transformierten Zielvariable auf",
       "Ersetze Pr[1|a₁, ..., aₖ] mit log(Pr[1|a₁, ..., aₖ] / (1 − Pr[1|a₁, ..., aₖ]))",
@@ -217,10 +217,10 @@
       "Dadurch entstehen Werte im Bereich [−∞, ∞], was mit einer linearen Regression gut funktioniert."
     ],
     "explanationJa": [
-      "ロジスティック回帰では、確率そのものを予測するのではなく、まずそれを log(Pr / (1 − Pr)) という形に変換します。この変換は logit（ロジット）変換と呼ばれます。",
-      "このように変換することで、出力値は −∞ から ∞ の実数範囲に広がり、線形モデルと相性がよくなります。",
+      "★ロジスティック回帰では、確率そのものを予測するのではなく、まずそれを log(Pr / (1 − Pr)) という形に変換します。この変換は logit（ロジット）変換と呼ばれます。",
+      "★このように変換することで、出力値は −∞ から ∞ の実数範囲に広がり、線形モデルと相性がよくなります。",
       "例：ある入力に対して購入確率が0.8だと仮定すると、log(0.8 / 0.2) = log(4) ≈ 1.39 になります。この値を ∑ wᵢ·aᵢ のような線形式で近似します。",
-      "変換によって、線形回帰の枠組みの中で確率を扱えるようになります。"
+      "★変換によって、線形回帰の枠組みの中で確率を扱えるようになります。"
     ],
     "originalSlideText": "- Logistische Regression\n- Baut ein lineares Modell auf einer transformierten Zielvariable\n- Ersetze Pr[1|a₁, ..., aₖ] mit log(Pr[1|a₁, ..., aₖ] / (1 − Pr[1|a₁, ..., aₖ]))\n- Die Ergebniswerte liegen zwischen [−∞, ∞]\n- Transformation wird auch logit transformation genannt (siehe Bild auf der nächsten Folie)"
   },
@@ -254,7 +254,7 @@
   {
     "id": 10,
     "questionDe": "(s.9–10) Was zeigen die beiden Abbildungen zur logistischen Regression?",
-    "questionJa": "スライド9と10の図はロジスティック回帰において何を表しているか説明せよ。",
+    "questionJa": "★スライド9と10の図はロジスティック回帰において何を表しているか説明せよ。",
     "answerDe": [
       "Die linke Abbildung (s.9) zeigt die logit-Transformation: log(P / (1 − P))",
       "Die rechte Abbildung (s.10) zeigt die logistische Funktion: 1 / (1 + e^(−x))",
@@ -262,10 +262,10 @@
       "Die logistische Funktion wandelt lineare Werte wieder in Wahrscheinlichkeiten zwischen 0 und 1 um"
     ],
     "answerJa": [
-      "左側の図（s.9）は logit 変換 log(P / (1 − P)) を示している",
+      "★左側の図（s.9）は logit 変換 log(P / (1 − P)) を示している",
       "右側の図（s.10）はロジスティック関数 1 / (1 + e^(−x)) を示している",
-      "logit 関数は確率を −∞〜∞ に広げる変換である",
-      "ロジスティック関数は線形値を 0〜1 の確率に戻す逆変換である"
+      "★logit 関数は確率を −∞〜∞ に広げる変換である",
+      "★ロジスティック関数は線形値を 0〜1 の確率に戻す逆変換である"
     ],
     "explanationDe": [
       "Auf Folie 9 ist die logit-Funktion dargestellt. Sie nimmt eine Wahrscheinlichkeit (zwischen 0 und 1) und berechnet log(P / (1 − P)).",
@@ -277,7 +277,7 @@
     ],
     "explanationJa": [
       "スライド9は、確率Pを log(P / (1 − P)) に変換する logit 関数の形を示しています。確率が0.5ならlogitは0、1に近づくと急激に大きな正の値に、0に近づくと大きな負の値になります。",
-      "この変換により、確率を無限の範囲（−∞〜∞）に広げて、線形回帰で扱いやすくしています。",
+      "★この変換により、確率を無限の範囲（−∞〜∞）に広げて、線形回帰で扱いやすくしています。",
       "一方、スライド10はロジスティック関数（1 / (1 + e^(−x))）を示しており、logit変換された値を0〜1の確率に戻す役割を果たします。",
       "横軸は線形な入力（例えば ∑ wᵢ·aᵢ）で、縦軸がその入力に対応する確率です。",
       "例：∑ wᵢ·aᵢ = 0 のとき、出力は 0.5。−5 のときは約 0.007、+5 のときは約 0.993 になります。",
@@ -289,7 +289,7 @@
   {
     "id": 11,
     "questionDe": "(s.11) Wie wird das logistische Regressionsmodell an Trainingsdaten angepasst?",
-    "questionJa": "ロジスティック回帰モデルはどのように訓練データに適合させるか説明せよ。",
+    "questionJa": "★ロジスティック回帰モデルはどのように訓練データに適合させるか説明せよ。",
     "answerDe": [
       "Finde Gewichte, die zu den Trainingsdaten passen",
       "Nutze die log-likelihood des Modells",
@@ -298,11 +298,11 @@
       "Konvergiert normalerweise nach ein paar Iterationen"
     ],
     "answerJa": [
-      "訓練データに合うような重みを求める",
-      "モデルの対数尤度（log-likelihood）を用いる",
-      "重み wᵢ は対数尤度を最大にするように選ばれる",
-      "簡単な方法としては、加重最小二乗法を繰り返し解く手法がある",
-      "通常、数回の繰り返しで収束する"
+      "★訓練データに合うような重みを求める",
+      "★モデルの対数尤度（log-likelihood）を用いる",
+      "★重み wᵢ は対数尤度を最大にするように選ばれる",
+      "★簡単な方法としては、加重最小二乗法を繰り返し解く手法がある",
+      "★通常、数回の繰り返しで収束する"
     ],
     "explanationDe": [
       "In der logistischen Regression passt man das Modell an die Trainingsdaten an, indem man Gewichte wᵢ bestimmt, die die Vorhersagewahrscheinlichkeiten verbessern.",
@@ -325,7 +325,7 @@
   {
     "id": 13,
     "questionDe": "(s.12) Nennen Sie drei Merkmale der paarweisen Klassifikation.",
-    "questionJa": "ペアワイズ分類の特徴を3つ挙げよ。",
+    "questionJa": "★ペアワイズ分類の特徴を3つ挙げよ。",
     "answerDe": [
       "Ein Klassifikator wird für jedes Paar von Klassen gebaut",
       "Nur Instanzen dieser Klassen werden benutzt",
@@ -339,13 +339,19 @@
     "explanationDe": [
       "Bei der paarweisen Klassifikation (auch one-vs-one) wird für jede Kombination von zwei Klassen ein separater Klassifikator trainiert.",
       "Beispiel: Bei drei Klassen (A, B, C) gibt es drei Paare: (A vs B), (A vs C), (B vs C). Für jedes dieser Paare wird ein eigenes Modell erstellt.",
-      "Jeder Klassifikator verwendet nur die Daten dieser zwei Klassen. Für eine neue Eingabe stimmen alle Klassifikatoren ab, und die Klasse mit den meisten 'Stimmen' wird als Ergebnis gewählt."
+      "Jeder Klassifikator verwendet nur die Daten dieser zwei Klassen. Für eine neue Eingabe stimmen alle Klassifikatoren ab, und die Klasse mit den meisten 'Stimmen' wird als Ergebnis gewählt.",
+      "Eine 'Klasse' ist eine Kategorie, zu der ein Objekt gehören kann – zum Beispiel Tierarten wie 'Hund', 'Katze' oder 'Kaninchen'.",
+      "Wenn das System zum Beispiel ein Bild eines Hundes analysiert, entscheiden die Modelle wie folgt: (Hund vs. Katze) → Hund, (Hund vs. Kaninchen) → Hund, (Katze vs. Kaninchen) → Kaninchen. Der Hund erhält 2 Stimmen und wird daher als Ergebnis ausgegeben.",
+      "Das bedeutet: Bei einer unbekannten Eingabe – also einem Objekt, das das System vorher noch nie gesehen hat – wird die Klasse vorhergesagt, die am häufigsten von den paarweisen Klassifikatoren gewählt wurde. Diese Klasse gilt dann als die am besten passende."
     ],
     "explanationJa": [
       "ペアワイズ分類（または one-vs-one 手法）では、すべてのクラスの組み合わせに対して個別の分類器を作ります。",
-      "例：クラスが A・B・C の3つある場合、(AとB)、(AとC)、(BとC) の3組があり、それぞれに分類器を作ります。",
-      "各分類器はその2クラスのデータだけを学習し、新しいデータについてどちらのクラスに近いかを判断します。最終的には、投票のように多数決で最も適合したクラスを選びます。"
-    ],
+      "★例：クラスが A・B・C の3つある場合、(AとB)、(AとC)、(BとC) の3組があり、それぞれに分類器を作ります。",
+      "★各分類器はその2クラスのデータだけを学習し、新しいデータについてどちらのクラスに近いかを判断します。最終的には、投票のように多数決で最も適合したクラスを選びます。",
+      "ここで言う『クラス』とは、分類対象となるカテゴリのことです。たとえば動物を分類する場合、『犬』『猫』『ウサギ』といった種類がクラスになります。",
+      "新しい画像が『犬』だったとき、各分類器は次のように判断するかもしれません：『犬 vs 猫』→ 犬、『犬 vs ウサギ』→ 犬、『猫 vs ウサギ』→ ウサギ。このとき、犬が2票、ウサギが1票なので、最終的に『犬』と分類されます。",
+      "このように、未知のデータ――つまりシステムがこれまで見たことのない入力に対しては、すべての分類器の予測結果を集計し、最も多く票を得たクラスが『最もふさわしい』と判断されて出力されます。"
+    ],    
     "originalSlideText": "- Paarweise Klassifikation:\n  – Ein Klassifikator wird für jedes Paar von Klassen gebaut\n  – Nur Instanzen dieser Klassen werden benutzt\n  – Ergebnis für einen unbekannten Datensatz basiert auf der Klasse, die am besten passt"
   },
   {
@@ -358,9 +364,9 @@
       "Kalibriert die individuellen Wahrscheinlichkeiten der verschiedenen Klassifikatoren"
     ],
     "answerJa": [
-      "分類誤差を考慮することで良い結果が得られる",
-      "確率の計算にも利用できる",
-      "各分類器の出力確率を校正できる"
+      "★分類誤差を考慮することで良い結果が得られる",
+      "★確率の計算にも利用できる",
+      "★各分類器の出力確率を校正できる"
     ],
     "explanationDe": [
       "Da jeder Klassifikator nur zwei Klassen unterscheidet, sind die Aufgaben einfacher und oft genauer als bei Multiklassenmodellen.",
@@ -377,16 +383,16 @@
   {
     "id": 15,
     "questionDe": "(s.13) Nennen Sie drei Eigenschaften der Anzahl und Nutzung der Klassifikatoren bei der paarweisen Klassifikation.",
-    "questionJa": "ペアワイズ分類における分類器の数とその使い方に関する特徴を3つ挙げよ。",
+    "questionJa": "★ペアワイズ分類における分類器の数とその使い方に関する特徴を3つ挙げよ。",
     "answerDe": [
       "Für k Klassen werden (k·(k−1))/2 Klassifikatoren erstellt",
       "Nur die Instanzen, die zu den zwei Klassen gehören, werden benutzt",
       "Ist dennoch genauso schnell wie die anderen Multiklassenmethoden"
     ],
     "answerJa": [
-      "k 個のクラスに対して (k·(k−1))/2 個の分類器が作られる",
+      "★k 個のクラスに対して (k·(k−1))/2 個の分類器が作られる",
       "各分類器には対象の2クラスのインスタンスだけを使う",
-      "他の多クラス分類法と同じくらい高速である"
+      "★他の多クラス分類法と同じくらい高速である"
     ],
     "explanationDe": [
       "Bei k Klassen gibt es insgesamt k·(k−1)/2 mögliche Paare, für die jeweils ein eigener Klassifikator trainiert wird.",
@@ -403,7 +409,7 @@
   {
     "id": 16,
     "questionDe": "(s.13) Nennen Sie drei Aussagen über den Rechenaufwand der paarweisen Klassifikation.",
-    "questionJa": "ペアワイズ分類の計算量に関する記述を3つ挙げよ。",
+    "questionJa": "★ペアワイズ分類の計算量に関する記述を3つ挙げよ。",
     "answerDe": [
       "Gleichmäßige Verteilung von n Instanzen über k Klassen: (2n/k) Instanzen pro Problem",
       "Laufzeit ist proportional zu (k−1)·n",
@@ -412,7 +418,7 @@
     "answerJa": [
       "n 個のインスタンスが k クラスに均等に分布すると、1つの分類器あたりのインスタンス数は (2n/k)",
       "全体の実行時間は (k−1)·n に比例する",
-      "この手法はクラス数に対して線形にスケールする"
+      "★この手法はクラス数に対して線形にスケールする"
     ],
     "explanationDe": [
       "Wenn die n Trainingsinstanzen gleichmäßig auf k Klassen verteilt sind, enthält jede Klasse etwa n/k Instanzen. Für ein Paar sind das 2n/k Instanzen.",
@@ -429,7 +435,7 @@
   {
     "id": 17,
     "questionDe": "(s.14) Nennen Sie fünf Eigenschaften des Nearest-Neighbor-Algorithmus.",
-    "questionJa": "最近傍法（Nearest Neighbor法）の特徴を5つ挙げよ。",
+    "questionJa": "★最近傍法（Nearest Neighbor法）の特徴を5つ挙げよ。",
     "answerDe": [
       "Klassifiziere Datenpunkte aufgrund ihrer Nachbarschaft",
       "Attribute werden als Vektoren aufgefasst und in einen Raum gelegt",
@@ -438,11 +444,11 @@
       "Zu wenig/zu viele Nachbarn verändern die Ergebnisse"
     ],
     "answerJa": [
-      "データ点を近傍に基づいて分類する",
-      "属性はベクトルとして扱われ、空間に配置される",
-      "近傍の訓練データの多数決で分類される",
-      "k個の近傍を使って分類を行うことができる",
-      "近傍が少なすぎても多すぎても結果に影響を与える"
+      "★データ点を近傍に基づいて分類する",
+      "★属性はベクトルとして扱われ、空間に配置される",
+      "★近傍の訓練データの多数決で分類される",
+      "★k個の近傍を使って分類を行うことができる",
+      "★近傍が少なすぎても多すぎても結果に影響を与える"
     ],
     "explanationDe": [
       "Der Nearest-Neighbor-Algorithmus klassifiziert einen neuen Punkt basierend auf den Datenpunkten in seiner Umgebung (Nachbarschaft).",
@@ -470,9 +476,9 @@
       "Verteilung der Daten im Raum"
     ],
     "answerJa": [
-      "計算時間がかかる",
-      "メモリ使用量が多い",
-      "データの空間分布に依存する"
+      "★計算時間がかかる",
+      "★メモリ使用量が多い",
+      "★データの空間分布に依存する"
     ],
     "explanationDe": [
       "Da alle Trainingsdaten beim Klassifizieren durchsucht werden müssen, ist der Algorithmus rechnerisch aufwendig – vor allem bei großen Datensätzen.",
@@ -480,9 +486,9 @@
       "Wenn die Trainingsdaten ungleichmäßig im Raum verteilt sind (z. B. Cluster oder Lücken), kann das die Klassifikation stark verzerren."
     ],
     "explanationJa": [
-      "Nearest Neighbor法では、新しいデータが来るたびにすべての訓練データとの距離を計算する必要があるため、処理時間が非常にかかります（特にデータが多い場合）。",
-      "また、全データを記憶しておく必要があるため、メモリ使用量も多くなります。",
-      "さらに、データが空間上に偏って分布していたり、密集と空白があるような場合には、分類結果が不安定になることがあります。"
+      "★Nearest Neighbor法では、新しいデータが来るたびにすべての訓練データとの距離を計算する必要があるため、処理時間が非常にかかります（特にデータが多い場合）。",
+      "★また、全データを記憶しておく必要があるため、メモリ使用量も多くなります。",
+      "★さらに、データが空間上に偏って分布していたり、密集と空白があるような場合には、分類結果が不安定になることがあります。"
     ],
     "originalSlideText": "- Vektoren werden durch Distanzmaße auf „Nähe“/„Ähnlichkeit“ geprüft\n- Probleme:\n  – Rechenzeit\n  – Speicherbedarf\n  – Verteilung der Daten im Raum"
   },
@@ -541,7 +547,7 @@
   {
     "id": 21,
     "questionDe": "(s.16) Nennen Sie drei Varianten von Distanzfunktionen, die auf der Minkowski-Metrik basieren.",
-    "questionJa": "Minkowski距離に基づく距離関数のバリエーションを3つ挙げよ。",
+    "questionJa": "★Minkowski距離に基づく距離関数のバリエーションを3つ挙げよ。",
     "answerDe": [
       "Minkowski-Distanz (Lp-Norm): tₚ(dᵢ, dₖ) := (∑ⱼ=1ᵐ |aᵢⱼ − aₖⱼ|ᵖ)¹/ᵖ",
       "Euklidische Distanz als Spezialfall (p = 2): √∑ⱼ=1ᵐ (aᵢⱼ − aₖⱼ)²",
@@ -560,7 +566,7 @@
       "Beispiel: Für Punkte A=(1,2), B=(4,6):\n- Euklidisch: √[(4−1)² + (6−2)²] = √25 = 5\n- Manhattan: |4−1| + |6−2| = 3 + 4 = 7"
     ],
     "explanationJa": [
-      "Nearest Neighbor法では、特徴ベクトル間の距離を定義するために距離関数が使われます。",
+      "★Nearest Neighbor法では、特徴ベクトル間の距離を定義するために距離関数が使われます。",
       "Minkowski距離はpというパラメータに基づいて定義される距離関数の総称であり、有名なユークリッド距離やマンハッタン距離もこの仲間です。",
       "p=2 の場合はユークリッド距離となり、2点間の直線距離（ピタゴラスの定理）になります。",
       "p=1 の場合はマンハッタン距離となり、縦横の移動量の合計として表現されます。",
@@ -580,8 +586,8 @@
     ],
     "answerJa": [
       "比較目的なら平方根を省略しても問題ない",
-      "平行移動に対しては距離が変わらない（不変）",
-      "スケーリングに対しては不変ではない（特徴量の大きさが影響する）"
+      "★平行移動に対しては距離が変わらない（不変）",
+      "★スケーリングに対しては不変ではない（特徴量の大きさが影響する）"
     ],
     "explanationDe": [
       "Beim Vergleich von Distanzen, z. B. um den nächsten Nachbarn zu finden, bleibt die Rangordnung auch ohne Wurzel erhalten. Daher kann man sie zur Effizienz weglassen.",
@@ -657,7 +663,7 @@
   {
     "id": 25,
     "questionDe": "(s.18) Nennen Sie die vier Initialisierungsschritte beim Aufbau eines k-d-Baums.",
-    "questionJa": "k-d木を構築する際の初期化ステップを4つ挙げよ。",
+    "questionJa": "★k-d木を構築する際の初期化ステップを4つ挙げよ。",
     "answerDe": [
       "Sortiere Punkte für jedes Attribut",
       "i ← 1",
@@ -687,7 +693,7 @@
   {
     "id": 26,
     "questionDe": "(s.18) Beschreiben Sie vier Schritte der rekursiven Konstruktion eines k-d-Baums.",
-    "questionJa": "k-d木の再帰的な構築における4つの処理を説明せよ。",
+    "questionJa": "★k-d木の再帰的な構築における4つの処理を説明せよ。",
     "answerDe": [
       "Teile Punkte bezüglich Attribut i in zwei Teilmengen (Median)",
       "Trage Teilwert t in aktuellen Knoten ein",
@@ -695,10 +701,10 @@
       "Erzeuge rechten Kindknoten mit zugewiesenen Punkten"
     ],
     "answerJa": [
-      "i 番目の特徴に基づいて点を2つに分割（中央値を使用）",
-      "分割値 t を現在のノードに記録する",
-      "左側の子ノードを作り、そのデータ点を割り当てる",
-      "右側の子ノードを作り、そのデータ点を割り当てる"
+      "★i 番目の特徴に基づいて点を2つに分割（中央値を使用）",
+      "★分割値 t を現在のノードに記録する",
+      "★左側の子ノードを作り、そのデータ点を割り当てる",
+      "★右側の子ノードを作り、そのデータ点を割り当てる"
     ],
     "explanationDe": [
       "In jedem rekursiven Schritt wird das aktuelle Attribut i verwendet, um die Datenpunkte anhand ihres Medians in zwei gleich große Gruppen aufzuteilen.",
@@ -717,7 +723,7 @@
   {
     "id": 27,
     "questionDe": "(s.19) Nennen Sie vier Eigenschaften von Ball Trees im Vergleich zu k-d-Bäumen.",
-    "questionJa": "Ball Treeの特徴をk-d木と比較して4つ挙げよ。",
+    "questionJa": "★Ball Treeの特徴をk-d木と比較して4つ挙げよ。",
     "answerDe": [
       "k-d-Bäume sind aufgrund ihrer Ecken nicht ideal",
       "Daten sind in der Fläche nicht gleichmäßig verteilt",
@@ -725,10 +731,10 @@
       "Raum wird rekursiv in kleinere Sphären unterteilt – vergleichbar wie k-d-Baum"
     ],
     "answerJa": [
-      "k-d木は端（コーナー）の構造が原因で最適とは言えない",
-      "データは空間内に均等には分布していないことが多い",
+      "★k-d木は端（コーナー）の構造が原因で最適とは言えない",
+      "★データは空間内に均等には分布していないことが多い",
       "Ball Treeは重なり合う球（スフィア）に空間を分割する",
-      "空間を再帰的に小さな球に分割していく点で、k-d木と同様の構造を持つ"
+      "★空間を再帰的に小さな球に分割していく点で、k-d木と同様の構造を持つ"
     ],
     "explanationDe": [
       "k-d-Bäume teilen den Raum entlang von Achsen, was eckige Teilräume erzeugt – ungeeignet für viele reale Datenverteilungen.",
@@ -747,7 +753,7 @@
   {
     "id": 28,
     "questionDe": "(s.19) Beschreiben Sie in sechs Schritten, wie ein Ball Tree aufgebaut wird.",
-    "questionJa": "Ball Treeの構築手順を6ステップで説明せよ。",
+    "questionJa": "★Ball Treeの構築手順を6ステップで説明せよ。",
     "answerDe": [
       "Wähle einen Punkt möglichst entfernt vom Mittelpunkt",
       "Wähle einen zweiten möglichst weit entfernten vom ersten",
@@ -757,12 +763,12 @@
       "Zerlege die Teilmenge rekursiv weiter"
     ],
     "answerJa": [
-      "中心から最も遠い点を1つ選ぶ",
-      "その点からさらに最も遠い点をもう1つ選ぶ",
-      "すべての点を、2つの代表点のうち近い方に割り当てる",
-      "2つのグループそれぞれの重心（重み付き平均）を計算する",
-      "重心を球の中心とし、最も遠い点までの距離を半径とする",
-      "各部分集合を再帰的にさらに分割する"
+      "★中心から最も遠い点を1つ選ぶ",
+      "★その点からさらに最も遠い点をもう1つ選ぶ",
+      "★すべての点を、2つの代表点のうち近い方に割り当てる",
+      "★2つのグループそれぞれの重心（重み付き平均）を計算する",
+      "★重心を球の中心とし、最も遠い点までの距離を半径とする",
+      "★各部分集合を再帰的にさらに分割する"
     ],
     "explanationDe": [
       "Im ersten Schritt wird ein Startpunkt möglichst weit vom geometrischen Mittelpunkt gewählt, um eine gute Trennung zu erreichen.",
@@ -785,7 +791,7 @@
   {
     "id": 29,
     "questionDe": "(s.20–24) Erklären Sie, wie der Ball Tree sich rekursiv über mehrere Ebenen aufbaut.",
-    "questionJa": "Ball Treeが複数のレベルにわたってどのように再帰的に構築されるかを説明せよ。",
+    "questionJa": "★Ball Treeが複数のレベルにわたってどのように再帰的に構築されるかを説明せよ。",
     "answerDe": [
       "Level 1: Ein großer Ball umschließt alle Datenpunkte",
       "Level 2: Der große Ball wird in zwei kleinere überlappende Bälle unterteilt",

@@ -64,16 +64,16 @@
   {
     "id": 3,
     "questionDe": "(s3) Wie wird die Performanz bei Klassifizierungsproblemen gemessen und was ist das Ziel der Evaluation?",
-    "questionJa": "分類問題においてパフォーマンス（性能）はどのように測定され、Evaluation（評価）の目的は何か？",
+    "questionJa": "★分類問題においてパフォーマンス（性能）はどのように測定され、Evaluation（評価）の目的は何か？",
     "answerDe": [
       "Die Performanz für Klassifizierungsprobleme wird mit der Fehlerrate gemessen",
       "Fehlerrate = Anzahl der falschen Vorhersagen über alle Vorhersagen",
       "Ziel: Erreiche gute Vorhersagen auf neuen Daten"
     ],
     "answerJa": [
-      "分類問題の性能は誤分類率（Fehlerrate）によって測定される",
-      "誤分類率 = 全予測に対する間違った予測の割合",
-      "目的：未知の新しいデータに対して良い予測ができること"
+      "★分類問題の性能は誤分類率（Fehlerrate）によって測定される",
+      "★誤分類率 = 全予測に対する間違った予測の割合",
+      "★目的：未知の新しいデータに対して良い予測ができること"
     ],
     "explanationDe": [
       "Bei Klassifizierungsproblemen geht es darum, Objekte korrekt einer Kategorie zuzuordnen, z. B. 'E-Mail' oder 'Nicht-E-Mail'.",
@@ -84,8 +84,8 @@
     "explanationJa": [
       "分類問題とは、たとえば「これはスパムかスパムでないか」のように、データをあるカテゴリに正しく分類する問題です。",
       "その性能（パフォーマンス）を測る指標の一つが誤分類率（Fehlerrate）で、これは全体の予測のうち、間違った予測の割合を意味します。例：100件中20件が間違い → 誤分類率20%。",
-      "Evaluationの目的は、すでに学習したデータだけでなく、未知の新しいデータに対しても正確に予測できるモデルを作ることです。",
-      "そのため、誤分類率は主に新しいテストデータを使って評価します。"
+      "★Evaluationの目的は、すでに学習したデータだけでなく、未知の新しいデータに対しても正確に予測できるモデルを作ることです。",
+      "★そのため、誤分類率は主に新しいテストデータを使って評価します。"
     ],
     "originalSlideText": "EVALUIERUNG\n\n– Training und Tests\n\n– Die Performanz für Klassifizierungsprobleme wird mit der Fehlerrate gemessen\n\n– Fehlerrate: Anzahl der falschen Vorhersagen über alle Vorhersagen\n\n– Ziel: Erreiche gute Vorhersagen auf neuen Daten",
     "explanationImage": "",
@@ -94,7 +94,7 @@
   {
     "id": 4,
     "questionDe": "(s3) Warum ist die Fehlerrate auf dem Trainingsdatensatz kein guter Indikator und wie sollte man den Datensatz stattdessen aufteilen?",
-    "questionJa": "なぜ訓練データにおける誤分類率は良い指標とは言えないのか？また、データセットはどのように分けるべきか？",
+    "questionJa": "★なぜ訓練データにおける誤分類率は良い指標とは言えないのか？また、データセットはどのように分けるべきか？",
     "answerDe": [
       "Fehlerrate auf dem Trainingsdatensatz eignet sich nicht als guter Indikator",
       "Wird auch Resubstitution Fehler genannt",
@@ -104,8 +104,8 @@
       "– Test Datensatz"
     ],
     "answerJa": [
-      "訓練データでの誤分類率は良い指標ではない",
-      "これは再代入誤差（Resubstitution Fehler）とも呼ばれる",
+      "★訓練データでの誤分類率は良い指標ではない",
+      "★これは再代入誤差（Resubstitution Fehler）とも呼ばれる",
       "分類器の質を示す初期的な目安にすぎない",
       "データセットは以下のように分ける：",
       "– 訓練用データ（Training）",
@@ -119,8 +119,8 @@
       "Nur so lässt sich bewerten, wie gut das Modell auf neue Daten reagiert."
     ],
     "explanationJa": [
-      "もし訓練データ（学習に使ったデータ）での誤分類率だけを見て評価すると、非常に低くなることがあります。しかしこれは、モデルが単に暗記してしまっているだけ（＝過学習）という危険があります。",
-      "このような誤差は「再代入誤差（Resubstitution Fehler）」と呼ばれ、評価としては不十分です。",
+      "★もし訓練データ（学習に使ったデータ）での誤分類率だけを見て評価すると、非常に低くなることがあります。しかしこれは、モデルが単に暗記してしまっているだけ（＝過学習）という危険があります。",
+      "★このような誤差は「再代入誤差（Resubstitution Fehler）」と呼ばれ、評価としては不十分です。",
       "モデルが本当に汎用性があるか（未知のデータに対してもうまく機能するか）を確かめるためには、データを「訓練用」と「テスト用」に分ける必要があります。",
       "訓練データで学習し、テストデータで評価することで、初めて本当の性能がわかります。"
     ],
@@ -131,7 +131,7 @@
   {
   "id": 5,
   "questionDe": "(s4) Warum ist es sinnvoll, verschiedene Datensätze beim Training und Testen eines Klassifizierers zu verwenden?",
-  "questionJa": "分類器のトレーニングやテストにおいて、異なるデータセットを使うことがなぜ有効なのか？",
+  "questionJa": "★分類器のトレーニングやテストにおいて、異なるデータセットを使うことがなぜ有効なのか？",
   "answerDe": [
     "Die Testdaten dürfen nicht zur Erstellung des Klassifizierers genutzt werden",
     "Nutzung von verschiedenen, unabhängigen Datensätzen ist oft sinnvoll",
@@ -141,8 +141,8 @@
     "– Vergleich von verschiedenen Methoden"
   ],
   "answerJa": [
-    "テストデータは分類器の作成には使ってはならない",
-    "異なる独立したデータセットを使うのが有効な場合が多い",
+    "★テストデータは分類器の作成には使ってはならない",
+    "★異なる独立したデータセットを使うのが有効な場合が多い",
     "トレーニングデータ：ルールを作成する",
     "バリデーションデータ：",
     "– 枝刈り（Pruning）",
@@ -158,8 +158,8 @@
   "explanationJa": [
     "もしテストデータをモデルの学習に使ってしまうと、そのデータに特化してモデルが過学習してしまい、本当の性能がわからなくなります。",
     "このため、目的ごとに異なる独立したデータセットを用いることが重要です。",
-    "– トレーニングデータ：モデルの規則やパターンを学習するために使います。",
-    "– バリデーションデータ：学習の途中でモデルの性能を評価し、例えば決定木の枝刈り（Pruning）を行ったり、異なる手法を比較したりするために使います。",
+    "★– トレーニングデータ：モデルの規則やパターンを学習するために使います。",
+    "★– バリデーションデータ：学習の途中でモデルの性能を評価し、例えば決定木の枝刈り（Pruning）を行ったり、異なる手法を比較したりするために使います。",
     "これにより、モデルが未知のデータに対しても良い性能を発揮できるようになります。"
   ],
   "originalSlideText": "EVALUIERUNG\n\n– Training und Tests\n\n– Die Testdaten dürfen nicht zur Erstellung des Klassifizierers genutzt werden\n– Nutzung von verschiedenen, unabhängigen Datensätzen ist oft sinnvoll:\n  – Trainingsdatensatz: Erstelle die Regeln\n  – Validierungsdatensatz:\n    – Pruning\n    – Vergleich von verschiedenen Methoden",
@@ -169,15 +169,15 @@
 {
   "id": 6,
   "questionDe": "(s4) Welche Rolle spielt der Testdatensatz in der Evaluation und was ist bei kleinen Datensätzen zu beachten?",
-  "questionJa": "Evaluationにおけるテストデータの役割とは？また、データが少ない場合に注意すべきことは？",
+  "questionJa": "★Evaluationにおけるテストデータの役割とは？また、データが少ない場合に注意すべきことは？",
   "answerDe": [
     "Testdatensatz: Test der Performanz des finalen und optimierten Klassifizierers",
     "Große Datensätze sind hier hilfreich",
     "Bei kleinen Datensätzen müssen reale Daten oft händisch klassifiziert werden"
   ],
   "answerJa": [
-    "テストデータは最終的に最適化された分類器の性能評価に使う",
-    "大きなデータセットがあると評価がしやすい",
+    "★テストデータは最終的に最適化された分類器の性能評価に使う",
+    "★大きなデータセットがあると評価がしやすい",
     "小さなデータセットでは、実際のデータを手作業で分類する必要があることもある"
   ],
   "explanationDe": [
@@ -199,7 +199,7 @@
 {
   "id": 7,
   "questionDe": "(s5) Wovon hängt die Vorhersage-Performanz ab und welche statistische Grundlage wird zur Bewertung genutzt?",
-  "questionJa": "予測性能（Vorhersage-Performanz）は何に依存し、どのような統計的手法が評価に使われるか？",
+  "questionJa": "★予測性能（Vorhersage-Performanz）は何に依存し、どのような統計的手法が評価に使われるか？",
   "answerDe": [
     "Hängt von der Größe des Testdatensatzes ab",
     "Qualität des Klassifizierers hängt vom Trainingsdatensatz ab",
@@ -208,8 +208,8 @@
     "– Beispiel: Münzwurf"
   ],
   "answerJa": [
-    "予測性能はテストデータセットの大きさに依存する",
-    "分類器の質はトレーニングデータセットに依存する",
+    "★予測性能はテストデータセットの大きさに依存する",
+    "★分類器の質はトレーニングデータセットに依存する",
     "統計的には「ベルヌーイ列（Bernoulli-Kette）」が使われる",
     "– 独立した試行の連続",
     "– 例：コイン投げ"
@@ -502,7 +502,7 @@
 {
   "id": 16,
   "questionDe": "(Klausur) Wie werden Trainings- und Testdaten in der Evaluierung genutzt und wie läuft der Evaluierungsprozess allgemein ab?",
-  "questionJa": "（試験）評価（Evaluation）において、トレーニングデータとテストデータはどのように使われるか？評価プロセス全体の流れは？",
+  "questionJa": "★（試験）評価（Evaluation）において、トレーニングデータとテストデータはどのように使われるか？評価プロセス全体の流れは？",
   "answerDe": [
     "Trainingsdaten dienen zur Erstellung und Anpassung des Modells",
     "Testdaten werden verwendet, um die Vorhersagequalität des fertigen Modells zu überprüfen",
@@ -511,11 +511,11 @@
     "Ergebnisse mehrerer Testläufe werden oft gemittelt, um stabile Aussagen zu treffen"
   ],
   "answerJa": [
-    "トレーニングデータはモデルの構築・調整に使われる",
-    "テストデータは、最終的なモデルの予測性能を評価するために使われる",
-    "評価は通常、未知の新しいデータに対する誤分類率を比較して行われる",
-    "データはトレーニング用とテスト用に分割される（例：ホールドアウト法、交差検証）",
-    "複数のテスト結果を平均することで、より信頼できる評価が得られる"
+    "★トレーニングデータはモデルの構築・調整に使われる",
+    "★テストデータは、最終的なモデルの予測性能を評価するために使われる",
+    "★評価は通常、未知の新しいデータに対する誤分類率を比較して行われる",
+    "★データはトレーニング用とテスト用に分割される（例：ホールドアウト法、交差検証）",
+    "★複数のテスト結果を平均することで、より信頼できる評価が得られる"
   ],
   "explanationDe": [
     "Der Evaluierungsprozess beginnt mit dem Aufteilen der verfügbaren Daten in zwei (oder mehr) Gruppen: Trainingsdaten und Testdaten.",
@@ -540,7 +540,7 @@
 {
   "id": 17,
   "questionDe": "(s11) Was ist die Holdout-Methode und wie wird sie angewendet?",
-  "questionJa": "ホールドアウト法（Holdout-Methode）とは何か？ どのように使われるのか？",
+  "questionJa": "★ホールドアウト法（Holdout-Methode）とは何か？ どのように使われるのか？",
   "answerDe": [
     "Holdout Methode",
     "– Datenmengen für das Lernen und Testen sind oft limitiert verfügbar",
@@ -572,7 +572,7 @@
 {
   "id": 18,
   "questionDe": "(s11) Wie wird die Datenaufteilung bei der Holdout-Methode typischerweise vorgenommen?",
-  "questionJa": "ホールドアウト法では、データはどのように分割されるのが一般的か？",
+  "questionJa": "★ホールドアウト法では、データはどのように分割されるのが一般的か？",
   "answerDe": [
     "Manchmal müssen auch Daten für die Validierung reserviert werden",
     "Oft:",
@@ -582,8 +582,8 @@
   "answerJa": [
     "検証（バリデーション）用にもデータを確保することがある",
     "一般的には：",
-    "– 3分の1をテスト用に使う",
-    "– 3分の2を学習（トレーニング）用に使う"
+    "★– 3分の1をテスト用に使う",
+    "★– 3分の2を学習（トレーニング）用に使う"
   ],
   "explanationDe": [
     "Je nach Anwendungsfall kann es sinnvoll sein, die Daten nicht nur in Trainings- und Testdaten zu unterteilen, sondern auch einen Validierungssatz zu nutzen.",
@@ -604,7 +604,7 @@
 {
   "id": 19,
   "questionDe": "(s12) Welches Problem kann bei der Holdout-Methode bezüglich der Repräsentativität der Daten auftreten?",
-  "questionJa": "ホールドアウト法では、データの代表性に関してどんな問題が発生するか？",
+  "questionJa": "★ホールドアウト法では、データの代表性に関してどんな問題が発生するか？",
   "answerDe": [
     "Problem: Die Datensätze können nicht repräsentativ sein",
     "– Im Trainingsdatensatz fehlt eine Klasse",
@@ -612,8 +612,8 @@
   ],
   "answerJa": [
     "問題：データセットが代表的でない可能性がある",
-    "– トレーニングデータにあるクラスが全く含まれない",
-    "– 特定のクラスがトレーニングデータ内で非常に少ない"
+    "★– トレーニングデータにあるクラスが全く含まれない",
+    "★– 特定のクラスがトレーニングデータ内で非常に少ない"
   ],
   "explanationDe": [
     "Ein wesentliches Problem bei der Holdout-Methode ist, dass die zufällige Aufteilung der Daten zu ungleichen Klassenverteilungen führen kann.",
@@ -634,7 +634,7 @@
 {
   "id": 20,
   "questionDe": "(s12) Wie kann man das Repräsentativitätsproblem bei der Holdout-Methode lösen?",
-  "questionJa": "ホールドアウト法での代表性の問題をどのように解決できるか？",
+  "questionJa": "★ホールドアウト法での代表性の問題をどのように解決できるか？",
   "answerDe": [
     "Lösung: Stratifikation",
     "– Random sampling",
@@ -643,9 +643,9 @@
     "– Ist nur eine simple Absicherung gegen ungleiche Verteilungen"
   ],
   "answerJa": [
-    "解決策：Stratifikation（層化）",
-    "– ランダムサンプリングを行う",
-    "– 各クラスが学習・テストデータに同じように含まれるようにする",
+    "★解決策：Stratifikation（層化）",
+    "★– ランダムサンプリングを行う",
+    "★– 各クラスが学習・テストデータに同じように含まれるようにする",
     "– 方法：Stratified Holdout（層化ホールドアウト）",
     "– 不均一な分布を避けるための簡易的な対策である"
   ],
@@ -668,7 +668,7 @@
 {
   "id": 21,
   "questionDe": "(s13) Was ist die Repeated Holdout Methode und wie funktioniert sie?",
-  "questionJa": "Repeated Holdout（繰り返しホールドアウト）法とは何か？どのように行うのか？",
+  "questionJa": "★Repeated Holdout（繰り返しホールドアウト）法とは何か？どのように行うのか？",
   "answerDe": [
     "Repeated Holdout",
     "– Wiederhole die Analyse (mit Stratifikation) mehrere Male",
@@ -677,9 +677,9 @@
   ],
   "answerJa": [
     "Repeated Holdout（繰り返しホールドアウト）",
-    "– ストラティフィケーション付きの分析を複数回繰り返す",
-    "– 毎回テスト用にデータの一部をランダムに選ぶ",
-    "– 残りのデータをトレーニング用に使う"
+    "★– ストラティフィケーション付きの分析を複数回繰り返す",
+    "★– 毎回テスト用にデータの一部をランダムに選ぶ",
+    "★– 残りのデータをトレーニング用に使う"
   ],
   "explanationDe": [
     "Bei der Repeated Holdout Methode wird die einfache Holdout-Analyse mehrfach durchgeführt, typischerweise mit zufälligen und ggf. stratifizierten Stichproben.",
@@ -700,14 +700,14 @@
 {
   "id": 22,
   "questionDe": "(s13) Wie wird die zusammengefasste Fehlerrate bei Repeated Holdout berechnet?",
-  "questionJa": "Repeated Holdout で得られた誤差率はどのようにまとめて評価するのか？",
+  "questionJa": "★Repeated Holdout で得られた誤差率はどのようにまとめて評価するのか？",
   "answerDe": [
     "Zusammengefasste Fehlerrate:",
     "– Bilde den Durchschnitt über alle einzelnen Fehlerraten"
   ],
   "answerJa": [
     "まとめた誤差率（Fehlerrate）：",
-    "– 各回の誤差率の平均を取る"
+    "★– 各回の誤差率の平均を取る"
   ],
   "explanationDe": [
     "Da bei Repeated Holdout viele einzelne Tests durchgeführt werden, erhält man auch viele verschiedene Fehlerraten.",
@@ -726,7 +726,7 @@
 {
   "id": 23,
   "questionDe": "(s14) Was ist Kreuzvalidierung und wie wird sie durchgeführt?",
-  "questionJa": "交差検証（Kreuzvalidierung）とは何か？どのように行うのか？",
+  "questionJa": "★交差検証（Kreuzvalidierung）とは何か？どのように行うのか？",
   "answerDe": [
     "Kreuzvalidierung",
     "– Erweiterung der holdout Methode",
@@ -736,12 +736,12 @@
     "– Die übrigen werden für das Training genutzt"
   ],
   "answerJa": [
-    "交差検証（Kreuzvalidierung）",
-    "– ホールドアウト法を拡張した手法",
-    "– データをfold（分割）数に固定して分ける",
-    "– 通常、すべてのfoldは同じサイズ",
-    "– 各foldを1回ずつテスト用に使う",
-    "– 残りのfoldを学習用に使う"
+    "★交差検証（Kreuzvalidierung）",
+    "★– ホールドアウト法を拡張した手法",
+    "★– データをfold（分割）数に固定して分ける",
+    "★– 通常、すべてのfoldは同じサイズ",
+    "★– 各foldを1回ずつテスト用に使う",
+    "★– 残りのfoldを学習用に使う"
   ],
   "explanationDe": [
     "Kreuzvalidierung ist eine Evaluierungsmethode, bei der die Daten in mehrere gleich große Teile (folds) aufgeteilt werden.",
@@ -762,7 +762,7 @@
 {
   "id": 24,
   "questionDe": "(s14) Wie bewertet man die Leistung bei Kreuzvalidierung und was bedeutet 'dreifache Kreuzvalidierung'?",
-  "questionJa": "交差検証における性能評価はどのように行われるか？また「3分割交差検証」とは何か？",
+  "questionJa": "★交差検証における性能評価はどのように行われるか？また「3分割交差検証」とは何か？",
   "answerDe": [
     "Bei drei folds:",
     "– Dreifache Kreuzvalidierung",
@@ -773,7 +773,7 @@
     "fold数が3の場合：",
     "– 3分割交差検証（Dreifache Kreuzvalidierung）",
     "– 層化された3分割交差検証（Stratifizierte dreifache Kreuzvalidierung）",
-    "– 各foldで得られた誤差率の平均を取る"
+    "★– 各foldで得られた誤差率の平均を取る"
   ],
   "explanationDe": [
     "Bei dreifacher Kreuzvalidierung wird der Datensatz in drei gleich große Teile geteilt.",
@@ -783,9 +783,9 @@
   ],
   "explanationJa": [
     "3分割交差検証とは、データを3等分して、各部分を1回ずつテスト用に使う手法です。",
-    "つまり3回の学習・評価を行い、それぞれの誤差率を計算します。",
-    "さらに、各foldにおいてクラスの分布が偏らないようにする場合は「層化3分割交差検証」と呼ばれます。",
-    "最後に、各foldで得られた誤差率の平均を取り、モデルの総合的な性能を評価します。"
+    "★つまり3回の学習・評価を行い、それぞれの誤差率を計算します。",
+    "★さらに、各foldにおいてクラスの分布が偏らないようにする場合は「層化3分割交差検証」と呼ばれます。",
+    "★最後に、各foldで得られた誤差率の平均を取り、モデルの総合的な性能を評価します。"
   ],
   "originalSlideText": "– Bei drei folds:\n  – Dreifache Kreuzvalidierung\n  – Stratifizierte dreifache Kreuzvalidierung\n– Bilde den Durchschnitt der Fehlerraten",
   "explanationImage": "",
@@ -794,7 +794,7 @@
 {
   "id": 25,
   "questionDe": "(s15) Warum wird bei der Kreuzvalidierung häufig 10-fold verwendet?",
-  "questionJa": "交差検証ではなぜよく10分割（10-fold）が使われるのか？",
+  "questionJa": "★交差検証ではなぜよく10分割（10-fold）が使われるのか？",
   "answerDe": [
     "Standard: 10 folds",
     "Warum 10?",
@@ -805,8 +805,8 @@
   "answerJa": [
     "標準：10分割（10-fold）",
     "なぜ10なのか？",
-    "– 実践的な経験に基づく",
-    "– 理論的な裏付けもある",
+    "★– 実践的な経験に基づく",
+    "★– 理論的な裏付けもある",
     "– それでも「標準値」として盲目的に使う必要はない"
   ],
   "explanationDe": [
@@ -829,7 +829,7 @@
 {
   "id": 26,
   "questionDe": "(Klausur) Erklären Sie das Prinzip der K-Fold Kreuzvalidierung. Welche Anzahl an Folds wird häufig verwendet und warum?",
-  "questionJa": "（試験）K-Fold交差検証の仕組みを説明せよ。また、一般的によく使われるfold数とその理由について述べよ。",
+  "questionJa": "★（試験）K-Fold交差検証の仕組みを説明せよ。また、一般的によく使われるfold数とその理由について述べよ。",
   "answerDe": [
     "Kreuzvalidierung: Erweiterung der Holdout-Methode",
     "Daten werden in k gleich große Folds (Teilmengen) aufgeteilt",
@@ -867,7 +867,7 @@
 {
   "id": 27,
   "questionDe": "(s16) Was ist Leave-one-out Kreuzvalidierung und wie funktioniert sie?",
-  "questionJa": "Leave-one-out交差検証（LOOCV）とは何か？どのように行われるか？",
+  "questionJa": "★Leave-one-out交差検証（LOOCV）とは何か？どのように行われるか？",
   "answerDe": [
     "Datensatz mit n Instanzen",
     "Führe n-fache Kreuzvalidierung durch",
@@ -907,7 +907,7 @@
 {
   "id": 28,
   "questionDe": "(s17)  Nennen Sie vier Vorteile der Leave-one-out Kreuzvalidierung.",
-  "questionJa": "Leave-one-out交差検証（LOOCV）の利点を4つ挙げよ。",
+  "questionJa": "★Leave-one-out交差検証（LOOCV）の利点を4つ挙げよ。",
   "answerDe": [
     "Nutzung der maximal möglichen Datenmenge für das Training",
     "Kann zur Steigerung der Klassifikatorleistung führen",
@@ -915,10 +915,10 @@
     "Optimal für kleinere Datensätze geeignet"
   ],
   "answerJa": [
-    "学習に利用できるデータ量を最大限活用できる",
-    "分類器の性能が向上する可能性がある",
-    "決定的な手法であり、ランダムサンプリングを必要としない",
-    "小規模なデータセットに最適である"
+    "★学習に利用できるデータ量を最大限活用できる",
+    "★分類器の性能が向上する可能性がある",
+    "★決定的な手法であり、ランダムサンプリングを必要としない",
+    "★小規模なデータセットに最適である"
   ],
   "explanationDe": [
     "Bei Leave-one-out wird in jedem Durchlauf nur eine Instanz zum Testen verwendet, alle übrigen Daten fließen ins Training ein – das maximiert die Nutzung der Daten.",
@@ -939,7 +939,7 @@
 {
   "id": 29,
   "questionDe": "(s17)Nennen Sie vier Nachteile der Leave-one-out Kreuzvalidierung.",
-  "questionJa": "Leave-one-out交差検証（LOOCV）の欠点を4つ挙げよ。",
+  "questionJa": "★Leave-one-out交差検証（LOOCV）の欠点を4つ挙げよ。",
   "answerDe": [
     "Sehr hohe Rechenzeit",
     "Unpraktisch für große Datensätze",
@@ -947,10 +947,10 @@
     "Kann zu irreführender Fehlerrate führen (z. B. 100 % bei echter Rate 50 %)"
   ],
   "answerJa": [
-    "計算時間が非常に長い",
+    "★計算時間が非常に長い",
     "大規模なデータセットには不向きである",
-    "層化（クラスの分布の維持）ができない",
-    "誤った誤差率になることがある（例：真の誤差50％でも100％と評価される）"
+    "★層化（クラスの分布の維持）ができない",
+    "★誤った誤差率になることがある（例：真の誤差50％でも100％と評価される）"
   ],
   "explanationDe": [
     "Da das Modell n-mal trainiert und getestet wird (für n Datenpunkte), ist der Zeitaufwand sehr hoch – besonders bei großen Datensätzen.",
@@ -971,16 +971,16 @@
 {
   "id": 30,
   "questionDe": "(s18) Was ist das Prinzip des Bootstrappings in der Evaluation?",
-  "questionJa": "ブートストラップ法とは、評価においてどのような原理で行われるか？",
+  "questionJa": "★ブートストラップ法とは、評価においてどのような原理で行われるか？",
   "answerDe": [
     "Bootstrapping verwendet Sampling mit Ersatz",
     "Frühere Verfahren arbeiteten ohne Ersatz",
     "Variante: 0.632 Bootstrap"
   ],
   "answerJa": [
-    "ブートストラップは復元抽出（同じデータを複数回選べる）を用いる",
-    "従来の手法（ホールドアウトや交差検証）は非復元抽出であった",
-    "0.632ブートストラップというバリエーションもある"
+    "★ブートストラップは復元抽出（同じデータを複数回選べる）を用いる",
+    "★従来の手法（ホールドアウトや交差検証）は非復元抽出であった",
+    "★0.632ブートストラップというバリエーションもある"
   ],
   "explanationDe": [
     "Beim Bootstrapping wird ein Trainingsdatensatz erzeugt, indem man n-mal mit Ersatz aus n Originalinstanzen zieht.",
@@ -988,7 +988,7 @@
     "Die Variante „0.632 Bootstrap“ besagt, dass etwa 63,2 % der Instanzen im Mittel im Trainingsdatensatz auftauchen."
   ],
   "explanationJa": [
-    "ブートストラップ法では、n個の元データから復元抽出によりn回データを選び、訓練データを作ります。",
+    "★ブートストラップ法では、n個の元データから復元抽出によりn回データを選び、訓練データを作ります。",
     "このとき、同じデータが複数回選ばれたり、一度も選ばれないものも出てきます。この点が、非復元抽出（1回選んだら再使用しない）を使う交差検証やホールドアウト法と大きく異なります。",
     "0.632ブートストラップでは、平均して全体の約63.2％のデータが訓練データに含まれるとされています。"
   ],
@@ -999,7 +999,7 @@
 {
   "id": 31,
   "questionDe": "(s18) Wie werden Trainings- und Testdaten beim Bootstrapping gebildet?",
-  "questionJa": "ブートストラップ法では、どのように訓練データとテストデータが分けられるか？",
+  "questionJa": "★ブートストラップ法では、どのように訓練データとテストデータが分けられるか？",
   "answerDe": [
     "Ein Datensatz mit n Instanzen wird n-mal mit Ersatz gesampelt",
     "Der Trainingsdatensatz enthält n Instanzen, teils mehrfach",
@@ -1027,7 +1027,7 @@
 {
   "id": 32,
   "questionDe": "(s19) Welche Wahrscheinlichkeit hat eine Instanz, bei Bootstrapping nicht gewählt zu werden, und wie ergibt sich daraus der 0.632-Faktor?",
-  "questionJa": "Bootstrappingにおいて、1つのインスタンスが選ばれない確率はいくらか？またそれが0.632という値とどう関係するか？",
+  "questionJa": "★Bootstrappingにおいて、1つのインスタンスが選ばれない確率はいくらか？またそれが0.632という値とどう関係するか？",
   "answerDe": [
     "Wahrscheinlichkeit, gewählt zu werden: 1/n",
     "Wahrscheinlichkeit, nicht gewählt zu werden: 1 - 1/n",
@@ -1038,7 +1038,7 @@
   "answerJa": [
     "1回で選ばれる確率は1/n",
     "選ばれない確率は1 - 1/n",
-    "これをn回繰り返すと、1つのデータが一度も選ばれない確率は (1 - 1/n)^n",
+    "★これをn回繰り返すと、1つのデータが一度も選ばれない確率は (1 - 1/n)^n",
     "nが大きいとき、これはe⁻¹ ≈ 0.368に近づく",
     "→ 約36.8%は訓練データに含まれず、残り63.2%が含まれる（0.632法）"
   ],
@@ -1063,7 +1063,7 @@
 {
   "id": 33,
   "questionDe": "(s19) Wie verteilen sich Trainings- und Testdaten beim Bootstrapping?",
-  "questionJa": "Bootstrappingでは、訓練データとテストデータはどのような割合で分けられるか？",
+  "questionJa": "★Bootstrappingでは、訓練データとテストデータはどのような割合で分けられるか？",
   "answerDe": [
     "Trainingsdatensatz enthält ca. 63.2 % der Instanzen",
     "Testdatensatz enthält ca. 36.8 % der Instanzen",
@@ -1091,7 +1091,7 @@
 {
   "id": 34,
   "questionDe": "(s20) Warum ist die Fehlerratenschätzung beim Bootstrapping pessimistisch und wie kann man sie verbessern?",
-  "questionJa": "Bootstrappingでの誤差率の推定が悲観的（低め）になるのはなぜか？また、それをどのように補うか？",
+  "questionJa": "★Bootstrappingでの誤差率の推定が悲観的（低め）になるのはなぜか？また、それをどのように補うか？",
   "answerDe": [
     "Nur 63 % der Daten werden für Training verwendet (vs. 90 % bei 10-fold)",
     "Fehlerrate ist dadurch oft pessimistisch",
@@ -1100,9 +1100,9 @@
     "Daher sollte er nicht alleine verwendet werden"
   ],
   "answerJa": [
-    "訓練データとして使われるのは約63％で、10分割交差検証の90％より少ない",
-    "そのため、誤差率が高く出てしまいがち（悲観的）",
-    "そこで、テスト誤差とモデルの訓練誤差を組み合わせて補うという工夫がある",
+    "★訓練データとして使われるのは約63％で、10分割交差検証の90％より少ない",
+    "★そのため、誤差率が高く出てしまいがち（悲観的）",
+    "★そこで、テスト誤差とモデルの訓練誤差を組み合わせて補うという工夫がある",
     "ただし訓練誤差は楽観的すぎるため、単独では使うべきではない"
   ],
   "explanationDe": [
@@ -1112,7 +1112,7 @@
     "Allerdings ist der Trainingsfehler meistens zu optimistisch – daher wird empfohlen, ihn nur im Gewicht mit dem Testfehler zu verwenden."
   ],
   "explanationJa": [
-    "ブートストラップでは、データの約63％しか訓練に使われないため、モデルが十分に学習できず、テスト誤差が高く（＝悲観的に）出やすくなります。",
+    "★ブートストラップでは、データの約63％しか訓練に使われないため、モデルが十分に学習できず、テスト誤差が高く（＝悲観的に）出やすくなります。",
     "そこで補完策として、テスト誤差と訓練データ上の誤差（モデル誤差）を組み合わせるという方法が考案されました。",
     "ただし、訓練誤差は楽観的すぎる傾向があるため、これ単体では使わず、テスト誤差と適切に重みづけして使うのがポイントです。"
   ],
@@ -1123,7 +1123,7 @@
 {
   "id": 35,
   "questionDe": "(s20) Wie berechnet man die Bootstrap-Fehlerrate und warum wird das Verfahren wiederholt?",
-  "questionJa": "ブートストラップによる誤差率（エラー率）はどのように計算するか？また、なぜ繰り返し行う必要があるか？",
+  "questionJa": "★ブートストラップによる誤差率（エラー率）はどのように計算するか？また、なぜ繰り返し行う必要があるか？",
   "answerDe": [
     "Formel: e = 0.632 × Fehler auf Testdaten + 0.368 × Fehler auf Trainingsdaten",
     "Kombiniert pessimistische und optimistische Fehler",
@@ -1131,7 +1131,7 @@
     "Dann berechnet man den Durchschnitt über alle Wiederholungen"
   ],
   "answerJa": [
-    "計算式：e = 0.632 × テストデータ上の誤差 + 0.368 × 訓練データ上の誤差",
+    "★計算式：e = 0.632 × テストデータ上の誤差 + 0.368 × 訓練データ上の誤差",
     "悲観的な評価と楽観的な評価をバランスよく組み合わせる",
     "ブートストラップを何度も繰り返す必要がある",
     "すべての結果の平均を最終的な評価として用いる"
@@ -1179,7 +1179,7 @@
 {
   "id": 37,
   "questionDe": "(s21) Warum liefert Bootstrapping in manchen Fällen schlechte Ergebnisse?",
-  "questionJa": "なぜBootstrappingは一部のケースで誤った（低すぎる）誤差評価をしてしまうのか？",
+  "questionJa": "★なぜBootstrappingは一部のケースで誤った（低すぎる）誤差評価をしてしまうのか？",
   "answerDe": [
     "Bei zwei gleich großen Klassen kann der Trainingsfehler 0 % sein",
     "Fehlerratenschätzung wird dadurch zu niedrig (z. B. 31.6 %)",
@@ -1207,7 +1207,7 @@
 {
   "id": 38,
   "questionDe": "(s18–21) Erklären Sie das Prinzip des Bootstrappings. Welcher Wert wird häufig verwendet und warum?",
-  "questionJa": "（試験類題）Bootstrappingの基本的な仕組みを説明せよ。よく使われる「0.632」は何を意味し、なぜ使われるのか？",
+  "questionJa": "★（試験類題）Bootstrappingの基本的な仕組みを説明せよ。よく使われる「0.632」は何を意味し、なぜ使われるのか？",
   "answerDe": [
     "Bootstrapping verwendet Ziehen mit Zurücklegen (Sampling mit Ersatz)",
     "Ein Datensatz mit n Instanzen wird n-mal gesampelt",
@@ -1216,11 +1216,11 @@
     "Daher stammt der Begriff „0.632 bootstrap“"
   ],
   "answerJa": [
-    "Bootstrappingでは、復元抽出（同じデータを繰り返し選べる）を行う",
-    "n個のデータからn回ランダムにサンプリングして訓練データを作る",
-    "平均して63.2%のデータが訓練データに含まれる",
-    "残りの36.8%はテストデータとして使われる",
-    "この63.2%という割合から「0.632 bootstrap」と呼ばれる"
+    "★Bootstrappingでは、復元抽出（同じデータを繰り返し選べる）を行う",
+    "★n個のデータからn回ランダムにサンプリングして訓練データを作る",
+    "★平均して63.2%のデータが訓練データに含まれる",
+    "★残りの36.8%はテストデータとして使われる",
+    "★この63.2%という割合から「0.632 bootstrap」と呼ばれる"
   ],
   "explanationDe": [
     "Bootstrapping ist eine Methode zur Abschätzung der Modellgüte, bei der aus einem vorhandenen Datensatz mit n Instanzen n Stichproben gezogen werden – und zwar mit Zurücklegen.",
@@ -1236,8 +1236,8 @@
     "このとき「あるデータが1回も選ばれない確率」は (1 - 1/n)^n で求められ、nが大きいときは e^(-1) ≈ 0.368（約36.8%）に近づきます。",
     "つまり、データのうち約**63.2%が訓練データに含まれ**、残り**36.8%は一度も使われず、テストデータに回せる**のです。",
     "この63.2%という割合がよく使われるため、手法全体を「0.632ブートストラップ」と呼びます。",
-    "この方法では、訓練データのエラー（しばしば楽観的すぎる）とテストデータのエラー（やや悲観的）を組み合わせて、現実的なエラー率を算出できます。",
-    "例えば： e = 0.632 × テスト誤差 + 0.368 × 訓練誤差 のような形です。"
+    "★この方法では、訓練データのエラー（しばしば楽観的すぎる）とテストデータのエラー（やや悲観的）を組み合わせて、現実的なエラー率を算出できます。",
+    "★例えば： e = 0.632 × テスト誤差 + 0.368 × 訓練誤差 のような形です。"
   ],
   "originalSlideText": "– Bootstrapping\n– Sampling mit Ersatz\n– Wahrscheinlichkeit, dass eine Instanz nicht gezogen wird: (1 - 1/n)^n ≈ e⁻¹ ≈ 0.368\n– Trainingsdatensatz: 63.2% Instanzen\n– Testdatensatz: 36.8% Instanzen\n– Einige Instanzen mehrfach im Training\n– e = 0.632 e_test + 0.368 e_train",
   "explanationImage": "",
@@ -1246,7 +1246,7 @@
 {
   "id": 39,
   "questionDe": "(s22) Wie kann man verschiedene Data Mining Verfahren sinnvoll vergleichen? Welche Probleme treten auf und wie kann man sie lösen?",
-  "questionJa": "異なるデータマイニング手法を適切に比較するにはどうすればよいか？その際に生じる問題と解決策は何か？",
+  "questionJa": "★異なるデータマイニング手法を適切に比較するにはどうすればよいか？その際に生じる問題と解決策は何か？",
   "answerDe": [
     "Nutze z. B. Kreuzvalidierung zur Fehlerabschätzung",
     "Wähle das Verfahren mit der geringsten Fehlerrate",
@@ -1257,7 +1257,7 @@
     "誤差率の見積もりには交差検証（Cross-Validation）などを使う",
     "誤差が最も小さい手法を選ぶのが一般的",
     "問題点：誤差率の見積もりが正確でないことがある",
-    "対策：信頼区間に基づく統計的検定を用いて比較する"
+    "★対策：信頼区間に基づく統計的検定を用いて比較する"
   ],
   "explanationDe": [
     "Wenn man mehrere Data Mining Verfahren vergleichen möchte, ist es üblich, die Fehlerrate (z. B. durch Kreuzvalidierung) als Maßstab zu verwenden.",
@@ -1284,7 +1284,7 @@
 {
   "id": 40,
   "questionDe": "(s23) Wann und warum wird der t-Test zum Vergleich von Data Mining Verfahren verwendet?",
-  "questionJa": "いつ、なぜデータマイニング手法の比較にt検定（t-Test）を使うのか？",
+  "questionJa": "★いつ、なぜデータマイニング手法の比較にt検定（t-Test）を使うのか？",
   "answerDe": [
     "Der t-Test (Student’s t-test) vergleicht die Mittelwerte zweier Verfahren",
     "Wenn Trainings- und Testdaten gleich sind, wird der gepaarte t-Test verwendet",
@@ -1292,8 +1292,8 @@
   ],
   "answerJa": [
     "t検定（Studentのt検定）は2つの手法の平均誤差を比較するために使う",
-    "訓練データとテストデータが同じ場合は「対応のあるt検定（ペアt検定）」を使う",
-    "誤差率の差が統計的に有意かを判断するためによく用いられる"
+    "★訓練データとテストデータが同じ場合は「対応のあるt検定（ペアt検定）」を使う",
+    "★誤差率の差が統計的に有意かを判断するためによく用いられる"
   ],
   "explanationDe": [
     "Der t-Test ist ein statistisches Verfahren, das verwendet wird, um zu beurteilen, ob der Unterschied der Mittelwerte zweier Gruppen signifikant ist.",

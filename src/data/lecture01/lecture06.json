@@ -38,12 +38,12 @@
   {
     "id": 2,
     "questionDe": "(s.3) Welches Problem entsteht bei vielen Attributen und Datenpunkten?",
-    "questionJa": "多数の属性やデータ点があると、どのような問題が生じますか？",
+    "questionJa": "★多数の属性やデータ点があると、どのような問題が生じますか？",
     "answerDe": [
       "Bei einer Tabelle mit vielen Datenpunkten und Attributen entsteht das Problem, dass mehr Daten vorhanden sind als Darstellungsfläche."
     ],
     "answerJa": [
-      "多数のデータ点や属性を持つ表では、表示できる領域よりもデータ量のほうが多くなってしまうという問題が発生します。"
+      "★多数のデータ点や属性を持つ表では、表示できる領域よりもデータ量のほうが多くなってしまうという問題が発生します。"
     ],
     "explanationDe": [
       "In datengetriebenen Anwendungen, etwa bei Sensor- oder Bilddaten, entstehen häufig sehr große Tabellen mit vielen Spalten (Attributen) und Zeilen (Datenpunkten).",
@@ -62,7 +62,7 @@
   {
     "id": 3,
     "questionDe": "(s.3) Welche Lösungsansätze gibt es zur Datenreduktion?",
-    "questionJa": "データ量の削減にはどのような解決法がありますか？",
+    "questionJa": "★データ量の削減にはどのような解決法がありますか？",
     "answerDe": [
       "Zur Lösung kann man entweder eine Datenauswahl durch Einschränkung der Attribute oder Attributwerte treffen oder eine Projektion zur Dimensionsreduktion durchführen."
     ],
@@ -77,7 +77,7 @@
     ],
     "explanationJa": [
       "データ量を削減する方法のひとつは「データ選択」で、重要な属性だけを選んだり、属性値の範囲を制限したりします（例：フィルター処理）。",
-      "もうひとつは「射影（プロジェクション）」で、データを数学的に低次元の空間に写し、重要な構造を保ちながら次元を減らします。",
+      "★もうひとつは「射影（プロジェクション）」で、データを数学的に低次元の空間に写し、重要な構造を保ちながら次元を減らします。",
       "この射影の一種が「次元削減（Dimensionality Reduction）」であり、視覚化のためや、計算負荷の軽減などによく用いられます。",
       "例としてPCA（主成分分析）では、最も分散の大きな軸に沿ってデータを写すことで、次元を縮小します。"
     ],
@@ -88,7 +88,7 @@
   {
     "id": 4,
     "questionDe": "(s.4) Was ist unter Projektion im Kontext der Datenvisualisierung zu verstehen und welche Probleme entstehen dabei?",
-    "questionJa": "データの可視化におけるプロジェクションとは何ですか？また、どのような問題がありますか？",
+    "questionJa": "★データの可視化におけるプロジェクションとは何ですか？また、どのような問題がありますか？",
     "answerDe": [
       "Bei der Projektion wählt man typischerweise 2 oder 3 Attribute aus, um Daten visuell darzustellen.",
       "Dies kann zu vielen gleichen Datenpunkten führen (Overplotting).",
@@ -96,8 +96,8 @@
     ],
     "answerJa": [
       "プロジェクションでは、通常2つか3つの属性を選び、データを視覚的に表示します。",
-      "しかし、多くのデータ点が同じ位置に重なってしまう（オーバープロッティング）という問題が発生します。",
-      "また、どの属性を選ぶべきか、値の分布が考慮されているかなどの課題もあります。"
+      "★しかし、多くのデータ点が同じ位置に重なってしまう（オーバープロッティング）という問題が発生します。",
+      "★また、どの属性を選ぶべきか、値の分布が考慮されているかなどの課題もあります。"
     ],
     "explanationDe": [
       "In der Datenvisualisierung beschränkt man sich oft auf 2 oder 3 Dimensionen, da man diese einfach auf einem Bildschirm oder Plot darstellen kann.",
@@ -152,7 +152,7 @@
   {
     "id": 6,
     "questionDe": "(s.5) Welche Verfahren zur Dimensionsreduktion werden vorgestellt?",
-    "questionJa": "どのような次元削減の手法が紹介されていますか？",
+    "questionJa": "★どのような次元削減の手法が紹介されていますか？",
     "answerDe": [
       "Vorgestellt werden: Factor Analysis, Principal Component Analysis (PCA), Multi-Dimensional Scaling (MDS).",
       "Weitere Möglichkeiten: Self-Organizing Maps, visuelle Metaphern zur Anordnung von Dimensionen."
@@ -167,7 +167,7 @@
       "Zusätzliche Optionen sind:\n- **Self-Organizing Maps (SOMs)**: Neuronale Netze, die eine nichtlineare Projektion liefern.\n- **Visuelle Metaphern**: Grafische Ansätze, die dem Nutzer helfen, die Struktur der Daten intuitiv zu erfassen."
     ],
     "explanationJa": [
-      "次元削減にはさまざまなアプローチがあり、情報をなるべく失わずにデータの特徴量を減らすことを目的とします。",
+      "★次元削減にはさまざまなアプローチがあり、情報をなるべく失わずにデータの特徴量を減らすことを目的とします。",
       "代表的な手法は次のとおりです：\n- **因子分析（Factor Analysis）**：観測された変数を、観測できない「因子」の線形結合としてモデル化します。\n- **主成分分析（PCA）**：データの分散を最も説明する新しい軸（主成分）を見つけ出します。\n- **多次元尺度構成法（MDS）**：データ間の距離関係を保つように、低次元空間に配置します。",
       "その他の方法には：\n- **自己組織化マップ（SOM）**：ニューラルネットワークを用いた非線形なマッピング手法です。\n- **視覚的メタファー**：データの構造を視覚的に理解しやすくするための図示的アプローチです。"
     ],
@@ -178,16 +178,16 @@
   {
     "id": 7,
     "questionDe": "(s.5) Welche allgemeinen Hinweise gelten für alle Verfahren der Dimensionsreduktion?",
-    "questionJa": "次元削減のすべての手法に共通する注意点は何ですか？",
+    "questionJa": "★次元削減のすべての手法に共通する注意点は何ですか？",
     "answerDe": [
       "Eine Analyse kann keine Informationen hinzufügen, die nicht vorhanden sind.",
       "Es gilt das Prinzip: „Garbage in, garbage out“.",
       "Faktoren werden immer gefunden – daher ist Domänenwissen zur Bewertung notwendig."
     ],
     "answerJa": [
-      "分析では、元々存在しない情報を新たに加えることはできません。",
-      "『Garbage in, garbage out（ゴミを入れればゴミが出る）』という原則が当てはまります。",
-      "手法は常に何らかの『因子』を見つけますが、それが有効かどうかはドメイン知識で判断する必要があります。"
+      "★分析では、元々存在しない情報を新たに加えることはできません。",
+      "★『Garbage in, garbage out（ゴミを入れればゴミが出る）』という原則が当てはまります。",
+      "★手法は常に何らかの『因子』を見つけますが、それが有効かどうかはドメイン知識で判断する必要があります。"
     ],
     "explanationDe": [
       "Ein wichtiger Hinweis bei allen Verfahren zur Dimensionsreduktion: Sie arbeiten nur mit den vorliegenden Daten.",
@@ -198,10 +198,10 @@
     ],
     "explanationJa": [
       "次元削減を含むすべての分析手法は、与えられたデータの範囲内でしか処理を行えません。",
-      "つまり、もし重要な情報（例えばある属性）がそもそも収集されていなければ、それを後からどんな分析を使っても補うことはできません。",
+      "★つまり、もし重要な情報（例えばある属性）がそもそも収集されていなければ、それを後からどんな分析を使っても補うことはできません。",
       "このような状況を表す言葉が「Garbage in, garbage out（ゴミを入れればゴミが出る）」です。",
-      "また、PCAや因子分析などの手法は、必ず何らかの構造や因子を抽出しますが、それが本当に意味あるものかどうかは自動的には判断できません。",
-      "したがって、分析結果の妥当性を判断するためには、データの背景知識や専門的な知見（ドメイン知識）が不可欠です。"
+      "★また、PCAや因子分析などの手法は、必ず何らかの構造や因子を抽出しますが、それが本当に意味あるものかどうかは自動的には判断できません。",
+      "★したがって、分析結果の妥当性を判断するためには、データの背景知識や専門的な知見（ドメイン知識）が不可欠です。"
     ],
     "originalSlideText": "– Achtung!\n– Für alle Verfahren gilt:\n  – Information, die nicht erhoben wurde, wird durch eine Analyse nicht hinzugefügt\n  – Beware of „garbage in, garbage out“\n    Vorsicht vor „Müll hinein, Müll heraus“:\n    – Das Verfahren findet immer Faktoren\n    – Hintergrund-/Domänen-Wissen ist notwendig, um zu entscheiden, ob die Faktoren einen Wert haben",
     "explanationImage": "",
@@ -210,7 +210,7 @@
   {
     "id": 7,
     "questionDe": "(s.5) Nennen Sie vier wichtige Hinweise („Achtung!“), die für alle Verfahren der Dimensionsreduktion gelten.",
-    "questionJa": "次元削減のすべての手法に共通する重要な注意点を4つ挙げなさい。",
+    "questionJa": "★次元削減のすべての手法に共通する重要な注意点を4つ挙げなさい。",
     "answerDe": [
       "1. Eine Analyse kann keine Informationen hinzufügen, die nicht erhoben wurden.",
       "2. Das Prinzip „Garbage in, garbage out“ gilt: Schlechte Daten führen zu schlechten Ergebnissen.",
@@ -220,7 +220,7 @@
     "answerJa": [
       "1. 収集されていない情報は、分析であとから追加することはできない。",
       "2. 「Garbage in, garbage out（ゴミを入れればゴミが出る）」の原則が当てはまる：質の低いデータでは、分析結果も信用できない。",
-      "3. 数理的な処理として、分析手法は必ず因子（パターン）を見つけ出すが、それが意味のあるものとは限らない。",
+      "★3. 数理的な処理として、分析手法は必ず因子（パターン）を見つけ出すが、それが意味のあるものとは限らない。",
       "4. 見つかった因子を正しく解釈するには、対象分野の専門知識（ドメイン知識）が必要である。"
     ],
     "explanationDe": [
@@ -230,10 +230,10 @@
       "**4. Bedeutung durch Domänenwissen:** Nur mit Fachwissen lässt sich entscheiden, ob ein Faktor tatsächlich etwas wie 'Kundenzufriedenheit' widerspiegelt oder nur ein statistisches Artefakt ist."
     ],
     "explanationJa": [
-      "**1. 情報は後から足せない：** たとえば「年齢」や「収入」といった属性が最初からデータに含まれていない場合、分析手法でそれを補うことはできません。",
-      "**2. Garbage in, garbage out（ゴミを入れればゴミが出る）：** 測定ミスや不完全なデータ、単位が統一されていないデータを用いると、主成分分析なども意味のある結果を返しません。例：身長をcmとmで混在させたままPCAを行うと、主成分の方向が歪みます。",
-      "**3. 手法は必ず「因子」を出力する：** PCAや因子分析などの数理手法は、たとえデータに意味のある構造がなくても、必ず数学的に「因子」を作り出します。これが過信につながる危険があります。",
-      "**4. 専門知識が必要：** たとえば「第1主成分が顧客満足度に対応している」かどうかを判断するには、統計ではなく業務や対象領域の知識が不可欠です。そうでなければ、意味のない構造をあたかも意味があるように見なしてしまいます。"
+      "★**1. 情報は後から足せない：** たとえば「年齢」や「収入」といった属性が最初からデータに含まれていない場合、分析手法でそれを補うことはできません。",
+      "★**2. Garbage in, garbage out（ゴミを入れればゴミが出る）：** 測定ミスや不完全なデータ、単位が統一されていないデータを用いると、主成分分析なども意味のある結果を返しません。例：身長をcmとmで混在させたままPCAを行うと、主成分の方向が歪みます。",
+      "★**3. 手法は必ず「因子」を出力する：** PCAや因子分析などの数理手法は、たとえデータに意味のある構造がなくても、必ず数学的に「因子」を作り出します。これが過信につながる危険があります。",
+      "★**4. 専門知識が必要：** たとえば「第1主成分が顧客満足度に対応している」かどうかを判断するには、統計ではなく業務や対象領域の知識が不可欠です。そうでなければ、意味のない構造をあたかも意味があるように見なしてしまいます。"
     ],
     "originalSlideText": "- Achtung!\n- Für alle Verfahren gilt:\n  – Information, die nicht erhoben wurde, wird durch eine Analyse nicht hinzugefügt\n  – Beware of „garbage in, garbage out“\n    Vorsicht vor „Müll hinein, Müll heraus“:\n    – Das Verfahren findet immer Faktoren\n    – Hintergrund-/Domänen-Wissen ist notwendig, um zu entscheiden, ob die Faktoren einen Wert haben",
     "explanationImage": "",
@@ -242,14 +242,14 @@
   {
     "id": 8,
     "questionDe": "(s.6) Erklären Sie die zwei Typen der Faktorenanalyse und benennen Sie ihre jeweiligen Merkmale.",
-    "questionJa": "因子分析の2つのタイプ（Typ Q と Typ R）について説明し、それぞれの特徴を挙げなさい。",
+    "questionJa": "★因子分析の2つのタイプ（Typ Q と Typ R）について説明し、それぞれの特徴を挙げなさい。",
     "answerDe": [
       "Typ Q fasst Datenpunkte zusammen, ist rechenaufwändig und wird oft durch Clustering ersetzt.",
       "Typ R identifiziert verborgene Dimensionen, also Gruppen korrelierter Variablen."
     ],
     "answerJa": [
-      "Typ Q はデータポイントをまとめる手法で、計算コストが高く、代わりにクラスタリングが使われることが多い。",
-      "Typ R は相関のある変数をまとめ、隠れた次元（因子）を見つける手法である。"
+      "★Typ Q はデータポイントをまとめる手法で、計算コストが高く、代わりにクラスタリングが使われることが多い。",
+      "★Typ R は相関のある変数をまとめ、隠れた次元（因子）を見つける手法である。"
     ],
     "explanationDe": [
       "Die Faktorenanalyse wird in zwei Varianten unterteilt:",
@@ -270,7 +270,7 @@
   {
     "id": 9,
     "questionDe": "(s.6) Nennen Sie drei typische Ziele der Faktorenanalyse.",
-    "questionJa": "因子分析の代表的な目的を3つ挙げなさい。",
+    "questionJa": "★因子分析の代表的な目的を3つ挙げなさい。",
     "answerDe": [
       "Identifikation von Strukturen",
       "Zusammenfassung der Daten",
@@ -287,16 +287,16 @@
       "Dies führt gleichzeitig zu einer Reduktion der Anzahl an Variablen und damit zu besserer Interpretierbarkeit und Effizienz bei der Analyse."
     ],
     "explanationJa": [
-      "因子分析の主な目的は、観測された変数の背後にある構造（パターン）を明らかにすることです。たとえば、変数同士がどのように関係し、どのグループに属するかなどを探ります。",
+      "★因子分析の主な目的は、観測された変数の背後にある構造（パターン）を明らかにすることです。たとえば、変数同士がどのように関係し、どのグループに属するかなどを探ります。",
       "また、情報の要約手法としても使われ、多くの変数を少数の因子に集約することで、データの解釈が容易になります。",
-      "その結果、次元の削減が可能となり、計算の効率化や視覚的な理解の向上にもつながります。"
+      "★その結果、次元の削減が可能となり、計算の効率化や視覚的な理解の向上にもつながります。"
     ],
     "originalSlideText": "– Ziele:\n  – Identifikation von Strukturen\n  – Zusammenfassung der Daten\n  – Reduktion der Daten"
   },
   {
     "id": 10,
     "questionDe": "(s.6) Welche zwei Eigenschaften zeichnen Gruppen in der Faktorenanalyse aus?",
-    "questionJa": "因子分析におけるグループの特徴を2つ挙げなさい。",
+    "questionJa": "★因子分析におけるグループの特徴を2つ挙げなさい。",
     "answerDe": [
       "Gruppen sind disjunkt.",
       "Gruppen können von ihren Mitgliedern repräsentiert werden."
@@ -318,7 +318,7 @@
   {
     "id": 11,
     "questionDe": "(s.7) Vergleichen Sie anhand der dargestellten Grafik die Gruppierungsergebnisse von Typ Q Faktor-Analyse und Clustering.",
-    "questionJa": "図をもとに、Typ Q 因子分析とクラスタリングによるグループ分けの違いを比較しなさい。",
+    "questionJa": "★図をもとに、Typ Q 因子分析とクラスタリングによるグループ分けの違いを比較しなさい。",
     "answerDe": [
       "Bei der Typ Q Faktor-Analyse gehören A und C sowie B und D zur gleichen Gruppe.",
       "Beim Clustering gehören A und B sowie C und D zusammen."
@@ -336,7 +336,7 @@
     "explanationJa": [
       "この図には、3つの変数 (V1〜V3) に対して4つのデータ（A〜D）の値が示されており、線グラフがそれぞれの傾向を視覚化しています。",
       "Typ Q の因子分析では、全体の形（変数間の推移の傾向）に注目します。たとえば、AとCは全体の数値は異なるものの、増減のパターンが似ており、同じ因子とみなされます。同様に、BとDも同じ形状の傾向を持つため、一緒に分類されます。",
-      "一方クラスタリングは、値の絶対的な近さに基づいてグループ化を行います。AとBは3変数すべての値が高く、CとDは低いため、前者と後者でグループが分かれます。",
+      "★一方クラスタリングは、値の絶対的な近さに基づいてグループ化を行います。AとBは3変数すべての値が高く、CとDは低いため、前者と後者でグループが分かれます。",
       "つまり、因子分析（Typ Q）は『傾向の類似性』、クラスタリングは『数値の近さ』をもとにしているという違いがあります。"
     ],
     "originalSlideText": "FACTOR ANALYSIS\n– Typ Q Faktor-Analyse – Clustering\n– Faktor-Analyse\n  – Gruppe 1: A, C\n  – Gruppe 2: B, D\n– Clustering\n  – Gruppe 1: A, B\n  – Gruppe 2: C, D",
@@ -354,8 +354,8 @@
       "Die Eignung der Daten kann mit Bartletts Test auf Sphärizität überprüft werden."
     ],
     "answerJa": [
-      "データ点の数が変数の数よりも十分に多いこと。",
-      "使用する変数の数はできるだけ少なくすること。",
+      "★データ点の数が変数の数よりも十分に多いこと。",
+      "★使用する変数の数はできるだけ少なくすること。",
       "できるだけ多くのデータ点を使用すること。",
       "バートレットの球面性検定（Bartlett's Test）により、因子分析に適しているかどうかを確認すること。"
     ],
@@ -448,7 +448,7 @@
   {
     "id": 15,
     "questionDe": "(s13) Was ist das Ziel der Principal Component Analysis (PCA) und wie wird sie zur Dimensionsreduktion verwendet?",
-    "questionJa": "主成分分析（PCA）の目的は何であり、それはどのように次元削減に利用されるのですか？",
+    "questionJa": "★主成分分析（PCA）の目的は何であり、それはどのように次元削減に利用されるのですか？",
     "answerDe": [
       "Ziel: Reduktion der Dimension durch unkorrelierte Hauptkomponenten.",
       "Ergebnis: p < m neue Variablen (principal components), die möglichst viel Varianz erklären.",
@@ -597,7 +597,7 @@
 {
   "id": 19,
   "questionDe": "(s16) Welche Einschränkungen hat die Principal Component Analysis (PCA)?",
-  "questionJa": "主成分分析（PCA）にはどのような制約がありますか？",
+  "questionJa": "★主成分分析（PCA）にはどのような制約がありますか？",
   "answerDe": [
     "Das Ergebnis hängt stark von der Skalierung der Variablen ab.",
     "Ausreißer können das Ergebnis stark beeinflussen.",
@@ -605,10 +605,10 @@
     "Die Interpretation der neuen Achsen (Basis) ist oft schwierig."
   ],
   "answerJa": [
-    "変数のスケーリング（単位）によって結果が大きく変わる。",
-    "外れ値があると結果に大きな影響を与える。",
-    "PCAは線形な方法である。",
-    "新しい軸（主成分）の解釈が難しいことがある。"
+    "★変数のスケーリング（単位）によって結果が大きく変わる。",
+    "★外れ値があると結果に大きな影響を与える。",
+    "★PCAは線形な方法である。",
+    "★新しい軸（主成分）の解釈が難しいことがある。"
   ],
   "explanationDe": [
     "PCA basiert auf der Varianz. Wenn eine Variable in Zentimetern und eine andere in Kilometern gemessen ist, dominiert die größere Einheit das Ergebnis – daher ist Standardisierung wichtig.",
@@ -629,7 +629,7 @@
 {
   "id": 20,
   "questionDe": "(s12–s16) Erklären Sie den Ablauf der Principal Component Analysis (PCA) und wie sie für die Dimensionsreduktion angewendet wird. (5 Punkte)",
-  "questionJa": "（試験）主成分分析（PCA）の手順と、それがどのように次元削減に用いられるかを説明しなさい。（5点）",
+  "questionJa": "★（試験）主成分分析（PCA）の手順と、それがどのように次元削減に用いられるかを説明しなさい。（5点）",
   "answerDe": [
     "1. Zentriere die Daten: Berechne den Mittelwert jeder Variable und ziehe ihn ab.",
     "2. Berechne die Kovarianzmatrix der zentrierten Daten.",
@@ -638,11 +638,11 @@
     "5. Projiziere die ursprünglichen Daten auf den neuen Raum der Hauptkomponenten, um die Dimension zu reduzieren."
   ],
   "answerJa": [
-    "1. データを中心化する：各変数の平均を求め、すべてのデータからその平均を引く。",
-    "2. 中心化したデータの共分散行列を求める。",
-    "3. 共分散行列に対して固有値分解を行う。",
-    "4. 固有値が大きい順にp個を選び、それに対応する固有ベクトル（主成分）を選ぶ。",
-    "5. 元のデータを主成分空間に射影することで、次元数をpに削減する。"
+    "★1. データを中心化する：各変数の平均を求め、すべてのデータからその平均を引く。",
+    "★2. 中心化したデータの共分散行列を求める。",
+    "★3. 共分散行列に対して固有値分解を行う。",
+    "★4. 固有値が大きい順にp個を選び、それに対応する固有ベクトル（主成分）を選ぶ。",
+    "★5. 元のデータを主成分空間に射影することで、次元数をpに削減する。"
   ],
   "explanationDe": [
     "Die Principal Component Analysis (PCA) ist ein Verfahren, das korrelierte Variablen durch eine kleinere Anzahl unkorrelierter Variablen ersetzt.",
@@ -666,7 +666,7 @@
 {
   "id": 21,
   "questionDe": "(s17) Was ist das Ziel von Multi-Dimensional Scaling (MDS)?",
-  "questionJa": "多次元尺度構成法（MDS）の目的は何ですか？",
+  "questionJa": "★多次元尺度構成法（MDS）の目的は何ですか？",
   "answerDe": [
     "Ziel ist es, Datenpunkte aus einem Ähnlichkeitssystem in ein Koordinatensystem zu überführen.",
     "Dabei soll die Struktur der Ähnlichkeiten zwischen den Punkten erhalten bleiben."
@@ -692,14 +692,14 @@
 {
   "id": 22,
   "questionDe": "(s17) Welche Bedingungen müssen beim Multi-Dimensional Scaling (MDS) erfüllt sein?",
-  "questionJa": "多次元尺度構成法（MDS）で満たすべき条件は何ですか？",
+  "questionJa": "★多次元尺度構成法（MDS）で満たすべき条件は何ですか？",
   "answerDe": [
     "Monotonie: Kleinere Distanzen im Originalsystem führen zu kleineren Distanzen im Zielsystem.",
     "Minimum: Die Zieldimension soll möglichst gering sein."
   ],
   "answerJa": [
-    "単調性：元の空間で近い点同士は、変換後の空間でも近くにある必要がある。",
-    "最小性：できるだけ少ない次元で表現するようにする。"
+    "★単調性：元の空間で近い点同士は、変換後の空間でも近くにある必要がある。",
+    "★最小性：できるだけ少ない次元で表現するようにする。"
   ],
   "explanationDe": [
     "MDS versucht, ein niedrigdimensionales Koordinatensystem zu finden, in dem die relativen Distanzen der Objekte möglichst gut den Originaldaten entsprechen.",
@@ -795,7 +795,7 @@
 {
   "id": 25,
   "questionDe": "(s19) Erklären Sie den Ablauf des Metric Multi-Dimensional Scaling (MDS). (Prüfung, 3 Punkte)",
-  "questionJa": "（試験類題）Metric MDS の処理手順（Ablauf）を説明しなさい（3点）",
+  "questionJa": "★（試験類題）Metric MDS の処理手順（Ablauf）を説明しなさい（3点）",
   "answerDe": [
     "1. Gegeben ist eine Distanzmatrix zwischen Datenpunkten.",
     "2. Berechne Matrix A: a_ik = -1/2 * t_ik^2.",
@@ -831,7 +831,7 @@
 {
   "id": 26,
   "questionDe": "(s19) Wie wird Metric MDS für Dimensionsreduktion angewendet? (Prüfung, 2 Punkte)",
-  "questionJa": "（試験類題）Metric MDS はどのように次元削減に応用されるか説明しなさい（2点）",
+  "questionJa": "★（試験類題）Metric MDS はどのように次元削減に応用されるか説明しなさい（2点）",
   "answerDe": [
     "MDS transformiert hochdimensionale Distanzen in einen Raum mit niedriger Dimension.",
     "Dabei wird versucht, die relativen Abstände zwischen den Datenpunkten möglichst gut zu erhalten.",
@@ -959,7 +959,7 @@
 {
   "id": 30,
   "questionDe": "(s23) Welche Parameter können das Verhalten von t-SNE beeinflussen?",
-  "questionJa": "t-SNEの動作に影響を与えるパラメータにはどのようなものがありますか？",
+  "questionJa": "★t-SNEの動作に影響を与えるパラメータにはどのようなものがありますか？",
   "answerDe": [
     "Perplexity: Anzahl der Nachbarn im Gauss-Kernel",
     "Maximale Anzahl von Iterationen",
@@ -967,7 +967,7 @@
     "Zielanzahl der Dimensionen"
   ],
   "answerJa": [
-    "Perplexity（パープレキシティ）: ガウスカーネル内に含める近傍データ点の数",
+    "★Perplexity（パープレキシティ）: ガウスカーネル内に含める近傍データ点の数",
     "最大イテレーション数",
     "theta（シータ）: Barnes-Hut最適化のためのパラメータ",
     "次元数の設定（通常は2次元や3次元）"
@@ -981,10 +981,10 @@
   ],
   "explanationJa": [
     "t-SNEは以下のような複数のパラメータによって動作が調整されます：",
-    "- Perplexity（パープレキシティ）は各点の近傍として考慮するデータ点の数を表し、小さいと局所構造、大きいと大域構造を重視します。",
-    "- 最大イテレーション数は、配置をどこまで最適化するか（繰り返し回数）を決定します。",
-    "- theta（シータ）は、Barnes-Hut近似という高速化手法で用いられ、精度と計算効率のトレードオフを調整します。",
-    "- 次元数の設定では、最終的に何次元に埋め込むかを決めます（多くは2次元または3次元）。"
+    "★- Perplexity（パープレキシティ）は各点の近傍として考慮するデータ点の数を表し、小さいと局所構造、大きいと大域構造を重視します。",
+    "★- 最大イテレーション数は、配置をどこまで最適化するか（繰り返し回数）を決定します。",
+    "★- theta（シータ）は、Barnes-Hut近似という高速化手法で用いられ、精度と計算効率のトレードオフを調整します。",
+    "★- 次元数の設定では、最終的に何次元に埋め込むかを決めます（多くは2次元または3次元）。"
   ],
   "originalSlideText": "METHODE\n- t-SNE hat mehrere Parameter\n  - Perplexity: Wie viele Datenpunkte sollen im Gauss Kernel liegen\n  - Maximale Iterationen\n  - theta: Parameter für die Barnes-Hut Optimierung\n  - Anzahl der Dimensionen",
   "explanationImage": "",
@@ -993,7 +993,7 @@
 {
   "id": 31,
   "questionDe": "(s24) Welche praktischen Einschränkungen und Eigenschaften hat t-SNE?",
-  "questionJa": "t-SNEの実用上の制約や特徴にはどのようなものがありますか？",
+  "questionJa": "★t-SNEの実用上の制約や特徴にはどのようなものがありますか？",
   "answerDe": [
     "Komplexität von Laufzeit und Speicher ist quadratisch (n²)",
     "Verwendet Quadtree zur Optimierung des zweiten Schritts",
@@ -1003,8 +1003,8 @@
   "answerJa": [
     "計算時間とメモリの複雑さはデータ数nの2乗（n²）に比例する",
     "第2ステップではクアッドツリーによる最適化を使用",
-    "10,000点未満のデータに適している",
-    "結果が毎回異なり、決定的でない（再現性がない）"
+    "★10,000点未満のデータに適している",
+    "★結果が毎回異なり、決定的でない（再現性がない）"
   ],
   "explanationDe": [
     "t-SNE hat einige praktische Einschränkungen:",
@@ -1027,7 +1027,7 @@
 {
   "id": 32,
   "questionDe": "(s22–24) Erklären Sie den Ablauf von t-SNE.",
-  "questionJa": "t-SNEの手順を説明しなさい（試験）",
+  "questionJa": "★t-SNEの手順を説明しなさい（試験）",
   "answerDe": [
     "Platziere alle Punkte zunächst in einer 2D-Ebene zufällig.",
     "Berechne Wahrscheinlichkeiten für alle Punktpaare im Ursprungsraum mit Gauß-Verteilung.",
@@ -1036,11 +1036,11 @@
     "Nutze einen Gradientenabstieg für die Optimierung."
   ],
   "answerJa": [
-    "すべてのデータ点をまず2次元平面にランダムに配置する。",
-    "元の高次元空間での各点のペアについて、ガウス分布に基づいた類似度（確率）を計算する。",
-    "2次元空間では、t分布（自由度1）を使って同様に確率を計算する。",
-    "元と変換後の確率分布の差（KLダイバージェンス）を最小化するように、配置を更新する。",
-    "最小化には勾配降下法（gradient descent）を用いる。"
+    "★すべてのデータ点をまず2次元平面にランダムに配置する。",
+    "★元の高次元空間での各点のペアについて、ガウス分布に基づいた類似度（確率）を計算する。",
+    "★2次元空間では、t分布（自由度1）を使って同様に確率を計算する。",
+    "★元と変換後の確率分布の差（KLダイバージェンス）を最小化するように、配置を更新する。",
+    "★最小化には勾配降下法（gradient descent）を用いる。"
   ],
   "explanationDe": [
     "t-SNE ist ein nichtlineares Verfahren zur Reduktion von hochdimensionalen Daten in 2D oder 3D.",
@@ -1065,7 +1065,7 @@
 {
   "id": 33,
   "questionDe": "(s20–24) Wie wird t-SNE für Dimensionsreduktion angewendet?",
-  "questionJa": "t-SNEがどのように次元削減に使われるかを説明しなさい（試験）",
+  "questionJa": "★t-SNEがどのように次元削減に使われるかを説明しなさい（試験）",
   "answerDe": [
     "t-SNE reduziert hochdimensionale Daten auf 2 oder 3 Dimensionen.",
     "Es bewahrt die lokale Struktur der Daten (Nachbarschaften).",
@@ -1074,7 +1074,7 @@
   ],
   "answerJa": [
     "t-SNEは、高次元（例えば50次元など）のデータを2次元または3次元に変換して可視化する。",
-    "この変換により、データの局所的な構造（近い点同士の関係）が保たれるようにする。",
+    "★この変換により、データの局所的な構造（近い点同士の関係）が保たれるようにする。",
     "複雑な関係性を視覚的に理解しやすくするために利用される。",
     "クラスタ（群）の可視化など、機械学習の文脈でよく使用される。"
   ],
@@ -1087,8 +1087,8 @@
   ],
   "explanationJa": [
     "t-SNEは、単に可視化のためだけでなく、次元削減の有効な手段でもあります。",
-    "元の空間での類似性を保ちつつ、複雑な高次元データ（例：100次元）を2次元に変換します。",
-    "これにより、似ているデータ点同士が平面上でも近くに表示され、クラスタや外れ値が視覚的に分かるようになります。",
+    "★元の空間での類似性を保ちつつ、複雑な高次元データ（例：100次元）を2次元に変換します。",
+    "★これにより、似ているデータ点同士が平面上でも近くに表示され、クラスタや外れ値が視覚的に分かるようになります。",
     "例：手書き数字（0～9）の画像データをt-SNEで変換すると、各数字が固まって表示され、グループごとに分かれるように見えます。"
   ],
   "originalSlideText": "T-DISTRIBUTED STOCHASTIC NEIGHBORHOOD EMBEDDING (T-SNE)\n- t-SNE ist eine weitere Methode zur Dimensionsreduktion\n- Daten werden in eine 2 dimensionale Ebene eingebettet\n- T-SNE versucht die lokale Verteilung der Daten zu bewahren\n- Häufig im Bereich des Maschinellen Lernens eingesetzt",
@@ -1098,7 +1098,7 @@
 {
   "id": 34,
   "questionDe": "(s26) Was ist UMAP und wie unterscheidet es sich von t-SNE?",
-  "questionJa": "UMAPとは何か、またt-SNEとどう異なるかを説明しなさい。",
+  "questionJa": "★UMAPとは何か、またt-SNEとどう異なるかを説明しなさい。",
   "answerDe": [
     "UMAP steht für Uniform Manifold Approximation and Projection for Dimension Reduction.",
     "Ähnlich zu t-SNE, aber mit folgenden Unterschieden:",
@@ -1212,7 +1212,7 @@
 {
   "id": 37,
   "questionDe": "(s26–28) Erklären Sie den Ablauf von UMAP!",
-  "questionJa": "（試験）UMAPの手順を説明しなさい",
+  "questionJa": "★（試験）UMAPの手順を説明しなさい",
   "answerDe": [
     "Berechne bedingte Wahrscheinlichkeiten basierend auf Distanzen zwischen Punkten (unter Verwendung von nearest neighbors).",
     "Verwende keine Normalisierung oder Logarithmen.",
@@ -1221,10 +1221,10 @@
     "Verwende Binary Cross Entropy als Verlustfunktion."
   ],
   "answerJa": [
-    "データ点間の距離に基づいて条件付き確率を計算する（近傍点のみを使用）。",
-    "データの正規化や対数変換は行わない。",
-    "元の空間での類似度を低次元空間に写像する。",
-    "埋め込みの最適化には確率的勾配降下法（SGD）を用いる。",
+    "★データ点間の距離に基づいて条件付き確率を計算する（近傍点のみを使用）。",
+    "★データの正規化や対数変換は行わない。",
+    "★元の空間での類似度を低次元空間に写像する。",
+    "★埋め込みの最適化には確率的勾配降下法（SGD）を用いる。",
     "損失関数としてバイナリクロスエントロピーを使用する。"
   ],
   "explanationDe": [
@@ -1238,7 +1238,7 @@
     "UMAPはまず、各データ点の周囲の点（近傍）との距離に基づいて、確率的な類似度を計算します。",
     "t-SNEとは異なり、これらの確率を正規化しないため、計算負荷が軽減されます。",
     "次に、その類似度をなるべく保ったまま、低次元空間へデータを写像します。",
-    "このとき、確率的勾配降下法（SGD）を使って、低次元空間でのデータ配置を調整します。",
+    "★このとき、確率的勾配降下法（SGD）を使って、低次元空間でのデータ配置を調整します。",
     "最適化では、元の類似度と写像後の類似度の差をバイナリクロスエントロピーで測定し、それを最小化します。"
   ],
   "originalSlideText": "- Berechnet auch bedingte Wahrscheinlichkeiten, diese werden aber nicht normalisiert\n- Nutzt nearest neighbor statt perplexity\n- SGD bei der Einbettung\n- Binary Cross Entropy\n- Performanzvorteil",
@@ -1248,7 +1248,7 @@
 {
   "id": 38,
   "questionDe": "(s26–28) Wie wird UMAP für Dimensionsreduktion verwendet?",
-  "questionJa": "（試験）UMAPはどのように次元削減に利用されますか",
+  "questionJa": "★（試験）UMAPはどのように次元削減に利用されますか",
   "answerDe": [
     "UMAP projiziert hochdimensionale Daten in einen Raum mit weniger Dimensionen (z. B. 2D oder 3D).",
     "Dabei bleibt die lokale Struktur (z. B. Cluster) erhalten.",
@@ -1257,8 +1257,8 @@
   ],
   "answerJa": [
     "UMAPは高次元データを2次元や3次元のような低次元空間に写像します。",
-    "このとき、元のデータの局所構造（クラスターなど）をできるだけ保ちます。",
-    "t-SNEと異なり、データ全体の大きな構造（グローバル構造）も比較的よく保持されます。",
+    "★このとき、元のデータの局所構造（クラスターなど）をできるだけ保ちます。",
+    "★t-SNEと異なり、データ全体の大きな構造（グローバル構造）も比較的よく保持されます。",
     "また、10,000点以上の大規模データにも対応可能です。"
   ],
   "explanationDe": [

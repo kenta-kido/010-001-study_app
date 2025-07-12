@@ -2,7 +2,7 @@
   {
     "id": 1,
     "questionDe": "(s.5) Was sind Entscheidungsbäume?",
-    "questionJa": "決定木とは何か説明せよ。",
+    "questionJa": "★決定木とは何か説明せよ。",
     "answerDe": [
       "Instanzen mit Attributen werden als Baum dargestellt",
       "Baum ist gerichtet",
@@ -11,9 +11,9 @@
     ],
     "answerJa": [
       "属性を持つインスタンスを木構造で表現する",
-      "木は有向である",
-      "木のパスはif...then形式のルールを表す",
-      "木はある属性の値を予測する"
+      "★木は有向である",
+      "★木のパスはif...then形式のルールを表す",
+      "★木はある属性の値を予測する"
     ],
     "explanationDe": [
       "Ein Entscheidungsbaum ist ein grafisches Modell, das Dateninstanzen durch Fragen nach ihren Attributwerten aufteilt.",
@@ -32,7 +32,7 @@
   {
     "id": 2,
     "questionDe": "(s.6) Nennen Sie zwei Anwendungsbereiche und zwei Bedingungen für die Verwendung von Entscheidungsbäumen.",
-    "questionJa": "決定木の応用分野を2つ、利用条件を2つ挙げよ。",
+    "questionJa": "★決定木の応用分野を2つ、利用条件を2つ挙げよ。",
     "answerDe": [
       "Anwendungsbereiche: Klassifikation und Regression",
       "Beispiele: Kreditwürdigkeitsprüfung, medizinische Diagnose",
@@ -41,7 +41,7 @@
     "answerJa": [
       "応用分野：分類と回帰",
       "例：信用評価、医療診断",
-      "条件：属性値の組み合わせでインスタンスを記述、属性は離散的である必要がある"
+      "★条件：属性値の組み合わせでインスタンスを記述、属性は離散的である必要がある"
     ],
     "explanationDe": [
       "Entscheidungsbäume können sowohl zur Klassifikation (z. B. ob ein Kredit vergeben wird) als auch zur Regression (z. B. Höhe eines Versicherungsbetrags) genutzt werden.",
@@ -52,15 +52,15 @@
     "explanationJa": [
       "決定木は、分類（例：ローンの承認可否）にも回帰（例：保険料の予測）にも利用可能です。",
       "具体例としては、個人の信用スコアの評価や、患者の症状に基づく診断支援などが挙げられます。",
-      "利用条件としては、各インスタンスが属性とその値のペアによって記述されていることが前提です。",
-      "さらに、属性は『離散値』でなければなりません。例えば「はい／いいえ」や「赤／青／緑」など、明確に区切られた値が必要です。"
+      "★利用条件としては、各インスタンスが属性とその値のペアによって記述されていることが前提です。",
+      "★さらに、属性は『離散値』でなければなりません。例えば「はい／いいえ」や「赤／青／緑」など、明確に区切られた値が必要です。"
     ],
     "originalSlideText": "• Anwendungsbereiche\n  • Klassifikation und Regression\n  • Beispiele\n    • Bewertung von Kreditwürdigkeit\n    • Medizinische Diagnosen\n• Bedingungen:\n  • Instanzen werden durch Attribute-Werte Paare beschrieben\n  • Attribute der Daten werden zugeordnet\n  • Attribute müssen diskret sein"
   },
   {
     "id": 3,
     "questionDe": "(s.7) Nennen Sie vier Vorteile von Entscheidungsbäumen.",
-    "questionJa": "決定木の利点を4つ挙げよ。",
+    "questionJa": "★決定木の利点を4つ挙げよ。",
     "answerDe": [
       "Regeln sind einfach ablesbar",
       "Gut darstellbar",
@@ -69,9 +69,9 @@
     ],
     "answerJa": [
       "ルールが読み取りやすい",
-      "視覚的に表現しやすい",
-      "ホワイトボックス型の手法である",
-      "比較的高速に計算可能である"
+      "★視覚的に表現しやすい",
+      "★ホワイトボックス型の手法である",
+      "★比較的高速に計算可能である"
     ],
     "explanationDe": [
       "Ein großer Vorteil von Entscheidungsbäumen ist die Transparenz: Man kann leicht nachvollziehen, wie eine Entscheidung zustande kommt.",
@@ -146,16 +146,16 @@
   {
     "id": 6,
     "questionDe": "(s.15) Nennen Sie drei Herausforderungen beim Aufbau von Entscheidungsbäumen.",
-    "questionJa": "決定木の構築における課題を3つ挙げよ。",
+    "questionJa": "★決定木の構築における課題を3つ挙げよ。",
     "answerDe": [
       "Attribut-Reihenfolge: Wie wählt man sie optimal?",
       "Umgang mit kontinuierlichen Werten",
       "Fehlerhafte und fehlende Werte"
     ],
     "answerJa": [
-      "属性の順序を最適に選ぶには？",
-      "連続値の扱い",
-      "欠損値や誤ったデータの処理"
+      "★属性の順序を最適に選ぶには？",
+      "★連続値の扱い",
+      "★欠損値や誤ったデータの処理"
     ],
     "explanationDe": [
       "Die Reihenfolge, in der Attribute im Baum abgefragt werden, beeinflusst dessen Größe und Lesbarkeit. Ziel ist es, möglichst kurze und aussagekräftige Bäume zu erzeugen. Dazu ist eine Priorisierung der Attribute erforderlich – oft basierend auf Metriken wie Informationsgewinn.",
@@ -163,16 +163,16 @@
       "Fehlende oder fehlerhafte Werte stellen ein Problem dar. Es muss entschieden werden, ob man sie ignoriert, mit Mittelwerten ersetzt oder spezielle Behandlungsknoten im Baum dafür einführt."
     ],
     "explanationJa": [
-      "どの属性を先に判断基準として使うかによって、決定木のサイズや理解しやすさが大きく変わります。情報利得（Information Gain）などを使って、重要な属性から優先的に使うことが一般的です。",
-      "決定木はもともとカテゴリデータに強いですが、連続値（例：温度、収入など）を扱う場合は、それらを区間に分けて離散化する必要があります。例：『収入30万円未満』『30〜50万円』など。",
-      "データに欠損がある場合（例：ある人の年齢が不明）や、記録ミスがある場合、それらをどう扱うかが重要です。平均値で埋める、最頻値を使う、あるいは分岐条件に『不明』を設けるなどの対応があります。"
+      "★どの属性を先に判断基準として使うかによって、決定木のサイズや理解しやすさが大きく変わります。情報利得（Information Gain）などを使って、重要な属性から優先的に使うことが一般的です。",
+      "★決定木はもともとカテゴリデータに強いですが、連続値（例：温度、収入など）を扱う場合は、それらを区間に分けて離散化する必要があります。例：『収入30万円未満』『30〜50万円』など。",
+      "★データに欠損がある場合（例：ある人の年齢が不明）や、記録ミスがある場合、それらをどう扱うかが重要です。平均値で埋める、最頻値を使う、あるいは分岐条件に『不明』を設けるなどの対応があります。"
     ],
     "originalSlideText": "• Herausforderungen\n• Kann man die Reihenfolge der Attribute so wählen, dass der Baum möglichst klein wird?\n  • Priorisierung\n• Kontinuierliche Werte?\n• Fehler und fehlende Werte?"
   },
   {
     "id": 7,
     "questionDe": "(s.16) Erklären Sie das ID3-Verfahren zur Konstruktion eines Entscheidungsbaums.",
-    "questionJa": "決定木構築に用いられるID3アルゴリズムの仕組みを説明せよ。",
+    "questionJa": "★決定木構築に用いられるID3アルゴリズムの仕組みを説明せよ。",
     "answerDe": [
       "Top-Down-Aufbau des Baums",
       "Greedy-Auswahl des besten Attributs anhand von Informationsentropie",
@@ -191,7 +191,7 @@
     ],
     "explanationJa": [
       "ID3は決定木を『トップダウン（根から葉へ）』の方式で構築するアルゴリズムです。",
-      "まず『情報エントロピー』という指標を使い、どの属性がもっとも分類の不確実性を減らすかを計算し、それを『最良の属性』として選びます（貪欲法）。",
+      "★まず『情報エントロピー』という指標を使い、どの属性がもっとも分類の不確実性を減らすかを計算し、それを『最良の属性』として選びます（貪欲法）。",
       "選ばれた属性の各値に応じて子ノードを作成し、それぞれに対応するサブセットのデータを割り当てます。",
       "その後、同様の処理を子ノードにも再帰的に適用し、すべての属性が使い切られるか、分類が確定できるまで木を成長させます。"
     ],
@@ -206,8 +206,8 @@
       "Nur für diskrete Daten geeignet"
     ],
     "answerJa": [
-      "局所最適解に陥りやすい",
-      "離散データしか扱えない"
+      "★局所最適解に陥りやすい",
+      "★離散データしか扱えない"
     ],
     "explanationDe": [
       "Entscheidungsbäume verwenden eine greedy-Strategie, das heißt sie treffen lokale Entscheidungen bei der Attributauswahl. Dadurch besteht die Gefahr, dass globale optimale Strukturen übersehen werden.",
@@ -222,40 +222,42 @@
   {
     "id": 9,
     "questionDe": "(s.17) Wie kann Overfitting bei Entscheidungsbäumen verhindert werden?",
-    "questionJa": "決定木における過学習を防ぐにはどうすればよいか？",
+    "questionJa": "★決定木における過学習を防ぐにはどうすればよいか？",
     "answerDe": [
       "Baumwachstum bei bestimmter Tiefe stoppen",
-      "Pruning des Baums: Post-Pruning und Reduced-Error-Pruning"
+      "★Pruning des Baums: Post-Pruning und Reduced-Error-Pruning"
     ],
     "answerJa": [
       "ある深さで木の成長を止める（早期終了）",
-      "木の剪定（Post-Pruning や Reduced-Error-Pruning）を行う"
+      "★木の剪定（Post-Pruning や Reduced-Error-Pruning）を行う"
     ],
     "explanationDe": [
       "Overfitting tritt auf, wenn ein Entscheidungsbaum zu detailliert ist und sich zu sehr an die Trainingsdaten anpasst. Er kann dann bei neuen Daten schlechtere Leistungen zeigen.",
-      "Eine Methode zur Vermeidung ist das Begrenzen der Baumtiefe. So wird verhindert, dass der Baum zu sehr ins Detail geht.",
-      "Ein weiterer Ansatz ist das Pruning: Beim Post-Pruning wird der vollständig gelernte Baum nachträglich vereinfacht, indem unwichtige Knoten entfernt werden.",
-      "Beim Reduced-Error-Pruning wird geprüft, ob die Entfernung eines Teilbaums die Genauigkeit auf einem Validierungsdatensatz verschlechtert. Wenn nicht, wird der Teilbaum gelöscht."
+      "Eine Methode zur Vermeidung ist das Begrenzen der Baumtiefe oder die Angabe von Mindestanforderungen für Knoten – dies nennt man Pre-Pruning. So wird verhindert, dass der Baum zu sehr ins Detail geht.",
+      "Ein weiterer Ansatz ist das sogenannte Post-Pruning (auch als Backward-Pruning bekannt): Hierbei wird der vollständig gelernte Baum nachträglich vereinfacht, indem unwichtige Knoten entfernt werden.",
+      "Beim Reduced-Error-Pruning, einer konkreten Methode des Post-Prunings, wird geprüft, ob die Entfernung eines Teilbaums die Genauigkeit auf einem Validierungsdatensatz verschlechtert. Wenn nicht, wird der Teilbaum gelöscht.",
+      "Reduced-Error-Pruning ist also ein spezieller Fall von Backward-Pruning. Während Backward-Pruning allgemein jede nachträgliche Vereinfachung des Baumes meint, verwendet Reduced-Error-Pruning explizit die Genauigkeit auf Validierungsdaten als Entscheidungsgrundlage."
     ],
     "explanationJa": [
       "決定木が訓練データに過剰に適合すると、テストデータ（未知のデータ）に対して性能が下がる「過学習」が発生します。",
-      "これを防ぐ一つの方法は、あらかじめ木の深さに制限を設けて、詳細すぎる分岐を避けることです。",
-      "もう一つの方法が剪定（Pruning）です。ポスト剪定（Post-Pruning）は、一度完全に木を構築してから、精度に大きく影響しない枝を取り除きます。",
-      "誤差削減剪定（Reduced-Error-Pruning）は、枝を削除しても検証データでの精度が下がらなければ、その枝を削るという実践的な方法です。"
+      "★これを防ぐ一つの方法は、あらかじめ木の深さやノードの分割条件などに制限を設ける『前剪定（フォーワードプルーニング）』です。これにより、木が複雑になりすぎるのを防ぎます。",
+      "★もう一つの方法が剪定（Pruning）で、その中でも『後剪定（バックワードプルーニング／ポスト剪定）』は、一度完全に木を構築してから、精度に大きく影響しない枝を取り除く手法です。",
+      "★誤差削減剪定（Reduced-Error-Pruning）は、枝を削除しても検証データでの精度が下がらなければ、その枝を削るという実践的な後剪定の方法です。",
+      "★つまり、誤差削減剪定は後剪定の中の具体的な手法の一つであり、すべての後剪定が誤差削減剪定というわけではありません。他の後剪定では、コストや複雑度を基準に剪定することもあります。"
     ],
     "originalSlideText": "Overfitting:\n• Wachsen bei bestimmter Tiefe stoppen\n• Pruning des Baums\n  • Post-pruning\n  • Reduced-error pruning"
   },
   {
     "id": 10,
     "questionDe": "(s.18) Was ist Entropie in der Klassifikation und wie wird sie berechnet?",
-    "questionJa": "分類問題におけるエントロピーとは何か？また、その計算方法を説明せよ。",
+    "questionJa": "★分類問題におけるエントロピーとは何か？また、その計算方法を説明せよ。",
     "answerDe": [
       "Entropie misst den Informationsgehalt einer Verteilung",
       "Für binäre Klassifikation: S = -pₓ·log₂(pₓ) - pᵧ·log₂(pᵧ)",
       "Für mehrere Klassen: S = -∑ pᵢ·log₂(pᵢ)"
     ],
     "answerJa": [
-      "エントロピーは分布の情報量を測る指標である",
+      "★エントロピーは分布の情報量を測る指標である",
       "2クラスの場合：S = -pₓ·log₂(pₓ) - pᵧ·log₂(pᵧ)",
       "多クラスの場合：S = -∑ pᵢ·log₂(pᵢ)"
     ],
@@ -280,7 +282,7 @@
   {
   "id": 11,
   "questionDe": "(s.19) Was ist Information Gain und wie wird er berechnet?",
-  "questionJa": "情報利得とは何か？またその計算方法を説明せよ。",
+  "questionJa": "★情報利得とは何か？またその計算方法を説明せよ。",
   "answerDe": [
     "Information Gain misst, wie gut ein Attribut die Daten trennt",
     "Er vergleicht die Entropie vor und nach dem Split",
@@ -376,15 +378,15 @@
 {
   "id": 14,
   "questionDe": "(s.21–22) Berechnen Sie den Information Gain für verschiedene Attribute und erklären Sie, wie das beste Attribut ausgewählt wird.",
-  "questionJa": "さまざまな属性に対する情報利得を計算し、最良の属性を選ぶ方法を説明せよ。",
+  "questionJa": "★さまざまな属性に対する情報利得を計算し、最良の属性を選ぶ方法を説明せよ。",
   "answerDe": [
     "Information Gain misst die Verringerung der Entropie nach dem Split",
     "Das Attribut mit höchstem Gain wird zuerst gewählt",
     "Im Beispiel: Aussichten hat den höchsten Gain"
   ],
   "answerJa": [
-    "情報利得は分割後のエントロピーの減少量を示す",
-    "情報利得が最も高い属性が分割の最初に選ばれる",
+    "★情報利得は分割後のエントロピーの減少量を示す",
+    "★情報利得が最も高い属性が分割の最初に選ばれる",
     "この例では『Aussichten（天気）』が最も高い"
   ],
   "explanationDe": [
@@ -456,7 +458,7 @@
 {
   "id": 16,
   "questionDe": "(s.25) Was ist der C4.5-Algorithmus und welche Verbesserungen bietet er gegenüber ID3?",
-  "questionJa": "C4.5アルゴリズムとは何か。またID3との主な違いを説明せよ。",
+  "questionJa": "★C4.5アルゴリズムとは何か。またID3との主な違いを説明せよ。",
   "answerDe": [
     "Erweiterung von ID3",
     "Unterstützt kontinuierliche Daten",
@@ -486,15 +488,15 @@
 {
   "id": 17,
   "questionDe": "(s.26) Nennen Sie drei Vorteile von Entscheidungsbäumen.",
-  "questionJa": "決定木の利点を3つ挙げよ。",
+  "questionJa": "★決定木の利点を3つ挙げよ。",
   "answerDe": [
     "Regeln können einfach abgeleitet werden",
     "Robust beim Training (z. B. Klassifikationsfehler, Fehler in Attributen)",
     "Relativ einfach erweiterbar zu Random Forest"
   ],
   "answerJa": [
-    "ルールが簡単に導出できる",
-    "学習時に頑健（分類ミスや属性の誤りに強い）",
+    "★ルールが簡単に導出できる",
+    "★学習時に頑健（分類ミスや属性の誤りに強い）",
     "ランダムフォレストへの拡張が容易"
   ],
   "explanationDe": [
@@ -512,11 +514,11 @@
 {
   "id": 18,
   "questionDe": "(s.26) Nennen Sie drei Nachteile von Entscheidungsbäumen.",
-  "questionJa": "決定木の欠点を3つ挙げよ。",
+  "questionJa": "★決定木の欠点を3つ挙げよ。",
   "answerDe": [
-    "Immenser Rechenaufwand bei kontinuierlichen Werten",
-    "Baum kann sehr groß werden (→ Pruning notwendig)",
-    "Schnelles Overfitting"
+    "★Immenser Rechenaufwand bei kontinuierlichen Werten",
+    "★Baum kann sehr groß werden (→ Pruning notwendig)",
+    "★Schnelles Overfitting"
   ],
   "answerJa": [
     "連続値の処理に大きな計算コストがかかる",

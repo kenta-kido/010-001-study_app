@@ -2287,7 +2287,529 @@
   "originalSlideText": "Prosection View\n▶ Projektion in zwei Dimensionen\n▶ Alle anderen Dimensionen werden auf einen kleinen Bereich (±ε) um einen Fokuspunkt beschränkt\n▶ Erlaubt Untersuchung lokaler Muster\n▶ Alternative zu Hyperslice: statt Fixierung → Einschränkung",
   "explanationImage": "lecture02/lecture05_ex29.png",
   "questionImage": ""
+},
+{
+  "id": 66,
+  "questionDe": "(s83) Was sind die grundlegenden Prinzipien paralleler Koordinaten?",
+  "questionJa": "パラレル座標の基本的な仕組みはどうなっているか？",
+  "answerDe": [
+    "m Attribute → m Achsen (parallel angeordnet)",
+    "Jede Achse wird skaliert: Minimum und Maximum der Werte",
+    "Datenpunkt → Linienzug über benachbarte Achsen",
+    "Polygonzüge zeigen Beziehungen zwischen Attributen"
+  ],
+  "answerJa": [
+    "m個の属性 → m本の軸（平行に配置される）",
+    "各軸はその属性の最小値と最大値でスケーリングされる",
+    "各データ点は隣接する軸間を結ぶ線（ポリゴン）で表現される",
+    "この線の形によって属性間の関係を視覚的に捉えられる"
+  ],
+  "explanationDe": [
+    "Parallele Koordinaten sind ein Visualisierungsansatz für multivariate Daten, bei dem jede der m Dimensionen (Attribute) durch eine eigene vertikale Achse dargestellt wird. Diese Achsen sind parallel zueinander angeordnet.",
+    "Jede Achse wird individuell skaliert – das bedeutet, dass der niedrigste Wert eines Attributs unten und der höchste Wert oben angezeigt wird.",
+    "Ein Datenpunkt mit m Attributen wird durch eine Linie dargestellt, die die m Achsen über m−1 Liniensegmente verbindet. Diese Linienzüge helfen, Muster, Trends oder Korrelationen zwischen Attributen zu erkennen.",
+    "Beispiel: Wenn ein Datensatz drei Attribute (z. B. Einkommen, Alter, Ausgaben) hat, werden drei parallele Achsen gezeichnet. Jeder Datenpunkt wird durch eine Linie dargestellt, die je einen Punkt auf jeder Achse verbindet. So lassen sich z. B. lineare Beziehungen zwischen Alter und Ausgaben erkennen."
+  ],
+  "explanationJa": [
+    "パラレル座標とは、多次元（多変量）データを視覚化する手法の一つで、m個の属性（変数）それぞれに1本ずつ縦の軸を割り当て、すべての軸を平行に並べます。",
+    "各軸はその属性の最小値から最大値までの範囲でスケーリングされ、データのばらつきを適切に反映します。",
+    "ある1つのデータ点は、各軸における対応値を順番に線でつないで表現されます（これをポリゴンあるいは線分列と呼びます）。",
+    "例えば、収入・年齢・支出という3つの属性を持つデータセットでは、3本の軸を使ってそれぞれの値を表示し、それらを線でつなぐことで、年齢と支出の関係が視覚的に捉えられるようになります。"
+  ],
+  "originalSlideText": "▶ m Attribute → m Achsen\n▶ Anordnung der Achsen: parallel\n▶ Scatterplot: orthogonal\n▶ Jede Achse j wird skaliert:\n▶ min1≤i≤n(xij)\n▶ max1≤i≤n(xij)\n▶ Für jedes i wird ein Polygonzug mit\nKanten (xi ,j ,xi ,j+1), 1 ≤ j ≤ m −1\ngezeichnet\n▶ Beispiel\n▶ n = 3,m = 2\n▶ blau und rot: gleiche Richtung\n▶ grün: entgegengesetzt zu blau und\nrot",
+  "explanationImage": "lecture02/lecture05_ex30.png",
+  "questionImage": ""
+},
+{
+  "id": 67,
+  "questionDe": "(s84) Welche Informationen können Linienzüge in parallelen Koordinaten vermitteln?",
+  "questionJa": "パラレル座標における線の形（線分列）はどのような情報を伝えているか？",
+  "answerDe": [
+    "Lineare Abhängigkeiten zwischen Attributen",
+    "Schnittpunkt zwischen zwei Achsen: maximal ein Punkt",
+    "Erlaubt Ableitungen zu k-dimensionalen Unterräumen"
+  ],
+  "answerJa": [
+    "属性間の線形な関係（相関）を示す",
+    "隣り合う2軸間で、線分は最大1か所しか交差しない",
+    "k次元部分空間のルールや構造を読み取ることができる"
+  ],
+  "explanationDe": [
+    "In parallelen Koordinaten können die Linienzüge lineare Beziehungen zwischen Attributen sichtbar machen. Wenn viele Linien ähnlich verlaufen, kann das auf eine Korrelation hinweisen.",
+    "Ein wichtiger Aspekt ist, dass sich die Linien zwischen zwei benachbarten Achsen nur einmal schneiden können. Das bedeutet: zwischen zwei Attributen kann man nur einen eindeutigen Schnittpunkt identifizieren, was die Lesbarkeit vereinfacht.",
+    "Laut Inselberg (1998) lassen sich aus diesen Mustern auch Regeln oder Strukturen in k-dimensionalen Unterräumen ableiten – also etwa, wie sich Gruppen von Attributen gemeinsam verhalten.",
+    "Beispiel: Wenn alle Linien von einer Achse zur nächsten nahezu parallel verlaufen, deutet das auf eine starke positive Korrelation hin. Wenn sie sich kreuzen, kann das auf eine negative Korrelation oder Ausreißer hinweisen."
+  ],
+  "explanationJa": [
+    "パラレル座標における線の形は、属性（変数）間の線形関係、つまり相関を示す手がかりになります。たとえば、線がある傾向に沿って似たような角度で並んでいれば、それは正の相関を意味します。",
+    "また、隣接する2本の軸の間では、各データ点に対応する線は最大1回しか交差しません。これは、視覚的な解釈を簡単にするための重要な性質です。",
+    "Inselberg（1998）によれば、このようなパターンからはk次元の部分空間（複数の属性が一緒にどう変化するか）におけるルールや特徴的な構造も読み取れます。",
+    "例として、すべての線が同じ方向に傾いているときは、強い正の相関を示し、線が交差している場合は負の相関や異常値の可能性を示します。"
+  ],
+  "originalSlideText": "▶ Linienzüge zeigen lineare\nAbhängigkeiten der Daten\n▶ Die Polygonzüge schneiden sich\nzwischen zwei Achsen in maximal\neinem Punkt\n▶ Man kann Regeln für k-dimensionale\nUnterräume ableiten [Inselberg 1998]",
+  "explanationImage": "lecture02/lecture05_ex31.png",
+  "questionImage": ""
+},
+{
+  "id": 68,
+  "questionDe": "(s87) Welche Eigenschaften zeichnen parallele Koordinaten aus?",
+  "questionJa": "パラレル座標にはどのような特徴があるか？",
+  "answerDe": [
+    "Anzeige von m − 1 Korrelationen",
+    "Achsenreihenfolge beeinflusst sichtbare Korrelationen",
+    "Positive Korrelationen schwer erkennbar",
+    "Negative Korrelationen leichter erkennbar",
+    "Mehr Überlappungen als bei Punkt-basierten Darstellungen"
+  ],
+  "answerJa": [
+    "m − 1個の相関関係を同時に表示できる",
+    "軸の並び順によって見える相関が変わる",
+    "正の相関の認識は難しい",
+    "負の相関は比較的認識しやすい",
+    "点ベースの表現よりも重なり（オーバーラップ）が多い"
+  ],
+  "explanationDe": [
+    "Ein Vorteil paralleler Koordinaten ist, dass man mit m Achsen insgesamt m − 1 direkte Korrelationen zwischen benachbarten Attributen darstellen kann.",
+    "Welche Korrelationen sichtbar werden, hängt stark von der Reihenfolge der Achsen ab. Wenn zwei stark korrelierte Attribute weit auseinander liegen, erkennt man die Beziehung nicht sofort.",
+    "Positive Korrelationen erscheinen als parallele Linien, aber diese sind schwer zu unterscheiden, da sie eng beieinanderliegen können. Negative Korrelationen hingegen erzeugen sich kreuzende Linien, die besser sichtbar sind.",
+    "Ein Nachteil: Wenn viele Datenpunkte vorhanden sind, überlagern sich die Linien stark, was die Lesbarkeit beeinträchtigen kann – im Vergleich zu Punkt-basierten Visualisierungen wie Scatterplots."
+  ],
+  "explanationJa": [
+    "パラレル座標では、m本の軸があると、隣り合う軸間でm − 1個の相関を同時に観察できます。",
+    "ただし、どの相関が見えるかは軸の並び順に依存します。強い相関を持つ2つの変数が離れた位置にあると、その関係を視覚的に捉えにくくなります。",
+    "正の相関は線がほぼ平行になることで表れますが、線同士が近すぎて認識が難しいことがあります。一方、負の相関は線が交差するため、視認性が高くなります。",
+    "また、パラレル座標は多くのデータを表示すると線が重なりやすく、点で表す手法（例：散布図）よりも読み取りが困難になる場合があります。"
+  ],
+  "originalSlideText": "▶ Eigenschaften\n▶ Anzeige von m −1 Korrelationen\n▶ Reihenfolge der Achsen bestimmt,\nwelche Korrelationen sichtbar sind\n▶ [HYFC2014]\n▶ Positive Korrelationen und deren\nStärke sind relativ schwer zu\nerkennen\n▶ Negative Korrelationen und deren\nStärke sind relativ einfach zu\nerkennen\n▶ Mehr Überlappungen als bei\nPunkt-basierten Darstellungen",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 69,
+  "questionDe": "(s87) Was sind mögliche Erweiterungen paralleler Koordinaten?",
+  "questionJa": "パラレル座標に追加できる拡張機能にはどのようなものがあるか？",
+  "answerDe": [
+    "Brushing (Parvis)",
+    "Transferfunktionen",
+    "Clusterbildung",
+    "Fokus und Kontext (Kapitel “Interaktion”)"
+  ],
+  "answerJa": [
+    "Brushing（ブラッシング、Parvisにて）",
+    "Transfer関数の適用",
+    "クラスタリング（データのグループ化）",
+    "焦点＋文脈（インタラクションの章で扱う）"
+  ],
+  "explanationDe": [
+    "Parallele Koordinaten können mit verschiedenen Interaktions- und Visualisierungstechniken erweitert werden, um ihre Aussagekraft zu verbessern.",
+    "Brushing ist eine Methode, mit der der Nutzer bestimmte Wertebereiche auf den Achsen auswählen kann, um nur relevante Daten hervorzuheben. Dies hilft bei der Analyse großer Datensätze.",
+    "Transferfunktionen dienen dazu, visuelle Eigenschaften wie Transparenz oder Farbe abhängig von Datenwerten zu steuern. So lassen sich z. B. dichte Datenbereiche abschwächen und Ausreißer hervorheben.",
+    "Clusterbildung bedeutet, dass ähnliche Datenpunkte gruppiert werden, um Muster oder Kategorien besser zu erkennen.",
+    "Fokus-und-Kontext-Techniken ermöglichen es, einen Ausschnitt des Datenraums detailliert darzustellen, während der Gesamtkontext erhalten bleibt – z. B. durch Zoom oder Hervorhebung bestimmter Segmente."
+  ],
+  "explanationJa": [
+    "パラレル座標は、さまざまなインタラクションや視覚化手法を加えることで、より効果的にデータを読み取れるようになります。",
+    "Brushing（ブラッシング）は、特定の軸の範囲を選択して該当するデータだけを強調表示する手法で、大量のデータを扱うときに有効です。",
+    "Transfer関数は、透明度や色などの視覚的属性をデータの値に応じて変化させる機能で、密集した部分を薄くしたり、外れ値を目立たせたりするのに使われます。",
+    "クラスタリングは、似た傾向のデータをグループ化することで、構造的なパターンや分類を視覚的に理解しやすくする方法です。",
+    "フォーカス＋コンテキスト手法では、注目する部分を詳細に表示しつつ、全体像（コンテキスト）も同時に維持することができます。ズームや強調表示などがこの例です。"
+  ],
+  "originalSlideText": "▶ Erweiterungen\n▶ Brushing (Parvis)\n▶ Transferfunktionen\n▶ Clusterbildung\n▶ Fokus und Kontext (Kapitel “Interaktion”)",
+  "explanationImage": "lecture02/lecture05_ex32.png",
+  "questionImage": ""
+},
+{
+  "id": 70,
+  "questionDe": "(s85) Was passiert bei parallelen Koordinaten mit leichtem Rauschen in den Daten?",
+  "questionJa": "わずかなノイズがデータに含まれているとき、パラレル座標ではどのような問題が生じるか？",
+  "answerDe": [
+    "Leichtes Rauschen kann visuelle Muster stören",
+    "Erkennung von Korrelationen wird erschwert"
+  ],
+  "answerJa": [
+    "軽度のノイズでも視覚的なパターンが乱れる",
+    "属性間の相関関係の認識が難しくなる"
+  ],
+  "explanationDe": [
+    "Schon geringfügiges Rauschen (Noise) in den Daten kann bei parallelen Koordinaten dazu führen, dass klare Linienzüge verschwimmen oder sich überlagern. Dadurch werden Muster wie Korrelationen schwerer erkennbar.",
+    "Visuelle Unregelmäßigkeiten durch Rauschen können z. B. dazu führen, dass eigentlich parallele Linien sich leicht kreuzen oder ausfransen, was bei der Analyse zu Missverständnissen führen kann.",
+    "Beispiel: Wenn in einem Datensatz mit positiver Korrelation ein kleines Maß an Messfehlern (z. B. ±1 %) enthalten ist, können die Linien in der Visualisierung zerstreut wirken, obwohl die Daten inhaltlich stark zusammenhängen."
+  ],
+  "explanationJa": [
+    "データにわずかなノイズ（誤差や揺らぎ）が含まれているだけで、パラレル座標では線のパターンが崩れたり重なったりし、明瞭な構造が見えづらくなってしまいます。",
+    "ノイズによって視覚的な乱れが生じると、本来は見えるはずだった相関関係や傾向が不明瞭になり、正しい読み取りが難しくなります。",
+    "例えば、ある属性間に明確な正の相関があるデータでも、測定誤差（±1%程度）が加わるだけで、線がばらついて見え、相関が弱く見える場合があります。"
+  ],
+  "originalSlideText": "Abbildung: Leichtes Rauschen verursacht Probleme [AGK2002]",
+  "explanationImage": "lecture02/lecture05_ex33.png",
+  "questionImage": ""
+},
+{
+  "id": 71,
+  "questionDe": "(s88) Was zeigt die Brushing-Interaktion in Parvis?",
+  "questionJa": "ParvisでのBrushing（ブラッシング）操作はどのような可視化を実現するか？",
+  "answerDe": [
+    "Hervorhebung bestimmter Datenbereiche",
+    "Auswahl durch Achsenabschnitte und Winkel",
+    "Kombination mit Histogrammen möglich"
+  ],
+  "answerJa": [
+    "特定のデータ範囲を強調表示できる",
+    "軸上の区間や角度による選択が可能",
+    "ヒストグラムとの併用も可能"
+  ],
+  "explanationDe": [
+    "Brushing ist eine interaktive Technik in parallelen Koordinaten, mit der Benutzer gezielt Datenbereiche auswählen und visuell hervorheben können.",
+    "In Parvis können Nutzer z. B. durch Ziehen eines Bereichs entlang einer Achse nur die Linien hervorheben, die durch diesen Bereich verlaufen. Zusätzlich können Linien anhand ihrer Winkelverläufe selektiert werden.",
+    "Das hilft besonders dabei, Muster oder Ausreißer zu erkennen, wenn viele Linien sich überlagern.",
+    "Die Technik kann auch mit Histogrammen kombiniert werden, um die Verteilung innerhalb der markierten Bereiche zu analysieren.",
+    "Beispiel: Wenn man einen Bereich mit hohem Einkommen markiert, werden nur die zugehörigen Datenlinien hervorgehoben. Dadurch lassen sich deren Beziehungen zu anderen Attributen wie Bildung oder Ausgaben gezielt untersuchen."
+  ],
+  "explanationJa": [
+    "Brushing（ブラッシング）とは、パラレル座標において特定のデータ範囲をインタラクティブに選択・強調する手法です。",
+    "Parvisでは、軸上の特定の区間（例：収入が高い部分）をマウスで選ぶことで、その範囲に含まれるデータのみを強調表示できます。また、線の傾き（角度）による選択も可能です。",
+    "この方法により、他の多くの線との重なりの中から、関心のあるデータのみを可視化し、パターンや異常値（アウトライヤー）を見つけやすくなります。",
+    "さらに、ヒストグラムと組み合わせて、選択した範囲のデータ分布を確認することもできます。",
+    "例として、高収入者だけを選択して他の属性（教育や支出）との関係を観察する、といった分析が可能になります。"
+  ],
+  "originalSlideText": "Abbildung: Parvis Abbildung: Parvis: Brushing\nAbbildung: Parvis: Brushing + Histogram\nAbbildung: Parvis: Auswahl über Achsenabschnitte und Winkel (in rot) → Fokus",
+  "explanationImage": "lecture02/lecture05_ex32.png",
+  "questionImage": ""
+},
+{
+  "id": 72,
+  "questionDe": "(s91) Welche Arten von Transferfunktionen werden in parallelen Koordinaten verwendet und wie wirken sie? (mit Bild)",
+  "questionJa": "パラレル座標で使われるTransfer関数の種類と、それぞれが与える視覚的効果にはどんなものがあるか？",
+  "answerDe": [
+    "Lineare Transferfunktion: reduziert Überdeckungen, bietet Überblick",
+    "Logarithmische Transferfunktion: hebt dünn besetzte Bereiche hervor",
+    "Quadratwurzel-Transferfunktion: betont Ausreißer von lokalen Clustern",
+    "Komplementäre Ansicht: zeigt gleichmäßige Bandstruktur"
+  ],
+  "answerJa": [
+    "線形Transfer関数：重なりを減らし、全体の把握を助ける",
+    "対数Transfer関数：データの密度が低い領域を強調する",
+    "平方根Transfer関数：ローカルクラスタから外れた外れ値を強調する",
+    "補完的視点：均一な帯状構造を示す"
+  ],
+  "explanationDe": [
+    "Transferfunktionen verändern die visuelle Darstellung der Linien in parallelen Koordinaten, um bestimmte Merkmale der Daten hervorzuheben.",
+    "Eine lineare Transferfunktion verringert die Überlagerung der Linien, indem beispielsweise Transparenz gleichmäßig angewendet wird. Dadurch erhält man einen klareren Überblick.",
+    "Die logarithmische Transferfunktion hebt seltene oder dünn besetzte Bereiche hervor – etwa wenn wenige Datenpunkte eine Region durchqueren, werden sie deutlicher sichtbar.",
+    "Die Quadratwurzel-Transferfunktion verstärkt die Darstellung von Ausreißern, die außerhalb von dichten lokalen Clustern liegen.",
+    "In der komplementären Ansicht werden Cluster durch einheitliche Bandmuster dargestellt, was strukturelle Gleichmäßigkeiten sichtbar macht.",
+    "Beispiel: Wenn eine große Anzahl ähnlicher Daten einen engen Bereich bildet, kann man mit einer logarithmischen Funktion die wenigen Ausnahmen besser erkennen."
+  ],
+  "explanationJa": [
+    "Transfer関数とは、パラレル座標において線の描画方法（色、透明度など）をデータに基づいて制御する手法で、重要な特徴を視覚的に強調するために使われます。",
+    "線形Transfer関数では、たとえば線の透明度を一定にすることで重なりを抑え、全体の分布を見やすくします。",
+    "対数Transfer関数では、データが少ない部分（例：希少ケースや外れ値）を視覚的に強調できます。こうした部分は、通常は目立ちにくいため、この手法で可視化が容易になります。",
+    "平方根Transfer関数は、密集したクラスタから外れた外れ値などを目立たせる効果があります。",
+    "補完的な表示では、同じグループに属するデータが均一な帯（バンド）として表れ、クラスタの構造や範囲が一目で分かるようになります。",
+    "例：売上が特定の範囲に集中している中で、極端に高い売上のケースを強調するには、平方根や対数のTransfer関数が有効です。"
+  ],
+  "originalSlideText": "Abbildung: Lineare Transferfunktion angewendet auf eine hochauflösende Textur um Überdeckungen zu reduzieren und einen Überblick über die Daten zu geben. [Johan2005]\nAbbildung: Logarithmische Transferfunktion angewandt auf einen ausgewählten Cluster: Die Struktur bleibt erhalten und Regionen geringer Dichte werden hervorgehoben. [Johan2005]\nAbbildung: Transferfunktion unter Verwendung der Quadratwurzel: Ausreißer von lokalen Clustern werden hervorgehoben. [Johan2005]\nAbbildung: Komplementäre Ansicht der Cluster: uniforme Bandstruktur. [Johan2005]",
+  "explanationImage": "lecture02/lecture05_ex34.png",
+  "questionImage": ""
+},
+{
+  "id": 73,
+  "questionDe": "(s95) Was zeigt die komplementäre Clusteransicht in parallelen Koordinaten? (mit Bild)",
+  "questionJa": "パラレル座標における補完的なクラスタ表示はどのような情報を示しているか？",
+  "answerDe": [
+    "Uniforme Bandstruktur",
+    "Betont die Zugehörigkeit von Datenpunkten zu Clustern"
+  ],
+  "answerJa": [
+    "均一な帯状の構造（バンドパターン）が現れる",
+    "データ点のクラスタへの所属が視覚的にわかる"
+  ],
+  "explanationDe": [
+    "Die komplementäre Clusteransicht nutzt visuelle Techniken, um Cluster (Gruppen ähnlicher Datenpunkte) in parallelen Koordinaten deutlich zu machen.",
+    "Dabei erscheinen Datenpunkte, die zu demselben Cluster gehören, als zusammenhängende und einheitlich gefärbte oder geformte Bänder, sogenannte Bandstrukturen.",
+    "Diese gleichmäßigen Bänder helfen dem Betrachter, Gruppenbildungen und deren Charakteristika intuitiv zu erkennen.",
+    "Beispiel: Wenn alle Daten eines Clusters ähnliche Werte auf mehreren Achsen haben, erscheinen sie als konsistentes Band, das sich gleichmäßig durch die Achsen zieht – dies erleichtert die Unterscheidung zwischen verschiedenen Clustern."
+  ],
+  "explanationJa": [
+    "補完的クラスタ表示とは、パラレル座標において類似するデータ点を視覚的に同じグループ（クラスタ）として表現する手法です。",
+    "この表示では、同じクラスタに属するデータは、全体的に整った帯状の構造（バンド）として描かれます。",
+    "こうした均一なバンドは、複数の軸にわたって似た値を持つデータ群がどのように分布しているかを一目で把握する助けになります。",
+    "例えば、同じ顧客層に属する人々のデータがすべて似た傾向（年齢、収入、支出など）を示す場合、それらはひとまとまりの帯として表示され、他のクラスタとの違いが直感的にわかります。"
+  ],
+  "originalSlideText": "Abbildung: Komplementäre Ansicht der Cluster: uniforme Bandstruktur. [Johan2005]",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 74,
+  "questionDe": "(s96) Was ist ein Star-Plot und wie funktioniert er?",
+  "questionJa": "スター・プロットとは何か？どのような仕組みで可視化を行うのか？",
+  "answerDe": [
+    "m Attribute → m Achsen (sternförmig angeordnet)",
+    "Verbindung von xi,j mit xi,j+1 (für 0 ≤ j ≤ m − 1)",
+    "Verbindung von xi,m mit xi,1 (schließt das Polygon)",
+    "Zeigt m Korrelationen gleichzeitig",
+    "Eignet sich für qualitativen Formvergleich"
+  ],
+  "answerJa": [
+    "m個の属性 → m本の軸（星型に放射状に配置）",
+    "各軸上の点 xi,j と xi,j+1 を順番につなぐ",
+    "最後に xi,m と xi,1 をつなげて閉じた図形にする",
+    "m個の属性間の関係を一度に示すことができる",
+    "形の違いによる質的な比較に適している"
+  ],
+  "explanationDe": [
+    "Ein Star-Plot (auch Radar-Chart oder Kiviat-Diagramm genannt) ist eine Visualisierungsmethode für multivariate Daten, bei der jede Dimension durch eine Achse dargestellt wird, die strahlenförmig (sternförmig) von einem Mittelpunkt ausgeht.",
+    "Ein Datenpunkt wird durch eine geschlossene Linie dargestellt, die die Werte auf den einzelnen Achsen miteinander verbindet. Die Form des resultierenden Polygons vermittelt Informationen über die Struktur und Eigenschaften des Datenpunkts.",
+    "Alle m Achsen sind gleichmäßig um einen Kreis herum verteilt. Man beginnt mit dem ersten Wert und verbindet ihn der Reihe nach mit dem nächsten, bis man wieder beim Anfangswert ankommt und das Polygon schließt.",
+    "Beispiel: Wenn ein Datensatz 5 Attribute wie Produktivität, Teamarbeit, Kreativität, Effizienz und Genauigkeit enthält, wird ein Stern mit 5 Achsen erstellt, und die verbundenen Punkte ergeben ein charakteristisches Fünfeck. So lassen sich z. B. unterschiedliche Mitarbeiterprofile miteinander vergleichen."
+  ],
+  "explanationJa": [
+    "スター・プロット（別名：レーダーチャート、キビアット図）は、多変量データを視覚的に比較するための手法で、各属性を中心から放射状に伸びた軸で表します。",
+    "1つのデータ点は、各軸上にその値をプロットし、隣同士を線でつないでいき、最後に最初の点と結んで閉じた図形（ポリゴン）になります。",
+    "この図形の形から、データの全体的なバランスや特徴を視覚的に把握することができます。特に複数のデータを重ねて描くことで、形の違いからグループの傾向を比較できます。",
+    "例として、ある社員の「生産性・チームワーク・創造性・効率・正確性」の5項目を評価した場合、それぞれを軸として星型に配置し、点を結ぶことでその人の特性が視覚的に表現されます。"
+  ],
+  "originalSlideText": "▶ m Attribute → m Achsen\n▶ Anordnung der Achsen: Stern-förmig\n▶ Verbindung von xi ,j mit xi ,j+1,\n0 ≤ j ≤ m −1\n▶ Zusätzliche Verbindung von xi ,m mit\nxi ,1\n▶ Anzeige von m Korrelationen\n▶ Ergibt geschlossenen Polygonzug\n(Polygon)\n▶ Meist zum qualitativen Vergleich der\nForm",
+  "explanationImage": "lecture02/lecture05_ex35.png",
+  "questionImage": ""
+},
+{
+  "id": 75,
+  "questionDe": "(s97) Welche anderen Bezeichnungen gibt es für Star-Plots?",
+  "questionJa": "スター・プロットには他にどんな呼び名があるか？",
+  "answerDe": [
+    "Radar-Chart",
+    "Kiviat-Diagramm"
+  ],
+  "answerJa": [
+    "レーダーチャート",
+    "キビアット図（Kiviatダイアグラム）"
+  ],
+  "explanationDe": [
+    "Star-Plots werden in der Literatur und Praxis unter verschiedenen Namen geführt. Zwei der häufigsten Alternativbezeichnungen sind:",
+    "– Radar-Chart: Der Name stammt aus der Ähnlichkeit zur Darstellung eines Radars (z. B. in der Luftfahrt).",
+    "– Kiviat-Diagramm: Eine weitere technische Bezeichnung, die besonders im Bereich der Ingenieurwissenschaften und Systemanalyse verwendet wird.",
+    "Alle Begriffe bezeichnen dieselbe Darstellungsform, bei der mehrere Attribute radial um einen Mittelpunkt angeordnet und durch Linien verbunden werden, um ein geschlossenes Polygon zu erzeugen."
+  ],
+  "explanationJa": [
+    "スター・プロット（Star-Plot）は、文献や実務でいくつかの別名でも呼ばれています。特によく使われるのは以下の2つです：",
+    "– レーダーチャート：航空機のレーダー表示に似ていることからこの名がついています。",
+    "– キビアット図（Kiviatダイアグラム）：特に工学分野やシステム解析の分野で用いられる技術的な名称です。",
+    "これらの名称はすべて、複数の属性を中心から放射状に配置し、各点をつないで多角形を作るという、同じ可視化手法を指しています。"
+  ],
+  "originalSlideText": "▶ Andere Bezeichnungen\n▶ Radar-Chart\n▶ Kiviat-Diagramm",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 76,
+  "questionDe": "(s100) Welche Eigenschaften haben Star-Plots im Vergleich zu parallelen Koordinaten?",
+  "questionJa": "スター・プロットはパラレル座標と比べてどのような特徴があるか？",
+  "answerDe": [
+    "Ähnlichkeiten zu parallelen Koordinaten",
+    "Unterschiedliche Qualität der Achsen (wegen Richtungsunterschieden)",
+    "Abstand zwischen Achsen variiert: klein im Zentrum, groß am Rand"
+  ],
+  "answerJa": [
+    "パラレル座標と共通点がある",
+    "軸の向きが異なるため、軸ごとの表現の質にばらつきがある",
+    "軸間の距離が中心では小さく、外側では大きくなる"
+  ],
+  "explanationDe": [
+    "Star-Plots ähneln parallelen Koordinaten in dem Sinne, dass sie mehrere Attribute gleichzeitig darstellen. Doch es gibt wichtige Unterschiede in der Geometrie.",
+    "Da die Achsen in einem Sternmuster (radial) angeordnet sind, haben sie unterschiedliche Richtungen. Das führt dazu, dass die visuelle Wahrnehmung der Daten je nach Achse unterschiedlich stark sein kann.",
+    "Ein weiteres Problem liegt im Abstand zwischen zwei benachbarten Achsen: Dieser ist im Zentrum sehr klein und nimmt zum Rand hin zu. Dadurch wird der Vergleich von Werten auf benachbarten Achsen schwieriger.",
+    "Beispiel: In einem Star-Plot mit acht Achsen liegen die Achsen sehr dicht beieinander, was nahe der Mitte wenig Platz lässt, um Unterschiede zu erkennen. Außerdem wirken gleich große Unterschiede visuell unterschiedlich, je nachdem welche Achsen beteiligt sind."
+  ],
+  "explanationJa": [
+    "スター・プロットは、パラレル座標と同様に多変量データを可視化する手法ですが、表示の幾何学的な構造に重要な違いがあります。",
+    "スター・プロットでは軸が放射状に配置されるため、各軸の方向が異なり、それによってデータの見え方が軸ごとに異なってきます。",
+    "また、軸と軸の間の距離が中心では非常に小さく、外側では大きくなるため、隣接する属性間の比較が視覚的に歪んでしまう可能性があります。",
+    "例えば、同じ差の数値でも、軸が近い中心部分では見えにくく、外側では強調されて見えるため、注意して解釈する必要があります。"
+  ],
+  "originalSlideText": "▶ Eigenschaften\n▶ siehe auch: Parallele Koordinaten\n▶ Unterschiedliche Qualität der\nAchsen durch unterschiedliche\nRichtungen\n▶ Abstand zwischen zwei Achsen\n▶ Klein nahe dem Zentrum\n▶ Groß nahe dem Rand",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 77,
+  "questionDe": "(s101) Was stellt eine Heatmap dar?",
+  "questionJa": "ヒートマップとは何を表現する視覚化手法か？",
+  "answerDe": [
+    "Darstellung von Korrelationen zwischen zwei Attributen",
+    "Visualisierung in Matrixform",
+    "Korrelationswerte im Bereich [−1; 1]"
+  ],
+  "answerJa": [
+    "2つの属性間の相関関係を表現する",
+    "行列（マトリックス）形式で視覚化される",
+    "相関係数の値は [−1; 1] の範囲で示される"
+  ],
+  "explanationDe": [
+    "Eine Heatmap ist eine Visualisierungstechnik zur Darstellung von Korrelationen zwischen numerischen Attributen.",
+    "In einer Matrix werden die Attribute sowohl auf der X- als auch auf der Y-Achse dargestellt. Die Zellen dieser Matrix enthalten die Korrelationswerte zwischen den entsprechenden Attributpaaren.",
+    "Die Werte liegen typischerweise im Bereich von −1 (starke negative Korrelation) bis 1 (starke positive Korrelation), wobei 0 für keine Korrelation steht.",
+    "Die Stärke und Richtung der Korrelation wird durch Farben codiert – meist mit einem kontinuierlichen Farbschema.",
+    "Beispiel: In einem Datensatz mit Attributen wie Alter, Einkommen und Ausgaben zeigt eine Heatmap, ob z. B. das Einkommen stark mit dem Alter korreliert oder nicht."
+  ],
+  "explanationJa": [
+    "ヒートマップは、数値属性間の相関関係を視覚的に示すための手法です。",
+    "行と列に属性を並べ、各セルに対応する2つの属性間の相関係数（−1から1の範囲）を色で表現します。",
+    "−1は強い負の相関、1は強い正の相関、0は相関なしを示します。",
+    "色の濃さや色相を使って、どの属性同士がどの程度関係しているかを直感的に把握できるのが特徴です。",
+    "例として、年齢・収入・支出という3つの属性を持つデータに対してヒートマップを作成すると、それぞれの組み合わせ間の相関の強さを一目で確認できます。"
+  ],
+  "originalSlideText": "▶ Daten\n▶ Darstellung von\n▶ Korrelationen zwischen zwei\nAttributen\n▶ in einer Matrix\n▶ Stärke der Korrelation im Intervall\n[−1;1]",
+  "explanationImage": "lecture02/lecture05_ex36.png",
+  "questionImage": ""
+},
+{
+  "id": 78,
+  "questionDe": "(s102) Wie funktioniert das visuelle Mapping in einer Heatmap?",
+  "questionJa": "ヒートマップではどのように視覚的マッピング（色の割り当て）が行われているか？",
+  "answerDe": [
+    "Wertebereich: [−1;1]",
+    "Positive Werte: grüne Farbtöne",
+    "Negative Werte: rote Farbtöne",
+    "0: neutrale Farbe (z. B. schwarz oder weiß)",
+    "Sättigung/Helligkeit abhängig von der Stärke",
+    "Größte Helligkeit/Sättigung bei Werten ±1"
+  ],
+  "answerJa": [
+    "値の範囲は [−1;1]",
+    "正の値は緑系の色で表現",
+    "負の値は赤系の色で表現",
+    "0は中立色（黒または白）で表示",
+    "色の鮮やかさや明るさは相関の強さによって変化",
+    "±1では最も強い色で表示される"
+  ],
+  "explanationDe": [
+    "Das visuelle Mapping in einer Heatmap übersetzt Korrelationswerte in Farben. Die Farbgebung erfolgt anhand des Vorzeichens und der Stärke der Korrelation.",
+    "Positive Korrelationen (> 0) werden typischerweise durch grüne Farbtöne dargestellt, während negative Korrelationen (< 0) in Rottönen erscheinen.",
+    "Ein Wert von 0 wird neutral (z. B. schwarz oder weiß) dargestellt, um keine Korrelation zu signalisieren.",
+    "Je stärker die Korrelation (nahe ±1), desto intensiver ist die Farbe – entweder in Form von höherer Sättigung oder Helligkeit.",
+    "Beispiel: Eine Korrelation von 0.9 zwischen zwei Variablen würde als ein sehr heller oder kräftiger Grünton angezeigt, während −0.9 ein intensives Rot ergeben würde. Ein Wert von 0,1 würde dagegen blassgrün oder fast grau erscheinen."
+  ],
+  "explanationJa": [
+    "ヒートマップでは、相関係数の値に応じて色を割り当てるマッピングが行われます。色は符号と強さの2つの情報を表現します。",
+    "正の相関（>0）は通常、緑系の色で示され、負の相関（<0）は赤系の色で示されます。",
+    "相関が0（つまり無相関）の場合は、中立色として黒または白で表示されます。",
+    "相関が強い（±1に近い）ほど、色が鮮やかまたは明るくなり、視覚的に目立つようになります。",
+    "例：相関係数が0.9の組み合わせは鮮やかな緑に、−0.9なら鮮やかな赤で示されます。一方、0.1のように弱い相関なら、色が薄く、目立たなくなります。"
+  ],
+  "originalSlideText": "▶ Visuelle Abbildung\n▶ Wertebereich: [−1;1]\n▶ Je ein Farbton für\n▶ positive Werte\n▶ negative Werte\n▶ Größe der Werte\n▶ Sättigung\n▶ Helligkeit\n▶ Größte Sättigung oder Helligkeit\n▶ negative Werte: -1\n▶ positvie Werte: 1\n▶ Neutrale Farbe für 0\n▶ Schwarz\n▶ Weiß",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 79,
+  "questionDe": "(s103) Warum ist das Farb-Mapping bei Rot-Grün-Sehschwäche problematisch? (mit Bild)",
+  "questionJa": "赤緑色覚異常の人にとって、ヒートマップのカラーマッピングにどのような問題があるか？（画像あり）",
+  "answerDe": [
+    "Rot-Grün-Mapping ist für Farbenblinde schwer unterscheidbar",
+    "Wichtige Unterschiede in den Daten können visuell verloren gehen"
+  ],
+  "answerJa": [
+    "赤と緑の区別がつきにくいため、色覚異常の人には認識が難しい",
+    "重要なデータの違いが視覚的に見えなくなる可能性がある"
+  ],
+  "explanationDe": [
+    "Menschen mit Rot-Grün-Sehschwäche (häufigste Form der Farbenblindheit) haben Schwierigkeiten, zwischen roten und grünen Farbtönen zu unterscheiden.",
+    "Wenn eine Heatmap diese Farben zur Darstellung positiver und negativer Korrelationen nutzt, können diese Personen nicht erkennen, ob ein Wert positiv oder negativ ist.",
+    "Das führt dazu, dass wichtige strukturelle Informationen in den Daten verloren gehen oder falsch interpretiert werden.",
+    "Beispiel: Zwei Zellen in der Heatmap, die starke positive (grün) und starke negative (rot) Korrelationen anzeigen, können für betroffene Personen gleich aussehen – was die Interpretation erschwert oder unmöglich macht."
+  ],
+  "explanationJa": [
+    "赤緑色覚異常（色弱）の人は、赤と緑の色の区別がつきにくいという特性があります（色覚異常の中でも最も一般的）。",
+    "ヒートマップで正の相関を緑、負の相関を赤で示す場合、これらが判別できず、データの意味を読み取れなくなる可能性があります。",
+    "その結果、本来見えるはずの構造的な情報（相関の向き）が視覚的に失われたり、誤解を生んだりするリスクがあります。",
+    "例：相関が+0.9のセル（緑）と−0.9のセル（赤）が同じように見えてしまい、相関の向きが判断できなくなってしまいます。"
+  ],
+  "originalSlideText": "▶ Mapping in der Abbildung\n▶ 0: neutral → schwarz\n▶ < 0: rot\n▶ > 0: grün\n▶ Absoluter Betrag des Wertes\n▶ Helligkeit\n▶ Mapping ungünstig bei rot-grün\nSehschwäche",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 80,
+  "questionDe": "(s105) Welche Visualisierungstechniken eignen sich für verschiedene Attributtypen?",
+  "questionJa": "属性の種類（カテゴリ・順序・連続）に応じて、どのような可視化手法が適しているか？",
+  "answerDe": [
+    "Einige Techniken besonders geeignet für:",
+    "– kategorische Attribute",
+    "– ordinale Attribute",
+    "Auch kombinierbar mit kontinuierlichen Attributen"
+  ],
+  "answerJa": [
+    "特定の技法は以下の属性に特に適している：",
+    "– カテゴリ属性",
+    "– 順序属性",
+    "連続属性との組み合わせも可能"
+  ],
+  "explanationDe": [
+    "Verschiedene Visualisierungstechniken sind für unterschiedliche Datentypen besser geeignet.",
+    "Kategorische Attribute (z. B. Geschlecht, Region) lassen sich gut mit Farben, Symbolen oder separaten Achsen darstellen.",
+    "Ordinale Attribute (z. B. Schulnoten, Zufriedenheitsstufen) sind geordnet, haben aber keine exakten Abstände. Diese können sinnvoll auf Achsen abgebildet werden, sollten aber nicht wie kontinuierliche Daten behandelt werden.",
+    "Viele Techniken erlauben die gleichzeitige Darstellung verschiedener Attributtypen. Zum Beispiel kann ein Star-Plot kontinuierliche und ordinale Werte kombinieren, indem die Skalen entsprechend angepasst werden.",
+    "Beispiel: In einer parallelen Koordinatendarstellung können kontinuierliche Werte wie Einkommen und ordinale Werte wie Bildungsniveau zusammen verwendet werden, wobei die Skala für das ordinale Attribut diskrete Positionen einnimmt."
+  ],
+  "explanationJa": [
+    "可視化技法は、属性の種類ごとに適性が異なります。",
+    "カテゴリ属性（例：性別、地域）は、色やマーク、別の軸などで表現しやすいです。",
+    "順序属性（例：成績、満足度）は順番には意味がありますが、値の間隔は定まっていないため、連続値のように扱うのは注意が必要です。",
+    "多くの可視化手法は、これらの属性タイプを組み合わせて扱うことが可能です。たとえば、スター・プロットでは連続値と順序属性を同じプロット上で表現できます（スケールを工夫する必要があります）。",
+    "例：パラレル座標では、「収入（連続）」と「教育水準（順序）」を一緒に表示でき、順序属性の軸は段階的に分割して視覚化されます。"
+  ],
+  "originalSlideText": "▶ Einige Techniken sind besonders\negeeignet für\n▶ kategorische Attribute\n▶ ordinale Attribute\n▶ Mischungen möglich mit\n▶ kontinuierlichen Attributen",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 81,
+  "questionDe": "(s105) Warum führen ordinale Attribute zu auffälligen Clustern?",
+  "questionJa": "順序属性はなぜ目立つクラスタを作りやすいのか？",
+  "answerDe": [
+    "Wenige mögliche Werte → auffällige Cluster",
+    "Springen dem Anwender ins Auge",
+    "Können dadurch überbetont werden"
+  ],
+  "answerJa": [
+    "取り得る値が少ないため、クラスタとして目立つ形になりやすい",
+    "ユーザーの目にすぐ留まる",
+    "その結果、実際以上に強調されて解釈される可能性がある"
+  ],
+  "explanationDe": [
+    "Ordinale Attribute haben typischerweise nur eine kleine Anzahl möglicher Werte (z. B. Schulnoten von 1 bis 6 oder Zufriedenheitslevel von 1 bis 5).",
+    "Wenn diese Werte in einer Visualisierung auftauchen, gruppieren sich die Daten automatisch in gut sichtbare Cluster oder Linienbündel, da viele Datenpunkte denselben Wert annehmen.",
+    "Diese auffällige Gruppierung springt dem Betrachter direkt ins Auge, auch wenn sie vielleicht analytisch gar nicht so relevant ist.",
+    "Das kann dazu führen, dass diese Attribute visuell überbetont werden und in der Interpretation mehr Gewicht bekommen, als sie eigentlich haben sollten."
+  ],
+  "explanationJa": [
+    "順序属性（ordinal attribute）は、取り得る値の数が少ないことが多く（例：評価スコア1〜5など）、多くのデータ点が同じ値を取る傾向があります。",
+    "そのため、可視化においては同じ値を持つデータが軸上で重なり、線や塊（クラスタ）として目立つ形になります。",
+    "こうした視覚的なまとまりは、観察者の目にすぐに入ってきやすく、他の属性よりも印象に残りやすいです。",
+    "結果として、分析上はそこまで重要でない属性でも、可視化の効果により過剰に重視されてしまうリスクがあります。"
+  ],
+  "originalSlideText": "▶ Ordinale Attribute\n▶ Führen mit einer kleinen\nWertmenge zu auffälligen Clustern\n▶ Diese springen dem Anwender ins\nAuge\n▶ Überbetonen damit diese Attribute",
+  "explanationImage": "",
+  "questionImage": ""
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

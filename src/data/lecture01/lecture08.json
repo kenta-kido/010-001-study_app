@@ -52,7 +52,7 @@
   {
     "id": 3,
     "questionDe": "(s6) Wodurch sind künstliche neuronale Netze gekennzeichnet?",
-    "questionJa": "人工ニューラルネットワークにはどんな特徴があるか？",
+    "questionJa": "★人工ニューラルネットワークにはどんな特徴があるか？",
     "answerDe": [
       "Massiv parallele Informationsverarbeitung",
       "Propagierung der Informationen durch Kanten",
@@ -60,10 +60,10 @@
       "Black Box Modell"
     ],
     "answerJa": [
-      "大規模並列による情報処理",
-      "エッジ（接続）を通じた情報の伝播",
-      "分散型の情報記憶方式",
-      "ブラックボックスモデル（中身が見えにくい）"
+      "★大規模並列による情報処理",
+      "★エッジ（接続）を通じた情報の伝播",
+      "★分散型の情報記憶方式",
+      "★ブラックボックスモデル（中身が見えにくい）"
     ],
     "explanationDe": [
       "Neuronale Netze verarbeiten viele Informationen gleichzeitig, was als massiv parallele Verarbeitung bezeichnet wird. Dadurch können sie komplexe Aufgaben effizient bewältigen.",
@@ -140,7 +140,7 @@
   {
     "id": 6,
     "questionDe": "(s11) Was ist die Grundidee des McCulloch-Pitts-Neurons?",
-    "questionJa": "McCulloch-Pittsニューロンの基本的なアイデアとは？",
+    "questionJa": "★McCulloch-Pittsニューロンの基本的なアイデアとは？",
     "answerDe": [
       "Neuron ist entweder aktiv oder inaktiv",
       "Fähigkeiten entstehen durch Vernetzung der Neuronen"
@@ -164,7 +164,7 @@
   {
     "id": 7,
     "questionDe": "(s11) Welche Einschränkungen hat das McCulloch-Pitts-Modell?",
-    "questionJa": "McCulloch-Pittsモデルにはどんな制限があるか？",
+    "questionJa": "★McCulloch-Pittsモデルにはどんな制限があるか？",
     "answerDe": [
       "Nur statische Netze werden betrachtet",
       "Topologie wird vorher festgelegt",
@@ -172,9 +172,9 @@
       "Widerspruch zur Biologie"
     ],
     "answerJa": [
-      "静的なネットワークしか扱わない",
-      "ネットワーク構造（トポロジー）は事前に決まっている",
-      "学習時に新たな接続を作らない",
+      "★静的なネットワークしか扱わない",
+      "★ネットワーク構造（トポロジー）は事前に決まっている",
+      "★学習時に新たな接続を作らない",
       "生物の仕組みと矛盾する"
     ],
     "explanationDe": [
@@ -194,7 +194,7 @@
   {
     "id": 8,
     "questionDe": "(s11–14) Wie funktioniert das McCulloch-Pitts-Neuron und wie wurde es erweitert?",
-    "questionJa": "McCulloch-Pittsニューロンはどのように機能し、それはどのように拡張されてきたか？",
+    "questionJa": "★McCulloch-Pittsニューロンはどのように機能し、それはどのように拡張されてきたか？",
     "answerDe": [
       "Binäre Eingaben (0 oder 1), Neuron ist aktiv oder inaktiv",
       "Schwellwert entscheidet über Aktivierung",
@@ -203,9 +203,9 @@
       "Verallgemeinerung durch gewichtete Eingaben"
     ],
     "answerJa": [
-      "入力は0または1の2値、ニューロンは活性または非活性",
-      "しきい値によって出力が決まる",
-      "ANDやORなどの論理関数を表現可能",
+      "★入力は0または1の2値、ニューロンは活性または非活性",
+      "★しきい値によって出力が決まる",
+      "★ANDやORなどの論理関数を表現可能",
       "抑制入力があると出力は無効になる",
       "重み付き入力によって一般化される"
     ],
@@ -230,7 +230,7 @@
   {
     "id": 9,
     "questionDe": "(s16) Was ist ein Perceptron und welche Eigenschaften hat es?",
-    "questionJa": "Perceptronとは何で、どのような特徴があるか？",
+    "questionJa": "★Perceptronとは何で、どのような特徴があるか？",
     "answerDe": [
       "Ein Outputneuron pro unabhängigem Netzbereich",
       "Zur Vereinfachung nur ein Output pro Netz",
@@ -238,10 +238,10 @@
       "Später zu Multilayer-Perceptrons erweitert"
     ],
     "answerJa": [
-      "各出力ニューロンは独立したネット領域を持つ",
-      "簡略化のために各ネットは1つの出力を持つ",
-      "当初はハードウェアとして設計された",
-      "後に多層Perceptronへと拡張された"
+      "★各出力ニューロンは独立したネット領域を持つ",
+      "★簡略化のために各ネットは1つの出力を持つ",
+      "★当初はハードウェアとして設計された",
+      "★後に多層Perceptronへと拡張された"
     ],
     "explanationDe": [
       "Ein Perceptron ist ein einfaches künstliches neuronales Netz, das 1958 von Rosenblatt entwickelt wurde. Es besteht aus einer Eingabeschicht und einer Ausgabeschicht.",
@@ -264,7 +264,7 @@
   {
     "id": 10,
     "questionDe": "(s16) Welche Bestandteile hat ein einfaches Perzeptron?",
-    "questionJa": "単純なPerceptronはどのような構成要素を持つか？",
+    "questionJa": "★単純なPerceptronはどのような構成要素を持つか？",
     "answerDe": [
       "Inputschicht: Enthält mehrere Eingangssignale (x1 bis x4), die Merkmale der Eingabedaten darstellen.",
       "Gewichtete Verbindungen: Jede Verbindung zwischen Eingabe- und Ausgabeneuron hat ein Gewicht (z. B. w11, w12).",
@@ -272,10 +272,10 @@
       "Aktivierung: Ein Neuron wird aktiv (gibt 1 aus), wenn die gewichtete Summe einen Schwellwert übersteigt."
     ],
     "answerJa": [
-      "入力層：複数の入力信号（x1〜x4）を持ち、それぞれがデータの特徴を表す。",
-      "重み付き接続：各入力と出力の間には重み（例：w11, w12）が設定され、影響の大きさを示す。",
-      "出力層：ニューロン（o1〜o3）が、受け取った信号に重みをかけて合計する。",
-      "活性化：合計がしきい値を超えたとき、ニューロンが活性化（出力が1）される。"
+      "★入力層：複数の入力信号（x1〜x4）を持ち、それぞれがデータの特徴を表す。",
+      "★重み付き接続：各入力と出力の間には重み（例：w11, w12）が設定され、影響の大きさを示す。",
+      "★出力層：ニューロン（o1〜o3）が、受け取った信号に重みをかけて合計する。",
+      "★活性化：合計がしきい値を超えたとき、ニューロンが活性化（出力が1）される。"
     ],
     "explanationDe": [
       "Ein Perzeptron besteht aus einer Inputschicht mit mehreren Eingangssignalen (z. B. x1 bis x4), die bestimmte Merkmale eines Eingabedatensatzes beschreiben – etwa Pixel eines Bildes oder Messwerte von Sensoren.",
@@ -286,9 +286,9 @@
     ],
     "explanationJa": [
       "Perceptronは、入力層に複数の信号（x1〜x4）を持ち、それぞれが画像の特徴やセンサーの測定値などを表します。",
-      "各入力は重み（例：w11, w43）を持っており、これはその入力が出力にどれだけ影響を与えるかを示します。",
-      "出力層のニューロンは、それぞれの入力に対応する重みをかけた値を合計します。そしてその合計が「しきい値」以上であれば活性化され、出力が1になります。",
-      "『活性化』とは、ニューロンが信号を出す状態になることです。出力が1であれば「はい」、0であれば「いいえ」のような意味を持ちます。",
+      "★各入力は重み（例：w11, w43）を持っており、これはその入力が出力にどれだけ影響を与えるかを示します。",
+      "★出力層のニューロンは、それぞれの入力に対応する重みをかけた値を合計します。そしてその合計が「しきい値」以上であれば活性化され、出力が1になります。",
+      "★『活性化』とは、ニューロンが信号を出す状態になることです。出力が1であれば「はい」、0であれば「いいえ」のような意味を持ちます。",
       "例：x1 = 1、x2 = 1、重みw11 = 0.5、w21 = 0.5とすると、合計は1.0になります。しきい値が0.8であればニューロンは活性化され、1を出力します。たとえば「これは猫の画像である」と判断するケースです。"
     ],
     "originalSlideText": "Abbildung: Inputschicht (x1–x4), Gewichtungen (w_ij), Outputschicht (o1–o3), Aktivierung bei Schwellenüberschreitung",
@@ -298,7 +298,7 @@
   {
     "id": 11,
     "questionDe": "(s17) Wie ist ein künstliches Neuron im Allgemeinen aufgebaut?",
-    "questionJa": "人工ニューロンは一般的にどのような構造をしているか？",
+    "questionJa": "★人工ニューロンは一般的にどのような構造をしているか？",
     "answerDe": [
       "Eingaben (x1 bis xn) mit zugehörigen Gewichtungen (w1j bis wnj)",
       "Übertragungsfunktion: Bildung der gewichteten Summe (netj)",
@@ -332,15 +332,15 @@
   {
     "id": 12,
     "questionDe": "(s18) Was ist eine Schwellenwertfunktion und wie funktioniert sie?",
-    "questionJa": "しきい値関数とは何で、どのように機能するか？",
+    "questionJa": "★しきい値関数とは何で、どのように機能するか？",
     "answerDe": [
       "Nimmt nur die Werte 0 und 1 an",
       "Schwellwert entscheidet über Aktivierung",
       "Funktioniert nach dem Alles-oder-Nichts-Prinzip"
     ],
     "answerJa": [
-      "出力は0か1のどちらかのみをとる",
-      "しきい値によって活性化が決まる",
+      "★出力は0か1のどちらかのみをとる",
+      "★しきい値によって活性化が決まる",
       "すべてかゼロかの動作（All-or-Nothing）をする"
     ],
     "explanationDe": [
@@ -364,7 +364,7 @@
   {
     "id": 13,
     "questionDe": "(s19) Was ist eine stückweise lineare Aktivierungsfunktion und wie funktioniert sie?",
-    "questionJa": "区分的線形活性化関数とは何で、どのように機能するか？",
+    "questionJa": "★区分的線形活性化関数とは何で、どのように機能するか？",
     "answerDe": [
       "Abbildung eines begrenzten Intervalls mit linearer Funktion",
       "Außerhalb des Intervalls konstante Werte (0 oder 1)",
@@ -396,7 +396,7 @@
   {
     "id": 14,
     "questionDe": "(s20) Was ist die Sigmoidfunktion und welche Eigenschaften hat sie?",
-    "questionJa": "シグモイド関数とは何で、どのような特徴を持つか？",
+    "questionJa": "★シグモイド関数とは何で、どのような特徴を持つか？",
     "answerDe": [
       "Wurde lange Zeit als Standard-Aktivierungsfunktion verwendet",
       "Hat eine glatte, S-förmige Kurve",
@@ -405,8 +405,8 @@
     ],
     "answerJa": [
       "長い間、標準的な活性化関数として使われてきた",
-      "滑らかでS字型の曲線を持つ",
-      "傾き（alpha）を調整できる",
+      "★滑らかでS字型の曲線を持つ",
+      "★傾き（alpha）を調整できる",
       "出力値は0から1の間をとる"
     ],
     "explanationDe": [
@@ -421,7 +421,7 @@
       "数式は φ_alpha(v) = 1 / (1 + exp(-alpha * v)) で表され、alphaは曲線の傾きを調整するパラメータです。",
       "alphaを変えることで曲線の急勾配具合を変えられ、ニューラルネットの学習挙動に影響します。",
       "歴史的には、出力が0から1の間で値を取るため、確率的な解釈がしやすく標準的な活性化関数として多用されてきました。",
-      "しかし、勾配消失問題などの課題から、最近のネットワークではReLUなど他の関数が使われることも増えています。"
+      "★しかし、勾配消失問題などの課題から、最近のネットワークではReLUなど他の関数が使われることも増えています。"
     ],
     "originalSlideText": "Sigmoid Funktion:\n– Wurden lange als Standardfunktion genutzt\n– Steigungsmaß alpha kann modifiziert werden\nφ^sig_α(v) = 1 / (1 + exp(-αv))",
     "explanationImage": "lecture01/lecture09_ex05.png",
@@ -430,7 +430,7 @@
   {
     "id": 15,
     "questionDe": "(s21) Was ist die Rectifier (ReLU) Funktion und wie funktioniert sie?",
-    "questionJa": "Rectifier（ReLU）関数とは何で、どのように機能するか？",
+    "questionJa": "★Rectifier（ReLU）関数とは何で、どのように機能するか？",
     "answerDe": [
       "ReLU steht für 'rectified linear activation unit'",
       "Abwandlung der stückweisen linearen Funktion",
@@ -440,7 +440,7 @@
     "answerJa": [
       "ReLUは『整流線形活性化単位』の略",
       "区分的線形関数の一種の変形",
-      "入力の正の部分のみを線形にマッピングする",
+      "★入力の正の部分のみを線形にマッピングする",
       "出力は max(0, v) で表される"
     ],
     "explanationDe": [
@@ -503,7 +503,7 @@
   {
     "id": 17,
     "questionDe": "(s23) Wie bildet ein Outputneuron eine lineare Trennlinie zwischen zwei Klassen und wie sieht ein Beispiel dafür aus?",
-    "questionJa": "出力ニューロンはどのようにして2クラス間の線形分離境界を作り、具体例はどのようなものか？",
+    "questionJa": "★出力ニューロンはどのようにして2クラス間の線形分離境界を作り、具体例はどのようなものか？",
     "answerDe": [
       "Erzeugt eine lineare Ungleichung: w1 x1 + w2 x2 ≥ θ",
       "Umgestellt nach x2: x2 ≥ (θ/w2) - (w1/w2) x1",
@@ -539,7 +539,7 @@
   {
     "id": 18,
     "questionDe": "(s24) Wie können neuronale Netze die logischen Funktionen AND, OR, NAND und NOR durch lineare Trennung darstellen?",
-    "questionJa": "ニューラルネットはAND、OR、NAND、NORの論理関数をどのように線形分離で表現できるか？",
+    "questionJa": "★ニューラルネットはAND、OR、NAND、NORの論理関数をどのように線形分離で表現できるか？",
     "answerDe": [
       "AND: Punkte, bei denen beide Eingänge 1 sind, werden durch eine Gerade getrennt",
       "OR: Punkte, bei denen mindestens ein Eingang 1 ist, liegen auf einer Seite der Trennlinie",
@@ -605,7 +605,7 @@
   {
     "id": 20,
     "questionDe": "(s26) Wie funktioniert das Lernverfahren der Delta Regel in neuronalen Netzen?",
-    "questionJa": "ニューラルネットのデルタ学習規則の学習手法はどのように動作するか？",
+    "questionJa": "★ニューラルネットのデルタ学習規則の学習手法はどのように動作するか？",
     "answerDe": [
       "Beim Training werden Eingabedaten dem Netz gezeigt",
       "Der korrekte Output für Beispiele ist bekannt (supervised learning)",
@@ -620,9 +620,9 @@
       "入力データに対する正しい出力が既知（教師あり学習）",
       "実際の出力と正解を比較する",
       "誤差があれば重みとしきい値を調整する",
-      "微分可能な活性化関数にのみ適用可能",
-      "重みの調整は入力ごと、またはエポックごとに行える",
-      "エポックとは全訓練データの1回分の処理"
+      "★微分可能な活性化関数にのみ適用可能",
+      "★重みの調整は入力ごと、またはエポックごとに行える",
+      "★エポックとは全訓練データの1回分の処理"
     ],
     "explanationDe": [
       "Die Delta Regel ist ein grundlegendes Lernverfahren für neuronale Netze, das im überwachten Lernen eingesetzt wird.",
@@ -638,7 +638,7 @@
       "訓練では、入力とそれに対応する正解出力をネットに与えます。",
       "ネットの出力と正解を比較し、誤差を計算します。",
       "この誤差に基づいて、ニューロンの重みやしきい値を調整し、誤差が小さくなるようにします。",
-      "この方法は活性化関数が微分可能であることが条件で、誤差の微分を使って重みを更新します。",
+      "★この方法は活性化関数が微分可能であることが条件で、誤差の微分を使って重みを更新します。",
       "重みの更新は1つ1つの入力ごとに行うことも、全データの1回分の処理（エポック）ごとにまとめて行うこともできます。",
       "こうした調整を繰り返すことで、ネットは徐々に望ましい出力に近づけることを学習します。"
     ],
@@ -833,7 +833,7 @@
 {
   "id": 26,
   "questionDe": "(s25-30) Wie funktioniert das Lernverfahren der Delta Regel im Detail, welche Rolle spielt der Schwellwert und welche Probleme können dabei auftreten?",
-  "questionJa": "（試験類題）デルタ学習則の大まかな流れはどうなっているか、しきい値の役割は何か、またどんな問題点があるかを教えてください。",
+  "questionJa": "★（試験類題）デルタ学習則の大まかな流れはどうなっているか、しきい値の役割は何か、またどんな問題点があるかを教えてください。",
   "answerDe": [
     "Das Lernverfahren zeigt dem Netz Trainingsdaten mit bekannten korrekten Ausgaben (supervised learning).",
     "Das Netz berechnet eine Ausgabe basierend auf aktuellen Gewichten und dem Schwellwert.",
@@ -881,7 +881,7 @@
 {
   "id": 27,
   "questionDe": "(s32) Warum ist das XOR-Problem mit einfachen künstlichen Neuronen nicht lösbar?",
-  "questionJa": "なぜXOR問題は単純な人工ニューロンでは解けないのか？",
+  "questionJa": "★なぜXOR問題は単純な人工ニューロンでは解けないのか？",
   "answerDe": [
     "XOR ist nicht linear trennbar",
     "Die Ungleichungen für die Gewichte widersprechen sich",
@@ -913,7 +913,7 @@
 {
   "id": 28,
   "questionDe": "(s33) Was sind die Probleme und Lösungen für das XOR-Problem in künstlichen neuronalen Netzen?",
-  "questionJa": "人工ニューラルネットにおけるXOR問題の課題と解決策は何か？",
+  "questionJa": "★人工ニューラルネットにおけるXOR問題の課題と解決策は何か？",
   "answerDe": [
     "1969 von Minsky und Papert veröffentlicht, dass künstliche Neuronen das XOR-Problem nicht lösen können",
     "Folgerung war, dass künstliche Neuronen eine Sackgasse darstellen",
@@ -925,8 +925,8 @@
     "1969年にミンスキーとパパートによって、単純な人工ニューロンではXOR問題を解けないことが示された",
     "その結果、人工ニューロンは行き詰まりとみなされた",
     "このためニューラルネットの研究は約15年間停滞した",
-    "解決策として、多層パーセプトロン（フィードフォワードネットワーク）が提案された",
-    "非線形の分離関数を用いることで問題を解決"
+    "★解決策として、多層パーセプトロン（フィードフォワードネットワーク）が提案された",
+    "★非線形の分離関数を用いることで問題を解決"
   ],
   "explanationDe": [
     "Das XOR-Problem zeigte die Grenzen einfacher künstlicher Neuronen auf, da es nicht linear trennbar ist.",
@@ -949,7 +949,7 @@
 {
   "id": 29,
   "questionDe": "(s34) Was sind die Vorteile künstlicher neuronaler Netze?",
-  "questionJa": "人工ニューラルネットの利点は何ですか？",
+  "questionJa": "★人工ニューラルネットの利点は何ですか？",
   "answerDe": [
     "Sehr gute Mustererkennung",
     "Verarbeitung von verrauschten, unvollständigen und widersprüchlichen Eigenschaften",
@@ -959,11 +959,11 @@
     "Einfach im Produktivbetrieb zu nutzen"
   ],
   "answerJa": [
-    "非常に高いパターン認識能力",
-    "ノイズがある、不完全な、矛盾する特徴の処理が可能",
-    "多様なモダリティの入力が可能（数値、色、音声、言語など）",
-    "ユーザーの仮説なしにモデルを構築できる",
-    "誤差に強い（フォールトトレラント）",
+    "★非常に高いパターン認識能力",
+    "★ノイズがある、不完全な、矛盾する特徴の処理が可能",
+    "★多様なモダリティの入力が可能（数値、色、音声、言語など）",
+    "★ユーザーの仮説なしにモデルを構築できる",
+    "★誤差に強い（フォールトトレラント）",
     "実運用環境で使いやすい"
   ],
   "explanationDe": [
@@ -987,7 +987,7 @@
 {
   "id": 30,
   "questionDe": "(s34) Nenne mindestens sechs Vorteile künstlicher neuronaler Netze und erläutere diese konkret.",
-  "questionJa": "人工ニューラルネットの利点を少なくとも6つ挙げ、それぞれ具体的に説明せよ。",
+  "questionJa": "★人工ニューラルネットの利点を少なくとも6つ挙げ、それぞれ具体的に説明せよ。",
   "answerDe": [
     "Sehr gute Mustererkennung",
     "Verarbeitung von verrauschten Eigenschaften",
@@ -999,13 +999,13 @@
     "Einfach im Produktivbetrieb zu nutzen"
   ],
   "answerJa": [
-    "非常に高いパターン認識能力",
-    "ノイズのある特徴の処理が可能",
-    "欠損している特徴の処理が可能",
-    "矛盾する特徴の処理が可能",
-    "多様な入力形式に対応可能（数値、色、音、言語など）",
-    "ユーザーが事前に仮説を立てなくてもモデルを自動構築可能",
-    "誤差や一部の故障に強い（フォールトトレラント）",
+    "★非常に高いパターン認識能力",
+    "★ノイズのある特徴の処理が可能",
+    "★欠損している特徴の処理が可能",
+    "★矛盾する特徴の処理が可能",
+    "★多様な入力形式に対応可能（数値、色、音、言語など）",
+    "★ユーザーが事前に仮説を立てなくてもモデルを自動構築可能",
+    "★誤差や一部の故障に強い（フォールトトレラント）",
     "実際の運用環境での導入・利用が容易"
   ],
   "explanationDe": [
@@ -1035,7 +1035,7 @@
 {
   "id": 31,
   "questionDe": "(s35) Nenne mindestens sechs Nachteile künstlicher neuronaler Netze und erläutere diese genauer.",
-  "questionJa": "人工ニューラルネットの欠点を少なくとも6つ挙げ、それぞれ詳しく説明せよ。",
+  "questionJa": "★人工ニューラルネットの欠点を少なくとも6つ挙げ、それぞれ詳しく説明せよ。",
   "answerDe": [
     "Lange Trainingszeiten, die sich über Monate erstrecken können",
     "Lernerfolg ist nicht garantiert",
@@ -1047,14 +1047,14 @@
     "Löst nur das Problem mit einem Modell, gibt aber keine Hinweise auf wichtige Merkmale"
   ],
   "answerJa": [
-    "学習に非常に長い時間がかかることがあり、数か月に及ぶこともある",
+    "★学習に非常に長い時間がかかることがあり、数か月に及ぶこともある",
     "必ずしも学習が成功するとは限らない",
-    "未知のデータに対してうまく一般化できる保証がない",
-    "大量の訓練データが必要となる",
-    "複雑でブラックボックス的な手法のため、内部の動作を理解しづらい",
-    "ネットワークの評価が難しい",
+    "★未知のデータに対してうまく一般化できる保証がない",
+    "★大量の訓練データが必要となる",
+    "★複雑でブラックボックス的な手法のため、内部の動作を理解しづらい",
+    "★ネットワークの評価が難しい",
     "ノードやエッジの数が急速に増大することがある",
-    "問題を一つのモデルとして解くが、重要な特徴が何かの手がかりを与えない"
+    "★問題を一つのモデルとして解くが、重要な特徴が何かの手がかりを与えない"
   ],
   "explanationDe": [
     "Neuronale Netze können sehr lange Trainingszeiten benötigen, besonders bei großen Datenmengen und komplexen Modellen.",
