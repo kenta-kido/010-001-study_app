@@ -1,0 +1,361 @@
+[
+  {
+    "id": 1,
+    "questionDe": "(s5) Was ist die grundlegende Funktion eines Netzwerks?",
+    "questionJa": "ネットワークの基本的な機能とは何か？",
+    "answerDe": [
+      "Verbindung von Computern unterschiedlicher Hersteller und Architekturen",
+      "Kommunikation über kurze und große Distanzen",
+      "Verwendung von Netzwerkequipment und Protokollen verschiedener Hersteller",
+      "Unterstützung beliebiger Anwendungen"
+    ],
+    "answerJa": [
+      "異なるメーカーやアーキテクチャのコンピュータを接続する",
+      "近距離・遠距離どちらでも通信可能にする",
+      "異なるベンダーのネットワーク機器やプロトコルを利用する",
+      "さまざまなアプリケーションの動作を可能にする"
+    ],
+    "explanationDe": [
+      "Ein Netzwerk dient dazu, verschiedene Computer miteinander zu verbinden, unabhängig davon, von welchem Hersteller oder mit welcher Architektur sie gebaut wurden.",
+      "Diese Verbindung kann lokal (z. B. in einem Heimnetzwerk) oder über große Distanzen (z. B. über das Internet) erfolgen.",
+      "Netzwerke bestehen oft aus Geräten und Software verschiedener Hersteller. Damit sie zusammenarbeiten können, müssen standardisierte Protokolle verwendet werden.",
+      "Durch diese Netzwerke können Anwendungen wie E-Mail, Webbrowser, Videokonferenzen oder Cloud-Dienste funktionieren.",
+      "Im Vergleich zu Punkt-zu-Punkt-Verbindungen (z. B. USB oder serielle Kabel), ermöglichen Netzwerke eine dynamische, skalierbare und häufig drahtlose Kommunikation zwischen vielen Teilnehmern gleichzeitig."
+    ],
+    "explanationJa": [
+      "ネットワークは、異なるメーカーや構成のコンピュータ同士を接続するための仕組みです。",
+      "この接続は、家庭内LANのような近距離でも、インターネットのような長距離でも実現できます。",
+      "実際のネットワークは、異なるベンダーが提供する機器やソフトウェアで構成されることが多いため、共通の標準プロトコルが必要になります。",
+      "こうしたネットワークにより、メールやWebブラウジング、ビデオ会議、クラウドサービスなどのアプリケーションが利用可能になります。",
+      "USBやシリアルケーブルのような点対点の接続に比べて、ネットワークは動的かつ拡張性が高く、複数の機器が同時に通信できる柔軟な構造を持っています。"
+    ],
+    "originalSlideText": "❑ Netze verbinden\n Computer verschiedenster Hersteller und Architekturen\n❑ sowohl\n in der Nähe als auch über große Distanzen\n❑ mittels\n Netzequipment und Netzwerkprotokollen unterschiedlicher Hersteller\n❑ und ermöglichen beliebige Anwendungen",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 2,
+    "questionDe": "(s6) Warum waren frühe Netzwerke inkompatibel zueinander?",
+    "questionJa": "なぜ初期のネットワークは互いに互換性がなかったのか？",
+    "answerDe": [
+      "Abgeschottete Systeme von Telekommunikationsunternehmen, Computerherstellern und Netzausrüstern",
+      "Fehlende offene Standards",
+      "Eigenentwicklungen ohne Zusammenarbeit"
+    ],
+    "answerJa": [
+      "通信会社、コンピュータメーカー、ネットワーク機器ベンダーごとに閉じたシステムを構築していたから",
+      "共通のオープンな標準が存在しなかったから",
+      "各社が独自開発を行い、相互接続を前提としていなかったから"
+    ],
+    "explanationDe": [
+      "In den 1970er Jahren entwickelten verschiedene Unternehmen eigene Netzwerke ohne auf Interoperabilität zu achten.",
+      "Telekommunikationsfirmen, Hardwarehersteller und Netzwerkausrüster schufen proprietäre Systeme, die nicht miteinander kommunizieren konnten.",
+      "Diese abgeschotteten Systeme verwendeten eigene Protokolle, Geräte und Software, wodurch ein Austausch zwischen Netzen unmöglich wurde.",
+      "Ein Vergleich: So wie alte Handyladegeräte nicht standardisiert waren, konnte man früher Netzwerke auch nicht einfach verbinden.",
+      "Heute ermöglichen offene Standards wie Ethernet oder IP eine einheitliche Kommunikation – damals gab es solche Standards noch nicht."
+    ],
+    "explanationJa": [
+      "1970年代の初期には、企業ごとに独自のネットワークが作られており、互換性を考慮していませんでした。",
+      "通信会社、ハードウェアメーカー、ネットワーク機器ベンダーなどが、自社専用の閉じたシステム（プロトコルや機器）を構築していました。",
+      "そのため、異なるネットワーク同士を接続する手段がなく、データのやりとりはできませんでした。",
+      "これは、昔の携帯電話の充電器が機種ごとにバラバラで互換性がなかったのと同じような状況です。",
+      "現在のようにEthernetやIPなどの標準技術によって異なる機器が簡単に通信できるようになったのは、この後の変化によるものです。"
+    ],
+    "originalSlideText": "❑ Seit den 1970ern entwickelten sich viele Netze zunächst inkompatibel zueinander und entsprachen nicht dem gerade genannten Ideal\n❑ Abgeschottete Netze (sowohl Hardware als Software) von\n Telekommunikationsunternehmen\n Computerherstellern\n Netzwerkausrüstern\n❑ Keinerlei Interoperabilität",
+    "explanationImage": "",
+    "question,Image": ""
+  },
+  {
+    "id": 3,
+    "questionDe": "(s8) Was zeichnet ein offenes Netzwerk aus und warum ist es für das globale Wachstum entscheidend?",
+    "questionJa": "オープンネットワークとは何か、それがネットワークの世界的成長にとってなぜ重要なのか？",
+    "answerDe": [
+      "Zusammenarbeit mehrerer Gruppen an einer neuen Technologie",
+      "Erstellung frei zugänglicher Spezifikationen",
+      "Produkte orientieren sich an gemeinsamen Standards"
+    ],
+    "answerJa": [
+      "複数のグループが協力して新しい技術を開発する",
+      "誰でもアクセス可能な仕様書が作成される",
+      "製品は共通の仕様に従って作られる"
+    ],
+    "explanationDe": [
+      "Ein offenes Netzwerk basiert auf offenen Standards, an deren Entwicklung verschiedene Organisationen oder Firmen gemeinsam arbeiten.",
+      "Die Spezifikationen dieser Technologien sind öffentlich einsehbar und können von jedem genutzt und implementiert werden.",
+      "Das führt zu einer Interoperabilität zwischen Geräten und Software verschiedenster Hersteller.",
+      "Im Gegensatz dazu entwickeln geschlossene Netzwerke private Technologien, die nicht kompatibel mit anderen Systemen sind.",
+      "Ein Beispiel für offene Netzwerke ist das Internet, das durch offene Protokolle wie TCP/IP ermöglicht wurde, während alte Telefonnetze oft proprietär waren."
+    ],
+    "explanationJa": [
+      "オープンネットワークとは、誰でも参照・実装できる公開された標準に基づいて設計されたネットワークです。",
+      "このような標準は、複数の企業や研究機関が協力して作成します。",
+      "仕様が公開されているため、異なるベンダーの製品間でも互換性が確保されます。",
+      "これにより、世界中の機器やアプリケーションが相互に通信できるようになり、ネットワークの拡張が容易になります。",
+      "対照的に、電話会社が独自に開発した旧来のネットワークは互換性がなく、世界的な拡大には不向きでした。"
+    ],
+    "originalSlideText": "❑ Offene Netze sind für ein Wachstum eines Netzes auf Welt-umspannende Größe notwendig\n❑ Offene Netze:\n Mehrere Gruppen arbeiten zusammen an einer neuen Technologie\n Es wird eine Spezifikation geschaffen;  diese ist für jeden frei zugänglich\n Produkte orientieren sich an dieser Spezifikation\n❑ Im Gegensatz zu geschlossenen Netzen:\n Jeder Hersteller entwickelt seine private Technologie",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 4,
+    "questionDe": "(s10) Warum wirken Rechnernetze für Einsteiger komplex?",
+    "questionJa": "なぜネットワークは初学者にとって複雑に感じられるのか？",
+    "answerDe": [
+      "Viele unterschiedliche Spezifikationen, Standards und Technologien",
+      "Ständige Weiterentwicklung der Technologien",
+      "Fehlende einheitliche Theorie zur Netzgestaltung",
+      "Verbindung und Kombination vieler Technologien möglich"
+    ],
+    "answerJa": [
+      "多種多様な仕様、標準、技術が存在する",
+      "技術が常に進化し続けている",
+      "ネットワーク構築や管理に関する統一理論が存在しない",
+      "複数の技術を組み合わせて使う必要がある"
+    ],
+    "explanationDe": [
+      "Einsteiger stehen oft vor einer Vielzahl von Protokollen, Formaten und Architekturen, die schwer zu überblicken sind.",
+      "Technologien wie WLAN, 5G, Glasfaser oder SDN entwickeln sich schnell – Lernstoff veraltet schnell.",
+      "Es gibt keine zentrale Theorie, die erklärt, wie man Netzwerke generell bauen oder verwalten soll – vieles ist erfahrungsbasiert.",
+      "Unterschiedliche Technologien wie TCP/IP, Ethernet oder Bluetooth können miteinander kombiniert werden, was zusätzliche Komplexität erzeugt.",
+      "Im Vergleich zu anderen Bereichen der Informatik (z. B. Softwareentwicklung) ist der Netzbereich viel stärker von physikalischer Infrastruktur und Protokollabstimmung abhängig."
+    ],
+    "explanationJa": [
+      "初学者がネットワークを学ぶ際、登場するプロトコルや規格、構成などが多くて把握しきれないことが多いです。",
+      "たとえば、WLAN、5G、光ファイバー、SDNなど、技術は日々進化しており、教材がすぐ古くなります。",
+      "ネットワークをどう設計・管理すべきかについての普遍的な理論はなく、現場の経験や慣習に依存している部分が大きいです。",
+      "また、TCP/IPやEthernet、Bluetoothなど異なる技術を組み合わせて使うため、その相互運用が複雑さを増します。",
+      "ソフトウェア開発のように仮想空間で完結する分野と違い、ネットワークは物理的な機器やケーブル、設定との連携が必要で、全体を把握するには多面的な知識が求められます。"
+    ],
+    "originalSlideText": "❑ Als Einsteiger wirken Rechnernetze zunächst einschüchternd und komplex\n❑ Es existieren viele Spezifikationen / Standards / Technologien\n❑ Die Technologien entwickeln sich laufend weiter\n❑ Viele Technologien können miteinander verbunden und genutzt werden\n❑ Keine alles umfassenden Theorien / Konzepte, die erklären wie Netze gebaut und verwaltet werden sollen",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 5,
+    "questionDe": "(s11) Welche fünf Wissensgebiete sind nötig, um Netzwerke vollständig zu verstehen?",
+    "questionJa": "ネットワークを完全に理解するために必要な5つの知識分野とは何か？",
+    "answerDe": [
+      "Netzwerkanwendungen und -programmierung: Entwicklung robuster, fehlerfreier und korrekter Netzwerkprogramme",
+      "Signalverarbeitung und Kommunikation: Eigenschaften und Verfahren physikalischer Medien",
+      "Packet Switching und Netztechnologien: Nutzung paketvermittelter Netze statt fester Leitungen",
+      "TCP/IP: Konzept eines globalen Internets und Aufgabenteilung mit anderen Protokollen",
+      "Allgemeine Netzwerkkonzepte und -technologien: z. B. Streaming, Monitoring, SDN"
+    ],
+    "answerJa": [
+      "ネットワークアプリケーションとプログラミング：堅牢で誤りのない通信プログラムの開発",
+      "信号処理と通信：物理的媒体の特性と伝送方式の理解",
+      "パケット交換とネット技術：固定回線の代わりにパケット通信を利用する仕組み",
+      "TCP/IP：グローバルな通信の仕組みと他プロトコルとの役割分担",
+      "一般的なネット技術と概念：ストリーミング、監視、SDN など"
+    ],
+    "explanationDe": [
+      "Ein tieferes Verständnis von Netzwerken erfordert Kenntnisse aus fünf spezialisierten Bereichen. Bei der Anwendungsprogrammierung muss man beispielsweise verstehen, wie man eine Chat-App entwickelt, die auch bei Netzunterbrechungen stabil bleibt.",
+      "In der Signalverarbeitung lernt man, wie elektrische oder optische Signale z. B. über Kupferkabel oder Glasfasern fehlerfrei übertragen werden, was essenziell für stabile Datenverbindungen ist.",
+      "Das Konzept des Packet Switching erlaubt es, Daten effizient in kleinen Stücken zu übertragen – wie bei einem Postsystem mit vielen Umschlägen, die einzeln zugestellt werden.",
+      "TCP/IP stellt das Rückgrat des Internets dar, kümmert sich aber nicht um alle Aufgaben – z. B. erfolgt die physikalische Übertragung durch Ethernet, und das Routing durch Protokolle wie OSPF oder BGP.",
+      "Moderne Technologien wie Software Defined Networking (SDN) ermöglichen zentrale Steuerung von Netzwerkinfrastruktur, während Streamingdienste wie Netflix hohe Anforderungen an Datenrate und Zuverlässigkeit stellen – all das fällt unter allgemeine Netzwerktechnologien."
+    ],
+    "explanationJa": [
+      "ネットワークの理解には5つの異なる分野の知識が必要です。アプリケーションのプログラミングでは、例えばチャットアプリがネットワーク断に強く設計される必要があります。",
+      "信号処理では、データが電気信号や光信号としてケーブルや光ファイバーを通じて正確に送られる仕組みを学びます。これは通信の物理的安定性を支える要素です。",
+      "パケット交換は、データを小さく分割して個別に送る方式で、郵便物を分けて送るようなものです。これにより回線の効率利用が可能になります。",
+      "TCP/IPはインターネットの骨格を形成していますが、物理層の通信はEthernet、ルーティングはOSPFやBGPといった他のプロトコルに任されています。",
+      "Netflixのようなストリーミングサービスや、ネットワークの集中管理を可能にするSDNなど、現代のネットワーク環境ではこれらの技術の理解も不可欠です。"
+    ],
+    "originalSlideText": "❑ Zum vollständigen Verständnis muss ein umfangreiches Wissen auf mindestens fünf Gebieten gesammelt werden\n Netzwerkanwendungen und –programmierung\n• Entwicklung von robusten, fehlerfreien und korrekten Netzwerkanwendugen\n Signalverarbeitung und Kommunikation\n• Das physikalische Medium, dessen Eigenschaften und Übertragungsverfahren\n Packet Switching und Netztechnologien\n• Feste Leitung wie im Telefonnetz werden durch Paketvermittlung ersetzt → geteiltes Netz\n TCP/IP\n• Es gibt keine One-Fits-All Packet Switching Technologie\n• TCP/IP bietet das Konzept des globalen Internets und überlässt anderen Protokollen (z.B. Ethernet) den physikalischen Transport oder auch das Routing (z.B. OSPF, RIP, BGP)\n Allgemeine Netzwerkkonzepte und -technologien\n• Streaming von Sprache und Bild\n• Netzwerk-Monitoring\n• Software Defined Networking\n• …",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 6,
+    "questionDe": "(s14) Was sind private Netze und wie unterscheiden sie sich von öffentlichen Netzen?",
+    "questionJa": "プライベートネットワークとは何か？ 公共ネットワークとの違いは？",
+    "answerDe": [
+      "Das Internet ist ein öffentliches Netz auf Basis von TCP/IP.",
+      "Zugang zu öffentlichen Netzen wird von ISPs bereitgestellt.",
+      "Private Netze werden von einer einzigen Gruppe genutzt.",
+      "Private Netze können auch gemietete öffentliche Netzteile umfassen."
+    ],
+    "answerJa": [
+      "インターネットはTCP/IPに基づいた公共ネットワークである。",
+      "公共ネットワークへのアクセスはISP（インターネットサービスプロバイダ）が提供する。",
+      "プライベートネットワークは単一の組織またはグループによって使用される。",
+      "プライベートネットワークにはISPから借りた公共ネットワークの一部が含まれる場合もある。"
+    ],
+    "explanationDe": [
+      "Private Netze sind Netzwerke, die innerhalb einer Organisation oder eines Haushalts verwendet werden und nicht allgemein zugänglich sind. Ein typisches Beispiel ist ein Heimnetzwerk mit einem WLAN-Router, das nur für Familienmitglieder zugänglich ist.",
+      "Im Gegensatz dazu sind öffentliche Netze wie das Internet offen für jeden, der Zugang über einen ISP erhält. Der ISP stellt die Verbindung zur Internet-Infrastruktur bereit.",
+      "Private Netze können trotzdem Teile der öffentlichen Infrastruktur nutzen. So mieten Firmen oft Leitungen oder VPN-Zugänge von ISPs, behalten aber die Kontrolle über ihr internes Netzwerk.",
+      "Ein weiteres Beispiel ist ein Unternehmensnetz, das über mehrere Standorte hinweg durch gemietete MPLS-Leitungen verbunden ist – intern privat, aber physikalisch öffentlich vermittelt.",
+      "Der Hauptunterschied liegt also nicht unbedingt in der Technologie, sondern in der Zugänglichkeit und Verwaltung der Netzwerke."
+    ],
+    "explanationJa": [
+      "プライベートネットワークとは、企業や家庭など特定のグループ内だけで使用されるネットワークのことです。たとえば、自宅のWi-Fiルーターによって構成される家庭内LANが典型です。",
+      "これに対して、公共ネットワーク（インターネットなど）は誰でもISP（インターネットサービスプロバイダ）を通じてアクセスできる開かれたネットワークです。",
+      "ただし、プライベートネットワークでもISPから回線を借りて接続することがあり、この場合は物理的には公共網を利用していても、論理的には隔離された構成になっています。",
+      "企業が複数拠点間をMPLSなどの専用線で接続している場合なども、内部はプライベートネットですが、外部インフラは公共網です。",
+      "両者の違いは使用技術よりも、誰がアクセスできるか、誰が管理するかという点にあります。"
+    ],
+    "originalSlideText": "❑ Das Internet ist ein öffentliches Netz auf Basis von TCP/IP\n❑ Zugang zu öffentlichen Netzen wird von Internet Service Providern (ISP) gekauft\n❑ Netz bzw. Netzzugang ist ein Service\n❑ Private Netze werden von einer einzige Gruppe genutzt\n Können auch Netze sein, die von ISPs gemietet wurden",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 7,
+    "questionDe": "(s15) Welche Kategorien privater Netze gibt es und was zeichnet sie aus?",
+    "questionJa": "プライベートネットワークにはどのような種類があり、それぞれの特徴は？",
+    "answerDe": [
+      "Privatkunden: Heimnetz mit wenigen Computern",
+      "SOHO (Small Office / Home Office): Firmennetz mit Computern, Druckern, Bezahlterminals",
+      "SMB (Small-to-Medium Business): SOHO + zweiter Standort oder Produktionsstätte",
+      "Large Enterprise: Mehrere Standorte, viele Router"
+    ],
+    "answerJa": [
+      "個人利用：少数のコンピュータによる家庭内ネットワーク",
+      "SOHO（スモールオフィス／ホームオフィス）：PC、プリンター、決済端末などを含む小規模な企業ネットワーク",
+      "SMB（中小企業）：SOHOに加えて第2拠点や生産設備を持つネットワーク",
+      "大企業：多数の拠点とルーターで構成される大規模ネットワーク"
+    ],
+    "explanationDe": [
+      "Private Netzwerke unterscheiden sich stark in Größe und Komplexität. Ein Heimnetz ist meist ein einfaches WLAN mit einem Router und wenigen Geräten wie Laptops oder Smartphones.",
+      "Ein SOHO-Netzwerk wird oft in kleinen Betrieben genutzt – z. B. ein Café mit WLAN, Kassensystem und Drucker, alles über einen gemeinsamen Router verbunden.",
+      "Ein SMB-Netz verbindet z. B. das Büro und eine externe Lagerhalle. Dafür braucht es VPN-Tunnel oder dedizierte Leitungen.",
+      "Große Unternehmen betreiben Netzwerke über viele Standorte hinweg. Diese umfassen zahlreiche Router, Firewalls und oft zentrale Rechenzentren.",
+      "Mit zunehmender Größe steigen auch die Anforderungen an Sicherheit, Redundanz und Verwaltung. Große Netze verwenden oft eigene Subnetze und professionelle Monitoring-Tools."
+    ],
+    "explanationJa": [
+      "プライベートネットワークは規模や構成によって大きく異なります。個人利用では、Wi-Fiルーターにスマホやパソコンを接続する程度の簡単な構成です。",
+      "SOHOでは、小規模オフィスでの業務を支えるネットワークで、レジ、PC、プリンターなどが同一ルーターに接続されている例が挙げられます。",
+      "SMB（中小企業）では、例えば事務所と倉庫をVPNや専用線でつないだ構成が一般的です。",
+      "大企業では、全国や全世界に拠点を持ち、それらを多数のルーターとファイアウォールで接続し、データセンターやクラウドも活用する構成になります。",
+      "ネットワークが大きくなるほど、セキュリティ、冗長性、運用管理の重要性も増し、専用のサブネット設計や監視ツールの導入が必要となります。"
+    ],
+    "originalSlideText": "❑ Klassen von privaten Netzen\n Privatkunden: Heimnetz mit wenigen Computern\n Small Office / Home Office (SOHO): Firmennetz mit Computern, Druckern, Bezahlterminals, …\n Small-to-Medium Business (SMB): SOHO + zweiten Standort oder Produktionsstätte\n Large Enterprise: Mehrere Standorte, viele Router",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 8,
+    "questionDe": "(s16) Was versteht man unter Interoperabilität in Netzwerken und wie wird sie durch Protokolle erreicht?",
+    "questionJa": "ネットワークにおけるインターオペラビリティ（相互運用性）とは何か？ それはプロトコルによってどのように実現されるのか？",
+    "answerDe": [
+      "Ein Netzwerkprotokoll definiert Regeln für die Kommunikation.",
+      "Mehrere Protokolle regeln verschiedene Aspekte der Kommunikation.",
+      "Protokolle beschreiben Syntax: Format, Darstellung und Kodierung von Nachrichten.",
+      "Protokolle beschreiben Semantik: Bedeutung, Ablauf, Fehlerbehandlung von Nachrichten."
+    ],
+    "answerJa": [
+      "ネットワークプロトコルは通信に関するルールを定める。",
+      "複数のプロトコルが通信のさまざまな側面を制御する。",
+      "プロトコルは構文（Syntax）を定義する：メッセージの形式、表示、符号化。",
+      "プロトコルは意味（Semantik）も定義する：メッセージの意味、やり取りの手順、エラー処理など。"
+    ],
+    "explanationDe": [
+      "Interoperabilität bedeutet, dass Geräte und Software unterschiedlicher Hersteller miteinander kommunizieren können. Dies ist nur möglich, wenn sie sich an gemeinsame Regeln – also Protokolle – halten.",
+      "Ein Protokoll legt fest, wie Daten formatiert sind (Syntax) – z. B. ob eine Nachricht zuerst einen Header oder eine Länge enthält.",
+      "Ebenso beschreibt es die Semantik: Was bedeutet die Nachricht, wann wird sie geschickt, was passiert bei einem Fehler?",
+      "Beispiel: Bei TCP wird festgelegt, wie eine Verbindung aufgebaut, Daten übertragen und Fehler erkannt werden – damit funktioniert TCP unabhängig vom Betriebssystem.",
+      "Ohne solche Standards wäre es nicht möglich, dass z. B. ein Apple-Gerät mit einem Windows-PC oder ein Linux-Server mit einem Android-Smartphone kommuniziert."
+    ],
+    "explanationJa": [
+      "インターオペラビリティとは、異なるメーカーやOSの機器同士が相互に通信できる能力のことです。これは、共通のルール（プロトコル）に従うことで初めて実現されます。",
+      "プロトコルでは、まず構文（Syntax）として、メッセージの形式（例：ヘッダー→本文）や文字コードなどを定義します。",
+      "次に意味（Semantik）として、そのメッセージが何を意味するか、どういう順序で送信されるか、エラーが起きたときにどう対処するかが定められます。",
+      "例えばTCPでは、通信の開始方法（3-way handshake）や再送、誤り検出などがプロトコル内に明示されており、異なるOS間でも問題なく動作します。",
+      "こうした標準がなければ、MacとWindows、あるいはLinuxサーバーとAndroid端末が直接通信することは困難になります。"
+    ],
+    "originalSlideText": "❑ Basis der Kommunikation innerhalb eines Netzes ist das Netzwerk-Protokoll\n Enthält Regeln, die alle Aspekte der Kommunikation festlegen\n• Z.B. elektrische Spannung, Bedeutung von Zeichenfolgen\n❑ Ein funktionierendes Netzwerk greift auf viele Protokolle zurück, die unterschiedliche Aspekte der Kommunikation regeln\n Z.B. physikalische Übertragung vs. Transportprotokoll (TCP)\n\n❑ Protokolle beschreiben\n Syntax\n• Format und Darstellung von Nachrichten\n• Kodierung\n Semantik\n• Bedeutung von Nachrichten\n• Verfahren um Nachrichten auszutauschen\n• Fehlerbehandlung",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 8,
+    "questionDe": "(s16) Was versteht man unter Interoperabilität im Netzwerk und wie wird sie durch Protokolle ermöglicht?",
+    "questionJa": "ネットワークにおける相互運用性（インターオペラビリティ）とは何か？また、プロトコルはそれをどのように実現するのか？",
+    "answerDe": [
+      "Interoperabilität bedeutet, dass unterschiedliche Systeme miteinander kommunizieren können.",
+      "Ermöglicht durch Netzwerkprotokolle, die alle Aspekte der Kommunikation regeln.",
+      "Ein Netzwerk nutzt viele Protokolle gleichzeitig (z. B. physikalische Übertragung und Transportprotokoll).",
+      "Protokolle definieren Syntax: Format, Kodierung von Nachrichten.",
+      "Protokolle definieren Semantik: Bedeutung und Austauschverfahren von Nachrichten, Fehlerbehandlung."
+    ],
+    "answerJa": [
+      "インターオペラビリティとは、異なるシステム同士が相互に通信できることを意味する。",
+      "通信の全側面を定めるネットワークプロトコルによって実現される。",
+      "ネットワークでは、物理層の通信やトランスポート層など複数のプロトコルが同時に使われる。",
+      "プロトコルはシンタックス（構文）を定義する：メッセージの形式や符号化など。",
+      "プロトコルはセマンティク（意味）を定義する：メッセージの意味、交換手順、エラー処理など。"
+    ],
+    "explanationDe": [
+      "Interoperabilität ist entscheidend dafür, dass z. B. ein Windows-PC mit einem Mac oder ein Smartphone mit einem Server kommunizieren kann. Ohne gemeinsame Protokolle wäre dies unmöglich.",
+      "Netzwerkprotokolle geben den 'Regelrahmen' vor – ähnlich wie eine gemeinsame Sprache. Zum Beispiel legt HTTP fest, wie Webbrowser mit Webservern sprechen.",
+      "Syntax bezieht sich auf das konkrete Datenformat: Wo steht welche Information, wie ist sie codiert? Ein Beispiel ist das IP-Header-Format mit Adressen, Prüfsummen usw.",
+      "Semantik meint die Bedeutung: Was soll passieren, wenn ein Paket empfangen wird? Wie wird ein Fehler gemeldet? Ein Beispiel ist die TCP-Fehlerkorrektur durch Bestätigung (ACK).",
+      "Die Kombination vieler Protokolle – etwa Ethernet auf der physikalischen Ebene und TCP für die Zuverlässigkeit – schafft ein funktionierendes Gesamtsystem."
+    ],
+    "explanationJa": [
+      "インターオペラビリティは、たとえばWindowsパソコンとMac、スマートフォンとWebサーバーが問題なく通信できることを指し、それを実現するには共通のプロトコルが必要です。",
+      "プロトコルは、通信のルールを定めたものです。HTTPはWebブラウザとWebサーバーがどうやりとりするかを定義したプロトコルの例です。",
+      "構文（シンタックス）は、データがどんな形式で構成されているか（たとえばIPパケットの中でアドレスやチェックサムがどこにあるか）を指します。",
+      "意味（セマンティク）は、あるデータが持つ意味や、エラーが起きたときにどう対処するか（TCPのACKなど）を定義します。",
+      "こうした複数のプロトコル（物理層はEthernet、信頼性確保はTCPなど）が階層的に組み合わさることで、異なるシステム間でも円滑な通信が実現します。"
+    ],
+    "originalSlideText": "❑ Basis der Kommunikation innerhalb eines Netzes ist das Netzwerk-Protokoll\n Enthält Regeln, die alle Aspekte der Kommunikation festlegen\n• Z.B. elektrische Spannung, Bedeutung von Zeichenfolgen\n❑ Ein funktionierendes Netzwerk greift auf viele Protokolle zurück, die unterschiedliche Aspekte der Kommunikation regeln\n Z.B. physikalische Übertragung vs. Transportprotokoll (TCP)\n❑ Protokolle beschreiben\n Syntax\n• Format und Darstellung von Nachrichten\n• Kodierung\n Semantik\n• Bedeutung von Nachrichten\n• Verfahren um Nachrichten auszutauschen\n• Fehlerbehandlung",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 9,
+    "questionDe": "(s18) Welche Ziele verfolgt das Protokolldesign und wie ist die Kommunikation strukturiert?",
+    "questionJa": "プロトコル設計の目的は何か？また、通信はどのような構造で行われるのか？",
+    "answerDe": [
+      "Effizienz: Protokolle sollen ressourcenschonend arbeiten.",
+      "Vollständigkeit: Alle Kommunikationsszenarien werden abgedeckt.",
+      "Vermeidung von Redundanz: Jedes Protokoll löst ein spezifisches Teilproblem.",
+      "Interoperabilität: Schnittstellen zwischen Protokollen werden definiert.",
+      "Protokolle werden als Familie entworfen (z. B. TCP/IP).",
+      "Kommunikation wird in Schichten (Layern) strukturiert.",
+      "Daten werden schrittweise durch alle Schichten verarbeitet.",
+      "Der Output einer höheren Schicht dient als Input für die darunterliegende.",
+      "Auf der Empfängerseite liest jede Schicht die Daten, die die gleichnamige Schicht am Sender erstellt hat."
+    ],
+    "answerJa": [
+      "効率性：プロトコルはリソースを無駄にせず動作する必要がある。",
+      "完全性：あらゆる通信シナリオに対応できる設計であること。",
+      "冗長性の排除：各プロトコルが特定の問題を分担する。",
+      "相互運用性：プロトコル間のインターフェースが定義されている。",
+      "プロトコルはファミリーとして設計される（例：TCP/IP）。",
+      "通信は階層（レイヤー）構造で設計される。",
+      "データは各レイヤーで段階的に処理される。",
+      "上位レイヤーの出力が下位レイヤーの入力となる。",
+      "受信側では、送信側と同じレイヤーが対応するデータを読み取る。"
+    ],
+    "explanationDe": [
+      "Protokolle sind so entworfen, dass sie jeweils eine definierte Funktion erfüllen – z. B. übernimmt TCP die Zuverlässigkeit, während IP die Adressierung übernimmt.",
+      "Die Kommunikation wird in logisch getrennte Schichten aufgeteilt. So bleibt jede Schicht übersichtlich und kann unabhängig weiterentwickelt werden.",
+      "Die untere Schicht kümmert sich z. B. um die physikalische Übertragung, während die obere sich mit der Anwendungslogik befasst.",
+      "Beim Senden durchlaufen die Daten jede Schicht, wobei jede ihren eigenen Header anfügt – z. B. fügt TCP Sequenznummern hinzu, IP die Zieladresse.",
+      "Empfangene Daten werden umgekehrt Schicht für Schicht analysiert – jede Schicht entfernt ihren Header und gibt die Nutzdaten an die nächsthöhere weiter. So entsteht ein geordnetes, standardisiertes Kommunikationsmodell."
+    ],
+    "explanationJa": [
+      "プロトコルは、それぞれが明確な役割を果たすように設計されています。たとえばTCPは信頼性のある転送、IPはアドレス指定を担当します。",
+      "通信全体は階層構造で分割されており、それぞれのレイヤーが別個の役割を持つことで、設計や管理がしやすくなります。",
+      "下位レイヤーは物理的なデータ転送を、上位レイヤーはアプリケーション側の処理を担当します。",
+      "送信時には、上位のアプリケーションデータが下位レイヤーに順に渡され、各レイヤーで必要なヘッダ情報が追加されていきます（例：TCPが順番情報を追加、IPがアドレスを付加）。",
+      "受信時には、各レイヤーが自分のヘッダ情報を読み取り、それを除去して上位に渡すという流れで進みます。このような構造により、整然とした通信が可能になります。"
+    ],
+    "originalSlideText": "❑ Ziele des Protokolldesigns:\n Effizienz\n Vollständigkeit (alle Szenarien abgedeckt)\n Vermeidung von Redundanz → Jedes Protokoll löst ein anderes Problem der Netzwerkkommunikation\n Interoperabilität → Schnittstellen zwischen den Protokollen\n❑ Lösung: Protokolle werden zusammen als Protokoll-Familie entworfen (z.B. TCP/IP Protokollstack)\n❑ Die Protokoll-Familie teilt das Problem der Kommunikation in Schichten auf → Schichtmodell (Layer)\n❑ Für jede Schicht kann es mehrere Protokolle geben\n❑ Für die praktische Netzwerkkommunikation durchlaufen zu transportierende Daten linear jede Schicht und werden dort von genau einem Protokoll verarbeitet\n❑ Der Output einer höheren Schicht dient als Input der darunter liegenden (beim Senden; beim Empfang umgekehrt)\n❑ Pakete die beim Sender von Schicht A erzeugt werden, werden beim Empfänger von der gleichen Schicht A gelesen",
+    "explanationImage": "",
+    "questionImage": ""
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+]

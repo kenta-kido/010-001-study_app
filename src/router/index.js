@@ -3,11 +3,13 @@ import HomePage from '../views/HomePage.vue';
 
 import lecture01Routes from '../views/lecture/lecture01/index.js';
 import lecture02Routes from '../views/lecture/lecture02/index.js';
+import lecture03Routes from '../views/lecture/lecture03/index.js';
 
 const routes = [
   { path: '/', name: 'Home', component: HomePage },
   ...lecture01Routes,
   ...lecture02Routes,
+  ...lecture03Routes,
 ];
 
 const router = createRouter({

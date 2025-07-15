@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "questionDe": "(s.2) Nennen Sie drei Gründe, warum Data Mining eingesetzt wird.",
+    "questionJa": "Data Miningが用いられる理由を3つ挙げよ。",
+    "answerDe": [
+      "Überbordernde Menge an Daten",
+      "Wachsende Lücke zwischen Produktion und Auswertung der Daten",
+      "Extraktion von nützlichen und versteckten Informationen"
+    ],
+    "answerJa": [
+      "膨大なデータ量",
+      "データ生成と分析のギャップの拡大",
+      "有用かつ隠れた情報の抽出"
+    ],
+    "explanationDe": [
+      "Data Mining wird eingesetzt, weil die heutige Datenmenge die menschliche Analysefähigkeit übersteigt.",
+      "Die überbordende Menge an Daten macht automatisierte Methoden notwendig.",
+      "Ziel ist die Extraktion von Informationen, die für Unternehmen oder Forschung wichtig sind."
+    ],
+    "explanationJa": [
+      "現代のデータ量は人間の分析能力を超えているため、自動化が必要とされます。",
+      "データの増加と分析のギャップを埋めるために用いられます。",
+      "Data Miningは、ビジネスや研究に役立つ情報を抽出する手法です。"
+    ],
+    "originalSlideText": "• Warum?\n\n• Überbordernde Menge an Daten\n• Wachsende Lücke zwischen Produktion und Auswertung der Daten\n\n• Ziel:\n• Extraktion von nützlichen und versteckten Informationen\n\n• Methode:\n• Mustererkennung in den Daten\n• Nutzung von verschiedenen Data Mining Verfahren, um die Muster in den Daten (semi-)automatisch zu finden",
+    "questionImage": "lecture01/lecture01_q01.png",
+    "explanationImage": "lecture01/lecture01_ex01.png"
+  },
+  {
+    "id": 2,
+    "questionDe": "(s.4) Nennen Sie drei Eigenschaften strukturierter Muster im Data Mining.",
+    "questionJa": "Data Miningにおける構造化されたパターンの特徴を3つ挙げよ。",
+    "answerDe": [
+      "Bilden die Struktur eindeutig ab",
+      "Sind untersuchbar und begründbar",
+      "Sind nützlich für zukünftige Entscheidungen"
+    ],
+    "answerJa": [
+      "構造が明確に表現されている",
+      "分析可能かつ理由づけができる",
+      "将来の意思決定に役立つ"
+    ],
+    "explanationDe": [
+      "Strukturierte Muster zeigen erkennbare und wiederholbare Strukturen in Daten.",
+      "Sie lassen sich analysieren und ihre Herkunft sowie Gültigkeit prüfen.",
+      "Sie dienen als Grundlage für fundierte Entscheidungen oder Prognosen."
+    ],
+    "explanationJa": [
+      "構造化されたパターンは、データに見られる明確で再現可能な構造を示します。",
+      "それらは分析・検証が可能であり、正当性も確認できます。",
+      "将来の意思決定や予測の基礎として利用できます。"
+    ],
+    "originalSlideText": "• Strukturierte Muster\n\n• Bilden die Struktur eindeutig ab\n• Sind untersuchbar\n• Sind begründbar\n• Sind nützlich für zukünftige Entscheidungen",
+    "questionImage": "lecture01/lecture01_q01.png",
+    "explanationImage": "lecture01/lecture01_ex01.png"
+  }
+]

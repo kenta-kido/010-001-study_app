@@ -36,6 +36,25 @@
         { "number": 13, "title": "-" },
         { "number": 14, "title": "-" }
       ]
+    },
+    "lecture03": {
+      "title": "Kommunikationssystem (2024Wi)",
+      "lectures": [
+        { "number": 1, "title": "Organisation und Internet Trends" },
+        { "number": 2, "title": "Programmierung mobiler Anwendungen mit Android" },
+        { "number": 3, "title": "Protokolldesign und das Internet" },
+        { "number": 4, "title": "Anwendungen und Netzwerkprogrammierung" },
+        { "number": 5, "title": "LAN und Medienzugriff" },
+        { "number": 6, "title": "Ethernet und drahtlose Netze" },
+        { "number": 7, "title": "LAN Komponenten und WAN Technologien" },
+        { "number": 8, "title": "Internetworking und Adressierung mit IP" },
+        { "number": 9, "title": "IP Datagramme" },
+        { "number": 10, "title": "Zusätzliche Protokolle und Technologien" },
+        { "number": 11, "title": "User Datagram Protocol und Transmission Control Protocol" },
+        { "number": 12, "title": "TCP Überlastkontrolle, Internet Routing und Routingprotokolle" },
+        { "number": 13, "title": "Ausblick: TCP für Hochgeschwindigkeitsnetze" },
+        { "number": 14, "title": "Review der Vorlesung" }
+      ]
     }
   }
   
