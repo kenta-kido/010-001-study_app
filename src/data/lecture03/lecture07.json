@@ -828,26 +828,1397 @@
   "originalSlideText": "Ursprüngliche WAN Architektur (3)\n\n❑ Seit LANs wird Packet Switch in WAN in zwei Teile unterteilt\n Layer 2 Switch um lokale Computer zu verbinden\n Router um zu anderen Standorten zu verbinden",
   "explanationImage": "",
   "questionImage": ""
+},
+{
+  "id": 22,
+  "questionDe": "(s31) Wie ist ein modernes WAN aufgebaut und welche Übertragungsmedien werden verwendet?",
+  "questionJa": "現代のWANはどのように構成され、どのような伝送メディアが使われていますか？",
+  "answerDe": [
+    "WAN besteht aus Packet Switches an mehreren Standorten",
+    "Verbindungen zwischen Switches basieren auf Datenrate, Distanz und Verzögerung",
+    "Typische Medien: gemietete Standleitungen (z. B. T3, OC-12)",
+    "Alternativ: Mikrowellen oder Satellitenkanäle"
+  ],
+  "answerJa": [
+    "WANは複数の拠点にあるパケットスイッチで構成されている",
+    "スイッチ間の接続は必要なデータレート、距離、許容遅延によって決定される",
+    "一般的な伝送メディア：専用線（例：T3、OC-12）",
+    "他にはマイクロ波や衛星通信も使われる"
+  ],
+  "explanationDe": [
+    "Ein modernes Wide Area Network (WAN) besteht aus einer Vielzahl von Packet Switches, die über große Entfernungen hinweg miteinander verbunden sind. Jeder dieser Switches befindet sich an einem geografisch unterschiedlichen Standort.",
+    "Der konkrete Aufbau des WANs hängt von mehreren Faktoren ab: der benötigten Datenübertragungsrate (z. B. für Video, Sprache, große Dateien), der physischen Distanz zwischen den Standorten und der maximal tolerierbaren Übertragungsverzögerung.",
+    "Um diese Anforderungen zu erfüllen, kommen unterschiedliche Übertragungsmedien zum Einsatz. Besonders verbreitet sind gemietete Standleitungen, etwa T3 (45 Mbps) oder OC-12 (622 Mbps), die eine zuverlässige und konstante Verbindung bieten.",
+    "In Gebieten, wo physische Leitungen nicht praktikabel oder zu teuer sind (z. B. in ländlichen Regionen oder über Meere hinweg), werden alternative Übertragungswege wie Mikrowellenstrecken oder Satellitenverbindungen genutzt.",
+    "Diese drahtlosen Optionen ermöglichen zwar weltweite Abdeckung, bringen jedoch oft höhere Latenz und Störanfälligkeit mit sich – insbesondere bei Satelliten.",
+    "Die Wahl des Übertragungsmediums ist somit ein Kompromiss aus Leistung, Kosten, geographischer Lage und technischer Machbarkeit.",
+    "Ein effizientes WAN-Design berücksichtigt diese Faktoren, um eine stabile, skalierbare und leistungsfähige Kommunikation zwischen den Standorten sicherzustellen."
+  ],
+  "explanationJa": [
+    "現代のWAN（ワイドエリアネットワーク）は、地理的に離れた複数の拠点にあるパケットスイッチ同士を接続することで構成されています。",
+    "このネットワーク構成では、必要なデータ転送速度、距離、そして許容可能な遅延（レイテンシ）といった要素をもとに、どのような伝送経路を選択するかが決定されます。",
+    "よく使われる伝送メディアには、T3（45Mbps）やOC-12（622Mbps）といった専用線があり、これらは安定した大容量通信を提供します。",
+    "一方、地形やコストの制約で有線敷設が難しい地域では、マイクロ波通信や衛星通信が用いられることもあります。",
+    "衛星通信は広範囲をカバーできるという利点がある一方で、遅延が大きく、天候などの影響も受けやすいため、用途に応じた慎重な設計が必要です。",
+    "このように、使用される伝送手段はコスト・性能・地理的条件のバランスを考慮して選択され、ネットワーク全体の安定性とスケーラビリティに影響を与えます。",
+    "理想的なWAN構成とは、これらの技術的要素を最適に組み合わせて、拠点間の確実で高速な通信を実現するネットワークのことを指します。"
+  ],
+  "originalSlideText": "Aufbau eines WAN (1)\n\n❑ WAN gebildet durch Verbindungen von Packet Switches an mehreren Standorten\n❑ Details hängen von benötigter Datenrate, Distanz und tolerierter Verzögerung ab\n❑ Nutzen oft gemietete Standleitungen (T3, OC-12, …)\n❑ Auch möglich: Mikrowellen, Satellitenkanal",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 23,
+  "questionDe": "(s32) Warum muss die Topologie eines WANs sorgfältig geplant werden?",
+  "questionJa": "なぜWANのトポロジーは慎重に設計されなければならないのですか？",
+  "answerDe": [
+    "Topologie beeinflusst Leistung und Ausfallsicherheit des WANs",
+    "WAN muss nicht symmetrisch aufgebaut sein",
+    "Verbindungen und Kapazitäten werden je nach erwarteter Verkehrslast gewählt",
+    "Redundante Verbindungen verbessern Zuverlässigkeit"
+  ],
+  "answerJa": [
+    "トポロジーはWANの性能と耐障害性に大きく影響する",
+    "WANは必ずしも対称構造である必要はない",
+    "接続と帯域幅は想定されるトラフィックに基づいて選定される",
+    "冗長構成は信頼性を向上させる"
+  ],
+  "explanationDe": [
+    "Die Topologie eines WANs – also wie die einzelnen Standorte miteinander verbunden sind – ist entscheidend für die Leistungsfähigkeit und Fehlertoleranz des Netzwerks.",
+    "Im Gegensatz zu LANs, bei denen eine einfache Stern- oder Bus-Topologie genügt, müssen WANs deutlich flexibler geplant werden, da große Entfernungen und unterschiedliche Lastverteilungen berücksichtigt werden müssen.",
+    "Ein WAN muss nicht symmetrisch aufgebaut sein. Das bedeutet, dass nicht alle Standorte gleich viele oder gleich starke Verbindungen haben müssen. Die Struktur richtet sich vielmehr nach praktischen Anforderungen wie erwarteter Datenverkehr, Redundanzbedarf und Leitungskosten.",
+    "So kann beispielsweise ein zentraler Standort (z. B. Hauptsitz) mit mehreren Hochgeschwindigkeitsleitungen angebunden sein, während kleinere Außenstellen nur über eine einzelne Verbindung verfügen.",
+    "Die Kapazität jeder Verbindung muss sorgfältig geplant werden – sie sollte groß genug für die erwartete Last sein, aber wirtschaftlich sinnvoll bleiben.",
+    "Darüber hinaus ist Redundanz (doppelte oder alternative Verbindungen) ein wesentlicher Aspekt der WAN-Planung, da sie im Falle eines Ausfalls eine automatische Umleitung des Datenverkehrs ermöglicht.",
+    "Eine gut durchdachte WAN-Topologie erhöht somit die Stabilität, Flexibilität und Skalierbarkeit des gesamten Netzwerks und ermöglicht einen reibungslosen Betrieb auch bei Teilstörungen."
+  ],
+  "explanationJa": [
+    "WAN（ワイドエリアネットワーク）のトポロジー、つまり拠点間の接続構造は、そのネットワークの性能や障害時の耐久性に大きな影響を与えます。",
+    "LANでは比較的単純なバス型やスター型で構成できますが、WANでは距離の長さやトラフィックの偏りを考慮する必要があるため、より柔軟で複雑な設計が求められます。",
+    "WANは必ずしも対称的な構成である必要はありません。拠点ごとに必要な通信量や重要性が異なるため、それぞれ異なる接続数や帯域幅を持つことが一般的です。",
+    "たとえば、本社には複数の高速回線を用意し、地方支店には1本の回線だけを用意するなど、状況に応じた設計が行われます。",
+    "各接続回線の帯域幅も、予想されるトラフィック量をもとに選定され、性能とコストのバランスを取る必要があります。",
+    "また、どこかのリンクが障害で使えなくなった場合に備えて、冗長構成（複数経路）を設けることが重要です。これにより、通信が自動的に別ルートに切り替わり、継続的な運用が可能になります。",
+    "このように、慎重に設計されたWANトポロジーは、ネットワーク全体の安定性・柔軟性・拡張性を支える基盤となります。"
+  ],
+  "originalSlideText": "Aufbau eines WAN (2)\n\n❑ Topologie muss gewählt werden\n❑ WAN muss nicht symmetrisch aufgebaut sein\n❑ Verbindungen und deren Kapazität nach Bedarf gewählt (erwarteter Verkehr, Redundanz)",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 24,
+  "questionDe": "(s33) Was bedeutet das Prinzip Store and Forward in WANs?",
+  "questionJa": "WANにおける「ストア・アンド・フォワード（Store and Forward）」の原理とは何ですか？",
+  "answerDe": [
+    "Grundprinzip zur Ermöglichung simultaner Übertragungen im WAN",
+    "Packet Switch speichert eingehende Pakete im Speicher",
+    "„Store“: I/O-Hardware legt Paket im Speicher ab",
+    "„Forward“: Prozessor analysiert und sendet Paket über Interface weiter",
+    "Pakete werden zwischengespeichert, falls das Zielgerät beschäftigt ist"
+  ],
+  "answerJa": [
+    "WANで同時通信を可能にする基本的な仕組み",
+    "パケットスイッチは受信したパケットをメモリに保存する",
+    "「ストア」＝I/Oハードウェアがパケットをメモリに保管",
+    "「フォワード」＝プロセッサが解析して次のインターフェースに送信",
+    "送信先が使用中の場合は一時的にパケットを保持する"
+  ],
+  "explanationDe": [
+    "Store and Forward ist ein fundamentales Prinzip in der Architektur von Wide Area Networks (WANs), das es ermöglicht, Datenpakete effizient zwischen verschiedenen Standorten zu übertragen.",
+    "Das Konzept funktioniert in zwei Schritten: Zuerst wird das empfangene Datenpaket (Store) in den lokalen Speicher eines Packet Switch gelegt. Dies geschieht durch die I/O-Hardware des Switches.",
+    "Im zweiten Schritt (Forward) analysiert der Prozessor des Switches die Zieladresse des Pakets und bestimmt, über welches Ausgangsinterface das Paket weitergeleitet werden soll.",
+    "Falls das Zielinterface momentan frei ist, wird das Paket sofort übertragen. Ist das Interface jedoch belegt, wird das Paket in eine Warteschlange verschoben und dort so lange gespeichert, bis die Weiterleitung möglich ist.",
+    "Durch dieses Verfahren wird gewährleistet, dass keine Pakete verloren gehen, selbst wenn es kurzzeitig zu Engpässen kommt – was besonders bei hoher Auslastung oder wechselnden Netzbedingungen entscheidend ist.",
+    "Im Gegensatz zu einfachen Weiterleitungsmechanismen erlaubt Store and Forward die asynchrone Kommunikation und trägt wesentlich zur Stabilität und Effizienz eines WANs bei.",
+    "Diese Technik bildet die Grundlage für viele moderne Netzwerktechnologien, einschließlich der Internetprotokolle, da sie sowohl Fehlerbehandlung als auch Staukontrolle unterstützt."
+  ],
+  "explanationJa": [
+    "「ストア・アンド・フォワード（Store and Forward）」は、WAN（ワイドエリアネットワーク）における基本的なデータ転送原理であり、離れた拠点間での効率的な通信を可能にする仕組みです。",
+    "この原理は2段階で構成されます。まず「ストア（Store）」として、受信したパケットをパケットスイッチのローカルメモリに一時的に格納します。これはスイッチのI/Oハードウェアによって行われます。",
+    "次に「フォワード（Forward）」段階で、スイッチ内のプロセッサがパケットを解析し、宛先に応じて適切な出力ポート（インターフェース）を選び、そこへパケットを送信します。",
+    "もし出力ポートがすでに別のパケットを処理中であれば、新しいパケットはキューに保管され、ポートが空くのを待ちます。",
+    "この仕組みにより、通信経路が一時的に混雑していてもパケットが失われることなく処理され、通信の安定性が確保されます。",
+    "Store and Forwardは、非同期通信を可能にし、ネットワークの輻輳緩和やエラー処理にも対応できるため、WANの信頼性と効率性を大きく向上させる役割を果たしています。",
+    "この技術は、現在のインターネット通信やルーターの設計にも広く応用されている重要な要素です。"
+  ],
+  "originalSlideText": "Store and Forward (1)\n\n❑ Store and Forward: Fundamentales Paradigma um simultane Übertragungen zu erlauben\n❑ Packet Switch puffert Pakete im Speicher\n❑ Store: I/O Hardware im Packet Switch speichert Kopie des Paket im Speicher\n❑ Forward: Prozessor analysiert Paket, bestimmt Ziel, sendet Paket über I/O Interface\n❑ Pakete zu selben Ausgabegerät werden gespeichert bis Gerät bereit",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 25,
+  "questionDe": "(s34) Wie funktioniert Store and Forward bei gleichzeitigem Paketversand?",
+  "questionJa": "複数の送信が同時に行われる場合、Store and Forwardはどのように動作しますか？",
+  "answerDe": [
+    "Zwei Computer an Standort 1 senden gleichzeitig Pakete an Standort 3",
+    "I/O-Hardware speichert Pakete im Arbeitsspeicher",
+    "Prozessor erkennt das gemeinsame Ziel (Standort 3)",
+    "Ist das Ausgangsinterface frei, beginnt sofort die Übertragung",
+    "Ist es belegt, werden Pakete in Warteschlange gespeichert"
+  ],
+  "answerJa": [
+    "拠点1にある2台のコンピュータが同時に拠点3にパケットを送信する",
+    "I/Oハードウェアはパケットをメモリに一時保存する",
+    "プロセッサは宛先が同じ（拠点3）であることを識別する",
+    "出力インターフェースが空いていれば即時に送信する",
+    "使用中であればパケットはキューに保管される"
+  ],
+  "explanationDe": [
+    "Im Szenario der Folie senden zwei Computer an einem Standort gleichzeitig Pakete an einen dritten Standort. Beide Datenpakete treffen nahezu gleichzeitig beim lokalen Packet Switch ein.",
+    "Die I/O-Hardware des Switches speichert die Pakete zunächst im RAM. Dieser Vorgang ist Teil des „Store“-Schritts im Store-and-Forward-Modell.",
+    "Anschließend analysiert der Prozessor des Switches die Zieladressen der Pakete. In diesem Fall stellt er fest, dass beide Pakete an den gleichen entfernten Standort – Standort 3 – gerichtet sind.",
+    "Falls das Ausgangsinterface, das die Verbindung zu Standort 3 herstellt, aktuell frei ist, kann eines der Pakete direkt weitergeleitet werden (Forward).",
+    "Das zweite Paket muss warten: Es wird in eine Warteschlange verschoben, bis das Interface wieder verfügbar ist. So geht keine Information verloren, und die Pakete werden in der richtigen Reihenfolge weiterverarbeitet.",
+    "Dieses Verhalten ist besonders wichtig in Hochlastszenarien, wo mehrere Geräte gleichzeitig Daten senden und die begrenzten Ressourcen der Switches koordiniert genutzt werden müssen.",
+    "Store and Forward garantiert in solchen Fällen eine geordnete und stabile Übertragung, ohne dass Pakete verloren gehen oder die Netzwerktopologie überlastet wird."
+  ],
+  "explanationJa": [
+    "このスライドでは、拠点1にある2台のコンピュータが同時に拠点3に向けてパケットを送信するケースが示されています。両方のパケットは、ほぼ同時にパケットスイッチに到達します。",
+    "まず、スイッチのI/Oハードウェアが各パケットを一時的にRAM（メモリ）に保存します。これが「ストア（Store）」の段階です。",
+    "その後、スイッチのプロセッサがそれぞれのパケットの宛先アドレスを解析し、どちらも拠点3に送るべきであることを認識します。",
+    "このとき、拠点3に接続する出力インターフェースが空いていれば、最初のパケットは即座に転送されます（「フォワード（Forward）」の段階）。",
+    "しかし、インターフェースがすでに別のパケットを処理中であれば、残りのパケットはキュー（待機列）に入れられ、順番が来るまで保管されます。",
+    "この処理により、同時送信による混乱やパケットの消失を防ぎ、通信の整合性と効率が保たれます。",
+    "複数送信が同時に発生するような混雑状態でも、Store and Forwardは安定したデータ伝送を可能にし、ネットワーク全体の信頼性を高めます。"
+  ],
+  "originalSlideText": "Store and Forward (2)\n\n❑ Vorheriges Beispiel: Zwei Computer an Standort 1 senden gleichzeitig Paket für Computer an Standort 3\n❑ I/O Hardware legt Paket in Arbeitsspeicher und informiert Packet Switch Prozessor\n❑ Prozessor bestimmt Standort 3 als Ziel\n❑ Ist Output Interface nicht beschäftigt startet Übertragung direkt\n❑ Sonst Speicherung des Paket in Warteschlage des Output Interface bis es frei ist",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 26,
+  "questionDe": "(s35) Wie funktioniert die Adressierung im WAN?",
+  "questionJa": "WANにおけるアドレス指定はどのように機能していますか？",
+  "answerDe": [
+    "WAN-Technologie definiert spezielles Frame-Format für Senden und Empfangen",
+    "Jeder Computer im WAN erhält eine eindeutige Adresse",
+    "Beim Senden muss die Zieladresse im Frame angegeben werden",
+    "WANs verwenden hierarchische Adressierung",
+    "Typisches Format: (Standort, Computer am Standort)",
+    "Adresse ist ein Binärwert",
+    "Erster Adressteil durch Packet Switch ID bestimmt"
+  ],
+  "answerJa": [
+    "WANでは送受信のために専用のフレーム形式が定義されている",
+    "各コンピュータは一意なアドレスを持つ",
+    "送信時には宛先アドレスをフレームに含める必要がある",
+    "WANは階層型アドレス指定方式を採用している",
+    "典型的な形式は（拠点、拠点内のコンピュータ）",
+    "アドレスは実際には2進数で表現される",
+    "アドレスの最初の部分はパケットスイッチIDにより決まる"
+  ],
+  "explanationDe": [
+    "In einem Wide Area Network (WAN) ist eine klare Adressierung essenziell, um Daten korrekt an ihr Ziel zu senden. Dazu definiert jede WAN-Technologie ein spezielles Frame-Format für die Übertragung.",
+    "Jeder Computer im WAN erhält eine eindeutige Adresse, sodass er eindeutig identifizierbar ist. Diese Adresse muss beim Senden eines Pakets im Frame enthalten sein, damit die Zwischenstationen (z. B. Packet Switches) das Ziel korrekt bestimmen können.",
+    "WANs nutzen dabei eine hierarchische Adressierung, ähnlich wie IP-Adressen im Internet. Die Adresse besteht aus zwei logischen Teilen: einem Standortcode (z. B. für ein Rechenzentrum oder eine Filiale) und einer Geräte-ID am Standort.",
+    "Der erste Teil – der Standort – wird durch die ID des lokalen Packet Switches bestimmt, der für diesen Standort zuständig ist. So kann der Switch sofort erkennen, ob das Paket lokal oder weitergeleitet werden muss.",
+    "Die Adressen selbst sind nicht als lesbare Zeichenfolge, sondern als Binärwerte im Rahmenformat codiert, was eine schnellere Verarbeitung durch die Hardware ermöglicht.",
+    "Dank dieser hierarchischen Struktur wird die Adressierung skalierbar und effizient – besonders bei großen Netzwerken mit hunderten oder tausenden von Knoten.",
+    "Dieses System bildet die Grundlage für viele Routing- und Weiterleitungsmechanismen in modernen WANs und ähnelt dem Prinzip von IP-Adressen im Internet."
+  ],
+  "explanationJa": [
+    "WAN（ワイドエリアネットワーク）では、パケットが正しく目的地に届くために、明確なアドレス指定が必要不可欠です。そのため、WANごとに専用のフレーム形式が定義されています。",
+    "WANに接続された各コンピュータは、一意のアドレスを持ち、識別可能な状態になっています。このアドレスは、パケットを送信する際にフレーム内に含める必要があります。",
+    "WANでは、インターネットのIPアドレスのように、階層型のアドレス体系を採用しています。アドレスは「拠点情報」と「その拠点内のコンピュータ識別子」の2つに分かれています。",
+    "このうち、最初の部分である「拠点ID」は、各拠点に対応するパケットスイッチのIDによって決定されます。これにより、スイッチは宛先がローカルかどうかを即座に判断できます。",
+    "アドレス自体は人間が読む形式ではなく、2進数（バイナリ）としてフレーム内に格納されており、機器側で高速に処理できるようになっています。",
+    "このような階層構造により、大規模ネットワークでもアドレス空間が効率的に運用でき、ルーティングの効率も高く保たれます。",
+    "この方式は、現在のインターネットのIPアドレス設計ともよく似ており、多くのWANプロトコルで基盤となっています。"
+  ],
+  "originalSlideText": "Adressierung im WAN\n\n❑ WAN Technologie definiert Frame Format, welches Computer zum Senden / Empfangen nutzt\n❑ Jeder Computer des WAN bekommt Adresse, bei Versand muss Zieladresse angegeben werden\n❑ WANs nutzen Hierarchische Adressierung\n Konzept: (Standort, Computer des Standort)\n Packet Switch an Standort hat eindeutige ID, bestimmt ersten Teil der Adresse\n Adresse ist tatsächlich ein Binärwert",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 27,
+  "questionDe": "(s36) Was ist Next-Hop Forwarding im WAN und wie funktioniert es?",
+  "questionJa": "WANにおけるNext-Hopフォワーディングとは何ですか？その仕組みはどうなっていますか？",
+  "answerDe": [
+    "Packet Switch analysiert Zieladresse im Paket",
+    "Bei lokaler Switch-ID: Weiterleitung direkt an lokalen Computer",
+    "Bei anderer Switch-ID: Paket wird über Verbindung zu anderem Switch weitergeleitet",
+    "Es ist keine vollständige Route nötig, nur der nächste Hop"
+  ],
+  "answerJa": [
+    "パケットスイッチはパケット内の宛先アドレスを解析する",
+    "スイッチIDが自身と一致する場合、ローカルコンピュータへ直接送信する",
+    "スイッチIDが異なる場合、別のスイッチへのリンク経由で転送される",
+    "完全な経路情報は不要で、次の転送先（ホップ）だけを知っていればよい"
+  ],
+  "explanationDe": [
+    "Next-Hop Forwarding ist ein effizientes Weiterleitungsverfahren in WANs, bei dem ein Packet Switch nicht die vollständige Route zum Ziel kennt, sondern lediglich weiß, über welchen nächsten Switch (Hop) das Paket weitergeleitet werden soll.",
+    "Zunächst analysiert der Packet Switch die Zieladresse des eingehenden Pakets. Diese besteht aus einer Switch-ID und einer lokalen Computer-ID.",
+    "Wenn die Switch-ID mit der eigenen ID übereinstimmt, bedeutet das, dass der Zielrechner am lokalen Standort liegt – das Paket wird direkt an diesen Computer weitergeleitet.",
+    "Falls die Switch-ID sich unterscheidet, erkennt der Switch, dass das Paket für einen anderen Standort bestimmt ist, und leitet es über die passende Verbindung zum nächsten Switch weiter.",
+    "Dieses Verfahren reduziert den Speicher- und Rechenaufwand erheblich, da nicht jeder Switch den kompletten Pfad durchs gesamte Netzwerk kennen muss.",
+    "Die Routing-Entscheidung erfolgt also nur auf Basis des nächsten Hops – vergleichbar mit einem Navigationssystem, das nur den nächsten Abzweig kennt, aber nicht den ganzen Weg.",
+    "Next-Hop Forwarding bildet damit das Grundprinzip für skalierbares WAN-Routing und ist Grundlage vieler Protokolle wie IP oder MPLS."
+  ],
+  "explanationJa": [
+    "Next-Hopフォワーディングは、WANにおいて非常に効率的なパケット転送方式です。この方式では、パケットスイッチは宛先までの「完全なルート」を知る必要はなく、「次にどこへ送るか」だけを知っていればよいのです。",
+    "まず、スイッチは受信したパケットの宛先アドレスを解析します。このアドレスは「スイッチID」と「そのスイッチに属するコンピュータID」で構成されます。",
+    "スイッチIDが自分自身のIDと一致する場合、パケットの宛先はローカルに存在していると判断し、該当するコンピュータに直接転送します。",
+    "スイッチIDが異なる場合は、パケットを別のスイッチに転送する必要があると判断し、対応するリンク（接続）を介して次のスイッチに送ります。",
+    "この方法により、ネットワーク全体の経路情報を全スイッチが保持する必要がなくなり、処理が簡素で高速になります。",
+    "この考え方は、ナビゲーションシステムが目的地までの全ルートではなく「次の曲がり角」だけを教えてくれるようなイメージです。",
+    "Next-Hopフォワーディングは、WANのスケーラビリティを支える基本技術であり、IPルーティングやMPLSなど多くのネットワークプロトコルで広く採用されています。"
+  ],
+  "originalSlideText": "Next-Hop Forwarding (1)\n\n❑ Packet Switch muss ausgehenden Pfad für Paket bestimmen\n❑ Software in Packet Switch analysiert Zieladresse\n❑ Selbe Switch ID: Paket für lokalen Computer wird direkt zu Ziel gesendet\n❑ Andere Switch ID: Weiterleitung über eine Verbindung zu anderem Switch\n❑ Benötigt keine Information wie jeder einzelne Computer erreicht wird\n❑ Muss nicht komplette Route durch Netzwerk berechnen",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 28,
+  "questionDe": "(s37) Wie wird Next-Hop Forwarding konkret umgesetzt?",
+  "questionJa": "Next-Hopフォワーディングは具体的にどのように実行されますか？",
+  "answerDe": [
+    "Switch extrahiert Zieladresse aus Paket",
+    "Adresse wird in Switch-ID (P) und Computer-ID (C) unterteilt",
+    "Wenn P = Q (eigene ID): Weiterleitung an lokalen Computer C",
+    "Sonst: Auswahl einer Verbindung zu anderem Packet Switch und Weiterleitung"
+  ],
+  "answerJa": [
+    "スイッチはパケットから宛先アドレスを抽出する",
+    "アドレスはスイッチID（P）とコンピュータID（C）に分割される",
+    "P = Q（自分自身のID）なら、ローカルのコンピュータCへ転送する",
+    "そうでなければ、別のスイッチへの接続を選択して転送する"
+  ],
+  "explanationDe": [
+    "Die konkrete Umsetzung von Next-Hop Forwarding im WAN erfolgt in einem mehrstufigen Verfahren, das auf der Analyse der Zieladresse eines ankommenden Pakets basiert.",
+    "Zuerst wird die Zieladresse aus dem Paket extrahiert. Diese Adresse besteht aus zwei Teilen: der Switch-ID (P) und der Computer-ID (C).",
+    "Anschließend vergleicht der empfangende Switch seine eigene ID (Q) mit der im Paket enthaltenen Switch-ID (P).",
+    "Wenn P gleich Q ist, bedeutet das, dass das Zielgerät lokal angeschlossen ist – das Paket wird direkt an den entsprechenden Computer C weitergeleitet.",
+    "Wenn P ungleich Q ist, handelt es sich um ein Ziel in einem anderen Standort. In diesem Fall wählt der Switch die passende Ausgangsverbindung zu einem benachbarten Packet Switch und leitet das Paket dorthin weiter.",
+    "Dieser Entscheidungsprozess ist sehr effizient und lässt sich in Hardware oder optimierter Software implementieren, was schnelle Weiterleitung mit geringer Verzögerung ermöglicht.",
+    "Dieses Modell bildet die Grundlage vieler WAN-Architekturen und ist auch die Basis moderner IP-Routing-Verfahren, bei denen ebenfalls nur der nächste Zielknoten bekannt sein muss."
+  ],
+  "explanationJa": [
+    "WANにおけるNext-Hopフォワーディングは、パケットに含まれる宛先アドレスの解析に基づいて段階的に処理されます。",
+    "まず、スイッチは受信したパケットから宛先アドレスを抽出し、それをスイッチID（P）とコンピュータID（C）に分けます。",
+    "次に、スイッチは自身のID（Q）とPを比較します。もしP = Qであれば、パケットの宛先はローカルネットワーク上に存在することになります。",
+    "この場合、スイッチはCというIDを持つローカルのコンピュータに直接パケットを転送します。",
+    "P ≠ Qの場合は、宛先は別の拠点にあると判断し、パケットを次に接続された適切なパケットスイッチへと転送します。",
+    "この判断処理はシンプルかつ高速であり、ハードウェアや専用ソフトウェアによって効率的に実装されています。",
+    "この手法は、現代のWANやIPルーティングにおいても採用されており、「次にどこへ送るか」だけを判断すればよいという考え方の実装例です。"
+  ],
+  "originalSlideText": "Next-Hop Forwarding (2)\n\n❑ Gegeben: Angekommenes Paket an Switch Q\n❑ Durchführung: Next-Hop Forwarding\n❑ Verfahren:\n  Extrahieren der Zieladresse aus Paket\n  Teilen der Adresse in Packet Switch ID P und Computer ID C\n\n  if ( P == Q) /* lokales Ziel */\n     Weiterleitung an lokalen Computer C\n  else\n     Wähle Verbindung zu anderem Packet Switch und leite darüber weiter",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 29,
+  "questionDe": "(s38) Wie nutzt ein Switch eine Weiterleitungstabelle für Next-Hop Forwarding?",
+  "questionJa": "スイッチはNext-Hopフォワーディングのために転送テーブルをどのように利用していますか？",
+  "answerDe": [
+    "Switch nutzt den ersten Teil der Adresse (Switch-ID) zur Bestimmung des nächsten Hops",
+    "Verwendet eine Weiterleitungstabelle mit Einträgen für alle möglichen Packet Switches",
+    "Jeder Eintrag enthält den nächsten Hop zu einem bestimmten Ziel",
+    "Organisation als Array erlaubt schnelle Suche nach dem nächsten Hop"
+  ],
+  "answerJa": [
+    "スイッチは宛先アドレスの最初の部分（スイッチID）を使って次の転送先を決定する",
+    "すべてのパケットスイッチに対応するエントリを持つ転送テーブルを参照する",
+    "各エントリには、特定の宛先スイッチに対する次のホップが記録されている",
+    "テーブルは配列構造で実装されており、高速な検索が可能"
+  ],
+  "explanationDe": [
+    "Ein zentraler Bestandteil des Next-Hop Forwarding ist die Weiterleitungstabelle, die in jedem Packet Switch gespeichert ist. Diese Tabelle dient dazu, für jede mögliche Zieladresse den nächsten Knoten im Netzwerk anzugeben.",
+    "Der Switch analysiert den ersten Teil der Zieladresse – die Switch-ID – und verwendet diese als Schlüssel, um in der Tabelle nachzuschlagen.",
+    "Für jede Switch-ID im WAN existiert ein Eintrag in dieser Tabelle. Der Eintrag gibt an, über welches Ausgangsinterface (Port) das Paket weitergeleitet werden soll, damit es näher an sein Ziel gelangt.",
+    "Durch diese Methode muss der Switch keine vollständige Route berechnen, sondern nur einen einzigen Vergleich durchführen – das reduziert den Rechenaufwand und beschleunigt die Weiterleitung.",
+    "Die Tabelle ist häufig als Array organisiert, was bedeutet, dass die Suche nach dem nächsten Hop mit konstanter Zeitkomplexität (O(1)) durchgeführt werden kann.",
+    "Dies ist besonders wichtig in großen Netzwerken, in denen tausende von Paketen pro Sekunde verarbeitet werden müssen.",
+    "Die Weiterleitungstabelle ist somit das Herzstück jeder WAN-Weiterleitung und ermöglicht einfache, schnelle und skalierbare Paketverarbeitung."
+  ],
+  "explanationJa": [
+    "Next-Hopフォワーディングにおいて最も重要な要素の1つが、スイッチに保存されている「転送テーブル（Forwarding Table）」です。このテーブルは、各宛先スイッチに対して、どのリンク（出力ポート）を使って次にパケットを送るかを記録しています。",
+    "スイッチはパケットの宛先アドレスの先頭部分であるスイッチIDを抽出し、それをもとにテーブルを参照します。",
+    "WAN内のすべてのスイッチIDに対応するエントリがこのテーブル内にあり、各エントリは、対応する宛先に向かうための「次のホップ（Next Hop）」を指定しています。",
+    "これにより、スイッチはネットワーク全体の経路情報を持たなくても、即座に次の転送先を決定できます。処理が軽く、高速なパケット処理が可能になります。",
+    "多くの場合、このテーブルは配列（Array）として実装されており、一定時間内に目的のホップ情報を取得できるため、非常に効率的です。",
+    "特に、大量のトラフィックが流れるWANでは、数千〜数万のパケットを毎秒処理する必要があり、このような高速アクセス構造が不可欠です。",
+    "この転送テーブルは、WANにおけるすべてのルーティング処理の中核をなしており、スケーラブルで安定したネットワーク運用を実現する要です。"
+  ],
+  "originalSlideText": "Next-Hop Forwarding (3)\n\n❑ Switch nutzt ersten Teil der Adresse um nächsten Hop zu Ziel zu berechnen\n❑ Verwendet Weiterleitungstabelle mit allen möglichen Packet Switches und nächsten Hop für jeden\n❑ Schnelle Berechnung: Ein Eintrag pro Switch statt Computer, Organisation der Tabelle als Array statt komplette Suche",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 30,
+  "questionDe": "(s39) Warum ist Next-Hop Forwarding unabhängig von Quelle und Pfad?",
+  "questionJa": "Next-Hopフォワーディングが送信元や通過経路に依存しないのはなぜですか？",
+  "answerDe": [
+    "Next-Hop hängt nur vom Ziel ab",
+    "Quelle oder bisheriger Pfad spielen keine Rolle",
+    "Nur Zieladresse wird zur Weiterleitung benötigt",
+    "Gleiche Weiterleitungstabelle reicht für alle Pakete",
+    "Pakete von verschiedenen Quellen nutzen denselben Mechanismus"
+  ],
+  "answerJa": [
+    "Next-Hopは宛先だけに基づいて決定される",
+    "送信元やこれまでの経路は影響しない",
+    "転送には宛先アドレスのみを参照すればよい",
+    "すべてのパケットに対して同一の転送テーブルで対応できる",
+    "異なる送信元からのパケットも同じ方式で処理される"
+  ],
+  "explanationDe": [
+    "Next-Hop Forwarding basiert ausschließlich auf dem Ziel eines Pakets. Der Switch bestimmt den nächsten Weiterleitungsschritt allein anhand der Zieladresse – insbesondere der Switch-ID – ohne Berücksichtigung der Quelle oder des bereits zurückgelegten Pfads.",
+    "Das bedeutet: Ein und dasselbe Zielpaket wird unabhängig davon, von welchem Ursprungsort es stammt oder welchen Weg es bisher genommen hat, auf exakt dieselbe Weise weitergeleitet.",
+    "Dieser Mechanismus vereinfacht die Weiterleitung massiv, da keine Pfadverfolgung oder Zustandsinformationen gespeichert werden müssen. Jeder Switch benötigt nur eine Weiterleitungstabelle, in der pro Ziel-Switch ein Eintrag enthalten ist.",
+    "Diese Unabhängigkeit macht Next-Hop Forwarding besonders effizient, skalierbar und leicht implementierbar in Hardware und Software.",
+    "Zudem ist dieser Ansatz fehlertolerant: Selbst wenn sich die Netzwerktopologie ändert, können neue Pakete mit aktualisierten Next-Hop-Informationen sofort korrekt weitergeleitet werden, ohne auf die Historie früherer Pakete angewiesen zu sein.",
+    "Auch Sicherheits- und Leistungsanalysen profitieren davon, weil Entscheidungen lokal und deterministisch getroffen werden können – basierend nur auf dem Ziel.",
+    "Dieses Konzept entspricht auch dem Prinzip moderner IP-Routing-Protokolle, bei denen jede Routing-Entscheidung unabhängig von der Paketquelle getroffen wird."
+  ],
+  "explanationJa": [
+    "Next-Hopフォワーディングは、パケットの「宛先」のみに基づいて処理を行います。スイッチは、宛先アドレス（とくにスイッチID）をもとに次の転送先を決定し、送信元やそれまでの経路には一切依存しません。",
+    "つまり、同じ宛先を持つパケットであれば、どこから来たものであっても同じルールで同じ方向へ転送されます。",
+    "この仕組みにより、各スイッチはパケットの履歴や状態を記憶する必要がなく、非常にシンプルかつ高速に動作します。転送テーブルも宛先ごとに1つのエントリがあれば十分です。",
+    "送信元や過去の経路を考慮しないという性質は、Next-Hop方式の拡張性とハードウェア実装の容易さにもつながります。",
+    "また、ネットワーク構成が変化した場合でも、新しいNext-Hop情報を使って即座に正しい転送を行うことができ、柔軟性が高いという利点があります。",
+    "このように、全パケットに対して決定が一貫しており、ネットワーク設計やセキュリティ管理にも好都合です。",
+    "この考え方は、IPルーティングでも採用されており、送信元に関係なく「宛先だけで判断する」という原則と一致しています。"
+  ],
+  "originalSlideText": "Quellenunabhängigkeit\n\n❑ Next-Hop Forwarding unabhängig von Quelle oder genommenen Pfad des Paket\n❑ Next-Hop hängt nur von dem Ziel ab\n❑ Dadurch ist Weiterleitung kompakt und effizient\n Nur Zieladresse muss extrahiert werden\n Eine Tabelle reicht, da alle Pakete selben Pfad folgen\n Pakete von direkt verbundenen Computern sowie anderen Switches nutzen selben Mechanismus",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 31,
+  "questionDe": "(s40) Welche Ziele verfolgt dynamisches Routing im WAN?",
+  "questionJa": "WANにおける動的ルーティングはどのような目的で行われますか？",
+  "answerDe": [
+    "Sicherstellung universeller Kommunikation: gültiger Next-Hop zu jeder Zieladresse",
+    "Optimale Route: Next-Hop muss kürzesten Pfad zum Ziel darstellen",
+    "Routenanpassung bei Netzwerkfehlern",
+    "Routing-Software erkennt Fehler und aktualisiert Weiterleitungstabelle automatisch"
+  ],
+  "answerJa": [
+    "全ての宛先に対して有効なNext-Hopを用意し、通信を可能にすること",
+    "Next-Hopが宛先への最短経路となるように設定すること",
+    "ネットワーク障害が発生した際にルートを変更できるようにすること",
+    "ルーティングソフトウェアが障害を検出し、転送テーブルを自動で更新すること"
+  ],
+  "explanationDe": [
+    "Dynamisches Routing ist ein Mechanismus, bei dem die Weiterleitungstabellen in einem WAN automatisch und laufend an die aktuelle Netzwerksituation angepasst werden.",
+    "Ein zentrales Ziel dabei ist es, für jede denkbare Zieladresse einen gültigen Next-Hop zu kennen, um universelle Erreichbarkeit zu garantieren – unabhängig davon, wie sich das Netzwerk verändert.",
+    "Gleichzeitig strebt dynamisches Routing die optimale Nutzung des Netzwerks an. Das bedeutet, dass Pakete den kürzesten oder schnellsten verfügbaren Pfad zum Ziel nehmen sollen – abhängig von aktuellen Kostenmetriken.",
+    "Ein weiteres Ziel ist die Reaktionsfähigkeit bei Fehlern: Wenn z. B. ein Link oder ein Knoten ausfällt, erkennt die Routing-Software diesen Fehler und berechnet neue Routen, um die Weiterleitung aufrechtzuerhalten.",
+    "Diese Fehlererkennung erfolgt durch periodische Tests oder durch das Ausbleiben erwarteter Nachrichten, woraufhin die Routing-Tabellen automatisch angepasst werden.",
+    "Dadurch bleibt das Netzwerk auch bei Störungen funktionsfähig und kann sich flexibel an veränderte Topologien anpassen – das ist besonders wichtig für große, komplexe WANs.",
+    "Dynamisches Routing ist damit Grundlage für resiliente, selbstheilende Netzwerke und unterstützt viele moderne Protokolle wie OSPF, IS-IS oder BGP."
+  ],
+  "explanationJa": [
+    "動的ルーティングとは、WAN内のルーティングテーブルをネットワークの状態に応じて自動的に更新する仕組みです。",
+    "その目的のひとつは、ネットワーク上のすべての宛先に対して有効なNext-Hop（次の中継先）を持つことです。これにより、ネットワーク構成が変わっても通信が継続できます。",
+    "また、パケットが宛先まで可能な限り最短の経路を通れるようにすることも重要な目的です。現在の通信速度やリンクコストなどを考慮して、最も効率的なルートが選ばれます。",
+    "さらに、リンクやノード（スイッチ）が故障した場合でも、自動的に新しいルートが再計算され、通信が継続されるようにする必要があります。",
+    "ルーティングソフトウェアは、定期的な確認や通信の途絶といった手段で障害を検出し、それに応じて転送テーブルを動的に変更します。",
+    "このような機能により、WANは柔軟かつ信頼性の高い通信環境を維持でき、冗長性のある大規模ネットワークでも安定した運用が可能になります。",
+    "OSPF、IS-IS、BGPといった多くのルーティングプロトコルは、この動的ルーティングの仕組みに基づいて動作しています。"
+  ],
+  "originalSlideText": "Dynamisches Routing im WAN (1)\n\n❑ Werte in Weiterleitungstabelle garantieren:\n Universelle Kommunikation: Gültige Next-Hop Route zu jeder möglichen Zieladresse\n Optimale Route: Next-Hop für Ziel muss zu kürzestem Pfad zu Ziel führen\n❑ Änderung des Pfades falls Netzwerkfehler vorhanden ist\n❑ Routing Software auf Packet Switch testet System auf Fehler und konfiguriert Weiterleitungstabelle automatisch",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 32,
+  "questionDe": "(s41) Wie funktioniert die Pfadberechnung beim dynamischen Routing im WAN?",
+  "questionJa": "WANにおける動的ルーティングでは、どのように経路が計算されるのですか？",
+  "answerDe": [
+    "WAN wird als Graph dargestellt",
+    "Knoten sind Packet Switches, Kanten sind Verbindungen",
+    "Kürzeste Pfade werden mithilfe von Graphenalgorithmen berechnet",
+    "Effiziente Algorithmen aus der Graphentheorie kommen zum Einsatz"
+  ],
+  "answerJa": [
+    "WANはグラフとして表現される",
+    "ノード（頂点）はパケットスイッチ、エッジ（辺）は接続線を表す",
+    "最短経路はグラフアルゴリズムによって計算される",
+    "グラフ理論に基づいた効率的なアルゴリズムが使用される"
+  ],
+  "explanationDe": [
+    "Im dynamischen Routing wird die Netzwerkstruktur eines WANs als mathematischer Graph modelliert. Dabei entsprechen die Packet Switches den Knoten (Vertices) und die Verbindungen zwischen ihnen den Kanten (Edges) im Graphen.",
+    "Jede Kante kann mit einem Gewicht versehen sein, das zum Beispiel die Übertragungszeit, Bandbreite oder Kosten der Verbindung widerspiegelt.",
+    "Um den kürzesten Pfad zwischen zwei Standorten zu berechnen, werden bewährte Algorithmen aus der Graphentheorie eingesetzt. Ein bekanntes Beispiel ist der Dijkstra-Algorithmus.",
+    "Diese Algorithmen analysieren die gesamte Topologie und berechnen für jedes Ziel den optimalen Weg vom jeweiligen Ausgangspunkt aus.",
+    "Das Ergebnis dieser Berechnungen ist eine Weiterleitungstabelle mit Einträgen für alle Ziel-Switches, wobei jeder Eintrag den nächsten Hop auf dem kürzesten Pfad enthält.",
+    "Die Pfadberechnung erfolgt regelmäßig oder bei Veränderungen im Netzwerk, etwa wenn eine Verbindung ausfällt oder ein neuer Knoten hinzukommt.",
+    "Diese Methode stellt sicher, dass alle Switches im Netzwerk über aktuelle und optimierte Informationen zur Paketweiterleitung verfügen – und das vollständig automatisch."
+  ],
+  "explanationJa": [
+    "動的ルーティングでは、WAN全体の構造を数学的なグラフとして表現します。このグラフでは、ノード（頂点）はパケットスイッチを、エッジ（辺）はそれらを結ぶ物理的または論理的な接続を意味します。",
+    "各エッジには重み（コスト）が設定されており、それは伝送時間、回線容量、使用コストなどを表すことがあります。",
+    "2つの拠点間で最短経路を求めるには、グラフ理論のアルゴリズム（たとえばダイクストラ法など）を用いて、効率よく経路を計算します。",
+    "これらのアルゴリズムはネットワーク全体を把握し、出発点から各宛先に対して最短のパスを割り出します。",
+    "その結果として生成されるのが、Next-Hop情報を含む転送テーブルであり、各宛先に対してどのリンクを使うかが記録されます。",
+    "この経路計算は、定期的あるいはネットワークの状態が変化したとき（リンク障害や新しい接続の追加など）に自動で行われます。",
+    "このようにして、ネットワーク全体が常に最新かつ最適なルーティング情報を持ち、安定した通信が維持されます。"
+  ],
+  "originalSlideText": "Dynamisches Routing im WAN (2)\n\n❑ Darstellung des WAN als Graph und Berechnung kürzester Pfade\n Knoten sind Packet Switches, Kanten sind Verbindungen\n❑ Effiziente Algorithmen in Graphentheorie bereits vorhanden",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 33,
+  "questionDe": "(s42) Was ist eine Default Route im WAN und wozu wird sie verwendet?",
+  "questionJa": "WANにおけるデフォルトルートとは何ですか？どのような目的で使われますか？",
+  "answerDe": [
+    "Default Route ist ein optionaler Eintrag in der Weiterleitungstabelle",
+    "Wird verwendet, wenn kein spezifischer Eintrag für Zieladresse existiert",
+    "Spart Speicherplatz bei vielen identischen Weiterleitungswegen",
+    "Nur eine Default Route pro Tabelle erlaubt",
+    "Erlaubt einfache Weiterleitung in kleinen oder asymmetrischen Netzwerken"
+  ],
+  "answerJa": [
+    "デフォルトルートは転送テーブル内のオプションのエントリである",
+    "宛先に対する個別エントリがない場合に使用される",
+    "多数の宛先が同じ経路を通る場合、記述を簡素化できる",
+    "1つの転送テーブルに設定できるデフォルトルートは1つだけ",
+    "小規模または非対称なネットワークでの簡易ルーティングに有効"
+  ],
+  "explanationDe": [
+    "Eine Default Route ist ein Mechanismus im Routing, bei dem ein Standardpfad festgelegt wird, über den Pakete weitergeleitet werden, wenn für deren Zieladresse kein spezifischer Eintrag in der Weiterleitungstabelle vorhanden ist.",
+    "In großen Netzwerken mit vielen möglichen Zielen kann es ineffizient sein, für jedes Ziel einen eigenen Eintrag zu speichern. Stattdessen verweist die Default Route auf einen gemeinsamen Ausgang, der als ‚letzte Möglichkeit‘ dient.",
+    "Beispielsweise: Wenn ein kleiner Switch nur eine einzige Verbindung zu einem zentralen Backbone-Switch hat, kann er alle nicht bekannten Zieladressen über diese Verbindung weiterleiten.",
+    "Diese Lösung spart Speicherplatz in der Tabelle und vereinfacht die Verwaltung, insbesondere in hierarchisch organisierten Netzwerken oder am Rand des WANs.",
+    "Es darf pro Weiterleitungstabelle nur eine Default Route existieren, da sonst unklare Weiterleitungsentscheidungen entstehen würden.",
+    "In Kombination mit dynamischem Routing kann eine Default Route helfen, auch temporär unbekannte Ziele zu erreichen, bis spezifischere Routen erlernt werden.",
+    "Sie stellt somit eine nützliche Fallback-Option dar und erhöht die Robustheit der Kommunikation im WAN."
+  ],
+  "explanationJa": [
+    "デフォルトルートは、WANのルーティングにおいて、特定の宛先に対する個別エントリが存在しない場合に使用される「標準的な転送先」を指します。",
+    "宛先ごとに詳細なNext-Hop情報を保持するのが理想ですが、大規模ネットワークでは膨大な数のエントリが必要になり、管理やリソース面で非効率になります。",
+    "そのため、同じ経路で送信できる多くの宛先に対しては、個別エントリを省略して、共通の転送先（デフォルトルート）を指定することで、転送テーブルを簡素化できます。",
+    "たとえば、ローカルのスイッチがWANの中心部に1本のリンクしか持っていない場合、すべての不明な宛先をそのリンクに送るという設定が可能です。",
+    "この仕組みにより、ネットワーク設計が柔軟になり、特に構造が単純な端末ノードや非対称構成の拠点で有効に機能します。",
+    "ただし、1つの転送テーブルには1つのデフォルトルートしか設定できず、複数存在すると正しく動作しません。",
+    "動的ルーティングと併用することで、最初はデフォルトルートを利用し、後により最適な経路が自動的に学習されて置き換えられるという運用も可能です。"
+  ],
+  "originalSlideText": "Default Route\n\n❑ Switch 1 in letztem Beispiel hat nur eine Verbindung → Next-Hop ist immer Switch 3\n❑ In großem WAN kann es hunderte Duplikate geben\n❑ Default Route:\n Optionaler Eintrag in Weiterleitungstabelle ersetzt lange Listen mit selben Eintrag\n Nur eine Default Route pro Tabelle ist erlaubt\n Genutzt falls Routing Software keinen passenden Eintrag findet",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 34,
+  "questionDe": "(s43) Was sind die Unterschiede zwischen statischem und dynamischem Routing im WAN?",
+  "questionJa": "WANにおける静的ルーティングと動的ルーティングの違いは何ですか？",
+  "answerDe": [
+    "Statisches Routing: Routen werden beim Systemstart berechnet und installiert",
+    "Statische Routen ändern sich nicht automatisch",
+    "Statisches Routing ist einfach und verursacht wenig Overhead",
+    "Dynamisches Routing: Routen werden initial beim Boot berechnet",
+    "Dynamische Routing-Tabellen passen sich automatisch bei Änderungen an",
+    "Dynamisches Routing ist in den meisten WANs üblich"
+  ],
+  "answerJa": [
+    "静的ルーティング：ルートはシステム起動時に計算・設定される",
+    "静的ルートは自動的には変更されない",
+    "静的ルーティングは単純でオーバーヘッドが少ない",
+    "動的ルーティング：起動時に初期テーブルを作成する",
+    "ネットワーク変化に応じて自動でテーブルが更新される",
+    "動的ルーティングは多くのWANで一般的に使用されている"
+  ],
+  "explanationDe": [
+    "Statisches Routing und dynamisches Routing sind zwei grundlegende Ansätze zur Erstellung und Pflege von Weiterleitungstabellen in WANs.",
+    "Beim statischen Routing werden alle Routen manuell oder durch ein Setup-Programm während des Systemstarts eingerichtet. Diese Routen bleiben unverändert, bis sie manuell geändert werden – selbst wenn sich die Netzwerktopologie ändert.",
+    "Dies macht statisches Routing besonders geeignet für kleine, stabile Netzwerke mit fester Struktur. Es verursacht wenig Rechenlast und ist einfach zu implementieren.",
+    "Der Nachteil liegt in der fehlenden Flexibilität: Fällt z. B. ein Link aus, kann der Datenverkehr nicht automatisch umgeleitet werden.",
+    "Dynamisches Routing dagegen verwendet spezielle Software, um beim Systemstart eine initiale Routing-Tabelle zu erstellen. Diese Software überwacht anschließend das Netzwerk kontinuierlich und passt die Routen bei Bedarf an.",
+    "Dynamisches Routing reagiert auf Netzwerkveränderungen – etwa neue Verbindungen oder Ausfälle – und sorgt dafür, dass immer gültige und möglichst optimale Routen zur Verfügung stehen.",
+    "In großen und dynamischen WANs ist diese Methode unverzichtbar, da manuelle Pflege aller möglichen Routen nicht praktikabel ist."
+  ],
+  "explanationJa": [
+    "静的ルーティングと動的ルーティングは、WANにおけるルート情報の管理手法として基本的な2つのアプローチです。",
+    "静的ルーティングでは、ルート情報はシステムの起動時に手動またはスクリプトで設定され、その後はネットワーク構成が変わっても自動的には更新されません。",
+    "このため、小規模で構成が固定されているネットワークに向いており、計算負荷が少なく、実装も簡単です。",
+    "ただし、ネットワークに障害や変更があった場合には手動で修正が必要となるため、柔軟性に欠けます。",
+    "一方、動的ルーティングでは専用のソフトウェアが起動時にルーティングテーブルを生成し、その後もネットワークの状態を監視して必要に応じてルートを更新します。",
+    "これにより、リンクの断線や新しいノードの追加といったネットワークの変化に自動で対応できます。",
+    "大規模かつ変化の多いWAN環境では、静的ルーティングでは対応しきれないため、動的ルーティングが一般的に用いられています。"
+  ],
+  "originalSlideText": "Berechnung Weiterleitungstabelle\n\n❑ Statisches Routing:\n Programm berechnet und installiert Routen bei Booten des Switch\n Routen ändern sich nicht\n Einfach, wenig Overhead\n Nicht sehr flexibel\n\n❑ Dynamisches Routing:\n Programm erstellt initiale Weiterleitungstabelle bei Booten\n Ändert Tabelle bei Änderungen im Netzwerk\n In meisten WANs genutzt",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 35,
+  "questionDe": "(s44) Was versteht man unter verteilter Routenberechnung im WAN?",
+  "questionJa": "WANにおける「分散ルーティング計算」とは何を意味するか？",
+  "answerDe": [
+    "Dijkstra Algorithmus berechnet kürzesten Pfad in Routen.",
+    "Verteilte Routenberechnung wird benötigt.",
+    "Jeder Packet Switch soll Weiterleitungstabelle lokal berechnen.",
+    "Zwei Ansätze: Link-State Routing (LSR) und Distance-Vector Routing (DVR)."
+  ],
+  "answerJa": [
+    "Dijkstraアルゴリズムにより経路の最短パスを計算する。",
+    "分散的なルート計算が必要とされる。",
+    "各パケットスイッチが自身の転送テーブルをローカルに計算する。",
+    "主な手法は Link-State Routing（LSR）と Distance-Vector Routing（DVR）の2つ。"
+  ],
+  "explanationDe": [
+    "Unter verteilter Routenberechnung versteht man ein Verfahren, bei dem nicht ein zentraler Rechner die Routen für das gesamte Netzwerk berechnet, sondern jeder einzelne Netzwerk-Knoten (Packet Switch) seine eigene Weiterleitungstabelle selbständig erstellt.",
+    "Dies ist wichtig in großen WANs (Wide Area Networks), wo eine zentrale Berechnung nicht skalierbar wäre und Ausfälle einzelner Komponenten zu schwerwiegenden Problemen führen könnten.",
+    "Im Rahmen dieser Technik gibt es zwei Hauptansätze: Link-State Routing (LSR) und Distance-Vector Routing (DVR).",
+    "Beim LSR senden Switches regelmäßig Informationen über ihren aktuellen Verbindungsstatus an alle anderen, und erstellen damit ein vollständiges Bild des Netzwerks.",
+    "Beim DVR hingegen tauschen Switches nur Informationen mit ihren direkten Nachbarn aus und berechnen die besten Pfade schrittweise.",
+    "Ein Beispiel aus der Praxis: In einem großen Unternehmensnetzwerk mit mehreren Standorten weltweit wäre es ineffizient, alle Routen zentral zu berechnen – stattdessen nutzen die Router verteilte Algorithmen.",
+    "Im Vergleich zu zentralem Routing bietet verteiltes Routing höhere Ausfallsicherheit, Anpassungsfähigkeit und Skalierbarkeit – allerdings auch höhere Komplexität in der Koordination."
+  ],
+  "explanationJa": [
+    "分散ルーティング計算とは、ネットワーク全体のルーティング（経路選択）を中央集権的に行うのではなく、各ノード（パケットスイッチ）が自律的に自分のルーティングテーブルを計算する仕組みです。",
+    "特に広域ネットワーク（WAN）では、全ルートを中央で計算すると処理が集中してしまい、拡張性や耐障害性に問題が出るため、分散型の手法が必要とされます。",
+    "この分散計算には主に2つの方式があります：リンクステートルーティング（LSR）とディスタンスベクトルルーティング（DVR）です。",
+    "LSRでは、各スイッチが自分の接続状態をネットワーク全体にブロードキャストし、それをもとにネットワーク全体の構造を再現し、最短経路を計算します。",
+    "DVRでは、各スイッチが直接接続された隣接ノードから情報を受け取り、経路とコストを段階的に更新していきます。",
+    "例えば、グローバル企業のネットワークでは、東京、ニューヨーク、ロンドンなどの各拠点が自分のルートを自律的に決定することで、通信の効率と安定性を確保できます。",
+    "中央集権型に比べ、分散ルーティングは拡張性や障害対応力に優れる一方で、各ノード間の調整や情報の整合性維持においては複雑さが増します。"
+  ],
+  "originalSlideText": "Verteilte Routenberechnung\n❑ Dijkstra Algorithmus berechnet kürzesten Pfad in Routen\n❑ Aber: Verteilte Routenberechnung benötigt\n❑ Jeder Packet Switch soll Weiterleitungstabelle lokal berechnen\n❑ Zwei Ansätze\n Link-State Routing (LSR) nutzt Dijkstra\n Distance-Vector Routing (DVR)",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 36,
+  "questionDe": "(s45) Wie funktioniert das Link-State Routing (LSR) Verfahren im WAN?",
+  "questionJa": "WANにおけるLink-State Routing（リンクステートルーティング）はどのように動作するのか？",
+  "answerDe": [
+    "Auch bekannt als Shortest Path First (SPF).",
+    "Switches senden periodisch Broadcast mit Status der Verbindungen.",
+    "Software erstellt Netzwerkgraph basierend auf empfangenen Nachrichten.",
+    "Dijkstra Algorithmus berechnet Weiterleitungstabelle.",
+    "Bei Ausfall sendet betroffener Switch neuen Status, andere passen Tabellen an."
+  ],
+  "answerJa": [
+    "別名Shortest Path First（SPF）としても知られる。",
+    "各スイッチは接続状態のステータスを定期的にブロードキャストする。",
+    "ソフトウェアが受け取った情報からネットワークのグラフを構築する。",
+    "Dijkstraアルゴリズムを用いて転送テーブルを計算する。",
+    "接続障害が発生すると、当該スイッチがその情報を送信し、他のスイッチがテーブルを更新する。"
+  ],
+  "explanationDe": [
+    "Link-State Routing (LSR), auch bekannt als Shortest Path First (SPF), ist ein dynamisches Routing-Verfahren, bei dem jeder Switch im Netzwerk eine vollständige Karte (Graph) des Netzwerks erstellt.",
+    "Dazu senden alle Switches regelmäßig Informationen über den Status ihrer direkten Verbindungen – sogenannte Link-State Advertisements – als Broadcast-Nachrichten.",
+    "Sobald ein Switch alle aktuellen Informationen gesammelt hat, nutzt er den Dijkstra Algorithmus, um die kürzesten Wege zu allen erreichbaren Zielen zu berechnen.",
+    "Der Vorteil von LSR liegt in seiner Genauigkeit und Stabilität – alle Switches verfügen über identische Netzwerkinformationen und berechnen unabhängig voneinander dieselben Routen.",
+    "Wenn eine Verbindung ausfällt, informiert der betroffene Switch sofort alle anderen über den neuen Zustand. Diese passen daraufhin ihre Routingtabellen an.",
+    "Ein Beispiel: In einem Netzwerk mit 5 Switches erkennt einer einen Link-Ausfall. Durch die Broadcast-Nachricht wird dies allen mitgeteilt und jeder kann den neuen optimalen Pfad berechnen.",
+    "Im Vergleich zu DVR ist LSR schneller in der Reaktion auf Änderungen, da alle Knoten gleichzeitig über Veränderungen informiert sind. Allerdings erzeugt LSR mehr Overhead durch den regelmäßigen Informationsaustausch."
+  ],
+  "explanationJa": [
+    "Link-State Routing（LSR）は、Shortest Path First（SPF）としても知られるルーティング手法で、各スイッチがネットワーク全体のトポロジー（構造）を自分で把握し、最適な経路を計算します。",
+    "そのために、各スイッチは自分が接続している他のスイッチとのリンク状態（リンクが有効かどうか、帯域など）を定期的にブロードキャストとしてネットワーク全体に通知します。",
+    "受信した情報をもとに、各スイッチはネットワークの完全なグラフ（ノードとリンクからなる図）を再構成します。",
+    "その上で、Dijkstraアルゴリズムを用いて、すべての目的地への最短経路を計算し、転送テーブル（ルーティングテーブル）を構築します。",
+    "例えば、ネットワークのどこかでリンク障害が発生すると、それを検出したスイッチが新しいリンク情報をブロードキャストし、他のスイッチはその情報を受け取ってテーブルを更新します。",
+    "このようにして、ネットワーク全体が同じ情報を共有し、同期した状態で最適なルートを保つことができます。",
+    "DVRと比較すると、LSRは変化に対する反応が速く正確ですが、全ノードが定期的に全体情報を送信するため、情報のやり取り（オーバーヘッド）がやや大きくなる傾向があります。"
+  ],
+  "originalSlideText": "Link-State Routing (LSR)\n❑ Auch: Shortest Path First (SPF)\n❑ Switches senden periodisch Broadcast mit Status der Verbindungen zwischen zwei Switches\n❑ Software in Switch sammelt Nachrichten und erstellt Graph des Netzwerk\n❑ Nutzt Dijkstra Algorithmus um Weiterleitungstabelle zu berechnen\n❑ Falls Verbindung ausfällt wird dies von beteiligtem Switch bemerkt und als Status verschickt → Switches passen Tabelle an",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 37,
+  "questionDe": "(s46) Was ist der Dijkstra Algorithmus und wie wird er im Routing eingesetzt?",
+  "questionJa": "Dijkstraアルゴリズムとは何であり、ルーティングではどのように使われるのか？",
+  "answerDe": [
+    "Gegeben ist ein Graph mit nichtnegativen Gewichten an jeder Kante und einer gewählten Quelle.",
+    "Ziel ist es, die kürzeste Distanz zwischen Quelle und jedem anderen Knoten zu berechnen.",
+    "Gleichzeitig wird die Weiterleitungstabelle berechnet.",
+    "Initialisierung: Menge S, Array D und Array R.",
+    "D[v] ist Gewicht von Quelle zu v, R[v] ist nächster Hop zu v."
+  ],
+  "answerJa": [
+    "各辺に非負の重みが設定されたグラフと出発点（ソース）が与えられる。",
+    "出発点から他のすべてのノードまでの最短距離を求めるのが目的。",
+    "同時に転送テーブル（ルーティングテーブル）を構築する。",
+    "初期化：ノードの集合S、距離を表す配列D、Next-Hopを示す配列Rを用意する。",
+    "D[v]はソースからノードvまでの距離、R[v]はノードvへの次の中継地点を表す。"
+  ],
+  "explanationDe": [
+    "Der Dijkstra Algorithmus ist ein bekannter Algorithmus zur Berechnung kürzester Pfade in einem gewichteten Graphen. Dabei dürfen die Kantengewichte nicht negativ sein.",
+    "Im Kontext von Netzwerken wird er genutzt, um Routingtabellen zu berechnen: Der Algorithmus bestimmt für jeden erreichbaren Knoten die minimale Entfernung und den besten nächsten Hop.",
+    "Zu Beginn wird die Menge S initialisiert, die alle Knoten außer dem Ausgangsknoten enthält. Gleichzeitig wird das Array D mit Startwerten für Distanzen gefüllt – direkt erreichbare Knoten erhalten das Kantengewicht, andere erhalten den Wert 'unendlich'.",
+    "Das Array R gibt an, über welchen nächsten Switch (Next-Hop) der jeweilige Zielknoten am besten erreicht wird.",
+    "Der Algorithmus arbeitet iterativ: In jeder Runde wird der Knoten mit dem kleinsten D-Wert gewählt und seine Nachbarn überprüft. Falls sich durch ihn ein kürzerer Pfad ergibt, werden D und R aktualisiert.",
+    "Ein Beispiel: In einem Netzwerk mit fünf Switches kann Dijkstra den optimalen Pfad von einem Startknoten zu allen anderen berechnen und gleichzeitig festlegen, wohin das Paket als nächstes weitergeleitet werden soll.",
+    "Im Vergleich zu anderen Algorithmen wie Bellman-Ford ist Dijkstra schneller, benötigt aber globale Netzwerkkenntnis – ideal für Link-State Routing wie in LSR."
+  ],
+  "explanationJa": [
+    "Dijkstraアルゴリズムは、重み付きグラフにおいて最短経路を計算するための有名な手法で、各辺の重みが負でないことが前提です。",
+    "ネットワークのルーティングにおいては、出発点（ルーター）から他のすべてのノード（他のルーター）までの最短経路を計算し、転送テーブル（ルーティングテーブル）を生成する目的で使われます。",
+    "まず初期化として、未確定ノードの集合S、出発点からの距離を示す配列D、次の中継地点（Next-Hop）を示す配列Rを用意します。",
+    "初期状態では、直接接続されているノードには対応する重みを設定し、それ以外には「無限大（Infinity）」の値を割り当てます。",
+    "その後、Dが最小のノードをSから選び、その隣接ノードとの接続を確認して、より短いパスがあればDとRを更新します。",
+    "例えば、あるネットワークでルーター1からルーター5へ送信したい場合、Dijkstraを使えば最も早く・効率的な経路と、それに必要な次の宛先（Next-Hop）を自動的に選出できます。",
+    "このアルゴリズムは、Bellman-Ford法などに比べて計算が高速で安定しており、Link-State Routing（LSR）との相性が良いため、多くのルーティングプロトコルで採用されています。"
+  ],
+  "originalSlideText": "Dijkstra Algorithmus (1)\n❑ Gegeben: Graph mit nichtnegativen Gewichten an jeder Kante und ausgewählte Quelle\n❑ Berechnen: Kürzeste Distanz zwischen Quelle und jedem anderen Knoten sowie Weiterleitungstabelle\n❑ Verfahren:\nInitialisiere: Menge S mit allen Knoten außer der Quelle\nInitialisiere: Array D mit D[v] als Gewicht der Kante zwischen Quelle und v bei Existenz, sonst Infinity\nInitialisiere: Einträge in R mit R[v] = v falls Kante zwischen Quelle und V, sonst 0",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 38,
+  "questionDe": "(s47) Wie funktioniert der Dijkstra Algorithmus im iterativen Schritt?",
+  "questionJa": "Dijkstraアルゴリズムの繰り返し処理（ループ処理）はどのように行われるのか？",
+  "answerDe": [
+    "Solange S nicht leer ist, wird der Knoten u mit minimalem D[u] aus S gewählt.",
+    "Falls D[u] = Infinity: Kein Pfad zu Knoten in S vorhanden → Abbruch.",
+    "u wird aus S entfernt.",
+    "Für jeden Nachbarn v von u: Falls v in S, berechne c = D[u] + Gewicht(u,v).",
+    "Wenn c < D[v], dann setze R[v] = R[u] und D[v] = c."
+  ],
+  "answerJa": [
+    "集合Sが空でない間、D[u]が最小のノードuを選ぶ。",
+    "もしD[u] = ∞ であれば、S内に到達不可能なノードがあるため処理を中止する。",
+    "uをSから削除する。",
+    "uの隣接ノードvに対して、vがSに含まれていればc = D[u] + 重み(u,v)を計算。",
+    "もしc < D[v]ならば、R[v] = R[u]、D[v] = cと更新する。"
+  ],
+  "explanationDe": [
+    "Im iterativen Teil des Dijkstra Algorithmus wird die Menge S, die alle noch nicht verarbeiteten Knoten enthält, schrittweise reduziert.",
+    "In jeder Iteration wird der Knoten u ausgewählt, für den aktuell die kürzeste bekannte Distanz D[u] existiert – also der 'nächste' Knoten.",
+    "Falls der Wert D[u] unendlich ist, bedeutet das, dass keine Verbindung zu u besteht – der Algorithmus kann dann abbrechen, da weitere Berechnungen keinen Sinn ergeben.",
+    "Danach werden alle Nachbarn v von u untersucht: Wenn v noch in S ist, wird geprüft, ob über u ein kürzerer Pfad zu v existiert.",
+    "Wenn ja, wird die neue kürzere Distanz c berechnet und in D[v] übernommen, und auch der Next-Hop in R[v] entsprechend angepasst.",
+    "Beispiel: Wenn Knoten A zu B eine Distanz 5 hat und A der aktuell gewählte u ist, dann prüft man, ob der Weg A→B kürzer ist als der bisher bekannte.",
+    "Diese Schleife garantiert, dass nach und nach für alle erreichbaren Knoten die kürzeste Strecke gefunden wird – ein zentrales Merkmal des Dijkstra Algorithmus im Gegensatz zu z. B. Flooding-Verfahren, die redundant arbeiten."
+  ],
+  "explanationJa": [
+    "Dijkstraアルゴリズムの繰り返し処理では、まだ処理していないノードの集合Sを少しずつ減らしながら、最短距離を確定していきます。",
+    "毎回、Dの中で最も値が小さいノードuを選び、そのノードの隣接ノードに対して距離の再評価（更新）を行います。",
+    "もしD[u]が無限大（Infinity）であれば、到達不能なノードが含まれているため、処理は中断されます。",
+    "次に、選ばれたノードuの隣にあるノードvそれぞれに対して、現在のD[u]に(u, v)の辺の重みを加えた新しい距離cを求めます。",
+    "もしこのcが、現在登録されているD[v]よりも小さければ、D[v]をcに更新し、R[v]（Next-Hop情報）もu経由に書き換えます。",
+    "例：ノードAからBへの距離が5、Cへの距離が10、Aが現在のuであれば、A→BやA→Cの距離がそれぞれ見直され、短ければ更新されます。",
+    "この反復処理を通じて、最終的にすべてのノードに対する最短距離と最適なNext-Hopが確定されるため、効率的かつ精密なルーティングテーブルの構築が可能となります。"
+  ],
+  "originalSlideText": "Dijkstra Algorithmus (2)\n❑ Verfahren (Fortsetzung)\nwhile (Menge S nicht leer):\nWähle Knoten u aus S, so dass D[u] minimal\nif (D[u] = Infinity):\nError: Kein Pfad zu Knoten in S, Exit\nLösche u aus Menge S\nfor each v mit (u,v) ist Kante:\nif (v in S enthalten):\nc = D[u] + weight(u,v)\nif (c < D[v]):\nR[v] = R[u]\nD[v] = c",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 39,
+  "questionDe": "(s48) Wie arbeitet der Dijkstra Algorithmus bei der Auswahl und Aktualisierung der Knoten?",
+  "questionJa": "Dijkstraアルゴリズムはノードの選択と更新をどのように行うのか？",
+  "answerDe": [
+    "Der Algorithmus besitzt eine Menge S von Knoten, für die Distanzen und Next-Hops noch nicht berechnet sind.",
+    "Er wählt das Element u mit kürzester Entfernung.",
+    "Dann analysiert er Verbindungen zwischen u und seinen Nachbarn.",
+    "Findet er einen kürzeren Pfad, werden Distanz und Next-Hop aktualisiert."
+  ],
+  "answerJa": [
+    "アルゴリズムは、距離とNext-Hopが未確定のノード集合Sを持っている。",
+    "Sの中から、現在の最短距離D[u]が最小のノードuを選ぶ。",
+    "uの隣接ノードとの接続を分析する。",
+    "より短い経路が見つかれば、距離とNext-Hopを更新する。"
+  ],
+  "explanationDe": [
+    "Der Dijkstra Algorithmus verwendet in jeder Iteration eine Menge S, die alle Knoten enthält, für die noch keine endgültige kürzeste Entfernung bestimmt wurde.",
+    "Innerhalb dieser Menge wird jeweils der Knoten u mit dem aktuell kleinsten bekannten Wert D[u] gewählt – dieser gilt als der am nächsten gelegene Knoten zur Quelle.",
+    "Sobald u ausgewählt ist, prüft der Algorithmus alle direkten Verbindungen von u zu seinen Nachbarn v, die noch in S enthalten sind.",
+    "Falls der Weg von der Quelle über u zu v kürzer ist als der bisher bekannte Weg, wird sowohl die Entfernung D[v] als auch der Next-Hop R[v] entsprechend aktualisiert.",
+    "Dieser Prozess wiederholt sich, bis alle Knoten verarbeitet wurden, d.h. bis S leer ist.",
+    "Ein typisches Beispiel: Wenn der Knoten 4 mit D[4] = 3 gewählt wurde, analysiert man dessen Verbindungen z.B. zu Knoten 5. Wenn die direkte Verbindung ein Gewicht 2 hat, und D[5] bisher 10 war, wird D[5] nun zu 5 (3 + 2) und R[5] entsprechend angepasst.",
+    "Dieser Mechanismus sorgt dafür, dass am Ende garantiert für jeden Knoten der effizienteste Pfad von der Quelle aus berechnet wurde – ein Grund, warum Dijkstra so zuverlässig im Routing genutzt wird."
+  ],
+  "explanationJa": [
+    "Dijkstraアルゴリズムでは、まだ最短距離が確定していないノードを集合Sとして管理し、そこから順次処理していきます。",
+    "まず、Sの中から現在最も距離（D値）が小さいノードuを選びます。これは現時点で出発点から最も近いと判断されたノードです。",
+    "次に、そのノードuが持つすべての隣接ノード（まだSに含まれている）との接続を確認し、より短い経路があるかどうかを検討します。",
+    "もし、uを経由することで現在のD[v]よりも小さい距離cが見つかれば、その値でD[v]を更新し、次にパケットを送るべきノード（Next-Hop）R[v]も更新されます。",
+    "この処理を繰り返すことで、全てのノードに対して最も短く効率的な経路を見つけることができます。",
+    "例として、ノード4からノード5への経路を考えたとき、もしノード4までの距離が3で、4→5のリンクの重みが2なら、D[5]は3+2=5に更新されます（元が10などであれば）。",
+    "このようにして、最終的には全ノードに最適なNext-Hopが決まり、ルーティングに必要な情報が構築されるのです。"
+  ],
+  "originalSlideText": "Dijkstra Algorithmus (3)\n❑ Algorithmus besitzt Menge von Knoten S für die Distanzen und Next-Hops noch nicht berechnet sind\n❑ Betrachtet Element u in S mit kürzester Entfernung und analysiert Verbindungen zwischen u und seinen Nachbarn\n❑ Falls neuer, kürzerer Pfad von Quelle über u zu einem Knoten in S gefunden wird, aktualisiert es Distanz und Next-Hop",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 40,
+  "questionDe": "(s49) Welche Datenstrukturen verwendet der Dijkstra Algorithmus zur Umsetzung?",
+  "questionJa": "Dijkstraアルゴリズムの実装ではどのようなデータ構造が使われるのか？",
+  "answerDe": [
+    "D und R können Arrays sein, indexiert mit Knoten-ID.",
+    "Eintrag i in D entspricht Distanz von Quelle zu Knoten i.",
+    "Eintrag i in R entspricht Next-Hop für Knoten i.",
+    "Menge S kann als doppelt-verkettete Liste gespeichert werden.",
+    "Infinity kann als Summe aller Pfade plus 1 realisiert werden."
+  ],
+  "answerJa": [
+    "DとRはノードIDをインデックスとする配列として実装可能。",
+    "D[i]は出発点からノードiまでの距離を示す。",
+    "R[i]はノードiへのNext-Hop（次の中継点）を示す。",
+    "S（未処理ノードの集合）は二重連結リストとして保存できる。",
+    "Infinity（無限大）は全パス長の合計＋1で表現可能。"
+  ],
+  "explanationDe": [
+    "Für eine effiziente Implementierung des Dijkstra Algorithmus sind geeignete Datenstrukturen entscheidend.",
+    "Die Arrays D und R bilden das Rückgrat der Algorithmuslogik: D speichert die aktuell kürzeste bekannte Distanz von der Quelle zu jedem Knoten, während R den entsprechenden Next-Hop (also das erste Interface auf dem Pfad) für jedes Ziel festhält.",
+    "Da Knoten meist mit IDs nummeriert sind, können diese Arrays direkt mit der Knoten-ID indexiert werden, was schnellen Zugriff ermöglicht.",
+    "Die Menge S, die alle noch nicht verarbeiteten Knoten enthält, kann als doppelt-verkettete Liste implementiert werden. Das erlaubt das einfache Einfügen und Löschen von Knoten, was die Effizienz im Vergleich zu Arrays deutlich erhöht.",
+    "Der Begriff 'Infinity' muss im Programm durch einen sehr großen Wert ersetzt werden – üblich ist die Summe aller möglichen Kantengewichte plus 1, um sicherzustellen, dass jeder reale Pfadwert kleiner ist.",
+    "Diese Strukturierung erlaubt eine saubere und nachvollziehbare Implementierung des Algorithmus und macht ihn auch für komplexe Netzwerke praxistauglich.",
+    "In modernen Netzwerkprotokollen wie OSPF (Open Shortest Path First), das auf LSR basiert, wird genau dieser Algorithmus mit ähnlicher Datenstruktur verwendet."
+  ],
+  "explanationJa": [
+    "Dijkstraアルゴリズムを効率的に実装するためには、適切なデータ構造の選択が非常に重要です。",
+    "まず、D配列は出発点から各ノードまでの最短距離を格納するために使われます。一方、R配列は各ノードへのNext-Hop、つまり最短経路上で最初に向かうノードを保持します。",
+    "これらの配列はノード番号（ID）をインデックスとして使うことで、定数時間でアクセス可能になります。",
+    "また、未処理のノード集合Sは動的な要素の追加・削除が発生するため、二重連結リストで管理することで高速な削除操作が可能になります。",
+    "無限大（Infinity）は数値として実装する必要があり、典型的には「全経路の合計距離＋1」などの十分に大きな値が使われます。",
+    "このようなデータ構造を用いることで、アルゴリズムは簡潔かつ効率よく動作し、大規模ネットワークにも適用可能になります。",
+    "実際、OSPF（Open Shortest Path First）といったルーティングプロトコルでは、このDijkstraアルゴリズムと同様の構造と手法が使われています。"
+  ],
+  "originalSlideText": "Dijkstra Algorithmus (4)\n❑ D und R können Arrays sein, indexiert mit Knoten-ID\n Eintrag i in D entspricht Distanz von Quelle zu Knoten i\n Eintrag i in R entspricht Next-Hop für Knoten i\n❑ Menge S kann als doppelt-verkettete Liste gespeichert werden\n Einfaches Suchen und Löschen\n❑ Infinity kann als Summe aller Pfade + 1 realisiert werden",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 41,
+  "questionDe": "(s50) Welche Gewichtungen können beim Dijkstra Algorithmus zur Pfadwahl verwendet werden?",
+  "questionJa": "Dijkstraアルゴリズムでは最短経路の計算にどのような重みを使うことができるか？",
+  "answerDe": [
+    "Dijkstra Algorithmus kann verschiedene Gewichtungen verwenden.",
+    "Beispiel: Anzahl an Switches im Pfad (jede Kante hat Gewicht 1).",
+    "Oder: Kapazität der Verbindungen.",
+    "Oder: Gewichte anhand von Policy, z. B. primärer und Backup-Pfad."
+  ],
+  "answerJa": [
+    "Dijkstraアルゴリズムでは複数の種類の重みが使用可能である。",
+    "例：経路上のスイッチ数（各リンクの重みを1とする）。",
+    "例：リンクの通信容量（帯域幅）を重みとする。",
+    "例：ネットワーク方針（ポリシー）に基づいた重み設定。例えば、主経路と予備経路。"
+  ],
+  "explanationDe": [
+    "Beim Dijkstra Algorithmus ist das Gewicht einer Verbindung entscheidend für die Auswahl des kürzesten Pfads.",
+    "Je nachdem, welche Metrik man als Gewicht definiert, kann der Algorithmus ganz unterschiedliche Pfade auswählen.",
+    "Eine einfache Methode ist es, jeder Verbindung das Gewicht 1 zu geben. In diesem Fall wird der Pfad mit der geringsten Anzahl an Zwischenschritten (z. B. Switches) gewählt.",
+    "Eine weitere Möglichkeit ist, die Kapazität der Verbindung zu berücksichtigen. Hierbei bekommen leistungsfähige Leitungen ein kleineres Gewicht, sodass der Algorithmus diese bevorzugt.",
+    "Außerdem kann man administrative Policies verwenden: z. B. bestimmte Leitungen als bevorzugte (primäre) oder als Ausweichwege (Backup) kennzeichnen, indem man ihnen unterschiedliche Gewichte zuweist.",
+    "Diese Flexibilität erlaubt es Netzwerkbetreibern, die Pfadwahl gezielt zu steuern – sei es zur Lastverteilung, zur Fehlervermeidung oder zur Einhaltung von SLAs (Service Level Agreements).",
+    "In Routing-Protokollen wie OSPF ist es üblich, Gewichte über 'Kosten' manuell zu definieren, sodass z. B. eine langsamere oder weniger stabile Verbindung einen höheren Wert bekommt."
+  ],
+  "explanationJa": [
+    "Dijkstraアルゴリズムでは、リンクごとに設定される『重み』が最短経路の選定に大きく影響します。",
+    "どのような指標を『重み』として使うかによって、選ばれるルートは大きく変わります。",
+    "もっとも単純な方法としては、すべてのリンクの重みを1とする方法があります。これは『通過するノード数（スイッチ数）が最も少ない経路』を選ぶ形になります。",
+    "より現実的には、通信容量（帯域幅）を重みに反映させることがあります。この場合、より高速で安定したリンクに対して小さな重みを割り当て、優先的に選ばせます。",
+    "さらに、ネットワーク運用上のポリシーに基づいて重みを調整することも可能です。たとえば、通常時に使いたい主経路には低い重みを、障害時に使う予備経路には高い重みを設定します。",
+    "このような柔軟な重みの設定により、ネットワーク管理者は通信経路を戦略的にコントロールできます。",
+    "実際のルーティングプロトコル（例：OSPF）でも『コスト』という形で重みを手動または自動で調整し、経路の優先順位を管理する仕組みが用いられています。"
+  ],
+  "originalSlideText": "Gewichte im kürzesten Pfad\n❑ Dijkstra Algorithmus kann andere Gewichte als geographische Entfernung nutzen\n❑ Möglichkeiten\n Anzahl an Switches im Pfad (jede Kante hat Gewicht 1)\n Kapazität der Verbindungen\n Gewichte anhand Policy (Primärer Pfad, Backup Pfad)",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 42,
+  "questionDe": "(s51) Was ist Distance-Vector Routing (DVR) und wie funktioniert es?",
+  "questionJa": "Distance-Vector Routing（DVR）とは何であり、どのように動作するのか？",
+  "answerDe": [
+    "DVR verwendet Gewichte für Verbindungen.",
+    "Die Distanz zu einem Ziel ist die Summe der Gewichte entlang des Pfads.",
+    "Nachrichten mit Paaren (Ziel, Distanz) werden periodisch nur an Nachbarn gesendet.",
+    "Nach Empfang berechnet jeder Knoten, ob es einen kürzeren Pfad gibt."
+  ],
+  "answerJa": [
+    "DVRでは各リンクに重みが設定される。",
+    "目的地までの距離は、経路上のリンクの重みの合計として計算される。",
+    "（宛先, 距離）のペアを含むメッセージが定期的に近隣ノードにのみ送信される。",
+    "各ノードは受信した情報を元に、より短い経路があるかを判断し、あればテーブルを更新する。"
+  ],
+  "explanationDe": [
+    "Distance-Vector Routing (DVR) ist ein dezentrales Routingverfahren, bei dem jeder Knoten in einem Netzwerk nur mit seinen direkten Nachbarn Informationen über das gesamte Netzwerk austauscht.",
+    "Jeder Knoten speichert eine Liste von Zielen, den aktuell bekannten Distanzen zu diesen Zielen und den jeweiligen Next-Hops.",
+    "In regelmäßigen Abständen sendet der Knoten seine aktuelle Routingtabelle – als Liste von (Ziel, Distanz) Paaren – an alle direkten Nachbarn.",
+    "Nachbarn nutzen diese Informationen, um ihre eigene Tabelle zu aktualisieren, falls ein kürzerer Weg gefunden wird.",
+    "Ein zentraler Unterschied zu Link-State Routing (LSR) ist: Beim DVR kennen die Knoten nur ihre Nachbarn und nicht die gesamte Netzwerktopologie.",
+    "Ein praktisches Beispiel: Wenn ein Router von seinem Nachbarn erfährt, dass dieser einen Zielknoten in 5 Einheiten Entfernung erreichen kann, und die Verbindung zum Nachbarn kostet 2, dann kann der Router den neuen Weg mit Gesamtkosten 7 eintragen.",
+    "DVR ist einfacher zu implementieren als LSR, aber anfälliger für Schleifen und benötigt längere Konvergenzzeit nach Änderungen im Netzwerk."
+  ],
+  "explanationJa": [
+    "Distance-Vector Routing（DVR）は、各ノードが直接接続された近隣ノードとだけ通信を行い、ネットワーク全体の経路情報を少しずつ伝播させていく分散型のルーティング方式です。",
+    "各ノードは、あらゆる宛先までの現在の推定距離と、そこに到達するためのNext-Hop（次に送るべきノード）を一覧として保持しています。",
+    "一定時間ごとに、自分が持つルーティング情報（宛先と距離のペア）を直接接続された隣接ノードに送信します。",
+    "受け取ったノードは、それを使って自分のルーティングテーブルを更新します。もしより短い経路が見つかれば、その情報に基づいてNext-Hopと距離を修正します。",
+    "LSRとの主な違いは、LSRがネットワーク全体の構造を把握しているのに対し、DVRは近隣とのやり取りだけで全体の経路情報を学習していく点です。",
+    "例えば、ルーターAが、ルーターBが目的地Xまで5の距離で到達できると聞き、AとBの間のリンクが2なら、AはXまでの距離を7としてテーブルに登録します。",
+    "DVRは比較的シンプルな仕組みで実装可能ですが、収束までに時間がかかりやすく、ループ（同じパケットがぐるぐる回る現象）に陥るリスクもあります。"
+  ],
+  "originalSlideText": "DVR (1)\n❑ Distance-Vector Routing (DVR) \n❑ Ähnlichkeiten zu LSR\n Verbindung hat Gewicht, Distanz zu Ziel ist Summe der Gewichte\n Nachrichten werden periodisch ausgetauscht\n❑ DVR sendet komplette Liste der Ziele und derzeitige Kosten um jedes zu erreichen\n❑ Nachricht mit Paaren (Ziel, Distanz) wird nur an Nachbarn gesendet",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 43,
+  "questionDe": "(s52) Wie unterscheidet sich DVR von LSR in Bezug auf die Informationsverarbeitung und Konvergenz?",
+  "questionJa": "DVRはLSRと比べて、情報処理や収束の仕方においてどのような違いがあるか？",
+  "answerDe": [
+    "Nach Empfang einer Nachricht prüft der Switch, ob ein Nachbar einen kürzeren Pfad kennt.",
+    "Beispiel: Nachbar N bietet Pfad zu Ziel D mit Kosten 5, aktueller Pfad über Knoten K kostet 100.",
+    "Next-Hop wird auf N geändert, Gesamtkosten werden neu berechnet.",
+    "Bei LSR kennen alle Knoten das Problem gleichzeitig (verzögert durch Nachrichtenzustellung).",
+    "Bei DVR berechnet jeder Switch erst seine Tabelle und sendet dann weiter – Konvergenz dauert länger."
+  ],
+  "answerJa": [
+    "スイッチは、隣接ノードからのメッセージを受け取った際に、そのノードがより短い経路を知っているかどうかを確認する。",
+    "例：隣接ノードNが目的地Dまでコスト5の経路を持ち、現在のノードKを経由する経路がコスト100の場合。",
+    "Next-HopをNに変更し、総コストを再計算する。",
+    "LSRでは、すべてのノードがほぼ同時に問題（変化）を把握する（伝達の遅延はあるが）。",
+    "DVRでは、各スイッチが自分のテーブルを更新してから他のノードへ通知するため、収束に時間がかかる。"
+  ],
+  "explanationDe": [
+    "Ein wesentlicher Unterschied zwischen DVR (Distance-Vector Routing) und LSR (Link-State Routing) liegt im Umgang mit Informationen und der Geschwindigkeit, mit der sich das Netzwerk nach Änderungen stabilisiert (Konvergenz).",
+    "Bei DVR erhält ein Switch periodisch Routinginformationen von seinen direkten Nachbarn. Er prüft dann, ob über einen dieser Nachbarn ein kürzerer Weg zu einem Ziel existiert, als bisher bekannt war.",
+    "Wenn dies der Fall ist, wird die Route entsprechend angepasst: Der neue Next-Hop wird eingetragen, und die Distanz neu berechnet.",
+    "Im Gegensatz dazu erfassen bei LSR alle Knoten nahezu gleichzeitig eine Änderung im Netzwerk, da jeder Knoten eine vollständige Netzwerkkarte besitzt und Updates über Broadcasts erhält.",
+    "Dadurch reagieren LSR-basierte Systeme schneller und einheitlicher auf Netzwerkveränderungen.",
+    "Bei DVR hingegen verbreiten sich Änderungen schrittweise von Knoten zu Knoten, was zu einer langsameren Konvergenz führen kann – besonders in großen Netzwerken.",
+    "Beispiel: Ein Link fällt aus. In LSR reagieren alle Knoten fast gleichzeitig. In DVR kann es viele Runden dauern, bis alle Tabellen konsistent sind."
+  ],
+  "explanationJa": [
+    "DVR（ディスタンスベクトルルーティング）とLSR（リンクステートルーティング）の大きな違いの1つは、ネットワーク情報の処理方法と、ネットワーク変更後の安定（収束）までのスピードにあります。",
+    "DVRでは、各ノードは定期的に近隣ノードからルーティング情報を受け取り、それをもとに自身のテーブルを更新します。受け取った経路が現在の経路より短ければ、その情報を採用します。",
+    "この更新は、1つのノードから次のノードへと段階的に広がっていくため、ネットワーク全体の状態が一致するまでには時間がかかります。",
+    "一方LSRでは、各ノードがネットワーク全体の構造を把握しており、状態の変化（リンクダウンなど）はブロードキャストによって全ノードに即座に通知されます。",
+    "そのため、LSRではほぼ同時に全ノードがルート情報を更新でき、収束が速いという利点があります。",
+    "例えば、あるリンクが切断された場合、LSRなら全ノードがすぐにそれを知って新しいルートを計算できますが、DVRでは隣から隣へと情報が伝わるため、完全に反映されるまでに複数ステップかかります。",
+    "このように、DVRはシンプルで実装しやすい反面、大規模ネットワークでは反応速度や安定化の面でLSRに劣ることがあります。"
+  ],
+  "originalSlideText": "DVR (2)\n❑ Bei Empfang einer Nachricht von Nachbarn wird geprüft, ob Nachbar kürzeren Pfad kennt\n Nachbar N hat Pfad zu Ziel D mit Kosten 5, derzeitiger Pfad zu D über Knoten K hat aber Kosten 100\n Next Hop für D wird durch N ersetzt, Kosten sind 5 plus  die Kosten um N zu erreichen\n❑ In LSR kennen Knoten Problem zur gleichen Zeit (Nur Verzögerung bis Nachricht angekommen ist)\n❑ In DVR berechnet jeder Switch erst Tabelle und sendet dann weiter → Dauert länger bis alle Switches Problem kennen",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 44,
+  "questionDe": "(s53) Wie ist der DVR Algorithmus aufgebaut und welche Informationen benötigt er zur Berechnung?",
+  "questionJa": "DVRアルゴリズムはどのように構成されており、計算に必要な情報は何か？",
+  "answerDe": [
+    "Lokale Weiterleitungstabelle mit Distanz pro Eintrag.",
+    "Distanz zu jedem Nachbarn bekannt.",
+    "Eingehende Distance-Vector-Nachricht wird verarbeitet.",
+    "Ziel: Aktualisierung der eigenen Weiterleitungstabelle.",
+    "Initialisierung: Ein einziger Eintrag – Ziel ist lokaler Switch, Next-Hop leer, Distanz 0."
+  ],
+  "answerJa": [
+    "各エントリごとに距離を含むローカルの転送テーブルを持つ。",
+    "各隣接ノードまでの距離をあらかじめ知っている必要がある。",
+    "受信したDistance-Vectorメッセージ（宛先と距離のペア）を処理する。",
+    "目的は、自分の転送テーブルを更新することにある。",
+    "初期化時には、自分自身を宛先とするエントリのみを持つ（Next-Hopは空、距離は0）。"
+  ],
+  "explanationDe": [
+    "Der Distance-Vector Routing Algorithmus (DVR) beginnt mit einer einfachen Initialisierung und verwendet schrittweise Informationen von Nachbarn zur Pfadberechnung.",
+    "Zu Beginn besitzt jeder Switch nur eine minimale Weiterleitungstabelle mit einem einzigen Eintrag: sich selbst. Die Distanz zu sich selbst beträgt 0, ein Next-Hop ist nicht nötig.",
+    "Zusätzlich muss der Switch wissen, wie weit entfernt seine direkten Nachbarn sind – das heißt, die Kosten der direkten Verbindungen (z. B. Latenz, Bandbreite oder administrativ gesetzte Werte).",
+    "Wenn eine Nachricht von einem Nachbarn eintrifft, besteht diese aus einer Liste von (Ziel, Distanz)-Paaren.",
+    "Der Switch analysiert diese Nachricht und berechnet, ob ein neuer Pfad über diesen Nachbarn kürzer ist als bisher bekannte Wege.",
+    "Dabei werden die empfangene Distanz und die lokale Verbindungskosten zum Nachbarn addiert, um die Gesamtkosten zu ermitteln.",
+    "Dieses Verfahren bildet die Grundlage für die iterative Tabellenaktualisierung, die dann in der nächsten Folie weiter beschrieben wird – eine fundamentale Technik, die beispielsweise im RIP-Protokoll eingesetzt wird."
+  ],
+  "explanationJa": [
+    "Distance-Vector Routing（DVR）アルゴリズムは、自分の近隣ノードからの情報を元にルーティングテーブルを段階的に更新していく手法です。",
+    "まず初期状態では、自分自身へのエントリ（距離0、Next-Hopなし）だけを含む最小限のテーブルを用意します。",
+    "さらに、近隣ノード（直接接続されているノード）までのコスト（通信距離やレイテンシ、設定された重みなど）を事前に知っておく必要があります。",
+    "近隣ノードから届くDistance-Vectorメッセージには、複数の（宛先, 距離）ペアが含まれています。",
+    "これを受け取ると、受信した距離と自分からその隣接ノードへのコストを合算し、より安い経路であれば転送テーブルを更新します。",
+    "このようにして、自分の持つ経路情報を常に改善していき、最終的には最短経路の一覧を得ることができます。",
+    "この手法はRIP（Routing Information Protocol）などのルーティングプロトコルでも用いられており、シンプルながら基本となる技術です。"
+  ],
+  "originalSlideText": "DVR Algorithmus (1)\n❑ Gegeben: \n Lokale Weiterleitungstabelle mit Distanz pro Eintrag\n Distanz um Nachbarn zu erreichen\n Eingehende DV Nachricht\n❑ Berechnen: Aktualisierte Weiterleitungstabelle\n❑ Verfahren:\n Initialisiere: Weiterleitungstabelle mit einem einzigen Eintrag \n(Ziel ist lokaler Switch, Next-Hop leer, Distanz 0)",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 45,
+  "questionDe": "(s54) Wie läuft der Distance-Vector Routing Algorithmus im Betrieb ab?",
+  "questionJa": "Distance-Vector Routing アルゴリズムは実際の運用においてどのように処理を行うのか？",
+  "answerDe": [
+    "Wiederhole unendlich:",
+    "Warte auf Routing-Nachricht von Nachbarn, Sender ist N.",
+    "Für jeden Eintrag (Ziel V, Distanz D) in der Nachricht:",
+    "Berechne C = D + Gewicht der Verbindung zu N.",
+    "Wenn keine Route zu V existiert: Eintrag mit Next-Hop N, Distanz C.",
+    "Wenn Route mit Next-Hop N existiert: Ersetze Distanz mit C.",
+    "Wenn Route mit anderer Route existiert und C kleiner ist: Ersetze Next-Hop mit N und Distanz mit C."
+  ],
+  "answerJa": [
+    "無限に繰り返す:",
+    "近隣ノードNからルーティングメッセージを受信するのを待つ。",
+    "メッセージ内の各エントリ（宛先V, 距離D）について処理する:",
+    "C = D + 自ノードからNへの接続コストを計算する。",
+    "Vへのルートが存在しない場合: Next-HopをN、距離をCとして新規登録。",
+    "Next-HopがNの既存ルートがある場合: 距離をCで上書きする。",
+    "Next-Hopが他ノードだがCがより小さい場合: Next-HopをNに、距離をCに更新する。"
+  ],
+  "explanationDe": [
+    "Im laufenden Betrieb funktioniert der Distance-Vector Routing Algorithmus (DVR) als Endlosschleife, die ständig eingehende Routinginformationen verarbeitet.",
+    "Sobald eine Routingnachricht von einem Nachbarn (N) empfangen wird, analysiert der Router die Liste der enthaltenen (Ziel, Distanz)-Paare.",
+    "Für jeden dieser Einträge berechnet er die neue Gesamtdistanz C, indem er die empfangene Distanz D mit dem Gewicht (Kosten) der Verbindung zu N addiert.",
+    "Wenn für ein Ziel V noch kein Eintrag existiert, wird ein neuer Eintrag mit Next-Hop N und Distanz C angelegt.",
+    "Falls bereits eine Route mit N als Next-Hop existiert, wird die Distanz mit dem neuen Wert C überschrieben.",
+    "Existiert eine Route zu V mit anderem Next-Hop, aber C ist kleiner als die bisher bekannte Distanz, wird die Route ebenfalls angepasst.",
+    "Dieser Vorgang ermöglicht eine schrittweise, aber kontinuierliche Optimierung der Weiterleitungstabellen und macht DVR zu einem lernfähigen, dynamischen Routingverfahren."
+  ],
+  "explanationJa": [
+    "Distance-Vector Routing（DVR）アルゴリズムの運用時処理は、常にネットワークの変化に対応するために繰り返し動作します。",
+    "隣接ノード（N）からルーティング情報（宛先とその距離のリスト）が送られてくると、ルーターはそれを1つずつ処理します。",
+    "受信した宛先Vと距離Dに対し、自ノードからNへのリンクのコストを加算し、新しい総距離Cを計算します。",
+    "もしVへのルートがテーブルに存在しない場合、新しくNext-HopをN、距離をCとして登録します。",
+    "すでにNext-HopがNのルートが存在する場合は、距離をCで上書きして最新の情報に更新します。",
+    "もしVへのルートが他のノード経由で存在していても、新たに計算されたCが現在の距離よりも短ければ、Next-HopをNに、距離をCに置き換えます。",
+    "このようにして、DVRはネットワークの情報を少しずつ改善・更新しながら、効率的なルートを継続的に学習していく方式となっています。"
+  ],
+  "originalSlideText": "DVR Algorithmus (2)\nRepeat forever:\nWarte auf Routing Nachricht von Nachbarn, Sender ist N\nfor each (Eintrag in Nachricht):\nV ist Ziel in Eintrag, D ist Distanz\nBerechne C als D plus Gewicht der Verbindung über die Nachricht erhalten wurde\nif (Keine Route zu V vorhanden):\nEintrag in Weiterleitungstabelle für Ziel V mit Next-Hop N und Distanz C\nelse if ( Route existiert mit Next-Hop N):\nErsetze Distanz in Route durch C\nelse if ( Route existiert mit Distanz größer C):\nErsetze Next-Hop mit N und Distanz mit C",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 46,
+  "questionDe": "(s55) Welche typischen Routingprobleme können bei LSR und DVR auftreten?",
+  "questionJa": "LSRおよびDVRにおいて発生しうる代表的なルーティングの問題にはどのようなものがあるか？",
+  "answerDe": [
+    "Theoretisch berechnen LSR und DVR kürzeste Pfade korrekt und konvergieren.",
+    "Bei LSR können verlorene Nachrichten zu inkonsistenten Sichtweisen führen.",
+    "Bei DVR kann es zu Routing Loops kommen.",
+    "Beispiel: Zwei Switches glauben jeweils, der andere hätte den kürzesten Pfad.",
+    "Ergebnis: Paket wird hin- und hergeschickt (Endlosschleife)."
+  ],
+  "answerJa": [
+    "理論的には、LSRとDVRは正しく最短経路を計算し、収束することが期待されている。",
+    "しかしLSRでは、ネットワーク内でメッセージが失われると、ノード間で異なる視点（トポロジー）が生じることがある。",
+    "DVRでは、ルーティングループが発生する可能性がある。",
+    "例：2つのスイッチがお互いに相手の方が最短経路を知っていると誤認する。",
+    "結果として、パケットが往復し続け、ループ状態となる。"
+  ],
+  "explanationDe": [
+    "Obwohl sowohl Link-State Routing (LSR) als auch Distance-Vector Routing (DVR) darauf ausgelegt sind, korrekte und stabile Pfade zu berechnen, können unter realen Bedingungen Probleme auftreten.",
+    "Bei LSR kann ein Problem entstehen, wenn eine oder mehrere Statusnachrichten (Link-State Advertisements) auf dem Weg zwischen Knoten verloren gehen.",
+    "Dadurch kann es passieren, dass nicht alle Router dieselbe Sicht auf die Netzwerkstruktur haben, was zu widersprüchlichen Weiterleitungstabellen führt.",
+    "Ein anderes, besonders berüchtigtes Problem tritt bei DVR auf: das sogenannte Routing-Loop-Problem.",
+    "Es entsteht, wenn zwei oder mehr Switches irrtümlich glauben, dass der jeweils andere den besten Weg zum Ziel kennt.",
+    "Ein typisches Beispiel: Switch A leitet ein Paket an B weiter, weil er denkt, B kennt einen kürzeren Weg – aber B denkt das Gleiche über A. Das Ergebnis ist eine Endlosschleife, in der das Paket zwischen beiden hin- und herwandert.",
+    "Solche Loops belasten das Netzwerk stark und können zu Datenverlusten oder Störungen führen – insbesondere, wenn keine zusätzlichen Schutzmechanismen wie TTL (Time To Live) oder Loop Detection verwendet werden."
+  ],
+  "explanationJa": [
+    "LSR（リンクステートルーティング）やDVR（ディスタンスベクトルルーティング）は、理論的にはネットワーク内で最短経路を正確に計算し、やがて全体として安定（収束）する設計となっています。",
+    "しかし、現実の運用ではいくつかの問題が発生する可能性があります。",
+    "例えば、LSRではトポロジー情報（リンク状態）の通知メッセージが途中で失われると、あるルーターが他のルーターとは異なるネットワーク構造を認識することがあります。",
+    "これにより、各ノードでルーティングテーブルが食い違い、通信の不整合や誤ルーティングが発生する恐れがあります。",
+    "一方、DVRにおいては「ルーティングループ」と呼ばれる問題が典型的です。",
+    "たとえば、スイッチAとスイッチBがそれぞれ相手が目的地への最短経路を知っていると誤認し、お互いにパケットを送り合ってしまう状態が発生することがあります。",
+    "このようなループはネットワーク帯域を無駄に消費し、トラフィックが増大する原因となるため、現実的にはTTLの制限やループ検出アルゴリズムで対応する必要があります。"
+  ],
+  "originalSlideText": "Routingprobleme (1)\n❑ In Theorie berechnen LSR und DVR kürzeste Pfade korrekt und konvergieren\n❑ Gehen in LSR Nachrichten verloren, haben Switches andere Ansichten über kürzesten Pfad\n❑ In DVR kann Routing Loop entstehen\n Packet Switch denkt der jeweils andere Switch hat den kürzesten Pfad\n Paket wird immer hin- und hergeschickt",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 47,
+  "questionDe": "(s56) Was ist Routing-Backwash im DVR und wie wird es verhindert?",
+  "questionJa": "DVRにおける『ルーティング・バックウォッシュ』とは何であり、どのように防止されるか？",
+  "answerDe": [
+    "Backwash entsteht, wenn ein Switch eine Route entfernt und ein anderer Switch sie fälschlich wieder einführt.",
+    "Beispiel: Knoten 1 wird von Switch entfernt.",
+    "Ein anderer Switch lernt falsche Route zu Knoten 1 über diesen entfernten Pfad.",
+    "Gegenmaßnahmen: Split Horizon – Informationen werden nicht an Ursprung zurückgesendet.",
+    "Weitere Heuristiken: Begrenzung häufiger Änderungen, Schleifenvermeidung."
+  ],
+  "answerJa": [
+    "バックウォッシュは、あるスイッチがルートを削除したのに、他のスイッチが誤ってそのルートを復活させてしまう現象。",
+    "例：スイッチがノード1へのルートを削除した後、別のスイッチが古い情報を元にルートを復元してしまう。",
+    "この誤情報は、すでに使えない経路に基づいている。",
+    "対策として『スプリット・ホライズン（Split Horizon）』があり、情報を元の送信元には返送しない。",
+    "その他にも、短時間に多数の変更を防ぐヒューリスティック手法や、ループ回避の制限が使われる。"
+  ],
+  "explanationDe": [
+    "Ein spezielles Problem im Distance-Vector Routing ist das sogenannte Backwash-Phänomen, das auftritt, wenn veraltete oder gelöschte Routinginformationen wieder fälschlich ins System gelangen.",
+    "Stellen Sie sich vor: Ein Switch erkennt, dass eine Verbindung zu einem Ziel (z. B. Knoten 1) ausgefallen ist, und entfernt die Route.",
+    "Ein benachbarter Switch hat jedoch noch die alte Information gespeichert und meldet versehentlich, dass dieses Ziel erreichbar ist – über einen Pfad, der eigentlich nicht mehr existiert.",
+    "Das Resultat ist, dass der erste Switch die Route wieder in seine Tabelle aufnimmt – obwohl sie ungültig ist. Solche Rückwirkungen nennt man Routing-Backwash.",
+    "Zur Vermeidung nutzt man Methoden wie Split Horizon: Dabei wird eine Routinginformation nicht an den Ursprung zurückgesendet, von dem sie ursprünglich kam.",
+    "Weitere Maßnahmen beinhalten das Dämpfen (Verzögern) häufiger Änderungen und Schleifenvermeidung durch Regeln wie Poison Reverse oder Triggered Updates.",
+    "Diese Mechanismen sorgen dafür, dass sich Routinginformationen stabilisieren und nicht durch veraltete Daten gestört werden – besonders in dynamischen oder instabilen Netzwerken."
+  ],
+  "explanationJa": [
+    "DVR（Distance-Vector Routing）において特有の問題として『バックウォッシュ（Backwash）』があります。これは、すでに削除されたはずのルーティング情報が、他のノードから誤って再導入されてしまう現象です。",
+    "例えば、あるスイッチがノード1への経路を削除したとします。その直後に、他のスイッチが過去の情報を基に『ノード1へ到達可能』と誤って判断し、その情報を広めてしまうと、削除されたはずのルートが再びルーティングテーブルに追加されてしまいます。",
+    "このような誤認識によるルートの復元が繰り返されると、ネットワーク内で誤ったルート情報が広まり、ループや通信エラーの原因になります。",
+    "この現象を防ぐために使われる代表的な対策が『スプリット・ホライズン（Split Horizon）』です。これは、受信した経路情報を元の送信元には返送しないというルールです。",
+    "さらに、ネットワーク内で短時間に多数のルーティング変更が発生するのを防ぐためのヒューリスティック（経験則）や、Poison Reverse（逆方向への経路の無効化）といった追加手法も併用されます。",
+    "こうした対策により、DVRのルーティング情報が正確で安定した状態を保ちやすくなります。特に、変化の激しいネットワーク環境では重要です。"
+  ],
+  "originalSlideText": "Routingprobleme (2)\n❑ Backwash in DVR\n Switch sendet Nachricht: Knoten 1 mit Kosten 3 erreichbar\n Bei Ausfall der Verbindung entfernt er diesen Eintrag\n Anderer Switch sendet: Knoten 1 über Kosten 4 erreichbar (basiert auf der falschen Information)\n❑ In Praxis: Beschränkungen und Heuristiken um Schleifen zu vermeiden\n Switch Horizon in DVR: Information wird nicht an Ursprung der Nachricht gesendet\n Verhinderung vieler Änderungen in kurzer Zeit\n❑ Dennoch: Probleme in großen Netzwerken, falls oft viele Links ausfallen oder aktiv werden",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 48,
+  "questionDe": "(s57) Welche zentralen Konzepte zu WAN und Routing fasst die Vorlesung zusammen?",
+  "questionJa": "この講義ではWANおよびルーティングに関してどのような重要な概念がまとめられているか？",
+  "answerDe": [
+    "WAN kann genutzt werden, um Netzwerke über große Distanzen zu bilden und viele Computer zu vernetzen.",
+    "WAN besteht ursprünglich aus verbundenen Packet Switches.",
+    "Packet Switching verwendet Store-and-Forward Paradigma.",
+    "Weiterleitungstabelle besitzt Eintrag mit Ziel und Next-Hop.",
+    "Routing Software verwendet Link-State Routing und Distance-Vector Routing."
+  ],
+  "answerJa": [
+    "WANは広域にわたるネットワーク接続を実現し、多数のコンピュータを相互接続するために用いられる。",
+    "WANはもともと複数のパケットスイッチを接続する構成から成り立っている。",
+    "パケットスイッチングは『ストア・アンド・フォワード』方式を採用している。",
+    "ルーティングテーブルには宛先とNext-Hop（次の中継先）の情報が記録されている。",
+    "ルーティングアルゴリズムとしては、リンクステートルーティング（LSR）とディスタンスベクトルルーティング（DVR）が使用される。"
+  ],
+  "explanationDe": [
+    "Diese Folie fasst die wichtigsten Konzepte rund um WAN (Wide Area Network) und das Routing in solchen Netzwerken zusammen.",
+    "Ein WAN verbindet lokale Netzwerke (LANs) über große geografische Distanzen hinweg – beispielsweise über Städte, Länder oder Kontinente.",
+    "Im Zentrum stehen dabei sogenannte Packet Switches, die Datenpakete an den richtigen Zielort weiterleiten.",
+    "Das zugrundeliegende Prinzip ist das Store-and-Forward-Verfahren: Pakete werden zunächst gespeichert, analysiert und dann weitergeleitet – das erhöht Zuverlässigkeit und erlaubt flexible Übertragungswege.",
+    "Jeder Switch nutzt eine Weiterleitungstabelle, die für jede Zieladresse angibt, über welchen Next-Hop das Paket weitergesendet werden soll.",
+    "Zur automatischen Pflege dieser Tabellen kommen zwei Hauptarten von Routing-Software zum Einsatz: Link-State Routing (LSR) und Distance-Vector Routing (DVR).",
+    "Diese beiden Verfahren unterscheiden sich in der Art, wie Informationen gesammelt und verarbeitet werden – LSR ist schneller in der Konvergenz, DVR dafür einfacher zu implementieren."
+  ],
+  "explanationJa": [
+    "このスライドでは、WAN（広域ネットワーク）およびその中で使用されるルーティングの主要な考え方を整理しています。",
+    "WANとは、地理的に離れた複数のLAN（ローカルネットワーク）をつなぎ、都市間や国際間でネットワーク通信を可能にする技術です。",
+    "WANの構成要素として重要なのが『パケットスイッチ』で、これは受信したデータパケットを中継・転送する装置です。",
+    "データの転送には『ストア・アンド・フォワード』という方式が使われており、これは一度パケットを保存し、その内容を確認してから次のノードに転送する仕組みです。",
+    "各パケットスイッチにはルーティングテーブルがあり、宛先ごとに最適なNext-Hop（次に送るべき隣接スイッチ）を定義しています。",
+    "このルーティングテーブルを構築・更新するために使われるのが、Link-State Routing（LSR）とDistance-Vector Routing（DVR）という2つの代表的なアルゴリズムです。",
+    "LSRは収束が早く精度が高いのが特長で、DVRは実装がシンプルで中小規模ネットワークに向いています。"
+  ],
+  "originalSlideText": "Zusammenfassung\n❑ WAN kann genutzt werden um Netzwerke über große Distanzen zu bilden und viele Computer zu vernetzen\n❑ WAN besteht ursprünglich aus verbundenen Packet Switches\n❑ Packet Switching verwendet Store-and-Forward Paradigma\n❑ Weiterleitungstabelle besitzt Eintrag mit Ziel und Next-Hop\n❑ Routing Software verwendet Link-State Routing und Distance-Vector Routing",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 49,
+  "questionDe": "(s59) Was ist SONET/SDH und welche Funktion hat der Add-Drop Multiplexer?",
+  "questionJa": "SONET/SDHとは何か？また、Add-Drop Multiplexerの役割は何か？",
+  "answerDe": [
+    "SONET/SDH ist ein System zur Übertragung digitaler Sprachtelefonie.",
+    "Physischer Ring zur Redundanzsicherung.",
+    "Fehlererkennung und -korrektur durch Hardware.",
+    "Add-Drop Multiplexer verbindet Standort mit dem SONET-Ring.",
+    "Er fügt Datenströme hinzu oder entfernt sie vom Ring.",
+    "Nutzt Time Division Multiplexing (TDM)."
+  ],
+  "answerJa": [
+    "SONET/SDHはデジタル音声通話の伝送システムである。",
+    "物理的なリング構造により冗長性を確保する。",
+    "ハードウェアによってエラー検出と訂正が行われる。",
+    "Add-Drop Multiplexerは、拠点をSONETリングに接続する装置である。",
+    "リングにデータを追加したり取り除いたりする役割を担う。",
+    "時間分割多重（TDM）を使用している。"
+  ],
+  "explanationDe": [
+    "SONET (Synchronous Optical Network) bzw. SDH (Synchronous Digital Hierarchy) ist ein standardisiertes System zur Übertragung digitaler Signale – ursprünglich entwickelt für Sprachtelefonie, heute aber auch für Datenverkehr genutzt.",
+    "Das System nutzt eine ringförmige physische Topologie, bei der Signale in zwei entgegengesetzten Richtungen zirkulieren – dies ermöglicht eine automatische Umschaltung bei Ausfällen (Redundanz).",
+    "Ein wesentliches Element ist der Add-Drop Multiplexer (ADM), der es erlaubt, einzelne Datenströme an einem Standort aus dem Ring zu 'entnehmen' (drop) oder einzuspeisen (add), ohne den gesamten Verkehr zu stören.",
+    "Der ADM verbindet dabei einen Standort (z. B. Bürogebäude oder Rechenzentrum) mit dem Backbone-Ring.",
+    "Fehlerkorrekturmechanismen sind in die Hardware integriert, sodass Signalstörungen oder Unterbrechungen erkannt und automatisch korrigiert werden können.",
+    "Zur Organisation der Daten wird Time Division Multiplexing (TDM) verwendet – das bedeutet, dass jeder Datenstrom ein festes Zeitfenster im Übertragungssignal erhält.",
+    "Dieses Konzept ist besonders in Telekommunikationsnetzen verbreitet und bildet die Grundlage für viele Glasfaser-Infrastrukturen großer Netzbetreiber."
+  ],
+  "explanationJa": [
+    "SONET（Synchronous Optical Network）およびSDH（Synchronous Digital Hierarchy）は、もともとデジタル音声通話を送信するために設計された標準化されたネットワーク技術です。現在ではデータ通信にも幅広く使用されています。",
+    "このシステムでは、物理的なリング状のネットワーク構成を採用しており、信号が両方向に流れることで、片方に障害が発生しても自動的に逆方向に切り替わる冗長性を備えています。",
+    "このリングに拠点を接続するための装置がAdd-Drop Multiplexer（ADM）です。",
+    "ADMは、データストリームをリングに『追加（Add）』したり、『削除（Drop）』したりすることで、必要なデータのみを処理対象とし、他の通信には影響を与えずに中継を行うことができます。",
+    "また、これらの装置にはエラーの検出・訂正機能がハードウェアレベルで備えられており、高い信頼性を提供します。",
+    "データの多重化には『時間分割多重（TDM）』が使われ、これは各データが一定の時間スロットに割り当てられて順番に伝送される仕組みです。",
+    "SONET/SDHは、特に通信キャリアや大規模ネットワークで使用される光ファイバーインフラの中核技術となっています。"
+  ],
+  "originalSlideText": "Zugangstechnologien (1)\n❑ Synchronous Optical Network Or Digital Hierarchy (SONET/SDH)\n Ursprünglich System um digitale Sprachtelefonie zu übertragen\n Bildet physischen Ring um Redundanz zu gewährleisten\n Hardware erkennt und korrigiert Fehler\n Add-Drop Multiplexor um Standort zu SONET Ring zu verbinden: Hinzufügen oder Terminieren von Datenleitungen an Ring\n Nutzt Time Division Multiplexing",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 50,
+  "questionDe": "(s60) Welche Unterschiede bestehen zwischen OC Circuits, DSL und Kabelmodems als Zugangstechnologien?",
+  "questionJa": "OC回線、DSL、ケーブルモデムといったアクセス技術にはどのような違いがあるか？",
+  "answerDe": [
+    "OC Circuits spezifizieren Signale in Glasfaser-Sonet-Ringen.",
+    "Firmen können OC-Leitungen mieten, um zwei Standorte zu verbinden.",
+    "Tier 1 ISPs nutzen OC-192 bis OC-768 (10–40 Gbps).",
+    "DSL nutzt Telefonleitungen, Bandbreite hängt von Entfernung ab.",
+    "Kabelmodems verwenden TV-Infrastruktur, Bandbreite wird geteilt.",
+    "Beide gelten als Übergangslösung bis Glasfaseranschluss verfügbar ist."
+  ],
+  "answerJa": [
+    "OC回線は光ファイバーSONETリング内で使われる信号仕様である。",
+    "企業はOC専用回線をレンタルして2拠点を接続することができる。",
+    "Tier 1のISPはOC-192〜OC-768（10〜40Gbps）を使用する。",
+    "DSLは電話線を利用し、帯域幅は距離により変動する。",
+    "ケーブルモデムはテレビ回線を利用し、帯域幅は複数ユーザーで共有される。",
+    "どちらも家庭に光回線が普及するまでの移行的技術とみなされている。"
+  ],
+  "explanationDe": [
+    "Zugangstechnologien definieren, wie Endnutzer oder Unternehmen physisch mit dem Netzwerk verbunden werden – insbesondere mit dem Internet oder einem WAN.",
+    "Optical Carrier (OC) Circuits sind spezialisierte Hochgeschwindigkeitsverbindungen über Glasfaser, die auf SONET basieren. Sie bieten garantierte Bandbreite und werden häufig zwischen großen Standorten verwendet.",
+    "Firmen können z. B. eine OC-12-Leitung mieten, um ihre Rechenzentren zu verbinden. Tier 1 ISPs betreiben häufig OC-192 (10 Gbps) oder OC-768 (40 Gbps) Verbindungen für ihre Kerninfrastruktur.",
+    "Im Gegensatz dazu sind DSL (Digital Subscriber Line) und Kabelmodems für Endverbraucher gedacht. DSL nutzt bestehende Telefonleitungen – die Geschwindigkeit sinkt mit wachsender Entfernung zum Anbieter.",
+    "Kabelmodems verwenden das Koaxialkabelnetz, das ursprünglich für Fernsehen gedacht war. Hier teilen sich mehrere Haushalte dieselbe Leitung, was zu Schwankungen in der Geschwindigkeit führen kann.",
+    "Beide Techniken – DSL und Kabel – gelten als Übergangstechnologien, bis Glasfaseranschlüsse (Fiber to the Home, FTTH) flächendeckend verfügbar sind.",
+    "Im Vergleich bieten OC Circuits deutlich höhere Performance und garantierte Servicequalität, sind aber teuer und primär für professionelle Infrastrukturen gedacht."
+  ],
+  "explanationJa": [
+    "アクセス技術とは、ユーザーや企業がインターネットやWANに物理的に接続するための手段を指します。",
+    "OC回線（Optical Carrier）は、SONETに基づいた光ファイバー用の高速専用線で、企業や大規模事業者が拠点間を接続するために利用されます。",
+    "たとえば企業はOC-12（622 Mbps）などをレンタルし、ISP（Tier 1クラス）はOC-192（10 Gbps）やOC-768（40 Gbps）といった大容量回線を運用します。",
+    "一方、DSL（Digital Subscriber Line）は既存の電話回線を使ってインターネット接続を提供する方式で、ユーザーの自宅からプロバイダーまでの距離が遠くなると通信速度が低下します。",
+    "ケーブルモデムはテレビ用の同軸ケーブルを利用し、インターネット接続を提供します。ただし、同一地域のユーザー間で回線を共有するため、混雑時に速度が低下することがあります。",
+    "DSLもケーブルモデムも、家庭用の一時的なアクセス手段として普及してきましたが、現在は光ファイバー（FTTH）への移行が進んでいます。",
+    "OC回線は高性能かつ専用性が高い一方で、コストが高く、主に大企業やISPのインフラ用途に適しています。"
+  ],
+  "originalSlideText": "Zugangstechnologien (2)\n❑ Optical Carrier (OC) Circuits\n Spezifizieren Signale in Glasfaser SONET Ring\n Firma kann OC Circuit mieten um zwei Standorte zu verbinden\n Tier 1 ISPs nutzen Circuits zwischen OC-192 (10 Gbps) und OC-768 (40 Gbps)\n❑ Digital Subscriber Line (DSL) und Kabelmodems\n Bieten Breitbandanbindung für Privatleute und kleine Firmen\n DSL nutzt existierende Telefonleitungen, Bandbreite abhängig von Distanz zwischen Kunde und Anbieter\n Kabeltechnologie nutzt existierende Infrastruktur für Kabelfernsehen, Bandbreite zwischen Nutzern geteilt\n Technologien als Übergang bis Glasfaser für zu Hause verfügbar",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 51,
+  "questionDe": "(s61) Was unterscheidet Wi-Fi und WiMAX bezüglich ihrer Einsatzbereiche?",
+  "questionJa": "Wi-FiとWiMAXはどのような用途や使用範囲の違いがあるか？",
+  "answerDe": [
+    "Wi-Fi ist eine kabellose Technologie für lokalen Internetzugang.",
+    "Einsatzorte: Zuhause, Flughäfen, Hotels usw.",
+    "Datenrate steigt stetig – z. B. 802.11ac mit 1300 Mbit/s.",
+    "WiMAX kann ein MAN (Metropolitan Area Network) bilden.",
+    "Bietet Zugang und Backhaul für entfernte Orte.",
+    "Geeignet für feste und mobile Endpunkte."
+  ],
+  "answerJa": [
+    "Wi-Fiはローカルなインターネット接続のための無線技術である。",
+    "使用場所：家庭内、空港、ホテルなど。",
+    "通信速度は向上しており、例：802.11acでは最大1300 Mbpsに対応。",
+    "WiMAXは都市圏ネットワーク（MAN）の構築が可能な技術である。",
+    "遠隔地へのアクセスやバックホール接続にも利用される。",
+    "固定局と移動局の両方に対応している。"
+  ],
+  "explanationDe": [
+    "Wi-Fi und WiMAX sind beides drahtlose Zugangstechnologien, unterscheiden sich jedoch deutlich in ihren Einsatzbereichen und technischen Eigenschaften.",
+    "Wi-Fi ist eine Kurzstreckentechnologie, die typischerweise in Innenräumen verwendet wird – etwa in Haushalten, Büros, Hotels oder an öffentlichen Orten wie Flughäfen.",
+    "Die Reichweite ist begrenzt (meistens unter 100 m), aber die Geschwindigkeit ist für lokale Anwendungen hoch. Neue Standards wie 802.11ac oder 802.11ax erreichen Übertragungsraten bis zu mehreren Gigabit pro Sekunde.",
+    "WiMAX hingegen ist für größere Reichweiten ausgelegt und kann verwendet werden, um ganze Stadtgebiete (MAN – Metropolitan Area Network) zu versorgen.",
+    "Es eignet sich besonders für Szenarien, in denen eine kabelgebundene Infrastruktur nicht verfügbar oder zu teuer ist, z. B. ländliche Regionen oder temporäre Installationen (z. B. Baustellen, Events).",
+    "Ein wichtiger Vorteil von WiMAX ist die Möglichkeit, sowohl feste Endgeräte (z. B. Gebäude) als auch mobile Geräte zu unterstützen.",
+    "Zusätzlich kann WiMAX als Backhaul genutzt werden – also als Verbindung zwischen entfernten Zugangspunkten und dem Kernnetz eines Internetanbieters."
+  ],
+  "explanationJa": [
+    "Wi-FiとWiMAXはどちらも無線によるインターネット接続技術ですが、用途や適用範囲には大きな違いがあります。",
+    "Wi-Fiは主に家庭やオフィスなど、比較的狭い範囲での通信に利用される短距離向けの技術です。空港、ホテル、カフェなどの公共スペースでも広く使われています。",
+    "通信範囲は数十メートル〜100メートル程度と限られますが、最新の規格（802.11acや802.11ax）では非常に高速な通信が可能です（理論値で1Gbps以上）。",
+    "一方、WiMAXは広いエリアをカバーできる無線技術で、都市全体をネットワークで覆うような『都市圏ネットワーク（MAN）』の構築が可能です。",
+    "特に、光ファイバーなどの有線インフラが届かない地域や、仮設イベント、建設現場などでも活用されます。",
+    "WiMAXは、建物に設置された固定局だけでなく、移動中のモバイル端末からの通信もサポートします。",
+    "さらに、WiMAXはプロバイダーのネットワークと遠隔拠点をつなぐ『バックホール回線』としても利用される重要な用途があります。"
+  ],
+  "originalSlideText": "Zugangstechnologien (3)\n❑ Wi-Fi\n Kabellose Technologien\n Bieten Internetzugang zu Hause, in Flughäfen, Hotels, …\n Datenrate wird immer weiter gesteigert (Aktuell Geräte für 802.11ac mit 1300 Mbit/s)\n❑ WiMAX\n Kann zur Bildung eines MAN genutzt werden\n Bietet Zugang sowie Backhaul (Entfernter Ort an Provider anbinden)\n Feste und mobile Endpunkte",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 52,
+  "questionDe": "(s63) Welche Eigenschaften hatten die LAN-Technologien Token Ring und FDDI?",
+  "questionJa": "Token RingとFDDIというLAN技術にはどのような特徴があったか？",
+  "answerDe": [
+    "Token Ring nutzte Token zur Zugangskontrolle.",
+    "IBM Token Ring war weit verbreitet.",
+    "Anfangs 4 Mbps, später 16 Mbps.",
+    "FDDI erhöhte die LAN-Geschwindigkeit auf 100 Mbps.",
+    "Nutzte Glasfaser und redundante gegenläufige Ringe.",
+    "Physisch Stern-, logisch Ringtopologie.",
+    "CDDI war Version von FDDI über Kupferkabel."
+  ],
+  "answerJa": [
+    "Token Ringはトークンによって通信権を制御する方式を採用していた。",
+    "IBM製Token Ringは広く普及していた。",
+    "初期は4 Mbps、後に16 Mbpsに対応した。",
+    "FDDIはLANの通信速度を100 Mbpsに向上させた技術。",
+    "光ファイバーを使用し、逆方向に回る二重リングで冗長性を確保していた。",
+    "物理的にはスター型だが、論理的にはリング型のトポロジーを持つ。",
+    "CDDIはFDDIを銅線で利用できるようにしたバージョンである。"
+  ],
+  "explanationDe": [
+    "Token Ring war eine frühe LAN-Technologie, die von IBM entwickelt und verbreitet wurde. Die Zugangskontrolle erfolgte durch ein sogenanntes 'Token', das im Netzwerk zirkulierte. Nur der Rechner, der das Token besaß, durfte senden.",
+    "Dieses Verfahren sollte Kollisionen vermeiden, war aber bei hoher Netzauslastung weniger effizient als moderne Methoden wie CSMA/CD (Ethernet).",
+    "Die ersten Versionen arbeiteten mit 4 Mbps, später wurde auf 16 Mbps erweitert.",
+    "FDDI (Fiber Distributed Data Interface) wurde Ende der 1980er Jahre eingeführt, als Token Ring und Ethernet mit 10–16 Mbps nicht mehr ausreichten.",
+    "FDDI verwendete Glasfaserkabel und ermöglichte Übertragungsraten von bis zu 100 Mbps – ein großer Fortschritt für Hochleistungs-LANs.",
+    "Ein besonderes Merkmal war die doppelte Ringstruktur: Ein Ring für den Hauptverkehr, ein zweiter als Backup. Dadurch war das System sehr ausfallsicher.",
+    "Obwohl die physische Verkabelung sternförmig war (alle Leitungen laufen zu einem zentralen Punkt), wurde logisch ein Ring gebildet. Für Umgebungen ohne Glasfaser wurde CDDI (Copper Distributed Data Interface) als Alternative angeboten."
+  ],
+  "explanationJa": [
+    "Token Ringは、IBMによって開発された初期のLAN技術で、ネットワーク上を巡回するトークンを用いて通信の順番を制御していました。トークンを持っている端末だけがデータを送信できる仕組みで、衝突を避けることができます。",
+    "ただし、ネットワークの使用率が高まると、待ち時間が長くなるなどの非効率性が問題となりました。初期の通信速度は4 Mbpsで、後に16 Mbpsに向上しました。",
+    "FDDI（Fiber Distributed Data Interface）は1980年代後半に登場し、従来のToken RingやEthernetでは不足していた帯域幅を補うために導入されました。",
+    "FDDIは光ファイバーを利用して最大100 Mbpsの通信速度を提供し、特に高性能を必要とする企業ネットワークなどで活用されました。",
+    "特徴的なのは、主回線とバックアップ用の逆回転リングという2重構造により、高い信頼性と冗長性を持っていた点です。",
+    "配線は物理的には中央に集中するスター型でしたが、論理的にはリング状に動作する構成でした。",
+    "FDDIの一種であるCDDIは、光ファイバーではなく銅線を使ってFDDIの仕組みを実現するためのバージョンでした。"
+  ],
+  "originalSlideText": "LAN Technologien (1)\n❑ Token Ring\n Zugangskontrolle über ausgetauschten Token\n IBM Token Ring war weit verbreitet\n Initial 4 Mbps, später 16 Mbps\n❑ Fiber And Distributed Data Interconnect (FDDI)\n Ende 1980er: Ethernet mit 10 Mbps und IBM Token Ring mit 16 Mbps unzureichend\n Erhöhte Datenraten in LAN auf 100 Mbps, nutzte Glasfaser\n Redundanz in FDDI durch gegenläufige Ringe\n Einer der ersten LAN Switches\n Physisch Sterntopologie, logisch Ringtopologie\n Hohe Kosten und Spezialwissen notwendig\n CDDI: Version von FDDI über Kupferkabel",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 53,
+  "questionDe": "(s64) Wie hat sich Ethernet als LAN-Technologie entwickelt und welche Geräte ersetzte es?",
+  "questionJa": "Ethernetはどのように発展してきたLAN技術であり、どのような機器が置き換えられてきたか？",
+  "answerDe": [
+    "Ethernet dominiert den Markt für LANs.",
+    "Wird häufiger eingesetzt als alle anderen Technologien zusammen.",
+    "Frühe Ethernet-Versionen nutzten dicke Koaxialkabel.",
+    "Später ersetzten Hubs die Kabel.",
+    "Hubs wurden durch Switches ersetzt.",
+    "Switches wurden durch VLAN Switches ergänzt oder ersetzt."
+  ],
+  "answerJa": [
+    "EthernetはLAN技術市場を支配しており、他のすべての技術を合わせたよりも多く使用されている。",
+    "初期のEthernetは太い同軸ケーブルを使用していた。",
+    "その後、ケーブルはHUBに置き換えられた。",
+    "HUBはSwitch（スイッチ）に置き換えられた。",
+    "さらにSwitchは、VLAN Switchにより拡張または代替されるようになった。"
+  ],
+  "explanationDe": [
+    "Ethernet ist heute mit Abstand die am weitesten verbreitete LAN-Technologie und hat sich seit seiner Einführung stark weiterentwickelt.",
+    "Ursprünglich basierte Ethernet auf sogenannten 'dicken Koaxialkabeln', die als gemeinsames Übertragungsmedium für alle Geräte dienten – dies führte häufig zu Kollisionen und Einschränkungen bei der Skalierbarkeit.",
+    "Um die physikalische Struktur zu vereinfachen, wurden diese Kabel durch sogenannte Hubs ersetzt, die Signale an alle angeschlossenen Geräte weiterleiteten, aber ebenfalls keine Kollisionsvermeidung boten.",
+    "Später wurden Hubs durch Switches ersetzt, die in der Lage sind, gezielt Pakete nur an den richtigen Empfängerport weiterzuleiten – das reduzierte Kollisionen erheblich und erhöhte die Netzwerkleistung.",
+    "Mit der Einführung von VLAN (Virtual LAN) Switches wurde es zudem möglich, mehrere logische Netzwerke auf einer gemeinsamen physischen Infrastruktur zu betreiben – wichtig z. B. für Sicherheit und Netzwerktrennung in Unternehmen.",
+    "Insgesamt zeigt die Entwicklung von Ethernet eine kontinuierliche Verbesserung in Bezug auf Performance, Skalierbarkeit und Flexibilität.",
+    "Der heutige Standard ist meist Gigabit Ethernet oder schneller – über Glasfaser oder Twisted-Pair-Kabel realisiert."
+  ],
+  "explanationJa": [
+    "Ethernetは、現在最も広く使われているLAN技術であり、その歴史の中で大きく発展してきました。",
+    "初期のEthernetでは『太い同軸ケーブル』が使用され、すべての機器が1本のケーブルを共有して通信を行っていましたが、衝突が発生しやすく、拡張性にも制限がありました。",
+    "この構造は後にHUB（集線装置）に置き換えられ、複数のケーブルを1つの装置で中継できるようになりましたが、HUBは送信された信号を全ポートに一斉に送るため、依然として衝突の問題が残っていました。",
+    "その後登場したスイッチ（Switch）は、受信したパケットを宛先のポートだけに送ることができ、通信の効率と安定性が大幅に向上しました。",
+    "さらに進化したVLAN Switch（仮想LANスイッチ）では、1つの物理ネットワーク上で複数の論理ネットワークを構成できるため、企業などでセキュリティや業務ごとのネットワーク分離に活用されています。",
+    "Ethernetの進化は、通信速度、拡張性、管理性のすべてにおいて継続的な改善をもたらしてきました。",
+    "現在では、ギガビットEthernetや10Gbps以上の高速通信が主流となっており、光ファイバーやツイストペアケーブルで構築されています。"
+  ],
+  "originalSlideText": "LAN Technologien (2)\n❑ Ethernet\n Dominiert Markt, öfter eingesetzt als alle anderen Technologien\n Kaum mehr Ähnlichkeit zwischen frühen Ethernet Versionen (dicke Koaxialkabel) und heutigem Gigabit Ethernet\n Hubs ersetzten Kabel, Switches ersetzten Hubs, VLAN Switches ersetzen Switches",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 54,
+  "questionDe": "(s65) Welche Rolle spielte ARPANET in der Entwicklung von WAN-Technologien?",
+  "questionJa": "ARPANETはWAN技術の発展においてどのような役割を果たしたか？",
+  "answerDe": [
+    "ARPANET war eines der ersten WANs mit Packet Switching.",
+    "Verband Universitäten und Industrie.",
+    "Verwendete serielle Verbindungen mit 56 Kbps.",
+    "Begriffe und Algorithmen wurden teilweise heute noch genutzt.",
+    "Ab 1983 wurden Internetprotokolle verwendet."
+  ],
+  "answerJa": [
+    "ARPANETはパケット交換を採用した最初期のWANの1つだった。",
+    "大学と産業界を結ぶネットワークとして構築された。",
+    "56 Kbpsのシリアル通信回線を使用していた。",
+    "当時開発された用語やアルゴリズムは現在でも使われている。",
+    "1983年以降はインターネットプロトコルを採用するようになった。"
+  ],
+  "explanationDe": [
+    "ARPANET (Advanced Research Projects Agency Network) war ein bahnbrechendes Projekt des US-Verteidigungsministeriums und gilt als direkter Vorläufer des heutigen Internets.",
+    "Es war eines der ersten Weitverkehrsnetze (WANs), das auf dem Prinzip der Paketvermittlung (Packet Switching) basierte – ein radikaler Unterschied zu leitungsvermittelten Netzen wie der Telefonie.",
+    "ARPANET verband zunächst Universitäten, Forschungseinrichtungen und später auch Unternehmen mit dem Ziel, verteilte Ressourcen gemeinsam zu nutzen und Kommunikation über große Distanzen zu ermöglichen.",
+    "Die eingesetzten Leitungen hatten eine Datenrate von 56 Kbps – aus heutiger Sicht sehr gering, für damalige Verhältnisse aber revolutionär.",
+    "Viele der in ARPANET entwickelten Konzepte, wie IP-Adressierung, Routing-Algorithmen und Protokollstrukturen, bildeten das Fundament für das heutige Internet.",
+    "Ab 1983 wurden im ARPANET offiziell die Internetprotokolle TCP/IP eingeführt – ein entscheidender Schritt in der globalen Verbreitung des Internets.",
+    "Insgesamt diente ARPANET nicht nur als technisches Experiment, sondern auch als Plattform für Innovationen, die bis heute die Netzwerktechnik prägen."
+  ],
+  "explanationJa": [
+    "ARPANET（アーパネット）は、アメリカ国防総省の研究機関ARPAによって推進された先駆的なネットワークプロジェクトであり、現在のインターネットの直接的な前身とされています。",
+    "これは、従来の電話網のような回線交換方式とは異なり、『パケット交換方式（Packet Switching）』を採用した、初期の広域ネットワーク（WAN）のひとつでした。",
+    "ARPANETは、主に大学、研究機関、産業界を相互に接続することを目的に構築され、情報の共有や遠隔地間のコミュニケーションを可能にしました。",
+    "通信には56 Kbpsのシリアル回線が用いられ、当時としては非常に画期的な速度でした。",
+    "ARPANETで生まれた多くの概念――例えば、IPアドレス、ルーティングアルゴリズム、階層化されたプロトコル設計――は、今もインターネット技術の中核として使用されています。",
+    "1983年にはARPANET上で正式にTCP/IPプロトコルが採用され、これがインターネットの世界的な普及の引き金となりました。",
+    "ARPANETは単なる実験ネットワークに留まらず、ネットワーク技術の基礎を築く実証の場でもありました。"
+  ],
+  "originalSlideText": "WAN Technologien (1)\n❑ ARPANET\n Advanced Research Projects Agency (ARPA) förderte Forschungsprojekte für US Department of Defense\n ARPANET war eines der ersten WANs mit Packet Switching\n Verbindungen zwischen Universitäten und Industrie\n Verbindungen nutzten serielle Leitungen mit 56 Kbps\n Konzepte, Algorithmen, Terminologie oft noch heute genutzt\n Forscher am Internet Projekt kommunizierten und experimentierten über ARPANET\n Ab 1983 Verwendung der Internet Protokolle",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 55,
+  "questionDe": "(s71) Welche Protokolle werden für Voice over IP (VoIP) verwendet und wozu dienen sie?",
+  "questionJa": "Voice over IP（VoIP）で使用されるプロトコルにはどのようなものがあり、それぞれ何のために使われるか？",
+  "answerDe": [
+    "VoIP dient dem Transport von Echtzeitsprache und Video.",
+    "IETF entwickelte das Protokoll SIP.",
+    "ITU entwickelte das Protokoll H.323."
+  ],
+  "answerJa": [
+    "VoIPはリアルタイム音声およびビデオの転送に使用される。",
+    "IETFはSIPというプロトコルを開発した。",
+    "ITUはH.323というプロトコルを開発した。"
+  ],
+  "explanationDe": [
+    "Voice over IP (VoIP) bezeichnet die Übertragung von Sprach- und Videodaten über IP-basierte Netzwerke, wie z. B. das Internet.",
+    "Im Gegensatz zur klassischen Telefonie, die leitungsvermittelt funktioniert, nutzt VoIP paketvermittelte Netzwerke – das reduziert Kosten und ermöglicht flexible Anwendungen.",
+    "Für die Steuerung von VoIP-Verbindungen werden spezielle Signalisierungsprotokolle benötigt.",
+    "SIP (Session Initiation Protocol), entwickelt von der IETF, ist ein weit verbreitetes Protokoll für den Aufbau, die Steuerung und den Abbau von Sprach- oder Videoverbindungen.",
+    "H.323, entwickelt von der ITU, ist ein älteres Protokoll, das ebenfalls Signalisierung, Adressierung und Sitzungssteuerung für Echtzeitkommunikation bietet – besonders in früheren VoIP-Systemen verwendet.",
+    "Während H.323 eher ein monolithisches Protokollpaket ist, ist SIP modular aufgebaut und besser an moderne, verteilte Systeme angepasst.",
+    "Beide Protokolle erfüllen ähnliche Aufgaben, unterscheiden sich aber in ihrer Architektur und Flexibilität – heute ist SIP in den meisten modernen VoIP-Diensten Standard."
+  ],
+  "explanationJa": [
+    "Voice over IP（VoIP）は、インターネットなどのIPネットワーク上で音声や映像をリアルタイムに送受信する技術です。",
+    "従来の電話が専用の回線を使用していたのに対し、VoIPはパケット通信を使うため、コスト削減や柔軟な接続形態が可能になります。",
+    "VoIPでは通話の開始・終了や接続の制御を行うための『シグナリングプロトコル』が必要です。",
+    "IETF（Internet Engineering Task Force）が開発したSIP（Session Initiation Protocol）は、通話やビデオ会議のセッション確立・制御・終了を行うための標準プロトコルです。",
+    "一方、ITU（国際電気通信連合）が策定したH.323は、初期のVoIPシステムで広く使われたプロトコルで、音声や映像通信のための一連の仕様を提供します。",
+    "H.323は一体型のプロトコルで構成が複雑ですが、SIPはモジュール型で柔軟性が高く、現在の分散型ネットワークに適しています。",
+    "そのため、現代の多くのVoIPサービスではSIPが主流となっています。"
+  ],
+  "originalSlideText": "Voice and Voice Over IP (VoIP)\n❑ Transport von Echtzeitsprache und Video\n❑ IETF entwickelte SIP\n❑ ITU entwickelte H.323",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 56,
+  "questionDe": "(s72) Was ist der Grundgedanke von Software Defined Networking (SDN) und wie wird er umgesetzt?",
+  "questionJa": "ソフトウェア定義ネットワーク（SDN）の基本的な考え方とは何であり、それはどのように実現されるか？",
+  "answerDe": [
+    "SDN trennt das Netzwerkmanagement von der Netzwerkhardware.",
+    "Netzwerkkomponenten lassen sich über standardisierte Softwareschnittstellen steuern.",
+    "Beispiel: OpenFlow.",
+    "Erlaubt einfachen Wechsel von Hardware oder Hersteller."
+  ],
+  "answerJa": [
+    "SDNでは、ネットワーク管理をネットワーク機器のハードウェアから分離する。",
+    "ネットワーク機器は標準化されたソフトウェアインターフェースを通じて制御される。",
+    "例として、OpenFlowがある。",
+    "ハードウェアやメーカーの変更が容易になるという利点がある。"
+  ],
+  "explanationDe": [
+    "Software Defined Networking (SDN) ist ein modernes Netzwerkparadigma, das eine klare Trennung zwischen der Steuerungsebene (Control Plane) und der Weiterleitungsebene (Data Plane) eines Netzwerks einführt.",
+    "Traditionelle Netzwerke koppeln Managementlogik und Datenverarbeitung innerhalb jedes einzelnen Geräts – z. B. Switches oder Router –, was Konfiguration, Wartung und Automatisierung erschwert.",
+    "SDN hingegen zentralisiert das Netzwerkmanagement: Eine zentrale Steuerungseinheit (SDN-Controller) kommuniziert mit den Geräten über standardisierte Protokolle wie OpenFlow.",
+    "Dies ermöglicht dynamisches Routing, Lastverteilung, Netzwerksicherheit oder Priorisierung von Datenströmen per Software – ohne Änderungen an der physischen Infrastruktur.",
+    "Ein großer Vorteil ist die Herstellerunabhängigkeit: Netzwerkadministratoren können Hardware verschiedener Anbieter kombinieren und dennoch zentral verwalten.",
+    "Zudem fördert SDN Automatisierung und Skalierbarkeit, da Netzwerke schnell an neue Anforderungen angepasst werden können – etwa bei Cloud- oder Rechenzentrumsarchitekturen.",
+    "OpenFlow ist eines der ersten und bekanntesten Protokolle, das diese Trennung von Steuerung und Datenübertragung ermöglicht hat."
+  ],
+  "explanationJa": [
+    "SDN（Software Defined Networking、ソフトウェア定義ネットワーク）は、ネットワーク制御（コントロールプレーン）とデータ転送（データプレーン）を分離するという新しいネットワークアーキテクチャの概念です。",
+    "従来のネットワークでは、ルーターやスイッチといった各デバイスに制御機能と転送機能の両方が組み込まれていましたが、それにより運用管理や設定変更が煩雑になっていました。",
+    "SDNでは、ネットワークの管理機能を中央集約型のSDNコントローラーに集め、各ネットワーク機器はコマンドに従って動作するだけのシンプルな装置として動きます。",
+    "この制御は、OpenFlowなどの標準化されたインターフェースを通じて行われ、ルーティングやアクセス制御、トラフィック制御などをソフトウェアで動的に実装することができます。",
+    "最大の利点は、ハードウェアのメーカーに依存しない柔軟な運用が可能になる点で、異なるベンダーの機器も一元管理できます。",
+    "さらに、クラウドやデータセンターといったスケーラブルな環境において、ネットワーク構成を迅速に変更・最適化できるため、自動化との相性も非常に良いです。",
+    "OpenFlowはこのSDNの考え方を具現化した代表的なプロトコルで、業界で広く利用されています。"
+  ],
+  "originalSlideText": "Software Defined Networking\n❑ Trennung des Netzwerkmanagements von der Netzwerkhardware\n Netzwerkkomponenten lassen sich über eine standardisierte Softwareschnittstelle programmieren / steuern\n❑ Z.B. Openflow\n❑ Wechseln der Hardware oder gar des Herstellers einfach",
+  "explanationImage": "",
+  "questionImage": ""
 }
-
-
-
-
-
-
-
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
 ]
