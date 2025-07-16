@@ -1560,26 +1560,506 @@
   "originalSlideText": "❑ 1970s: 1G Netze\n Analoge Signale\n❑ Seit 1990s: 2G und 2,5G Netze\n Digitale Signale\n Viele Länder-spezifische Standards\n• Deutschland: GSM mit TDMA\n• USA: Motorola mit dem TDMA Systeme iDEN, andere Mobilfunkbetreiber IS-95A mit CDMA\n• Japan: PDC mit TDMA\n Erweiterungen wie EDGE ermöglichten höhere Datenraten bis zu 473,6 Kbps bzw. 1 Mbps mit EDGE Evolution",
   "explanationImage": "",
   "questionImage": ""
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
+},
+{
+  "id": 42,
+  "questionDe": "(s47) Welche Unterschiede bestehen zwischen GSM, CDMA und PDC in 2G-Netzen?",
+  "questionJa": "2GネットワークにおけるGSM、CDMA、PDCの違いとは何か？",
+  "answerDe": [
+    "GSM (Europa, z. B. Deutschland): nutzt TDMA als Zugriffsverfahren.",
+    "CDMA (USA): IS-95A Standard, Code Division Multiple Access.",
+    "PDC (Japan): verwendet ebenfalls TDMA, landesspezifisch angepasst."
+  ],
+  "answerJa": [
+    "GSM（ヨーロッパ・ドイツなど）：TDMA方式を採用。",
+    "CDMA（アメリカ）：IS-95AというCDMA方式の標準を使用。",
+    "PDC（日本）：TDMAを使うが、日本独自に調整された仕様。"
+  ],
+  "explanationDe": [
+    "In den 1990er Jahren entstanden weltweit verschiedene 2G-Standards, die auf regional unterschiedliche Bedürfnisse und Märkte abgestimmt waren.",
+    "GSM (Global System for Mobile Communications) war vor allem in Europa verbreitet und nutzte das TDMA-Verfahren (Time Division Multiple Access), bei dem jedem Nutzer ein bestimmtes Zeitslot zugewiesen wird.",
+    "CDMA (Code Division Multiple Access), in den USA weit verbreitet, verwendet dagegen ein anderes Prinzip: mehrere Nutzer teilen sich denselben Frequenzbereich, werden aber über individuelle Codes voneinander getrennt.",
+    "IS-95A war eine frühe Implementierung von CDMA durch US-amerikanische Anbieter wie Verizon oder Sprint.",
+    "PDC (Personal Digital Cellular) war ein japanischer Standard, der ebenfalls auf TDMA basierte, jedoch speziell an Japans technische Infrastruktur und Frequenznutzung angepasst wurde.",
+    "Ein Hauptunterschied liegt in der Art, wie viele Nutzer gleichzeitig kommunizieren können und wie flexibel die Netzkapazität angepasst werden kann – CDMA erlaubt tendenziell mehr Nutzer pro Zelle als TDMA.",
+    "Diese Inkompatibilität der Standards erschwerte weltweites Roaming erheblich, bis mit 3G einheitlichere Lösungen wie UMTS eingeführt wurden."
+  ],
+  "explanationJa": [
+    "1990年代、2Gネットワークは各国の事情に応じて異なる規格が採用されました。",
+    "ヨーロッパではGSM（Global System for Mobile Communications）が主流で、TDMA（時分割多重接続）という方式を使って、各ユーザーに時間枠を割り当てて通信していました。",
+    "一方アメリカではCDMA（符号分割多重接続）が使われ、同じ周波数帯を複数のユーザーで共有しつつ、それぞれ異なるコードで識別するという仕組みです。IS-95Aがその代表的な標準です。",
+    "日本ではPDC（Personal Digital Cellular）が使われており、TDMA方式に基づきつつも、日本の技術仕様や周波数事情に合わせて独自にカスタマイズされていました。",
+    "TDMAとCDMAでは通信の仕組みが根本的に異なり、CDMAは同時に多くのユーザーを扱いやすいという利点があります。",
+    "ただし、これらの方式は互換性がなく、当時は国際ローミングが困難でした。",
+    "このような多様性を解消するために、3G世代ではより統一された規格（例：UMTS）が導入されていきました。"
+  ],
+  "originalSlideText": "❑ Seit 1990s: 2G und 2,5G Netze\n Digitale Signale\n Viele Länder-spezifische Standards\n• Deutschland: GSM mit TDMA\n• USA: Motorola mit dem TDMA Systeme iDEN, andere Mobilfunkbetreiber IS-95A mit CDMA\n• Japan: PDC mit TDMA",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 43,
+  "questionDe": "(s49) Welche Anforderungen stellte die IMT-Advanced Spezifikation an 4G-Netze?",
+  "questionJa": "IMT-Advancedの規格は4Gネットワークにどのような技術要件を課したのか？",
+  "answerDe": [
+    "IMT-Advanced fordert bis zu 1 Gbps Downloadgeschwindigkeit.",
+    "4G-Netze müssen Real-Time Multimedia unterstützen.",
+    "Netzwerke sollen vollständig auf Paketvermittlung basieren."
+  ],
+  "answerJa": [
+    "IMT-Advancedは最大1Gbpsのダウンロード速度を要求した。",
+    "4Gネットワークはリアルタイムマルチメディアをサポートしなければならない。",
+    "ネットワークは完全にパケット交換ベースで構築されるべきとされた。"
+  ],
+  "explanationDe": [
+    "Die ITU (Internationale Fernmeldeunion) definierte mit IMT-Advanced erstmals eine offizielle Spezifikation für 4G-Netze.",
+    "Eine der wichtigsten Anforderungen war eine maximale Datenrate von bis zu 1 Gbps im Downlink unter idealen Bedingungen – dies übertrifft die Möglichkeiten der 3G-Technologien deutlich.",
+    "Zudem wurde erwartet, dass 4G-Netze Echtzeit-Multimedia (z. B. Videoanrufe, Streaming) zuverlässig und mit niedriger Latenz unterstützen.",
+    "Ein weiterer zentraler Punkt war die vollständige Umstellung auf IP-basierte, paketvermittelte Netzwerke – im Gegensatz zu den leitungsvermittelten Teilen in früheren Generationen.",
+    "Das bedeutete auch, dass Sprachdienste wie VoIP (Voice over IP) in das Datenkonzept integriert werden mussten.",
+    "Die Spezifikation legte außerdem Wert auf globale Interoperabilität und Effizienz beim Umgang mit Spektrum und Energie.",
+    "Nur Technologien wie LTE Advanced und WiMAX Advanced erfüllten diese strengen Kriterien vollständig – frühere Versionen wurden aus Marketinggründen dennoch als '4G' bezeichnet."
+  ],
+  "explanationJa": [
+    "ITU（国際電気通信連合）は、IMT-Advancedという名称で初めて4Gに関する正式な仕様を定義しました。",
+    "その中で最も重要な要件の一つが、理想条件下で最大1Gbpsのダウンロード速度を実現することでした。これは3Gを大きく超える性能です。",
+    "また、4Gネットワークはリアルタイムでのマルチメディア通信（例：ビデオ通話、ストリーミング）を安定して提供できることが求められました。",
+    "さらに、以前の世代では回線交換方式（通話ごとに専用の通信路を確保）とパケット交換方式（データを小分けに送る）が混在していましたが、4Gでは完全にパケット交換方式に移行することが条件となりました。",
+    "つまり、音声通話もVoIP（Voice over IP）としてデータ通信に統合される必要がありました。",
+    "そのほかにも、周波数の利用効率や国際的な相互運用性、省エネルギーといった点も重視されました。",
+    "これらのすべての要件を満たしたのは、LTE AdvancedやWiMAX Advancedといった、進化版の技術のみでした。"
+  ],
+  "originalSlideText": "❑ Seit 2008: 4G Netze\n Ziel: Real-Time Multimedia\n Gemeinsame Spezifikation für 4G Netze: International Mobile Telecommunications Advanced (IMT_Advanced)\n• Bis zu 1 Gbps im Download",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 44,
+  "questionDe": "(s50) Warum wurden frühe LTE- oder WiMAX-Versionen trotzdem als 4G vermarktet?",
+  "questionJa": "なぜ初期のLTEやWiMAXはIMT-Advancedの基準を満たしていなくても“4G”として販売されたのか？",
+  "answerDe": [
+    "Frühere LTE- und WiMAX-Versionen erfüllten nicht alle Anforderungen von IMT-Advanced.",
+    "Sie wurden trotzdem als '4G' vermarktet, da sie deutliche Leistungsverbesserungen gegenüber 3G boten.",
+    "Die ITU tolerierte diese Marketingbezeichnung später offiziell."
+  ],
+  "answerJa": [
+    "初期のLTEおよびWiMAXはIMT-Advancedの全要件を満たしていなかった。",
+    "それでも、3Gより大幅に性能が向上していたため、“4G”として販売された。",
+    "後にITUはこのマーケティング上の表現を正式に容認した。"
+  ],
+  "explanationDe": [
+    "LTE und WiMAX wurden zunächst entwickelt, bevor die endgültigen Spezifikationen von IMT-Advanced vollständig veröffentlicht waren.",
+    "Obwohl diese frühen Versionen keine Datenraten von 1 Gbps erreichten und nicht vollständig auf paketvermittelten Sprachdiensten basierten, stellten sie einen erheblichen technologischen Fortschritt gegenüber 3G dar.",
+    "Daher begannen Hersteller und Netzbetreiber, ihre Dienste aus Marketinggründen als '4G' zu bezeichnen – obwohl sie technisch noch als '3.9G' galten.",
+    "Diese Bezeichnung suggerierte dem Markt eine neue Generation und half bei der Positionierung neuer Produkte und Geräte.",
+    "Aufgrund der weiten Verbreitung dieser Praxis entschied sich die ITU später, diese Nutzung des Begriffs '4G' auch für LTE und WiMAX zu akzeptieren, solange sie signifikante Fortschritte gegenüber 3G darstellten.",
+    "Erst mit LTE Advanced und WiMAX Advanced waren tatsächlich alle IMT-Advanced-Kriterien erfüllt.",
+    "Diese Entwicklung zeigt, wie sich technische Definitionen durch Marketing und wirtschaftliche Interessen in der öffentlichen Wahrnehmung verschieben können."
+  ],
+  "explanationJa": [
+    "LTEやWiMAXは、IMT-Advancedの最終仕様が定まる前に開発・展開が始まりました。",
+    "そのため、初期のバージョンは最大1Gbpsの速度や、完全なパケット交換方式など、IMT-Advancedのすべての要件を満たしていませんでした。",
+    "しかしながら、3Gと比べて通信速度や応答性が飛躍的に向上していたため、多くの通信事業者やメーカーはそれらを“4G”と称して販売しました。",
+    "技術的には“3.9G”とも呼ばれるレベルでしたが、“4G”の名称のほうが市場で受け入れられやすく、製品の訴求力が高まりました。",
+    "このような状況を受けて、ITUも後に“3Gから大きく性能が向上していれば4Gと称してよい”という見解を出し、商業的な表現を容認しました。",
+    "その後、LTE AdvancedやWiMAX Advancedといった進化版の規格がIMT-Advancedの技術基準を正式に満たすことになります。",
+    "この経緯は、技術的な定義と市場の認識が必ずしも一致しないこと、そしてマーケティングが標準化の影響を受けることを示しています。"
+  ],
+  "originalSlideText": "❑ Früher Protokolle der Hersteller erfüllten diese Spezifikation nicht (z.B. HSPA+, HTC Evo 4G, WiMAX, LTE) → Durften aber als 4G beworben werden\n❑ Erst neue Standards LTE Advanced und WiMAX Advanced sind echte 4G Standards",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 45,
+  "questionDe": "(s51) Was versteht man unter einem VSAT-System?",
+  "questionJa": "VSATシステムとは何か？その構成要素とは？",
+  "answerDe": [
+    "VSAT steht für Very-Small-Aperture Terminal.",
+    "Besteht aus einer kleinen Parabolantenne (max. 3 m Durchmesser) und einem sendefähigen LNB.",
+    "Ermöglicht Zweiwegekommunikation über geostationäre Satelliten.",
+    "Verwendung: z. B. zur Verbindung von Firmenfilialen für Abrechnung, Bezahlung oder Internetzugang."
+  ],
+  "answerJa": [
+    "VSATとは“Very-Small-Aperture Terminal（超小型開口端末）”の略。",
+    "最大直径3mの小型パラボラアンテナと送信可能なLNB（低雑音ブロックコンバータ）で構成される。",
+    "静止衛星を用いた双方向通信が可能。",
+    "用途：企業の支店間接続、決済・会計処理、インターネット接続など。"
+  ],
+  "explanationDe": [
+    "VSAT-Systeme sind Satellitenkommunikationslösungen mit sehr kleinen Bodenstationen, typischerweise für abgelegene oder schlecht erschlossene Gebiete.",
+    "Der Begriff VSAT steht für 'Very-Small-Aperture Terminal', was sich auf die geringe Größe der Parabolantenne bezieht – meist maximal 3 Meter im Durchmesser.",
+    "Die Antenne kommuniziert über geostationäre Satelliten, die sich mit der Erdrotation synchron bewegen und somit permanent über einem Punkt der Erdoberfläche stehen.",
+    "VSAT-Anlagen sind in der Lage, Daten zu senden und zu empfangen (Zweiwegekommunikation), im Gegensatz zu einfachen Satellitenempfängern.",
+    "Ein zentraler Bestandteil ist der LNB (Low Noise Block Converter), der nicht nur Empfang, sondern auch Sendeunterstützung ermöglicht.",
+    "Solche Systeme werden oft von Unternehmen genutzt, um ihre Filialen in abgelegenen Regionen an das Firmennetzwerk anzubinden – z. B. für Kassen- und Abrechnungssysteme oder Backup-Internetverbindungen.",
+    "Der große Vorteil von VSAT ist die Unabhängigkeit von terrestrischer Infrastruktur – sie funktionieren weltweit, solange Sichtverbindung zum Satelliten besteht."
+  ],
+  "explanationJa": [
+    "VSAT（Very-Small-Aperture Terminal）は、小型の地上局を利用した衛星通信システムです。",
+    "最大3mほどの小型パラボラアンテナを使用し、地球の自転に合わせて動かない静止衛星と通信します。",
+    "VSATは双方向通信が可能であり、単なる受信専用の衛星システムとは異なります。",
+    "主要な構成要素の1つがLNB（Low Noise Block Converter）で、これは衛星からの微弱な信号を増幅して変換するだけでなく、送信にも対応します。",
+    "企業では、遠隔地の支店と本社を結ぶためや、決済・POSシステム、バックアップのインターネット回線として活用されています。",
+    "地上のインフラに依存しないため、山間部や僻地、発展途上国の地域などでも通信が可能です。",
+    "条件として、衛星への見通し（Line-of-Sight）が確保されている必要があります。"
+  ],
+  "originalSlideText": "❑ Very-Small-Aperture Terminal\n❑ Bestandteile:\n Kleine Parabolantenne mit max. 3m Durchmesser\n Sendefähiger LNB\n❑ Zweiwegekommunikation\n Geostationäre Satelliten und Ausrichtung der Antenne auf den Satelliten\n❑ Verwendung: Verbindung von Filialen einer Firma zur Abrechnung, Bezahlung; aber auch Internet",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 45,
+  "questionDe": "(s51) Was versteht man unter einem VSAT-System?",
+  "questionJa": "VSATシステムとは何か？その構成要素とは？",
+  "answerDe": [
+    "VSAT steht für Very-Small-Aperture Terminal.",
+    "Besteht aus einer kleinen Parabolantenne (max. 3 m Durchmesser) und einem sendefähigen LNB.",
+    "Ermöglicht Zweiwegekommunikation über geostationäre Satelliten.",
+    "Verwendung: z. B. zur Verbindung von Firmenfilialen für Abrechnung, Bezahlung oder Internetzugang."
+  ],
+  "answerJa": [
+    "VSATとは“Very-Small-Aperture Terminal（超小型開口端末）”の略。",
+    "最大直径3mの小型パラボラアンテナと送信可能なLNB（低雑音ブロックコンバータ）で構成される。",
+    "静止衛星を用いた双方向通信が可能。",
+    "用途：企業の支店間接続、決済・会計処理、インターネット接続など。"
+  ],
+  "explanationDe": [
+    "VSAT-Systeme sind Satellitenkommunikationslösungen mit sehr kleinen Bodenstationen, typischerweise für abgelegene oder schlecht erschlossene Gebiete.",
+    "Der Begriff VSAT steht für 'Very-Small-Aperture Terminal', was sich auf die geringe Größe der Parabolantenne bezieht – meist maximal 3 Meter im Durchmesser.",
+    "Die Antenne kommuniziert über geostationäre Satelliten, die sich mit der Erdrotation synchron bewegen und somit permanent über einem Punkt der Erdoberfläche stehen.",
+    "VSAT-Anlagen sind in der Lage, Daten zu senden und zu empfangen (Zweiwegekommunikation), im Gegensatz zu einfachen Satellitenempfängern.",
+    "Ein zentraler Bestandteil ist der LNB (Low Noise Block Converter), der nicht nur Empfang, sondern auch Sendeunterstützung ermöglicht.",
+    "Solche Systeme werden oft von Unternehmen genutzt, um ihre Filialen in abgelegenen Regionen an das Firmennetzwerk anzubinden – z. B. für Kassen- und Abrechnungssysteme oder Backup-Internetverbindungen.",
+    "Der große Vorteil von VSAT ist die Unabhängigkeit von terrestrischer Infrastruktur – sie funktionieren weltweit, solange Sichtverbindung zum Satelliten besteht."
+  ],
+  "explanationJa": [
+    "VSAT（Very-Small-Aperture Terminal）は、小型の地上局を利用した衛星通信システムです。",
+    "最大3mほどの小型パラボラアンテナを使用し、地球の自転に合わせて動かない静止衛星と通信します。",
+    "VSATは双方向通信が可能であり、単なる受信専用の衛星システムとは異なります。",
+    "主要な構成要素の1つがLNB（Low Noise Block Converter）で、これは衛星からの微弱な信号を増幅して変換するだけでなく、送信にも対応します。",
+    "企業では、遠隔地の支店と本社を結ぶためや、決済・POSシステム、バックアップのインターネット回線として活用されています。",
+    "地上のインフラに依存しないため、山間部や僻地、発展途上国の地域などでも通信が可能です。",
+    "条件として、衛星への見通し（Line-of-Sight）が確保されている必要があります。"
+  ],
+  "originalSlideText": "❑ Very-Small-Aperture Terminal\n❑ Bestandteile:\n Kleine Parabolantenne mit max. 3m Durchmesser\n Sendefähiger LNB\n❑ Zweiwegekommunikation\n Geostationäre Satelliten und Ausrichtung der Antenne auf den Satelliten\n❑ Verwendung: Verbindung von Filialen einer Firma zur Abrechnung, Bezahlung; aber auch Internet",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 46,
+  "questionDe": "(s52) Welche Frequenzbänder werden in VSAT-Systemen verwendet und wie beeinflusst das Wetter die Verbindung?",
+  "questionJa": "VSATで使われる周波数帯はどれか？また天候は通信にどう影響するか？（図解あり）",
+  "answerDe": [
+    "VSAT nutzt verschiedene Frequenzbänder, abhängig vom Einsatzszenario.",
+    "Beispielsweise Ku-Band und Ka-Band.",
+    "Je höher die Frequenz, desto stärker die Beeinträchtigung durch Wetter (z. B. Regen)."
+  ],
+  "answerJa": [
+    "VSATは使用目的に応じて複数の周波数帯を利用する（例：Ku帯、Ka帯）。",
+    "一般に周波数が高いほど、天候、特に雨による影響を受けやすくなる。"
+  ],
+  "explanationDe": [
+    "In VSAT-Systemen kommen verschiedene Frequenzbänder zum Einsatz, vor allem das Ku-Band (12–18 GHz) und das Ka-Band (26,5–40 GHz).",
+    "Diese Frequenzbereiche erlauben hohe Datenübertragungsraten und kompakte Antennengrößen, sind jedoch empfindlich gegenüber atmosphärischen Störungen.",
+    "Mit steigender Frequenz nimmt die Dämpfung durch Regen, Schnee oder starke Bewölkung deutlich zu – dieser Effekt wird als 'Rain Fade' bezeichnet.",
+    "Das Ku-Band wird häufig für klassische Geschäftsanwendungen genutzt, da es einen guten Kompromiss zwischen Leistung und Wetterempfindlichkeit bietet.",
+    "Das Ka-Band erlaubt zwar höhere Bandbreiten, ist jedoch wetteranfälliger – bei starkem Regen kann die Verbindung merklich schlechter oder unterbrochen werden.",
+    "Zur Kompensation dieser Effekte werden oft adaptive Modulation oder automatische Leistungsanpassung eingesetzt.",
+    "Die Wahl des Frequenzbands hängt daher stark vom Einsatzort (z. B. tropisches Klima oder Wüste), der Verfügbarkeit und den benötigten Bandbreiten ab."
+  ],
+  "explanationJa": [
+    "VSATでは主にKu帯（12～18GHz）やKa帯（26.5～40GHz）といった高周波の帯域が使用されます。",
+    "これらの帯域は高いデータ速度と小型アンテナを可能にする利点がありますが、その反面、天候の影響を受けやすいという特徴も持ちます。",
+    "特にKa帯は、雨や雪、厚い雲といった気象条件によって信号が減衰する『レインフェード（雨衰）』の影響を強く受けます。",
+    "Ku帯は比較的安定しており、多くの商業用途で使用されていますが、大雨などの際にはやはり一時的な通信品質の低下が生じることもあります。",
+    "このような天候による影響を緩和するために、適応変調方式や自動出力調整などの技術が使われています。",
+    "どの周波数帯を使うかは、利用場所の気候（例：熱帯や砂漠）や必要な通信速度、設備コストなどに応じて選ばれます。",
+    "VSATを設計・導入する際は、気象条件と周波数帯の特性を十分に考慮することが重要です。"
+  ],
+  "originalSlideText": "❑ Überblick der genutzten Frequenzbänder mit Größe der Parabolantenne, Signalstärke und Beeinflussbarkeit durch das Wetter",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 47,
+  "questionDe": "(s53) Welche Funktion erfüllt das GPS-System für mobile Netzwerke?",
+  "questionJa": "GPSはモバイルネットワークにおいてどのような役割を果たしているのか？",
+  "answerDe": [
+    "GPS liefert sehr genaue Zeit- und Ortsinformationen.",
+    "Diese sind essenziell für die Synchronisation mobiler Netze.",
+    "Satelliten sind in sechs verschiedenen Orbits verteilt und bieten weltweite Abdeckung."
+  ],
+  "answerJa": [
+    "GPSは非常に高精度な時刻と位置情報を提供する。",
+    "これはモバイルネットワークの時刻同期に不可欠である。",
+    "衛星は6つの異なる軌道に分散されており、地球全体をカバーしている。"
+  ],
+  "explanationDe": [
+    "GPS (Global Positioning System) ist ein satellitenbasiertes Navigationssystem, das ursprünglich vom US-Militär entwickelt wurde, heute aber weltweit in zivilen Anwendungen genutzt wird.",
+    "Für mobile Kommunikationsnetze ist die exakte Zeitsynchronisation zwischen verschiedenen Basisstationen essenziell, um Frequenzzuweisungen, Handover und Datendurchsatz effizient zu koordinieren.",
+    "GPS liefert dafür präzise Zeitstempel, die von Mobilfunkstationen empfangen und zur Ausrichtung der Netzwerkschichten genutzt werden.",
+    "Auch Standortdaten von Endgeräten werden durch GPS ermöglicht – wichtig z. B. für Notrufsysteme oder standortbezogene Dienste wie Karten, Werbung oder Verkehrsinfos.",
+    "Das System basiert auf über 30 Satelliten, die in sechs verschiedenen Umlaufbahnen die Erde umkreisen und damit eine lückenlose globale Abdeckung gewährleisten.",
+    "Ohne GPS müssten Mobilfunknetze eigene, aufwendige Zeitgeberstrukturen implementieren, was teurer und fehleranfälliger wäre.",
+    "GPS ist somit eine Schlüsseltechnologie, die moderne, schnelle und koordinierte mobile Netzwerke erst möglich macht."
+  ],
+  "explanationJa": [
+    "GPS（全地球測位システム）はもともとアメリカ軍によって開発された衛星ナビゲーションシステムで、現在では民間でも広く使われています。",
+    "モバイル通信ネットワークでは、基地局同士の時刻を正確に同期させることが非常に重要です。これは、周波数の割り当てやハンドオーバー（基地局の切り替え）、データ通信の整合性を確保するために必要です。",
+    "GPSは、ミリ秒単位の高精度な時刻情報を提供し、これをモバイルネットワーク内で共有することで、システム全体の動作を統一させています。",
+    "また、スマートフォンや通信端末がGPSから位置情報を取得することで、緊急通報の位置通知、地図アプリ、近隣情報の広告など、多くの位置情報サービスが実現されます。",
+    "GPS衛星は30基以上あり、6つの異なる軌道に配置されており、地球上のほぼどこでも信号が受信できるようになっています。",
+    "もしGPSがなければ、携帯ネットワークごとに独自の高精度なクロックシステムを整備する必要があり、大きなコストと技術的負担がかかります。",
+    "そのため、GPSは現代の高速・高性能なモバイル通信のインフラを支える不可欠な技術といえます。"
+  ],
+  "originalSlideText": "❑ Global Positioning System (GPS) liefert sehr genaue Zeit- und Ortsinformationen\n❑ Keine Kommunikationstechnologie per se, aber sehr wichtig für schnelle mobile Netze\n❑ Eigenschaften:\n Für normale Konsumenten eine Genauigkeit bis 2m\n > 30 Satelliten\n Satelliten in 6 verschiedenen Orbits\n Zeitsynchronisation für verschiedene Kommunikationsnetze",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 48,
+  "questionDe": "(s54) Wie berechnet ein GPS-Gerät seine Position mithilfe der Satellitensignale?",
+  "questionJa": "GPS受信機は、衛星の信号を使ってどのようにして自身の位置を計算しているのか？（図解あり）",
+  "answerDe": [
+    "GPS-Satelliten senden kodiert ihre Position und genaue Zeit.",
+    "Ein GPS-Gerät berechnet aus der Laufzeit des Signals die Entfernung zum Satelliten.",
+    "Mit den Signalen von mindestens drei Satelliten kann die exakte Position auf der Erde bestimmt werden."
+  ],
+  "answerJa": [
+    "GPS衛星は自分の位置と正確な時刻を符号化して送信する。",
+    "受信機は信号の到達時間から各衛星までの距離を計算する。",
+    "3つ以上の衛星信号があれば、地球上の正確な位置を三辺測量で割り出せる。"
+  ],
+  "explanationDe": [
+    "GPS funktioniert auf Basis der Laufzeitmessung: Jeder GPS-Satellit sendet kontinuierlich Informationen über seine aktuelle Position sowie einen sehr genauen Zeitstempel.",
+    "Ein GPS-Empfänger vergleicht die Zeit des gesendeten Signals mit der eigenen Empfangszeit und berechnet daraus, wie lange das Signal unterwegs war.",
+    "Da sich elektromagnetische Signale mit Lichtgeschwindigkeit ausbreiten, kann aus der Laufzeit die exakte Entfernung zum jeweiligen Satelliten ermittelt werden.",
+    "Mit den Entfernungen zu mindestens drei verschiedenen Satelliten kann der Empfänger per Trilateration (Dreiecksberechnung) seine eigene Position in zwei Dimensionen bestimmen – mit vier Satelliten auch in drei Dimensionen inklusive Höhe.",
+    "Die vierte Messung dient oft zur Korrektur der internen Uhr des Empfängers, da dieser normalerweise nicht so genau getaktet ist wie die Atomuhren in den Satelliten.",
+    "Beispiel: Wenn ein Gerät weiß, dass es 20 000 km von Satellit A, 22 000 km von B und 21 000 km von C entfernt ist, ergibt sich ein eindeutiger Schnittpunkt im Raum.",
+    "Durch diese Methode kann ein GPS-Empfänger seine Position mit einer Genauigkeit von etwa 2 Metern bestimmen – abhängig von Umgebung, Signalqualität und Antennenlage."
+  ],
+  "explanationJa": [
+    "GPSは、信号の到達時間を利用して位置を算出する「到達時間測位方式（タイム・オブ・フライト）」に基づいています。",
+    "各GPS衛星は、自分の現在位置と正確な時刻（原子時計ベース）を常に送信しています。",
+    "GPS受信機は、その信号を受け取った時刻と送信時刻の差を計算し、光速を用いて衛星までの距離を求めます。",
+    "少なくとも3つの異なる衛星から距離がわかれば、三辺測量（三辺法）を使って、地球上の2次元の位置が求められます。4つ以上あれば、高度も含めた3次元の位置が算出可能です。",
+    "受信機の時計は衛星ほど正確ではないため、4つ目の衛星信号は内部クロックの補正にも使われます。",
+    "たとえば、ある衛星から20,000km、別の衛星から22,000km、さらに21,000km離れていることがわかれば、それらの球の交点として現在位置が特定されます。",
+    "この仕組みにより、GPSは空がよく見える場所であれば、一般的に2m程度の高精度な位置特定が可能です。"
+  ],
+  "originalSlideText": "❑ GPS-Satelliten senden kodiert ihre Position und Zeit\n❑ Aus der Signallaufzeit des Signals kann ein Nutzer die Entfernung des Satelliten berechnen\n❑ Mit den Signalen von 3 Satelliten kann die genaue Position auf der Erde bestimmt werden",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 49,
+  "questionDe": "(s55) Was ist der Unterschied zwischen klassischer Netzhardware und Software Defined Radio?",
+  "questionJa": "従来のネットワーク機器とソフトウェア定義無線（SDR）の違いは何か？",
+  "answerDe": [
+    "Klassische Netzhardware ist auf ein bestimmtes Protokoll festgelegt.",
+    "SDR nutzt programmierbare Hardware und kann verschiedene Protokolle durch Software umsetzen.",
+    "Dadurch reduziert SDR die Notwendigkeit für mehrere spezialisierte Chips im Gerät."
+  ],
+  "answerJa": [
+    "従来のネットワーク機器は、特定の通信プロトコルに専用化されている。",
+    "SDRはプログラム可能なハードウェアにより、ソフトウェアで複数のプロトコルを切り替えて扱える。",
+    "そのため、SDRは機器内に複数の専用チップを持つ必要がなくなる。"
+  ],
+  "explanationDe": [
+    "Traditionelle Netzhardware besteht aus fest verdrahteten Komponenten wie Antennen und Transceivern, die für ein bestimmtes Protokoll (z. B. LTE oder Wi-Fi) ausgelegt sind.",
+    "Ein typisches Smartphone enthält daher mehrere separate Chips für verschiedene Funktechnologien: z. B. einen LTE-Chip, einen für Bluetooth, einen für NFC und einen für WLAN.",
+    "Software Defined Radio (SDR) hingegen verfolgt einen flexibleren Ansatz: Die Kommunikationsfunktionen wie Modulation, Demodulation, Codierung oder Frequenzwahl werden durch Software auf programmierbaren Prozessoren und Filtern ausgeführt.",
+    "Das bedeutet, dass ein einziger, universeller SDR-Chip durch Software verschiedene Funkdienste unterstützen kann – ähnlich wie ein Universalwerkzeug statt vieler Einzelwerkzeuge.",
+    "Das reduziert nicht nur die Hardwarekosten, sondern vereinfacht auch Updates und Anpassungen an neue Standards.",
+    "Ein Beispiel: Während bei klassischer Hardware ein neuer Funkstandard neue Chips erfordert, kann SDR einfach per Softwareupdate erweitert werden.",
+    "SDR steht somit für eine neue, flexiblere Generation von Kommunikationssystemen mit hohem Innovationspotenzial, vor allem in Bereichen wie Mobilfunk, Forschung und Militär."
+  ],
+  "explanationJa": [
+    "従来のネットワーク機器は、それぞれの通信プロトコルに対応する専用のハードウェア（アンテナ、送受信回路）で構成されています。",
+    "例えばスマートフォンでは、LTE用、Wi-Fi用、Bluetooth用、NFC用など、複数のチップが別々に搭載されています。",
+    "これに対し、Software Defined Radio（SDR）は通信処理の多くをソフトウェアで行い、ハードウェアはプログラム可能な汎用構成になっています。",
+    "変調・復調、符号化、周波数選択などの処理をソフトウェアで実装することで、1つのSDRデバイスで複数の通信方式に対応可能となります。",
+    "たとえるなら、従来は専用工具が複数必要だったのに対し、SDRはマルチツールのように1つで多機能をこなせる存在です。",
+    "この柔軟性により、ハードウェアのコスト削減や、ソフトウェアアップデートによる新機能対応が容易になります。",
+    "SDRはモバイル通信、学術研究、軍事通信などで大きな可能性を秘めた次世代技術です。"
+  ],
+  "originalSlideText": "❑ Klassische Netzgeräte: Antennen und Transceiverhardware sind auf ein bestimmtes Protokoll zugeschnitten\n❑ Resultat: Smartphones besitzen mehrere Chips mit redundanten Hardwarebausteinen\n LTE\n NFC\n Bluetooth\n Wifi\n❑ Alternative: Software Defined Radio→ Kommunikationshardware ist programmierbar\n Programmierbare DSPs: Modulation, Signalcodierung\n Programmierbare analoge Filter: Frequenzauswahl\n Mehrere Antennen",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 50,
+  "questionDe": "(s56) Welche programmierbaren Funktionen ermöglicht ein Software Defined Radio?",
+  "questionJa": "ソフトウェア定義無線（SDR）ではどのような機能をプログラムで実現できるのか？",
+  "answerDe": [
+    "SDR erlaubt die softwarebasierte Implementierung von Modulation, Codierung und Filterung.",
+    "Funktionen wie Frequenzwahl und Signalverarbeitung können flexibel angepasst werden.",
+    "Ein SDR-System ist dadurch vielseitig und aktualisierbar."
+  ],
+  "answerJa": [
+    "SDRでは、変調、符号化、フィルタリングなどをソフトウェアで実装できる。",
+    "周波数の選択や信号処理も柔軟に変更可能。",
+    "これにより、SDRは多用途かつアップデート可能な通信システムとなる。"
+  ],
+  "explanationDe": [
+    "Software Defined Radio (SDR) ermöglicht es, viele klassische Hardwarefunktionen über Software zu realisieren.",
+    "Dazu zählen unter anderem die Modulation und Demodulation von Signalen (z. B. AM, FM, QAM), was früher ausschließlich in analogen Schaltungen geschah.",
+    "Auch die Codierung von Daten – etwa Fehlerkorrekturverfahren wie FEC (Forward Error Correction) – kann per Software angepasst werden.",
+    "Ein weiteres zentrales Element ist die Frequenzwahl: Mit digitalen Filtern lässt sich das gewünschte Frequenzband dynamisch einstellen.",
+    "Die gesamte Signalverarbeitung, also das Verstärken, Filtern, Mischen und Digitalisieren der Signale, erfolgt durch programmierbare digitale Signalprozessoren (DSPs).",
+    "Diese Flexibilität erlaubt es, SDR-Systeme nach Bedarf umzuprogrammieren – z. B. für neue Standards, militärische Frequenzen oder Forschungsprojekte.",
+    "Im Vergleich zu klassischer Hardware entfällt damit die Notwendigkeit, neue Chips für jeden einzelnen Funkstandard zu produzieren – was Zeit und Kosten spart."
+  ],
+  "explanationJa": [
+    "ソフトウェア定義無線（SDR）は、従来ハードウェアで実装されていた多くの機能をソフトウェアによって制御可能にします。",
+    "例えば、AMやFM、QAMなどの変調・復調処理は、従来はアナログ回路に依存していましたが、SDRではソフトウェアによって行えます。",
+    "また、エラー訂正方式（FECなど）の符号化もソフト的に柔軟に設定できます。",
+    "周波数の選択も、デジタルフィルタによって動的に切り替えることが可能です。",
+    "信号の増幅、ミキシング、サンプリングといった処理は、DSP（デジタル信号プロセッサ）を用いてリアルタイムに制御されます。",
+    "このような柔軟性により、SDRは特定の通信規格だけでなく、新たな用途や周波数帯にも容易に対応できます。",
+    "結果として、複数の規格ごとに専用チップを設計・製造する必要がなくなり、時間やコストの大幅な削減が実現できます。"
+  ],
+  "originalSlideText": "❑ Durch Software Defined Radio programmierbare Features",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 51,
+  "questionDe": "(s57) Welche Risiken und Vorteile sind mit Software Defined Radio verbunden?",
+  "questionJa": "ソフトウェア定義無線（SDR）の利点とリスクにはどのようなものがあるか？",
+  "answerDe": [
+    "Vorteile: hohe Flexibilität, programmierbare Nutzung verschiedener Frequenzen und Protokolle.",
+    "Risiken: Umgehung von Spezifikationen, Fairness-Mechanismen und Sicherheitsvorschriften.",
+    "Möglichkeit zur Verbreitung von Hardware-Viren und unkontrolliertem Frequenzmissbrauch."
+  ],
+  "answerJa": [
+    "利点：柔軟性が高く、さまざまな周波数や通信プロトコルをプログラムで扱える。",
+    "リスク：仕様や公正制御（Fairness）を回避することが可能になり、悪用の懸念がある。",
+    "ハードウェアウイルスの拡散や無許可の周波数使用の危険性もある。"
+  ],
+  "explanationDe": [
+    "Software Defined Radio (SDR) bringt viele technische Vorteile mit sich – darunter die Fähigkeit, eine Vielzahl von Funkstandards mit einem einzigen Gerät zu unterstützen.",
+    "Gerade im militärischen Bereich wird SDR intensiv genutzt, da es eine schnelle Anpassung an wechselnde Frequenzen und verschlüsselte Protokolle erlaubt.",
+    "Auch für private Nutzer sind SDR-Kits erhältlich, was zu einer Demokratisierung der Funktechnik führt.",
+    "Jedoch birgt diese Offenheit auch erhebliche Risiken: Da SDR nahezu jedes Frequenzband programmatisch nutzen kann, ist es möglich, unlizenzierte oder sicherheitsrelevante Frequenzen zu stören.",
+    "Außerdem kann SDR bestehende Fairness-Mechanismen im Netz umgehen, etwa durch bevorzugte Zugriffszeiten oder manipulierte Datenraten.",
+    "Ein weiteres Problem ist die mögliche Verbreitung von sogenannten 'Hardware-Viren', bei denen Schadsoftware direkt auf die programmierbare Funkhardware zielt.",
+    "Die Kontrolle über SDR-Nutzung erfordert daher nicht nur technische, sondern auch regulatorische und ethische Maßnahmen – wie das Sprichwort sagt: 'With great power comes great responsibility.'"
+  ],
+  "explanationJa": [
+    "ソフトウェア定義無線（SDR）は、多くの無線通信規格を1つの機器で処理できるという柔軟性を持ち、大きな技術的利点があります。",
+    "軍事用途では、周波数の変更やプロトコルの切り替えが迅速に行えるため、非常に重宝されています。",
+    "また、近年では民間向けのSDR開発キットも販売されており、無線技術の民主化が進んでいます。",
+    "しかしこの自由度の高さは、同時に大きなリスクも伴います。プログラム次第で、法律で許可されていない周波数帯を送信したり、他の通信を妨害することも可能です。",
+    "さらに、ネットワーク上の公平性（フェアネス）制御を回避したり、意図的に優先的なアクセスを得るような不正な利用も理論的には可能です。",
+    "プログラム可能なハードウェアに対して、マルウェアや“ハードウェアウイルス”が仕込まれるリスクも指摘されています。",
+    "このように、SDRを正しく活用するためには、技術面だけでなく、法制度や倫理的ガイドラインも必要不可欠です。“大きな力には大きな責任が伴う”という言葉がまさに当てはまります。"
+  ],
+  "originalSlideText": "❑ Im militärischen Umfeld im Einsatz\n❑ Für private Zwecke Experimentierkits bestellbar\n❑ Problem: Umgehung der Spezifikationen\n Beliebige Frequenzbänder nutzbar\n Umgehung von QoS Verfahren und Fairness Mechanismen\n Hardware-Viren\n …\n❑ „With great power comes great responsibility“",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 52,
+  "questionDe": "(s58) Welche Arten von drahtlosen Netzwerken werden unterschieden?",
+  "questionJa": "無線ネットワークにはどのような種類（PAN, LAN, MAN, WAN）があるか？",
+  "answerDe": [
+    "Unterschieden werden PAN (Personal Area Network), LAN (Local Area Network), MAN (Metropolitan Area Network) und WAN (Wide Area Network)."
+  ],
+  "answerJa": [
+    "PAN（個人エリアネットワーク）、LAN（構内ネットワーク）、MAN（都市圏ネットワーク）、WAN（広域ネットワーク）に分類される。"
+  ],
+  "explanationDe": [
+    "Drahtlose Netzwerke lassen sich je nach Reichweite und Einsatzzweck in vier Haupttypen unterteilen.",
+    "PAN (Personal Area Network) bezeichnet Funknetze über sehr kurze Distanzen – z. B. Bluetooth zwischen Smartphone und Kopfhörer oder NFC beim kontaktlosen Bezahlen.",
+    "LAN (Local Area Network) umfasst lokale Funkverbindungen, typischerweise über WLAN in Haushalten, Büros oder Schulen.",
+    "MAN (Metropolitan Area Network) verbindet größere Areale in Städten – ein typisches Beispiel dafür ist WiMAX, das ganze Stadtteile oder Regionen versorgen kann.",
+    "WAN (Wide Area Network) deckt weite geografische Bereiche ab und wird meist durch Mobilfunknetze oder Satellitenkommunikation (z. B. VSAT) realisiert.",
+    "Die Übergänge sind fließend, aber jede Kategorie hat spezifische Anforderungen an Bandbreite, Energieverbrauch, Kosten und Latenz.",
+    "Ein Verständnis dieser Kategorien hilft bei der Auswahl geeigneter Technologien für verschiedene Szenarien – etwa für Heimnetzwerke, industrielle IoT-Anwendungen oder ländliche Breitbandanbindung."
+  ],
+  "explanationJa": [
+    "無線ネットワークは、通信範囲や用途によって大きく4つに分類されます。",
+    "PAN（パーソナルエリアネットワーク）は数メートル以内の通信を対象とし、BluetoothやNFCのように個人の機器間通信に用いられます。",
+    "LAN（ローカルエリアネットワーク）は家庭やオフィス内でのWi-Fiなど、比較的狭い範囲での通信を指します。",
+    "MAN（メトロポリタンエリアネットワーク）は都市規模でのネットワークで、WiMAXのように広いエリアをカバーする通信に使用されます。",
+    "WAN（ワイドエリアネットワーク）は国や地球規模での通信を対象とし、携帯電話網や衛星通信（例：VSAT）などがこれに該当します。",
+    "それぞれのネットワークは、通信距離や速度、消費電力、コストなどに関して異なる設計要件を持っています。",
+    "使用する目的や環境に応じて、どのカテゴリの無線ネットワークが適しているかを理解することが重要です。"
+  ],
+  "originalSlideText": "❑ Drahtlose Netze existieren als PAN, LAN, MAN und WAN",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 53,
+  "questionDe": "(s58) Welche drahtlosen Technologien wurden vom IEEE standardisiert?",
+  "questionJa": "IEEEが標準化した無線通信技術にはどのようなものがあるか？",
+  "answerDe": [
+    "IEEE 802.11 für WLAN.",
+    "IEEE 802.15 für PAN-Technologien wie Bluetooth, UWB, ZigBee, IrDA."
+  ],
+  "answerJa": [
+    "IEEE 802.11：無線LAN（WLAN）のための標準。",
+    "IEEE 802.15：PAN技術（Bluetooth、UWB、ZigBee、IrDAなど）の標準。"
+  ],
+  "explanationDe": [
+    "Das Institute of Electrical and Electronics Engineers (IEEE) entwickelt internationale Standards für zahlreiche Kommunikationstechnologien.",
+    "Im Bereich drahtloser Netzwerke sind insbesondere die 802er-Standards relevant.",
+    "IEEE 802.11 ist der weltweit bekannte Standard für drahtlose lokale Netzwerke (WLAN), oft unter dem Namen Wi-Fi bekannt.",
+    "Dieser Standard definiert physikalische und MAC-Schichten für drahtlose Kommunikation und wurde über die Jahre mehrfach erweitert (z. B. 802.11a/b/g/n/ac/ax).",
+    "IEEE 802.15 behandelt Technologien für Personal Area Networks (PAN), also Funknetze auf sehr kurzer Distanz.",
+    "Dazu zählen Bluetooth (802.15.1), Ultra-Wideband (UWB, ursprünglich 802.15.3a), ZigBee (802.15.4) sowie Infrarot-Standards wie IrDA.",
+    "Diese Standardisierung durch das IEEE ermöglicht Interoperabilität zwischen Geräten unterschiedlicher Hersteller und sichert die Weiterentwicklung auf globaler Ebene."
+  ],
+  "explanationJa": [
+    "IEEE（米国電気電子学会）は、通信技術に関する国際的な標準化団体で、さまざまな無線技術の規格を策定しています。",
+    "中でも無線ネットワーク関連では「802」シリーズの規格が重要です。",
+    "IEEE 802.11は、Wi-Fiとして知られる無線LAN（WLAN）の規格で、物理層やMAC層を定義し、a/b/g/n/ac/axなどのバージョンが存在します。",
+    "一方、IEEE 802.15はPAN（パーソナルエリアネットワーク）を対象とした規格群です。",
+    "これにはBluetooth（802.15.1）、UWB（超広帯域通信、802.15.3a）、ZigBee（低消費電力ネットワーク、802.15.4）、IrDA（赤外線通信）などが含まれます。",
+    "IEEEの標準化によって、異なるメーカーの機器間でも相互運用が可能となり、世界中で統一された通信が実現されています。",
+    "これにより、技術の発展や製品の普及もスムーズに進められるのです。"
+  ],
+  "originalSlideText": "❑ IEEE hat viele drahtlose Protokolle standardisiert\n IEEE 802.11 für WLAN\n IEEE 802.15 für PAN",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 54,
+  "questionDe": "(s58) Was sind die wichtigsten Merkmale von WLAN, WiMAX und PAN-Technologien?",
+  "questionJa": "WLAN、WiMAX、PAN（Bluetoothなど）の代表的な特徴は何か？",
+  "answerDe": [
+    "WLAN (IEEE 802.11): lokal, nutzt CSMA/CA, funktioniert im Infrastruktur- oder Ad-hoc-Modus.",
+    "WiMAX (IEEE 802.16): große Reichweite, hohe Datenraten, MAN-Technologie.",
+    "PAN (IEEE 802.15): kurze Distanzen, umfasst Bluetooth, ZigBee, UWB, IrDA."
+  ],
+  "answerJa": [
+    "WLAN（IEEE 802.11）：ローカル通信、CSMA/CAを利用、インフラ型とアドホック型がある。",
+    "WiMAX（IEEE 802.16）：広域通信、高速通信が可能なMAN技術。",
+    "PAN（IEEE 802.15）：近距離通信、Bluetooth、ZigBee、UWB、IrDAなどを含む。"
+  ],
+  "explanationDe": [
+    "WLAN (Wireless LAN), standardisiert durch IEEE 802.11, ist für lokale Netzwerke ausgelegt, etwa in Haushalten oder Büros.",
+    "Es arbeitet entweder im Infrastrukturmodus (mit Access Point) oder Ad-hoc-Modus (direkte Kommunikation zwischen Geräten).",
+    "Zur Medienzugriffssteuerung verwendet WLAN CSMA/CA (Carrier Sense Multiple Access with Collision Avoidance), um Kollisionen bei der Datenübertragung zu vermeiden.",
+    "WiMAX (Worldwide Interoperability for Microwave Access) basiert auf IEEE 802.16 und ist für Metropolennetze (MAN) gedacht.",
+    "WiMAX bietet hohe Übertragungsraten und große Reichweiten, weshalb es oft für Breitbandzugänge oder als Backhaul-Lösung genutzt wird.",
+    "PAN-Technologien, definiert in IEEE 802.15, sind auf sehr kurze Distanzen ausgelegt – z. B. für persönliche Gerätekommunikation.",
+    "Dazu gehören: Bluetooth (Peripheriegeräte), ZigBee (Hausautomation), UWB (hohe Geschwindigkeit auf sehr kurzer Distanz) und IrDA (Infrarot, z. B. Fernbedienungen)."
+  ],
+  "explanationJa": [
+    "WLAN（無線LAN）はIEEE 802.11によって標準化されたローカルエリアネットワーク向けの通信技術で、家庭やオフィスなどで利用されます。",
+    "動作モードとして、アクセスポイントを介するインフラモードと、端末同士が直接通信するアドホックモードがあります。",
+    "通信の競合を防ぐために、WLANではCSMA/CA（搬送波感知／衝突回避）というメディアアクセス制御方式が用いられています。",
+    "WiMAXはIEEE 802.16に基づく技術で、都市全体をカバーできるMAN（都市圏ネットワーク）として設計されています。",
+    "広い範囲に高速通信を提供できるため、ラストワンマイルのインフラや、携帯基地局のバックホール回線などに活用されています。",
+    "PAN（パーソナルエリアネットワーク）はIEEE 802.15で定義され、近距離の機器間通信に使われます。",
+    "代表例として、Bluetooth（周辺機器接続）、ZigBee（スマートホーム）、UWB（高速近距離通信）、IrDA（赤外線通信）などがあります。"
+  ],
+  "originalSlideText": "❑ WLAN kann im Infrastrukturmodus oder im Ad hoc Modus betrieben werden\n❑ WLAN nutzt CSMA/CA\n❑ Wichtigste MAN Technologie ist WiMAX\n❑ PAN Protokolle: Bluetooth, UWB, ZigBee, IrDA",
+  "explanationImage": "",
+  "questionImage": ""
+} 
 ]
