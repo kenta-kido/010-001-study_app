@@ -1,22 +1,202 @@
 [
   {
-      "id": 1,
-      "questionDe": "Not yet",
-      "questionJa": "Not yet",
-      "answerDe": [
-        "-"
-      ],
-      "answerJa": [
-        "-"
-      ],
-      "explanationDe": [
-        "-"
-      ],
-      "explanationJa": [
-        "-"
-      ],
-      "originalSlideText": "-",
-      "questionImage": "",
-      "explanationImage": ""
-    }
+    "id": 1,
+    "questionDe": "(s4) Was ist das Address Resolution Protocol (ARP)?",
+    "questionJa": "Address Resolution Protocol（ARP）とは何ですか？",
+    "answerDe": [
+      "ARP ist ein Hilfsprotokoll, das IP-Adressen in MAC-Adressen übersetzt.",
+      "Es ermöglicht die Kapselung eines IP-Datagramms in ein Frame zur Übertragung im physischen Netzwerk.",
+      "Die Adressauflösung erfolgt nur für Computer im selben Netzwerk."
+    ],
+    "answerJa": [
+      "ARP は、IP アドレスを MAC アドレスに変換するための補助プロトコルです。",
+      "物理ネットワーク上でIPデータグラムをフレームにカプセル化して送信することを可能にします。",
+      "アドレス解決は、同一ネットワーク内のコンピュータ間でのみ行われます。"
+    ],
+    "explanationDe": [
+      "Das Address Resolution Protocol (ARP) ist ein essenzieller Bestandteil der Internetkommunikation innerhalb eines lokalen Netzwerks. Es dient der Übersetzung einer IP-Adresse in eine MAC-Adresse, die für die physikalische Adressierung im Netzwerk erforderlich ist.",
+      "Wenn ein Host ein IP-Datagramm senden möchte, kennt er zwar die IP-Adresse des Zielhosts, benötigt aber dessen MAC-Adresse für die eigentliche Übertragung auf dem lokalen Netz.",
+      "ARP löst dieses Problem, indem es eine spezielle Anfrage (Broadcast) an alle Geräte im lokalen Netz sendet und um die MAC-Adresse zur gegebenen IP-Adresse bittet.",
+      "Nur der Zielhost antwortet darauf mit seiner MAC-Adresse, wodurch der Absender das Datagramm korrekt adressieren kann.",
+      "Ein wichtiger Aspekt ist, dass ARP nur innerhalb eines Netzwerks funktioniert – für Geräte außerhalb des Netzes erfolgt die Auflösung über Zwischenschritte durch Router.",
+      "ARP gehört zur Schicht 2 (Data Link Layer) im OSI-Modell und stellt damit die Verbindung zwischen der IP-Schicht und der physischen Übertragungsschicht her.",
+      "Im Vergleich zu DNS, das Domainnamen in IP-Adressen auflöst, übersetzt ARP technische Adressen (IP zu MAC) auf Hardwareebene, was für die Paketweiterleitung unverzichtbar ist."
+    ],
+    "explanationJa": [
+      "Address Resolution Protocol（ARP）は、ローカルネットワーク内でIP通信を成立させるために不可欠な補助プロトコルです。これは、IPアドレスを物理的なハードウェアアドレス（MACアドレス）へ変換する役割を担います。",
+      "たとえば、あるコンピュータが別のホストにデータを送信しようとすると、相手のIPアドレスは知っていても、実際にそのデータをローカルネットワーク上で送るにはMACアドレスが必要です。",
+      "ARPはこの問題を解決するため、ネットワーク内の全デバイスにブロードキャストで「このIPアドレスを持つMACアドレスは誰ですか？」という問いを発信します。",
+      "対象のホストが応答することで、送信元ホストは正しいMACアドレスを取得し、データを正確に届けることができます。",
+      "ARPによるアドレス解決は、同一ネットワーク内の通信に限られており、異なるネットワークへの通信ではルーターを介して段階的に解決されます。",
+      "ARPはOSI参照モデルの第2層（データリンク層）に位置しており、IPアドレスによる論理的な指定と、物理的な通信手段とを結びつける役割を果たします。",
+      "類似の技術としてDNSが挙げられますが、DNSはドメイン名をIPアドレスへ変換する一方で、ARPはIPアドレスをMACアドレスへ変換する点で異なります。"
+    ],
+    "originalSlideText": "Address Resolution Protocol (ARP)\n\nAdressauflösung (1)\n❑ Sender und Router nutzen IP Adresse des Datagramms um nächsten Hop zu finden\n❑ Kapseln Datagramm in Frame und übertragen über physisches Netzwerk\n❑ Weiterleitung nutzt IP Adresse des nächsten Hop, aber Frame benötigt MAC Adresse\n❑ Adressauflösung: Übersetzung von IP Adresse in MAC Adresse (Address Resolution)\n❑ Adressauflösung findet nur für Computer im selben Netzwerk statt",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 2,
+    "questionDe": "(s5–s6) Wie funktioniert die Adressauflösung im lokalen Netzwerk?",
+    "questionJa": "ローカルネットワーク内でのアドレス解決はどのように行われますか？",
+    "answerDe": [
+      "Der Sender nutzt die IP-Adresse, um den nächsten Hop zu finden.",
+      "Das Datagramm wird in ein Frame gekapselt, das eine MAC-Adresse benötigt.",
+      "Die Adressauflösung ist notwendig, um die IP-Adresse in eine MAC-Adresse zu übersetzen.",
+      "Bei direkter Kommunikation mit einem Host muss dessen IP-Adresse aufgelöst werden.",
+      "Bei Weiterleitung über Router wird schrittweise die Adresse jedes nächsten Hops aufgelöst."
+    ],
+    "answerJa": [
+      "送信元はIPアドレスを使って次の転送先（ホップ）を特定します。",
+      "IPデータグラムはMACアドレスを必要とするフレームにカプセル化されます。",
+      "アドレス解決とは、IPアドレスをMACアドレスに変換する処理です。",
+      "ホストと直接通信する場合は、そのホストのIPアドレスを解決する必要があります。",
+      "ルーターを介した通信では、それぞれの次のホップに対して段階的にアドレスが解決されます。"
+    ],
+    "explanationDe": [
+      "Im lokalen Netzwerk ist für die Übertragung von Daten nicht nur die IP-Adresse des Zielgeräts notwendig, sondern auch dessen MAC-Adresse, da das physische Netzwerk auf MAC-Adressen basiert.",
+      "Ein Host oder Router bestimmt anhand der IP-Adresse, wohin das IP-Datagramm weitergeleitet werden soll – dies ist der sogenannte nächste Hop.",
+      "Bevor das Datagramm verschickt werden kann, wird es in ein Frame eingebettet, das die MAC-Adresse des nächsten Geräts benötigt.",
+      "Wenn ein Host A mit Host B im selben Netzwerk kommuniziert, muss Host A die IP-Adresse von B in dessen MAC-Adresse übersetzen.",
+      "Wenn A aber mit einem Host F kommunizieren will, der nicht im selben Netz liegt, löst A zunächst die Adresse seines Routers R1 auf. R1 wiederum löst die Adresse von R2 auf, und schließlich löst R2 die Adresse von F auf.",
+      "Dieser gestufte Prozess sorgt dafür, dass jeder Netzwerkteilnehmer nur die Adresse des unmittelbar nächsten Geräts auflöst, nicht die des Endziels.",
+      "Dies spart Ressourcen und sorgt für modularen Aufbau der Weiterleitung. Ein ähnliches Prinzip findet man in der Postzustellung: Jeder Abschnitt kennt nur den nächsten Empfänger, nicht den endgültigen Zielort."
+    ],
+    "explanationJa": [
+      "ローカルネットワーク内でデータを送信する際には、IPアドレスだけでなくMACアドレスも必要です。物理的なネットワークはMACアドレスを基盤に通信を行うためです。",
+      "送信元ホストやルーターは、宛先のIPアドレスを基にして、どのルーターまたはホストに次に転送すべきか（次のホップ）を判断します。",
+      "その後、データはフレームにカプセル化されて送信されますが、このフレームには次のホップのMACアドレスが必要となります。",
+      "たとえば、Host Aが同一ネットワーク内のHost Bに送信する場合は、Host AがBのIPアドレスをMACアドレスに解決する必要があります。",
+      "一方、Host Fのように異なるネットワークにいる相手に送る場合、Aはまず自身のルーター（R1）のMACアドレスを解決し、R1が次のルーターR2を解決し、最後にR2がFを解決します。",
+      "この段階的なアドレス解決により、各デバイスは直接接続された相手のみを対象にして効率的に処理を行えます。",
+      "これは郵便システムに似ており、各中継地点が最終目的地を知らずとも次の宛先だけを知っていれば、全体として正しく届く仕組みと同じです。"
+    ],
+    "originalSlideText": "Adressauflösung (2)\n❑ Leitet 𝑅1 Datagramm an 𝑅2 weiter, muss er IP Adresse von 𝑅2 in MAC Adresse übersetzen\n❑ Sendet Host A an Host B, muss er IP Adresse von Host B in Mac Adresse übersetzen\n❑ Sendet Host A an Host F, muss Host A Adresse von Host F nicht auflösen\n A löst 𝑅1 auf, 𝑅1 löst 𝑅2 auf, 𝑅2 löst F auf",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 3,
+    "questionDe": "(s7–s8) Wie läuft eine ARP-Anfrage und -Antwort im Ethernet-Netz ab? (mit Bild)",
+    "questionJa": "Ethernet ネットワークにおける ARP 要求と応答はどのように行われますか？（図あり）",
+    "answerDe": [
+      "Computer X sendet eine ARP-Anfrage als Broadcast.",
+      "Computer Y antwortet direkt mit seiner MAC- und IP-Adresse.",
+      "Die ARP-Anfrage lautet: 'Wer hat IP-Adresse Y?'.",
+      "Die Antwort erfolgt nur vom Zielgerät, nicht von allen."
+    ],
+    "answerJa": [
+      "コンピュータXはARP要求をブロードキャストで送信します。",
+      "コンピュータYは自分のMACアドレスとIPアドレスで直接応答します。",
+      "ARP要求は「IPアドレスYのMACアドレスは誰か？」という内容です。",
+      "応答は対象の機器のみが返します。"
+    ],
+    "explanationDe": [
+      "In einem Ethernet-Netzwerk erfolgt eine ARP-Anfrage durch einen sogenannten Broadcast. Das bedeutet, dass das Paket an alle Geräte im lokalen Netzwerk gesendet wird.",
+      "Beispielsweise möchte Computer X wissen, welche MAC-Adresse zur IP-Adresse von Computer Y gehört. Dazu sendet er eine ARP-Anfrage mit der Frage: 'Wer hat IP-Adresse Y?'",
+      "Diese Anfrage erreicht alle Geräte im Netzwerk, aber nur derjenige, dessen IP-Adresse mit der angefragten übereinstimmt – in diesem Fall Computer Y – antwortet.",
+      "Die Antwort von Y enthält sowohl die IP-Adresse als auch die zugehörige MAC-Adresse, und sie wird direkt an X geschickt – also als Unicast, nicht als Broadcast.",
+      "X kann diese Information dann in seinem ARP-Cache speichern, um spätere Anfragen zu vermeiden.",
+      "Ein wichtiger Punkt: ARP funktioniert nur im selben Netzsegment. Ist das Zielgerät in einem anderen Netzwerk, muss die Anfrage über einen Router erfolgen.",
+      "Dieser Mechanismus ist zentral für die Funktionsweise lokaler Netzwerke, da IP-Adressen für Routing notwendig sind, aber MAC-Adressen für die eigentliche physikalische Übertragung im Ethernet."
+    ],
+    "explanationJa": [
+      "Ethernetネットワークにおいて、ARP要求はブロードキャスト（ネットワーク内のすべての機器に一斉送信）として送信されます。",
+      "たとえば、コンピュータXがコンピュータYのIPアドレスに対応するMACアドレスを知りたい場合、Xは「IPアドレスYのMACアドレスは誰ですか？」というARP要求を送信します。",
+      "この要求は同じネットワーク内のすべての機器に届きますが、応答するのはそのIPアドレスを持つ機器、つまりYだけです。",
+      "Yは自分のMACアドレスとIPアドレスを含んだARP応答を、ブロードキャストではなくX宛にユニキャストで返送します。",
+      "XはこれによりMACアドレスを取得し、自身のARPキャッシュに保存することで、同じアドレスに対する次回以降の問い合わせを省略できます。",
+      "なお、ARPは同一ネットワーク内の通信に限定されており、別ネットワークにあるホストへの通信ではルーターを介して処理されます。",
+      "このARPによるアドレス解決プロセスは、IPベースの通信と実際の物理転送（Ethernet）との橋渡しとして非常に重要です。"
+    ],
+    "originalSlideText": "IPv4 Address Resolution Protocol (ARP)\n\n(a) Computer X sendet Anfrage als Broadcast\n(b) Computer Y sendet Antwort direkt.\n❑ Computer X und Y im selben Ethernet, X muss IPv4 Adresse von Y auflösen\n❑ Sendet Broadcast im Netzwerk: „Wie ist MAC Adresse von Computer mit IP Adresse Y“\n❑ Y antwortet direkt mit seiner IP Adresse und MAC Adresse",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 4,
+    "questionDe": "(s9–s10) Wie ist das ARP-Nachrichtenformat aufgebaut?",
+    "questionJa": "ARPメッセージのフォーマットはどのように構成されていますか？",
+    "answerDe": [
+      "Das Format enthält Felder mit fester Größe für Hardware- und Protokolladressen.",
+      "Typische Werte sind: Hardwaretyp = 1 (Ethernet), Protokolltyp = 0x0800 (IPv4).",
+      "Längenfelder HADDR LEN = 6 und PADDR LEN = 4 für Ethernet und IPv4.",
+      "OPERATION gibt an, ob es sich um eine Anfrage (1) oder Antwort (2) handelt.",
+      "Weitere Felder: Sender/Target Hardware- und Protokolladressen."
+    ],
+    "answerJa": [
+      "ARPメッセージは、ハードウェアアドレスとプロトコルアドレスの長さなどを示す固定長フィールドを含みます。",
+      "代表的な値：ハードウェアタイプ = 1（Ethernet）、プロトコルタイプ = 0x0800（IPv4）。",
+      "HADDR LEN = 6、PADDR LEN = 4（EthernetとIPv4に対応）。",
+      "OPERATIONフィールドはリクエスト（1）かレスポンス（2）かを示します。",
+      "そのほか、送信者とターゲットのハードウェアアドレスおよびプロトコルアドレスを含みます。"
+    ],
+    "explanationDe": [
+      "Das ARP-Nachrichtenformat ist standardisiert und besteht aus mehreren Feldern mit festen Größen, die sowohl die Adresstypen als auch die Adresswerte enthalten.",
+      "Zunächst geben zwei Felder den Typ der verwendeten Adressen an: 'HARDWARE ADDRESS TYPE' hat bei Ethernet den Wert 1 und 'PROTOCOL ADDRESS TYPE' bei IPv4 den Wert 0x0800.",
+      "Die Längen der Adressen sind ebenfalls festgelegt: für Ethernet beträgt die Hardwareadresse 6 Oktetts, die Protokolladresse (IPv4) 4 Oktetts.",
+      "Das 'OPERATION'-Feld bestimmt, ob es sich um eine ARP-Anfrage (Wert 1) oder eine Antwort (Wert 2) handelt.",
+      "Die Felder 'SENDER HADDR' und 'SENDER PADDR' enthalten die MAC- und IP-Adresse des Absenders, während 'TARGET HADDR' und 'TARGET PADDR' die Zielinformationen angeben.",
+      "Diese strukturierte Form erlaubt es, ARP auch für andere Kombinationen als nur IPv4 über Ethernet zu verwenden, obwohl dies selten der Fall ist.",
+      "Im Vergleich zu anderen Protokollen ist das ARP-Format relativ einfach, aber äußerst effizient für den lokalen Adressauflösungsprozess."
+    ],
+    "explanationJa": [
+      "ARPメッセージは、アドレスの種類や長さ、実際のアドレス値を示す複数のフィールドで構成される、標準化されたフォーマットを持っています。",
+      "最初のフィールドでアドレスの種類を定義します。たとえばEthernetの場合はハードウェアアドレスタイプに「1」、IPv4の場合はプロトコルアドレスタイプに「0x0800」が指定されます。",
+      "さらに、それぞれのアドレスの長さも明示されており、EthernetのMACアドレスは6オクテット、IPv4アドレスは4オクテットと定義されています。",
+      "OPERATIONフィールドは、そのメッセージがリクエスト（1）かレスポンス（2）かを識別するために使われます。",
+      "送信者（SENDER HADDR/PADDR）とターゲット（TARGET HADDR/PADDR）のMACアドレスとIPアドレスがそれぞれ記載されます。",
+      "この形式により、ARPは他のネットワーク技術にも応用可能ですが、実際にはEthernetとIPv4の組み合わせがほとんどです。",
+      "他のプロトコルと比較すると、ARPの構造は比較的シンプルで効率的であり、ローカルネットワーク内のアドレス解決に特化しています。"
+    ],
+    "originalSlideText": "ARP Nachrichtenformat (1)\n❑ Allgemeines Protokoll: Nicht beschränkt auf IPv4 und Ethernet Adressen\n❑ Felder mit fester Größe am Anfang der Nachricht geben  Länge von Hardware- und Protokolladresse an\n IPv4 und Ethernet: Länge der Hardwareadresse ist 6 Oktetts, Länge der Protokolladresse ist 4 Oktetts\n❑ ARP wird fast nur für Ethernet und IPv4 Adressen genutzt\n\nARP Nachrichtenformat (2)\n❑ HARDWARE ADDRESS TYPE: Typ der Hardwareadresse, „1“ für Ethernet\n❑ PROTOCOL ADDRESS TYPE: Typ der Protokolladresse, „0x0800“ für IPv4\n❑ HADDR LEN: Größe der Hardwareadresse in Oktetts\n❑ PADDR LEN: Größe der Protokolladresse in Oktetts\n❑ OPERATION: Request („1“) oder Response („2“)\n❑ SENDER HADDR: HADDR LEN Oktetts lang, enthält Hardwareadresse von Sender\n❑ SENDER PADDR, TARGET HADDR, TARGET PADDR ähnlich",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 6,
+    "questionDe": "(s13–s14) Warum ist ARP-Caching notwendig und wie funktioniert es?",
+    "questionJa": "なぜARPキャッシュが必要であり、どのように機能するのですか？",
+    "answerDe": [
+      "Ohne Cache würden für jedes Datagramm drei Frames übertragen: ARP Request, ARP Response, eigentliches Datagramm.",
+      "Ein ARP-Cache speichert bekannte IP-MAC-Zuordnungen.",
+      "Der älteste Eintrag wird ersetzt oder gelöscht, wenn Speicher knapp ist oder Einträge veraltet sind.",
+      "Einträge werden nur aktualisiert, wenn ARP-Nachrichten empfangen werden – nicht bei Lookup.",
+      "Bei eingehenden Requests wird der Cache nur aktualisiert, wenn man selbst Ziel ist."
+    ],
+    "answerJa": [
+      "キャッシュがないと、各データグラムごとにARPリクエスト、レスポンス、データグラムの3つのフレームが必要になります。",
+      "ARPキャッシュは、既知のIPとMACの対応関係を保存する仕組みです。",
+      "古いエントリは、メモリが不足したときや有効期限切れのときに削除・置換されます。",
+      "キャッシュはARPメッセージを受信したときのみ更新され、検索時には更新されません。",
+      "受信したARPリクエストが自分宛でない場合、キャッシュは更新されません。"
+    ],
+    "explanationDe": [
+      "Das ARP-Caching dient dazu, die Anzahl an Netzwerkanfragen zu reduzieren und die Effizienz der Adressauflösung zu steigern.",
+      "Ohne Cache müsste jedes Mal, wenn ein Gerät ein IP-Datagramm senden möchte, zuerst eine ARP-Anfrage und danach die Antwort übertragen werden – zusammen mit dem eigentlichen Datenpaket also drei Übertragungen pro Vorgang.",
+      "Ein ARP-Cache speichert IP-zu-MAC-Adressen-Zuordnungen lokal, sodass sie bei wiederholtem Gebrauch sofort verfügbar sind.",
+      "Wenn ein Eintrag im Cache vorhanden ist, wird keine neue ARP-Anfrage gesendet, was Bandbreite und Zeit spart.",
+      "Der Cache funktioniert wie ein Puffer mit beschränkter Kapazität: Der älteste Eintrag wird entfernt, wenn kein Platz mehr ist oder der Eintrag zu alt ist.",
+      "Einträge werden jedoch nur aktualisiert, wenn ARP-Nachrichten (Request oder Response) empfangen werden – nicht durch bloßes Nachschlagen.",
+      "Ein besonderer Fall ist der Empfang eines Requests: Nur wenn das Gerät selbst das Ziel ist, wird der Cache entsprechend angepasst. Das verhindert, dass unnötige oder unzuverlässige Daten gespeichert werden.",
+      "Im Vergleich zu DNS-Caching, das auf längere Gültigkeitszeiten ausgelegt ist, arbeitet der ARP-Cache kurzfristig und dynamisch, um auf häufige Änderungen im lokalen Netz zu reagieren."
+    ],
+    "explanationJa": [
+      "ARPキャッシュは、ネットワークの効率を向上させるために不可欠です。キャッシュがなければ、IPデータグラムを送るたびにARPリクエストとレスポンスの通信が必要となり、毎回3つのフレーム（ARPリクエスト、ARPレスポンス、データ本体）を送ることになります。",
+      "ARPキャッシュは、過去に解決されたIPアドレスとMACアドレスの対応関係を記憶しておくことで、再利用時に即座に利用可能にします。",
+      "この仕組みにより、同じ宛先への通信ではARPリクエストを省略でき、ネットワーク帯域の節約と応答時間の短縮が実現されます。",
+      "キャッシュは容量に限りがあるため、古いエントリから順に削除されるか、メモリが不足した場合に置き換えられます。",
+      "ただし、キャッシュの更新はARPメッセージの受信時にしか行われません。検索（ルックアップ）だけでは更新されません。",
+      "また、他ホスト宛のARPリクエストを受信しても、その内容をキャッシュに記録することはありません。自身がターゲットである場合のみ記録されます。",
+      "このように、ARPキャッシュは頻繁に変化するローカルネットワークに適した、一時的で効率的なメモリ管理の仕組みです。DNSキャッシュのように長期的な保存を想定するものとは異なります。"
+    ],
+    "originalSlideText": "ARP Caching (1)\n❑ Pro Datagramm sind drei Frames notwendig (ARP Request, ARP Response, eigentliches Datagramm)\n❑ ARP Tabelle speichert Bindings in Cache\n Ältester Eintrag wird ersetzt\n Entfernen falls zu wenig Speicher oder Eintrag zu alt\n❑ ARP Request nur, falls kein Eintrag in Cache\n❑ Cache nur aktualisiert, wenn ARP Nachrichten (Request oder Response) gesehen werden, nicht bei Lookup\n\nARP Caching (2)\n❑ Cache bei eingehendem Request nur aktualisiert, falls man selbst Target ist\n Kommunikation in der Regel in beide Richtungen; falls Nachricht von A nach B, ist Wahrscheinlichkeit hoch für Antwort von B an A\n Keine beliebige Zahl an Adressen kann gespeichert werden (Speicher)",
+    "explanationImage": "",
+    "questionImage": ""
+  }
+  
+  
+  
+  
+  
 ]
