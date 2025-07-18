@@ -1,261 +1,1613 @@
 [
   {
-      "id": 1,
-      "questionDe": "Not yet",
-      "questionJa": "Not yet",
-      "answerDe": [
-        "-"
-      ],
-      "answerJa": [
-        "-"
-      ],
-      "explanationDe": [
-        "-"
-      ],
-      "explanationJa": [
-        "-"
-      ],
-      "originalSlideText": "-",
-      "questionImage": "",
-      "explanationImage": ""
-    },
-    {
-      "id": 1,
-      "questionDe": "(s4) Was ist das Address Resolution Protocol (ARP)?",
-      "questionJa": "Address Resolution Protocol（ARP）とは何ですか？",
-      "answerDe": [
-        "ARP ist ein Hilfsprotokoll, das IP-Adressen in MAC-Adressen übersetzt.",
-        "Es ermöglicht die Kapselung eines IP-Datagramms in ein Frame zur Übertragung im physischen Netzwerk.",
-        "Die Adressauflösung erfolgt nur für Computer im selben Netzwerk."
-      ],
-      "answerJa": [
-        "ARP は、IP アドレスを MAC アドレスに変換するための補助プロトコルです。",
-        "物理ネットワーク上でIPデータグラムをフレームにカプセル化して送信することを可能にします。",
-        "アドレス解決は、同一ネットワーク内のコンピュータ間でのみ行われます。"
-      ],
-      "explanationDe": [
-        "Das Address Resolution Protocol (ARP) ist ein essenzieller Bestandteil der Internetkommunikation innerhalb eines lokalen Netzwerks. Es dient der Übersetzung einer IP-Adresse in eine MAC-Adresse, die für die physikalische Adressierung im Netzwerk erforderlich ist.",
-        "Wenn ein Host ein IP-Datagramm senden möchte, kennt er zwar die IP-Adresse des Zielhosts, benötigt aber dessen MAC-Adresse für die eigentliche Übertragung auf dem lokalen Netz.",
-        "ARP löst dieses Problem, indem es eine spezielle Anfrage (Broadcast) an alle Geräte im lokalen Netz sendet und um die MAC-Adresse zur gegebenen IP-Adresse bittet.",
-        "Nur der Zielhost antwortet darauf mit seiner MAC-Adresse, wodurch der Absender das Datagramm korrekt adressieren kann.",
-        "Ein wichtiger Aspekt ist, dass ARP nur innerhalb eines Netzwerks funktioniert – für Geräte außerhalb des Netzes erfolgt die Auflösung über Zwischenschritte durch Router.",
-        "ARP gehört zur Schicht 2 (Data Link Layer) im OSI-Modell und stellt damit die Verbindung zwischen der IP-Schicht und der physischen Übertragungsschicht her.",
-        "Im Vergleich zu DNS, das Domainnamen in IP-Adressen auflöst, übersetzt ARP technische Adressen (IP zu MAC) auf Hardwareebene, was für die Paketweiterleitung unverzichtbar ist."
-      ],
-      "explanationJa": [
-        "Address Resolution Protocol（ARP）は、ローカルネットワーク内でIP通信を成立させるために不可欠な補助プロトコルです。これは、IPアドレスを物理的なハードウェアアドレス（MACアドレス）へ変換する役割を担います。",
-        "たとえば、あるコンピュータが別のホストにデータを送信しようとすると、相手のIPアドレスは知っていても、実際にそのデータをローカルネットワーク上で送るにはMACアドレスが必要です。",
-        "ARPはこの問題を解決するため、ネットワーク内の全デバイスにブロードキャストで「このIPアドレスを持つMACアドレスは誰ですか？」という問いを発信します。",
-        "対象のホストが応答することで、送信元ホストは正しいMACアドレスを取得し、データを正確に届けることができます。",
-        "ARPによるアドレス解決は、同一ネットワーク内の通信に限られており、異なるネットワークへの通信ではルーターを介して段階的に解決されます。",
-        "ARPはOSI参照モデルの第2層（データリンク層）に位置しており、IPアドレスによる論理的な指定と、物理的な通信手段とを結びつける役割を果たします。",
-        "類似の技術としてDNSが挙げられますが、DNSはドメイン名をIPアドレスへ変換する一方で、ARPはIPアドレスをMACアドレスへ変換する点で異なります。"
-      ],
-      "originalSlideText": "Address Resolution Protocol (ARP)\n\nAdressauflösung (1)\n❑ Sender und Router nutzen IP Adresse des Datagramms um nächsten Hop zu finden\n❑ Kapseln Datagramm in Frame und übertragen über physisches Netzwerk\n❑ Weiterleitung nutzt IP Adresse des nächsten Hop, aber Frame benötigt MAC Adresse\n❑ Adressauflösung: Übersetzung von IP Adresse in MAC Adresse (Address Resolution)\n❑ Adressauflösung findet nur für Computer im selben Netzwerk statt",
-      "explanationImage": "",
-      "questionImage": ""
-    },
-    {
-      "id": 2,
-      "questionDe": "(s5–s6) Wie funktioniert die Adressauflösung im lokalen Netzwerk?",
-      "questionJa": "ローカルネットワーク内でのアドレス解決はどのように行われますか？",
-      "answerDe": [
-        "Der Sender nutzt die IP-Adresse, um den nächsten Hop zu finden.",
-        "Das Datagramm wird in ein Frame gekapselt, das eine MAC-Adresse benötigt.",
-        "Die Adressauflösung ist notwendig, um die IP-Adresse in eine MAC-Adresse zu übersetzen.",
-        "Bei direkter Kommunikation mit einem Host muss dessen IP-Adresse aufgelöst werden.",
-        "Bei Weiterleitung über Router wird schrittweise die Adresse jedes nächsten Hops aufgelöst."
-      ],
-      "answerJa": [
-        "送信元はIPアドレスを使って次の転送先（ホップ）を特定します。",
-        "IPデータグラムはMACアドレスを必要とするフレームにカプセル化されます。",
-        "アドレス解決とは、IPアドレスをMACアドレスに変換する処理です。",
-        "ホストと直接通信する場合は、そのホストのIPアドレスを解決する必要があります。",
-        "ルーターを介した通信では、それぞれの次のホップに対して段階的にアドレスが解決されます。"
-      ],
-      "explanationDe": [
-        "Im lokalen Netzwerk ist für die Übertragung von Daten nicht nur die IP-Adresse des Zielgeräts notwendig, sondern auch dessen MAC-Adresse, da das physische Netzwerk auf MAC-Adressen basiert.",
-        "Ein Host oder Router bestimmt anhand der IP-Adresse, wohin das IP-Datagramm weitergeleitet werden soll – dies ist der sogenannte nächste Hop.",
-        "Bevor das Datagramm verschickt werden kann, wird es in ein Frame eingebettet, das die MAC-Adresse des nächsten Geräts benötigt.",
-        "Wenn ein Host A mit Host B im selben Netzwerk kommuniziert, muss Host A die IP-Adresse von B in dessen MAC-Adresse übersetzen.",
-        "Wenn A aber mit einem Host F kommunizieren will, der nicht im selben Netz liegt, löst A zunächst die Adresse seines Routers R1 auf. R1 wiederum löst die Adresse von R2 auf, und schließlich löst R2 die Adresse von F auf.",
-        "Dieser gestufte Prozess sorgt dafür, dass jeder Netzwerkteilnehmer nur die Adresse des unmittelbar nächsten Geräts auflöst, nicht die des Endziels.",
-        "Dies spart Ressourcen und sorgt für modularen Aufbau der Weiterleitung. Ein ähnliches Prinzip findet man in der Postzustellung: Jeder Abschnitt kennt nur den nächsten Empfänger, nicht den endgültigen Zielort."
-      ],
-      "explanationJa": [
-        "ローカルネットワーク内でデータを送信する際には、IPアドレスだけでなくMACアドレスも必要です。物理的なネットワークはMACアドレスを基盤に通信を行うためです。",
-        "送信元ホストやルーターは、宛先のIPアドレスを基にして、どのルーターまたはホストに次に転送すべきか（次のホップ）を判断します。",
-        "その後、データはフレームにカプセル化されて送信されますが、このフレームには次のホップのMACアドレスが必要となります。",
-        "たとえば、Host Aが同一ネットワーク内のHost Bに送信する場合は、Host AがBのIPアドレスをMACアドレスに解決する必要があります。",
-        "一方、Host Fのように異なるネットワークにいる相手に送る場合、Aはまず自身のルーター（R1）のMACアドレスを解決し、R1が次のルーターR2を解決し、最後にR2がFを解決します。",
-        "この段階的なアドレス解決により、各デバイスは直接接続された相手のみを対象にして効率的に処理を行えます。",
-        "これは郵便システムに似ており、各中継地点が最終目的地を知らずとも次の宛先だけを知っていれば、全体として正しく届く仕組みと同じです。"
-      ],
-      "originalSlideText": "Adressauflösung (2)\n❑ Leitet 𝑅1 Datagramm an 𝑅2 weiter, muss er IP Adresse von 𝑅2 in MAC Adresse übersetzen\n❑ Sendet Host A an Host B, muss er IP Adresse von Host B in Mac Adresse übersetzen\n❑ Sendet Host A an Host F, muss Host A Adresse von Host F nicht auflösen\n A löst 𝑅1 auf, 𝑅1 löst 𝑅2 auf, 𝑅2 löst F auf",
-      "explanationImage": "",
-      "questionImage": ""
-    },
-    {
-      "id": 3,
-      "questionDe": "(s7–s8) Wie läuft eine ARP-Anfrage und -Antwort im Ethernet-Netz ab? (mit Bild)",
-      "questionJa": "Ethernet ネットワークにおける ARP 要求と応答はどのように行われますか？（図あり）",
-      "answerDe": [
-        "Computer X sendet eine ARP-Anfrage als Broadcast.",
-        "Computer Y antwortet direkt mit seiner MAC- und IP-Adresse.",
-        "Die ARP-Anfrage lautet: 'Wer hat IP-Adresse Y?'.",
-        "Die Antwort erfolgt nur vom Zielgerät, nicht von allen."
-      ],
-      "answerJa": [
-        "コンピュータXはARP要求をブロードキャストで送信します。",
-        "コンピュータYは自分のMACアドレスとIPアドレスで直接応答します。",
-        "ARP要求は「IPアドレスYのMACアドレスは誰か？」という内容です。",
-        "応答は対象の機器のみが返します。"
-      ],
-      "explanationDe": [
-        "In einem Ethernet-Netzwerk erfolgt eine ARP-Anfrage durch einen sogenannten Broadcast. Das bedeutet, dass das Paket an alle Geräte im lokalen Netzwerk gesendet wird.",
-        "Beispielsweise möchte Computer X wissen, welche MAC-Adresse zur IP-Adresse von Computer Y gehört. Dazu sendet er eine ARP-Anfrage mit der Frage: 'Wer hat IP-Adresse Y?'",
-        "Diese Anfrage erreicht alle Geräte im Netzwerk, aber nur derjenige, dessen IP-Adresse mit der angefragten übereinstimmt – in diesem Fall Computer Y – antwortet.",
-        "Die Antwort von Y enthält sowohl die IP-Adresse als auch die zugehörige MAC-Adresse, und sie wird direkt an X geschickt – also als Unicast, nicht als Broadcast.",
-        "X kann diese Information dann in seinem ARP-Cache speichern, um spätere Anfragen zu vermeiden.",
-        "Ein wichtiger Punkt: ARP funktioniert nur im selben Netzsegment. Ist das Zielgerät in einem anderen Netzwerk, muss die Anfrage über einen Router erfolgen.",
-        "Dieser Mechanismus ist zentral für die Funktionsweise lokaler Netzwerke, da IP-Adressen für Routing notwendig sind, aber MAC-Adressen für die eigentliche physikalische Übertragung im Ethernet."
-      ],
-      "explanationJa": [
-        "Ethernetネットワークにおいて、ARP要求はブロードキャスト（ネットワーク内のすべての機器に一斉送信）として送信されます。",
-        "たとえば、コンピュータXがコンピュータYのIPアドレスに対応するMACアドレスを知りたい場合、Xは「IPアドレスYのMACアドレスは誰ですか？」というARP要求を送信します。",
-        "この要求は同じネットワーク内のすべての機器に届きますが、応答するのはそのIPアドレスを持つ機器、つまりYだけです。",
-        "Yは自分のMACアドレスとIPアドレスを含んだARP応答を、ブロードキャストではなくX宛にユニキャストで返送します。",
-        "XはこれによりMACアドレスを取得し、自身のARPキャッシュに保存することで、同じアドレスに対する次回以降の問い合わせを省略できます。",
-        "なお、ARPは同一ネットワーク内の通信に限定されており、別ネットワークにあるホストへの通信ではルーターを介して処理されます。",
-        "このARPによるアドレス解決プロセスは、IPベースの通信と実際の物理転送（Ethernet）との橋渡しとして非常に重要です。"
-      ],
-      "originalSlideText": "IPv4 Address Resolution Protocol (ARP)\n\n(a) Computer X sendet Anfrage als Broadcast\n(b) Computer Y sendet Antwort direkt.\n❑ Computer X und Y im selben Ethernet, X muss IPv4 Adresse von Y auflösen\n❑ Sendet Broadcast im Netzwerk: „Wie ist MAC Adresse von Computer mit IP Adresse Y“\n❑ Y antwortet direkt mit seiner IP Adresse und MAC Adresse",
-      "explanationImage": "",
-      "questionImage": ""
-    },
-    {
-      "id": 4,
-      "questionDe": "(s9–s10) Wie ist das ARP-Nachrichtenformat aufgebaut?",
-      "questionJa": "ARPメッセージのフォーマットはどのように構成されていますか？",
-      "answerDe": [
-        "Das Format enthält Felder mit fester Größe für Hardware- und Protokolladressen.",
-        "Typische Werte sind: Hardwaretyp = 1 (Ethernet), Protokolltyp = 0x0800 (IPv4).",
-        "Längenfelder HADDR LEN = 6 und PADDR LEN = 4 für Ethernet und IPv4.",
-        "OPERATION gibt an, ob es sich um eine Anfrage (1) oder Antwort (2) handelt.",
-        "Weitere Felder: Sender/Target Hardware- und Protokolladressen."
-      ],
-      "answerJa": [
-        "ARPメッセージは、ハードウェアアドレスとプロトコルアドレスの長さなどを示す固定長フィールドを含みます。",
-        "代表的な値：ハードウェアタイプ = 1（Ethernet）、プロトコルタイプ = 0x0800（IPv4）。",
-        "HADDR LEN = 6、PADDR LEN = 4（EthernetとIPv4に対応）。",
-        "OPERATIONフィールドはリクエスト（1）かレスポンス（2）かを示します。",
-        "そのほか、送信者とターゲットのハードウェアアドレスおよびプロトコルアドレスを含みます。"
-      ],
-      "explanationDe": [
-        "Das ARP-Nachrichtenformat ist standardisiert und besteht aus mehreren Feldern mit festen Größen, die sowohl die Adresstypen als auch die Adresswerte enthalten.",
-        "Zunächst geben zwei Felder den Typ der verwendeten Adressen an: 'HARDWARE ADDRESS TYPE' hat bei Ethernet den Wert 1 und 'PROTOCOL ADDRESS TYPE' bei IPv4 den Wert 0x0800.",
-        "Die Längen der Adressen sind ebenfalls festgelegt: für Ethernet beträgt die Hardwareadresse 6 Oktetts, die Protokolladresse (IPv4) 4 Oktetts.",
-        "Das 'OPERATION'-Feld bestimmt, ob es sich um eine ARP-Anfrage (Wert 1) oder eine Antwort (Wert 2) handelt.",
-        "Die Felder 'SENDER HADDR' und 'SENDER PADDR' enthalten die MAC- und IP-Adresse des Absenders, während 'TARGET HADDR' und 'TARGET PADDR' die Zielinformationen angeben.",
-        "Diese strukturierte Form erlaubt es, ARP auch für andere Kombinationen als nur IPv4 über Ethernet zu verwenden, obwohl dies selten der Fall ist.",
-        "Im Vergleich zu anderen Protokollen ist das ARP-Format relativ einfach, aber äußerst effizient für den lokalen Adressauflösungsprozess."
-      ],
-      "explanationJa": [
-        "ARPメッセージは、アドレスの種類や長さ、実際のアドレス値を示す複数のフィールドで構成される、標準化されたフォーマットを持っています。",
-        "最初のフィールドでアドレスの種類を定義します。たとえばEthernetの場合はハードウェアアドレスタイプに「1」、IPv4の場合はプロトコルアドレスタイプに「0x0800」が指定されます。",
-        "さらに、それぞれのアドレスの長さも明示されており、EthernetのMACアドレスは6オクテット、IPv4アドレスは4オクテットと定義されています。",
-        "OPERATIONフィールドは、そのメッセージがリクエスト（1）かレスポンス（2）かを識別するために使われます。",
-        "送信者（SENDER HADDR/PADDR）とターゲット（TARGET HADDR/PADDR）のMACアドレスとIPアドレスがそれぞれ記載されます。",
-        "この形式により、ARPは他のネットワーク技術にも応用可能ですが、実際にはEthernetとIPv4の組み合わせがほとんどです。",
-        "他のプロトコルと比較すると、ARPの構造は比較的シンプルで効率的であり、ローカルネットワーク内のアドレス解決に特化しています。"
-      ],
-      "originalSlideText": "ARP Nachrichtenformat (1)\n❑ Allgemeines Protokoll: Nicht beschränkt auf IPv4 und Ethernet Adressen\n❑ Felder mit fester Größe am Anfang der Nachricht geben  Länge von Hardware- und Protokolladresse an\n IPv4 und Ethernet: Länge der Hardwareadresse ist 6 Oktetts, Länge der Protokolladresse ist 4 Oktetts\n❑ ARP wird fast nur für Ethernet und IPv4 Adressen genutzt\n\nARP Nachrichtenformat (2)\n❑ HARDWARE ADDRESS TYPE: Typ der Hardwareadresse, „1“ für Ethernet\n❑ PROTOCOL ADDRESS TYPE: Typ der Protokolladresse, „0x0800“ für IPv4\n❑ HADDR LEN: Größe der Hardwareadresse in Oktetts\n❑ PADDR LEN: Größe der Protokolladresse in Oktetts\n❑ OPERATION: Request („1“) oder Response („2“)\n❑ SENDER HADDR: HADDR LEN Oktetts lang, enthält Hardwareadresse von Sender\n❑ SENDER PADDR, TARGET HADDR, TARGET PADDR ähnlich",
-      "explanationImage": "",
-      "questionImage": ""
-    },
-    {
-      "id": 5,
-      "questionDe": "(s11–s12) In welcher Netzwerkschicht arbeitet ARP und wie wird es gekapselt?",
-      "questionJa": "ARPはどのネットワーク層で動作し、どのようにカプセル化されますか？",
-      "answerDe": [
-        "ARP arbeitet in der Schicht 2 (Data Link Layer) des OSI-Modells.",
-        "Es überbrückt die Lücke zwischen IP-Adressen und MAC-Adressen.",
-        "ARP-Nachrichten werden direkt in das Payload eines Ethernet-Frames eingebettet.",
-        "Der Typ im Ethernet-Frame-Header zeigt an, dass es sich um eine ARP-Nachricht handelt (Typ 0x806)."
-      ],
-      "answerJa": [
-        "ARPはOSIモデルの第2層（データリンク層）で動作します。",
-        "IPアドレスとMACアドレスの間のギャップを橋渡しします。",
-        "ARPメッセージはEthernetフレームのペイロードに直接カプセル化されます。",
-        "フレームヘッダ内のタイプフィールドがARPメッセージであることを示します（タイプ 0x806）。"
-      ],
-      "explanationDe": [
-        "Das Address Resolution Protocol (ARP) wird in der OSI-Schicht 2 – der Data Link Layer – eingeordnet. Diese Schicht befindet sich zwischen der IP-Schicht (Netzwerkschicht) und der physischen Hardware-Schicht.",
-        "Der Grund dafür liegt darin, dass ARP direkt mit MAC-Adressen arbeitet, welche im Ethernet auf der Schicht 2 verwendet werden, während IP-Adressen in Schicht 3 genutzt werden.",
-        "ARP dient somit als Brücke zwischen logischen (IP) und physischen (MAC) Adressen, was es essentiell für die korrekte Zustellung innerhalb lokaler Netzwerke macht.",
-        "Technisch gesehen wird eine ARP-Nachricht in das Payload-Feld eines Ethernet-Frames eingebettet. Damit das empfangende Gerät die Art der eingebetteten Nachricht erkennt, enthält der Ethernet-Frame-Header einen Typwert.",
-        "Für ARP wird hier typischerweise der Wert 0x806 verwendet, sowohl bei Requests als auch bei Responses. Dies unterscheidet sich z. B. von IP-Daten, die den Typ 0x0800 verwenden.",
-        "Ein Vorteil dieser Einbettung ist, dass ARP unabhängig vom eigentlichen IP-Protokoll transportiert werden kann und somit effizient auf Layer 2 funktioniert.",
-        "Dies erlaubt höhere Schichten, wie z. B. Transport- oder Anwendungsschicht, sich ausschließlich auf IP-Adressen zu konzentrieren, ohne Details zur MAC-Adressierung kennen zu müssen."
-      ],
-      "explanationJa": [
-        "Address Resolution Protocol（ARP）はOSI参照モデルの第2層、すなわちデータリンク層で動作するプロトコルです。この層はネットワーク層（IP）と物理層（ハードウェア）との中間に位置しています。",
-        "ARPが第2層に属するのは、MACアドレスを扱うためです。MACアドレスは物理的なネットワーク通信（特にEthernet）で使用されるハードウェアアドレスです。",
-        "一方、IPアドレスは第3層（ネットワーク層）で使われる論理アドレスであり、ARPはこの2つのアドレス間の橋渡しをします。",
-        "ARPメッセージはEthernetフレームのペイロード部分に直接埋め込まれて送信されます。",
-        "Ethernetフレームのヘッダにはタイプフィールドがあり、ARPメッセージが含まれていることを識別するための値（0x806）が設定されます。この値は、リクエストでもレスポンスでも共通です。",
-        "たとえば、IPパケットではこのフィールドに0x0800が使われます。ARPとは異なるプロトコルであることを識別するためです。",
-        "このようにARPは、上位の層（アプリケーションやトランスポート層など）がMACアドレスの詳細を気にせずに通信できるようにするための重要な中間層として機能しています。"
-      ],
-      "originalSlideText": "Kapselung von ARP\n❑ ARP Nachricht wird wie IP in Payload von Frame eingebettet\n❑ Typ in Frame Header gibt an, dass ARP Nachricht enthalten ist\n Typ in Ethernet: „0x806“\n Selber Typ für Request/Response\n\nEinordnung von ARP\n❑ Layer 2 ist die Schicht zwischen IP und der Hardware → ARP ist Layer 2\n❑ ARP stellt Grenze zwischen MAC Adressen und IP Adressen dar\n❑ ARP versteckt Details der Hardwareadressierung, erlaubt höheren Schichten Nutzung von IP Adressen",
-      "explanationImage": "",
-      "questionImage": ""
-    },
-    {
-      "id": 6,
-      "questionDe": "(s13–s14) Warum ist ARP-Caching notwendig und wie funktioniert es?",
-      "questionJa": "なぜARPキャッシュが必要であり、どのように機能するのですか？",
-      "answerDe": [
-        "Ohne Cache würden für jedes Datagramm drei Frames übertragen: ARP Request, ARP Response, eigentliches Datagramm.",
-        "Ein ARP-Cache speichert bekannte IP-MAC-Zuordnungen.",
-        "Der älteste Eintrag wird ersetzt oder gelöscht, wenn Speicher knapp ist oder Einträge veraltet sind.",
-        "Einträge werden nur aktualisiert, wenn ARP-Nachrichten empfangen werden – nicht bei Lookup.",
-        "Bei eingehenden Requests wird der Cache nur aktualisiert, wenn man selbst Ziel ist."
-      ],
-      "answerJa": [
-        "キャッシュがないと、各データグラムごとにARPリクエスト、レスポンス、データグラムの3つのフレームが必要になります。",
-        "ARPキャッシュは、既知のIPとMACの対応関係を保存する仕組みです。",
-        "古いエントリは、メモリが不足したときや有効期限切れのときに削除・置換されます。",
-        "キャッシュはARPメッセージを受信したときのみ更新され、検索時には更新されません。",
-        "受信したARPリクエストが自分宛でない場合、キャッシュは更新されません。"
-      ],
-      "explanationDe": [
-        "Das ARP-Caching dient dazu, die Anzahl an Netzwerkanfragen zu reduzieren und die Effizienz der Adressauflösung zu steigern.",
-        "Ohne Cache müsste jedes Mal, wenn ein Gerät ein IP-Datagramm senden möchte, zuerst eine ARP-Anfrage und danach die Antwort übertragen werden – zusammen mit dem eigentlichen Datenpaket also drei Übertragungen pro Vorgang.",
-        "Ein ARP-Cache speichert IP-zu-MAC-Adressen-Zuordnungen lokal, sodass sie bei wiederholtem Gebrauch sofort verfügbar sind.",
-        "Wenn ein Eintrag im Cache vorhanden ist, wird keine neue ARP-Anfrage gesendet, was Bandbreite und Zeit spart.",
-        "Der Cache funktioniert wie ein Puffer mit beschränkter Kapazität: Der älteste Eintrag wird entfernt, wenn kein Platz mehr ist oder der Eintrag zu alt ist.",
-        "Einträge werden jedoch nur aktualisiert, wenn ARP-Nachrichten (Request oder Response) empfangen werden – nicht durch bloßes Nachschlagen.",
-        "Ein besonderer Fall ist der Empfang eines Requests: Nur wenn das Gerät selbst das Ziel ist, wird der Cache entsprechend angepasst. Das verhindert, dass unnötige oder unzuverlässige Daten gespeichert werden.",
-        "Im Vergleich zu DNS-Caching, das auf längere Gültigkeitszeiten ausgelegt ist, arbeitet der ARP-Cache kurzfristig und dynamisch, um auf häufige Änderungen im lokalen Netz zu reagieren."
-      ],
-      "explanationJa": [
-        "ARPキャッシュは、ネットワークの効率を向上させるために不可欠です。キャッシュがなければ、IPデータグラムを送るたびにARPリクエストとレスポンスの通信が必要となり、毎回3つのフレーム（ARPリクエスト、ARPレスポンス、データ本体）を送ることになります。",
-        "ARPキャッシュは、過去に解決されたIPアドレスとMACアドレスの対応関係を記憶しておくことで、再利用時に即座に利用可能にします。",
-        "この仕組みにより、同じ宛先への通信ではARPリクエストを省略でき、ネットワーク帯域の節約と応答時間の短縮が実現されます。",
-        "キャッシュは容量に限りがあるため、古いエントリから順に削除されるか、メモリが不足した場合に置き換えられます。",
-        "ただし、キャッシュの更新はARPメッセージの受信時にしか行われません。検索（ルックアップ）だけでは更新されません。",
-        "また、他ホスト宛のARPリクエストを受信しても、その内容をキャッシュに記録することはありません。自身がターゲットである場合のみ記録されます。",
-        "このように、ARPキャッシュは頻繁に変化するローカルネットワークに適した、一時的で効率的なメモリ管理の仕組みです。DNSキャッシュのように長期的な保存を想定するものとは異なります。"
-      ],
-      "originalSlideText": "ARP Caching (1)\n❑ Pro Datagramm sind drei Frames notwendig (ARP Request, ARP Response, eigentliches Datagramm)\n❑ ARP Tabelle speichert Bindings in Cache\n Ältester Eintrag wird ersetzt\n Entfernen falls zu wenig Speicher oder Eintrag zu alt\n❑ ARP Request nur, falls kein Eintrag in Cache\n❑ Cache nur aktualisiert, wenn ARP Nachrichten (Request oder Response) gesehen werden, nicht bei Lookup\n\nARP Caching (2)\n❑ Cache bei eingehendem Request nur aktualisiert, falls man selbst Target ist\n Kommunikation in der Regel in beide Richtungen; falls Nachricht von A nach B, ist Wahrscheinlichkeit hoch für Antwort von B an A\n Keine beliebige Zahl an Adressen kann gespeichert werden (Speicher)",
-      "explanationImage": "",
-      "questionImage": ""
-    }
-    
-    
-    
-    
-    
-    
+    "id": 1,
+    "questionDe": "(s3) Welche Ziele verfolgt die Vorlesung zur Transportschicht im Internet?",
+    "questionJa": "この講義の目的は何か？どのような内容が扱われるのか？",
+    "answerDe": [
+      "Einblick in die beiden wichtigen Transportprotokolle des Internets: UDP und TCP."
+    ],
+    "answerJa": [
+      "インターネットにおける2つの主要なトランスポートプロtokolle（UDPとTCP）についての理解を深めること。"
+    ],
+    "explanationDe": [
+      "Die Vorlesung zielt darauf ab, grundlegendes Wissen über die zwei zentralen Protokolle der Transportschicht im Internet zu vermitteln: UDP (User Datagram Protocol) und TCP (Transmission Control Protocol).",
+      "Diese Protokolle bilden die Basis für den Datenaustausch zwischen Anwendungen auf unterschiedlichen Computern.",
+      "UDP ist ein leichtgewichtiges, verbindungsloses Protokoll, das schnelle und einfache Kommunikation ermöglicht, aber keine Garantie für die Zustellung bietet.",
+      "TCP hingegen stellt eine zuverlässige, verbindungsorientierte Übertragung sicher, bei der alle Daten in korrekter Reihenfolge und vollständig ankommen müssen.",
+      "Ein Verständnis dieser beiden Protokolle ist essenziell für die Entwicklung, Analyse und Fehlerbehebung von Netzwerkanwendungen.",
+      "Im Vergleich zu anderen Schichten des OSI-Modells liegt der Fokus hier auf der Transportschicht, die direkt über der Internetschicht liegt und der Applikationsschicht Dienste bereitstellt.",
+      "Die Vorlesung bereitet auf tiefergehende Themen wie Fehlererkennung, Flusskontrolle, Congestion Control und Protokolldesign vor, welche im Verlauf der Veranstaltung anhand von UDP und TCP erklärt werden."
+    ],
+    "explanationJa": [
+      "この講義の主な目的は、インターネットのトランスポート層における2つの主要プロトコル、UDP（User Datagram Protocol）とTCP（Transmission Control Protocol）についての基本的な理解を深めることです。",
+      "これらのプロトコルは、異なるコンピュータ上で動作するアプリケーション間のデータ通信を実現する基盤となっています。",
+      "UDPは軽量で接続を必要としないプロトコルであり、通信の簡便さや高速性が特徴ですが、データの到達保証はありません。",
+      "一方、TCPは接続型の信頼性の高いプロトコルであり、すべてのデータを正しい順序で完全に届けることを保証します。",
+      "UDPはストリーミングやリアルタイム通信など、多少のデータ損失を許容できる用途に向いており、TCPはファイル転送やWebアクセスなど、正確性が求められる用途に適しています。",
+      "このように、用途に応じて使い分けるべきプロトコルであり、それぞれの特性と役割を理解することは、ネットワークアプリケーションの設計やトラブルシューティングにおいて極めて重要です。",
+      "講義では、これらのプロトコルがどのように動作し、エラー制御やフロー制御、混雑制御などの高度な機能をどのように提供しているかを学びます。"
+    ],
+    "originalSlideText": "Überblick \n\nZiele:\n❑ Einblick in die beiden wichtigen Transportprotokolle des Internets\n\nThemen:\n❑ UDP\n Paketformat\n Nachrichtenaustausch\n❑ TCP\n Paketformat\n Servicemodell\n Verbindungsaufbau\n Flusskontrolle",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 2,
+    "questionDe": "(s5) Warum benötigt man Transportprotokolle wie UDP zusätzlich zum Internetprotokoll (IP)?",
+    "questionJa": "なぜIPとは別に、UDPのようなトランスポートプロトコルが必要なのか？",
+    "answerDe": [
+      "IP identifiziert nur den Host, nicht die Applikation.",
+      "Transportprotokolle unterscheiden Applikationen auf demselben Host.",
+      "UDP ermöglicht Ende-zu-Ende Kommunikation zwischen Applikationen."
+    ],
+    "answerJa": [
+      "IPはホストを識別するだけで、アプリケーションは区別できない。",
+      "トランスポートプロトコルは同一ホスト内のアプリケーションを識別する。",
+      "UDPはアプリケーション間のエンドツーエンド通信を可能にする。"
+    ],
+    "explanationDe": [
+      "Das Internetprotokoll (IP) ist dafür zuständig, Datenpakete zwischen Computern zu übertragen. Es unterscheidet jedoch nicht zwischen verschiedenen Anwendungen, die auf einem Computer laufen.",
+      "Das bedeutet, dass ein Computer zwar IP-Pakete empfangen kann, aber IP allein kann nicht entscheiden, welche Anwendung diese Pakete erhalten soll.",
+      "Transportprotokolle wie UDP oder TCP ergänzen IP, indem sie zusätzliche Informationen wie Portnummern verwenden, um einzelne Anwendungen zu identifizieren.",
+      "Ein Beispiel: Wenn auf einem Computer gleichzeitig ein Webbrowser und ein E-Mail-Programm laufen, kann IP nicht erkennen, für welches Programm das Paket bestimmt ist. UDP hingegen verwendet Portnummern, um diese Zuordnung zu ermöglichen.",
+      "Außerdem bietet UDP eine Schnittstelle für die Anwendungsschicht, um Daten direkt zu senden und zu empfangen, ohne sich mit den Details der darunterliegenden Netzwerkschichten befassen zu müssen.",
+      "Die Kommunikation erfolgt also nicht nur von Computer zu Computer, sondern konkret von Anwendung zu Anwendung – das nennt man Ende-zu-Ende-Kommunikation.",
+      "Damit ist UDP ein notwendiger Bestandteil der Netzarchitektur, um eine sinnvolle, strukturierte und anwendungsbezogene Kommunikation im Internet zu ermöglichen."
+    ],
+    "explanationJa": [
+      "IP（インターネットプロトコル）はコンピュータ間でパケットを送受信するための仕組みですが、1つのコンピュータ上に複数のアプリケーションが動作している場合、それらを区別することはできません。",
+      "たとえば、同じPCでWebブラウザとメールソフトが同時に開いている場合、IPだけではどのパケットがどのアプリケーション向けかを判断できません。",
+      "そのため、UDPのようなトランスポート層プロトコルが必要になります。UDPはパケットにポート番号という情報を付加し、アプリケーションの識別を可能にします。",
+      "これにより、1台のコンピュータ上で複数の通信が並行して正しく行えるようになります。",
+      "また、UDPはアプリケーション層と直接やり取りできるインターフェースを提供しており、プログラムはネットワークの詳細を意識せずにデータ通信が可能になります。",
+      "つまり、UDPはホスト間の通信だけでなく、アプリケーション間のエンドツーエンドの通信を実現するために不可欠なプロトコルです。",
+      "このような理由から、IPと併せてUDPのようなトランスポートプロトコルが必要とされているのです。"
+    ],
+    "originalSlideText": "Ende-zu-Ende Kommunikation\n❑ IP unterscheidet nicht zwischen verschiedenen Applikationen auf einem Host\n Beispiel: E-Mail und Webbrowser gleichzeitig geöffnet, mehrere Instanzen von einem Programm\n❑ Felder in Header von IP Datagramm identifizieren nur Host\n❑ IP behandelt Computer als Endpunkt der Kommunikation\n❑ Protokolle der Transportschicht sind Ende-zu-Ende Protokolle\n Applikation ist Endpunkt der Kommunikation",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 3,
+    "questionDe": "(s6–7) Welche charakteristischen Eigenschaften hat das User Datagram Protocol (UDP)?",
+    "questionJa": "UDPの代表的な性質・特徴は何か？",
+    "answerDe": [
+      "Eines der zwei Hauptprotokolle der Transportschicht.",
+      "Verbindungslos.",
+      "Nachrichtenorientiert.",
+      "Best-Effort Semantik.",
+      "Unabhängig vom Betriebssystem.",
+      "Erlaubt Kommunikation mit beliebig vielen Applikationen."
+    ],
+    "answerJa": [
+      "トランスポート層の主要プロトコルの1つ。",
+      "接続レス（接続の確立不要）。",
+      "メッセージ指向の通信。",
+      "Best-Effort（可能な限り）型の配送方式。",
+      "OSに依存しない設計。",
+      "多数のアプリケーションとの通信が可能。"
+    ],
+    "explanationDe": [
+      "UDP ist eines der zwei bedeutendsten Transportprotokolle im Internet neben TCP. Es wurde so konzipiert, dass es möglichst einfach und effizient ist.",
+      "Eine der wichtigsten Eigenschaften ist, dass UDP verbindungslos ist. Das bedeutet, es wird keine Verbindung zwischen Sender und Empfänger aufgebaut – Pakete können jederzeit versendet werden.",
+      "UDP ist nachrichtenorientiert: Jede Nachricht wird in einem Stück gesendet und empfangen, ohne vom Protokoll aufgeteilt oder zusammengefügt zu werden.",
+      "Es verwendet wie IP ein Best-Effort-Prinzip, das keine Garantie für die Zustellung, Reihenfolge oder Fehlerfreiheit bietet.",
+      "Diese Einfachheit bringt geringe Latenzzeiten und Overhead mit sich, was UDP ideal für Anwendungen wie Echtzeit-Streaming oder Online-Gaming macht, bei denen Geschwindigkeit wichtiger als Zuverlässigkeit ist.",
+      "UDP ist auch betriebssystemunabhängig – es verwendet standardisierte Portnummern, sodass Anwendungen plattformübergreifend kommunizieren können.",
+      "Durch seine offene Struktur erlaubt UDP es Applikationen, mit einer Vielzahl anderer Applikationen zu kommunizieren, ohne vorherige Aushandlung oder Handshake."
+    ],
+    "explanationJa": [
+      "UDPは、TCPと並ぶインターネットの2大トランスポートプロトコルの1つです。シンプルで効率的な設計を特徴としています。",
+      "最大の特徴は「接続レス（Connectionless）」であり、通信を開始するための接続確立が不要です。そのため、すぐにデータを送ることができます。",
+      "UDPは「メッセージ指向」であり、アプリケーションが送った1つのデータの塊（メッセージ）をそのまま1つのユニットとして送受信します。",
+      "また、UDPはIPと同じく「Best-Effort」方式を採用しており、パケットが確実に届くかどうか、順番が正しいか、エラーがないかは保証しません。",
+      "このような仕組みのため、通信の信頼性を必要とする場合はアプリケーション側で対応する必要があります。",
+      "しかしその分、UDPは遅延が少なくオーバーヘッドも小さいため、音声・映像のストリーミングやオンラインゲームなどのリアルタイム性が重要な用途に適しています。",
+      "さらに、UDPはOSに依存せず、標準化されたポート番号を使うことで、異なるプラットフォーム間でも通信が可能になります。"
+    ],
+    "originalSlideText": "User Datagram Protocol (1)\n❑ User Datagram Protocol (UDP)\n Eines der zwei Hauptprotokolle der Transportschicht (neben TCP)\n Weniger komplex und leicht verständlich\n❑ Charakterisierung\n Ende-zu-Ende: Unterscheidung zwischen verschiedenen Applikationen\n Verbindungslos\n Nachrichtenorientiert: Applikation sendet und empfängt individuelle Nachrichten\n\nUser Datagram Protocol (2)\n❑ Charakterisierung\n Best-Effort: Selbe Best-Effort Semantik wie IP\n Beliebige Interaktion: Senden und Empfangen zu und von beliebig vielen Applikationen\n Betriebssystemunabhängig: Nicht abhängig von Bezeichnern des lokalen Systems\n❑ Erlaubt Applikationen Senden und Empfangen von IP Datagrammen",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 4,
+    "questionDe": "(s8) Was bedeutet es, dass UDP verbindungslos ist, und welche Vorteile ergeben sich daraus?",
+    "questionJa": "UDPが「接続レス（Verbindungslos）」であるとはどういう意味か？それによりどんな利点があるか？",
+    "answerDe": [
+      "Kein Verbindungsaufbau oder -abbau notwendig.",
+      "Nachrichten können zu jeder Zeit gesendet werden.",
+      "Applikation kann beliebig lange zwischen Nachrichten warten.",
+      "Sehr geringer Overhead, da kein Zustand verwaltet wird.",
+      "Nur Datennachrichten, keine Kontrollnachrichten."
+    ],
+    "answerJa": [
+      "接続の確立や切断が不要である。",
+      "いつでもデータを送信できる。",
+      "アプリケーションが送信間隔を自由に決められる。",
+      "ステートレスでオーバーヘッドが非常に小さい。",
+      "制御メッセージを使わず、純粋なデータのみを送る。"
+    ],
+    "explanationDe": [
+      "UDP ist ein verbindungsloses Protokoll, was bedeutet, dass vor dem Senden von Nachrichten keine Verbindung zwischen Sender und Empfänger aufgebaut werden muss.",
+      "Dies unterscheidet sich grundlegend von TCP, wo eine Verbindung über einen sogenannten Three-Way Handshake initialisiert wird.",
+      "Bei UDP kann eine Anwendung jederzeit eine Nachricht senden, auch ohne vorherige Absprache mit dem Empfänger.",
+      "Zudem muss sich die Anwendung keine Gedanken über die Aufrechterhaltung oder Beendigung einer Verbindung machen.",
+      "Diese Eigenschaft führt zu einem sehr niedrigen Protokolloverhead, da keine Verwaltungsinformationen gespeichert oder übermittelt werden müssen.",
+      "Das Protokoll sendet ausschließlich die Nutzdaten – keine zusätzlichen Kontrollnachrichten wie ACKs oder SYNs.",
+      "Diese Leichtgewichtigkeit macht UDP ideal für Anwendungen mit geringen Latenzanforderungen, etwa DNS-Anfragen oder Echtzeitkommunikation wie VoIP."
+    ],
+    "explanationJa": [
+      "UDPが「接続レス（Connectionless）」であるというのは、通信を始めるために事前の接続確立が必要ないことを意味します。",
+      "つまり、TCPのような「3ウェイ・ハンドシェイク」などの手順を踏むことなく、アプリケーションが即座にデータを送信できます。",
+      "さらに、通信の途中で接続の維持や切断などの処理も不要なため、実装が非常にシンプルになります。",
+      "アプリケーションは好きなタイミングでデータを送り、好きな間隔をあけることも可能です。",
+      "UDPでは通信の状態（ステート）を保持しないため、「ステートレス」と呼ばれます。",
+      "また、TCPのようにACKや制御パケットをやり取りすることもなく、純粋なデータだけが送信されるので、プロトコルのオーバーヘッドも最小限です。",
+      "このため、DNS（名前解決）やVoIP（インターネット電話）のように、即時性が重要で多少のデータ損失が許容される用途に向いています。"
+    ],
+    "originalSlideText": "Verbindungslosigkeit von UDP\n❑ Kein Verbindungsaufbau und Verbindungsabbau zum Senden\n❑ Daten können zu beliebiger Zeit erstellt und gesendet werden\n❑ Applikation kann beliebig lange zwischen zwei Nachrichten warten\n❑ Sehr geringer Overhead\n UDP verwaltet keine Zustände\n UDP sendet nur reine Datennachrichten und keine Kontrollnachrichten",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 5,
+    "questionDe": "(s9–10) Wie funktioniert das nachrichtenorientierte Interface von UDP und welche Herausforderungen gibt es dabei?",
+    "questionJa": "UDPの「メッセージ指向インターフェース」とはどのような仕組みで、どんな課題があるか？",
+    "answerDe": [
+      "Jede Nachricht wird als einzelne Einheit übertragen.",
+      "Keine Fragmentierung oder Bündelung von Nachrichten.",
+      "Datengrenzen bleiben erhalten.",
+      "UDP-Nachrichten müssen ins IP-Datagramm passen.",
+      "Fragmentierung bei großen Nachrichten möglich.",
+      "Hoher Overhead bei kleinen Nachrichten."
+    ],
+    "answerJa": [
+      "各メッセージは1つの単位として送信される。",
+      "複数メッセージの統合や分割は行わない。",
+      "送信されたデータの区切りが保たれる。",
+      "UDPメッセージはIPデータグラムに収まる必要がある。",
+      "大きなメッセージは断片化される可能性がある。",
+      "小さなメッセージは逆に高いオーバーヘッドを生む可能性もある。"
+    ],
+    "explanationDe": [
+      "UDP verwendet ein nachrichtenorientiertes Interface, was bedeutet, dass jede Anwendungseinheit – also jede Nachricht – separat behandelt und über das Netzwerk gesendet wird.",
+      "Im Gegensatz zu TCP, das einen kontinuierlichen Datenstrom überträgt, bleiben bei UDP die Nachrichtengrenzen erhalten.",
+      "Das hat den Vorteil, dass der Empfänger genau weiß, wo eine Nachricht beginnt und endet – das ist wichtig für einfache Protokolle wie DNS.",
+      "Allerdings kann eine Nachricht nur so groß sein, wie es das zugrunde liegende IP-Datagramm erlaubt. Bei größeren Nachrichten kommt es zu Fragmentierung, was Effizienz und Robustheit beeinträchtigen kann.",
+      "Typischerweise beschränken Entwickler UDP-Nachrichten auf etwa 1400–1450 Bytes, da die maximale Übertragungseinheit (MTU) im Internet häufig bei 1500 Bytes liegt.",
+      "Ein weiteres Problem: Sehr kleine Nachrichten können verhältnismäßig viel Overhead verursachen, weil der UDP-Header unabhängig von der Nutzdatenlänge immer gleich lang ist.",
+      "Daher ist die Wahl der Nachrichtengröße bei UDP ein entscheidender Aspekt der Anwendungsentwicklung und -optimierung."
+    ],
+    "explanationJa": [
+      "UDPは「メッセージ指向（message-oriented）」のインターフェースを提供しており、アプリケーションが送るデータの1つ1つを独立した単位（メッセージ）として扱います。",
+      "TCPのようにデータをストリーム（連続したデータの流れ）として扱うのとは異なり、UDPではメッセージの境界がそのまま保持されます。",
+      "これは、1つのメッセージが1つのUDPデータグラムとして送られることを意味しており、受信側もその単位でデータを受け取ります。",
+      "しかし、UDPメッセージはIPデータグラムのサイズ制限に従う必要があり、一般的には1400〜1450バイト以内に収めるのが推奨されています（MTUが約1500バイトであるため）。",
+      "大きなメッセージを送ると、IPレベルでの断片化が起こりやすくなり、これが再構成の失敗や効率低下につながる可能性があります。",
+      "逆に、非常に小さいメッセージの場合、ヘッダー情報の比率が大きくなり、ネットワークリソースの無駄遣いになります。",
+      "そのため、UDPでの通信設計においては、データサイズと効率のバランスを考慮した実装が重要です。"
+    ],
+    "originalSlideText": "Nachrichtenorientiertes Interface (1)\n❑ Applikation möchte Block von Daten versenden → UDP überträgt diese in einer einzigen Nachricht\n❑ Keine Unterteilung oder Bündelung von mehreren Nachrichten\n❑ Datengrenzen bleiben erhalten: Empfänger bekommt Nachricht wie von Sender verschickt\n❑ Aber: UDP Nachricht muss in IP Datagramm passen\n\nNachrichtenorientiertes Interface (2)\n❑ Ineffiziente Nutzung des Netzwerks möglich\n Hoher Overhead bei kleinen Nachrichten\n Häufige Fragmentierung von großen Datagrammen (eventuell schon vor Versand)\n❑ Programmierer beschränken UDP-Nachrichten oft auf 1400 - 1450 Byte (MTU im Großteil des Internet 1500 Byte)",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 6,
+    "questionDe": "(s11) Was bedeutet es, dass UDP eine Best-Effort Semantik hat, und welche Auswirkungen hat das auf die Anwendung?",
+    "questionJa": "UDPが「Best-Effortセマンティクス」を持つとはどういう意味か？そのことはアプリケーションにどのような影響を与えるか？",
+    "answerDe": [
+      "Kein Schutz vor Verlust, Duplikaten, Verzögerung, falscher Reihenfolge oder Datenfehlern.",
+      "Fehler werden weder erkannt noch korrigiert.",
+      "Anwendung muss selbst mit Fehlern umgehen oder tolerant sein.",
+      "Geeignet für fehlerresistente Anwendungen (z. B. Audio/Video)."
+    ],
+    "answerJa": [
+      "パケットの損失、重複、遅延、順序の乱れ、データエラーから保護されない。",
+      "UDP自身はエラーの検出や修正を行わない。",
+      "アプリケーション側で問題に対処するか、エラーに耐性が必要。",
+      "音声・映像など、多少の誤りに強い用途に適している。"
+    ],
+    "explanationDe": [
+      "UDP übernimmt wie IP keine Garantie für eine fehlerfreie Datenübertragung – dies bezeichnet man als Best-Effort Semantik.",
+      "Das bedeutet, dass Pakete während der Übertragung verloren gehen, doppelt ankommen oder in falscher Reihenfolge eintreffen können.",
+      "Außerdem erkennt UDP keine Beschädigungen der Daten, es gibt keine automatischen Korrekturmechanismen wie bei TCP.",
+      "Für Anwendungen, die eine hohe Genauigkeit erfordern (z. B. Online-Shopping, Banktransaktionen), ist UDP daher ungeeignet, weil es zu Datenverlust oder Fehlverhalten führen kann.",
+      "Ein Beispiel: Wenn ein Benutzer bei einem Online-Shop zweimal auf 'Bestellen' klickt, könnten durch Duplikate zwei Bestellungen ausgelöst werden.",
+      "Für Anwendungen wie Video- oder Audioübertragung ist UDP jedoch oft ausreichend, da kleine Fehler in Bild oder Ton für den Nutzer oft nicht wahrnehmbar sind.",
+      "Die Applikation kann je nach Bedarf eigene Mechanismen zur Fehlererkennung und -behandlung einbauen oder bewusst auf diese verzichten."
+    ],
+    "explanationJa": [
+      "UDPはIPと同様に、パケットの配送を保証しない「Best-Effort（できる限り）」方式を採用しています。",
+      "これにより、データが途中で失われたり、重複して届いたり、順序が入れ替わって届いたりする可能性があります。",
+      "また、データが破損してもUDP自体では検出・修復を行いません。",
+      "そのため、通信の正確さが非常に重要なアプリケーション（例：オンラインショッピング、銀行取引など）ではUDPは適していません。",
+      "例えば、ネットショッピングでパケットが重複して届くと、同じ商品が2回注文されたり、二重に請求されたりするリスクがあります。",
+      "一方で、音声や映像のストリーミングでは多少のパケット損失があっても、体感上ほとんど影響がないためUDPがよく使われます。",
+      "このように、UDPのBest-Effortな性質に対応するためには、アプリケーション側でエラー検出機能を追加したり、そもそも誤りに強い設計を行う必要があります。"
+    ],
+    "originalSlideText": "Best-Effort Semantik\n❑ UDP hat Best-Effort Semantik von IP\n Verlust, Duplikate, Verzögerung, Falsche Reihenfolge, Datenfehler\n❑ Übertragungsfehler werden nicht erkannt und nicht korrigiert\n❑ Applikation muss immun gegenüber Problemen sein oder selbst Fehler entdecken und korrigieren\n❑ Beispiel:\n Audio-/Videoübertragung toleriert Fehler\n Probleme bei Online Shopping (Doppelte Bestellung oder Abbuchung)",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 7,
+    "questionDe": "(s12) Welche Kommunikationsformen unterstützt UDP und wie wird Multicast realisiert?",
+    "questionJa": "UDPはどのような通信形態をサポートしているか？マルチキャストはどのように実現されているか？（図のあるスライド）",
+    "answerDe": [
+      "Unterstützt 1-zu-1, 1-zu-N, N-zu-1 und N-zu-M Kommunikation.",
+      "Multicast oder Broadcast mit IP möglich.",
+      "Vermeidet mehrfaches Versenden der gleichen Nachricht.",
+      "Effizient in Ethernet-Netzen dank Hardwareunterstützung."
+    ],
+    "answerJa": [
+      "1対1、1対多、多対1、多対多の通信をサポートしている。",
+      "IPのマルチキャストやブロードキャストを利用可能。",
+      "同じメッセージを繰り返し送る必要がない。",
+      "Ethernetではハードウェアのサポートにより効率的に動作する。"
+    ],
+    "explanationDe": [
+      "UDP ist flexibel und erlaubt verschiedenste Formen der Interaktion zwischen Anwendungen – von einfachen 1-zu-1-Verbindungen bis zu komplexen N-zu-M-Kommunikationsszenarien.",
+      "1-zu-1 ist der klassische Fall: Ein Sender spricht mit einem Empfänger.",
+      "Bei 1-zu-N wird dieselbe Nachricht an viele Empfänger gleichzeitig geschickt – dies geschieht effizient über IP-Multicast oder IPv4-Broadcast.",
+      "Im Unterschied zu TCP, das nur Punkt-zu-Punkt-Verbindungen erlaubt, ermöglicht UDP breitere Kommunikation mit mehreren Endpunkten ohne große Zusatzkosten.",
+      "Multicast spart Bandbreite, da die Nachricht nur einmal gesendet wird und das Netzwerk sich um die Verteilung kümmert.",
+      "Gerade in Ethernet-Netzwerken ist Multicast besonders effizient, da viele Netzwerkkarten und Switches diese Funktion direkt auf Hardwareebene unterstützen.",
+      "Ein typisches Beispiel ist IPTV oder Online-Videostreaming an viele Nutzer gleichzeitig."
+    ],
+    "explanationJa": [
+      "UDPは通信形態が柔軟で、1対1（単純な送受信）だけでなく、1対多（複数の受信者へ同時に送信）、多対1、多対多といった通信スタイルにも対応できます。",
+      "特に1対多通信は、IPのマルチキャストやIPv4のブロードキャスト機能を使うことで実現できます。",
+      "この方法では、送信者は1回だけデータを送ればよく、ネットワーク側で複数の受信者に配信してくれるため、帯域の節約になります。",
+      "TCPでは基本的に1対1の接続しか扱えないため、複数相手との同時通信にはUDPが適しています。",
+      "また、Ethernetのような物理ネットワークでは、マルチキャストがハードウェアレベルでサポートされており、非常に効率的に動作します。",
+      "例えば、同時に多数のユーザーへ動画を配信するIPTVなどでは、UDPとマルチキャストの組み合わせがよく利用されます。",
+      "このようにUDPは、高効率な一斉通信が求められるアプリケーションにとって非常に有用です。"
+    ],
+    "originalSlideText": "Interaktion und Multicast\n❑ Mögliche Kommunikation:\n 1-zu-1\n 1-zu-N\n N-zu-1\n N-zu-M\n❑ Verwendung von IP Multicast (oder IPv4 Broadcast) für 1-to-many möglich\n❑ Vermeidet wiederholtes Versenden von Kopie der Nachricht an alle Empfänger\n❑ Vor allem in Ethernet nützlich, da von Hardware effizient unterstützt",
+    "explanationImage": "",
+    "questionImage": "(s12)"
+  },
+  {
+    "id": 8,
+    "questionDe": "(s13) Welche Rolle spielen Portnummern im UDP-Protokoll und wie werden sie vom Betriebssystem genutzt?",
+    "questionJa": "UDPにおけるポート番号の役割は何か？それはOSによってどのように扱われているか？",
+    "answerDe": [
+      "Portnummern identifizieren Anwendungen unabhängig vom Betriebssystem.",
+      "Betriebssysteme stellen Zuordnung zwischen Ports und Prozessen her.",
+      "Modus der Kommunikation wird beim Socket-Erstellen festgelegt.",
+      "Unterstützt 1-zu-1 oder N-zu-1 Kommunikation."
+    ],
+    "answerJa": [
+      "ポート番号はOSに依存せずアプリケーションを識別するために使われる。",
+      "OSはポート番号とプロセスの対応付けを管理する。",
+      "通信モードはソケット作成時に設定される。",
+      "1対1または多対1の通信形態をサポートしている。"
+    ],
+    "explanationDe": [
+      "Da IP nur Computer als Kommunikationspartner identifiziert, aber keine Unterscheidung zwischen laufenden Anwendungen macht, verwendet UDP sogenannte Portnummern, um Applikationen eindeutig zu adressieren.",
+      "Diese Portnummern sind standardisiert und reichen von 0 bis 65535. Bekannte Dienste nutzen feste Portnummern (z. B. DNS auf Port 53).",
+      "Das Betriebssystem übernimmt die Aufgabe, eine Verbindung zwischen einem bestimmten Port und dem zuständigen Prozess (z. B. eine Anwendung) herzustellen.",
+      "Dies ermöglicht es mehreren Anwendungen, gleichzeitig UDP zu verwenden, ohne dass es zu Verwechslungen kommt.",
+      "Beim Erstellen eines UDP-Sockets entscheidet die Anwendung, ob sie nur Nachrichten von einer bestimmten Quelle (1-zu-1) akzeptiert oder von beliebigen Quellen (N-zu-1).",
+      "Somit ermöglichen Portnummern eine flexible Kommunikation zwischen vielen verschiedenen Applikationen über dasselbe Netzwerkinterface.",
+      "Diese Struktur ist essenziell für eine funktionierende parallele Kommunikation in heutigen Betriebssystemen."
+    ],
+    "explanationJa": [
+      "IPはホスト（コンピュータ）を識別することはできますが、そのホスト上で動いている複数のアプリケーションを区別することはできません。",
+      "そこでUDPでは「ポート番号」という識別子を使用し、個々のアプリケーションを区別しています。ポート番号は0〜65535の範囲が使われ、DNS（ポート53）などの有名なアプリケーションには固定の番号が割り当てられています。",
+      "OSはこのポート番号とアプリケーションプロセスの対応関係（マッピング）を保持し、正しいアプリケーションにパケットを届けます。",
+      "これにより、複数のUDPアプリケーションが同時に通信しても混乱することなく処理できます。",
+      "また、UDPソケットを作成する際に、アプリケーションは通信相手を1つに限定するか、複数の相手から受け入れるか（1対1または多対1）を設定できます。",
+      "このように、UDPにおけるポート番号の仕組みは、効率的で柔軟なアプリケーション間通信を可能にしています。",
+      "今日のネットワークアプリケーションにおいて、ポート番号は極めて重要な基盤です。"
+    ],
+    "originalSlideText": "UDP Portnummer\n❑ Wie wird Applikation als Endpunkt identifiziert?\n❑ Betriebssysteme nutzen Prozess IDs, Task IDs, Job Namen\n Nicht ausreichend (Heterogene Computer kommunizieren)\n❑ Protokoll Portnummer (Ports) werden definiert\n Unabhängig von Betriebssystem\n Betriebssystem mit UDP muss Mapping zwischen Ports und Prozessen bereit stellen\n❑ Kommunikationsmodus von Applikation bei Erstellung des Socket festgelegt\n Nur Nachrichten von bestimmter IP und Port (1-zu-1) oder von allen anderen Endpunkten (N-zu-1)",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 9,
+    "questionDe": "(s14) Wie ist ein UDP-Datagramm aufgebaut und welche Informationen enthält der Header? (mit Abbildung)",
+    "questionJa": "UDPデータグラムの構造はどうなっているか？ヘッダーにはどのような情報が含まれているか？（図付き）",
+    "answerDe": [
+      "UDP-Nachricht wird als Datagramm bezeichnet.",
+      "Kurzer Header mit 8 Byte.",
+      "Header enthält Source Port, Destination Port, Length, Checksum.",
+      "Daten befinden sich im Payload-Teil."
+    ],
+    "answerJa": [
+      "UDPメッセージは「データグラム」と呼ばれる。",
+      "ヘッダーは8バイトと非常に短い。",
+      "ヘッダーには送信元ポート、宛先ポート、長さ、チェックサムが含まれる。",
+      "実際のデータはペイロード部分に格納される。"
+    ],
+    "explanationDe": [
+      "Ein UDP-Datagramm besteht aus zwei Teilen: einem kompakten Header mit 8 Byte und einem Payload, der die eigentlichen Nutzdaten enthält.",
+      "Der Header enthält vier Felder: Source Port (Absender-Port), Destination Port (Empfänger-Port), Length (Gesamtlänge von Header + Daten) und Checksum (optionale Prüfsumme).",
+      "Source und Destination Port bestehen jeweils aus 16 Bit, also Zahlen zwischen 0 und 65535.",
+      "Die Länge wird ebenfalls mit 16 Bit angegeben und erlaubt Datagramme mit einer maximalen Größe von 65.535 Byte.",
+      "Die Checksumme ist optional, bietet aber eine gewisse Fehlererkennung auf Transportebene.",
+      "Im Gegensatz zu TCP ist der Header bei UDP sehr einfach aufgebaut, was zur hohen Effizienz und geringen Latenz beiträgt.",
+      "Das Datagramm wird als Ganzes in ein IP-Paket eingebettet und über das Netzwerk transportiert – ideal für einfache, schnelle Übertragungen."
+    ],
+    "explanationJa": [
+      "UDPデータグラムは、8バイトのヘッダーと任意の長さのペイロード（データ本体）から構成されます。",
+      "ヘッダーには4つのフィールドがあります：送信元ポート番号（Source Port）、宛先ポート番号（Destination Port）、全体の長さ（Length）、チェックサム（Checksum）です。",
+      "送信元および宛先ポートはそれぞれ16ビット（0〜65535）で表現され、どのアプリケーションにデータが送られるかを示します。",
+      "Lengthフィールドには、ヘッダーとデータを合わせた全体の長さが記録されます。",
+      "Checksum（チェックサム）はオプションで、データの破損をある程度検出する役割があります。",
+      "TCPのヘッダーに比べてUDPは非常にシンプルで、この簡素さが高速通信を可能にしています。",
+      "このように、UDPは構造が単純で効率的な設計となっており、リアルタイム性が求められる用途に適しています。"
+    ],
+    "originalSlideText": "Datagramm Format\n❑ UDP Nachricht wird User Datagramm genannt\n Kurzer Header mit Sender und Empfänger Programmen\n Payload mit den Daten\n❑ Source und Destination Port mit 16 Bit (0 - 65535)",
+    "explanationImage": "",
+    "questionImage": "(s14)"
+  },
+  {
+    "id": 10,
+    "questionDe": "(s15) Welche Funktion hat die UDP-Checksumme und wie wird sie berechnet? (mit Abbildung)",
+    "questionJa": "UDPのチェックサムにはどのような役割があり、どのように計算されるか？（図付き）",
+    "answerDe": [
+      "Dient der Fehlererkennung.",
+      "Optional – kann deaktiviert werden (alle Bits auf 0).",
+      "UDP-Header enthält keine IP-Adressen.",
+      "Checksumme wird mit Pseudoheader berechnet.",
+      "Pseudoheader enthält IP-Quelladresse, Zieladresse, Protokolltyp und UDP-Länge."
+    ],
+    "answerJa": [
+      "エラー検出のために使われる。",
+      "オプションであり、すべて0にすれば無効化できる。",
+      "UDPヘッダーにはIPアドレスは含まれない。",
+      "チェックサムは疑似ヘッダー（Pseudoheader）を使って計算される。",
+      "PseudoheaderにはIPの送信元アドレス、宛先アドレス、プロトコル番号、UDP長が含まれる。"
+    ],
+    "explanationDe": [
+      "Die UDP-Checksumme dient zur Erkennung von Übertragungsfehlern im Datagramm.",
+      "Anders als bei TCP ist sie optional – wenn alle Bits des Checksumme-Felds auf 0 gesetzt werden, wird sie nicht verwendet.",
+      "Da der UDP-Header selbst keine Informationen über IP-Adressen enthält, kann er nicht allein zur Verifikation verwendet werden.",
+      "Deshalb wird bei der Berechnung der Checksumme ein sogenannter Pseudoheader verwendet.",
+      "Dieser Pseudoheader enthält zusätzliche Felder: IP-Quelladresse, IP-Zieladresse, Protokolltyp (für UDP ist das 17) sowie die UDP-Länge.",
+      "Diese Kombination stellt sicher, dass das Datagramm an die richtige Adresse gerichtet ist und auf Transportebene keine versehentliche Fehlzustellung erfolgt.",
+      "Die Checksumme wird über Pseudoheader, UDP-Header und Nutzdaten hinweg berechnet, sodass auch Header-Verfälschungen erkannt werden können."
+    ],
+    "explanationJa": [
+      "UDPのチェックサムは、通信中に発生するエラーを検出するために使用されます。",
+      "ただしTCPと異なり、UDPではチェックサムはオプション機能であり、すべてのビットを0にすれば無効にすることができます。",
+      "UDPヘッダーにはIPアドレスの情報が含まれていないため、通信相手が正しいかどうかをチェックサムだけでは判断できません。",
+      "そのため、チェックサムの計算には「疑似ヘッダー（Pseudoheader）」と呼ばれるIP層の情報も一時的に使用されます。",
+      "Pseudoheaderには送信元・宛先IPアドレス、プロトコル番号（UDPの場合は17）、およびUDPの長さが含まれます。",
+      "このように、UDPとIPの両レベルの情報をもとにチェックサムを計算することで、パケットの整合性を確認します。",
+      "これにより、たとえば送信先が間違っていた場合や、ヘッダーが改ざんされた場合の検出が可能になります。"
+    ],
+    "originalSlideText": "UDP Checksumme\n❑ UDP Checksumme optional\n Alle Bits auf 0 → wird nicht verwendet\n❑ IP Adressen nicht Teil des UDP Header\n UDP kann nicht feststellen, ob Datagramm richtiges Ziel erreicht hat\n❑ Checksummen Berechnung erweitert Header um Pseudoheader\n Enthält IP Source, IP Destination, Type von IP Datagramm sowie UDP Length",
+    "explanationImage": "",
+    "questionImage": "(s15)"
+  },
+  {
+    "id": 11,
+    "questionDe": "(s16) Wie wird ein UDP-Datagramm im Netzwerk übertragen und was bedeutet Kapselung?",
+    "questionJa": "UDPデータグラムはどのようにネットワークで送信されるか？「カプセル化（Kapselung）」とはどういう意味か？",
+    "answerDe": [
+      "UDP-Datagramm wird in ein IP-Datagramm eingebettet.",
+      "UDP ist der Payload von IP.",
+      "IP-Datagramm wird in Netzwerk-Frame eingebettet."
+    ],
+    "answerJa": [
+      "UDPデータグラムはIPデータグラムに埋め込まれる（カプセル化）。",
+      "UDPはIPにとってのペイロードとなる。",
+      "そのIPデータグラムはさらにネットワークのフレームとして送信される。"
+    ],
+    "explanationDe": [
+      "In Netzwerken ist es üblich, dass Protokolle in Schichten organisiert sind, wobei jede Schicht ihre Daten in ein Paket der nächsthöheren Schicht einbettet – dies nennt man Kapselung.",
+      "Im Fall von UDP wird das UDP-Datagramm vollständig als Nutzlast (Payload) in ein IP-Datagramm eingebettet.",
+      "Das IP-Datagramm wiederum wird dann in einen Rahmen (Frame) des zugrunde liegenden Netzwerkprotokolls (z. B. Ethernet) eingebettet.",
+      "Dieser Prozess sorgt dafür, dass Daten über mehrere Netzwerktypen hinweg korrekt übertragen werden können.",
+      "Kapselung ermöglicht Modularität: Jedes Protokoll konzentriert sich auf seine eigene Aufgabe, etwa Adressierung (IP), Fehlererkennung (Ethernet), oder Anwendungskommunikation (UDP).",
+      "Der Empfänger dekapselt die Pakete schrittweise: zuerst Ethernet, dann IP, dann UDP.",
+      "Diese Struktur ist ein zentrales Prinzip im Internet-Protokoll-Stack und macht Netzwerke flexibel und erweiterbar."
+    ],
+    "explanationJa": [
+      "ネットワークにおける通信は階層構造で行われ、それぞれの層が自分のデータを次の下位層のパケットに包み込む形で送信します。これを「カプセル化（Encapsulation）」と呼びます。",
+      "UDPの場合、作成されたUDPデータグラムはIPのペイロード（データ本体）として埋め込まれます。",
+      "さらに、そのIPデータグラムはEthernetなどのネットワークフレームに再度埋め込まれて、物理的に送信されます。",
+      "このように段階的に包まれて送信されることで、異なるネットワーク技術間でもデータを共通形式でやり取りできます。",
+      "各プロトコル層が独立して機能し、役割（例：IPはアドレス管理、UDPはアプリ間通信）に専念できるのもこの構造の利点です。",
+      "受信側ではこれを逆の順番で「デカプセル化」し、最終的にアプリケーションが正しいデータを受け取ることができます。",
+      "このようなカプセル化と階層構造の仕組みは、インターネット全体の柔軟性と拡張性を支える基本原理です。"
+    ],
+    "originalSlideText": "UDP Kapselung\n❑ UDP Datagramm wird zur Übertragung in IP Datagramm gekapselt\n Wird als Payload von IP übertragen\n❑ IP wird wiederum in Frame des individuellen Netzwerk übertragen",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 12,
+    "questionDe": "(s17) Welche zentralen Eigenschaften und Funktionen bietet das User Datagram Protocol (UDP)?",
+    "questionJa": "UDPの主要な性質と機能は何か？",
+    "answerDe": [
+      "Verbindungsloser Ende-zu-Ende Transport von Nachrichten.",
+      "Kommunikation zwischen Anwendungen auf verschiedenen Computern.",
+      "Best-Effort Übertragung wie bei IP.",
+      "Unterstützt nicht nur 1-zu-1 Interaktionen.",
+      "Verwendung von Portnummern zur Applikationsidentifikation.",
+      "UDP-Checksumme ist optional."
+    ],
+    "answerJa": [
+      "接続不要のエンドツーエンドなメッセージ通信。",
+      "異なるコンピュータ上のアプリケーション間で通信可能。",
+      "IPと同様にBest-Effortの配送方式。",
+      "1対1に限定されない柔軟な通信形態に対応。",
+      "ポート番号によってアプリケーションを識別。",
+      "チェックサムはオプション機能である。"
+    ],
+    "explanationDe": [
+      "UDP ist ein einfaches, leichtgewichtiges Transportprotokoll, das für schnelle und unzuverlässige Übertragung von Daten entwickelt wurde.",
+      "Im Gegensatz zu TCP ist es verbindungslos: Es erfolgt kein Verbindungsaufbau vor dem Datenaustausch.",
+      "Die Kommunikation findet zwischen Anwendungen (nicht nur Hosts) statt, was durch die Nutzung von Portnummern ermöglicht wird.",
+      "UDP unterstützt nicht nur klassische 1-zu-1 Kommunikation, sondern auch Multicast oder Broadcast, wodurch es sich für Gruppenkommunikation eignet.",
+      "Es arbeitet nach dem Best-Effort-Prinzip, d. h., es gibt keine Garantien für Zustellung, Reihenfolge oder Fehlerfreiheit.",
+      "Die UDP-Checksumme erlaubt eine rudimentäre Fehlererkennung, ist aber optional – somit kann Effizienz gegenüber Sicherheit priorisiert werden.",
+      "Diese Eigenschaften machen UDP ideal für Anwendungen, die geringe Latenz benötigen oder selbst für Zuverlässigkeit sorgen können, z. B. bei Multimedia oder DNS."
+    ],
+    "explanationJa": [
+      "UDPは軽量でシンプルな設計のトランスポート層プロトコルで、迅速かつ非信頼的なデータ転送を目的としています。",
+      "TCPのように通信前に接続を確立する必要がない「接続レス」なプロトコルです。",
+      "通信はホスト同士ではなく、アプリケーション間で行われ、これはポート番号によって実現されています。",
+      "1対1だけでなく、マルチキャストやブロードキャストなどの柔軟な通信形態をサポートしており、グループ通信にも適しています。",
+      "IPと同じくBest-Effortのセマンティクスを採用しているため、配信の保証や順序保持、エラー訂正などは行いません。",
+      "チェックサムを使った簡易なエラー検出も可能ですが、任意機能のため使用しないこともあります。",
+      "これらの特徴から、UDPはDNS、VoIP、ビデオストリーミングのようなリアルタイム性が重視される用途に適しています。"
+    ],
+    "originalSlideText": "Zusammenfassung\n❑ UDP bietet verbindungslosen Ende-zu-Ende Transport von Nachrichten\n❑ Kommunikation erfolgt zwischen Anwendungen auf verschiedenen Computern\n❑ Bietet Best-Effort wie IP\n❑ Keine Beschränkung auf 1-zu-1 Interaktionen\n❑ Nutzt Portnummern um Anwendungen zu unterscheiden\n❑ UDP Checksumme ist optional",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 13,
+    "questionDe": "(s18–19) Worin unterscheidet sich TCP grundlegend von UDP und welches Hauptziel verfolgt TCP?",
+    "questionJa": "TCPはUDPと何が根本的に異なり、どのような目的を持つのか？",
+    "answerDe": [
+      "TCP ist verbindungsorientiert und zuverlässig.",
+      "Überträgt Daten exakt wie gesendet – vollständig und in richtiger Reihenfolge.",
+      "Kompensiert Verluste, Verzögerungen, Duplikate und Reihenfolgenfehler.",
+      "Verhindert Überlastung der Netzwerke und Router."
+    ],
+    "answerJa": [
+      "TCPは接続型で、信頼性のある通信を行う。",
+      "送信されたデータを正確に、順番通り、完全に届ける。",
+      "パケットの損失、遅延、重複、順序の乱れを補償する。",
+      "ネットワークやルーターの過負荷を防ぐ機能も持つ。"
+    ],
+    "explanationDe": [
+      "TCP (Transmission Control Protocol) ist das zweite Hauptprotokoll der Transportschicht neben UDP, verfolgt aber ein völlig anderes Ziel.",
+      "Während UDP auf Geschwindigkeit und Einfachheit setzt, konzentriert sich TCP auf Zuverlässigkeit, Integrität und Kontrolle der Datenübertragung.",
+      "TCP ist verbindungsorientiert – bevor Daten ausgetauscht werden, muss eine Verbindung zwischen Sender und Empfänger etabliert werden.",
+      "TCP verwendet Mechanismen wie Sequenznummern, Bestätigungen (ACKs), Zeitgeber und Wiederholungen, um sicherzustellen, dass Daten nicht verloren gehen oder beschädigt ankommen.",
+      "Außerdem korrigiert TCP die Reihenfolge von Paketen und erkennt doppelte Pakete.",
+      "Ein weiteres wichtiges Ziel von TCP ist die Überlastkontrolle: Es passt die Übertragungsrate dynamisch an, um Netzwerke vor Überlastung zu schützen.",
+      "Durch diese Mechanismen ist TCP besonders für Anwendungen geeignet, bei denen Genauigkeit und Vollständigkeit entscheidend sind – z. B. Dateiübertragungen, E-Mail oder Webseitenabrufe."
+    ],
+    "explanationJa": [
+      "TCP（Transmission Control Protocol）は、UDPとは異なり、信頼性と制御を重視したトランスポート層のプロトコルです。",
+      "UDPが高速かつ軽量な通信を目的としているのに対し、TCPはデータを正確かつ確実に届けることを目的としています。",
+      "TCPは「接続型」で、通信を行う前に送信側と受信側の間で接続を確立する必要があります。",
+      "その後の通信では、パケットに番号（シーケンス番号）を付け、確認応答（ACK）やタイマーによって、損失やエラー、重複、順序の乱れなどを検出・補正します。",
+      "また、TCPはネットワークの過負荷（Congestion）を防ぐため、転送速度を自動的に調整する仕組みを持っています。",
+      "これにより、TCPはWebブラウジング、ファイル転送、電子メールなど、データの正確性が重要な用途に最適です。",
+      "信頼性・順序性・流量制御といった多くの機能を持つ反面、UDPよりもオーバーヘッドが大きく、リアルタイム性にはやや劣ります。"
+    ],
+    "originalSlideText": "Transmission Control Protocol\n\nEinführung\n❑ Transmission Control Protocol (TCP)\n❑ Bietet zuverlässige Datenübertragung zwischen Anwendungen auf Transportschicht\n❑ Nutzt unzuverlässigen Datagramm Dienst von IP\n❑ Verlust, Verspätung, Duplikate, falsche Reihenfolge muss kompensiert werden\n❑ Verhindert Überlastung der Netzwerke und Router",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 14,
+    "questionDe": "(s20) Welche Dienste bietet TCP hinsichtlich Verbindungsaufbau, Zuverlässigkeit und Datenflussrichtung?",
+    "questionJa": "TCPは接続確立、信頼性、データの流れに関してどのようなサービスを提供するか？",
+    "answerDe": [
+      "Verbindungsorientiert: Verbindung vor dem Versand notwendig.",
+      "Point-to-Point: Verbindung hat genau zwei Endpunkte.",
+      "Zuverlässigkeit: Daten vollständig und in richtiger Reihenfolge.",
+      "Full Duplex: Datenfluss gleichzeitig in beide Richtungen möglich."
+    ],
+    "answerJa": [
+      "接続型通信：データ送信前に接続を確立する必要がある。",
+      "1対1の通信：TCP接続には常に2つの端点が存在する。",
+      "信頼性：データは完全かつ順序通りに届く。",
+      "全二重通信：データは同時に双方向に流れることが可能。"
+    ],
+    "explanationDe": [
+      "TCP stellt eine Reihe von Diensten bereit, die zuverlässige Datenübertragung ermöglichen.",
+      "Zunächst ist TCP verbindungsorientiert – vor dem Senden von Daten wird eine logische Verbindung aufgebaut, die durch einen Drei-Wege-Handschlag etabliert wird.",
+      "TCP-Verbindungen sind immer Punkt-zu-Punkt, das heißt, es gibt exakt zwei Kommunikationspartner: einen Sender und einen Empfänger.",
+      "TCP garantiert die Zustellung aller Daten in exakt der Reihenfolge, in der sie gesendet wurden. Dafür nutzt es Sequenznummern, ACKs und Retransmissions.",
+      "Ein weiterer Dienst ist Full Duplex: Beide Kommunikationspartner können gleichzeitig Daten senden und empfangen.",
+      "Dies unterscheidet TCP deutlich von einfacheren Protokollen wie UDP, die keine Verbindung und keine Zuverlässigkeit bieten.",
+      "Durch diese Dienste ist TCP besonders geeignet für Anwendungen, die fehlerfreie und geordnete Kommunikation benötigen – z. B. Web, FTP, E-Mail."
+    ],
+    "explanationJa": [
+      "TCPは信頼性の高いデータ通信を実現するためのさまざまなサービスを提供しています。",
+      "まず、TCPは「接続型」であり、通信を開始する前に送信側と受信側で論理的な接続を確立する必要があります（通常はThree-Way Handshakeで実現）。",
+      "この接続は常に「1対1」の関係であり、送信元と送信先の2つのエンドポイントだけで構成されます。",
+      "TCPはデータが正しい順番で完全に届くことを保証しており、そのためにシーケンス番号やACK（確認応答）、再送制御などを用います。",
+      "また、TCPでは「フルデュプレックス通信（Full Duplex）」が可能で、両方向に同時にデータを送ることができます。",
+      "このような特徴により、TCPはUDPと違って信頼性や整合性のある通信を実現しており、Webアクセス、ファイル転送、メール送受信などで多用されます。",
+      "高信頼性と双方向性が必要なアプリケーションにとって、TCPは不可欠な通信プロトコルです。"
+    ],
+    "originalSlideText": "Dienste von TCP (1)\n❑ Verbindungsorientiert: Anwendung muss vor Versand Verbindung zu Ziel anfordern\n❑ Point-to-Point: Jede TCP Verbindung hat zwei Endpunkte\n❑ Zuverlässigkeit: Daten werden exakt so zugestellt wie versendet (vollständig, richtige Reihenfolge)\n❑ Full Duplex: Daten können in beide Richtungen fließen, Anwendungen dürfen zu beliebiger Zeit senden",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 15,
+    "questionDe": "(s21) Was ist ein Stream Interface bei TCP und wie erfolgt Verbindungsaufbau und -abbau?",
+    "questionJa": "TCPのストリームインターフェースとは何か？また、接続の確立と終了はどのように行われるか？",
+    "answerDe": [
+      "Stream Interface: kontinuierlicher Datenfluss ohne feste Nachrichtenstruktur.",
+      "Empfangene Datenstücke können unterschiedlich groß sein.",
+      "Verbindungsaufbau ist zuverlässig.",
+      "Verbindungsabbau erfolgt mit Zustimmung beider Seiten und garantiert vollständige Datenübertragung."
+    ],
+    "answerJa": [
+      "ストリームインターフェース：メッセージ単位ではなく連続したデータの流れ。",
+      "受信側に届くデータのサイズは送信側と異なることがある。",
+      "接続確立は信頼的に行われる。",
+      "接続終了は両者の同意により行われ、すべてのデータ送信が保証される。"
+    ],
+    "explanationDe": [
+      "Ein zentrales Merkmal von TCP ist das Stream Interface, bei dem Daten nicht als einzelne Nachrichten, sondern als fortlaufender Datenstrom übermittelt werden.",
+      "Das bedeutet, dass TCP selbst keine Nachrichtengrenzen kennt – die Anwendung muss diese bei Bedarf selbst einführen.",
+      "Der Empfänger erhält Daten in variablen Blöcken, je nach Netzwerkbedingungen und Puffergrößen.",
+      "Vor Beginn der Kommunikation wird eine zuverlässige Verbindung aufgebaut – dies stellt sicher, dass beide Seiten synchronisiert sind.",
+      "Beim Verbindungsabbau verwendet TCP ein spezielles Verfahren, bei dem beide Seiten zustimmen müssen und sich vergewissern, dass alle gesendeten Daten erfolgreich übertragen wurden.",
+      "Dabei kommen sogenannte FIN- und ACK-Segmente zum Einsatz.",
+      "Dies gewährleistet eine saubere und kontrollierte Beendigung der Verbindung, was wichtig ist, um Datenverluste und Missverständnisse zu vermeiden."
+    ],
+    "explanationJa": [
+      "TCPではデータはメッセージ単位ではなく、連続した「ストリーム（stream）」として送受信されます。",
+      "これは、アプリケーションから送られたデータが1つのまとまりとしてではなく、任意の大きさの塊で届く可能性があることを意味します。",
+      "つまりTCP自体には「メッセージの区切り」はなく、必要に応じてアプリケーション側が明示的に区切る必要があります。",
+      "通信開始前には、信頼性の高い接続確立が行われ、双方の通信状態が同期されます。",
+      "接続終了も一方的には行われず、双方が「すべてのデータを受け取った」ことを確認したうえで終了します。",
+      "この手順にはFIN（終了）とACK（確認応答）という制御セグメントが使われます。",
+      "これにより、通信の中断によるデータの損失や処理ミスを防ぐ、安全なセッション管理が実現されます。"
+    ],
+    "originalSlideText": "Dienste von TCP (2)\n❑ Stream Interface:\n Applikation sendet kontinuierliche Sequenz von Daten\n Größe der ankommenden Stücke kann ungleich der gesendeten Stücke sein\n❑ Verbindungsaufbau erfolgt zuverlässig\n❑ Verbindungsabbau:\n Stellt sicher, dass alle Daten vorher übertragen werden\n Beide Seiten müssen Verbindungsabbau zustimmen",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 16,
+    "questionDe": "(s22) Was bedeutet es, dass TCP virtuelle Verbindungen nutzt, und welche Konsequenzen hat das?",
+    "questionJa": "TCPの『仮想接続』とは何を意味し、それにはどのような特徴や利点があるか？",
+    "answerDe": [
+      "Virtuell: Verbindung nur durch Software, keine spezielle Hardware nötig.",
+      "TCP-Nachrichten werden in IP-Datagramme gekapselt.",
+      "TCP muss nur an beiden Endpunkten vorhanden sein."
+    ],
+    "answerJa": [
+      "仮想的とは、ソフトウェアのみで接続が実現されることを意味する（専用ハードウェアは不要）。",
+      "TCPのデータはIPデータグラムとしてカプセル化されて送信される。",
+      "TCPは通信の両端に存在すればよく、中間のネットワークには依存しない。"
+    ],
+    "explanationDe": [
+      "Der Begriff 'virtuelle Verbindung' bedeutet, dass die Verbindung zwischen zwei Kommunikationspartnern nicht physisch, sondern rein softwarebasiert über das Internet hergestellt wird.",
+      "Im Gegensatz zu traditionellen Telefonleitungen ist bei TCP keine durchgängige Leitung erforderlich.",
+      "Stattdessen kapselt TCP seine Daten in IP-Datagramme, die unabhängig voneinander durch das Netzwerk transportiert werden.",
+      "Es gibt keine speziellen Netzwerkgeräte, die TCP verstehen müssen – es reicht, wenn beide Endsysteme TCP implementieren.",
+      "Dies vereinfacht die Netzwerkinfrastruktur und macht das Internet sehr skalierbar.",
+      "Der Zustand der Verbindung (z. B. Sequenznummern, ACKs, Fenstergröße) wird nur in den Endsystemen gespeichert.",
+      "Diese Technik ist auch die Grundlage für virtuelle Netzwerke wie VPNs, bei denen sichere logische Verbindungen über unsichere physische Netze aufgebaut werden."
+    ],
+    "explanationJa": [
+      "『仮想接続』とは、TCPの接続が物理的な専用回線ではなく、ソフトウェアのみで論理的に実現されていることを意味します。",
+      "つまり、従来の電話回線のように物理的に2点が接続されるのではなく、インターネット上でデータをIPデータグラムとして分割・転送し、TCPがそれらを再構成します。",
+      "TCPはIPの上のレイヤーにあり、送信側と受信側の2端末がTCPを実装していれば、中間のネットワーク機器はTCPを理解していなくても通信は成立します。",
+      "この特徴により、ネットワーク全体を単純化し、大規模で柔軟なインフラ構築が可能になります。",
+      "また、接続に関する状態（たとえば送信済みのデータの確認情報やバッファサイズなど）はすべて通信端点のソフトウェアで管理されます。",
+      "この仮想接続の考え方は、VPN（仮想プライベートネットワーク）などの応用技術にも活かされています。",
+      "つまり、TCPはインターネットのような物理構造に制限されないネットワーク通信を可能にする基盤技術です。"
+    ],
+    "originalSlideText": "Virtuelle Verbindungen\n❑ Verbindungen virtuell, da nur mit Software erreicht\n❑ Keine Unterstützung durch Hardware und Software im verwendeten Internet\n❑ TCP Nachricht in IP Datagramm gekapselt\n❑ TCP muss nur an beiden Endpunkten der Verbindung vorhanden sein",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 17,
+    "questionDe": "(s23) Welche typischen Probleme lösen Transportprotokolle und welche Techniken werden dafür verwendet?",
+    "questionJa": "トランスポートプロトコルはどのような問題に対処しようとしており、どのような技術を使っているか？",
+    "answerDe": [
+      "Probleme: Unzuverlässige Kommunikation, Neustart von Endsystem, Heterogenität, Überlastung.",
+      "Techniken: Fehlerkorrektur, Sequenzierung, Flusskontrolle, Congestion Control."
+    ],
+    "answerJa": [
+      "課題：通信の信頼性のなさ、エンドシステムの再起動、異種環境、ネットワークの輻輳。",
+      "対応技術：誤り訂正、順序制御、フロー制御、輻輳制御など。"
+    ],
+    "explanationDe": [
+      "Transportprotokolle wie TCP sind dafür verantwortlich, Kommunikationsprobleme zu beheben, die auf niedrigeren Ebenen des Netzwerkstacks auftreten können.",
+      "Ein Hauptproblem ist die Unzuverlässigkeit der IP-Schicht: Pakete können verloren gehen, in falscher Reihenfolge ankommen oder dupliziert werden.",
+      "Transportprotokolle lösen das durch Mechanismen wie Sequenznummern, ACKs und Wiederholungen.",
+      "Ein weiteres Problem ist der Neustart eines Endsystems während einer Verbindung, was zu inkonsistentem Zustand führen kann – dem begegnet man z. B. mit Session-IDs.",
+      "Heterogene Endgeräte (z. B. langsame Mobilgeräte vs. schnelle Server) erfordern Flusskontrolle, um Überforderung zu verhindern.",
+      "Bei Überlastung im Netzwerk greifen Techniken wie Congestion Control ein, die die Datenrate dynamisch reduzieren.",
+      "Diese Mechanismen machen es möglich, dass moderne Netzwerke trotz Unsicherheiten stabil und effizient arbeiten."
+    ],
+    "explanationJa": [
+      "トランスポートプロトコル（例：TCP）は、ネットワークの下層（特にIP層）で発生するさまざまな問題に対処する役割を担っています。",
+      "まず、IP層ではパケットが失われたり、順序が乱れたり、重複して届いたりすることがあります。これらは信頼性のない通信による典型的な問題です。",
+      "TCPでは、これらを解決するために、シーケンス番号、確認応答（ACK）、再送制御などを活用します。",
+      "また、接続中に片方の端末が再起動すると通信の整合性が崩れるため、セッションIDの導入などで対応します。",
+      "異なる性能の端末（例：モバイル端末と高性能サーバ）間の通信では、フロー制御が重要となり、受信側の処理能力を超えないように調整します。",
+      "さらに、ネットワーク全体が混雑している場合には輻輳制御（Congestion Control）によって送信速度を動的に調整し、ネットワーク崩壊を防ぎます。",
+      "これらの技術によって、トランスポートプロトコルは複雑で不確実なインターネット環境でも安定した通信を実現しています。"
+    ],
+    "originalSlideText": "Techniken von Transportprotokollen\n❑ Hauptprobleme\n Unzuverlässige Kommunikation\n Neustart von Endsystem\n Heterogene Endsysteme\n Überlastung des Internet\n❑ Transportprotokolle besitzen Techniken um Probleme zu beheben oder zu umgehen",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 18,
+    "questionDe": "(s24) Wie erkennt und verarbeitet TCP empfangene Pakete in der falschen Reihenfolge?",
+    "questionJa": "TCPは順序が乱れたパケットをどのように検出・処理するか？",
+    "answerDe": [
+      "Sender versieht jedes Paket mit einer Sequenznummer.",
+      "Empfänger speichert letzte korrekte Sequenznummer (S).",
+      "Pakete in falscher Reihenfolge werden in Liste (L) zwischengespeichert.",
+      "Falls neues Paket korrekt folgt, wird es geliefert und Liste überprüft."
+    ],
+    "answerJa": [
+      "送信側は各パケットにシーケンス番号を付与する。",
+      "受信側は最後に正しく受信した番号（S）を記録する。",
+      "順序がずれたパケットは一時的にリスト（L）に保存する。",
+      "新しいパケットが正しい順番で届いた場合、それを上位層に渡し、リストも確認する。"
+    ],
+    "explanationDe": [
+      "Da IP-Pakete im Internet in beliebiger Reihenfolge ankommen können, muss TCP eine Möglichkeit haben, die korrekte Reihenfolge wiederherzustellen.",
+      "Dazu versieht der Sender jedes Paket mit einer eindeutigen Sequenznummer.",
+      "Der Empfänger speichert die Sequenznummer S des zuletzt korrekt empfangenen Pakets und verwaltet eine Liste L von Paketen, die aus dem erwarteten Verlauf herausfallen.",
+      "Wenn ein neu ankommendes Paket direkt auf S folgt, wird es sofort an die Anwendung weitergeleitet.",
+      "Danach überprüft der Empfänger, ob weitere Pakete in Liste L in der nun richtigen Reihenfolge zugestellt werden können.",
+      "So wird sichergestellt, dass die Anwendung eine korrekt geordnete Datenfolge erhält, auch wenn das Netzwerk Pakete in beliebiger Reihenfolge liefert.",
+      "Diese Technik ist zentral für die Zuverlässigkeit von TCP, besonders bei Verbindungen über große Distanzen oder überlastete Netzwerke."
+    ],
+    "explanationJa": [
+      "インターネットでは、IPパケットは必ずしも送信された順番どおりに届くとは限りません。そのためTCPでは、正しい順番に並べ直すための仕組みが必要です。",
+      "送信側は、各パケットに一意のシーケンス番号（順番を示す番号）を付けて送信します。",
+      "受信側は、最後に正しい順番で受信したパケットの番号（S）を保持し、それより先に届いたが順序が飛んでいるパケットをリスト（L）に一時保存します。",
+      "もし次に届いたパケットがSの次の番号であれば、それを上位層に渡し、Lに保存されているパケットも順に確認して上位層に届けます。",
+      "このようにして、TCPはパケットが届く順番に依存せず、アプリケーションに対して常に正しい順序でデータを提供できます。",
+      "この仕組みは、特に長距離通信や混雑したネットワークにおいて信頼性を確保するために重要です。",
+      "順序制御は、TCPの持つ信頼性の中核となる技術です。"
+    ],
+    "originalSlideText": "Duplikate, Out-of-Order (1)\n❑ Verwendung von Sequenzierung\n Sender fügt Sequenznummer zu jedem Paket hinzu\n Empfänger speichert Sequenznummer S des letzten Pakets in richtiger Reihenfolge\n Empfänger speichert Liste L von zusätzlichen Paketen in falscher Reihenfolge\n❑ Neues Paket in richtiger Reihenfolge (folgt auf S)\n Zustellung an nächste Schicht\n Überprüfung der Liste L, ob weitere Pakete zugestellt werden können",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 19,
+    "questionDe": "(s25) Wie geht TCP mit duplizierten oder falsch geordneten Paketen um?",
+    "questionJa": "TCPは重複パケットや順序の乱れたパケットをどのように処理するか？",
+    "answerDe": [
+      "Falsch geordnete Pakete werden in Liste L gespeichert.",
+      "Duplikate werden durch Sequenznummer erkannt.",
+      "Pakete mit Sequenznummer < S werden verworfen.",
+      "Bereits gespeicherte Pakete in L werden ebenfalls verworfen."
+    ],
+    "answerJa": [
+      "順序が乱れたパケットは一時的にリストLに保存する。",
+      "重複パケットはシーケンス番号により識別される。",
+      "S（最後に受け取った正しい番号）より前のパケットは破棄される。",
+      "すでにLにあるパケットと同じものも破棄される。"
+    ],
+    "explanationDe": [
+      "TCP stellt sicher, dass jede Datenmenge nur einmal und in richtiger Reihenfolge an die Anwendung geliefert wird.",
+      "Dazu prüft es bei jedem empfangenen Paket die enthaltene Sequenznummer.",
+      "Wenn ein Paket eine Nummer hat, die kleiner als S ist – also bereits verarbeitet wurde –, wird es als Duplikat erkannt und verworfen.",
+      "Ebenso wird es verworfen, wenn es sich um ein weiteres Exemplar eines Pakets handelt, das bereits in der Liste L gespeichert ist.",
+      "Dadurch vermeidet TCP unnötige Verarbeitung und doppelte Auslieferung von Daten.",
+      "Diese Kontrolle ist besonders wichtig bei instabilen Netzwerken, bei denen es leicht zu Duplikaten durch Wiederholungsversuche kommen kann.",
+      "TCP hält so die Datenübertragung effizient und zuverlässig, ohne inkonsistente Ergebnisse auf Anwendungsebene zu verursachen."
+    ],
+    "explanationJa": [
+      "TCPでは、アプリケーションに同じデータが2回以上渡ることを防ぐために、重複パケットの管理を行います。",
+      "すべてのパケットにはシーケンス番号が付けられており、受信側はこれをもとに受信済みかどうかを判定します。",
+      "もし番号がS（最後に正しく受信された番号）より小さい場合、それはすでに処理済みであり、重複と見なされて破棄されます。",
+      "また、順番が乱れていて一時的に保存しているリストLに同じ番号のパケットがすでにある場合も、重複として処理されます。",
+      "このようにTCPは、ネットワークの不安定性によって再送が発生しても、重複データがアプリケーションに渡らないよう設計されています。",
+      "これは、正確なデータの受信が要求される通信（たとえばファイル転送）において非常に重要な機能です。",
+      "TCPの重複検出機能は、信頼性と一貫性を保つための重要な柱の一つです。"
+    ],
+    "originalSlideText": "Duplikate, Out-of-Order (2)\n❑ Neues Paket in falscher Reihenfolge\n Wird zu Liste L hinzugefügt\n❑ Duplikate\n Prüfung der Sequenznummer des Paket\n Verwerfen, falls Sequenznummer vor S liegt\n Verwerfen, falls schon in Liste L enthalten",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 20,
+    "questionDe": "(s26) Wie erkennt TCP verlorene Pakete und wie reagiert es darauf?",
+    "questionJa": "TCPはパケットの損失をどのように検出し、どのように対処するか？",
+    "answerDe": [
+      "Verwendung von ACKs (Bestätigungen).",
+      "Sender startet Timer bei Versand eines Pakets.",
+      "Falls kein ACK vor Timeout, wird das Paket erneut gesendet (Retransmission)."
+    ],
+    "answerJa": [
+      "ACK（確認応答）を使ってパケットの受信を確認する。",
+      "送信時にタイマーを開始する。",
+      "タイムアウトまでにACKが来なければ再送する（再送制御）。"
+    ],
+    "explanationDe": [
+      "Ein zentrales Element der Fehlererkennung in TCP ist das Prinzip des positiven Acknowledgements mit Retransmission.",
+      "Sobald der Sender ein Datenpaket verschickt, startet er einen Timer.",
+      "Empfängt der Empfänger das Paket fehlerfrei, schickt er ein ACK – eine kleine Bestätigung, dass das Paket korrekt angekommen ist.",
+      "Kommt dieses ACK rechtzeitig zurück, wird der Timer abgebrochen und der Sender fährt mit dem nächsten Paket fort.",
+      "Falls kein ACK empfangen wird, geht TCP davon aus, dass das Paket verloren ging oder beschädigt wurde – und sendet es erneut.",
+      "Diese Technik stellt sicher, dass auch in unzuverlässigen Netzwerken keine Daten verloren gehen.",
+      "Das Verhalten ähnelt einem Einschreiben mit Rückschein: Nur wer eine Bestätigung bekommt, weiß, dass die Nachricht angekommen ist."
+    ],
+    "explanationJa": [
+      "TCPでは、データが正しく届いたことを確認するためにACK（確認応答）を使います。",
+      "送信側はパケットを送信したときに同時にタイマーをスタートさせます。",
+      "受信側がパケットを受け取ると、問題がなければACKを送り返します。",
+      "ACKがタイムアウトまでに届いた場合、送信側はそのデータが無事に届いたと判断し、次の送信に進みます。",
+      "もしACKが一定時間内に届かなかった場合、TCPはそのパケットが失われた、または破損したと見なし、再送を行います。",
+      "このようにして、TCPは不安定なネットワークでも確実にデータを届ける仕組みを持っています。",
+      "これは、書留郵便で受領確認をもらうようなイメージです。"
+    ],
+    "originalSlideText": "Verlorene Pakete (1)\n❑ Nutzung von Positive Acknowledgement mit Retransmission\n❑ Kleine Acknowledgment (ACK) Nachricht wird für empfangenen, intakten Frame gesendet\n❑ Sender hat Verantwortung, dass alle Pakete erfolgreich zugestellt werden\n❑ Bei Versand jedes Pakets wird Timer gestartet",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 21,
+    "questionDe": "(s27) Wie funktioniert der Timer für Retransmission in TCP und welche Grenzen bestehen?",
+    "questionJa": "TCPの再送タイマーはどのように動作し、どのような制限があるか？",
+    "answerDe": [
+      "Timer wird abgebrochen, wenn ACK rechtzeitig kommt.",
+      "Kommt kein ACK, wird Paket erneut gesendet (Retransmission).",
+      "Anzahl der Wiederholungen ist begrenzt.",
+      "Bei Hardwarefehlern oder Netzwerkausfall kann keine Zustellung erfolgen.",
+      "Retransmission kann bei Verzögerung zu Duplikaten führen."
+    ],
+    "answerJa": [
+      "ACKがタイムアウト前に届けばタイマーはキャンセルされる。",
+      "ACKが来なければ再送を行う（Retransmission）。",
+      "再送回数には上限がある。",
+      "ハードウェア障害やネットワーク切断では再送しても届かない。",
+      "遅延が原因で再送されると、重複パケットが発生する可能性がある。"
+    ],
+    "explanationDe": [
+      "Wenn TCP ein Paket verschickt, startet es einen Timer, der auf eine geschätzte Verzögerung (Round Trip Time) eingestellt ist.",
+      "Kommt das ACK rechtzeitig an, wird der Timer gestoppt – andernfalls erfolgt eine Wiederholung (Retransmission) des Pakets.",
+      "Diese Wiederholungen sind jedoch begrenzt – beispielsweise bei Hardwarefehlern, bei denen der Empfänger dauerhaft offline ist.",
+      "Eine unendliche Zahl von Wiederholungen wäre ineffizient und könnte das Netzwerk belasten.",
+      "Ein weiteres Problem entsteht, wenn ein ACK stark verzögert eintrifft: Dann kann TCP irrtümlich denken, das Paket sei verloren, obwohl es nur spät bestätigt wurde.",
+      "In diesem Fall sendet TCP dasselbe Paket erneut, was zu Duplikaten auf der Empfängerseite führen kann.",
+      "Der Empfänger muss daher nicht nur mit verlorenen, sondern auch mit doppelten Paketen umgehen können – z. B. durch Sequenznummern und Zwischenspeicherung."
+    ],
+    "explanationJa": [
+      "TCPはパケット送信時にタイマーを設定し、一定時間内にACK（確認応答）が返ってくることを期待します。",
+      "ACKがタイムアウトよりも早く届けば、タイマーは解除され、正常に次の処理に進みます。",
+      "しかしACKが届かない場合、TCPはそのパケットが失われたと判断し、再送（Retransmission）を行います。",
+      "ただし再送には回数制限があり、ハードウェアの故障やネットワーク切断のような深刻な問題には対応しきれません。",
+      "また、ACKが極端に遅れて届いた場合には、本来不要な再送が発生してしまい、受信側で重複パケットとなる可能性があります。",
+      "そのため、TCPの受信側ではパケットの重複を防ぐための仕組み（シーケンス番号の確認など）が重要です。",
+      "このように、再送のタイミング制御とその限界は、TCPの信頼性を支える重要なポイントの一つです。"
+    ],
+    "originalSlideText": "Verlorene Pakete (2)\n❑ Timer wird abgebrochen, wenn ACK vor Ablauf ankommt\n❑ Läuft Timer vorher ab, wird neue Kopie versendet und Timer neugestartet → Retransmitting\n❑ Maximalzahl an Neuübertragungen beschränkt\n Hardwarefehler, Empfänger abgestürzt, Keine Verbindung mit Netzwerk\n❑ Retransmission kann zu Duplikaten bei Verzögerungen führen",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 22,
+    "questionDe": "(s28) Was ist ein Replay-Fehler im TCP und wie wird er verhindert?",
+    "questionJa": "TCPにおけるReplay（リプレイ）エラーとは何か？それはどのように防がれているか？",
+    "answerDe": [
+      "Lang verzögerte Pakete können neue Sessions stören.",
+      "Beispiel: Altes FIN-Paket beendet neue Verbindung.",
+      "Lösung: Eindeutige Session-ID für jede Verbindung.",
+      "Session-ID wird in jedes Paket geschrieben.",
+      "Empfänger verwirft Pakete mit veralteter Session-ID.",
+      "IDs dürfen über lange Zeit nicht wiederverwendet werden."
+    ],
+    "answerJa": [
+      "長く遅延したパケットが新しいセッションを妨害する可能性がある。",
+      "例：古いFINパケットが新しい接続を終了させてしまう。",
+      "対策：各接続に一意のセッションIDを付与する。",
+      "セッションIDは全てのパケットに埋め込まれる。",
+      "受信側は古いIDのパケットを破棄する。",
+      "セッションIDは長期間再利用してはならない。"
+    ],
+    "explanationDe": [
+      "Ein Replay-Fehler entsteht, wenn alte TCP-Pakete mit erheblicher Verzögerung im Netzwerk zirkulieren und fälschlicherweise in neuen Verbindungen interpretiert werden.",
+      "Ein typisches Beispiel: Ein FIN-Segment zum Beenden einer alten Verbindung trifft erst ein, nachdem bereits eine neue Verbindung zwischen denselben Endpunkten aufgebaut wurde.",
+      "Dieses alte FIN könnte nun irrtümlich die neue Session beenden oder andere Datenpakete stören.",
+      "Um das zu verhindern, verwendet TCP eine Technik, bei der jede Verbindung mit einer eindeutigen Session-ID versehen wird.",
+      "Diese ID wird in jedem TCP-Paket übertragen und ermöglicht es dem Empfänger, zwischen alten und aktuellen Sessions zu unterscheiden.",
+      "Pakete mit nicht mehr gültiger ID werden verworfen, um Beeinträchtigungen zu vermeiden.",
+      "Wichtig ist, dass diese IDs nicht zu früh wiederverwendet werden, um Überschneidungen zwischen alten und neuen Verbindungen zu vermeiden – besonders bei langsamen Netzwerken oder überlasteten Systemen."
+    ],
+    "explanationJa": [
+      "Replay（リプレイ）エラーとは、以前の通信で送信されたTCPパケットが、ネットワークの遅延などにより後から届き、すでに終了したはずの接続が再び影響を受ける現象です。",
+      "たとえば、古い接続を終了するためのFINパケットが、偶然新しい接続のタイミングで届くと、新しいセッションが強制的に終了されてしまうことがあります。",
+      "このような誤動作を防ぐため、TCPでは各接続ごとに一意なセッションIDを生成し、それをすべてのパケットに含めて送信します。",
+      "受信側は、現在有効なセッションIDを確認し、それ以外のIDを持つパケットは無効として破棄します。",
+      "この仕組みによって、古いパケットによる予期しない通信干渉を防ぐことができます。",
+      "ただし、セッションIDが短期間で再利用されると、また同じ問題が発生するため、十分な時間を空けて再使用されるように管理されています。",
+      "このような仕組みは、セッションの整合性を保ち、安全な通信を維持するうえで重要な要素となっています。"
+    ],
+    "originalSlideText": "Replay\n❑ Lang verzögerte Pakete können zu Replay Fehlern führen\n❑ Beispiel:\n Paket einer Session wird durch Hardwarefehler verzögert → Wird erst zugestellt, wenn neue Session bereits aktiv ist\n Kontrollpaket zum Verbindungsabbau wird verzögert → Beendet spätere neue Session bei Zustellung\n❑ Lösung\n Session bekommt einzigartige ID\n Wird in jedes Paket der Session eingetragen, Empfänger verwirft andere Pakete\n ID darf lange Zeit nicht neu genutzt werden",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 23,
+    "questionDe": "(s29) Warum ist Flusskontrolle in TCP notwendig und wie funktioniert das Stop-and-Go-Verfahren?",
+    "questionJa": "なぜTCPにおいてフロー制御が必要なのか？Stop-and-Go方式とはどのような仕組みか？",
+    "answerDe": [
+      "Verhindert Überforderung eines langsamen Empfängers durch schnellen Sender.",
+      "Stop-and-Go: Sender wartet nach jedem Paket auf Bestätigung.",
+      "Empfänger sendet ACK nach Empfang eines Pakets.",
+      "Sehr geringer Durchsatz bei hoher Verzögerung."
+    ],
+    "answerJa": [
+      "速い送信者が遅い受信者を圧迫しないようにするために必要。",
+      "Stop-and-Go方式：各パケット送信後に確認応答を待つ。",
+      "受信者は受信後すぐにACKを返す。",
+      "遅延が大きいとスループットが極端に低下する。"
+    ],
+    "explanationDe": [
+      "Flusskontrolle ist notwendig, wenn ein Sender schneller Daten liefern kann als der Empfänger sie verarbeiten oder speichern kann.",
+      "Ohne solche Kontrolle würde der Empfänger überfordert, was zu Paketverlust oder sogar Verbindungsabbruch führen kann.",
+      "Das einfachste Verfahren ist Stop-and-Go: Der Sender schickt ein Paket und wartet, bis ein ACK vom Empfänger kommt, bevor er das nächste Paket sendet.",
+      "Dieses Verfahren ist zwar sicher, aber ineffizient, vor allem bei langen Verzögerungen (z. B. über Satellitenverbindungen).",
+      "Beispiel: Bei einer Verzögerung von 50 ms und 2 Mbps Bandbreite ist nur ein Paket alle 100 ms möglich – das ergibt nur etwa 80 Kbps nutzbare Datenrate.",
+      "In extremen Fällen bedeutet das, dass nur wenige Prozent der möglichen Bandbreite tatsächlich genutzt werden.",
+      "Stop-and-Go dient oft als Grundlage zum Verständnis effizienterer Mechanismen wie Sliding Window."
+    ],
+    "explanationJa": [
+      "TCPにおけるフロー制御は、送信者が速すぎて受信者が処理しきれない場合に、受信側を守るために必要です。",
+      "フロー制御がないと、受信者のバッファが溢れ、パケットが失われたり接続が切断されたりする可能性があります。",
+      "もっとも基本的な方式が「Stop-and-Go」です。これは、送信者が1つのパケットを送ったら、必ずACK（確認応答）が届くまで次のパケットを送らないという仕組みです。",
+      "安全ではありますが、通信に遅延がある場合は極端に非効率になります。",
+      "例えば、50ミリ秒の遅延があり、回線速度が2Mbpsの場合、1秒間に10パケットしか送れず、スループットはわずか約80Kbpsになります。",
+      "このように、Stop-and-Go方式では、回線の実効利用率が数％にとどまることもあります。",
+      "この方式はシンプルで理解しやすいため、より高度なSliding Window方式を学ぶ前段階としてよく使われます。"
+    ],
+    "originalSlideText": "Flusskontrolle (1)\n❑ Schneller Computer kann langsamen Empfänger überfordern → Flusskontrolle oder Flow Control notwendig\n❑ Einfachste Flusskontrolle ist Stop-and-Go\n Sender wartet nach jedem Paket\n Empfänger sendet nach empfangenem Paket Kontrollnachricht\n❑ Führt zu sehr geringem Durchsatz\n Paketgröße 1000 Byte, Durchsatz 2 Mbps, 50 ms Verzögerung\n Nur ein Paket alle 100 ms möglich → 80.000 bps (4% der Kapazität)",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 24,
+    "questionDe": "(s30) Wie funktioniert das Sliding Window-Verfahren in TCP und was ist das Window?",
+    "questionJa": "TCPにおけるSliding Window方式とはどのような仕組みか？『ウィンドウ』とは何を意味するか？",
+    "answerDe": [
+      "Sliding Window erlaubt mehrere unbestätigte Pakete.",
+      "Window Size: maximale Datenmenge ohne ACK.",
+      "Empfänger hat Puffer mindestens in Größe des Windows.",
+      "Paket in richtiger Reihenfolge → an Anwendung geliefert, ACK wird gesendet.",
+      "Sender schickt weiteres Paket nach Empfang eines ACK."
+    ],
+    "answerJa": [
+      "Sliding Window方式では、複数の未確認パケットを同時に送ることができる。",
+      "ウィンドウサイズとは、ACKなしで送信できる最大データ量のこと。",
+      "受信者はそのサイズに見合うバッファを持っている必要がある。",
+      "正しい順番のパケットが来れば上位層に渡し、ACKを返す。",
+      "送信者はACKを受け取ると、次のパケットを送信できる。"
+    ],
+    "explanationDe": [
+      "Das Sliding Window-Verfahren ist eine erweiterte Flusskontrolltechnik, die mehrere Pakete gleichzeitig im Umlauf erlaubt.",
+      "Der Sender darf bis zu einer bestimmten Grenze – der sogenannten Window Size – Pakete verschicken, ohne auf jedes einzelne ACK zu warten.",
+      "Der Empfänger reserviert entsprechend Speicherplatz (Buffer), um diese Daten zwischenspeichern zu können.",
+      "Sobald ein Paket in korrekter Reihenfolge empfangen wurde, wird es an die Anwendung weitergereicht und ein ACK versendet.",
+      "Mit jedem ACK verschiebt sich das 'Fenster' – d. h., der Sender darf ein neues Paket senden.",
+      "Durch diese Methode wird der Durchsatz erheblich verbessert, da die Leitung während der Wartezeit auf ACKs weiter genutzt werden kann.",
+      "Sliding Window ist die Grundlage für effiziente, zuverlässige Datenübertragung in TCP."
+    ],
+    "explanationJa": [
+      "Sliding Window（スライディング・ウィンドウ）方式は、TCPにおける高度なフロー制御の1つで、複数のパケットを一度に送信できる仕組みです。",
+      "送信者は、受信者からのACKを待たずに一定量（ウィンドウサイズ）までのデータを連続して送信することができます。",
+      "このウィンドウサイズは受信者側のバッファ容量に基づいて決定され、受信者はそれに応じてデータを一時的に保存します。",
+      "正しい順番のパケットが届くと、アプリケーション層に渡され、ACKが送信されます。",
+      "ACKを受け取ることで送信ウィンドウが前にスライドし、新たなパケットを送ることができます。",
+      "この仕組みにより、ACK待ちの間も回線を有効活用でき、全体のスループットが大幅に向上します。",
+      "Sliding Windowは、TCPにおける効率的かつ信頼性の高い通信の基礎を支える重要な技術です。"
+    ],
+    "originalSlideText": "Flusskontrolle (2)\n❑ Für höheren Durchsatz wird Sliding Window verwendet\n❑ Window Size: Maximalmenge an Daten, die ohne Empfang von ACK gesendet werden kann\n❑ Empfänger hält Pufferspeicher, welcher mind. die Größe der Window Size hat\n❑ Paket in richtiger Reihenfolge → wird an höhere Schicht geleitet und ACK versandt\n❑ Wird ACK empfangen sendet Sender nächstes Paket",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 25,
+    "questionDe": "(s31) Wie kann man sich das Sliding Window-Verfahren bildlich vorstellen? (mit Abbildung)",
+    "questionJa": "TCPのSliding Window方式はどのようなイメージで捉えることができるか？（図付き）",
+    "answerDe": [
+      "Das Fenster umfasst mehrere Sequenznummern gleichzeitig.",
+      "Es verschiebt sich beim Empfang von ACKs.",
+      "Ermöglicht parallele Übertragung mehrerer Pakete.",
+      "Startzustand: Fenster am Anfang der Sequenz.",
+      "Zwischenzustand: einige Pakete gesendet, einige bestätigt.",
+      "Endzustand: Fenster komplett verschoben, alle Pakete bestätigt."
+    ],
+    "answerJa": [
+      "ウィンドウは複数のシーケンス番号を同時に含む範囲を表す。",
+      "ACKを受け取るたびにウィンドウが前へスライドする。",
+      "複数のパケットを同時に送信できる仕組みを提供する。",
+      "開始時はシーケンスの先頭に位置する。",
+      "中間では一部が送信済み・一部がACK済みの状態になる。",
+      "最後はすべてのパケットが確認され、ウィンドウが前進しきる。"
+    ],
+    "explanationDe": [
+      "Das Sliding Window kann man sich als ein bewegliches Fenster vorstellen, das sich über eine Reihe von Sequenznummern spannt.",
+      "Innerhalb dieses Fensters darf der Sender mehrere Pakete versenden, ohne auf ACKs zu warten.",
+      "Sobald ACKs vom Empfänger eintreffen, wird das Fenster weitergeschoben – neue Pakete können gesendet werden.",
+      "Anfangs zeigt das Fenster auf die ersten n Sequenznummern (je nach Window Size).",
+      "Wenn ACKs eintreffen, rücken diese Nummern nach vorne, das Fenster 'slidet'.",
+      "Der visuelle Vergleich mit einem Fenster hilft zu verstehen, wie TCP Datenfluss effizient steuert, ohne auf jedes Paket einzeln zu reagieren.",
+      "Diese Darstellungen zeigen typische Zustände: Start (a), zwischendrin (b), und Ende (c)."
+    ],
+    "explanationJa": [
+      "Sliding Window（スライディング・ウィンドウ）は、連続するシーケンス番号の範囲をウィンドウとして扱い、その範囲内のパケットを同時に送信できるようにする仕組みです。",
+      "送信者は、このウィンドウ内のパケットを一度に送り、受信者からACKを受け取ることで、ウィンドウを前に『スライド』させます。",
+      "最初はウィンドウがシーケンス番号の先頭を指し、ウィンドウサイズの分だけパケットが送られます。",
+      "ACKを受け取るたびに、ウィンドウの先頭が前に進み、新しいパケットの送信が可能になります。",
+      "この動きは、窓（ウィンドウ）を前にずらしていくような視覚的なイメージで捉えると理解しやすくなります。",
+      "スライドでは、初期状態（a）、途中の状態（b）、すべてのACKが返ってきた状態（c）という3段階で動きを説明しています。",
+      "この仕組みにより、TCPは通信効率を大幅に高めています。"
+    ],
+    "originalSlideText": "Flusskontrolle (3)\n❑ Vorstellbar als ein Fenster, welches über Daten geschoben wird",
+    "explanationImage": "",
+    "questionImage": "(s31)"
+  },
+  {
+    "id": 26,
+    "questionDe": "(s32) Wie unterscheiden sich Stop-and-Go und Sliding Window hinsichtlich der Gesamtübertragungszeit?",
+    "questionJa": "Stop-and-Go方式とSliding Window方式では、総通信時間にどのような違いがあるか？",
+    "answerDe": [
+      "Stop-and-Go: Gesamtzeit = 8N (bei N=Verzögerung).",
+      "Sliding Window: Gesamtzeit = 2N + ε.",
+      "Sliding Window reduziert Wartezeit zwischen Paketen.",
+      "Hoher Durchsatz trotz Netzwerkverzögerung möglich."
+    ],
+    "answerJa": [
+      "Stop-and-Go方式では、総通信時間は8N（Nはネットワークの遅延）。",
+      "Sliding Window方式では、総通信時間は2N + εに短縮される。",
+      "Sliding Windowではパケット間の待ち時間が大幅に減る。",
+      "遅延のあるネットワークでも高いスループットが実現できる。"
+    ],
+    "explanationDe": [
+      "Stop-and-Go wartet nach jedem Paket auf ein ACK, wodurch sich die Gesamtübertragungszeit stark verlängert.",
+      "Wenn die Verzögerung im Netzwerk als N definiert ist, ergibt sich bei 4 Paketen etwa eine Gesamtzeit von 8N.",
+      "Im Gegensatz dazu erlaubt Sliding Window, dass mehrere Pakete gleichzeitig verschickt werden.",
+      "Hier beträgt die Gesamtzeit nur 2N plus eine kleine Restverzögerung (ε), die vernachlässigbar ist.",
+      "Das liegt daran, dass beim Sliding Window bereits während der ACK-Wartezeit neue Pakete gesendet werden können.",
+      "Gerade bei großen Verzögerungen, wie sie bei Satellitenverbindungen vorkommen, ist Sliding Window deutlich effizienter.",
+      "Durch die kontinuierliche Nutzung der Leitung steigert es die Bandbreitenausnutzung erheblich."
+    ],
+    "explanationJa": [
+      "Stop-and-Go方式では、各パケットを送った後にACKを待つため、ネットワーク遅延（N）が通信全体の時間に大きく影響します。",
+      "たとえば4パケットを送る場合、全体で8Nの時間がかかる計算になります。",
+      "一方、Sliding Window方式では、ACKを待たずに複数のパケットを送信できるため、総通信時間は2N + ε（εは小さな遅れ）と非常に短くなります。",
+      "これは、ACKを待っている間にも次のパケットを送れるという並列性の高さに起因します。",
+      "特に遅延の大きいネットワーク（例：衛星通信）では、Stop-and-Goは非効率ですが、Sliding Windowなら高効率で通信できます。",
+      "この仕組みにより、TCPは限られた帯域幅を最大限に活用できるようになっています。",
+      "Sliding Windowは、リアルタイム性と効率性の両立を図る上で重要な技術です。"
+    ],
+    "originalSlideText": "Flusskontrolle (4)\n❑ Stop-and-Go: Verzögerung von N in Netzwerk → Gesamtzeit 8N\n❑ Sliding Window: Kurze Verzögerung zwischen einzelnen Paketen → Gesamtzeit 2N + ε",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 27,
+    "questionDe": "(s33) Wie beeinflusst die Window Size den TCP-Durchsatz und welche Grenzen gibt es?",
+    "questionJa": "TCPにおいてウィンドウサイズはスループットにどのような影響を与えるか？また、その限界とは？",
+    "answerDe": [
+      "Größeres Window erhöht den Durchsatz.",
+      "Theoretische Verbesserung: Tw = Tg × W.",
+      "Obergrenze: Tw = min(C, Tg × W).",
+      "C = maximale Netzwerkkapazität.",
+      "Erhöhung des Windows hat bei vollem Netzwerk keinen Effekt mehr."
+    ],
+    "answerJa": [
+      "ウィンドウサイズを大きくするとスループットが向上する。",
+      "理論上の式：Tw = Tg × W（Twはスライディングウィンドウによるスループット）。",
+      "上限式：Tw = min(C, Tg × W）、Cはネットワークの最大容量。",
+      "ネットワークが限界に達していれば、ウィンドウを広げても効果はない。"
+    ],
+    "explanationDe": [
+      "Das Sliding Window erlaubt die parallele Übertragung mehrerer Pakete, was den Gesamtdurchsatz erheblich steigern kann.",
+      "Je größer das Window ist, desto mehr Daten können gleichzeitig gesendet werden, ohne auf ACKs zu warten.",
+      "Die theoretische Verbesserung ergibt sich aus der Formel: Tw = Tg × W, wobei Tg der Durchsatz im Stop-and-Go-Verfahren ist und W die Window Size.",
+      "Allerdings gibt es eine natürliche Grenze: Die maximale Kapazität des Netzwerks (C).",
+      "Wird Tg × W größer als C, dann wird der tatsächliche Durchsatz durch C begrenzt, also: Tw = min(C, Tg × W).",
+      "Das bedeutet: Ein unbegrenzt großes Window bringt keine unendliche Leistungssteigerung.",
+      "In der Praxis muss daher ein Gleichgewicht zwischen Window Size, Round-Trip Time und Netzwerkkapazität gefunden werden."
+    ],
+    "explanationJa": [
+      "Sliding Window方式では、同時に複数のパケットを送信できるため、ウィンドウサイズ（Window Size）を大きくすることで通信のスループット（データ転送効率）を高めることができます。",
+      "この関係は理論的には Tw = Tg × W（TwはSliding Windowのスループット、TgはStop-and-Goのスループット、WはWindow Size）という式で表せます。",
+      "しかし現実には、ネットワークの最大帯域（C）という限界が存在するため、実際のスループットは Tw = min(C, Tg × W）で制限されます。",
+      "つまり、いくらウィンドウを大きくしても、ネットワーク自体の限界を超えることはできません。",
+      "このため、TCP通信を最適化するには、適切なWindow Sizeの設定が必要です。",
+      "特に高遅延かつ大容量の通信路（例：衛星通信）では、Window Sizeを大きくすることが効果的ですが、それにも限界があります。",
+      "ネットワーク条件と遅延時間に応じてWindow Sizeを調整することが、高効率な通信を実現する鍵となります。"
+    ],
+    "originalSlideText": "Flusskontrolle (5)\n❑ Bei großer Anzahl an Paketen kann ε vernachlässigt werden\n❑ Potenzielle Verbesserung durch Sliding Window: 𝑇𝑤 = 𝑇𝑔 × 𝑊\n 𝑇𝑤 Durchsatz mit Sliding Window, 𝑇𝑔 Durchsatz mit Stop-and-Go, W Window Size\n❑ Durchsatz kann mit größerem Window nicht beliebig erhöht werden\n Obere Schranke durch Kapazität des Netzwerks: 𝑇𝑤 = min(𝐶, 𝑇𝑔 × 𝑊), C Kapazität des Netzwerks",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 28,
+    "questionDe": "(s34) Wie entsteht Überlast im Netzwerk und welches Problem ergibt sich daraus?",
+    "questionJa": "ネットワークで輻輳（Überlast）はどのように発生し、どのような問題を引き起こすか？",
+    "answerDe": [
+      "Mehrere Sender überlasten Zwischenkomponenten wie Switches.",
+      "Beispiel: Zwei Sender mit je 1 Gbps an Switch 1 → nur 1 Gbps zu Switch 2.",
+      "Pakete werden gepuffert, was Verzögerung verursacht."
+    ],
+    "answerJa": [
+      "複数の送信者がスイッチなどの中継機器に負荷をかけることで発生する。",
+      "例：各1 Gbpsの送信者2台が1 Gbpsしか出力できないスイッチに接続されている。",
+      "結果としてパケットがバッファされ、遅延が発生する。"
+    ],
+    "explanationDe": [
+      "Überlast im Netzwerk tritt auf, wenn mehr Daten in ein Netzsegment eingespeist werden, als es weiterleiten kann.",
+      "Ein klassisches Beispiel: Zwei Computer senden gleichzeitig mit je 1 Gbps an einen Switch, der jedoch nur 1 Gbps zur nächsten Station weiterleiten kann.",
+      "Die eingehenden Daten übersteigen die Ausgangskapazität – der Switch muss Pakete zwischenspeichern.",
+      "Dies führt zu Verzögerungen, da Pakete in Warteschlangen abgelegt werden.",
+      "Kurzfristig kann der Switch dies abfedern, aber bei andauernder Last steigt die Latenz erheblich.",
+      "Wenn alle Puffer belegt sind, kommt es zu Paketverlusten.",
+      "Dieses Szenario ist typisch in Netzwerken ohne Lastregulierung und kann sich schnell verschärfen."
+    ],
+    "explanationJa": [
+      "ネットワークの輻輳（Überlast）は、特定のネットワーク区間において、処理能力を超える量のデータが流れ込んだときに発生します。",
+      "典型的な例として、1 Gbpsの帯域を持つスイッチに、2台の送信者がそれぞれ1 Gbpsでデータを送った場合、合計2 Gbpsが入力されるのに対して出力は1 Gbpsしかありません。",
+      "この差により、スイッチは一時的にパケットをバッファ（待機）させて対応しますが、その分遅延（レイテンシ）が増加します。",
+      "バッファは有限であるため、継続的に高負荷がかかるとすぐに満杯になります。",
+      "すると、後から来たパケットは破棄されることになり、通信の信頼性が低下します。",
+      "これはネットワーク制御が行われていない環境で頻発し、特に多数のユーザーやアプリが同時にアクセスする状況で顕著です。",
+      "このような輻輳を未然に防ぐ仕組みが、TCPの重要な機能のひとつとなっています。"
+    ],
+    "originalSlideText": "Vermeidung von Überlast (1)\nBetrachte folgendes Szenario:\n❑ Jede Verbindung hat Kapazität 1 Gbps\n❑ Beide Computer an Switch 1 senden an Computer an Switch 2 → Switch 1 empfängt mit 2 Gbps, kann nur mit 1 Gbps an Switch 2 senden\n❑ Switch kann temporär Pakete speichern, führt dennoch zu Verzögerung",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 29,
+    "questionDe": "(s35) Was passiert bei anhaltender Überlast im Netzwerk und wie nennt man diesen Zustand?",
+    "questionJa": "ネットワークの輻輳が継続すると何が起こるか？この状態は何と呼ばれるか？",
+    "answerDe": [
+      "Puffer laufen voll → Pakete werden verworfen.",
+      "Retransmission erzeugt noch mehr Pakete.",
+      "System kann kollabieren: Congestion Collapse.",
+      "Transportprotokolle versuchen das zu vermeiden."
+    ],
+    "answerJa": [
+      "バッファが満杯になると、パケットが破棄される。",
+      "再送（Retransmission）がさらにパケットを増加させる。",
+      "これによりネットワーク全体が機能しなくなる（輻輳崩壊）。",
+      "トランスポート層のプロトコルはこれを防ぐよう設計されている。"
+    ],
+    "explanationDe": [
+      "Wenn die Überlast länger anhält und der Puffer im Switch oder Router voll ist, können keine neuen Pakete mehr gespeichert werden – sie werden verworfen.",
+      "Sender, die keine ACKs erhalten, gehen fälschlicherweise davon aus, dass ihre Pakete verloren gingen und senden sie erneut (Retransmission).",
+      "Das führt zu noch mehr Verkehr im ohnehin überlasteten Netzwerk.",
+      "So entsteht ein Teufelskreis, in dem durch Wiederholungen das Problem verschärft wird – das nennt man Congestion Collapse.",
+      "In einem Congestion Collapse ist die Netzwerkauslastung hoch, aber kaum nützlicher Datentransfer findet statt.",
+      "Transportprotokolle wie TCP sind deshalb mit Mechanismen ausgestattet, die diesen Zustand erkennen und vermeiden sollen.",
+      "Dazu gehört z. B. die dynamische Anpassung der Sendeleistung basierend auf Paketverlust oder Verzögerungssignalen."
+    ],
+    "explanationJa": [
+      "輻輳状態が続くと、スイッチやルーターのバッファが限界に達し、新しいパケットを格納できなくなります。",
+      "その結果、到着したパケットは破棄されます。送信側はACK（確認応答）が届かないため、パケットが失われたと判断し、再送（Retransmission）を行います。",
+      "しかしこの再送によって、ネットワーク内のトラフィックはさらに増加し、輻輳状態が悪化します。",
+      "このような悪循環によって、ネットワークがほとんど動作しなくなる状態を『輻輳崩壊（Congestion Collapse）』と呼びます。",
+      "この状態では、通信は発生しているにもかかわらず、有効なデータのやり取りがほとんどできない状況になります。",
+      "TCPなどのトランスポートプロトコルには、このような状況を避けるための輻輳制御機構が組み込まれています。",
+      "たとえば、パケットロスや遅延時間を観測しながら、送信速度を自動的に調整する仕組みが代表例です。"
+    ],
+    "originalSlideText": "Vermeidung von Überlast (2)\n❑ Bei weiterer Überlastung, wird Speicher voll und Pakete verworfen\n❑ Retransmission führt wieder zu neuen Paketen\n❑ Netzwerk kann unbenutzbar werden → Congestion Collapse\n❑ Transportprotokolle versuchen Congestion Collapse zu verhindern\n❑ Nutzen Congestion Control bzw. Überlastkontrolle",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 30,
+    "questionDe": "(s36) Welche Methoden nutzt TCP zur Erkennung und Steuerung von Überlast im Netzwerk?",
+    "questionJa": "TCPはネットワークの輻輳をどのように検出し、制御しているか？",
+    "answerDe": [
+      "Router können Sender direkt informieren (z. B. gesetztes Bit, Nachricht).",
+      "Oder: Empfänger bemerkt Verzögerung/Verlust → informiert Sender via ACK.",
+      "Bei Überlast verringert Sender seine Rate.",
+      "Sliding Window wird temporär verkleinert."
+    ],
+    "answerJa": [
+      "ルーターが送信者に輻輳を直接通知する（ビット設定やメッセージ）。",
+      "または、受信者が遅延や損失を検出してACKに通知情報を入れる。",
+      "送信者は輻輳を察知すると送信速度を下げる。",
+      "一時的にウィンドウサイズを縮小する。"
+    ],
+    "explanationDe": [
+      "TCP kann Überlast im Netzwerk auf zwei Arten erkennen: durch explizite oder implizite Signale.",
+      "Explizit: Router oder Zwischenknoten setzen ein spezielles Bit in den IP-Header oder senden eine separate Nachricht an den Sender.",
+      "Implizit: Der Empfänger bemerkt zunehmende Verzögerungen oder verlorene Pakete und gibt dem Sender Hinweise durch die ACKs.",
+      "Moderne TCP-Implementierungen schätzen die Netzwerküberlast auch anhand der Round-Trip-Zeit oder durch statistische Muster bei Paketverlusten.",
+      "Wenn Überlast erkannt wird, reagiert der Sender, indem er die Datenrate verringert.",
+      "Ein häufiger Mechanismus dafür ist die vorübergehende Verkleinerung des Sliding Windows.",
+      "Diese Anpassung schützt das Netzwerk vor Zusammenbruch und sorgt für stabilen Betrieb bei hoher Last."
+    ],
+    "explanationJa": [
+      "TCPでは、ネットワークが輻輳しているかどうかを、明示的あるいは暗黙的な方法で検出します。",
+      "明示的な方法としては、ルーターがIPヘッダの特定ビットを設定したり、専用の通知メッセージを送信したりして、送信者に輻輳を直接知らせます。",
+      "暗黙的な方法では、受信者がパケット遅延やロスを検知し、それをACK（確認応答）に反映して送信者に通知します。",
+      "また、TCP自身がRTT（往復時間）やパケットロスの傾向から輻輳状態を推定することもあります。",
+      "送信者が輻輳を察知すると、送信レートを自動的に下げ、ネットワークへの負荷を軽減します。",
+      "代表的な手法としては、Sliding Windowのサイズを一時的に小さくする方法があります。",
+      "これにより、ネットワーク全体の安定性を保ちながら輻輳を抑制することができます。"
+    ],
+    "originalSlideText": "Vermeidung von Überlast (3)\n❑ Zwischenliegende Systemkomponenten (ie Router) könnten Sender über Überlast informieren\n Spezielle Nachricht an Sender oder gesetztes Bit in verzögerten Paketen\n❑ Schätzen von Überlast anhand erhöhter Verzögerung oder Verlust\n Empfänger informiert Sender mit Informationen in ACK\n❑ Moderne Netzwerkhardware funktioniert zuverlässig → Verluste und Verzögerung meist durch Überlast\n❑ Bei Überlast wird Rate verringert\n Sliding Window verkleinert Window temporär",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 31,
+    "questionDe": "(s37) Welche Herausforderungen und Zielkonflikte treten beim Design von Transportprotokollen wie TCP auf?",
+    "questionJa": "TCPのようなトランスポートプロトコルを設計する際に、どのような課題やトレードオフがあるか？",
+    "answerDe": [
+      "Kleine Designfehler können zu falschem Verhalten, Verzögerung oder unnötigem Traffic führen.",
+      "Trade-off bei Sequenznummern: Platz vs. Wiederverwendung.",
+      "Flow Control nutzt große Fenster für besseren Durchsatz.",
+      "Congestion Control reduziert Fenstergröße bei Überlast.",
+      "Neustart des Empfängers kann inkonsistente Zustände erzeugen."
+    ],
+    "answerJa": [
+      "小さな設計ミスが重大な誤動作や遅延、無駄なトラフィックを引き起こす可能性がある。",
+      "シーケンス番号の長さには、再利用頻度とヘッダーのサイズというトレードオフがある。",
+      "フロー制御ではスループット向上のため大きなウィンドウを使う。",
+      "一方、輻輳制御では負荷を避けるためにウィンドウサイズを縮小する。",
+      "受信側が再起動すると、データの整合性が失われる可能性がある。"
+    ],
+    "explanationDe": [
+      "Das Design von Transportprotokollen wie TCP erfordert sorgfältige Abwägung zwischen Effizienz, Zuverlässigkeit und Komplexität.",
+      "Schon kleine Fehler im Design können dazu führen, dass Pakete falsch verarbeitet, doppelt gesendet oder in falscher Reihenfolge geliefert werden.",
+      "Ein Beispiel ist die Wahl der Sequenznummern: Wählt man zu kurze Nummern, kommt es bei langen Verbindungen schneller zur Wiederverwendung und möglichen Verwechslungen.",
+      "Zu lange Nummern vergrößern hingegen die Header und damit den Overhead.",
+      "Ein weiterer Zielkonflikt besteht zwischen Flusskontrolle und Überlastkontrolle: Während Flusskontrolle möglichst viele Pakete erlaubt, muss Congestion Control bei Überlast die Anzahl reduzieren.",
+      "Auch Sonderfälle wie ein Neustart des Empfängers müssen berücksichtigt werden – ohne geeignete Mechanismen können dabei veraltete oder unvollständige Daten weiterverarbeitet werden.",
+      "Deshalb ist die Robustheit gegen Fehler und Wiederherstellungsszenarien ein zentraler Aspekt beim Protokolldesign."
+    ],
+    "explanationJa": [
+      "TCPのようなトランスポートプロトコルを設計する際には、効率性、信頼性、シンプルさのバランスをとる必要があります。",
+      "設計上の小さなミスが、大きな問題（誤動作、遅延、無駄なトラフィックなど）につながる可能性があります。",
+      "たとえば、シーケンス番号を短くしすぎると長時間接続で再利用されやすくなり、パケットの混同が発生します。",
+      "逆に、番号を長くするとヘッダーサイズが増え、ネットワーク帯域の無駄につながります。",
+      "また、フロー制御では通信効率を高めるためにウィンドウサイズを大きくしますが、輻輳制御では逆にウィンドウを小さくしてネットワーク負荷を軽減する必要があります。",
+      "さらに、通信中に受信側が再起動してしまうと、送信側からのデータを受け取れず、整合性の問題が発生します。",
+      "このように、プロトコル設計では正常系だけでなく、異常系や回復処理まで含めた包括的な考慮が必要です。"
+    ],
+    "originalSlideText": "Protokolldesign\n❑ Design nicht trivial: Kleine Designfehler führen zu falschem Ablauf, unnötigen Paketen, Verzögerungen\n❑ Trade-off bei Größe der Sequenznummern: Häufige Wiederbenutzung oder Platzverschwendung in Header\n❑ Flow Control mit Sliding Window nutzt mehr Kapazität um Durchsatz zu verbessern vs. Congestion Control verringert Zahl an Paketen, um Überlast zu vermeiden\n❑ Neustart von Empfänger während Verbindung → Empfang von Daten aus der Mitte des Streams",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 32,
+    "questionDe": "(s38) Wie reagiert TCP auf Paketverlust und welche Techniken werden dabei kombiniert?",
+    "questionJa": "TCPはパケット損失にどのように対処しており、どのような技術を組み合わせているか？",
+    "answerDe": [
+      "TCP verwendet Acknowledgements (ACKs) zur Bestätigung.",
+      "Bei fehlendem ACK wird ein Timer verwendet.",
+      "Nach Ablauf des Timers erfolgt eine Retransmission.",
+      "Mehrere Techniken werden kombiniert für zuverlässige Übertragung."
+    ],
+    "answerJa": [
+      "TCPはACK（確認応答）によってデータ受信を確認する。",
+      "ACKが来ない場合、タイマーにより再送が行われる。",
+      "タイマーが切れた時点でパケットが再送される。",
+      "複数の技術を組み合わせて信頼性の高い通信を実現している。"
+    ],
+    "explanationDe": [
+      "TCP kombiniert verschiedene Mechanismen, um sicherzustellen, dass Daten trotz möglicher Verluste korrekt übertragen werden.",
+      "Das Grundprinzip ist, dass der Sender nach dem Senden eines Pakets auf ein ACK (Acknowledgement) wartet.",
+      "Kommt dieses ACK nicht innerhalb einer bestimmten Zeitspanne (Timeout), wird das Paket erneut gesendet – dies nennt man Retransmission.",
+      "Zusätzlich verwendet TCP Techniken wie Sequenznummern und Checksummen, um doppelte oder beschädigte Pakete zu erkennen.",
+      "Diese Maßnahmen ergänzen sich, um einen zuverlässigen Datentransport auch bei unzuverlässigem Netzwerk zu gewährleisten.",
+      "Im Gegensatz zu UDP, das auf solche Mechanismen verzichtet, stellt TCP sicher, dass alle Daten vollständig und korrekt ankommen.",
+      "Das Zusammenspiel dieser Techniken macht TCP zur bevorzugten Wahl für Anwendungen mit hohen Anforderungen an Datenintegrität – z. B. Web, E-Mail oder Dateiübertragung."
+    ],
+    "explanationJa": [
+      "TCPは、ネットワーク上でパケットが損失しても、信頼性の高い通信を実現するために複数の仕組みを組み合わせています。",
+      "まず、送信したパケットが正しく届いたかどうかを確認するために、受信者からのACK（確認応答）を待ちます。",
+      "ACKが一定時間内に届かなかった場合、そのパケットが失われたと判断し、再送（Retransmission）を行います。",
+      "また、シーケンス番号やチェックサムを活用して、重複パケットや破損パケットの検出も行います。",
+      "このような機能を組み合わせることで、TCPは不安定なネットワーク環境でも信頼性を保てる設計になっています。",
+      "UDPがこのような信頼性機構を持たないのに対して、TCPは完全性や順序性が求められる用途（Web、メール、ファイル転送など）に最適です。",
+      "複数の対策を同時に使うことで、TCPは多様な障害に対応できる強固なプロトコルとなっています。"
+    ],
+    "originalSlideText": "TCP Paketverlust (1)\n❑ Verschiedene Techniken werden kombiniert\n❑ Empfängt TCP Daten, wird Acknowledgement an Sender gesendet\n❑ TCP nutzt Timer für versendete Daten und sendet neu bei Ablauf",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 33,
+    "questionDe": "(s39) Welche Probleme ergeben sich bei der Wahl des Retransmission-Timers in TCP?",
+    "questionJa": "TCPで再送タイマーを設定する際に、どのような問題があるか？",
+    "answerDe": [
+      "ACK-Zeiten variieren je nach Verbindungstyp (LAN vs. Satellit).",
+      "Zu lange Timer → niedriger Durchsatz.",
+      "Zu kurze Timer → unnötiger Traffic, Bandbreitenverschwendung.",
+      "Verzögerungen ändern sich bei Überlast schnell."
+    ],
+    "answerJa": [
+      "ACKの到達時間は接続の種類（LAN・衛星）によって異なる。",
+      "タイマーが長すぎるとスループットが低下する。",
+      "短すぎると不要な再送が発生し、帯域が無駄になる。",
+      "ネットワークの輻輳時には遅延が急激に変化することもある。"
+    ],
+    "explanationDe": [
+      "Die Wahl der richtigen Zeitspanne für den Retransmission-Timer ist kritisch für die TCP-Leistung.",
+      "Bei zu langem Timer dauert es im Verlustfall unnötig lange, bis das Paket erneut gesendet wird – das reduziert den Durchsatz deutlich.",
+      "Ist der Timer hingegen zu kurz, kann es passieren, dass TCP ein Paket unnötig erneut sendet, weil das ACK nur verspätet eintrifft.",
+      "Das führt zu zusätzlichem Datenverkehr, der die Bandbreite belastet und sogar weitere Verluste provozieren kann.",
+      "Ein großes Problem ist die hohe Schwankung der Verzögerung (RTT), insbesondere bei Überlast im Netzwerk.",
+      "So kann ein Timer, der in einem Moment passt, im nächsten schon zu kurz oder zu lang sein.",
+      "Deshalb sind moderne TCP-Implementierungen darauf ausgelegt, den Timer adaptiv und dynamisch anzupassen – ein Thema der nächsten Folien."
+    ],
+    "explanationJa": [
+      "TCPにおいて、再送タイマー（Retransmission Timer）の設定は通信性能に大きな影響を与える重要な要素です。",
+      "タイマーが長すぎると、パケットが失われた場合に再送されるまでに時間がかかり、スループットが低下します。",
+      "逆に短すぎると、実際には正常に届いているパケットを、遅延によるACKの遅れと勘違いして再送してしまい、無駄なトラフィックを発生させてしまいます。",
+      "これにより、ネットワーク帯域の浪費やさらなる輻輳の原因となる可能性もあります。",
+      "特に混雑時にはRTT（往復遅延時間）が大きく変動するため、静的なタイマー設定では対応できません。",
+      "そのため、TCPではこの後のスライドで紹介されるように、遅延時間に応じてタイマーを動的に調整する『適応型再送制御（Adaptive Retransmission）』が必要とされます。",
+      "このように、タイマー設定はTCPの効率と安定性を大きく左右する重要なパラメータです。"
+    ],
+    "originalSlideText": "TCP Paketverlust (2)\n❑ Wie lange muss bis Retransmitting gewartet werden?\n ACKs in LAN werden in wenigen Millisekunden erwartet\n Bei Verbindung über Satellit mehrere hundert Millisekunden\n❑ Zu lange warten: Verringert Durchsatz, Netzwerk untätig\n❑ Zu kurz warten: Unnötiger Traffic verbraucht Bandbreite und verringert Durchsatz\n❑ Verzögerung kann sich durch Überlast rasch ändern",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 34,
+    "questionDe": "(s40) Warum wurde in TCP ein adaptives Retransmission-Verfahren eingeführt und wie funktioniert es grundsätzlich?",
+    "questionJa": "なぜTCPでは適応型再送制御が導入されたのか？その基本的な仕組みはどうなっているか？",
+    "answerDe": [
+      "Vorher feste Verzögerungswerte → unflexibel.",
+      "TCP misst Round-Trip Time (RTT) jeder Verbindung.",
+      "Schätzung des Timers basierend auf RTT-Messung.",
+      "Versandzeitpunkt jedes Pakets muss gespeichert werden."
+    ],
+    "answerJa": [
+      "以前は固定の遅延値を使っていたが、それでは柔軟性がなかった。",
+      "TCPは各接続ごとにRTT（往復時間）を測定する。",
+      "RTTに基づいて再送タイマーを動的に調整する。",
+      "そのために各パケットの送信時刻を記録しておく必要がある。"
+    ],
+    "explanationDe": [
+      "Früher wurde in TCP eine feste Verzögerungszeit für den Retransmission-Timer verwendet, was in dynamischen Netzwerken häufig zu ineffizientem Verhalten führte.",
+      "Wenn Netzwerke wenig ausgelastet sind, ist ein fester langer Timer unnötig langsam.",
+      "Bei starker Belastung kann der feste Timer zu kurz sein und unnötige Retransmissions auslösen.",
+      "Deshalb wurde das Verfahren der adaptiven Retransmission eingeführt, das sich an die aktuelle Netzsituation anpasst.",
+      "TCP misst bei jedem empfangenen ACK die sogenannte Round-Trip Time (RTT), also die Zeit vom Versand eines Pakets bis zum Eintreffen der Bestätigung.",
+      "Dazu muss sich der Sender den exakten Zeitpunkt des Versands merken.",
+      "Anhand dieser RTT-Messungen passt TCP den Timeout-Wert für zukünftige Pakete dynamisch an – schneller bei stabilen Verbindungen, vorsichtiger bei schwankenden Bedingungen."
+    ],
+    "explanationJa": [
+      "従来のTCPでは、パケットの再送タイマーは固定の遅延値で設定されていましたが、これではネットワークの状況に応じた柔軟な対応ができませんでした。",
+      "たとえば、通信の遅延が非常に小さいネットワークで長いタイマーを設定していると、無駄に待たされることになります。",
+      "逆に、輻輳などで遅延が大きくなったネットワークでは、タイマーが短すぎて不要な再送が起こってしまいます。",
+      "こうした問題を解決するため、TCPでは『適応型再送制御（Adaptive Retransmission）』が導入されました。",
+      "この方式では、各接続について往復遅延時間（RTT）を測定し、それに基づいて再送タイマーを調整します。",
+      "具体的には、パケットの送信時刻を記録し、ACKが返ってくるまでの時間からRTTを計算します。",
+      "この情報をもとに、現在のネットワーク状態に適したタイムアウト時間を算出する仕組みです。"
+    ],
+    "originalSlideText": "Adaptive Retransmission (1)\n❑ Vor TCP wurde nur feste Verzögerung genutzt\n❑ Retransmission in TCP wurde adaptiv gestaltet\n❑ TCP überwacht Verzögerung jeder Verbindung und passt Retransmission Timer an\n❑ TCP schätzt Round-Trip Verzögerung anhand Zeit um Antwort zu bekommen\n Zeit des Versand muss gespeichert werden",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 35,
+    "questionDe": "(s41) Wie berechnet TCP den Retransmission-Timer auf Basis der Round-Trip Time?",
+    "questionJa": "TCPはRTTに基づいてどのように再送タイマーを算出しているか？",
+    "answerDe": [
+      "TCP bildet gewichteten Durchschnitt der RTT-Messungen.",
+      "Kombination aus geschätztem Mittelwert und geschätzter Varianz.",
+      "Schnelle Reaktion bei steigender Verzögerung durch Varianz.",
+      "Timer wird zurückgesetzt bei sinkender Verzögerung.",
+      "Bei konstanter Verzögerung ist der Timer nur wenig größer als RTT."
+    ],
+    "answerJa": [
+      "TCPはRTTの測定値を加重平均して処理する。",
+      "平均値と分散の両方を用いて予測を行う。",
+      "遅延が急に増えた場合、分散により迅速に対応できる。",
+      "遅延が減った場合はタイマーをすばやく短縮する。",
+      "遅延が安定している場合、タイマーはRTTより少し長い程度になる。"
+    ],
+    "explanationDe": [
+      "TCP verwendet nicht einfach nur den zuletzt gemessenen RTT-Wert, sondern berechnet einen gewichteten Durchschnitt über mehrere Messungen.",
+      "Dabei werden aktuelle Werte stärker gewichtet, um auf Änderungen schnell reagieren zu können.",
+      "Zusätzlich wird die Varianz (also die Streuung der RTTs) berücksichtigt – bei plötzlichem Anstieg wird der Timer automatisch großzügiger.",
+      "Fällt die RTT hingegen konstant, passt sich der Timer schnell nach unten an, was zu höherem Durchsatz führt.",
+      "Der finale Timeout-Wert wird so gewählt, dass er etwas über dem geschätzten RTT liegt, aber nicht zu weit.",
+      "Durch diese adaptive Steuerung wird verhindert, dass TCP zu schnell oder zu spät neu überträgt.",
+      "Das System reagiert dynamisch auf Netzwerklast, ohne aggressives Verhalten zu zeigen – ein gutes Gleichgewicht zwischen Effizienz und Stabilität."
+    ],
+    "explanationJa": [
+      "TCPは再送タイマーの設定において、単に最新のRTT（往復時間）を使うのではなく、複数の測定結果をもとに加重平均を計算します。",
+      "最新の値にはより大きな重みを与えることで、ネットワークの変化に素早く対応できるようにしています。",
+      "さらに、RTTの分散（ばらつき）も考慮することで、急激な遅延増加にも対応可能です。",
+      "もしRTTが急上昇すれば、再送タイマーも自動的に長めに設定され、誤った再送を防ぎます。",
+      "逆に、RTTが安定して短くなった場合には、タイマーもすばやく短縮され、スループットが向上します。",
+      "最終的なタイマーの値は、RTTよりわずかに長い程度に設定され、無駄な再送や待機を防ぎます。",
+      "このように、効率と安定性のバランスを取る仕組みが、TCPの堅牢な通信を支えています。"
+    ],
+    "originalSlideText": "Adaptive Retransmission (2)\n❑ Erhält Sequenz von Schätzungen für Round-Trip Time, bildet gewichteten Durchschnitt\n Linearkombination aus geschätztem Mittelwert und geschätzter Varianz der Round-Trip Time\n❑ Varianz: Schnelle Reaktion, falls Verzögerung nach Burst steigt\n❑ Gewichteter Durchschnitt: Falls Delay sinkt, wird Timer schnell zurück gesetzt\n❑ Konstante Verzögerung: Timer auf Wert gesetzt, der nur wenig größer als Round-Trip Verzögerung ist",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 36,
+    "questionDe": "(s42) Wie unterscheidet sich die Retransmission in TCP bei Verbindungen mit unterschiedlichen RTTs? (mit Abbildung)",
+    "questionJa": "RTTが異なるTCP接続では、再送タイマーはどのように異なる設定になるか？（図付き）",
+    "answerDe": [
+      "TCP setzt Timeout basierend auf mittlerer RTT.",
+      "Bei größerer Verzögerung wird Timeout entsprechend erhöht.",
+      "Ziel: Weder zu früh noch zu spät neu senden.",
+      "Abbildung zeigt zwei Verbindungen mit verschiedenen RTTs."
+    ],
+    "answerJa": [
+      "TCPは平均的なRTTに基づいてタイムアウトを設定する。",
+      "RTTが大きい接続では、タイマーもそれに応じて長くなる。",
+      "早すぎず遅すぎない再送が目標。",
+      "図では異なるRTTを持つ2つの接続が比較されている。"
+    ],
+    "explanationDe": [
+      "TCP stellt für jede Verbindung individuell einen Timeout-Wert ein, der auf der geschätzten RTT dieser Verbindung basiert.",
+      "Verbindungen mit kürzerer RTT (z. B. in einem LAN) erhalten kürzere Timeout-Werte, was schnelle Reaktion auf Verluste ermöglicht.",
+      "Verbindungen mit längerer RTT (z. B. über Satellit) benötigen einen längeren Timeout, um unnötige Retransmissions zu vermeiden.",
+      "Die Abbildung auf der Folie vergleicht zwei TCP-Verbindungen mit unterschiedlichen RTTs – sichtbar ist, dass die Verbindung mit hoher RTT deutlich später neu überträgt.",
+      "Würde man für alle Verbindungen denselben Timer verwenden, käme es bei langsamen Verbindungen zu falschen Retransmissions oder bei schnellen zu unnötiger Verzögerung.",
+      "Die adaptive Anpassung sorgt dafür, dass jeder Datenstrom optimal auf seine Netzbedingungen abgestimmt ist.",
+      "Dies verbessert die Effizienz und Stabilität der Übertragung, insbesondere bei Netzwerken mit stark unterschiedlichen physikalischen Eigenschaften."
+    ],
+    "explanationJa": [
+      "TCPは接続ごとにRTT（往復時間）を測定し、それに基づいて再送タイマーを個別に設定します。",
+      "RTTが短い（例：LAN内）の接続ではタイマーも短くなり、迅速な再送が可能になります。",
+      "一方で、RTTが長い（例：衛星通信）の接続では、タイマーを長めに設定しないと、不要な再送が頻発してしまいます。",
+      "このスライドの図では、RTTが異なる2つのTCP接続の再送動作が比較されています。RTTが長い方は、再送までの待機時間が長く設定されていることが分かります。",
+      "もしすべての接続に同じタイマーを使うと、高速回線では無駄な遅延が発生し、低速回線では誤った再送が増える恐れがあります。",
+      "TCPの適応型再送制御により、それぞれの接続状況に応じた最適な動作が実現されています。",
+      "これは、異なるネットワーク条件下での効率的で安定した通信を維持するために不可欠な技術です。"
+    ],
+    "originalSlideText": "Vergleich der Retransmission\n❑ TCP setzt Retransmission Timeout wenig größer als mittlere Round-Trip Verzögerung\n❑ Größerer Timeout, falls vorher große Verzögerung",
+    "explanationImage": "",
+    "questionImage": "(s42)"
+  },
+  {
+    "id": 37,
+    "questionDe": "(s43) Wie funktioniert die Flusskontrolle bei TCP mithilfe von Puffer und Window Advertisement?",
+    "questionJa": "TCPでは、バッファとWindow Advertisementをどのように利用してフロー制御を行っているか？",
+    "answerDe": [
+      "Flusskontrolle basiert auf Byte-Zählung, nicht auf Paketanzahl.",
+      "Empfänger reserviert Puffer beim Verbindungsaufbau.",
+      "Empfänger sendet verbleibende Puffergröße im ACK (Window Advertisement).",
+      "Sender passt Datenmenge an verfügbares Window an.",
+      "Bei vollem Puffer → Zero Window."
+    ],
+    "answerJa": [
+      "TCPのフロー制御はパケット数ではなくバイト単位で行われる。",
+      "接続時に受信者がバッファサイズを確保する。",
+      "ACKで受信可能な残りバッファ容量（Window）を通知する（Window Advertisement）。",
+      "送信者はそのWindowサイズに基づいてデータ量を調整する。",
+      "バッファが満杯になると、Zero Windowが発生する。"
+    ],
+    "explanationDe": [
+      "TCP misst die Flusskontrolle nicht in der Anzahl von Paketen, sondern in der Anzahl von Bytes, die noch übertragen werden dürfen.",
+      "Beim Verbindungsaufbau teilt der Empfänger dem Sender mit, wie viel Puffer (Buffer) er für eingehende Daten zur Verfügung hat.",
+      "Diese Information nennt man Window Advertisement – sie wird in jedem ACK mitgesendet.",
+      "Der Sender darf nur so viele Bytes senden, wie vom Empfänger aktuell erlaubt sind.",
+      "Wenn der Puffer voll ist, sendet der Empfänger ein Zero Window Advertisement – d. h. der Sender muss warten.",
+      "Diese dynamische Steuerung verhindert Überlastung des Empfängers und vermeidet Paketverluste durch lokale Engpässe.",
+      "Es ist ein zentrales Element der TCP-Flusskontrolle und ergänzt das Sliding Window Verfahren auf der Empfängerseite."
+    ],
+    "explanationJa": [
+      "TCPでは、フロー制御はパケット数ではなくバイト単位で管理されています。",
+      "通信の開始時、受信者はデータを受け取るためのバッファ領域を確保し、そのサイズを送信者に伝えます。",
+      "この情報はACK（確認応答）に含まれ、Window Advertisement（ウィンドウ通知）として送信者に送られます。",
+      "送信者はこのWindowサイズを見て、送信してよいデータ量を調整します。",
+      "もし受信側のバッファが満杯になると、Windowサイズが0（Zero Window）として通知され、送信側は一時的にデータ送信を停止します。",
+      "これにより、受信側の処理能力を超えたデータが送られることを防ぎます。",
+      "この仕組みは、TCPにおけるフロー制御の中核であり、Sliding Windowと連携して高効率な通信を支えています。"
+    ],
+    "originalSlideText": "Buffer, Flusskontrolle, Window (1)\n❑ Flusskontrolle in TCP nutzt Window Mechanismus\n Gemessen in Bytes und nicht in Anzahl Pakete\n❑ Bei Verbindungsaufbau allokiert Empfänger Buffer und teilt Größe an Sender mit\n❑ TCP am Empfänger sendet ACK mit verbleibender Größe des Buffer (Window Advertisement)\n❑ Falls Daten schneller gesendet als Empfangen werden (z.B. langsamere CPU), füllt sich Buffer → Zero Window\n Empfängt Sender Zero Window Advertisement sendet er nicht bis Window wieder positiv ist",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 38,
+    "questionDe": "(s44) Was passiert bei einem Zero Window im TCP und wie wird die Übertragung danach fortgesetzt?",
+    "questionJa": "TCPでZero Windowが発生した場合、どのようにして通信が再開されるか？",
+    "answerDe": [
+      "Sender stoppt Übertragung bei Zero Window.",
+      "Empfänger liest Daten → Puffer wird frei.",
+      "Empfänger sendet neues Window Advertisement.",
+      "Sender nimmt Übertragung wieder auf."
+    ],
+    "answerJa": [
+      "Zero Windowが通知されると、送信者は送信を停止する。",
+      "受信者がバッファ内のデータを読み出すと、空きができる。",
+      "その後、新しいWindowサイズが通知される（Window Advertisement）。",
+      "送信者は通知を受けて通信を再開する。"
+    ],
+    "explanationDe": [
+      "Ein Zero Window bedeutet, dass der Empfänger aktuell keine weiteren Daten empfangen kann, da sein Puffer voll ist.",
+      "Der Sender muss in diesem Fall die Übertragung vollständig stoppen und auf neue Anweisungen warten.",
+      "Sobald der Empfänger die gepufferten Daten verarbeitet hat (z. B. durch Übergabe an die Anwendung), entsteht wieder Platz im Puffer.",
+      "Der Empfänger informiert den Sender über die neue freie Puffergröße mit einem aktualisierten Window Advertisement.",
+      "Der Sender prüft regelmäßig, ob ein neues Window verfügbar ist (Window Probing), oder wartet auf die entsprechende Nachricht.",
+      "Wenn das Window wieder positiv ist (>0), kann die Datenübertragung fortgesetzt werden.",
+      "Dieser Mechanismus sorgt dafür, dass keine Daten verloren gehen und der Empfänger nicht überlastet wird – auch wenn er zwischenzeitlich blockiert ist."
+    ],
+    "explanationJa": [
+      "TCPにおいて、Zero Windowとは受信側のバッファが満杯で、これ以上データを受け取れない状態を指します。",
+      "このとき送信側は新たなデータの送信を停止し、ACKに含まれるWindowサイズが再び正の値になるのを待ちます。",
+      "受信者がバッファ内のデータを読み取り、アプリケーションへ渡すとバッファに空きができます。",
+      "その時点で受信者は新しいWindow Advertisementを送信し、使用可能なバッファ容量を送信側に知らせます。",
+      "送信側はこれを受け取るか、あるいは定期的に確認（Window Probe）して再開のタイミングを探ります。",
+      "Windowサイズが正の値に戻れば、送信は再開されます。",
+      "この仕組みによって、TCPは受信者の処理状況に合わせて柔軟に通信を制御し、データ損失を防いでいます。"
+    ],
+    "originalSlideText": "Buffer, Flusskontrolle, Window (2)\n❑ Sender sendet schneller als Empfänger Daten liest\n❑ Zusätzliches Window Advertisement nachdem Daten gelesen",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 39,
+    "questionDe": "(s45) Wie funktioniert der Three-Way Handshake in TCP und welches Ziel hat er?",
+    "questionJa": "TCPにおけるThree-Way Handshakeはどのように機能し、その目的は何か？",
+    "answerDe": [
+      "Drei Nachrichten werden ausgetauscht: SYN, SYN-ACK, ACK.",
+      "Jeder Endpunkt sendet Sequenznummer und Buffergröße.",
+      "Verbindung ist erst aktiv, wenn beide Seiten zugestimmt haben.",
+      "Robust gegen Verlust, Duplikate, Verzögerung, Replay."
+    ],
+    "answerJa": [
+      "SYN、SYN-ACK、ACKの3つのメッセージをやり取りする。",
+      "各エンドポイントはシーケンス番号とバッファサイズを送信する。",
+      "両者の同意が揃った時点で接続が確立される。",
+      "パケットの損失、重複、遅延、リプレイに対しても堅牢。"
+    ],
+    "explanationDe": [
+      "Der Three-Way Handshake ist ein zuverlässiger Mechanismus, mit dem TCP eine Verbindung zwischen zwei Endpunkten aufbaut.",
+      "Zuerst sendet der Client ein SYN-Segment, um eine Verbindung anzufragen.",
+      "Der Server antwortet mit einem SYN-ACK, um sowohl die Anfrage zu bestätigen als auch selbst eine Anfrage zu senden.",
+      "Schließlich bestätigt der Client mit einem ACK – danach ist die Verbindung etabliert.",
+      "Während dieses Prozesses tauschen beide Seiten auch Initialwerte wie Sequenznummern und Puffergrößen aus.",
+      "Dieser Ablauf verhindert Fehlverbindungen durch duplizierte oder verzögerte Pakete (z. B. von früheren Sessions).",
+      "So wird sichergestellt, dass beide Seiten bereit und synchron sind, bevor Daten ausgetauscht werden."
+    ],
+    "explanationJa": [
+      "Three-Way Handshakeは、TCPにおける信頼性の高い接続確立のための手順です。",
+      "まず、クライアントがSYN（接続要求）を送信します。",
+      "サーバはこれに対してSYN-ACKを返し、接続要求を受け入れるとともに自身の接続要求を伝えます。",
+      "最後にクライアントがACKを返すことで、両者の合意が成立し、接続が確立します。",
+      "この間に、シーケンス番号（通信の順序制御に使用）や各自のバッファサイズの初期値も交換されます。",
+      "この3段階を経ることで、過去の重複パケットや遅延したパケットによる誤接続を防ぎます。",
+      "つまり、通信開始前に両者の準備状態と合意を確認するための、信頼性確保の手順です。"
+    ],
+    "originalSlideText": "TCP Three-Way Handshake (1)\n❑ Verbindungen werden zuverlässig an- und aufgebaut\n❑ Three-Way Handshake: Drei Nachrichten werden ausgetauscht\n❑ Jede Seite sendet Sequenznummer und initiale Buffer Größe\n❑ Robust gegenüber Verlust, Duplikate, Verzögerung, Replay\n❑ Verbindung nicht geöffnet bis beide Endpunkte zugestimmt haben",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 40,
+    "questionDe": "(s46) Warum reicht ein 2-Way Handshake in TCP nicht aus?",
+    "questionJa": "なぜTCPでは2-Way Handshakeでは不十分なのか？",
+    "answerDe": [
+      "Bei nur zwei Nachrichten weiß der Server nicht, ob der Client seine Bestätigung erhalten hat.",
+      "SYN-ACK könnte verloren gehen → keine Verbindung für Client.",
+      "TCP verwendet daher ein drittes ACK für Sicherheit.",
+      "Initiale Sequenznummern sind zufällig, um alte Verbindungen abzuwehren."
+    ],
+    "answerJa": [
+      "2回のやりとりだけでは、サーバ側がクライアントに確認が届いたか判断できない。",
+      "SYN-ACKが失われた場合、クライアントは接続が確立されたと認識しない。",
+      "そのため、3つ目のACKが必要となる。",
+      "初期シーケンス番号をランダムにして、過去のセッションと区別している。"
+    ],
+    "explanationDe": [
+      "Ein 2-Way Handshake, also nur SYN und SYN-ACK, birgt ein Risiko: Der Server weiß nicht sicher, ob der Client das SYN-ACK erhalten hat.",
+      "Falls dieses Paket verloren geht, glaubt der Server, die Verbindung sei aktiv, der Client aber nicht – es kommt zu Inkonsistenzen.",
+      "Durch das dritte ACK wird diese Unsicherheit beseitigt: Der Client bestätigt, dass er das SYN-ACK erhalten hat.",
+      "Nur danach ist die Verbindung aktiv.",
+      "Zudem generiert jeder Endpunkt beim Verbindungsaufbau eine zufällige Initialsequenznummer.",
+      "Das schützt vor Replay-Angriffen mit alten Paketen früherer Verbindungen.",
+      "Der 3-Wege-Prozess sorgt also für Sicherheit, Synchronisierung und Klarheit in der Verbindungsinitialisierung."
+    ],
+    "explanationJa": [
+      "TCPで2-Way Handshake（SYN → SYN-ACK）のみを使用すると、確認応答の不確実性が生じます。",
+      "たとえば、サーバがSYN-ACKを返したが、それがクライアントに届かなかった場合、サーバは接続済みと認識し、クライアントは未接続と認識するという不整合が生じます。",
+      "この問題を回避するために、クライアントは3つ目のACKを返して、SYN-ACKを受け取ったことをサーバに通知します。",
+      "これにより、両者が完全に同期し、接続が正式に確立されたことが確認されます。",
+      "さらに、各端点は接続確立時にランダムな初期シーケンス番号を生成し、過去のセッションのパケットと混同しないようにします。",
+      "このような三段階のやりとりは、TCPの信頼性と安全性のために不可欠です。",
+      "特にネットワークが不安定な場合やリプレイ攻撃を防ぐうえで、3-Way Handshakeは重要な役割を果たします。"
+    ],
+    "originalSlideText": "TCP Three-Way Handshake (2)\n❑ 2-Way Handshake reicht nicht\n A sendet Request an B, B bestätigt → B weiß nicht, ob Bestätigung angekommen\n❑ Synchronization Segment (SYN): Kontrollnachrichten für Verbindungsaufbau in TCP\n❑ Jeder Endpunkt generiert zufällig initiale Sequenznummer\n Verhindert Verarbeitung von Daten alter Verbindungen",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 41,
+    "questionDe": "(s47) Wie wird in TCP eine Verbindung beendet und warum ist auch hier ein sicherer Ablauf notwendig?",
+    "questionJa": "TCPでは接続をどのように終了させるか？その際にも信頼性が必要な理由は？",
+    "answerDe": [
+      "Beendigung durch FIN-Segmente.",
+      "Jede Richtung sendet ACK, um vollständige Datenübertragung zu garantieren.",
+      "Verbindung wird erst geschlossen, wenn beide Seiten zustimmen.",
+      "Verhindert Verlust von Daten am Ende der Übertragung."
+    ],
+    "answerJa": [
+      "FINセグメントを使って接続終了を伝える。",
+      "双方がACKを返して、すべてのデータが届いたことを確認する。",
+      "両方の同意があってはじめて接続が終了する。",
+      "通信終了直前のデータ損失を防ぐために信頼性が必要。"
+    ],
+    "explanationDe": [
+      "Wie beim Aufbau, ist auch der Abbau einer TCP-Verbindung ein strukturierter Prozess.",
+      "Jede Seite, die keine Daten mehr senden will, sendet ein FIN-Segment (Finish).",
+      "Der Kommunikationspartner antwortet mit einem ACK, um zu bestätigen, dass alle Daten empfangen wurden.",
+      "Dieser Mechanismus stellt sicher, dass keine Daten am Ende der Verbindung verloren gehen – etwa durch voreiliges Schließen.",
+      "Da TCP eine bidirektionale Verbindung ist, muss jede Seite aktiv den Verbindungsabbau initiieren.",
+      "Es kann also vorkommen, dass erst eine Seite schließt und später die andere.",
+      "Dieser doppelte Mechanismus garantiert einen sauberen und sicheren Abschluss der Kommunikation."
+    ],
+    "explanationJa": [
+      "TCPでは、接続の終了も丁寧に手順化されています。",
+      "データ送信を終えた側は、FINセグメントを送って終了の意志を示します。",
+      "受信側はACKでそれを確認し、すべてのデータが確実に届いたことを保証します。",
+      "この仕組みにより、通信の最後に送ったデータが途中で失われることなく確実に処理されます。",
+      "TCPは双方向通信であるため、両方の端点がそれぞれ独立して接続終了を宣言する必要があります。",
+      "そのため、FINとACKのやり取りは双方向で発生し、片方が先に終了し、もう片方は後から終了することもあります。",
+      "このような丁寧な終了手続きにより、TCPは最後の1バイトまで安全に届けることができるのです。"
+    ],
+    "originalSlideText": "TCP Three-Way Handshake (3)\n❑ Finish Segment (FIN): Kontrollnachrichten für Verbindungsabbau in TCP\n❑ ACK in jede Richtung um zu garantieren, dass vor Verbindungsabbau alle Daten angekommen sind",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 42,
+    "questionDe": "(s48) Welche zentralen Eigenschaften zeichnen das Transmission Control Protocol (TCP) aus?",
+    "questionJa": "TCPの主要な特徴は何か？",
+    "answerDe": [
+      "Zuverlässige Datenübertragung auf Transportschicht.",
+      "Basiert auf unzuverlässigem IP-Dienst.",
+      "Verbindungsorientiert.",
+      "Kompensiert Verlust, Verspätung, Duplikate, falsche Reihenfolge.",
+      "Verhindert Überlastung im Netzwerk."
+    ],
+    "answerJa": [
+      "トランスポート層における信頼性の高いデータ転送を提供する。",
+      "不安定なIPの上に構築されている。",
+      "接続型プロトコルである。",
+      "損失・遅延・重複・順序の乱れを補正する。",
+      "ネットワークの輻輳を防止する仕組みを備えている。"
+    ],
+    "explanationDe": [
+      "TCP ist das wichtigste zuverlässige Transportprotokoll im Internet und stellt sicher, dass Daten korrekt, vollständig und in der richtigen Reihenfolge zwischen Anwendungen übertragen werden.",
+      "Obwohl es auf dem unzuverlässigen IP-Protokoll aufbaut, bietet es durch Mechanismen wie Sequenznummern, ACKs, Retransmissions und Pufferung einen robusten Kommunikationskanal.",
+      "TCP ist verbindungsorientiert, was bedeutet, dass vor dem Datenaustausch ein Drei-Wege-Handshake erfolgt und am Ende die Verbindung kontrolliert abgebaut wird.",
+      "Verluste, Verzögerungen, doppelte Pakete oder falsche Reihenfolgen werden automatisch erkannt und korrigiert.",
+      "Zusätzlich schützt TCP das Netzwerk vor Überlastung durch Congestion Control und passt sich dynamisch an die Netzwerklast an.",
+      "Diese Eigenschaften machen TCP zur Grundlage für viele Dienste wie HTTP, SMTP, FTP und viele weitere."
+    ],
+    "explanationJa": [
+      "TCPはインターネットにおける主要な信頼性重視のトランスポート層プロトコルであり、アプリケーション間の正確で完全なデータ転送を保証します。",
+      "TCPは信頼性のないIPの上に構築されながら、シーケンス番号、ACK、再送制御、バッファリングなどの機能を用いて、高い信頼性を実現しています。",
+      "TCPは接続型のプロトコルであり、通信開始前にThree-Way Handshakeで接続を確立し、終了時も制御された手順で接続を切断します。",
+      "パケットの損失、遅延、重複、順序の乱れといった問題は、TCPが自動的に補正します。",
+      "また、輻輳制御機能により、ネットワークに過剰な負荷がかかるのを防ぎ、通信の安定性を保ちます。",
+      "こうした機能によって、TCPはHTTP、メール（SMTP）、ファイル転送（FTP）など、多くのインターネットサービスで利用されています。"
+    ],
+    "originalSlideText": "Zusammenfassung\n❑ TCP bietet zuverlässige Datenübertragung zwischen Anwendungen auf Transportschicht\n❑ Nutzt unzuverlässigen Datagramm Dienst von IP\n❑ Verbindungsorientiert\n❑ Verlust, Verspätung, Duplikate, falsche Reihenfolge wird kompensiert\n❑ Verhindert Überlastung der Netzwerke und Router",
+    "explanationImage": "",
+    "questionImage": ""
+  }
 ]
