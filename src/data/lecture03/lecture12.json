@@ -542,7 +542,717 @@
     "originalSlideText": "❑ Großteil der Router nutzt Dynamisches Routing\n❑ Statisches Routing für Router 𝑅1 in letzten Beispiel denkbar\n Router hat Anbindung an ISP\n Leitet alle Daten nur an diesen weiter\n❑ Bei Verbindung von zwei ISPs müssen dynamische Routing Informationen ausgetauscht werden",
     "explanationImage": "",
     "questionImage": ""
-  }
+  },
+  {
+    "id": 15,
+    "questionDe": "(s20) Welche Informationen sind bei dynamischem Routing notwendig, wenn Netzwerke ergänzt oder Verbindungen ausfallen?",
+    "questionJa": "動的ルーティングでは、新しいネットワークの追加や障害が発生したときに、どのような情報が必要になるか？",
+    "answerDe": [
+      "Jeder Router kennt direkt verbundene Netzwerke.",
+      "R1 kennt Netzwerk 2 nicht, R2 kennt Netzwerk 1 nicht.",
+      "Wenn ISP ein neues Netzwerk hinzufügt, muss Information im Internet weitergegeben werden.",
+      "Manuelle Routen sind ungeeignet zur Umgehung von Fehlern oder Überlastung."
+    ],
+    "answerJa": [
+      "各ルーターは、自分に直接接続されたネットワークしか認識していない。",
+      "R1はネットワーク2を、R2はネットワーク1を知らない。",
+      "ISPが新しいネットワークを追加すると、その情報をインターネット全体に伝達する必要がある。",
+      "障害や過負荷を回避するには、手動ルートでは不十分。"
+    ],
+    "explanationDe": [
+      "Beim dynamischen Routing ist es essenziell, dass Router über den aktuellen Netzwerkstatus informiert sind, insbesondere wenn neue Netzwerke ergänzt werden oder bestehende Verbindungen ausfallen.",
+      "Jeder Router kennt nur die direkt an ihn angeschlossenen Netzwerke – z. B. kennt R1 nicht automatisch das von R2 angebundene Netzwerk 2.",
+      "Wenn ein ISP ein neues Netzwerk in sein System integriert, muss diese Information durch das Internet weitergegeben werden, damit alle beteiligten Router die neuen Routen lernen können.",
+      "Andernfalls würden Pakete nicht korrekt weitergeleitet, da die Zieladressen unbekannt bleiben.",
+      "Statische Routen reichen hier nicht aus, da sie keine automatisierte Reaktion auf Netzwerkänderungen ermöglichen.",
+      "Dynamisches Routing sorgt dafür, dass Netzverbindungen überwacht werden und Informationen bei Bedarf weitergegeben und verarbeitet werden können.",
+      "So lassen sich auch Fehler oder Überlastungen im Netzwerk aktiv und effizient umgehen."
+    ],
+    "explanationJa": [
+      "動的ルーティングにおいては、新たなネットワークの追加やリンクの障害に柔軟に対応するため、ルーター同士が正確な情報を交換する必要があります。",
+      "ルーターは、自分と直接接続されているネットワークしか知りません。つまり、R1はネットワーク2の存在を知らず、R2はネットワーク1を知りません。",
+      "ISPが新たなネットワークを導入した場合、その情報を他のルーターに通知しなければ、外部からのアクセスができません。",
+      "このような情報伝播が行われないと、目的地に到達できないパケットが発生し、通信に失敗する恐れがあります。",
+      "この点で、手動で設定された静的ルートでは迅速な対応ができず、障害や過負荷を回避するのは困難です。",
+      "動的ルーティングでは、ネットワーク構成の変化をリアルタイムで把握し、ルーティングテーブルを自動で更新することで、より安全で効率的な通信経路を確保できます。",
+      "これにより、ネットワークの信頼性と柔軟性が大幅に向上します。"
+    ],
+    "originalSlideText": "❑ Jeder Router kennt direkt verbundene Netze\n❑ 𝑅1 kennt nicht Netzwerk 2, 𝑅2 kennt nicht Netzwerk 1\n❑ Fügt ISP neues Netzwerk hinzu, muss Information durch Internet gereicht werden\n❑ Netzwerkfehler und Überlastung mit manuellen Routen nicht sinnvoll zu umgehen",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 16,
+    "questionDe": "(s21) Wie tauschen Router bei dynamischem Routing Informationen aus und aktualisieren ihre Weiterleitungstabellen?",
+    "questionJa": "動的ルーティングでは、ルーター同士がどのように情報を交換し、ルーティングテーブルを更新するのか？",
+    "answerDe": [
+      "Router R1 und R2 tauschen Informationen über Netzwerke aus.",
+      "Sie können ihre Weiterleitungstabellen aktualisieren.",
+      "Wenn R2 ausfällt, erkennt R1 dies und entfernt die Route zu Netzwerk 2.",
+      "Wird R2 wieder erreichbar, wird die Route erneut aufgenommen."
+    ],
+    "answerJa": [
+      "R1とR2はネットワークに関する情報を交換する。",
+      "その情報に基づいて各ルーターはルーティングテーブルを更新する。",
+      "R2が障害で停止した場合、R1はそれを検知し、ネットワーク2へのルートを削除する。",
+      "R2が復旧すると、そのルートは再び追加される。"
+    ],
+    "explanationDe": [
+      "Im dynamischen Routing tauschen Router regelmäßig Informationen über den Status ihrer Netzwerke aus, meist über sogenannte Routingprotokolle.",
+      "In diesem Prozess erfährt ein Router z. B., welche entfernten Netzwerke über einen anderen Router erreichbar sind.",
+      "Wenn Router R1 und R2 miteinander verbunden sind, teilen sie sich mit, welche Netzwerke sie direkt erreichen können.",
+      "Diese Informationen werden genutzt, um die Weiterleitungstabellen automatisch zu aktualisieren – so kann R1 eine Route zu Netzwerk 2 eintragen, obwohl es nicht direkt verbunden ist.",
+      "Fällt R2 plötzlich aus (z. B. durch Stromausfall oder Kabelbruch), erkennt R1 dies anhand ausbleibender Aktualisierungen oder Signale.",
+      "In diesem Fall wird die Route zu Netzwerk 2 aus der Weiterleitungstabelle entfernt, um ungültige Weiterleitungen zu vermeiden.",
+      "Sobald R2 wieder aktiv ist und neue Routinginformationen sendet, wird der Eintrag automatisch wieder hinzugefügt – dies ermöglicht schnelle Reaktionen ohne manuelles Eingreifen."
+    ],
+    "explanationJa": [
+      "動的ルーティングでは、ルーター同士が定期的にネットワークの状態を交換し合うことで、ルーティングテーブルを自動的に維持・更新します。",
+      "例えば、R1とR2が接続されている場合、R1はR2から「どのネットワークに接続されているか」という情報を受け取り、自身のテーブルに新たなルート（例えばネットワーク2）を追加できます。",
+      "このようにして、直接接続されていないネットワークにもパケットを送れるようになります。",
+      "もしR2に障害が発生すると、R1はR2からの更新情報が途絶えることで異常を検知します。",
+      "その際、R1はネットワーク2へのルートを無効として削除し、誤って障害のある経路にデータが送られないようにします。",
+      "その後、R2が復旧し再びルーティング情報を発信すると、自動的にルートが再登録されます。",
+      "このような仕組みにより、ネットワーク管理者の介入なしで柔軟かつ迅速な対応が可能となります。"
+    ],
+    "originalSlideText": "❑ Bei Verwendung von Route Propagation Software tauschen 𝑅1 und 𝑅2 Informationen über Netzwerke aus → Können Weiterleitungstabellen aktualisieren\n❑ Falls Router 𝑅2 abstürzt, erkennt dies Router 𝑅1 und entfernt Routen zu Netzwerk 2\n❑ Falls 𝑅2 wieder erreichbar, wird Route wieder hinzugefügt",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 17,
+    "questionDe": "(s22) Warum verwendet das Internet hierarchisches Routing und wie funktioniert es?",
+    "questionJa": "なぜインターネットでは階層的ルーティングが用いられているのか？その仕組みは？",
+    "answerDe": [
+      "Zu viel Traffic, wenn jeder Router mit allen anderen kommuniziert.",
+      "Daher nutzt das Internet hierarchisches Routing.",
+      "Router und Netzwerke sind in Gruppen organisiert.",
+      "Innerhalb der Gruppe tauschen Router Informationen aus.",
+      "Mindestens ein Router der Gruppe leitet Informationen an andere Gruppen weiter.",
+      "Gruppen sind in ihrer Größe nicht beschränkt, Protokolle innerhalb frei wählbar."
+    ],
+    "answerJa": [
+      "すべてのルーターが他のすべてのルーターと通信すると、トラフィックが膨大になる。",
+      "そのため、インターネットでは階層的なルーティング構造が採用されている。",
+      "ルーターとネットワークはグループに分けられる。",
+      "各グループ内のルーターは情報を交換し合う。",
+      "グループ内の少なくとも1台のルーターが、他のグループに情報を伝達する。",
+      "グループのサイズや内部で使うプロトコルは自由に決められる。"
+    ],
+    "explanationDe": [
+      "Das Internet besteht aus einer riesigen Anzahl von Routern, die Daten über verschiedene Netze weiterleiten.",
+      "Wenn jeder Router mit jedem anderen kommunizieren müsste, wäre der Informationsaustausch extrem aufwendig und würde zu hohem Verwaltungs-Overhead führen.",
+      "Daher verwendet das Internet ein hierarchisches Routingmodell, bei dem Router und Netzwerke in Gruppen – sogenannten Autonomen Systemen (AS) – organisiert sind.",
+      "Innerhalb dieser Gruppen (z. B. innerhalb eines ISPs) tauschen Router Informationen direkt miteinander aus.",
+      "Ein oder mehrere spezielle Router übernehmen dann die Aufgabe, Routinginformationen an andere Gruppen weiterzugeben.",
+      "Diese Hierarchie reduziert den Routingverkehr erheblich, da nicht jede Routingänderung global verbreitet werden muss.",
+      "Zudem erlaubt sie es, verschiedene Routingprotokolle innerhalb der Gruppen zu verwenden, was Flexibilität und Skalierbarkeit fördert."
+    ],
+    "explanationJa": [
+      "インターネットには数え切れないほどのルーターが存在しており、これらがすべて互いにルーティング情報を交換し合うと、通信量が莫大になります。",
+      "そのため、インターネットではルーターをグループに分けて管理する『階層的ルーティング』という仕組みが採用されています。",
+      "このグループは通常『自律システム（AS: Autonomous System）』と呼ばれ、同じ管理組織によって制御されるルーター群を指します。",
+      "グループ内部では、ルーター同士がルーティング情報を共有します。",
+      "さらに、各グループには少なくとも1台、外部と情報を交換するルーターが存在し、他のグループにルーティング情報を伝えます。",
+      "この仕組みによって、ルーティングのトラフィックを抑えつつ、ネットワークの拡張性や管理の柔軟性を確保できます。",
+      "グループのサイズや使用するルーティングプロトコルは各組織の自由に委ねられており、異なるネットワーク環境への適応が可能です。"
+    ],
+    "originalSlideText": "❑ Zuviel Traffic falls Router im Internet allen anderen Routern Informationen mitteilt\n❑ Internet nutzt deswegen hierarchisches Routing\n❑ Router und Netzwerke sind in Gruppen organisiert\n Router innerhalb einer Gruppe tauschen Informationen aus\n Mindestens ein Router der Gruppe reicht gesammelte Informationen an andere Gruppen weiter\n❑ Gruppen nicht in Größe beschränkt, Routingprotokoll in Gruppe nicht vorgeschrieben",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 18,
+    "questionDe": "(s23) Was ist ein Autonomes System (AS) im Internet und wer verwendet es?",
+    "questionJa": "インターネットにおける自律システム（AS: Autonomes System）とは何か？どのような組織が利用しているのか？",
+    "answerDe": [
+      "Ein Autonomes System (AS) ist ein Netzwerk unter Kontrolle einer Organisation.",
+      "Organisationen können ISPs, Unternehmen oder große Universitäten sein.",
+      "Große Organisationen können mehrere AS besitzen.",
+      "Ein ISP kann in mehrere AS aufgeteilt sein.",
+      "Die Größe hängt von ökonomischen, technischen und administrativen Faktoren ab."
+    ],
+    "answerJa": [
+      "自律システム（AS）とは、1つの組織によって管理されているネットワークの集まり。",
+      "ISP、企業、大学などの組織がASを使用する。",
+      "大規模な組織は複数のASを持つことがある。",
+      "ISP自体も複数のASに分割されることがある。",
+      "ASの規模は経済的・技術的・管理的な要因によって決まる。"
+    ],
+    "explanationDe": [
+      "Ein Autonomes System (AS) ist eine Sammlung von IP-Netzen und Routern, die unter einer gemeinsamen Verwaltung stehen und eine einheitliche Routingstrategie verfolgen.",
+      "Jede Organisation, die ihr eigenes Routing kontrollieren möchte – etwa ein Internet Service Provider (ISP), ein Unternehmen oder eine Universität – kann ein AS betreiben.",
+      "Große Organisationen mit mehreren geografischen Standorten oder komplexer interner Struktur können sich entscheiden, mehrere AS zu betreiben, z. B. für jeden Standort oder jede Region.",
+      "Auch ein großer ISP kann aus mehreren AS bestehen, z. B. um Routing-Verantwortlichkeiten zu trennen oder die Skalierbarkeit zu verbessern.",
+      "Die Entscheidung über die Größe und Struktur eines AS hängt von wirtschaftlichen (Kosten, Verträge), technischen (Netzwerkarchitektur) und administrativen (Verwaltung, Zuständigkeit) Aspekten ab.",
+      "Ein AS wird im globalen Routing eindeutig durch eine sogenannte AS-Nummer identifiziert, die von der IANA oder einer regionalen Internet-Registry vergeben wird.",
+      "AS spielen eine zentrale Rolle beim inter-domain Routing, insbesondere beim Einsatz von BGP, dem Standardprotokoll für den Austausch von Routinginformationen zwischen AS."
+    ],
+    "explanationJa": [
+      "自律システム（AS: Autonomous System）は、1つの組織によって管理され、共通のルーティングポリシーで運用されるIPネットワークの集合体です。",
+      "自分たちでルーティングを制御したいと考える組織（たとえばISP、企業、大学など）はASを構築して運用します。",
+      "大規模な組織では、地域ごとや拠点ごとにASを分けることがあり、複数のASを持つことで運用上の柔軟性やスケーラビリティを確保しています。",
+      "たとえば国際展開している企業が、各国ごとに異なるISPに接続する場合、それぞれの地域で個別にASを持つことがあります。",
+      "また、ISP自体も機能ごとにASを分けることで、管理しやすくしたり運用を分担したりしています。",
+      "ASの規模や構成は、経済的要因（コストや契約）、技術的要因（トポロジーや機器構成）、管理上の要因（運用責任の所在など）によって決まります。",
+      "ASは、グローバルなルーティングにおいて一意に識別されるAS番号（ASN）によって管理され、BGPなどのプロトコルでAS間のルーティング情報交換に使われます。"
+    ],
+    "originalSlideText": "❑ Autonomes System (AS): Netzwerke und Router unter Kontrolle einer Organisation (Administrative Authority)\n❑ Organisation kann z.B. ISP, Firma oder große Universität sein\n❑ Große Organisation mit mehreren Standorten kann mehrere AS haben\n❑ ISP kann sich in mehrere AS teilen\n❑ Größe ökonomisch, technisch, administrativ bedingt\n Firma mit mehreren AS verbunden zu regionalem ISP in jedem Land statt ein großes AS mit einer Verbindung zu Internet\n Routingprotokolle erzeugen mehr Verkehr bei vielen Routern",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 19,
+    "questionDe": "(s24) In welche Kategorien lassen sich Routingprotokolle einteilen?",
+    "questionJa": "ルーティングプロトコルはどのような分類（IGPとEGP）に分けられるか？",
+    "answerDe": [
+      "Alle Routingprotokolle fallen in zwei Kategorien:",
+      "– Interior Gateway Protocols (IGPs)",
+      "– Exterior Gateway Protocols (EGPs)"
+    ],
+    "answerJa": [
+      "すべてのルーティングプロトコルは2つのカテゴリに分類される：",
+      "– 内部ゲートウェイプロトコル（IGP）",
+      "– 外部ゲートウェイプロトコル（EGP）"
+    ],
+    "explanationDe": [
+      "Routingprotokolle regeln den Austausch von Informationen zwischen Routern und bestimmen, wie Datenpakete effizient durch ein Netzwerk geleitet werden.",
+      "Je nachdem, ob die Kommunikation innerhalb eines Autonomen Systems (AS) oder zwischen verschiedenen AS erfolgt, werden zwei grundlegende Kategorien unterschieden.",
+      "Interior Gateway Protocols (IGPs) werden innerhalb eines einzelnen AS verwendet – sie sind für die interne Organisation eines Netzwerks zuständig.",
+      "Beispiele für IGPs sind RIP, OSPF oder IS-IS.",
+      "Exterior Gateway Protocols (EGPs) kommen zum Einsatz, wenn Routinginformationen zwischen verschiedenen AS ausgetauscht werden sollen – also zwischen Netzwerken, die von unterschiedlichen Organisationen kontrolliert werden.",
+      "Das wichtigste (und praktisch einzige) verwendete EGP ist BGP (Border Gateway Protocol), das den globalen Internetverkehr zwischen ISPs regelt.",
+      "Die Trennung in IGP und EGP ermöglicht eine bessere Skalierung, Sicherheit und Flexibilität in großen Netzwerken wie dem Internet."
+    ],
+    "explanationJa": [
+      "ルーティングプロトコルは、ルーター間でネットワーク情報を交換し、データが効率的に転送されるように経路を決定するための仕組みです。",
+      "これらのプロトコルは、大きく分けて2つのカテゴリに分類されます。",
+      "1つ目はIGP（Interior Gateway Protocol：内部ゲートウェイプロトコル）で、1つの自律システム（AS）内で使用されるルーティングプロトコルです。",
+      "RIP、OSPF、IS-ISなどがIGPの代表例です。",
+      "2つ目はEGP（Exterior Gateway Protocol：外部ゲートウェイプロトコル）で、異なるAS同士がルーティング情報をやりとりするために用いられます。",
+      "最も重要かつ事実上唯一使用されているEGPは、BGP（Border Gateway Protocol）であり、インターネット全体のトラフィックを制御しています。",
+      "IGPとEGPの明確な役割分担により、大規模なネットワークのスケーラビリティや安全性、柔軟性が確保されています。"
+    ],
+    "originalSlideText": "❑ Alle Routingprotokolle fallen in eine der Kategorien\n Interior Gateway Protocols (IGPs)\n Exterior Gateway Protocols (EGPs)",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 20,
+    "questionDe": "(s25) Was ist ein Interior Gateway Protocol (IGP) und welche Eigenschaften hat es?",
+    "questionJa": "IGP（Interior Gateway Protocol）とは何か？どこで使われ、どんな特徴があるのか？",
+    "answerDe": [
+      "IGPs werden von Routern innerhalb eines Autonomen Systems genutzt.",
+      "Jedes AS kann ein eigenes IGP wählen.",
+      "IGPs sind typischerweise einfach zu installieren und zu bedienen.",
+      "Sie können die Routingkomplexität einschränken."
+    ],
+    "answerJa": [
+      "IGPは自律システム（AS）内のルーターによって使用される。",
+      "各ASは独自のIGPを選択できる。",
+      "通常、IGPは導入や運用が簡単である。",
+      "ルーティングの複雑さを抑えることができる。"
+    ],
+    "explanationDe": [
+      "Interior Gateway Protocols (IGPs) sind Routingprotokolle, die ausschließlich innerhalb eines Autonomen Systems (AS) verwendet werden.",
+      "Das bedeutet, sie koordinieren den Datenverkehr zwischen Routern, die unter der gleichen administrativen Kontrolle stehen – z. B. in einem Firmennetzwerk oder einem Internetprovider.",
+      "Da IGPs nur innerhalb eines klar abgegrenzten Bereichs operieren, können sie auf Leistung und einfache Verwaltung optimiert werden.",
+      "Typische IGPs wie RIP, OSPF oder IS-IS sind relativ leicht zu konfigurieren und bieten ausreichend Funktionen für die interne Routenverwaltung.",
+      "Ein großer Vorteil ist, dass jedes AS frei entscheiden kann, welches IGP es verwenden möchte – es gibt keine globale Vorschrift.",
+      "IGPs sind außerdem oft so gestaltet, dass sie die Komplexität begrenzen – z. B. durch Hierarchien (wie bei OSPF Areas) oder einfache Metriken.",
+      "Dadurch bleiben selbst große interne Netzwerke übersichtlich und effizient steuerbar."
+    ],
+    "explanationJa": [
+      "IGP（Interior Gateway Protocol）は、自律システム（AS）内部でルーター同士がルーティング情報を交換するために使われるプロトコルです。",
+      "たとえば企業ネットワークやISP内部のネットワークのように、1つの組織が管理しているルーター群の中で使用されます。",
+      "IGPは、特定のネットワーク内での使用を前提としているため、導入や運用が比較的簡単で、効率的な経路選択を実現できます。",
+      "代表的なIGPには、RIP、OSPF、IS-ISなどがあり、それぞれ異なる特徴を持ちながらも設定の容易さと拡張性を兼ね備えています。",
+      "ASごとに独自のIGPを自由に選べるため、ネットワークの構成や管理方針に応じた最適なプロトコルを導入できます。",
+      "また、OSPFのように階層構造（Area）を使ってルーティング情報の範囲を限定し、ネットワーク全体の複雑さを軽減する機能を備えたものもあります。",
+      "このように、IGPはネットワークの内部管理を簡素化し、大規模でも効率よく運用できる仕組みとなっています。"
+    ],
+    "originalSlideText": "❑ Von Router innerhalb Autonomem System genutzt\n❑ Jedes Autonome System kann ein eigenes IGP wählen\n❑ Typischerweise einfach zu installieren und zu bedienen\n❑ Kann Komplexität des Routing einschränken",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 21,
+    "questionDe": "(s26) Was ist ein Exterior Gateway Protocol (EGP) und wie wird es zwischen Autonomen Systemen verwendet?",
+    "questionJa": "EGP（Exterior Gateway Protocol）とは何か？どのように自律システム（AS）間で使用されるのか？",
+    "answerDe": [
+      "Ein EGP wird von Routern in einem AS verwendet, um mit Routern in anderen AS zu kommunizieren.",
+      "EGPs sind typischerweise komplexer zu installieren und zu warten.",
+      "Sie bieten größere Flexibilität und erzeugen weniger Overhead.",
+      "Routinginformationen werden gesammelt, bevor sie übertragen werden.",
+      "Informationen können durch Richtlinien (Policy Constraints) beschränkt werden."
+    ],
+    "answerJa": [
+      "EGPは、あるASのルーターが他のASのルーターと通信するために使う。",
+      "EGPは、導入・運用が一般に複雑である。",
+      "柔軟性が高く、通信のオーバーヘッドは少ない。",
+      "ルーティング情報は送信前に集約される。",
+      "情報の伝達は、ポリシー制約（Policy Constraints）によって制限されることがある。"
+    ],
+    "explanationDe": [
+      "Exterior Gateway Protocols (EGPs) werden verwendet, um Routinginformationen zwischen verschiedenen Autonomen Systemen auszutauschen.",
+      "Das bekannteste und am weitesten verbreitete EGP ist das Border Gateway Protocol (BGP), das im gesamten Internet eingesetzt wird.",
+      "Ein Router innerhalb eines AS kommuniziert über ein EGP mit einem Router in einem anderen AS, um Informationen über erreichbare Netzwerke weiterzugeben.",
+      "Im Gegensatz zu IGPs sind EGPs nicht für die interne Netzorganisation gedacht, sondern koordinieren den globalen Datenaustausch zwischen Netzwerken unterschiedlicher Betreiber.",
+      "EGPs sind oft komplexer zu konfigurieren und zu pflegen, bieten jedoch mehr Flexibilität in Bezug auf Pfadwahl und Richtlinien (Policy Constraints).",
+      "Bevor Routinginformationen an andere AS gesendet werden, werden sie im eigenen AS gesammelt und ggf. durch Richtlinien gefiltert oder modifiziert.",
+      "Dies ermöglicht eine gezielte Steuerung des Informationsflusses, z. B. um bestimmte Routen nicht öffentlich zu machen oder bevorzugte Pfade durchzusetzen."
+    ],
+    "explanationJa": [
+      "EGP（Exterior Gateway Protocol）は、異なる自律システム（AS）間でルーティング情報をやり取りするためのプロトコルです。",
+      "EGPの代表例であり、事実上インターネットで標準となっているのがBGP（Border Gateway Protocol）です。",
+      "あるAS内のルーターが別のASのルーターと接続して、どのネットワークに到達可能かを共有する役割を担います。",
+      "IGPが内部ネットワークの構成や管理を目的とするのに対し、EGPはネットワーク運営者間の調整に用いられます。",
+      "EGPは設定や保守がIGPよりも複雑な傾向にありますが、そのぶんルーティングポリシーの柔軟な設定が可能です。",
+      "AS内の複数のルーターから情報を収集し、ポリシー制約（たとえば特定のルートを非公開にする、優先順位を変えるなど）をかけたうえで他ASへ転送します。",
+      "これにより、組織ごとのルーティング戦略やセキュリティ要件を反映した経路制御が可能になります。"
+    ],
+    "originalSlideText": "❑ Router in AS nutzt EGP um mit Router in anderen AS zu kommunizieren\n❑ EGP typischerweise komplexer zu installieren und zu warten\n❑ Größere Flexibilität und weniger Overhead (Traffic)\n❑ Routing Informationen von AS werden vor Übertragung gesammelt\n❑ Information kann durch Richtlinien beschränkt werden (Policy Constraints)",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 22,
+    "questionDe": "(s27) Wie kommunizieren Router innerhalb eines AS und zwischen verschiedenen AS?",
+    "questionJa": "自律システム（AS）内部とAS間では、それぞれどのようにルーターが情報を交換するのか？",
+    "answerDe": [
+      "AS 1 nutzt IGP1: Alle Router in AS 1 kommunizieren darüber.",
+      "AS 2 nutzt IGP2: Alle Router in AS 2 kommunizieren darüber.",
+      "R1 und R4 kommunizieren zwischen AS über ein EGP.",
+      "Informationen werden vor Versand gesammelt und im AS weiter propagiert."
+    ],
+    "answerJa": [
+      "AS 1はIGP1を使用し、内部のルーター同士が情報をやり取りする。",
+      "AS 2もIGP2を使用し、同様に内部で情報を交換する。",
+      "R1とR4のようなルーターは、AS間でEGPを使って通信する。",
+      "外部から受け取った情報は、AS内で他のルーターに伝達される。"
+    ],
+    "explanationDe": [
+      "In komplexen Netzwerken mit mehreren Autonomen Systemen (AS) kommen sowohl IGPs als auch EGPs parallel zum Einsatz.",
+      "Innerhalb eines AS – z. B. bei einem Unternehmen oder einem ISP – wird ein IGP wie OSPF oder IS-IS verwendet, um Routinginformationen effizient zwischen allen Routern im AS zu verteilen.",
+      "Jedes AS kann dabei sein eigenes IGP wählen, passend zur internen Struktur und den administrativen Anforderungen.",
+      "Zwischen verschiedenen AS – etwa zwischen zwei ISPs – erfolgt die Kommunikation über ein EGP wie BGP.",
+      "Dabei tauschen spezielle Border-Router (wie R1 und R4) Informationen über erreichbare Netzwerke aus.",
+      "Diese Informationen werden im empfangenden AS zunächst gesammelt, geprüft und anschließend über das dort verwendete IGP an die anderen internen Router weitergegeben.",
+      "Diese zweistufige Kommunikation sorgt für Skalierbarkeit, Trennung der Zuständigkeiten und optimierte Kontrolle über externe und interne Pfade."
+    ],
+    "explanationJa": [
+      "複数の自律システム（AS）を含む大規模なネットワークでは、AS内とAS間で異なるルーティングプロトコルが使われます。",
+      "AS内部では、OSPFやIS-ISなどのIGPを用いて、すべてのルーター間で効率的にルーティング情報を共有します。",
+      "それぞれのASは、内部構成や管理方針に応じて自分たちに最適なIGPを選択することができます。",
+      "一方、異なるAS間、例えばISP同士の接続では、BGPのようなEGPを使って、到達可能なネットワーク情報を交換します。",
+      "この役割を担うのが、境界に位置するルーター（例：R1やR4）で、外部から得た情報をAS内に取り込む入口となります。",
+      "取り込まれた情報はまず集約・精査され、その後、内部のIGPを通じて他のルーターへ配布されます。",
+      "このようにして、ASごとにルーティングの責任と構成を分けながら、効率的なルート選択と柔軟な制御が可能になります。"
+    ],
+    "originalSlideText": "❑ AS 1 nutzt 𝐼𝐺𝑃1: Alle Router in AS 1 kommunizieren damit\n❑ AS 2 nutzt 𝐼𝐺𝑃2: Alle Router in AS 2 kommunizieren damit\n❑ 𝑅1 und 𝑅4 kommunizieren zwischen AS mit EGP\n❑ Sammeln Informationen vor Versand und propagieren an Router in eigenem AS",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 23,
+    "questionDe": "(s28) Warum hängt die Definition einer optimalen Route vom Verwendungszweck ab?",
+    "questionJa": "『最適なルート』の定義は、利用目的によってどのように異なるのか？",
+    "answerDe": [
+      "Es gibt keine einheitliche Definition für eine optimale Route.",
+      "Remote Desktop benötigt geringen Delay.",
+      "Browser-Download erfordert hohen Durchsatz.",
+      "Audio-Webcasts brauchen wenig Jitter."
+    ],
+    "answerJa": [
+      "『最適なルート』には共通の定義が存在しない。",
+      "リモートデスクトップには低遅延が求められる。",
+      "ブラウザでのダウンロードでは高スループットが重要。",
+      "音声配信（Webcast）ではジッターの少なさが重視される。"
+    ],
+    "explanationDe": [
+      "Was als 'optimale Route' gilt, hängt stark davon ab, welche Art von Anwendung genutzt wird und welche Qualitätskriterien dabei im Vordergrund stehen.",
+      "Bei zeitkritischen Anwendungen wie Remote Desktop oder Online-Gaming ist eine möglichst geringe Latenz (Delay) entscheidend, damit Eingaben schnell beim Ziel ankommen.",
+      "Für das Herunterladen großer Dateien im Browser ist vor allem die Bandbreite bzw. der Durchsatz (Throughput) wichtig, damit Daten schnell übertragen werden.",
+      "Bei Audio- oder Video-Streaming (z. B. Webcasts) ist es besonders wichtig, dass die Daten gleichmäßig ankommen – hier ist ein geringer Jitter, also die Schwankung in der Paketlaufzeit, ausschlaggebend.",
+      "Ein und dieselbe Route kann für eine Anwendung optimal und für eine andere ungeeignet sein.",
+      "Daher berücksichtigen moderne Routingprotokolle unterschiedliche Metriken, je nachdem, welche Art von Datenverkehr sie unterstützen sollen.",
+      "Diese Flexibilität ist notwendig, um die Leistungsanforderungen verschiedenster Dienste gleichzeitig im Netzwerk zu erfüllen."
+    ],
+    "explanationJa": [
+      "『最適なルート』の定義は、利用するアプリケーションやサービスの性質によって大きく異なります。",
+      "たとえばリモートデスクトップやオンラインゲームのようなリアルタイム性の高いサービスでは、操作の応答速度に直結する『遅延（Delay）』が最も重要です。",
+      "一方、ファイルのダウンロードでは、多少の遅延よりも『スループット（帯域幅）』が高い方が快適です。",
+      "また、音声配信やビデオストリーミングのような連続性が重要なサービスでは、パケットの到着間隔のばらつき（ジッター）が少ないことが求められます。",
+      "つまり、同じルートであっても、ある用途には最適であっても、別の用途には適さない場合があります。",
+      "そのため、現代のルーティングプロトコルは、用途に応じて異なるルーティングメトリック（評価指標）を使うよう設計されています。",
+      "こうした柔軟性により、ネットワークは多様なサービス要件を同時に満たすことができるのです。"
+    ],
+    "originalSlideText": "❑ Keine Übereinkunft was eine optimale Route ist\n Remote Desktop: Geringer Delay\n Download in Browser: Hoher Durchsatz\n Audio Webcast: Wenig Jitter",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+  "id": 24,
+  "questionDe": "(s29) Welche Bedeutung haben Hop Count und administrative Kosten als Routingmetriken?",
+  "questionJa": "ルーティングメトリックとして用いられるホップ数（Hop Count）や管理コスト（administrative cost）にはどのような意味があるか？",
+  "answerDe": [
+    "Typische Routingmetrik ist Kombination aus administrativen Kosten und Hop Count.",
+    "Hop Count gibt die Anzahl der Router oder Netzwerke bis zum Ziel an.",
+    "Administrative Kosten werden manuell zugewiesen.",
+    "Beispiel: Kommunikation innerhalb einer Firma soll nicht über Kundennetz laufen → manuell höhere Kosten für diesen Pfad."
+  ],
+  "answerJa": [
+    "一般的なルーティングメトリックは、管理コストとホップ数の組み合わせである。",
+    "ホップ数は、目的地までのルーターやネットワークの数を示す。",
+    "管理コストは手動で設定される。",
+    "例：社内通信が顧客ネットワークを通らないように、その経路に高いコストを設定する。"
+  ],
+  "explanationDe": [
+    "Routingmetriken sind numerische Werte, die Routingprotokolle verwenden, um zwischen mehreren möglichen Pfaden zu entscheiden.",
+    "Eine einfache Metrik ist der Hop Count – also die Anzahl der Router, die ein Paket durchlaufen muss, um sein Ziel zu erreichen.",
+    "Diese Methode ist leicht zu berechnen, berücksichtigt aber keine Unterschiede in Bandbreite, Verzögerung oder Zuverlässigkeit.",
+    "Daher wird oft zusätzlich eine administrative Kostenmetrik verwendet, bei der Netzadministratoren bestimmte Pfade manuell bevorzugen oder vermeiden können.",
+    "Ein praktisches Beispiel: Innerhalb einer Firma soll sensible Kommunikation nicht über ein öffentliches oder externes Netz geleitet werden.",
+    "In einem solchen Fall kann der Pfad über das Kundennetz mit einer hohen administrativen Kostenmetrik versehen werden, sodass Routingprotokolle ihn nur im Notfall wählen.",
+    "Die Kombination aus Hop Count und administrativer Kosten ermöglicht eine ausgewogenere und kontrollierbare Pfadwahl, angepasst an Sicherheits-, Leistungs- und Organisationsrichtlinien."
+  ],
+  "explanationJa": [
+    "ルーティングメトリックとは、複数の経路候補の中から最適なルートを選ぶために使用される数値的な評価基準です。",
+    "その中でも基本的なのがホップ数（Hop Count）で、これはパケットが目的地にたどり着くまでに通過するルーターやネットワークの数を表します。",
+    "ホップ数は簡単に計算できますが、帯域幅、遅延、信頼性などの要因は考慮されません。",
+    "そこで、管理者が手動で設定できる管理コスト（administrative cost）というメトリックも併用されます。",
+    "たとえば企業内の重要な通信が、セキュリティの観点から顧客向けネットワークを通過しないようにするには、その経路に高いコストを設定して回避することができます。",
+    "このように、管理コストを用いることで、技術的条件だけでなく運用ポリシーやセキュリティ要件をルーティングに反映させることが可能です。",
+    "ホップ数と管理コストを組み合わせることで、柔軟かつ現実的なルーティング選択が実現されます。"
+  ],
+  "originalSlideText": "❑ Typischerweise Kombination von administrativen Kosten und Hop Count genutzt\n❑ Hop gibt Anzahl Router bzw. Netzwerke auf Weg zu Ziel an\n❑ Administrative Kosten manuell zugeteilt\n Kommunikation von Accounting und Gehaltsstelle in Firma nicht durch Kundennetz leiten → Manuell höhere Kosten für den Pfad",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 25,
+  "questionDe": "(s30) Warum kann ein EGP wie BGP keine optimalen Routen bestimmen?",
+  "questionJa": "なぜEGP（例：BGP）は最適なルートを選ぶことができないのか？",
+  "answerDe": [
+    "Nur IGPs nutzen Routingmetriken.",
+    "Jedes AS wählt eigene Routingmetrik und bestimmt damit Pfade.",
+    "EGP versucht nur, einen gültigen Pfad zu finden – nicht den optimalen.",
+    "Vergleich ist unmöglich, da jedes AS andere Metriken nutzt.",
+    "Beispiel: Ein AS misst Hop Count, ein anderes den Durchsatz."
+  ],
+  "answerJa": [
+    "ルーティングメトリックを使用するのはIGPのみである。",
+    "各ASは独自のメトリックを使って経路を決定する。",
+    "EGPは有効な経路を探すだけで、最適経路は判断しない。",
+    "ASごとにメトリックが異なるため、比較できない。",
+    "例：あるASはホップ数、別のASはスループットを基準にしている。"
+  ],
+  "explanationDe": [
+    "Exterior Gateway Protocols wie BGP arbeiten auf globaler Ebene, um Pfade zwischen verschiedenen Autonomen Systemen (AS) zu vermitteln.",
+    "Im Gegensatz zu Interior Gateway Protocols (IGPs) verwenden EGPs jedoch keine standardisierten Metriken zur Bewertung der Routenqualität.",
+    "Jedes AS bestimmt seine eigene interne Routingmetrik – beispielsweise Hop Count, Latenz, Bandbreite oder politische Regeln.",
+    "Weil diese Metriken nicht einheitlich sind, kann ein EGP wie BGP nicht objektiv entscheiden, welcher Pfad der 'beste' ist.",
+    "Stattdessen ist das Ziel von EGPs, einen funktionierenden Pfad zu finden, der administrativen und politischen Anforderungen genügt.",
+    "Ein Vergleich über AS-Grenzen hinweg wäre sinnlos, da z. B. AS A Routen nach Hop Count und AS B nach Bandbreite bewertet – ihre Werte sind inkompatibel.",
+    "Daher bietet BGP keine Optimierung im klassischen Sinne, sondern eine flexible Auswahl akzeptabler Pfade unter Berücksichtigung lokaler Richtlinien."
+  ],
+  "explanationJa": [
+    "EGP（Exterior Gateway Protocol）であるBGPは、異なる自律システム（AS）間のルーティングを制御するためのプロトコルです。",
+    "しかし、IGP（Interior Gateway Protocol）と違って、BGPは標準的なルーティングメトリック（経路品質の評価基準）を使いません。",
+    "各ASは、自分たちの内部でどの経路を選ぶかを独自の基準（ホップ数、帯域幅、遅延、ポリシーなど）で決めています。",
+    "そのため、あるASで“最適”とされる経路が、他のASでも同様に評価されるとは限らず、客観的な比較ができません。",
+    "BGPの目的は、最も良い経路を選ぶことではなく、“到達可能で管理ポリシーに合った経路”を見つけることです。",
+    "たとえば、あるASではホップ数が少ない経路を選び、別のASではスループットが高い経路を優先することもあります。",
+    "このような事情から、EGPではルートの最適化ではなく、方針ベースの柔軟な経路選択が行われるのです。"
+  ],
+  "originalSlideText": "❑ Nur IGPs nutzen Routingmetriken\n❑ Jedes AS wählt eigene Routingmetrik und bestimmt danach Pfade\n❑ EGP versucht einen Pfad zu finden, aber nicht optimalen Pfad\n Vergleich wäre nicht möglich, da jedes AS mit eigener Metrik\n Beispiel: Ein AS misst Hops, das andere aber Durchsatz",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 26,
+  "questionDe": "(s31) Warum verläuft der Datenverkehr oft in entgegengesetzter Richtung zur Routenverbreitung?",
+  "questionJa": "なぜデータトラフィックはルーティング情報の伝播と逆方向に流れることがあるのか？",
+  "answerDe": [
+    "Datenverkehr zu einem Ziel erfolgt oft in entgegengesetzter Richtung zur Routenverbreitung.",
+    "Bevor ein Netzwerk (z. B. in ISP1) Daten empfangen kann, muss es seine Routen an andere bekannt geben."
+  ],
+  "answerJa": [
+    "目的地へのデータ通信は、ルート情報の伝播とは逆方向になることが多い。",
+    "ISP1のようなネットワークが外部からデータを受け取るためには、まず自分のルート情報を他に伝える必要がある。"
+  ],
+  "explanationDe": [
+    "In der Praxis werden Routinginformationen und Datenverkehr oft in entgegengesetzte Richtungen ausgetauscht.",
+    "Ein Netzwerk wie ISP1 möchte Daten aus dem Internet empfangen – z. B. Anfragen an eine Website, die es hostet.",
+    "Damit andere Netzwerke wissen, wie sie Pakete zu ISP1 senden können, muss ISP1 zuerst seine Routen ins Internet propagieren – z. B. per BGP.",
+    "Diese Routeninformationen werden also 'nach außen' verteilt, obwohl die zugehörigen Daten dann 'nach innen' fließen.",
+    "Wenn ISP1 seine Erreichbarkeit nicht ankündigt, könnten andere Netzwerke keine gültige Route zu seinen IP-Adressen kennen und keine Daten schicken.",
+    "Dieses Prinzip gilt allgemein für das Internet: Ein Netzwerk muss sich erst sichtbar machen, bevor es erreichbar ist.",
+    "Daher ist die Routenverbreitung Voraussetzung für eingehenden Datenverkehr – und verläuft somit in die entgegengesetzte Richtung."
+  ],
+  "explanationJa": [
+    "インターネットにおいては、ルーティング情報と実際のデータの流れが反対方向になることがよくあります。",
+    "たとえばISP1がWebサーバなどのサービスを提供しているとき、外部からそのネットワークへデータが送られてくる必要があります。",
+    "しかし、他のネットワークがISP1へ到達するには、まずISP1自身が『このネットワークにこういう経路で到達できます』というルート情報を外部に発信しなければなりません。",
+    "このように、ルート情報はISP1から外部へ向かって伝播しますが、データ通信自体は外部からISP1へ向かってくるため、方向が逆になります。",
+    "ISP1がルート情報を公開しなければ、他のネットワークは正しい宛先経路を持たず、通信が成立しません。",
+    "この仕組みはインターネット全体に共通しており、ルートの公開（アドバタイズ）が行われてはじめて、他者からのアクセスが可能になります。",
+    "したがって、ルーティングの広報は、受信方向のデータ通信の前提条件であり、方向が逆になるのは自然なことです。"
+  ],
+  "originalSlideText": "❑ Datenverkehr für ein Ziel erfolgt in entgegengesetzter Richtung des Routenverkehr\n❑ Bevor Netzwerk in 𝐼𝑆𝑃1 Daten bekommt, muss 𝐼𝑆𝑃1 Routen nach außen mitteilen",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 27,
+  "questionDe": "(s32) Was ist das Border Gateway Protocol (BGP) und welche Funktionen erfüllt es im Internet?",
+  "questionJa": "BGP（Border Gateway Protocol）とは何か？インターネット上でどのような機能と役割を果たしているのか？",
+  "answerDe": [
+    "BGP ist das Exterior Gateway Protocol (EGP) des Internets.",
+    "BGP-4 ist seit langem die genutzte Version.",
+    "Routing zwischen Autonomen Systemen: Pfade werden als AS-Sequenz angegeben.",
+    "Keine Details über Router innerhalb eines AS.",
+    "Richtlinien: Sender und Empfänger können propagierte Routen einschränken."
+  ],
+  "answerJa": [
+    "BGPはインターネットで使われている外部ゲートウェイプロトコル（EGP）である。",
+    "現在広く使われているのはBGPの第4版（BGP-4）である。",
+    "AS間のルーティングでは、経路はASの並び（ASパス）として表される。",
+    "各ASの内部ルーターの詳細は含まれない。",
+    "送信者・受信者は伝播されるルートに対して制限を設けることができる（ポリシー制御）。"
+  ],
+  "explanationDe": [
+    "Das Border Gateway Protocol (BGP) ist das zentrale Routingprotokoll für die Kommunikation zwischen verschiedenen Autonomen Systemen (AS) im Internet.",
+    "Es wird als einziges EGP aktiv verwendet und ermöglicht den Austausch von Informationen über erreichbare Netzwerke zwischen Netzbetreibern.",
+    "Die aktuell weit verbreitete Version ist BGP-4, die sich durch Stabilität und Skalierbarkeit auszeichnet.",
+    "Im Gegensatz zu IGPs, die detaillierte Informationen über einzelne Router austauschen, verwendet BGP lediglich AS-Pfade: Die Route wird als Folge von AS-Nummern dargestellt.",
+    "Dies reduziert den Umfang der Routingdaten und schützt die interne Struktur eines AS vor Einblick durch andere.",
+    "Ein wesentlicher Vorteil von BGP ist die Unterstützung von Richtliniensteuerung: Sowohl Sender als auch Empfänger können festlegen, welche Routen sie weitergeben oder akzeptieren.",
+    "Dies erlaubt es Organisationen, ihre Geschäftsbeziehungen, Sicherheitsvorgaben und technischen Prioritäten direkt in die Routingentscheidungen einzubinden."
+  ],
+  "explanationJa": [
+    "BGP（Border Gateway Protocol）は、インターネット上で異なる自律システム（AS）間のルーティング情報を交換するための主要なプロトコルです。",
+    "BGPは外部ゲートウェイプロトコル（EGP）として機能し、今日ではその第4版（BGP-4）が広く利用されています。",
+    "BGPはAS間の経路を、通過するAS番号の列（ASパス）として表現し、各ASの内部構造やルーターの詳細までは公開しません。",
+    "これにより、ルーティング情報の量を抑えるとともに、各ASの内部構成を秘匿できます。",
+    "BGPの大きな特徴の一つが『ポリシーベースのルーティング制御』であり、送信側・受信側の双方が、どの経路情報を伝えるか、あるいは受け入れるかを自由に制限できます。",
+    "たとえば、自社のネットワークが特定の経路を通らないようにしたり、特定のパートナーとの通信のみを許可したりする設定が可能です。",
+    "この柔軟性により、BGPは技術的要件だけでなく、経済的・安全保障的な観点も含めたルーティング制御を実現しています。"
+  ],
+  "originalSlideText": "❑ Border Gateway Protocol (BGP): DAS Exterior Gateway Protocol des Internet\n❑ Seit langem vierte Version BGP-4 genutzt\n❑ Routing unter Autonomen Systemen:\n Routen als Pfade von AS gegeben, keine Details über Router innerhalb AS\n❑ Richtlinien:\n Sender und Empfänger können Richtlinien haben (z.B. Einschränkung der propagierten Routen)",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 28,
+  "questionDe": "(s33) Was ist Transit Routing in BGP und wie wird die Zuverlässigkeit der Kommunikation gewährleistet?",
+  "questionJa": "BGPにおけるトランジットルーティングとは何か？また、通信の信頼性はどのように確保されているか？",
+  "answerDe": [
+    "Transit Routing bedeutet, dass ein AS Daten für andere AS weiterleitet.",
+    "Ein AS kann Transitverkehr ablehnen (ist dann ein Stub-System).",
+    "Zuverlässiger Transport: BGP nutzt TCP für die Kommunikation.",
+    "BGP ist das EGP, das von Tier-1-ISPs verwendet wird."
+  ],
+  "answerJa": [
+    "トランジットルーティングとは、ASが他のAS間の通信を中継すること。",
+    "ASはトランジット通信を拒否できる（その場合はスタブシステムと呼ばれる）。",
+    "通信の信頼性を確保するために、BGPはTCPを使用する。",
+    "BGPはTier-1 ISPによって利用されているEGPである。"
+  ],
+  "explanationDe": [
+    "Im Kontext von BGP bedeutet Transit Routing, dass ein Autonomes System (AS) nicht nur Daten zu eigenen Netzwerken empfängt, sondern auch Daten weiterleitet, die von einem AS stammen und an ein anderes AS gerichtet sind.",
+    "AS, die Transitdienste anbieten, werden als Transit-Systeme bezeichnet. Sie sind oft große Netzbetreiber oder ISPs mit mehreren Verbindungen zu anderen Netzwerken.",
+    "Ein AS kann jedoch bewusst entscheiden, keinen Transitverkehr zu akzeptieren – in diesem Fall wird es als Stub-System bezeichnet, da es nur eigene Daten sendet und empfängt.",
+    "Zur Sicherstellung der Zuverlässigkeit verwendet BGP TCP als Transportprotokoll. TCP stellt sicher, dass Routinginformationen fehlerfrei, vollständig und in der richtigen Reihenfolge übertragen werden.",
+    "Dies ist besonders wichtig, da Routinginformationen kritisch für die globale Internetkommunikation sind.",
+    "BGP ist das zentrale EGP des Internets und wird insbesondere von sogenannten Tier-1 ISPs verwendet – das sind Betreiber, die globale Netzwerke bereitstellen und sich direkt mit anderen großen AS austauschen.",
+    "Durch Kombination von Transit- und Richtliniensteuerung ermöglicht BGP eine flexible und robuste Steuerung des weltweiten Datenverkehrs."
+  ],
+  "explanationJa": [
+    "BGPにおけるトランジットルーティングとは、ある自律システム（AS）が、自身が宛先ではない他のAS間の通信トラフィックを中継（転送）することを指します。",
+    "このような中継を提供するASは、一般にトランジットシステム（Transit System）と呼ばれ、大規模ISPや主要ネットワーク事業者が該当します。",
+    "一方で、トランジットを提供せず、自身のネットワークとの通信のみに限定するASはスタブシステム（Stub System）と呼ばれます。",
+    "BGPはTCP（Transmission Control Protocol）を通信手段として使用しており、これによってルーティング情報の信頼性（誤りなし・順序保証・完全性）が確保されています。",
+    "ルーティング情報はインターネットの経路制御の基盤であるため、その確実な配信は極めて重要です。",
+    "BGPはTier-1 ISP（最上位の国際ネットワーク事業者）により広く使用され、グローバルなネットワーク間での接続とルート制御を支えています。",
+    "BGPは、トランジット機能とポリシーベースの経路制御を組み合わせることで、インターネット全体の柔軟かつ堅牢なルーティングを実現しています。"
+  ],
+  "originalSlideText": "❑ Transit Routing\n AS ist Transit System, falls es Daten zu anderen AS durchleitet, sonst Stub System\n AS kann Transit Verkehr verweigern\n❑ Zuverlässiger Transport:\n Nutzt TCP für Kommunikation\n❑ BGP ist das EGP, welches von Tier-1 ISPs genutzt wird",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 29,
+  "questionDe": "(s34) Welche Eigenschaften hat das Routing Information Protocol (RIP)?",
+  "questionJa": "RIP（Routing Information Protocol）の特徴にはどのようなものがあるか？（メトリック、通信プロトコル、方式など）",
+  "answerDe": [
+    "RIP ist eines der ersten IGPs im Internet.",
+    "Verwendet Hop Count als Metrik – direkt verbundenes Netzwerk zählt als 1 Hop.",
+    "Nutzt UDP als unzuverlässigen Transport.",
+    "Verwendet Broadcast oder Multicast (ab Version 2)."
+  ],
+  "answerJa": [
+    "RIPはインターネット初期のIGPの一つである。",
+    "ホップ数をメトリックとして使用し、直接接続されたネットワークを1ホップと数える。",
+    "信頼性のないUDPをトランスポート層で使用する。",
+    "LANでの通信にはブロードキャストまたはマルチキャストを使用する（バージョン2以降はマルチキャスト）。"
+  ],
+  "explanationDe": [
+    "Das Routing Information Protocol (RIP) ist eines der ältesten Interior Gateway Protocols (IGPs) im Internet und wurde speziell für kleine bis mittelgroße Netzwerke entwickelt.",
+    "RIP verwendet als Routingmetrik die Anzahl der Hops, also wie viele Router ein Datenpaket durchlaufen muss, um das Ziel zu erreichen.",
+    "Ein direkt verbundenes Netzwerk zählt als ein Hop, was die Berechnung einfach macht, jedoch keine Berücksichtigung von Bandbreite oder Verzögerung erlaubt.",
+    "Als Transportschichtprotokoll nutzt RIP das User Datagram Protocol (UDP), das im Gegensatz zu TCP keine Garantie für korrekte oder vollständige Zustellung bietet.",
+    "RIP sendet regelmäßig vollständige Routingtabellen an benachbarte Router – bei Version 1 per Broadcast, ab Version 2 über Multicast, um Netzlast zu reduzieren.",
+    "Obwohl RIP heute in großen Netzwerken durch leistungsfähigere Protokolle wie OSPF ersetzt wurde, bleibt es aufgrund seiner Einfachheit in kleinen Netzen und Schulungsumgebungen beliebt.",
+    "Ein weiterer Vorteil ist die breite Unterstützung durch Betriebssysteme und einfache Konfiguration."
+  ],
+  "explanationJa": [
+    "RIP（Routing Information Protocol）は、インターネット初期に使われていた最も古いIGP（内部ゲートウェイプロトコル）の一つです。",
+    "RIPでは、ルーティングメトリックとしてホップ数を使用しており、目的地までに通過するルーターの数を基準に経路を選択します。",
+    "直接接続されたネットワークは1ホップと数え、計算が非常に簡単ですが、帯域幅や遅延などは考慮されません。",
+    "トランスポート層では、信頼性が保証されないUDP（User Datagram Protocol）を使用しています。",
+    "RIPは定期的にルーティングテーブル全体を隣接ルーターに送信します。バージョン1ではブロードキャスト、バージョン2以降はマルチキャストが使用され、通信の効率化が図られました。",
+    "現在ではOSPFなどの高度なプロトコルに置き換えられつつありますが、構成が簡単なため、小規模ネットワークや教育用途では今でも使用されています。",
+    "また、多くのOSに標準で対応しており、設定や導入が容易なのも利点の一つです。"
+  ],
+  "originalSlideText": "❑ Routing Information Protocol (RIP): Eins der ersten IGP im Internet, erlaubt Routing innerhalb AS\n❑ Hop Count Metrik: Distanz in Netzwerk Hops gemessen, direkt verbundenes Netzwerk zählt als 1 Hop\n❑ Unzuverlässiger Transport: Nutzt UDP für Transfer\n❑ Broadcast oder Multicast: Für LAN Technologien mit Broadcast oder Multicast gedacht, Multicast ab Version 2",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 30,
+  "questionDe": "(s35) Welche Erweiterungen brachte RIP Version 2 im Vergleich zur ursprünglichen Version?",
+  "questionJa": "RIPのバージョン2では、従来のバージョンに比べてどのような機能が追加されたか？",
+  "answerDe": [
+    "Unterstützt IPv4 CIDR und Subnetting: Adressmaske zur Zieladresse.",
+    "Erlaubt Verwendung von Default Routen.",
+    "Verwendet Distance Vector Algorithmus.",
+    "Passive Version für Hosts: kann Routinginformationen empfangen und Tabelle aktualisieren.",
+    "RIPng: Erweiterung für IPv6."
+  ],
+  "answerJa": [
+    "IPv4のCIDRとサブネット対応：宛先アドレスにアドレスマスクを付加できる。",
+    "デフォルトルートの設定が可能。",
+    "距離ベクトルアルゴリズムを採用している。",
+    "ホスト向けパッシブバージョンにより、情報の受信とテーブル更新が可能。",
+    "IPv6対応の拡張版としてRIPngがある。"
+  ],
+  "explanationDe": [
+    "RIP Version 2 stellt eine bedeutende Erweiterung gegenüber der ursprünglichen Version dar, um den Anforderungen moderner IP-Netze besser gerecht zu werden.",
+    "Eine der wichtigsten Änderungen ist die Unterstützung von Classless Inter-Domain Routing (CIDR), wodurch auch Subnetze mit variabler Länge genutzt werden können – dafür wird die Zieladresse mit einer Adressmaske kombiniert.",
+    "Zudem kann Version 2 sogenannte Default Routes propagieren, also Standardpfade für alle unbekannten Ziele.",
+    "Wie in Version 1 wird weiterhin der Distance Vector Algorithmus verwendet, bei dem Router Informationen über ihre direkten Nachbarn austauschen.",
+    "Ein neues Feature ist die passive Version, bei der Hosts Routinginformationen empfangen können, ohne selbst welche zu senden – nützlich in Netzwerken mit mehreren Routern.",
+    "Für IPv6 wurde das Protokoll zu RIPng (RIP next generation) weiterentwickelt, was zeigt, dass das Konzept grundsätzlich auch in neueren Technologien anwendbar ist.",
+    "Diese Verbesserungen machen RIP v2 praktikabler und flexibler für komplexere Netzumgebungen im Vergleich zur ursprünglichen Version."
+  ],
+  "explanationJa": [
+    "RIPのバージョン2（RIP v2）は、従来のバージョン1に比べて複数の重要な機能が追加され、より現代的なIPネットワークに対応できるようになっています。",
+    "最大の改善点は、CIDR（クラスレスアドレッシング）とサブネットマスクへの対応です。これにより、宛先アドレスにマスクを付けて、より柔軟なアドレッシングが可能になります。",
+    "また、バージョン2ではデフォルトルート（すべての未知の宛先への標準経路）をルーターが他に伝えることが可能になりました。",
+    "基本的なアルゴリズムは従来どおり距離ベクトル法で、隣接ルーターと情報を交換して経路を判断します。",
+    "新たに導入されたパッシブモードでは、ホストが自らルーティング情報を発信せずに、受信してテーブルを更新することが可能となり、複数のルーターが存在する環境において便利です。",
+    "さらに、IPv6に対応する拡張版としてRIPng（RIP next generation）も開発されており、従来の仕組みを次世代ネットワークでも活用できることを示しています。",
+    "これらの拡張により、RIP v2はより柔軟で実用的なルーティングプロトコルとなっています。"
+  ],
+  "originalSlideText": "❑ IPv4 CIDR und Subnetting: Adressmaske zu Zieladresse ab Version 2\n❑ Unterstützung von Default Routen\n❑ Nutzt Distance Vector Algorithmus\n❑ Passive Version für Hosts: Host kann Informationen abhören und eigene Weiterleitungstabelle aktualisieren, Nützlich falls mehrere Router in Netzwerk\n❑ Erweiterung für IPv6: RIP next generation (RIPng)",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 31,
+  "questionDe": "(s36) Wie funktioniert der Distance Vector Algorithmus im RIP-Protokoll?",
+  "questionJa": "RIPにおける距離ベクトルアルゴリズムはどのように動作するのか？",
+  "answerDe": [
+    "Nachrichten enthalten erreichbare Netzwerke mit Distanz.",
+    "Jeder Eintrag besteht aus (Zielnetzwerk, Distanz in Hops).",
+    "Beim Empfang einer Nachricht wird die Weiterleitungstabelle aktualisiert.",
+    "Wenn Netzwerk neu ist oder die neue Distanz kürzer ist, wird Route übernommen.",
+    "Hauptvorteil von RIP ist Einfachheit.",
+    "Default Route wird propagiert (z. B. Route zum ISP)."
+  ],
+  "answerJa": [
+    "RIPのメッセージは到達可能なネットワークとその距離を含む。",
+    "各エントリは（宛先ネットワーク、ホップ数）として表される。",
+    "メッセージを受信すると、ルーティングテーブルが更新される。",
+    "新しいネットワークやより短い距離が通知された場合、その経路を採用する。",
+    "RIPの主な利点はそのシンプルさにある。",
+    "デフォルトルートも（例：ISPへの経路など）伝播される。"
+  ],
+  "explanationDe": [
+    "Der Distance Vector Algorithmus, wie er im RIP-Protokoll verwendet wird, basiert auf dem Austausch von Informationen über erreichbare Netzwerke und deren Entfernung (Hops).",
+    "Jeder Router sendet in regelmäßigen Abständen eine Nachricht an seine Nachbarn, die eine Liste aller ihm bekannten Netzwerke enthält – jeweils mit der geschätzten Distanz in Hops.",
+    "Wenn ein Router eine solche Nachricht empfängt, prüft er, ob sie neue Netzwerke enthält oder kürzere Wege zu bereits bekannten Zielen bietet.",
+    "Falls ja, wird die eigene Weiterleitungstabelle aktualisiert, um die bessere Route zu verwenden.",
+    "Ein Netzwerk mit kürzerer Hop-Distanz wird bevorzugt; bei gleicher Distanz kann eine vorhandene Route bestehen bleiben.",
+    "Dieses Verfahren ist sehr einfach zu implementieren und benötigt keine komplexen Berechnungen – was RIP für kleine Netzwerke attraktiv macht.",
+    "Ein praktisches Feature von RIP ist die Propagierung einer Default Route, z. B. zur Weiterleitung aller unbekannten Ziele an einen ISP."
+  ],
+  "explanationJa": [
+    "RIPにおける距離ベクトルアルゴリズムは、到達可能なネットワークとその距離（ホップ数）に関する情報をルーター間で交換する仕組みに基づいています。",
+    "各ルーターは、一定時間ごとに自身の知っているネットワーク一覧と、それぞれにかかるホップ数を隣接ルーターに通知します。",
+    "隣接ルーターがその情報を受け取ると、自分のルーティングテーブルに新しいネットワークがあるか、既知のネットワークでもより短い距離で到達可能かを確認します。",
+    "条件を満たす場合は、その経路でテーブルを更新し、より効率的なルートを採用します。",
+    "ホップ数が短いルートが優先され、同じ距離であれば既存のルートが維持されることもあります。",
+    "このアルゴリズムは非常にシンプルで、特別な計算や複雑な構造を必要とせず、小規模ネットワークでの利用に適しています。",
+    "また、RIPではデフォルトルートも伝播可能で、すべての未知の宛先に対してISPなどへの一括転送設定ができます。"
+  ],
+  "originalSlideText": "❑ Ausgehende Nachricht enthält erreichbare Netzwerke mit Distanz\n❑ Jeder Eintrag als (Zielnetzwerk, Distanz) gegeben mit Distanz in Hops\n❑ Bei Empfang von Nachricht wird Weiterleitungstabelle aktualisiert\n Falls Netzwerk bisher nicht erreichbar oder längere Distanz, wird Route durch Route zu Sender ersetzt\n❑ Hauptvorteil von RIP ist Einfachheit\n❑ Default Route wird propagiert (z.B. Route zu ISP)",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 32,
+  "questionDe": "(s37) Welche Informationen enthält ein Eintrag in einer RIP-Nachricht und was bedeuten sie?",
+  "questionJa": "RIPメッセージの各エントリにはどのような情報が含まれ、それぞれ何を意味しているか？",
+  "answerDe": [
+    "Jeder Eintrag enthält:",
+    "– IP-Adresse mit Adressmaske",
+    "– Nächsten Hop",
+    "– Distanz (in Hops)"
+  ],
+  "answerJa": [
+    "各エントリには以下が含まれる：",
+    "– IPアドレスとアドレスマスク",
+    "– 次の中継ルーター（ネクストホップ）",
+    "– 距離（ホップ数）"
+  ],
+  "explanationDe": [
+    "Eine RIP-Nachricht besteht aus mehreren Einträgen, von denen jeder Informationen über ein erreichbares Zielnetzwerk liefert.",
+    "Die IP-Adresse mit zugehöriger Adressmaske gibt das Zielnetzwerk eindeutig an – durch die Maske wird deutlich, welcher Teil die Netzwerkadresse darstellt.",
+    "Der 'nächste Hop' (Next Hop) gibt an, über welchen Router das Ziel erreichbar ist – er ist der erste Router auf dem Weg zum Zielnetz.",
+    "Die Distanz wird in Hops angegeben und zeigt, wie viele Router zwischen Sender und Zielnetzwerk liegen.",
+    "Mit diesen drei Angaben kann ein empfangender Router seine eigene Weiterleitungstabelle aktualisieren oder optimieren.",
+    "Dieses Format ermöglicht die einfache Verarbeitung der Routinginformationen und ist damit gut geeignet für kleinere, überschaubare Netzwerke.",
+    "Da das RIP-Protokoll regelmäßig solche Nachrichten versendet, bleibt die Routingtabelle automatisch auf dem aktuellen Stand."
+  ],
+  "explanationJa": [
+    "RIPメッセージは、複数のエントリ（経路情報）から構成されており、それぞれのエントリは1つの宛先ネットワークに関する情報を提供します。",
+    "エントリにはまず、IPアドレスとアドレスマスクが含まれており、これにより特定のネットワークの範囲（プレフィックス）が示されます。",
+    "次にネクストホップ（Next Hop）が記されており、これはその宛先ネットワークに到達するために最初に向かうべきルーターのアドレスを意味します。",
+    "そして、距離（ホップ数）が数値で表され、どれだけのルーターを経由する必要があるかを示します。",
+    "受信したルーターは、これらの情報を使って自身のルーティングテーブルを更新し、より効率のよい経路があればそちらを採用します。",
+    "このような構成により、RIPのメッセージは非常にシンプルで処理しやすく、小規模なネットワークに適した形式となっています。",
+    "また、RIPは定期的にこれらの情報をやり取りすることで、ネットワーク状況の変化に自動で対応できるようになっています。"
+  ],
+  "originalSlideText": "❑ Jeder Eintrag enthält IP-Adresse mit Adressmaske, Nächsten Hop, Distanz",
+  "explanationImage": "",
+  "questionImage": ""
+}
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+  
+  
   
   
   

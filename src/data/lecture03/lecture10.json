@@ -193,10 +193,801 @@
     "originalSlideText": "ARP Caching (1)\n❑ Pro Datagramm sind drei Frames notwendig (ARP Request, ARP Response, eigentliches Datagramm)\n❑ ARP Tabelle speichert Bindings in Cache\n Ältester Eintrag wird ersetzt\n Entfernen falls zu wenig Speicher oder Eintrag zu alt\n❑ ARP Request nur, falls kein Eintrag in Cache\n❑ Cache nur aktualisiert, wenn ARP Nachrichten (Request oder Response) gesehen werden, nicht bei Lookup\n\nARP Caching (2)\n❑ Cache bei eingehendem Request nur aktualisiert, falls man selbst Target ist\n Kommunikation in der Regel in beide Richtungen; falls Nachricht von A nach B, ist Wahrscheinlichkeit hoch für Antwort von B an A\n Keine beliebige Zahl an Adressen kann gespeichert werden (Speicher)",
     "explanationImage": "",
     "questionImage": ""
-  }
-  
-  
-  
-  
-  
+  },
+  {
+    "id": 7,
+    "questionDe": "(s16) Was ist ICMP und warum ist es notwendig?",
+    "questionJa": "ICMPとは何であり、なぜ必要なのですか？",
+    "answerDe": [
+      "ICMP steht für Internet Control Message Protocol.",
+      "Es meldet Fehler im IP-Netzwerk, da IP nur Best-Effort bietet.",
+      "Beispiel: TTL verhindert Endlosschleifen – Fehler werden per ICMP gemeldet.",
+      "ICMP nutzt IP zur Übertragung seiner Nachrichten."
+    ],
+    "answerJa": [
+      "ICMPはInternet Control Message Protocolの略です。",
+      "IPネットワークにおけるエラーを通知するために使われます（IPはベストエフォート方式のため）。",
+      "例：TTLは無限ループを防止し、エラーが発生した際はICMPで通知されます。",
+      "ICMPはそのメッセージをIPを使って転送します。"
+    ],
+    "explanationDe": [
+      "ICMP ist ein Begleitprotokoll zu IP, das dazu dient, Kontrollnachrichten im Netzwerk zu übermitteln, insbesondere Fehlermeldungen.",
+      "Da das IP-Protokoll selbst nur eine sogenannte 'Best-Effort'-Lieferung bietet, gibt es keine Garantie, dass Pakete erfolgreich ankommen oder dass Fehler gemeldet werden.",
+      "Hier setzt ICMP an: Wenn z. B. ein Router ein Paket nicht weiterleiten kann, weil das Ziel nicht erreichbar ist oder die TTL (Time To Live) abgelaufen ist, sendet er eine ICMP-Fehlermeldung zurück an den Absender.",
+      "Die TTL ist ein Mechanismus, um zu verhindern, dass Pakete endlos im Netz kreisen – bei Ablauf wird eine ICMP-Nachricht gesendet.",
+      "ICMP-Nachrichten werden über das IP-Protokoll transportiert – es handelt sich also um spezielle IP-Pakete mit ICMP-Inhalt.",
+      "Typische Anwendungen wie 'ping' oder 'traceroute' basieren auf ICMP, um Informationen über die Erreichbarkeit und die Route zu erhalten.",
+      "ICMP ist essenziell für die Netzwerkdiagnose und Fehlerbehandlung, wird aber häufig durch Firewalls blockiert, da es auch für Angriffe missbraucht werden kann."
+    ],
+    "explanationJa": [
+      "ICMP（Internet Control Message Protocol）は、IP通信において補助的な役割を果たすプロトコルで、特にエラーメッセージや制御メッセージを伝えるために使用されます。",
+      "IPプロトコル自体はベストエフォート型であり、パケットが確実に届くことや、エラーが発生したことの通知を保証していません。",
+      "そこでICMPが活用されます。たとえば、パケットの送信先が到達不能だったり、TTL（Time To Live）の値が0になった場合などに、ICMPが送信元にエラーメッセージを返します。",
+      "TTLは、パケットがネットワーク上を無限に回り続けるのを防ぐための仕組みで、上限に達するとICMPによる通知が発生します。",
+      "ICMPメッセージ自体もIPパケットとして転送され、その中にICMP特有のデータが含まれています。",
+      "例えば「ping」や「traceroute」などのツールはICMPを活用してネットワークの応答性や経路情報を取得します。",
+      "ICMPはネットワークの健全性を確認するために不可欠ですが、セキュリティ上の理由からファイアウォールなどで遮断されることもあります（攻撃への悪用の恐れがあるため）。"
+    ],
+    "originalSlideText": "ICMP (1)\n❑ IP ist Best Effort Dienst\n Fehler werden vermieden, können aber auftreten\n Fehler werden allerdings berichtet\n❑ Beispiel: TIME TO LIVE (TTL) verhindert, dass Paket in Endlosschleife übertragen wird\n❑ Fehlermeldung über Internet Control Message Protocol (ICMP, IPv4: ICMPv4, IPv6: ICMPv6)\n❑ ICMP nutzt IP für Übertragung",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 8,
+    "questionDe": "(s17) Welche ICMPv4-Nachrichten sind besonders wichtig und wie funktioniert Traceroute?",
+    "questionJa": "ICMPv4で特に重要なメッセージは何ですか？また、Tracerouteはどのように機能しますか？",
+    "answerDe": [
+      "ICMPv4 umfasst über 20 Nachrichtentypen.",
+      "Nur wenige davon werden regelmäßig verwendet.",
+      "Traceroute nutzt ICMP 'Time Exceeded'-Nachrichten.",
+      "Traceroute sendet Echo Requests mit schrittweise erhöhter TTL.",
+      "Antworten zeigen die Hops (Zwischenstationen) auf dem Pfad."
+    ],
+    "answerJa": [
+      "ICMPv4には20種類以上のメッセージがあります。",
+      "そのうちの一部のみが実際によく使用されます。",
+      "TracerouteはICMPの『Time Exceeded（時間超過）』メッセージを使用します。",
+      "TTLを1ずつ増やしたEcho Request（エコーリクエスト）を送信します。",
+      "各応答から経路上の中継地点（ホップ）を特定できます。"
+    ],
+    "explanationDe": [
+      "ICMPv4 definiert über 20 verschiedene Nachrichtentypen, jedoch sind im alltäglichen Gebrauch nur einige davon wirklich relevant.",
+      "Zu den wichtigsten zählen 'Echo Request' und 'Echo Reply' (für ping), sowie 'Time Exceeded' und 'Destination Unreachable'.",
+      "Traceroute ist ein bekanntes Werkzeug, das ICMP gezielt nutzt, um den Weg eines Pakets durch das Netzwerk zu analysieren.",
+      "Dabei sendet es eine Serie von ICMP Echo Requests, wobei die TTL (Time To Live) bei jedem Paket schrittweise erhöht wird: zuerst 1, dann 2, dann 3 usw.",
+      "Jeder Router auf dem Weg verringert die TTL um 1. Wenn sie 0 erreicht, sendet der Router eine ICMP 'Time Exceeded'-Nachricht zurück.",
+      "Auf diese Weise kann der Absender nachvollziehen, welche Router (Hops) auf dem Weg zum Ziel durchlaufen werden.",
+      "Diese Technik liefert nicht nur Diagnoseinformationen, sondern hilft auch bei der Fehlersuche, z. B. wenn Pakete verloren gehen oder das Ziel nicht erreichbar ist."
+    ],
+    "explanationJa": [
+      "ICMPv4には20種類以上の異なるメッセージタイプが定義されていますが、日常的に使用されるのは一部に限られます。",
+      "特に重要なのは『Echo Request』『Echo Reply』（pingコマンドで使用）、『Time Exceeded（時間超過）』『Destination Unreachable（到達不能）』などです。",
+      "Traceroute（トレースルート）は、パケットが宛先に到達するまでに通過するルーターを特定するためのツールで、ICMPの『Time Exceeded』メッセージを利用しています。",
+      "このツールは、TTL（Time To Live）を1、2、3と段階的に増やしながらEcho Request（エコーリクエスト）を送信します。",
+      "TTLが0になった地点で、そのルーターがICMPのTime Exceededメッセージを返信します。",
+      "これにより、送信元はどのルーターが途中にあるのか（ホップ）を1つずつ確認できます。",
+      "Tracerouteはネットワーク診断において非常に有用で、遅延や到達不可の原因究明にも使われます。"
+    ],
+    "originalSlideText": "ICMP (2)\n❑ ICMPv4 hat mehr als 20 Nachrichten, nur wenige werden genutzt\n❑ Nachrichten um Fehler zu berichten oder Information zu übertragen\n❑ Traceroute: Mehrere Echo Request mit aufsteigender TTL, Findet Hosts auf Pfad durch Auswertung von Time Exceeded Nachrichten",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 9,
+    "questionDe": "(s18) Wie erfolgt die Übertragung und Kapselung von ICMP-Nachrichten?",
+    "questionJa": "ICMPメッセージはどのように転送およびカプセル化されますか？",
+    "answerDe": [
+      "ICMP nutzt IP zur Übertragung.",
+      "Die ICMP-Nachricht wird im Payload eines IP-Datagramms transportiert.",
+      "Sie wird als normales IP-Paket weitergeleitet – ohne besondere Priorität.",
+      "Bei Fehlern entstehen nicht erneut ICMP-Meldungen, um Überlastung zu vermeiden."
+    ],
+    "answerJa": [
+      "ICMPはIPプロトコルを使ってメッセージを転送します。",
+      "ICMPメッセージはIPデータグラムのペイロード部分に含まれます。",
+      "これは通常のIPパケットとして転送され、特別な優先順位はありません。",
+      "ネットワークがエラー通知で過負荷にならないよう、ICMPのエラーには再度ICMPメッセージを返しません。"
+    ],
+    "explanationDe": [
+      "ICMP-Nachrichten werden nicht als eigenständige Protokolleinheiten übertragen, sondern sind in einem IP-Datagramm eingebettet.",
+      "Das bedeutet, dass jede ICMP-Nachricht den IP-Header nutzt und im Payload-Feld des IP-Datagramms transportiert wird.",
+      "Da ICMP selbst kein Transportprotokoll wie TCP oder UDP ist, erfolgt die Übertragung direkt auf der Netzwerkschicht (Layer 3).",
+      "Diese ICMP-haltigen IP-Pakete werden wie ganz normale IP-Pakete im Netz behandelt – sie haben keine höhere oder spezielle Priorität.",
+      "Wichtig ist auch die Regel, dass ICMP-Nachrichten selbst keine weiteren ICMP-Fehlermeldungen auslösen dürfen. Dies verhindert eine potenzielle Überflutung des Netzes mit Fehlermeldungen.",
+      "Ein Beispiel: Wenn ein Paket wegen TTL-Ablaufs verworfen wird, kann ein ICMP 'Time Exceeded' gesendet werden. Falls aber dieses ICMP-Paket ebenfalls fehlschlägt, wird kein weiteres ICMP generiert.",
+      "Diese Einschränkung macht ICMP robust und kontrolliert – es liefert relevante Informationen, ohne zusätzliche Netzlast zu erzeugen."
+    ],
+    "explanationJa": [
+      "ICMPメッセージは独立したパケットとして送信されるのではなく、IPデータグラムの中にカプセル化されて送信されます。",
+      "つまり、ICMPメッセージはIPヘッダを持ち、そのペイロード部分にICMP特有の情報が格納されています。",
+      "ICMPはTCPやUDPのようなトランスポート層のプロトコルではないため、ネットワーク層（OSIの第3層）で直接処理されます。",
+      "このため、ICMPメッセージを含むパケットも通常のIPパケットと同様に扱われ、特別な優先順位や経路制御はありません。",
+      "さらに、ICMP自体がエラー通知であるため、ICMPメッセージに関するエラーが発生しても、それに対する新たなICMPメッセージは送信されません。",
+      "たとえば、TTL切れによってICMPの『Time Exceeded』メッセージが生成される場合、そのメッセージがさらに問題を起こしても、ネットワークがエラー通知で過剰にならないよう追加のICMPは出ません。",
+      "このようにICMPは、制御メッセージとして必要な情報を効率的に伝える一方で、無限ループや過負荷を避けるよう設計された堅牢な仕組みです。"
+    ],
+    "originalSlideText": "ICMP (3)\n❑ ICMP nutzt IP für Übertragung, ICMP Nachricht wird in Payload von IP Datagramm gekapselt\n❑ Normale Weiterleitung als IP Datagramm ohne gesonderte Priorität → wird für Übertragung in Frame gekapselt\n❑ Bei Fehler des Datagramms keine Fehlernachricht → Internet soll nicht mit Fehlernachrichten überlastet werden",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 10,
+    "questionDe": "(s19) Wie funktioniert IPv6 Neighbour Discovery und wie unterscheidet es sich von ARP?",
+    "questionJa": "IPv6 Neighbour Discoveryはどのように機能し、ARPとはどのように異なりますか？",
+    "answerDe": [
+      "IPv6 verwendet das Neighbour Discovery Protocol (ND) zur Adressbindung.",
+      "ND basiert auf ICMPv6-Nachrichten.",
+      "IPv6 nutzt kein Broadcast, sondern Multicast für Anfragen.",
+      "Alle Knoten hören auf eine spezielle Multicast-Adresse.",
+      "Antworten werden gespeichert wie bei ARP.",
+      "IPv6 kontaktiert Nachbarn regelmäßig."
+    ],
+    "answerJa": [
+      "IPv6ではアドレスの対応づけにNeighbour Discovery Protocol（ND）を使用します。",
+      "NDはICMPv6メッセージをベースに動作します。",
+      "IPv6はブロードキャストを使用せず、マルチキャストを用います。",
+      "すべてのノードは特定のマルチキャストアドレスを監視しています。",
+      "応答はARPと同様にテーブルに保存されます。",
+      "IPv6は定期的に近隣ノードへ問い合わせを行います。"
+    ],
+    "explanationDe": [
+      "IPv6 ersetzt das klassische ARP durch das sogenannte Neighbour Discovery Protocol (ND), das auf ICMPv6 basiert.",
+      "Statt einer einfachen Anfrage über Broadcast wie bei IPv4-ARP nutzt ND Multicast – ein Mechanismus, bei dem Nachrichten gezielt an eine Gruppe von Empfängern gesendet werden.",
+      "Jeder IPv6-Knoten hört auf bestimmte Multicast-Adressen, darunter diejenige für alle lokalen Nachbarn.",
+      "Wenn ein Knoten die MAC-Adresse eines anderen Knotens benötigt, sendet er eine ICMPv6-Nachricht an diese Multicast-Gruppe.",
+      "Der Zielknoten antwortet direkt, und die erhaltene Information wird wie bei ARP in einer Tabelle gespeichert.",
+      "Darüber hinaus beinhaltet ND weitere Funktionen, wie etwa die Erkennung von doppelten Adressen oder das periodische Aktualisieren der Nachbarinformationen.",
+      "Im Vergleich zu ARP ist ND flexibler und effizienter, da Multicast statt Broadcast verwendet wird und gleichzeitig mehr Funktionalität bietet."
+    ],
+    "explanationJa": [
+      "IPv6では、従来のARPの代わりにNeighbour Discovery Protocol（ND）を使用します。これはICMPv6に基づいて動作する、より高度で効率的な仕組みです。",
+      "ARPではブロードキャストを用いてネットワーク全体に問い合わせを送りますが、NDではマルチキャストを用いて特定のグループのみに送信されます。",
+      "各IPv6ノードは、ローカルネットワークのノード全体を対象とした特定のマルチキャストアドレスを常に監視しています。",
+      "MACアドレスが必要な場合、ICMPv6メッセージを使ってマルチキャストで問い合わせを行い、対象ノードからの応答を受け取ります。",
+      "応答に含まれる情報はARPと同様にキャッシュされ、後続の通信に利用されます。",
+      "NDはまた、アドレスの重複検出や近隣ノード情報の定期的な更新など、ARPにはない機能も備えています。",
+      "このようにNDは、ARPに比べて柔軟性と効率が高く、IPv6における近隣探索とアドレス解決の中核を担っています。"
+    ],
+    "originalSlideText": "IPv6 Neighbour Discovery\n❑ IPv6 nutzt IPv6 Neighbour Discovery (IPv6-ND) für Adressbindung\n verwendet ICMPv6 Nachrichten\n❑ Besitzt neben Adressbindung weitere Funktionen\n❑ IPv6 hat kein Broadcast, aber Multicast Adresse auf der alle Knoten im Netzwerk lauschen\n❑ IPv6-ND schickt Nachricht über Multicast, Antworten der Nachbarn werden in Tabelle wie bei ARP gespeichert\n❑ IPv6 kontaktiert Nachbarn periodisch",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 11,
+    "questionDe": "(s20) Wie werden Router und Hosts beim Start konfiguriert?",
+    "questionJa": "ルーターとホストは起動時にどのように構成されますか？",
+    "answerDe": [
+      "Router erhalten initiale Werte manuell vom Administrator.",
+      "Dazu gehören IP-Adressen, Protokolle und Weiterleitungstabellen.",
+      "Diese Konfiguration wird beim Neustart wiederhergestellt.",
+      "Hosts führen Bootstrapping in zwei Schritten durch.",
+      "Das Betriebssystem setzt lokale Parameter.",
+      "Die Protokollsoftware ergänzt dynamische Informationen (z. B. IP-Adresse, DNS-Server)."
+    ],
+    "answerJa": [
+      "ルーターは管理者によって手動で初期値が設定されます。",
+      "設定項目には、IPアドレス、使用するプロトコル、ルーティングテーブルなどが含まれます。",
+      "再起動時にはこの設定が復元されます。",
+      "ホストは2段階のブートストラップ処理を行います。",
+      "最初にOSがローカルパラメータを設定します。",
+      "その後、プロトコルソフトウェアがIPアドレスやDNSサーバなどの情報を補完します。"
+    ],
+    "explanationDe": [
+      "Beim Start eines Netzwerksystems ist eine Konfiguration notwendig, damit die Geräte kommunizieren können. Dabei unterscheiden sich die Vorgehensweisen zwischen Routern und Hosts.",
+      "Ein Router wird meist von einem Administrator konfiguriert. Dabei werden feste Werte gesetzt, z. B. IP-Adressen für jede Schnittstelle, welche Protokollsoftware verwendet wird und welche Einträge in der Routing-Tabelle vorhanden sein sollen.",
+      "Diese Konfigurationsdaten werden beim Systemstart wiederhergestellt, damit der Router sofort betriebsbereit ist.",
+      "Ein Host, z. B. ein Laptop oder PC, nutzt hingegen einen automatisierten Prozess namens Bootstrapping.",
+      "Im ersten Schritt setzt das Betriebssystem eine Reihe grundlegender Netzwerkparameter, etwa die Netzwerkschnittstelle oder Broadcast-Adressen.",
+      "Im zweiten Schritt ergänzt die Protokollsoftware weitere Informationen wie die eigene IP-Adresse, die Subnetzmaske oder den DNS-Server – oft durch DHCP oder Autokonfiguration.",
+      "Diese Trennung in statische und dynamische Schritte erlaubt es, Hosts flexibel an unterschiedliche Netzwerke anzupassen, während Router dauerhaft stabile Konfigurationen verwenden."
+    ],
+    "explanationJa": [
+      "ネットワーク機器は起動時に適切な設定を行うことで通信が可能になります。ルーターとホストではこの設定の手順が異なります。",
+      "ルーターは管理者によって事前にIPアドレス、使用するプロトコル、ルーティングテーブルの内容などが明示的に設定されます。",
+      "これらの設定はルーターの起動時に復元され、すぐに通信ができるようになります。",
+      "一方、ホスト（パソコンやスマートフォンなど）は『ブートストラップ処理』という2段階のプロセスで設定を行います。",
+      "最初に、オペレーティングシステムがローカルネットワーク内で最低限必要なパラメータ（インターフェース情報など）を自動設定します。",
+      "次に、プロトコルソフトウェアがDHCPやIPv6の自動構成などを用いて、IPアドレス、サブネットマスク、DNSサーバ情報などを補完します。",
+      "このように、ルーターは安定した手動設定を、ホストは柔軟な自動設定を行うことで、それぞれの役割に応じたネットワーク接続が可能になります。"
+    ],
+    "originalSlideText": "Parameter und Konfiguration\n❑ Wie sieht Start der Protokollsoftware in Router und Host aus?\n❑ Router:\n Administrator setzt initiale Werte für IP Adressen jedes Netzwerks, verwendete Protokollsoftware, initiale Werte der Weiterleitungstabelle\n Konfiguration wird bei Start wiederhergestellt\n❑ Host verwendet zwei Schritte → Bootstrapping\n Betriebssystem setzt Menge von Konfigurationsparameter, damit Protokollsoftware im lokalen Netz kommunizieren kann\n Protokollsoftware ergänzt Informationen wie IP Adresse, Adressmaske, Lokaler DNS Server (Werte sind parametrisiert)",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 12,
+    "questionDe": "(s22) Was ist DHCP und wie funktioniert es im Vergleich zu BOOTP?",
+    "questionJa": "DHCPとは何で、BOOTPと比べてどのように動作しますか？",
+    "answerDe": [
+      "DHCP ist die Weiterentwicklung von BOOTP.",
+      "BOOTP sendet Broadcast-Requests mit Absenderadresse 0.0.0.0.",
+      "Ein vorkonfigurierter BOOTP-Server antwortet per Unicast.",
+      "DHCP ermöglicht Plug-and-Play Networking.",
+      "DHCP funktioniert ohne vorherige Serverkonfiguration für jeden Client."
+    ],
+    "answerJa": [
+      "DHCPはBOOTPの発展版です。",
+      "BOOTPは送信元アドレス0.0.0.0でブロードキャストリクエストを送信します。",
+      "あらかじめ設定されたBOOTPサーバがユニキャストで応答します。",
+      "DHCPはプラグアンドプレイ型のネットワーク接続を可能にします。",
+      "DHCPでは各クライアントごとの事前設定なしでも機能します。"
+    ],
+    "explanationDe": [
+      "DHCP steht für Dynamic Host Configuration Protocol und ist ein Netzwerkprotokoll, das es einem Computer ermöglicht, automatisch eine IP-Adresse und weitere Konfigurationsdaten zu erhalten.",
+      "Es wurde als Erweiterung des älteren BOOTP (Bootstrap Protocol) entwickelt, das ursprünglich für disklose Arbeitsstationen gedacht war.",
+      "Bei BOOTP sendet ein Client eine Anfrage über die IP-Adresse 255.255.255.255 mit einer Absenderadresse von 0.0.0.0, um seine eigene Adresse zu erfragen.",
+      "Ein zentral konfigurierter BOOTP-Server antwortet darauf über eine Unicast-Nachricht, in der dem Client eine feste IP-Adresse mitgeteilt wird.",
+      "Der Nachteil von BOOTP ist, dass für jeden Client ein Eintrag auf dem Server vorab vorhanden sein muss.",
+      "DHCP verbessert dieses Verfahren, indem es dynamische Adresszuweisungen ermöglicht – also eine automatische, temporäre IP-Adresse aus einem Pool von verfügbaren Adressen vergibt.",
+      "So wird Plug-and-Play Networking ermöglicht: Geräte können sich automatisch mit dem Netzwerk verbinden, ohne dass sie zuvor manuell auf dem Server konfiguriert wurden.",
+      "DHCP bietet damit eine flexiblere und wartungsärmere Lösung für moderne Netzwerke im Vergleich zu BOOTP."
+    ],
+    "explanationJa": [
+      "DHCP（Dynamic Host Configuration Protocol）は、コンピュータがIPアドレスやネットワーク設定を自動的に取得できるようにするプロトコルです。",
+      "もともとは、ディスクレスクライアント向けに設計されたBOOTP（Bootstrap Protocol）を拡張して開発されました。",
+      "BOOTPでは、クライアントが自分のIPアドレスを得るために、255.255.255.255宛に送信元アドレス0.0.0.0のブロードキャストリクエストを送信します。",
+      "これに対し、あらかじめ設定されたBOOTPサーバがユニキャストで応答し、クライアントに固定のIPアドレスを提供します。",
+      "BOOTPの欠点は、各クライアントの情報をサーバ側に事前に登録しておく必要がある点です。",
+      "一方、DHCPは動的にIPアドレスを割り当てることが可能で、サーバがアドレスプールから空きアドレスを選んで一時的に割り当てます。",
+      "このため、クライアント側での事前登録なしにネットワークに接続できる、いわゆるプラグアンドプレイ型の利用が可能になります。",
+      "BOOTPに比べて柔軟性が高く、管理の手間も少ないため、DHCPは現在のネットワーク環境で広く使用されています。"
+    ],
+    "originalSlideText": "DHCP (1)\n❑ Verschiedene, frühe Mechanismen um Parameter für Netzwerkkonfiguration zu erhalten\n Reverse Adress Resolution Protocol (RARP)\n Adress Mask Request und Router Discovery in ICMP\n❑ Bootstrap Protocol (BOOTP)\n Request über IPv4 zu 255.255.255.255 mit eigener Adresse 0.0.0.0\n Vorkonfigurierter BOOTP Server antwortet mit Unicast und teilt Host seine IP Adresse mit\n❑ IETF erweiterte BOOTP zu Dynamic Host Configuration Protocol (DHCP)\n Erlaubt Computer sich mit Netzwerk zu verbinden, ohne dass Server entsprechend konfiguriert ist → Plug-and-Play Networking",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+    "id": 13,
+    "questionDe": "(s23) Wie erfolgt die dynamische Adressvergabe mit Lease-Zeiten?",
+    "questionJa": "DHCPにおける動的アドレスのリースはどのように行われますか？",
+    "answerDe": [
+      "Ein DHCP-Client sendet einen Broadcast-Request.",
+      "Ein DHCP-Server antwortet mit einem Offer.",
+      "Dynamische Adressen werden aus einem Adresspool zugewiesen.",
+      "Die Zuweisung ist zeitlich begrenzt (Lease Time).",
+      "Vor Ablauf kann der Host eine Verlängerung beantragen.",
+      "Meist erlauben DHCP-Server eine Verlängerung der Lease."
+    ],
+    "answerJa": [
+      "DHCPクライアントはブロードキャストでリクエストを送信します。",
+      "DHCPサーバはオファーを返します。",
+      "動的アドレスはサーバが管理するプールから割り当てられます。",
+      "アドレスの割り当てにはリース期間が設定されています。",
+      "期限前にホストはリース延長を要求することができます。",
+      "多くのDHCPサーバはリース延長を許可するよう設定されています。"
+    ],
+    "explanationDe": [
+      "DHCP bietet die Möglichkeit, IP-Adressen dynamisch – also temporär – an Hosts zu vergeben. Dies geschieht auf Basis eines sogenannten Lease-Modells.",
+      "Ein Computer, der sich mit einem Netzwerk verbinden möchte, sendet eine DHCP-Anfrage (Discover) als Broadcast.",
+      "Ein DHCP-Server, der im Netz verfügbar ist, antwortet mit einem Offer, in dem er eine IP-Adresse aus seinem Adresspool vorschlägt.",
+      "Der Host akzeptiert das Angebot und erhält die Adresse für eine bestimmte Zeitspanne – die sogenannte Lease Time.",
+      "Diese Lease erlaubt dem Host, die IP-Adresse für die angegebene Dauer zu nutzen. Danach kann der Host entweder die Adresse aufgeben oder eine Verlängerung beantragen.",
+      "Damit die Verbindung stabil bleibt, versuchen Clients üblicherweise, die Lease automatisch vor Ablauf zu verlängern.",
+      "Die meisten DHCP-Server sind so konfiguriert, dass sie eine Verlängerung zulassen, solange keine Adresskonflikte auftreten oder der Adresspool erschöpft ist."
+    ],
+    "explanationJa": [
+      "DHCPは、IPアドレスを一時的（動的）にホストへ割り当てる機能を提供しており、これをリースモデルと呼びます。",
+      "ネットワークに接続しようとするコンピュータは、ブロードキャストでDHCP Discoverメッセージを送信します。",
+      "ネットワーク上のDHCPサーバは、使用可能なアドレスを含むOfferメッセージで応答します。",
+      "クライアントがこのオファーを受け入れると、指定された期間（リースタイム）にわたってIPアドレスが割り当てられます。",
+      "この期間中は、そのアドレスを他の機器と共有することなく使用できますが、期間が終了する前に更新する必要があります。",
+      "ほとんどのクライアントは自動的にリースの延長を試み、安定したネットワーク接続を維持しようとします。",
+      "多くのDHCPサーバは、アドレスが枯渇していない限りリースの延長を許可するように設定されています。"
+    ],
+    "originalSlideText": "DHCP (2)\n❑ Computer sendet Request als Broadcast und erhält Antwort (Offer) von DHCP Server\n❑ DHCP Server kann permanente Adressen (wie BOOTP) sowie dynamische Adressen aus Pool anbieten\n❑ Zuweisung von dynamischen Adressen nur für bestimmte Zeit (Lease Time)\n Bei Ablauf kann Host Adresse aufgeben oder bei DHCP Server Verlängerung beantragen\n Großteil der DHCP Server so konfiguriert, dass Verlängerung erlaubt ist",
+    "explanationImage": "",
+    "questionImage": ""
+  },
+  {
+  "id": 14,
+  "questionDe": "(s24) Wie geht DHCP mit Verlusten und Duplikaten um?",
+  "questionJa": "DHCPはパケットの損失や重複にどのように対応しますか？",
+  "answerDe": [
+    "Bei fehlender Antwort wird der Request erneut gesendet.",
+    "Bei doppelter Antwort wird die zusätzliche Kopie ignoriert.",
+    "Die Adresse des Servers wird im Cache gespeichert.",
+    "So kann bei einer Lease-Erneuerung direkt kommuniziert werden.",
+    "Hosts verzögern Requests nach Stromausfall zufällig.",
+    "Dies verhindert gleichzeitige Anfragen vieler Hosts."
+  ],
+  "answerJa": [
+    "応答が得られない場合、DHCPリクエストは再送されます。",
+    "重複して応答が届いた場合、余分な応答は無視されます。",
+    "一度検出されたサーバのアドレスはキャッシュされます。",
+    "これによりリース更新時に直接通信が可能になります。",
+    "停電後などの一斉再起動時には、リクエストをランダムに遅延させます。",
+    "これは同時多発的なリクエストを防ぐためです。"
+  ],
+  "explanationDe": [
+    "DHCP ist ein auf UDP basierendes Protokoll und daher nicht verbindungsorientiert – es gibt keine Garantien für die Zustellung von Nachrichten.",
+    "Deshalb muss DHCP aktiv mit Paketverlusten und Duplikaten umgehen.",
+    "Wenn ein DHCP-Client eine Anfrage sendet, aber keine Antwort vom Server erhält (z. B. durch Netzwerklast oder Paketverlust), wiederholt er die Anfrage nach kurzer Zeit.",
+    "Erhält der Client mehrere Antworten vom Server (z. B. durch Verzögerungen oder mehrere Server), wird nur die erste gültige Antwort akzeptiert; alle weiteren werden ignoriert.",
+    "Sobald ein Server einmal erfolgreich kontaktiert wurde, wird dessen Adresse im Cache des Clients gespeichert.",
+    "Diese Zwischenspeicherung erleichtert spätere Kommunikation, insbesondere bei der Verlängerung eines bestehenden Leases.",
+    "Ein spezielles Problem entsteht, wenn viele Hosts gleichzeitig gestartet werden – z. B. nach einem Stromausfall. Um ein synchronisiertes 'Fluten' des Servers zu verhindern, verzögert jeder Host seinen DHCP-Request um eine zufällig gewählte Zeitspanne.",
+    "Dieser Mechanismus schützt das Netzwerk vor Überlastung und erhöht die Erfolgsquote der DHCP-Kommunikation."
+  ],
+  "explanationJa": [
+    "DHCPはUDP上に構築されたプロトコルであり、コネクションレス型のため、パケットの到達保証がありません。",
+    "そのため、パケットの損失（ロス）や重複に対して、明示的に対応する必要があります。",
+    "クライアントがDHCPリクエストを送っても応答が得られなかった場合（ネットワーク混雑や遅延など）、短時間のうちに再送が行われます。",
+    "また、何らかの理由でサーバからの応答が複数届いた場合は、最初に受け取った有効な応答のみを採用し、それ以外は無視します。",
+    "一度通信に成功したDHCPサーバのアドレスは、クライアント側でキャッシュに保存され、今後のリース更新時などに再利用されます。",
+    "このキャッシュにより、サーバを再検索する必要がなくなり、通信が迅速かつ効率的になります。",
+    "また、停電後の一斉起動などで多くのクライアントが同時にリクエストを送る事態を防ぐため、各クライアントはリクエスト送信をランダムに遅延させる仕組みを持っています。",
+    "この遅延処理は、サーバへの過負荷やネットワークの輻輳を回避し、安定したアドレス配布を実現するのに役立っています。"
+  ],
+  "originalSlideText": "DHCP (3)\n❑ Verluste und Duplikate\n Falls kein Response erhalten wird, wird Request neu verschickt\n Bei doppelten Response, wird zusätzliche Kopie ignoriert\n❑ Caching der Server Adresse\n Nachdem Server mit DHCP Discover Nachrichten gefunden wurde, wird Adresse im Cache gehalten → Lease Erneuerung ist effizient\n❑ Vermeidung von synchronisiertem Fluten\n Beispiel: Neustart aller Computer nach Stromausfall\n Host muss Request um zufällige Zeit Verzögern",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 15,
+  "questionDe": "(s25) Welche Rolle spielt ein DHCP Relay Agent im Netzwerk?",
+  "questionJa": "ネットワークにおいてDHCPリレイエージェントはどのような役割を果たしますか？",
+  "answerDe": [
+    "Ein DHCP Relay Agent leitet DHCP-Anfragen und -Antworten weiter.",
+    "Er wird eingesetzt, wenn im lokalen Netz kein DHCP-Server vorhanden ist.",
+    "Der Relay Agent kennt die Adresse des zentralen DHCP-Servers.",
+    "So kann DHCP zentral verwaltet werden.",
+    "Kommerzielle Router bieten oft integrierte Relay-Funktionalität.",
+    "Diese ist einfacher zu konfigurieren als ein vollständiger DHCP-Server."
+  ],
+  "answerJa": [
+    "DHCPリレイエージェントは、DHCPリクエストとレスポンスを中継します。",
+    "ローカルネットワーク内にDHCPサーバが存在しない場合に使用されます。",
+    "リレイエージェントは、中央のDHCPサーバのアドレスを知っています。",
+    "これにより、DHCPの設定を一元管理できます。",
+    "市販のルーターには、リレイ機能が組み込まれていることが多いです。",
+    "DHCPサーバを構築するよりも簡単に設定できます。"
+  ],
+  "explanationDe": [
+    "In vielen Netzwerken ist es nicht praktikabel, in jedem Subnetz einen eigenen DHCP-Server zu betreiben.",
+    "Deshalb kommt ein DHCP Relay Agent zum Einsatz, der DHCP-Nachrichten vom Client empfängt und an einen zentralen DHCP-Server weiterleitet.",
+    "Dieser Agent befindet sich im lokalen Netz und ist so konfiguriert, dass er die Adresse des entfernten DHCP-Servers kennt.",
+    "Wenn ein Host eine DHCP Discover-Nachricht als Broadcast sendet, fängt der Relay Agent diese Nachricht ab und sendet sie als Unicast an den zentralen Server.",
+    "Der Server antwortet wiederum an den Relay Agent, der die Nachricht zurück an den ursprünglichen Client im lokalen Netz übermittelt.",
+    "Dieser Mechanismus ermöglicht es, DHCP-Adressvergabe zentral zu verwalten, auch über Subnetzgrenzen hinweg.",
+    "Viele kommerzielle Router enthalten bereits Relay-Funktionalität und lassen sich oft einfacher konfigurieren als ein vollwertiger DHCP-Server."
+  ],
+  "explanationJa": [
+    "複数のサブネットを持つネットワークにおいて、各ネットワークにDHCPサーバを個別に設置するのは非効率的です。",
+    "この課題を解決するのがDHCPリレイエージェントで、クライアントからのDHCPメッセージを受け取り、中央のDHCPサーバへ中継します。",
+    "リレイエージェントは、ローカルネットワーク上に配置され、DHCPサーバのアドレスを事前に把握しています。",
+    "たとえば、クライアントがブロードキャストでDHCP Discoverを送信すると、リレイエージェントがそれをキャッチしてユニキャストでサーバへ転送します。",
+    "サーバからの応答もリレイエージェント経由でクライアントに戻されるため、サーバは他のネットワークセグメントの端末にもアドレスを提供できます。",
+    "この仕組みにより、アドレスの一元管理が可能となり、ネットワーク管理の負担が軽減されます。",
+    "市販のルーターにはこの機能が標準で搭載されていることが多く、DHCPサーバを一から構築するよりも設定が簡単です。"
+  ],
+  "originalSlideText": "DHCP (4)\n❑ Lokales Netz muss keinen DHCP Server haben\n❑ DHCP Relay Agent leitet Request und Response weiter\n Muss in jedem Netz vorhanden sein\n Kennt Adresse des DHCP Server\n❑ Dadurch Verwaltung der Adressen zentralisiert\n❑ Kommerzielle Router besitzen DHCP Relay Service für angeschlossene Netze, ist leichter konfigurierbar als DHCP Server",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 16,
+  "questionDe": "(s26) Wie ist eine DHCP-Nachricht im IPv4 aufgebaut?",
+  "questionJa": "IPv4におけるDHCPメッセージの構造はどのようになっていますか？",
+  "answerDe": [
+    "OP gibt an, ob es sich um Request oder Response handelt.",
+    "OPTION bestimmt den Nachrichtentyp (z. B. Discover, Offer).",
+    "HTYPE und HLEN beschreiben Typ und Länge der Hardwareadresse.",
+    "FLAGS zeigt, ob Antwort als Broadcast erfolgen soll.",
+    "HOPS zählt weiterleitende Server.",
+    "TRANSACTION IDENTIFIER ordnet Anfrage und Antwort zu.",
+    "SECONDS ELAPSED zeigt Zeit seit dem Boot.",
+    "CLIENT IP ADDRESS wird genutzt, wenn bereits bekannt.",
+    "YOUR IP ADDRESS, Subnetzmaske, Router-Adresse stehen in OPTIONS der Antwort."
+  ],
+  "answerJa": [
+    "OPはリクエストかレスポンスかを示します。",
+    "OPTIONはメッセージの種類（Discover、Offerなど）を指定します。",
+    "HTYPEとHLENはハードウェアアドレスの種類と長さを示します。",
+    "FLAGSはブロードキャスト応答を要求するかどうかを示します。",
+    "HOPSはリクエストを中継したサーバの数をカウントします。",
+    "TRANSACTION IDENTIFIERはリクエストとレスポンスの対応をとるための識別子です。",
+    "SECONDS ELAPSEDはクライアントの起動からの経過時間を示します。",
+    "CLIENT IP ADDRESSは既にアドレスがわかっている場合に記載されます。",
+    "レスポンスにはYOUR IP ADDRESS、サブネットマスク、ルータのアドレスなどがOPTIONSに含まれます。"
+  ],
+  "explanationDe": [
+    "Eine DHCP-Nachricht im IPv4-Protokoll besteht aus mehreren Feldern, die unterschiedliche Aufgaben übernehmen. Diese sind notwendig, um die automatische Adressvergabe korrekt durchzuführen.",
+    "Das OP-Feld gibt an, ob es sich um eine Anfrage (z. B. Discover, Request) oder eine Antwort (z. B. Offer, ACK) handelt.",
+    "HTYPE (Hardware Type) und HLEN (Hardware Length) beschreiben die Art des Netzwerks, z. B. Ethernet (Typ 1) mit MAC-Adressen von 6 Byte.",
+    "Das FLAGS-Feld signalisiert dem Server, ob der Client nur Broadcasts empfangen kann oder auch Unicast versteht.",
+    "HOPS zählt, wie viele Server die Nachricht weitergeleitet haben – wichtig bei Verwendung von DHCP-Relay-Agenten.",
+    "Der TRANSACTION IDENTIFIER (eine zufällige 32-Bit-Zahl) sorgt dafür, dass Antwort und Anfrage eindeutig zugeordnet werden können.",
+    "SECONDS ELAPSED zeigt an, wie lange der Client bereits aktiv ist – dies hilft z. B. bei der Priorisierung von Antworten.",
+    "Wenn der Client schon eine gültige IP hat, wird sie im Feld CLIENT IP ADDRESS eingetragen – sonst bleibt es leer.",
+    "In der Server-Antwort stehen YOUR IP ADDRESS (die neue Adresse für den Client) sowie zusätzliche Informationen wie Subnetzmaske oder Standard-Gateway meist im OPTIONS-Feld."
+  ],
+  "explanationJa": [
+    "IPv4で使われるDHCPメッセージは、多数のフィールドから構成され、それぞれがIPアドレスの自動割り当てに必要な役割を果たします。",
+    "OPフィールドは、そのメッセージがリクエスト（Discover、Requestなど）かレスポンス（Offer、ACKなど）かを示します。",
+    "HTYPE（ハードウェアタイプ）とHLEN（ハードウェア長）は、ネットワークの種類（例：Ethernet）やMACアドレスの長さ（通常6バイト）を指定します。",
+    "FLAGSフィールドは、クライアントがブロードキャスト応答しか受け取れないかどうかをサーバに知らせます。",
+    "HOPSは、DHCPリレーエージェントなどでリクエストが何回中継されたかを示すカウンターです。",
+    "TRANSACTION IDENTIFIER（取引識別子）は32ビットの乱数で、クライアントとサーバの間のリクエストとレスポンスを正確に対応づけるために使われます。",
+    "SECONDS ELAPSEDは、クライアントが起動してからの経過時間を示し、レスポンスの優先順位決定などに活用されます。",
+    "CLIENT IP ADDRESSは、すでにIPアドレスが割り当てられている場合にそこに記載され、未割当であれば空欄です。",
+    "サーバからの応答メッセージには、YOUR IP ADDRESS（新しく割り当てられるIPアドレス）や、オプションフィールドに含まれるサブネットマスク、デフォルトルータのアドレスなどが含まれます。"
+  ],
+  "originalSlideText": "IPv4 DHCP Nachrichtenformat\n❑ OP: Request oder Response, OPTION: Typ der Nachricht\n❑ HTYPE, HLEN: Hardwaretyp des Netzwerks und Länge der Adresse\n❑ FLAGS: Gibt an, ob Client Broadcast oder Direkte Antwort verarbeitet\n❑ HOPS: Anzahl an Server die Request weitergeleitet haben\n❑ TRANSACTION IDENTIFIER: Passt Request zu Response?\n❑ SECONDS ELAPSED: Zeit des Client nach Boot\n❑ CLIENT IP ADDRESS: Falls bereits bekannt\n❑ Weitere Felder für Response: YOUR IP ADDRESS für neue Adresse, Adressmaske und Default Router in OPTIONS",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 17,
+  "questionDe": "(s27) Was ist die IPv6 Autoconfiguration und wie generieren Hosts ihre Adresse automatisch?",
+  "questionJa": "IPv6の自動構成（Autoconfiguration）とは何であり、ホストはどのようにして自動的にIPアドレスを生成しますか？",
+  "answerDe": [
+    "Ziel: Kommunikation zwischen IPv6-Knoten ohne Server oder Konfiguration.",
+    "Knoten generieren eindeutige IPv6-Adressen selbstständig.",
+    "Der Präfix wird per Multicast von anderen Knoten erfragt.",
+    "Wenn kein Präfix vorhanden ist, wird ein reservierter lokaler Präfix verwendet.",
+    "Der Suffix wird aus der MAC-Adresse des Knotens abgeleitet (48 Bit → 64 Bit)."
+  ],
+  "answerJa": [
+    "目的：IPv6ノード間でサーバや設定なしに通信を可能にすること。",
+    "ノードは自分自身で一意のIPv6アドレスを生成します。",
+    "ネットワーク上の他のノードにマルチキャストでプレフィックスを問い合わせます。",
+    "プレフィックスが見つからない場合は、ローカル通信用の予約済みプレフィックスを使用します。",
+    "サフィックスは自身のMACアドレス（48ビット）から64ビットに変換して生成されます。"
+  ],
+  "explanationDe": [
+    "IPv6 bietet eine Funktion zur automatischen Adressvergabe, die sogenannte Autoconfiguration (SLAAC – Stateless Address Autoconfiguration).",
+    "Ziel ist es, dass zwei IPv6-Knoten in einem Netzwerk miteinander kommunizieren können, ohne dass ein DHCPv6-Server oder manuelle Konfiguration notwendig ist.",
+    "Die Autokonfiguration erfolgt in zwei Schritten: Zuerst versucht der Knoten, den Präfix des Netzwerks zu ermitteln.",
+    "Dazu sendet er eine Multicast-Anfrage an alle lokalen Knoten, um das Netzpräfix zu erfahren. Falls kein Präfix gefunden wird, nutzt er einen reservierten lokalen Präfix.",
+    "Im zweiten Schritt generiert der Host den Suffix, indem er aus seiner MAC-Adresse eine 64-Bit-Identifikation erstellt (z. B. durch Einfügen von 'FFFE' in der Mitte und Umwandlung ins EUI-64-Format).",
+    "Das Ergebnis ist eine vollständige IPv6-Adresse, die ohne zentrale Steuerung gültig und eindeutig im lokalen Netzwerk ist.",
+    "Dieser Mechanismus erleichtert Plug-and-Play-Kommunikation in Heim- und Ad-hoc-Netzen erheblich, da keine Server-Infrastruktur notwendig ist."
+  ],
+  "explanationJa": [
+    "IPv6にはSLAAC（Stateless Address Autoconfiguration）と呼ばれる、自動アドレス構成機能があります。",
+    "これは、DHCPv6サーバや手動設定を必要とせず、2台のIPv6ノード間で通信を可能にするための仕組みです。",
+    "構成は2段階で行われます。まず、ノードはマルチキャストでネットワークプレフィックスを取得しようとします。",
+    "ローカルネットワーク内の他のノードに問い合わせて、使用中のプレフィックスが返されればそれを使用し、得られない場合はリンクローカル用の予約プレフィックスを利用します。",
+    "次に、ノードは自身のMACアドレス（48ビット）から64ビットの識別子を生成し、これをアドレスのサフィックス部分とします（例えば、EUI-64形式などを用いる）。",
+    "こうして生成されたIPv6アドレスはネットワーク内で一意であり、有効に使用できます。",
+    "この自動構成機能は、家庭や即席のネットワーク環境でサーバを使わずに即時通信を可能にする、非常に便利な機能です。"
+  ],
+  "originalSlideText": "IPv6 Autoconfiguration\n❑ Weitere Automatisierung war gewünscht: Zwei isolierte IPv6 Knoten sollen über nicht administriertes Netz ohne Server kommunizieren können\n❑ IPv6 Autoconfiguration: Generierung einer eindeutigen IP Adresse durch IPv6 Knoten\n❑ Präfix:\n Multicasting von Request an alle Nodes um bestehendes Präfix des Netzwerks zu finden\n Falls nicht vorhanden, wird reserviertes Präfix für lokale Kommunikation genutzt\n❑ Suffix (64 Bit) wird aus (im lokalen Rechnernetz) eindeutiger Mac Adresse (48 Bit) gebildet",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 18,
+  "questionDe": "(s29–s30) Was ist NAT und warum wurde es eingeführt?",
+  "questionJa": "NATとは何であり、なぜ導入されたのですか？",
+  "answerDe": [
+    "NAT steht für Network Address Translation.",
+    "Es wurde eingeführt, weil IPv4-Adressen knapp wurden.",
+    "NAT erlaubt mehreren Computern die Nutzung einer einzigen globalen IP-Adresse.",
+    "Es ermöglicht transparente Kommunikation zwischen Standort und Internet.",
+    "NAT erfolgt am Übergang zwischen lokalem Netz und Internet.",
+    "Oft ist NAT in Geräten wie Wi-Fi-Routern eingebaut."
+  ],
+  "answerJa": [
+    "NATはNetwork Address Translation（ネットワークアドレス変換）の略です。",
+    "IPv4アドレスの枯渇に対応するために導入されました。",
+    "NATを使うと、複数のコンピュータが1つのグローバルIPアドレスを共有できます。",
+    "NATにより、拠点内とインターネットとの通信が透過的に行われます。",
+    "NATはローカルネットワークとインターネットの境界で実行されます。",
+    "NATは多くの場合、Wi-Fiルーターなどの機器に組み込まれています。"
+  ],
+  "explanationDe": [
+    "NAT (Network Address Translation) ist eine Technik, mit der mehrere Geräte in einem lokalen Netzwerk über eine einzige öffentliche IP-Adresse mit dem Internet kommunizieren können.",
+    "Hintergrund ist die begrenzte Anzahl an IPv4-Adressen – mit dem Wachstum des Internets in den 1990er Jahren wurde schnell klar, dass die verfügbaren Adressen nicht ausreichen würden.",
+    "Neben der Einführung von Subnetting und Classless Inter-Domain Routing (CIDR) war NAT eine weitere Maßnahme, um den Bedarf an öffentlichen IPs zu reduzieren.",
+    "Bei NAT wird die interne (private) IP-Adresse eines Hosts in eine öffentliche IP-Adresse umgewandelt, wenn ein Paket das lokale Netzwerk verlässt.",
+    "Diese Umwandlung erfolgt am Übergangspunkt zwischen lokalem Netzwerk und Internet – in der Regel in einem Router oder einer Firewall.",
+    "Der umgekehrte Vorgang (von öffentlich zu privat) passiert, wenn ein Antwortpaket zurückkommt.",
+    "Dank NAT erscheint es für das Internet so, als käme der gesamte Datenverkehr von einem einzigen Gerät, obwohl in Wirklichkeit viele Geräte beteiligt sind.",
+    "Diese Technik ist besonders nützlich in Haushalten oder kleinen Unternehmen, wo viele Geräte hinter einem einzigen Internetanschluss arbeiten."
+  ],
+  "explanationJa": [
+    "NAT（ネットワークアドレス変換）は、複数のローカル機器が1つのグローバル（パブリック）IPアドレスを共有してインターネットにアクセスできるようにする技術です。",
+    "背景には、IPv4アドレスが有限であるという問題があり、インターネットが急成長した1990年代に、アドレスの枯渇が懸念されました。",
+    "この問題に対処するため、サブネット分割やCIDR（Classless Inter-Domain Routing）に加えて、NATが導入されました。",
+    "NATでは、ローカルネットワーク内の端末がインターネットにデータを送る際、そのプライベートIPアドレスをグローバルIPアドレスに変換します。",
+    "この変換は、通常Wi-Fiルーターなど、ローカルネットとインターネットの境界にある機器で行われます。",
+    "外部からの応答パケットが戻ってきたときには、逆方向の変換（グローバルIP → プライベートIP）が行われます。",
+    "その結果、外部からは、すべての通信が1台の機器から発信されたように見えますが、実際には複数の端末が関与しています。",
+    "NATは、家庭や小規模オフィスなど、多数の端末が1回線でインターネットに接続する環境に非常に有効な仕組みです。"
+  ],
+  "originalSlideText": "NAT (1)\n❑ Mit Wachstum des Internet wurden IP-Adressen rar\n❑ Zur Behebung Entwicklung von Subnet und Classless Adressierung\n❑ Network Address Translation (NAT) als dritter Mechanismus\n Mehrere Computer an einem Standort teilen sich eine eindeutige, globale IP Adresse\n Transparente Kommunikation: Hosts am Standort sowie Hosts im Internet sehen Unterschied nicht\n\nNAT (2)\n❑ NAT findet am Übergang zwischen Internet und Standort statt\n Oft in Gerät eingebettet wie Wi-Fi Router",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 19,
+  "questionDe": "(s31–s32) Wie sieht NAT aus Sicht des Internets und des Standorts aus? (mit Bild)",
+  "questionJa": "NATはインターネット側と拠点側でどのように見えるのか？（図あり）",
+  "answerDe": [
+    "Aus Sicht des Internets erscheint nur ein Host mit einer IP-Adresse.",
+    "Alle eingehenden und ausgehenden Datagramme laufen über diese Adresse.",
+    "Aus Sicht des Standorts haben Hosts private, nicht-routbare Adressen.",
+    "Der NAT-Router besitzt eine globale IP-Adresse.",
+    "NAT übersetzt zwischen privater und öffentlicher Adresse.",
+    "Private Adressen stammen aus reservierten IPv4-Blöcken."
+  ],
+  "answerJa": [
+    "インターネットから見ると、1つのグローバルIPアドレスを持つホストだけが存在するように見えます。",
+    "すべての送受信データはこの1つのアドレスを通して行われます。",
+    "拠点内では、それぞれのホストがプライベート（非ルーティング）IPアドレスを持っています。",
+    "NATルーターは1つのグローバルIPアドレスを持ちます。",
+    "NATは、プライベートIPとグローバルIPを相互に変換します。",
+    "使用されるプライベートアドレスは、予約されたIPv4アドレスブロックから割り当てられます。"
+  ],
+  "explanationDe": [
+    "Network Address Translation (NAT) verändert, wie Netzwerkgeräte aus verschiedenen Perspektiven gesehen werden.",
+    "Aus Sicht des Internets existiert hinter einem NAT nur ein einziger Host – nämlich der NAT-Router, der über eine globale IP-Adresse verfügt.",
+    "Alle Datagramme, die aus dem lokalen Netz ins Internet gehen, tragen diese eine öffentliche IP-Adresse als Absender.",
+    "Entsprechend laufen auch alle Rückantworten des Internets an genau diese IP-Adresse.",
+    "Im lokalen Netzwerk jedoch besitzen alle Geräte private IP-Adressen, z. B. aus den Bereichen 192.168.0.0/16, 10.0.0.0/8 oder 172.16.0.0/12 – diese sind nicht im Internet routbar.",
+    "Der NAT-Router übernimmt die Aufgabe, beim Versenden von Paketen die Quelladresse (privat) durch seine eigene globale Adresse zu ersetzen, und beim Empfangen die Zieladresse entsprechend zurückzusetzen.",
+    "Diese Trennung ermöglicht es, das Internet effizienter zu nutzen und gleichzeitig mehr Endgeräte in privaten Netzwerken zu betreiben.",
+    "Die dazu verwendeten Adressbereiche sind von der IETF offiziell als 'privat' gekennzeichnet und werden von öffentlichen Routern nicht weitergeleitet."
+  ],
+  "explanationJa": [
+    "NAT（ネットワークアドレス変換）は、ネットワークの見え方をインターネット側と拠点側で異なるものにします。",
+    "インターネット側から見ると、NATの背後には1台のホスト、つまりグローバルIPアドレスを持つルーターしか存在しないように見えます。",
+    "ローカルネットワーク内の複数の端末がインターネットにアクセスしても、すべての通信はその1つのIPアドレスを通して行われます。",
+    "一方、拠点側では各ホストがプライベートIPアドレスを持ち（例：192.168.x.x、10.x.x.xなど）、これらはインターネット上では使用できません。",
+    "NATルーターは、送信時にはローカルIPをグローバルIPに変換し、受信時にはその逆を行います。",
+    "これにより、1つのグローバルIPで複数の端末が外部通信できるようになり、IPアドレス資源の節約にもつながります。",
+    "なお、プライベートアドレスはIETFにより予約されたIPv4アドレス空間であり、グローバルインターネットではルーティングされません。",
+    "この仕組みは、図で示されているように、内側と外側で異なるIPアドレス体系が存在することを理解する助けになります。"
+  ],
+  "originalSlideText": "NAT (3)\n❑ Sicht aus Internet\n Einzelner Host mit einer IP Adresse\n Alle Datagramme des Standorts kommen von einen Host\n Alle Datagramme an diesen Standort gehen an einen Host\n❑ Sicht von Standort\n Host erhält IP Adresse über DHCP Server und kann diese für Internet nutzen\n❑ Hosts im Netzwerk bekommen aber verschiedene, private Adressen (nonroutable)\n❑ NAT selbst bekommt globale IP Adresse von DHCP\n\nNAT (4)\n❑ Verwendete Adressen von der IETF als privat markiert\n❑ Nicht im globalen Internet gültig, werden von Routern abgelehnt\n❑ NAT übersetzt private Adresse von ausgehenden Datagrammen in global gültige IP Adresse und umgekehrt",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 20,
+  "questionDe": "(s33–s34) Wie funktioniert die Adressübersetzung bei NAT konkret?",
+  "questionJa": "NATにおけるアドレス変換は具体的にどのように行われますか？",
+  "answerDe": [
+    "Bei ausgehenden Datagrammen wird die Quelladresse ersetzt.",
+    "Bei eingehenden Datagrammen wird die Zieladresse ersetzt.",
+    "NAT verwendet eine Übersetzungstabelle für die Zuordnung.",
+    "Die Tabelle enthält Abbildungen von privaten zu globalen Adressen und umgekehrt.",
+    "Übersetzung erfolgt automatisch anhand der Tabelle."
+  ],
+  "answerJa": [
+    "外向きのデータグラムでは送信元アドレスが変換されます。",
+    "内向きのデータグラムでは宛先アドレスが変換されます。",
+    "NATは変換のために対応表（テーブル）を使用します。",
+    "このテーブルにはプライベートアドレスとグローバルアドレスの対応関係が記録されています。",
+    "変換処理はテーブルに基づいて自動で行われます。"
+  ],
+  "explanationDe": [
+    "Die zentrale Funktion von NAT ist die Übersetzung von IP-Adressen beim Durchgang durch ein NAT-Gerät (meist ein Router).",
+    "Wenn ein Gerät aus einem privaten Netzwerk ein Datenpaket ins Internet sendet, ersetzt das NAT-Gerät die private Quelladresse durch seine eigene öffentliche IP-Adresse.",
+    "Dabei merkt sich das NAT-Gerät in einer Tabelle, welche interne IP-Adresse mit welcher externen Adresse verknüpft ist.",
+    "Wenn eine Antwort vom Internet zurückkommt, prüft das NAT-Gerät anhand dieser Tabelle, welche interne IP-Adresse das ursprüngliche Ziel war.",
+    "Es ersetzt dann die Zieladresse des eingehenden Pakets durch die passende private Adresse und leitet es entsprechend weiter.",
+    "Diese sogenannte NAT-Tabelle wird dynamisch geführt und enthält für jede aktive Verbindung die Zuordnung von interner zu externer Adresse.",
+    "Ohne diese Tabelle wäre es nicht möglich, eingehende Pakete dem richtigen Endgerät im internen Netz zuzuordnen.",
+    "Die gesamte Übersetzung erfolgt transparent – weder der Absender noch der Empfänger im Internet bemerken, dass NAT verwendet wird."
+  ],
+  "explanationJa": [
+    "NATの中心的な役割は、データがルーターなどのNAT機器を通過する際にIPアドレスを変換することです。",
+    "たとえば、ローカルネットワーク内の機器がインターネットにデータを送信すると、NAT機器はその送信元アドレス（プライベートIP）を自分のグローバルIPに書き換えます。",
+    "このとき、NATはどのプライベートアドレスがどの外部アドレスに変換されたかを、変換テーブルに記録します。",
+    "インターネットからの応答パケットが戻ってくると、NATはこのテーブルを参照して、元の通信を発信したローカルIPアドレスを特定します。",
+    "その後、宛先アドレスを適切なプライベートアドレスに再変換し、正しい機器へとデータを転送します。",
+    "この変換テーブルは動的に管理されており、通信ごとに対応関係が自動で追加・削除されます。",
+    "もしこのテーブルがなければ、外部からの応答が正しい内部端末に届かず、通信は成立しません。",
+    "この変換処理は完全に透過的に行われ、インターネット上の通信相手はNATの存在を意識することなくやり取りを行えます。"
+  ],
+  "originalSlideText": "NAT (5)\n❑ NAT Übersetzung durch Austausch der Quelladresse in ausgehenden Datagramm und Austausch der Zieladresse in eingehenden Datagramm\n\nNAT (6)\n❑ NAT nutzt Tabelle für die verwendeten Mappings\n❑ Ersetzt Zieladresse und Quelladresse entsprechend\nTabelle für vorheriges Beispiel",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 21,
+  "questionDe": "(s35–s36) Was ist Transport-Layer NAT (NAPT) und wie funktioniert es?",
+  "questionJa": "トランスポート層のNAT（NAPT）とは何で、どのように機能しますか？",
+  "answerDe": [
+    "NAPT steht für Network Address and Port Translation.",
+    "Es erweitert NAT durch die Nutzung von TCP/UDP-Portnummern.",
+    "Mehrere Hosts oder Anwendungen können gleichzeitig kommunizieren.",
+    "NAPT erstellt Zuordnungen anhand von Quell-/Zieladresse und Port.",
+    "Es arbeitet auf Transportschicht (Layer 4)."
+  ],
+  "answerJa": [
+    "NAPTはNetwork Address and Port Translation（アドレスとポートの変換）の略です。",
+    "NATに加えて、TCPやUDPのポート番号も使って識別を行います。",
+    "複数のホストやアプリケーションが同時に通信することができます。",
+    "NAPTは、送信元/宛先のアドレスとポートの組み合わせで対応関係を管理します。",
+    "トランスポート層（第4層）で動作します。"
+  ],
+  "explanationDe": [
+    "Transport-Layer NAT, auch bekannt als NAPT (Network Address and Port Translation), ist eine Erweiterung des klassischen NAT.",
+    "Beim einfachen NAT können Probleme auftreten, wenn mehrere Hosts gleichzeitig mit demselben Ziel im Internet kommunizieren oder wenn ein einzelner Host mehrere Anwendungen gleichzeitig betreibt.",
+    "NAPT löst dieses Problem, indem es nicht nur die IP-Adressen, sondern auch die Portnummern berücksichtigt.",
+    "Jede Verbindung wird eindeutig durch ein Tupel aus Quell-IP, Quell-Port, Ziel-IP und Ziel-Port identifiziert.",
+    "Der NAT-Router ersetzt bei ausgehenden Paketen die Quell-IP und Quell-Port durch seine eigene öffentliche IP und einen eindeutigen Port.",
+    "Dadurch können mehrere Verbindungen gleichzeitig bestehen, selbst wenn sie über dieselbe IP laufen.",
+    "Die NAPT-Tabelle führt Einträge, die alle vier Werte enthalten – so kann sie eingehende Pakete korrekt zurückübersetzen.",
+    "NAPT arbeitet auf der Transportschicht (Layer 4) und ist heute die am weitesten verbreitete NAT-Form – oft einfach als 'NAT' bezeichnet."
+  ],
+  "explanationJa": [
+    "トランスポート層のNAT（NAPT: Network Address and Port Translation）は、従来のNATにポート番号の識別を加えた拡張方式です。",
+    "通常のNATでは、複数のホストが同じ宛先と通信したり、1台のホスト上で複数のアプリケーションが同時に通信する際にアドレスの重複が起こる可能性があります。",
+    "NAPTでは、IPアドレスだけでなくTCPやUDPのポート番号も含めて識別することで、この問題を解決します。",
+    "各通信は、送信元IP＋送信元ポート＋宛先IP＋宛先ポートの組み合わせ（4要素のタプル）で一意に識別されます。",
+    "NAPTルーターは、送信時に送信元のIPアドレスとポート番号を、自身のグローバルIPアドレスと一意なポート番号に変換します。",
+    "これにより、複数の通信が1つのグローバルIPを共有しても衝突せずに処理できます。",
+    "NAPTテーブルにはこれらの4要素すべての対応関係が記録され、受信時に元のローカルホストとポートに変換されます。",
+    "NAPTはトランスポート層（OSI第4層）で動作し、現在もっとも一般的に使用されているNAT方式です。多くの場合「NAT」と言えばNAPTを指します。"
+  ],
+  "originalSlideText": "Transport-Layer NAT (1)\n❑ Einfache Version von NAT nicht ausreichend\n Zwei Hosts am Standort kommunizieren mit selben Ziel im Internet\n Zwei Applikationen auf selben Host kommunizieren zeitgleich\n❑ Network Address and Port Translation (NAPT) erlaubt dies\n So verbreitet, dass es meist einfach als NAT bezeichnet wird\n\nTransport-Layer NAT (2)\n❑ Applikationen nutzen Portnummern der Protokolle (TCP, UDP) zur Unterscheidung\n❑ NAPT assoziiert Datagramme mit spezifischer TCP, UDP Konversation, arbeitet damit auf Transportschicht\n❑ Einträge sind Tupel aus Quell- und Zieladresse sowie Quell- und Zielport",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 22,
+  "questionDe": "(s37) Wie vermeidet NAPT Portkonflikte bei mehreren Hosts? (mit Bild)",
+  "questionJa": "複数のホストがNAPTを通じて同じ宛先と通信する場合、ポート番号の競合はどのように回避されますか？（図あり）",
+  "answerDe": [
+    "Mehrere Hosts nutzen denselben Zielserver und Port (z. B. HTTP-Port 80).",
+    "Beide Hosts wählen denselben Quellport (z. B. 30000).",
+    "NAPT ersetzt den Quellport jedes Hosts durch einen eindeutigen neuen Port.",
+    "So wird jede Verbindung eindeutig und konfliktfrei identifizierbar."
+  ],
+  "answerJa": [
+    "複数のホストが同じ宛先サーバ（例：ポート80）へアクセスします。",
+    "それぞれのホストが同じ送信元ポート（例：30000）を使用している場合があります。",
+    "NAPTはそれぞれの送信元ポートを別のユニークなポート番号に変換します。",
+    "これにより、すべての通信は一意に識別され、競合は起きません。"
+  ],
+  "explanationDe": [
+    "Ein häufiges Szenario bei NAPT ist, dass mehrere Geräte im lokalen Netzwerk gleichzeitig mit demselben Zielhost im Internet kommunizieren – etwa einem Webserver auf Port 80.",
+    "Wenn dabei zwei Geräte zufällig denselben lokalen Quellport (z. B. 30000) verwenden, besteht ein Konfliktpotenzial.",
+    "NAPT verhindert diesen Konflikt, indem es die Quellportnummer bei der Übersetzung individuell ersetzt – selbst wenn mehrere Hosts den gleichen Port lokal gewählt haben.",
+    "Das NAT-Gerät verwaltet eine Tabelle mit allen aktiven Verbindungen, die aus Quell-IP, Quell-Port, Ziel-IP und Ziel-Port bestehen.",
+    "Für jede neue Verbindung wählt es einen noch nicht belegten externen Port aus und erstellt einen eindeutigen Eintrag.",
+    "So können mehrere gleichzeitige Verbindungen vom selben oder verschiedenen Hosts zum selben Ziel problemlos parallel laufen.",
+    "Die NAPT-Tabelle dient dabei als zentrales Element zur Konfliktvermeidung und eindeutigen Zuordnung.",
+    "Das zugehörige Diagramm auf der Folie zeigt zwei Hosts mit gleicher Quellportnummer, aber unterschiedliche extern zugewiesene Ports durch NAPT."
+  ],
+  "explanationJa": [
+    "NAPTでは、ローカルネットワーク内の複数の機器が同じインターネット上のサーバ（例：Webサーバのポート80）と同時に通信することがよくあります。",
+    "このとき、たとえば両方のホストが送信元ポート30000を使用していた場合、単純なアドレス変換では衝突が起こる可能性があります。",
+    "NAPTはこの問題を回避するため、送信時に各ホストの送信元ポートを一意なポート番号に変更して変換します。",
+    "NAPTルーターは、すべてのアクティブな通信を管理するテーブルを保持しており、送信元IP、送信元ポート、宛先IP、宛先ポートの4つの情報で識別します。",
+    "新しい通信が発生した場合、まだ使用されていないポートを割り当てて、競合を避けるように設計されています。",
+    "この仕組みにより、複数のホストが同時に同じ宛先と通信していても、互いに干渉することなく通信できます。",
+    "NAPTテーブルは、こうしたポート番号の競合回避と、正しい通信先への戻り先の指定に不可欠です。",
+    "スライドにある図では、2台のコンピュータが同じポート番号を使って通信していますが、NAPTにより外部では異なるポート番号に変換されていることが示されています。"
+  ],
+  "originalSlideText": "Transport-Layer NAT (3)\n❑ Browser auf Computer 192.168.0.1 und 192.168.0.2 kommunizieren mit Web Server 128.10.24.6 auf Port 80\n❑ Computer nutzen lokalen Source Port 30000\n❑ NAPT setzt anderen Source Port, um Konflikt zu vermeiden\n\nNAPT Übersetzungstabelle für zwei TCP Verbindungen zu selben Web Server",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 23,
+  "questionDe": "(s38) Warum ist es problematisch, Server hinter NAT zu betreiben?",
+  "questionJa": "なぜNATの背後でサーバを運用するのは問題があるのですか？",
+  "answerDe": [
+    "NAT erzeugt Übersetzungstabellen nur für ausgehenden Traffic.",
+    "Initiierte Verbindungen vom Internet werden ohne Übersetzung verworfen.",
+    "Twice NAT in Kombination mit DNS kann das Problem teilweise lösen.",
+    "Ohne DNS oder bei direkter IP-Nutzung funktioniert diese Lösung nicht."
+  ],
+  "answerJa": [
+    "NATは、内部からの通信に対してのみ変換テーブルを作成します。",
+    "インターネット側から開始された通信は翻訳されず、遮断されます。",
+    "Twice NATとDNSを併用すれば部分的に解決できます。",
+    "ただし、DNSを使わず直接IPアドレスを指定された場合などは機能しません。"
+  ],
+  "explanationDe": [
+    "NAT wurde ursprünglich dafür entwickelt, Clients im lokalen Netzwerk eine Internetverbindung zu ermöglichen – nicht, um öffentliche Serverdienste bereitzustellen.",
+    "Das NAT-Gerät erstellt eine Übersetzungstabelle nur dann, wenn ein Host im lokalen Netz eine Verbindung nach außen initiiert.",
+    "Wenn jedoch ein externes Gerät eine Verbindung zu einem lokalen Server aufbauen will, weiß das NAT-System nicht, an welches interne Gerät es das Paket weiterleiten soll – es fehlt ein Eintrag in der NAT-Tabelle.",
+    "Ein Lösungsansatz ist das sogenannte 'Twice NAT' in Verbindung mit DNS: Der DNS-Server liefert dabei die öffentliche Adresse eines internen Servers zurück, und das NAT-Gerät erzeugt bei dieser Namensauflösung automatisch einen Eintrag in der Übersetzungstabelle.",
+    "Das funktioniert jedoch nur, wenn der Zugriff über den Domainnamen erfolgt – nicht bei direkter Eingabe der IP-Adresse oder bei Einsatz eines DNS-Proxys.",
+    "Aus diesem Grund ist es in der Praxis kompliziert, öffentlich erreichbare Server hinter NAT zu betreiben, insbesondere in privaten Haushalten oder Firmennetzen ohne Portweiterleitungen oder spezielle NAT-Konfigurationen.",
+    "Diese Einschränkung zeigt, dass NAT zwar effizient für ausgehende Verbindungen ist, aber eingehende Verbindungen aktiv unterstützt werden müssen."
+  ],
+  "explanationJa": [
+    "NATはもともと、ローカルネットワーク内のクライアントがインターネットに接続するために設計された技術であり、外部からの通信を受けるサーバの設置には適していません。",
+    "NATでは、内部のホストが通信を開始した場合にのみ、変換テーブル（NATテーブル）に記録が作られます。",
+    "そのため、インターネット側からNAT内部のサーバに接続しようとしても、NATルーターはどの内部ホストへ転送すればよいか判断できず、通信は遮断されます。",
+    "これに対処する手段の1つが『Twice NAT』で、DNSと組み合わせることで、外部からの名前解決時にNATが自動的に変換エントリを作成します。",
+    "ただし、DNSを経由せず直接IPアドレスでアクセスされた場合や、DNSプロキシが使われている場合にはこの手法は機能しません。",
+    "したがって、NATの背後にインターネットからアクセス可能なサーバを設置するには、ポート転送設定や静的NATなどの追加設定が必要となります。",
+    "このように、NATは外向きの通信には便利ですが、内向き（外部からのアクセス）には制限が多く、特別な対処がなければサーバ運用には適していません。"
+  ],
+  "originalSlideText": "NAT und Server\n❑ NAT System erzeugt Übersetzungstabelle automatisch aus ausgehenden Traffic\n❑ Funktioniert nicht, falls Kommunikation von Internet initiiert wird\n Zwei Hosts an Standort mit jeweils einem Datenbankserver\n❑ Twice NAT kommuniziert mit DNS Server\n Löst Applikation in Internet Domainname von Computer an Standort auf, wird globale Internet Adresse zurückgeliefert\n NAT erzeugt Eintrag in Übersetzungstabelle\n❑ Funktioniert nicht, wenn Applikation direkt IP Adresse ohne DNS Lookup verwendet oder DNS Proxy nutzt",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 24,
+  "questionDe": "(s39) Welche Vorteile bietet NAT für Haushalte und kleine Firmen?",
+  "questionJa": "NATは家庭や小規模企業にとってどのような利点がありますか？",
+  "answerDe": [
+    "NAT spart Kosten – es werden keine zusätzlichen IP-Adressen vom ISP benötigt.",
+    "Es existiert Software, die NAT auf normalen PCs ermöglicht.",
+    "NAT-Hardware ist preiswert verfügbar.",
+    "Viele WLAN-Router enthalten bereits NAT-Funktionalität."
+  ],
+  "answerJa": [
+    "NATにより、ISPから追加のIPアドレスを購入する必要がなく、コストを削減できます。",
+    "通常のPCにインストールできるNAT機能付きソフトウェアも存在します。",
+    "NAT対応ハードウェアは安価に入手できます。",
+    "多くの無線LANルーターには標準でNAT機能が搭載されています。"
+  ],
+  "explanationDe": [
+    "Ein großer Vorteil von NAT für Privathaushalte und kleine Unternehmen ist die Kostenersparnis.",
+    "Statt für jedes Gerät im Netzwerk eine eigene öffentliche IP-Adresse vom Internetanbieter (ISP) beziehen zu müssen, genügt eine einzige IP-Adresse.",
+    "Der NAT-Router teilt diese eine öffentliche Adresse mit allen internen Geräten, die jeweils private IP-Adressen verwenden.",
+    "Dadurch kann ein kompletter Haushalt mit vielen Geräten – z. B. Laptops, Smartphones, Smart-TVs – über einen einzigen Internetanschluss kommunizieren.",
+    "Für einfache Netzwerke reicht sogar eine Softwarelösung, die auf einem normalen PC läuft und als NAT-Gateway fungiert.",
+    "Im Handel sind zudem viele kostengünstige NAT-fähige Geräte erhältlich – insbesondere WLAN-Router, die bereits mit NAT- und Firewall-Funktion ausgestattet sind.",
+    "Diese Geräte benötigen keine besondere Konfiguration und sind für Laien einfach in Betrieb zu nehmen.",
+    "So ermöglicht NAT eine unkomplizierte, preiswerte und sichere Internetverbindung für kleinere Netzwerke."
+  ],
+  "explanationJa": [
+    "NATの最大の利点の1つは、コスト削減です。家庭や小規模事業所では、すべての機器にグローバルIPアドレスを割り当てる必要がなく、ISPからの追加購入が不要になります。",
+    "NATでは1つのグローバルIPアドレスを複数のローカル機器で共有し、各機器にはプライベートIPアドレスが割り当てられます。",
+    "このため、複数のパソコン、スマートフォン、IoT機器などが1回線で同時にインターネットへ接続できます。",
+    "NAT機能を提供するソフトウェアはPC用にも存在し、専用機器がなくてもNATゲートウェイを構築することが可能です。",
+    "さらに、NAT対応のルーターは市販されており、比較的安価で購入できます。",
+    "これらのルーターはNAT機能に加えてファイアウォールやWi-Fi機能も搭載されており、家庭用として非常に使いやすく設計されています。",
+    "設定も簡単で、特別なネットワークの知識がなくても導入できる点も大きなメリットです。",
+    "このようにNATは、家庭や小規模ネットワークにおいて、安価かつ安全にインターネット接続を提供する有効な技術です。"
+  ],
+  "originalSlideText": "NAT für zu Hause\n❑ NAT nützlich für Wohnung oder kleine Firma\n Keine zusätzlichen IP Adressen müssen von ISP gekauft werden\n❑ Software für PC existiert, die NAT Gerät imitieren\n❑ NAT Hardware ist kostengünstig zu haben, oft Teil von WLAN Router",
+  "explanationImage": "",
+  "questionImage": ""
+},
+{
+  "id": 25,
+  "questionDe": "(s40) Welche Hilfsprotokolle machen ein IP-Netz praktikabel und wie greifen sie ineinander?",
+  "questionJa": "どの補助プロトコルがIPネットワークを実用的にしており、それらはどのように連携していますか？",
+  "answerDe": [
+    "ARP: Zuordnung von MAC- zu IP-Adressen (für IPv4).",
+    "ICMP: Überträgt Fehlermeldungen und Kontrollinformationen.",
+    "DHCP: Weist einem Host Konfigurationsdaten wie IP, DNS, Router zu.",
+    "IPv6 ND: ersetzt ARP, nutzt ICMPv6 und Multicast.",
+    "Autoconfiguration: IPv6-Hosts erzeugen selbstständig Adressen.",
+    "NAT: Erlaubt mehreren Hosts die Nutzung einer gemeinsamen IP."
+  ],
+  "answerJa": [
+    "ARPは、MACアドレスとIPアドレスの対応付けを行います（IPv4）。",
+    "ICMPはエラーメッセージや制御情報を伝達します。",
+    "DHCPは、ホストにIPアドレスやDNS、ルーターなどの設定情報を割り当てます。",
+    "IPv6 NDはARPの代わりにICMPv6とマルチキャストを使ってアドレス解決を行います。",
+    "Autoconfigurationは、IPv6ホストが自動で自身のアドレスを生成できる機能です。",
+    "NATは複数のホストが1つのグローバルIPアドレスを共有できるようにします。"
+  ],
+  "explanationDe": [
+    "Damit ein IP-basiertes Netzwerk in der Praxis funktioniert, sind mehrere zusätzliche Protokolle notwendig, die spezifische Aufgaben übernehmen.",
+    "ARP (Address Resolution Protocol) ist für IPv4 unerlässlich, da es IP-Adressen in MAC-Adressen übersetzt, damit Daten über das physische Netzwerk transportiert werden können.",
+    "ICMP (Internet Control Message Protocol) liefert wichtige Kontrollinformationen wie Fehlerbenachrichtigungen oder Echo-Anfragen (ping).",
+    "DHCP (Dynamic Host Configuration Protocol) ermöglicht es Hosts, automatisch Netzwerkparameter wie IP-Adresse, Subnetzmaske, Gateway und DNS-Server zu erhalten.",
+    "Für IPv6 wird ARP durch das Neighbour Discovery Protocol (ND) ersetzt, das auf ICMPv6 basiert und über Multicast arbeitet.",
+    "Zusätzlich erlaubt IPv6 durch Autoconfiguration die selbstständige Generierung eindeutiger Adressen durch die Hosts – ohne Server.",
+    "NAT (Network Address Translation) sorgt dafür, dass mehrere Geräte eines Standorts mit nur einer öffentlichen IP-Adresse ins Internet gelangen können.",
+    "Diese Protokolle ergänzen sich funktional und greifen nahtlos ineinander, um automatische Konfiguration, effiziente Adressnutzung und Fehlermanagement zu ermöglichen – alles Grundvoraussetzungen für ein funktionsfähiges IP-Netzwerk."
+  ],
+  "explanationJa": [
+    "IPネットワークを現実の環境で機能させるには、いくつかの補助的なプロトコルが必要です。それぞれが重要な役割を担っており、相互に補完し合う形で機能しています。",
+    "ARP（Address Resolution Protocol）はIPv4環境において、IPアドレスをMACアドレスに変換し、実際のデータ伝送が可能になるよう支援します。",
+    "ICMP（Internet Control Message Protocol）は、通信エラーの通知やpingのような制御メッセージを提供します。",
+    "DHCP（Dynamic Host Configuration Protocol）は、IPアドレスやサブネットマスク、デフォルトゲートウェイ、DNSなどの情報をホストに自動的に割り当てる役割を果たします。",
+    "IPv6環境では、ARPは使用されず、代わりにICMPv6に基づくNeighbour Discovery（ND）プロトコルが用いられ、マルチキャストによる通信が行われます。",
+    "さらに、IPv6にはAutoconfiguration（自動構成）という機能があり、ホストが自身のIPv6アドレスをサーバなしで自動生成できます。",
+    "NAT（Network Address Translation）は、複数の機器が1つのグローバルIPアドレスを共有してインターネットと通信できるようにすることで、IPv4アドレスの節約と柔軟なネットワーク構成を実現します。",
+    "これらのプロトコルはそれぞれ異なる役割を持ちつつ、全体としてIPネットワークを効率的かつ信頼性高く動作させるために連携しています。"
+  ],
+  "originalSlideText": "Zusammenfassung\n❑ IPv4 nutzt ARP um MAC und IP Adressen Mapping zu finden\n❑ IPv6 nutzt IPv6 Neighbour Discovery\n❑ Fehlermeldungen und Informationen werden über ICMP verschickt\n❑ DHCP erlaubt Host die eigene Konfiguration mit IP Adresse, Default Router, Nameserver\n❑ IPv6 nutzt Autoconfiguration um eigene IPv6 Adresse zu erzeugen, zusätzlich DHCPv6 vorhanden\n❑ NAT ermöglicht mehreren Hosts selbe IP Adresse zu nutzen",
+  "explanationImage": "",
+  "questionImage": ""
+} 
 ]
