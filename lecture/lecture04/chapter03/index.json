@@ -1,0 +1,170 @@
+[
+  {
+    "number": "00",
+    "title": "3.1 Introduction and Transport-Layer Services",
+    "startPage": 213,
+    "endPage": 218
+  },
+  {
+    "number": "01",
+    "title": "3.1.1 Relationship Between Transport and Network Layers",
+    "startPage": 213,
+    "endPage": 216
+  },
+  {
+    "number": "02",
+    "title": "3.1.2 Overview of the Transport Layer in the Internet",
+    "startPage": 216,
+    "endPage": 218
+  },
+  {
+    "number": "03",
+    "title": "3.2 Multiplexing and Demultiplexing",
+    "startPage": 218,
+    "endPage": 225
+  },
+  {
+    "number": "04",
+    "title": "3.3 Connectionless Transport: UDP",
+    "startPage": 225,
+    "endPage": 231
+  },
+  {
+    "number": "05",
+    "title": "3.3.1 UDP Segment Structure",
+    "startPage": 229,
+    "endPage": 229
+  },
+  {
+    "number": "06",
+    "title": "3.3.2 UDP Checksum",
+    "startPage": 229,
+    "endPage": 231
+  },
+  {
+    "number": "07",
+    "title": "3.4 Principles of Reliable Data Transfer",
+    "startPage": 231,
+    "endPage": 258
+  },
+  {
+    "number": "08",
+    "title": "3.4.1 Building a Reliable Data Transfer Protocol",
+    "startPage": 233,
+    "endPage": 242
+  },
+  {
+    "number": "09",
+    "title": "3.4.2 Pipelined Reliable Data Transfer Protocols",
+    "startPage": 242,
+    "endPage": 246
+  },
+  {
+    "number": "10",
+    "title": "3.4.3 Go-Back-N (GBN)",
+    "startPage": 246,
+    "endPage": 251
+  },
+  {
+    "number": "11",
+    "title": "3.4.4 Selective Repeat (SR)",
+    "startPage": 251,
+    "endPage": 258
+  },
+  {
+    "number": "12",
+    "title": "3.5 Connection-Oriented Transport: TCP",
+    "startPage": 258,
+    "endPage": 286
+  },
+  {
+    "number": "13",
+    "title": "3.5.1 The TCP Connection",
+    "startPage": 258,
+    "endPage": 261
+  },
+  {
+    "number": "14",
+    "title": "3.5.2 TCP Segment Structure",
+    "startPage": 261,
+    "endPage": 266
+  },
+  {
+    "number": "15",
+    "title": "3.5.3 Round-Trip Time Estimation and Timeout",
+    "startPage": 266,
+    "endPage": 269
+  },
+  {
+    "number": "16",
+    "title": "3.5.4 Reliable Data Transfer",
+    "startPage": 269,
+    "endPage": 277
+  },
+  {
+    "number": "17",
+    "title": "3.5.5 Flow Control",
+    "startPage": 277,
+    "endPage": 280
+  },
+  {
+    "number": "18",
+    "title": "3.5.6 TCP Connection Management",
+    "startPage": 280,
+    "endPage": 286
+  },
+  {
+    "number": "19",
+    "title": "3.6 Principles of Congestion Control",
+    "startPage": 286,
+    "endPage": 294
+  },
+  {
+    "number": "20",
+    "title": "3.6.1 The Causes and the Costs of Congestion",
+    "startPage": 286,
+    "endPage": 293
+  },
+  {
+    "number": "21",
+    "title": "3.6.2 Approaches to Congestion Control",
+    "startPage": 293,
+    "endPage": 294
+  },
+  {
+    "number": "22",
+    "title": "3.7 TCP Congestion Control",
+    "startPage": 294,
+    "endPage": 310
+  },
+  {
+    "number": "23",
+    "title": "3.7.1 Classic TCP Congestion Control",
+    "startPage": 294,
+    "endPage": 305
+  },
+  {
+    "number": "24",
+    "title": "3.7.2 Network-Assisted Explicit Congestion Notification and Delay-based Congestion Control",
+    "startPage": 305,
+    "endPage": 307
+  },
+  {
+    "number": "25",
+    "title": "3.7.3 Fairness",
+    "startPage": 307,
+    "endPage": 310
+  },
+  {
+    "number": "26",
+    "title": "3.8 Evolution of Transport-Layer Functionality",
+    "startPage": 310,
+    "endPage": 313
+  },
+  {
+    "number": "27",
+    "title": "3.9 Summary",
+    "startPage": 313,
+    "endPage": 315
+  }
+]
