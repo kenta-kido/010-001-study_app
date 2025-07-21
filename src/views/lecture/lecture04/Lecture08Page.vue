@@ -8,8 +8,7 @@
       <hr class="w-25 mx-auto border-primary" />
     </div>
 
-    <!-- TextbookItem に変更 -->
-    <TextbookItem
+    <QuestionItem
       v-for="q in questions"
       :key="q.id"
       :question="q"
@@ -20,13 +19,9 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
-
-// 修正後のコンポーネント名
-import TextbookItem from '@/components/TextbookItem.vue';
-
-// データの読み込み
+import QuestionItem from '@/components/QuestionItem.vue';
 import lectureMeta from '@/data/lectureMeta.json';
-import lectureData from '@/data/lecture04/lecture01.json';
+import lectureData from '@/data/lecture04/lecture08.json';
 
 const route = useRoute();
 const lectureTitle = ref('');
@@ -35,8 +30,8 @@ const lectureNumber = ref('');
 const questions = ref([]);
 
 onMounted(() => {
-  const group = 'lecture04'; // 固定
-  const number = parseInt(route.name.split('_')[1]); // "Lecture01_02" → 02
+  const group = 'lecture04'; // 固定（このファイルは lecture01 用だから）
+  const number = parseInt(route.name.split('_')[1]); // 例: Lecture01_02 → "02"
 
   const meta = lectureMeta[group];
   lectureTitle.value = meta.title;
@@ -45,7 +40,6 @@ onMounted(() => {
   const lectureEntry = meta.lectures.find(l => l.number === number);
   lectureSubtitle.value = lectureEntry ? lectureEntry.title : '';
 
-  // JSON形式が新しい構造に沿っている前提
   questions.value = lectureData;
 });
 </script>

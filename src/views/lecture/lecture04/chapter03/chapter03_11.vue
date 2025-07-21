@@ -1,0 +1,215 @@
+<template>
+  <div class="container my-4">
+    <h3 class="mb-4">3.1.1 Relationship Between Transport and Network Layers</h3>
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <p>
+          Recall that the transport layer lies just above the network layer in the protocol
+          stack. Whereas a transport-layer protocol provides logical communication between
+          processes running on different hosts, a network-layer protocol provides logical
+          communication between hosts. This distinction is subtle but important. Let’s examine
+          this distinction with the aid of a household analogy.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <p class="text-muted">
+          トランスポート層はプロトコルスタック内でネットワーク層のすぐ上にあります。トランスポート層プロトコルは異なるホスト上で動作するプロセス間の論理的通信を提供し、ネットワーク層プロトコルはホスト間の論理的通信を提供します。この違いは微妙ですが重要です。この違いを家庭のアナロジーで見てみましょう。
+        </p>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <p>
+          Consider two houses, one on the East Coast and the other on the West Coast,
+          with each house being home to a dozen kids. The kids in the East Coast household
+          are cousins of the kids in the West Coast household. The kids in the two households
+          love to write to each other—each kid writes each cousin every week, with each letter
+          delivered by the traditional postal service in a separate envelope. Thus, each household
+          sends 144 letters to the other household every week. (These kids would save a lot
+          of money if they had e-mail!)
+        </p>
+      </div>
+      <div class="col-md-6">
+        <p class="text-muted">
+          東海岸と西海岸にある2つの家を考えてみましょう。それぞれの家には12人の子どもが住んでおり、両家の子どもたちはいとこ同士です。彼らは手紙のやり取りが大好きで、毎週、各子どもが各いとこ宛に手紙を書き、伝統的な郵便サービスによって個別の封筒で届けられます。したがって、毎週各家庭から144通の手紙が相手の家に送られます。（もし彼らにEメールがあれば、かなりの節約になりますね！）
+        </p>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <p>
+          In each of the households, there is one kid—Ann in the West Coast house and
+          Bill in the East Coast house—responsible for mail collection and mail distribution.
+          Each week Ann visits all her brothers and sisters, collects the mail, and gives the
+          mail to a postal-service mail carrier, who makes daily visits to the house. When letters
+          arrive at the West Coast house, Ann also has the job of distributing the mail to her
+          brothers and sisters. Bill has a similar job on the East Coast.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <p class="text-muted">
+          各家庭には1人の子どもがいて、西海岸の家ではAnn、東海岸の家ではBillが郵便の収集と配達を担当しています。Annは毎週兄弟姉妹全員のところを回って手紙を集め、それを毎日訪問する郵便配達員に渡します。手紙が家に届いたら、Annは兄弟姉妹にそれを配達する役割も担っています。Billも東海岸で同様の役割を果たしています。
+        </p>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <p>
+          In this example, the postal service provides logical communication between the
+          two houses—the postal service moves mail from house to house, not from person to
+          person. On the other hand, Ann and Bill provide logical communication among the
+          cousins—Ann and Bill pick up mail from, and deliver mail to, their brothers and sisters.
+          Note that from the cousins’ perspective, Ann and Bill are the mail service, even
+          though Ann and Bill are only a part (the end-system part) of the end-to-end delivery
+          process. This household example serves as a nice analogy for explaining how the
+          transport layer relates to the network layer:
+        </p>
+      </div>
+      <div class="col-md-6">
+        <p class="text-muted">
+          この例では、郵便サービスは2つの家の間の論理的通信を提供しています。つまり、家から家への配送は行いますが、個人から個人への配送ではありません。一方、AnnとBillは兄弟姉妹との間で手紙の受け取りと配達を行い、いとこ同士の論理的通信を提供します。いとこたちの視点では、AnnとBillが郵便サービスそのもののように見えますが、彼らは実際にはエンドシステム部分にすぎません。この家庭の例えは、トランスポート層とネットワーク層の関係を説明する良いアナロジーとなります。
+        </p>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <p>
+          application messages = letters in envelopes<br />
+          processes = cousins<br />
+          hosts (also called end systems) = houses<br />
+          transport-layer protocol = Ann and Bill<br />
+          network-layer protocol = postal service (including mail carriers)
+        </p>
+      </div>
+      <div class="col-md-6">
+        <p class="text-muted">
+          アプリケーションメッセージ = 封筒に入った手紙<br />
+          プロセス = いとこたち<br />
+          ホスト（またはエンドシステム）= 家<br />
+          トランスポート層プロトコル = AnnとBill<br />
+          ネットワーク層プロトコル = 郵便サービス（配達員を含む）
+        </p>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <p>
+          Continuing with this analogy, note that Ann and Bill do all their work within
+          their respective homes; they are not involved, for example, in sorting mail in
+          any intermediate mail center or in moving mail from one mail center to another.
+          Similarly, transport-layer protocols live in the end systems. Within an end system, a
+          transport protocol moves messages from application processes to the network edge
+          (that is, the network layer) and vice versa, but it doesn’t have any say about how the
+          messages are moved within the network core.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <p class="text-muted">
+          このアナロジーを続けると、AnnとBillはすべての作業を自分たちの家の中で行い、中継センターでの郵便の仕分けや、他の郵便センター間の移動には関与していません。同様に、トランスポート層のプロトコルはエンドシステム内に存在し、アプリケーションプロセスからネットワークの端（つまりネットワーク層）への、またはその逆のメッセージの移動には関与しますが、ネットワークコア内でのメッセージの移動方法には関与しません。
+        </p>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <p>
+          Continuing with our family saga, suppose now that when Ann and Bill go on
+          vacation, another cousin pair—say, Susan and Harvey—substitute for them and
+          provide the household-internal collection and delivery of mail. Unfortunately for the
+          two families, Susan and Harvey do not do the collection and delivery in exactly
+          the same way as Ann and Bill. Being younger kids, Susan and Harvey pick up and
+          drop off the mail less frequently and occasionally lose letters (which are sometimes
+          chewed up by the family dog).
+        </p>
+      </div>
+      <div class="col-md-6">
+        <p class="text-muted">
+          家族の話を続けましょう。もしAnnとBillが休暇に出かけた場合、代わりに別のいとこであるSusanとHarveyが家の中で郵便の収集と配達を担当します。しかし残念なことに、SusanとHarveyはAnnとBillほど頻繁には作業せず、時には手紙を紛失することもあります（家の犬がかじってしまうこともあります）。
+        </p>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <p>
+          Thus, the cousin-pair Susan and Harvey do not provide the same set of services
+          (that is, the same service model) as Ann and Bill. In an analogous manner, a computer
+          network may make available multiple transport protocols, with each protocol offering
+          a different service model to applications.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <p class="text-muted">
+          このように、SusanとHarveyはいわば別のサービスモデルを提供しており、AnnとBillと同じサービスを提供しているわけではありません。同様に、コンピュータネットワークでは、複数のトランスポートプロトコルが利用可能であり、それぞれが異なるサービスモデルをアプリケーションに提供しています。
+        </p>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <p>
+          The possible services that Ann and Bill can provide are clearly constrained by
+          the possible services that the postal service provides. For example, if the postal service
+          doesn’t provide a maximum bound on how long it can take to deliver mail between
+          the two houses, then there is no way that Ann and Bill can guarantee a maximum
+          delay for mail delivery between any of the cousin pairs.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <p class="text-muted">
+          AnnとBillが提供できるサービスは、郵便サービスが提供可能な範囲に制限されます。たとえば、郵便サービスが配送にかかる最大日数の上限を設けていない場合、AnnとBillがいとこ間の郵便配達に最大遅延時間を保証することはできません。
+        </p>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <p>
+          In a similar manner, the services that a transport protocol can provide are often
+          constrained by the service model of the underlying network-layer protocol. If the
+          network-layer protocol cannot provide delay or bandwidth guarantees for transport-layer
+          segments sent between hosts, then the transport-layer protocol cannot provide
+          delay or bandwidth guarantees for application messages sent between processes.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <p class="text-muted">
+          同様に、トランスポートプロトコルが提供できるサービスは、下位のネットワーク層プロトコルのサービスモデルによって制限されることがよくあります。たとえば、ネットワーク層プロトコルがホスト間で送信されるセグメントに対して遅延や帯域幅の保証を提供できない場合、トランスポート層プロトコルもアプリケーション間のメッセージに対してこれらの保証を提供することはできません。
+        </p>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <p>
+          Nevertheless, certain services can be offered by a transport protocol even when
+          the underlying network protocol doesn’t offer the corresponding service at the network layer.
+          For example, a transport protocol can offer reliable data transfer even over an unreliable
+          network layer, and can use encryption to guarantee confidentiality even when the network
+          layer cannot.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <p class="text-muted">
+          それでも、下位のネットワークプロトコルが対応するサービスを提供していない場合でも、トランスポートプロトコルが特定のサービスを提供することは可能です。たとえば、ネットワーク層が信頼性のない場合でも、トランスポート層は信頼性のあるデータ転送を提供でき、ネットワーク層が機密性を保証できない場合でも、暗号化を用いてメッセージの秘密を保証することができます。
+        </p>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup>
+// No images required for this section
+</script>
+
+<style scoped>
+.text-muted {
+  color: #6c757d;
+}
+</style>

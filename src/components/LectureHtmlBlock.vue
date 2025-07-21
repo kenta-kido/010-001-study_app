@@ -8,11 +8,11 @@
       <hr class="w-25 mx-auto border-primary" />
     </div>
 
-    <!-- TextbookItem に変更 -->
-    <TextbookItem
-      v-for="q in questions"
-      :key="q.id"
-      :question="q"
+    <!-- 🔁 各セクションの .vue を自動読み込み -->
+    <DynamicVueChapterBlock
+      v-for="entry in chapterEntries"
+      :key="entry.number"
+      :lectureNumber="entry.number"
     />
   </div>
 </template>
@@ -20,32 +20,35 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
-
-// 修正後のコンポーネント名
-import TextbookItem from '@/components/TextbookItem.vue';
-
-// データの読み込み
+import DynamicVueChapterBlock from '@/components/DynamicVueChapterBlock.vue';
 import lectureMeta from '@/data/lectureMeta.json';
-import lectureData from '@/data/lecture04/lecture01.json';
 
 const route = useRoute();
 const lectureTitle = ref('');
 const lectureSubtitle = ref('');
 const lectureNumber = ref('');
-const questions = ref([]);
+const chapterEntries = ref([]);
 
-onMounted(() => {
-  const group = 'lecture04'; // 固定
-  const number = parseInt(route.name.split('_')[1]); // "Lecture01_02" → 02
+onMounted(async () => {
+  const group = 'lecture04';
+  const number = parseInt(route.name.split('_')[1]); // Lecture04_03 → 3
+  lectureNumber.value = number.toString().padStart(2, '0');
 
   const meta = lectureMeta[group];
   lectureTitle.value = meta.title;
-  lectureNumber.value = number.toString().padStart(2, '0');
 
   const lectureEntry = meta.lectures.find(l => l.number === number);
   lectureSubtitle.value = lectureEntry ? lectureEntry.title : '';
 
-  // JSON形式が新しい構造に沿っている前提
-  questions.value = lectureData;
+  try {
+    const res = await fetch('./lecture/lecture04/chapter03/index.json');
+    if (res.ok) {
+      chapterEntries.value = await res.json();
+    } else {
+      console.warn('index.json not found');
+    }
+  } catch (err) {
+    console.error('Failed to load index.json', err);
+  }
 });
 </script>

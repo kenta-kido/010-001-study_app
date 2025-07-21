@@ -1,0 +1,13 @@
+# Chapter 3: Transport Layer
+## Introduction
+
+![Diagram](./images/lecture/lecture04/chapter03/01.png)
+
+Residing between the application and network layers, the transport layer is a central
+piece of the layered network architecture...
+
+We’ll begin by discussing the relationship...
+
+We’ll then return to principles...
+
+We’ll next move on to a second fundamentally important problem...

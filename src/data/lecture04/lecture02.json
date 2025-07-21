@@ -1,0 +1,9 @@
+[
+  {
+    "id": 1,
+    "html": "./lecture/lecture04/chapter03/chapter3_00.html",
+    "explanationhtml": "./lecture/lecture04/chapter03/chapter3_00_ex.html",
+    "images": ["./images/lecture04/chapter03/01.png"],
+    "explanationImages": ["./images/lecture04/chapter03/01.png"]
+  }
+  ]
