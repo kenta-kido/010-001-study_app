@@ -1,16 +1,973 @@
-<!-- chapter03/chapter03_00.vue -->
 <template>
-  <div>
-    <h3>Chapter 3.0.0 - Detailed Content</h3>
-    <p>This is detailed content from chapter03_00.vue</p>
+  <div class="container my-4">
+    <h3 class="mb-4">3.2 Multiplexing and Demultiplexing</h3>
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <p>
+          In this section, we discuss transport-layer multiplexing and demultiplexing, that
+          is, extending the host-to-host delivery service provided by the network layer to a
+          process-to-process delivery service for applications running on the hosts.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <p class="text-muted">
+          このセクションでは、トランスポート層のマルチプレクシングとデマルチプレクシングについて説明します。これは、ネットワーク層が提供するホスト間の配送サービスを、ホスト上で動作するアプリケーションのプロセス間の配送サービスへと拡張するものです。
+        </p>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <p>
+          In order to keep the discussion concrete, we’ll discuss this basic transport-layer
+          service in the context of the Internet. We emphasize, however, that a
+          multiplexing/demultiplexing service is needed for all computer networks.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <p class="text-muted">
+          議論を具体的にするために、この基本的なトランスポート層サービスをインターネットの文脈で説明します。ただし、このマルチプレクシング／デマルチプレクシングのサービスは、すべてのコンピュータネットワークに必要であることを強調しておきます。
+        </p>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <p>
+          At the destination host, the transport layer receives segments from the network
+          layer just below. The transport layer has the responsibility of delivering the data in
+          these segments to the appropriate application process running in the host.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <p class="text-muted">
+          送信先ホストにおいて、トランスポート層は下位のネットワーク層からセグメントを受け取ります。そして、これらのセグメントに含まれるデータをホスト上で実行中の適切なアプリケーションプロセスに届ける責任を担っています。
+        </p>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <p>
+          Let’s take a look at an example. Suppose you are sitting in front of your computer,
+          and you are downloading Web pages while running one FTP session and two
+          Telnet sessions. You therefore have four network application processes running—
+          two Telnet processes, one FTP process, and one HTTP process.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <p class="text-muted">
+          例を見てみましょう。あなたがパソコンの前に座り、Webページをダウンロードしながら、1つのFTPセッションと2つのTelnetセッションを実行しているとします。つまり、Telnetが2つ、FTPが1つ、HTTPが1つの計4つのネットワークアプリケーションプロセスが動作している状態です。
+        </p>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <p>
+          When the transport layer in your computer receives data from the network layer below,
+          it needs to direct the received data to one of these four processes. Let’s now examine
+          how this is done.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <p class="text-muted">
+          あなたのコンピュータのトランスポート層がネットワーク層からデータを受け取ると、そのデータをこれら4つのプロセスのうちの1つに振り分ける必要があります。これがどのように行われるかをこれから見ていきます。
+        </p>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <p>
+          First recall from Section 2.7 that a process (as part of a network application)
+          can have one or more sockets, doors through which data passes from the network to
+          the process and through which data passes from the process to the network.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <p class="text-muted">
+          まず第2.7節を思い出してください。ネットワークアプリケーションの一部であるプロセスは、1つ以上のソケットを持つことができます。ソケットは、ネットワークからプロセスへ、またはプロセスからネットワークへとデータが通過する「出入り口」です。
+        </p>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <p>
+          Thus, as shown in Figure 3.2, the transport layer in the receiving host does not actually
+          deliver data directly to a process, but instead to an intermediary socket. Because at
+          any given time there can be more than one socket in the receiving host, each socket
+          has a unique identifier. The format of the identifier depends on whether the socket is
+          a UDP or a TCP socket, as we’ll discuss shortly.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <p class="text-muted">
+          したがって、図3.2に示されているように、受信ホストのトランスポート層はデータを直接プロセスに渡すのではなく、中間的なソケットに渡します。受信ホスト内には複数のソケットが存在する可能性があるため、それぞれのソケットには一意の識別子が付けられています。この識別子の形式は、そのソケットがUDPかTCPかによって異なります。この点については後ほど詳しく説明します。
+        </p>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+  <div class="col-md-6">
+    <p>
+      Now let’s consider how a receiving host directs an incoming transport-layer
+      segment to the appropriate socket. Each transport-layer segment has a set of fields in
+      the segment for this purpose. At the receiving end, the transport layer examines these
+      fields to identify the receiving socket and then directs the segment to that socket.
+    </p>
   </div>
+  <div class="col-md-6">
+    <p class="text-muted">
+      ここで、受信ホストがどのようにして受信したトランスポート層セグメントを適切なソケットに振り分けるかを見てみましょう。このために、各トランスポート層セグメントには特定のフィールドが含まれています。受信側では、トランスポート層がこれらのフィールドを確認し、適切なソケットを特定して、そのソケットにセグメントを渡します。
+    </p>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-6">
+    <p>
+      This job of delivering the data in a transport-layer segment to the correct socket is
+      called <strong>demultiplexing</strong>. The job of gathering data chunks at the source host from
+      different sockets, encapsulating each data chunk with header information (that will
+      later be used in demultiplexing) to create segments, and passing the segments to the
+      network layer is called <strong>multiplexing</strong>.
+    </p>
+  </div>
+  <div class="col-md-6">
+    <p class="text-muted">
+      トランスポート層セグメント内のデータを正しいソケットに届ける処理は、<strong>デマルチプレクシング（demultiplexing）</strong>と呼ばれます。一方、送信ホストで異なるソケットからデータチャンクを集め、それぞれにヘッダ情報（後にデマルチプレクシングで使用される）を付加してセグメントを作成し、ネットワーク層に渡す処理は、<strong>マルチプレクシング（multiplexing）</strong>と呼ばれます。
+    </p>
+  </div>
+</div>
+
+<div class="text-center my-4">
   <img
     :src="imgUrl"
-    alt="Transport Layer"
-    class="img-fluid my-3 rounded border"
+    alt="Figure 3.2 - Transport-layer multiplexing and demultiplexing"
+    class="img-fluid rounded border"
   />
+  <p class="text-muted mt-2 mb-0">
+    Figure 3.2 — Transport-layer multiplexing and demultiplexing
+  </p>
+  <p class="text-muted">
+    図3.2 — トランスポート層のマルチプレクシングとデマルチプレクシング
+  </p>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-6">
+    <p>
+      Note that the transport layer in the middle host in Figure 3.2 must demultiplex
+      segments arriving from the network layer below to either process P1 or P2 above;
+      this is done by directing the arriving segment’s data to the corresponding process’s socket.
+    </p>
+  </div>
+  <div class="col-md-6">
+    <p class="text-muted">
+      図3.2にある中間ホストのトランスポート層は、下位のネットワーク層から到着したセグメントを、上位のプロセスP1またはP2のいずれかにデマルチプレクスする必要があります。これは、受信したセグメントのデータを対応するプロセスのソケットに振り分けることで行われます。
+    </p>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-6">
+    <p>
+      The transport layer in the middle host must also gather outgoing data from these
+      sockets, form transport-layer segments, and pass these segments down to the
+      network layer.
+    </p>
+  </div>
+  <div class="col-md-6">
+    <p class="text-muted">
+      中間ホストのトランスポート層は、これらのソケットから送信データを集め、トランスポート層セグメントを作成し、それらをネットワーク層へと渡す必要もあります。
+    </p>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-6">
+    <p>
+      Although we have introduced multiplexing and demultiplexing in the context
+      of the Internet transport protocols, it’s important to realize that they are concerns
+      whenever a single protocol at one layer (at the transport layer or elsewhere) is used
+      by multiple protocols at the next higher layer.
+    </p>
+  </div>
+  <div class="col-md-6">
+    <p class="text-muted">
+      ここではインターネットのトランスポートプロトコルの文脈でマルチプレクシングとデマルチプレクシングを紹介しましたが、重要なのは、これらは一つの層（トランスポート層であれ他の層であれ）の単一のプロトコルが、次の上位層の複数のプロトコルによって利用される場合には常に関係する課題だということです。
+    </p>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-6">
+    <p>
+      To illustrate the demultiplexing job, recall the household analogy in the previous
+      section. Each of the kids is identified by his or her name. When Bill receives a batch
+      of mail from the mail carrier, he performs a demultiplexing operation by observing
+      to whom the letters are addressed and then hand delivering the mail to his brothers
+      and sisters.
+    </p>
+  </div>
+  <div class="col-md-6">
+    <p class="text-muted">
+      デマルチプレクシングの例として、前節の家庭のアナロジーを思い出してください。各子どもは名前で識別されます。Billが郵便配達員から郵便物を受け取ったとき、彼は宛先を確認して手紙を兄弟姉妹に配ることで、デマルチプレクシングの操作を行っているのです。
+    </p>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-6">
+    <p>
+      Ann performs a multiplexing operation when she collects letters from her
+      brothers and sisters and gives the collected mail to the mail person.
+    </p>
+  </div>
+  <div class="col-md-6">
+    <p class="text-muted">
+      Annは、兄弟姉妹から手紙を集め、それを郵便配達員に渡すことで、マルチプレクシングの操作を行っています。
+    </p>
+  </div>
+</div>
+<div class="row mb-3">
+  <div class="col-md-6">
+    <p>
+      Now that we understand the roles of transport-layer multiplexing and demultiplexing,
+      let us examine how it is actually done in a host. From the discussion above,
+      we know that transport-layer multiplexing requires (1) that sockets have unique
+      identifiers, and (2) that each segment have special fields that indicate the socket to
+      which the segment is to be delivered.
+    </p>
+  </div>
+  <div class="col-md-6">
+    <p class="text-muted">
+      トランスポート層におけるマルチプレクシングとデマルチプレクシングの役割が理解できたところで、これがホスト内で実際にどのように行われているのかを見ていきましょう。先ほどの説明から、トランスポート層のマルチプレクシングには（1）ソケットが一意の識別子を持っていること、（2）各セグメントに宛先ソケットを示す特別なフィールドが必要であることがわかります。
+    </p>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-6">
+    <p>
+      These special fields, illustrated in Figure 3.3, are the source port number field and
+      the destination port number field. (The UDP and TCP segments have other fields as
+      well, as discussed in the subsequent sections of this chapter.)
+    </p>
+  </div>
+  <div class="col-md-6">
+    <p class="text-muted">
+      これらの特別なフィールドは図3.3に示されており、送信元ポート番号フィールドと宛先ポート番号フィールドです。（UDPおよびTCPセグメントには他にもフィールドがありますが、それらは本章の後のセクションで説明します。）
+    </p>
+  </div>
+</div>
+
+<div class="text-center my-4">
+  <img
+    :src="imgUrl2"
+    alt="Figure 3.3 - Source and destination port-number fields"
+    class="img-fluid rounded border"
+  />
+  <p class="text-muted mt-2 mb-0">
+    Figure 3.3 — Source and destination port-number fields in a transport-layer segment
+  </p>
+  <p class="text-muted">
+    図3.3 — トランスポート層セグメントにおける送信元ポート番号と宛先ポート番号のフィールド
+  </p>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-6">
+    <p>
+      Each port number is a 16-bit number, ranging from 0 to 65535. The port numbers
+      ranging from 0 to 1023 are called well-known port numbers and are restricted, which
+      means that they are reserved for use by well-known application protocols such as
+      HTTP (which uses port number 80) and FTP (which uses port number 21).
+    </p>
+  </div>
+  <div class="col-md-6">
+    <p class="text-muted">
+      各ポート番号は16ビットの数値で、0から65535の範囲をとります。そのうち0から1023の範囲は「ウェルノウンポート番号（well-known port numbers）」と呼ばれ、制限されています。つまり、HTTP（ポート番号80）やFTP（ポート番号21）などの著名なアプリケーションプロトコル用に予約されています。
+    </p>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-6">
+    <p>
+      The list of well-known port numbers is given in RFC 1700 and is updated at
+      http://www.iana.org [RFC 3232]. When we develop a new application (such as
+      the simple application developed in Section 2.7), we must assign the application a
+      port number.
+    </p>
+  </div>
+  <div class="col-md-6">
+    <p class="text-muted">
+      ウェルノウンポート番号の一覧はRFC 1700で定義されており、http://www.iana.org にて更新されています（RFC 3232）。新しいアプリケーション（たとえば2.7節で作成した簡単なアプリケーション）を開発する場合、そのアプリケーションにポート番号を割り当てる必要があります。
+    </p>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-6">
+    <p>
+      It should now be clear how the transport layer could implement the demultiplexing
+      service: Each socket in the host could be assigned a port number, and when
+      a segment arrives at the host, the transport layer examines the destination port
+      number in the segment and directs the segment to the corresponding socket.
+    </p>
+  </div>
+  <div class="col-md-6">
+    <p class="text-muted">
+      トランスポート層がどのようにデマルチプレクシングを実現するか、ここで明確になったはずです。ホスト内の各ソケットにポート番号を割り当て、セグメントがホストに到着したとき、トランスポート層はセグメント内の宛先ポート番号を調べて、該当するソケットにセグメントを振り分けます。
+    </p>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-6">
+    <p>
+      The segment’s data then passes through the socket into the attached process.
+      As we’ll see, this is basically how UDP does it. However, we’ll also see that
+      multiplexing/demultiplexing in TCP is yet more subtle.
+    </p>
+  </div>
+  <div class="col-md-6">
+    <p class="text-muted">
+      セグメントのデータはその後、ソケットを通じて対応するプロセスに渡されます。後で見るように、これがUDPでの基本的な仕組みです。ただし、TCPにおけるマルチプレクシングとデマルチプレクシングは、これよりもさらに繊細です。
+    </p>
+  </div>
+</div>
+
+<div class="row mb-4">
+  <div class="col-12">
+    <p class="fw-bold" style="color: #004085;">
+      Connectionless Multiplexing and Demultiplexing
+    </p>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-6">
+    <p>
+      Recall from Section 2.7.1 that the Python program running in a host can create a
+      UDP socket with the line<br />
+      <code>clientSocket = socket(AF_INET, SOCK_DGRAM)</code>
+    </p>
+  </div>
+  <div class="col-md-6">
+    <p class="text-muted">
+      2.7.1節を思い出してください。ホスト上で動作するPythonプログラムは、以下のコードでUDPソケットを作成できます：<br />
+      <code>clientSocket = socket(AF_INET, SOCK_DGRAM)</code>
+    </p>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-6">
+    <p>
+      When a UDP socket is created in this manner, the transport layer automatically
+      assigns a port number to the socket. In particular, the transport layer assigns a port
+      number in the range 1024 to 65535 that is currently not being used by any other UDP
+      port in the host.
+    </p>
+  </div>
+  <div class="col-md-6">
+    <p class="text-muted">
+      このようにUDPソケットを作成すると、トランスポート層はそのソケットに自動的にポート番号を割り当てます。具体的には、ホスト内で他のUDPポートによって使用されていない1024から65535の範囲のポート番号が割り当てられます。
+    </p>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-6">
+    <p>
+      Alternatively, we can add a line into our Python program after we create the socket
+      to associate a specific port number (say, 19157) to this UDP socket via the socket
+      <code>bind()</code> method:<br />
+      <code>clientSocket.bind(('', 19157))</code>
+    </p>
+  </div>
+  <div class="col-md-6">
+    <p class="text-muted">
+      あるいは、ソケットを作成した後に、Pythonプログラムに1行追加して、<code>bind()</code> メソッドを用いて特定のポート番号（例：19157）をこのUDPソケットに関連付けることもできます：<br />
+      <code>clientSocket.bind(('', 19157))</code>
+    </p>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-6">
+    <p>
+      If the application developer writing the code were implementing the server side of
+      a “well-known protocol,” then the developer would have to assign the corresponding
+      well-known port number.
+    </p>
+  </div>
+  <div class="col-md-6">
+    <p class="text-muted">
+      アプリケーション開発者が「著名なプロトコル」のサーバー側を実装している場合は、対応するウェルノウンポート番号を割り当てる必要があります。
+    </p>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-6">
+    <p>
+      Typically, the client side of the application lets the transport layer automatically
+      (and transparently) assign the port number, whereas the server side of the application
+      assigns a specific port number.
+    </p>
+  </div>
+  <div class="col-md-6">
+    <p class="text-muted">
+      通常、アプリケーションのクライアント側ではポート番号の割り当てをトランスポート層に自動的（かつ透過的に）任せますが、サーバー側では特定のポート番号を明示的に割り当てます。
+    </p>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-6">
+    <p>
+      With port numbers assigned to UDP sockets, we can now precisely describe
+      UDP multiplexing/demultiplexing. Suppose a process in Host A, with UDP port
+      19157, wants to send a chunk of application data to a process with UDP port 46428 in
+      Host B.
+    </p>
+  </div>
+  <div class="col-md-6">
+    <p class="text-muted">
+      UDPソケットにポート番号が割り当てられると、UDPのマルチプレクシング／デマルチプレクシングの動作を正確に説明できるようになります。たとえば、ホストAのポート19157を使用するプロセスが、ホストBのポート46428を使用するプロセスにアプリケーションデータを送信したいとします。
+    </p>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-6">
+    <p>
+      The transport layer in Host A creates a transport-layer segment that includes
+      the application data, the source port number (19157), the destination port number
+      (46428), and two other values (which will be discussed later, but are unimportant for
+      the current discussion).
+    </p>
+  </div>
+  <div class="col-md-6">
+    <p class="text-muted">
+      ホストAのトランスポート層は、アプリケーションデータ、送信元ポート番号（19157）、宛先ポート番号（46428）、および他の2つの値（これらは後で説明しますが、現在の議論では重要ではありません）を含むトランスポート層セグメントを作成します。
+    </p>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-6">
+    <p>
+      The transport layer then passes the resulting segment to the network layer. The
+      network layer encapsulates the segment in an IP datagram and makes a best-effort
+      attempt to deliver the segment to the receiving host.
+    </p>
+  </div>
+  <div class="col-md-6">
+    <p class="text-muted">
+      その後、トランスポート層は生成されたセグメントをネットワーク層に渡します。ネットワーク層はこのセグメントをIPデータグラムにカプセル化し、受信ホストに届けるためのベストエフォート型の配送を試みます。
+    </p>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-6">
+    <p>
+      If the segment arrives at the receiving Host B, the transport layer at the receiving host
+      examines the destination port number in the segment (46428) and delivers the segment
+      to its socket identified by port 46428.
+    </p>
+  </div>
+  <div class="col-md-6">
+    <p class="text-muted">
+      セグメントが受信側のホストBに届いた場合、受信ホストのトランスポート層はセグメント内の宛先ポート番号（46428）を確認し、それに対応するソケットにセグメントを渡します。
+    </p>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-6">
+    <p>
+      Note that Host B could be running multiple processes, each with its own UDP socket
+      and associated port number. As UDP segments arrive from the network, Host B
+      directs (demultiplexes) each segment to the appropriate socket by examining the
+      segment’s destination port number.
+    </p>
+  </div>
+  <div class="col-md-6">
+    <p class="text-muted">
+      ホストBでは、複数のプロセスがそれぞれ独自のUDPソケットとポート番号を持って動作している可能性があります。UDPセグメントがネットワークから到着すると、ホストBはそれらのセグメントを宛先ポート番号に基づいて適切なソケットに振り分け（デマルチプレクス）します。
+    </p>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-6">
+    <p>
+      It is important to note that a UDP socket is fully identified by a two-tuple consisting
+      of a destination IP address and a destination port number. As a consequence, if
+      two UDP segments have different source IP addresses and/or source port numbers, but
+      have the same destination IP address and destination port number, then the two segments
+      will be directed to the same destination process via the same destination socket.
+    </p>
+  </div>
+  <div class="col-md-6">
+    <p class="text-muted">
+      UDPソケットは、「宛先IPアドレス」と「宛先ポート番号」からなる2要素の組み合わせ（タプル）によって一意に識別されるという点に注意が必要です。このため、たとえ送信元IPアドレスや送信元ポート番号が異なっていても、宛先IPアドレスと宛先ポート番号が同じであれば、2つのUDPセグメントは同じ宛先ソケットを通じて同じ宛先プロセスに届けられます。
+    </p>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-6">
+    <p>
+      You may be wondering now, what is the purpose of the source port number?
+      As shown in Figure 3.4, in the A-to-B segment the source port number serves as
+      part of a “return address”—when B wants to send a segment back to A, the destination
+      port in the B-to-A segment will take its value from the source port value of the
+      A-to-B segment.
+    </p>
+  </div>
+  <div class="col-md-6">
+    <p class="text-muted">
+      ここで、「送信元ポート番号は何のためにあるのか？」と疑問に思うかもしれません。図3.4に示されているように、AからBへのセグメントにおいて送信元ポート番号は「返信先アドレス」の一部として機能します。つまり、BがAにセグメントを送り返すとき、そのセグメントの宛先ポート番号は、Aから送られてきたセグメントの送信元ポート番号をそのまま使うのです。
+    </p>
+  </div>
+</div>
+
+<div class="text-center my-4">
+  <img
+    :src="imgUrl3"
+    alt="Figure 3.4 - UDP return address with source port number"
+    class="img-fluid rounded border"
+  />
+  <p class="text-muted mt-2 mb-0">
+    Figure 3.4 — UDP segment with source and destination port numbers for return path
+  </p>
+  <p class="text-muted">
+    図3.4 — 送信元および宛先ポート番号によるUDP返信経路
+  </p>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-6">
+    <p>
+      (The complete return address is A’s IP address and the source port
+      number.) As an example, recall the UDP server program studied in Section 2.7. In
+      <code>UDPServer.py</code>, the server uses the <code>recvfrom()</code> method to extract the clientside
+      (source) port number from the segment it receives from the client; it then sends
+      a new segment to the client, with the extracted source port number serving as the
+      destination port number in this new segment.
+    </p>
+  </div>
+  <div class="col-md-6">
+    <p class="text-muted">
+      （完全な返信アドレスは、AのIPアドレスと送信元ポート番号です。）例として、2.7節で扱ったUDPサーバープログラムを思い出してください。<code>UDPServer.py</code>では、サーバーは<code>recvfrom()</code>メソッドを使ってクライアントから受信したセグメントから送信元ポート番号を取り出し、その番号を新しいセグメントの宛先ポート番号として使用してクライアントに返信を送ります。
+    </p>
+  </div>
+</div>
+
+<div class="row mb-4">
+  <div class="col-12">
+    <p class="fw-bold" style="color: #004085;">
+      Connection-Oriented Multiplexing and Demultiplexing
+    </p>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-6">
+    <p>
+      In order to understand TCP demultiplexing, we have to take a close look at TCP
+      sockets and TCP connection establishment. One subtle difference between a
+      TCP socket and a UDP socket is that a TCP socket is identified by a four-tuple:
+      (source IP address, source port number, destination IP address, destination port
+      number).
+    </p>
+  </div>
+  <div class="col-md-6">
+    <p class="text-muted">
+      TCPのデマルチプレクシングを理解するには、TCPソケットとTCP接続の確立について詳しく見る必要があります。TCPソケットとUDPソケットの微妙な違いの一つは、TCPソケットは4要素（送信元IPアドレス、送信元ポート番号、宛先IPアドレス、宛先ポート番号）で識別される点です。
+    </p>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-6">
+    <p>
+      Thus, when a TCP segment arrives from the network to a host, the host
+      uses all four values to direct (demultiplex) the segment to the appropriate socket.
+    </p>
+  </div>
+  <div class="col-md-6">
+    <p class="text-muted">
+      このため、TCPセグメントがネットワークからホストに到着した際、ホストはこの4つの値すべてを使用して、セグメントを適切なソケットへとデマルチプレクスします。
+    </p>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-6">
+    <p>
+      In particular, and in contrast with UDP, two arriving TCP segments with different
+      source IP addresses or source port numbers will (with the exception of a TCP
+      segment carrying the original connection-establishment request) be directed to two
+      different sockets.
+    </p>
+  </div>
+  <div class="col-md-6">
+    <p class="text-muted">
+      特に、UDPとは異なり、送信元IPアドレスまたは送信元ポート番号が異なる2つのTCPセグメントは（最初の接続確立リクエストを運ぶセグメントを除いて）異なるソケットに振り分けられます。
+    </p>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-6">
+    <p>
+      To gain further insight, let’s reconsider the TCP client-server programming
+      example in Section 2.7.2:
+    </p>
+  </div>
+  <div class="col-md-6">
+    <p class="text-muted">
+      より理解を深めるために、2.7.2節で紹介したTCPのクライアント・サーバープログラミングの例を再確認しましょう。
+    </p>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-6">
+    <ul>
+      <li>
+        The TCP server application has a “welcoming socket,” that waits for connection-
+        establishment requests from TCP clients (see Figure 2.29) on port number 12000.
+      </li>
+      <li>
+        The TCP client creates a socket and sends a connection establishment request
+        segment with the lines:<br />
+        <code>clientSocket = socket(AF_INET, SOCK_STREAM)</code><br />
+        <code>clientSocket.connect((serverName,12000))</code>
+      </li>
+      <li>
+        A connection-establishment request is nothing more than a TCP segment with
+        destination port number 12000 and a special connection-establishment bit set in
+        the TCP header (discussed in Section 3.5). The segment also includes a source
+        port number that was chosen by the client.
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <ul class="text-muted">
+      <li>
+        TCPサーバーアプリケーションは「ウェルカミングソケット」を持ち、ポート番号12000でクライアントからの接続確立リクエストを待ち受けます（図2.29を参照）。
+      </li>
+      <li>
+        TCPクライアントはソケットを作成し、以下のコードで接続確立リクエストセグメントを送信します：<br />
+        <code>clientSocket = socket(AF_INET, SOCK_STREAM)</code><br />
+        <code>clientSocket.connect((serverName,12000))</code>
+      </li>
+      <li>
+        接続確立リクエストは、宛先ポート番号12000とTCPヘッダ内の特別な接続確立ビットが設定されたTCPセグメントにすぎません（3.5節で説明）。このセグメントにはクライアントが選んだ送信元ポート番号も含まれています。
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-6">
+    <p>
+      When the host operating system of the computer running the server process
+      receives the incoming connection-request segment with destination port 12000,
+      it locates the server process that is waiting to accept a connection on port number
+      12000. The server process then creates a new socket:<br />
+      <code>connectionSocket, addr = serverSocket.accept()</code>
+    </p>
+  </div>
+  <div class="col-md-6">
+    <p class="text-muted">
+      サーバープロセスが動作しているコンピュータのOSが、宛先ポート12000の接続リクエストセグメントを受け取ると、ポート番号12000で接続を待っているサーバープロセスを見つけ出し、新しいソケットを作成します：<br />
+      <code>connectionSocket, addr = serverSocket.accept()</code>
+    </p>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-6">
+    <p>
+      Also, the transport layer at the server notes the following four values in the connection-
+      request segment: (1) the source port number in the segment, (2) the IP
+      address of the source host, (3) the destination port number in the segment, and
+      (4) its own IP address.
+    </p>
+  </div>
+  <div class="col-md-6">
+    <p class="text-muted">
+      また、サーバー側のトランスポート層は接続リクエストセグメント内の次の4つの値を記録します：（1）セグメントの送信元ポート番号、（2）送信元ホストのIPアドレス、（3）セグメントの宛先ポート番号、（4）自ホストのIPアドレス。
+    </p>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-6">
+    <p>
+      The newly created connection socket is identified by these four values; all subsequently
+      arriving segments whose source port, source IP address, destination port,
+      and destination IP address match these four values will be demultiplexed to this socket.
+      With the TCP connection now in place, the client and server can now send data to each other.
+    </p>
+  </div>
+  <div class="col-md-6">
+    <p class="text-muted">
+      新たに作成された接続ソケットはこれら4つの値によって識別され、それ以降に到着するセグメントの送信元ポート、送信元IPアドレス、宛先ポート、宛先IPアドレスがこれらの値と一致する場合、そのセグメントはこのソケットにデマルチプレクスされます。こうしてTCP接続が確立され、クライアントとサーバーはデータをやり取りできるようになります。
+    </p>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-6">
+    <p>
+      The server host may support many simultaneous TCP connection sockets, with
+      each socket attached to a process, and with each socket identified by its own four-tuple.
+      When a TCP segment arrives at the host, all four fields (source IP address,
+      source port, destination IP address, destination port) are used to direct (demultiplex)
+      the segment to the appropriate socket.
+    </p>
+  </div>
+  <div class="col-md-6">
+    <p class="text-muted">
+      サーバーホストは、複数のTCP接続ソケットを同時にサポートでき、それぞれのソケットは個別のプロセスに紐付けられ、独自の4要素タプルで識別されます。TCPセグメントがホストに到着すると、4つすべての情報（送信元IPアドレス、送信元ポート、宛先IPアドレス、宛先ポート）が使用されて、適切なソケットへとデマルチプレクスされます。
+    </p>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-6">
+    <p>
+      The situation is illustrated in Figure 3.5, in which Host C initiates two HTTP
+      sessions to server B, and Host A initiates one HTTP session to B. Hosts A and C
+      and server B each have their own unique IP address—A, C, and B, respectively.
+    </p>
+  </div>
+  <div class="col-md-6">
+    <p class="text-muted">
+      この状況は図3.5に示されています。ホストCはサーバーBに対して2つのHTTPセッションを開始し、ホストAは1つのHTTPセッションをBに開始しています。ホストA、C、サーバーBはそれぞれ異なるIPアドレス（A、C、B）を持っています。
+    </p>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-6">
+    <p>
+      Host C assigns two different source port numbers (26145 and 7532) to its two HTTP
+      connections. Because Host A is choosing source port numbers independently of C,
+      it might also assign a source port of 26145 to its HTTP connection. But this is not
+      a problem—server B will still be able to correctly demultiplex the two connections
+      having the same source port number, since the two connections have different source
+      IP addresses.
+    </p>
+  </div>
+  <div class="col-md-6">
+    <p class="text-muted">
+      ホストCは、2つのHTTP接続に対して異なる送信元ポート番号（26145と7532）を割り当てています。ホストAはCとは独立してポート番号を選ぶため、HTTP接続に26145を使用することもあり得ます。しかしこれは問題ありません。サーバーBは、たとえ同じ送信元ポート番号を持っていても、送信元IPアドレスが異なるため、2つの接続を正しくデマルチプレクスすることができます。
+    </p>
+  </div>
+</div>
+
+<div class="text-center my-4">
+  <img
+    :src="imgUrl4"
+    alt="Figure 3.5 - Two clients using the same destination port"
+    class="img-fluid rounded border"
+  />
+  <p class="text-muted mt-2 mb-0">
+    Figure 3.5 — Two clients, using the same destination port number (80) to communicate with the same Web server application
+  </p>
+  <p class="text-muted">
+    図3.5 — 同じ宛先ポート番号（80）を使って同じWebサーバーアプリケーションと通信する2つのクライアント
+  </p>
+</div>
+
+<div class="row mb-4">
+  <div class="col-12">
+    <p class="fw-bold" style="color: #004085;">
+      Web Servers and TCP
+    </p>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-6">
+    <p>
+      Before closing this discussion, it’s instructive to say a few additional words about
+      Web servers and how they use port numbers. Consider a host running a Web server,
+      such as an Apache Web server, on port 80. When clients (for example, browsers)
+      send segments to the server, all segments will have destination port 80.
+    </p>
+  </div>
+  <div class="col-md-6">
+    <p class="text-muted">
+      この議論を締めくくる前に、Webサーバーとそれがポート番号をどのように使うかについて、いくつか補足しておきましょう。たとえばApacheなどのWebサーバーがポート80で動作しているとします。このとき、クライアント（たとえばブラウザ）がサーバーにセグメントを送信すると、そのすべてのセグメントは宛先ポート80になります。
+    </p>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-6">
+    <p>
+      In particular, both the initial connection-establishment segments and the segments
+      carrying HTTP request messages will have destination port 80. As we have just
+      described, the server distinguishes the segments from the different clients using source
+      IP addresses and source port numbers.
+    </p>
+  </div>
+  <div class="col-md-6">
+    <p class="text-muted">
+      特に、最初の接続確立セグメントも、HTTPリクエストを含むセグメントも、すべて宛先ポート80になります。前述したように、サーバーは送信元IPアドレスと送信元ポート番号を使ってクライアントごとのセグメントを識別します。
+    </p>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-6">
+    <p>
+      Figure 3.5 shows a Web server that spawns a new process for each connection.
+      As shown in Figure 3.5, each of these processes has its own connection socket
+      through which HTTP requests arrive and HTTP responses are sent.
+    </p>
+  </div>
+  <div class="col-md-6">
+    <p class="text-muted">
+      図3.5は、接続ごとに新しいプロセスを生成するWebサーバーを示しています。図に示されているように、それぞれのプロセスには独自の接続ソケットがあり、そのソケットを通じてHTTPリクエストを受け取り、HTTPレスポンスを送信します。
+    </p>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-6">
+    <p>
+      We mention, however, that there is not always a one-to-one correspondence between
+      connection sockets and processes. In fact, today’s high-performing Web servers
+      often use only one process, and create a new thread with a new connection socket
+      for each new client connection.
+    </p>
+  </div>
+  <div class="col-md-6">
+    <p class="text-muted">
+      ただし、接続ソケットとプロセスが必ず1対1で対応するとは限らないことに注意してください。実際、今日の高性能なWebサーバーは通常、1つのプロセスだけを使い、新しいクライアント接続ごとに新しいスレッドと新しい接続ソケットを作成します。
+    </p>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-6">
+    <p>
+      (A thread can be viewed as a lightweight subprocess.) If you did the first programming
+      assignment in Chapter 2, you built a Web server that does just this. For such a
+      server, at any given time there may be many connection sockets (with different
+      identifiers) attached to the same process.
+    </p>
+  </div>
+  <div class="col-md-6">
+    <p class="text-muted">
+      （スレッドは軽量なサブプロセスと考えることができます。）第2章の最初のプログラミング課題を行った場合、あなたはちょうどこのようなWebサーバーを構築したはずです。このようなサーバーでは、任意の時点で同一のプロセスに多くの接続ソケット（異なる識別子を持つ）が結びついていることがあります。
+    </p>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-6">
+    <p>
+      If the client and server are using persistent HTTP, then throughout the duration
+      of the persistent connection the client and server exchange HTTP messages via the
+      same server socket.
+    </p>
+  </div>
+  <div class="col-md-6">
+    <p class="text-muted">
+      クライアントとサーバーが持続的（persistent）HTTPを使用している場合、その持続的な接続の間、HTTPメッセージは同じサーバーソケットを通じて交換され続けます。
+    </p>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-6">
+    <p>
+      However, if the client and server use non-persistent HTTP, then a new TCP
+      connection is created and closed for every request/response, and hence a new socket
+      is created and later closed for every request/response.
+    </p>
+  </div>
+  <div class="col-md-6">
+    <p class="text-muted">
+      一方で、非持続的（non-persistent）HTTPを使用している場合、リクエスト／レスポンスごとに新しいTCP接続が作成されて閉じられます。したがって、各リクエスト／レスポンスごとに新しいソケットが作られ、後で閉じられます。
+    </p>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-6">
+    <p>
+      This frequent creating and closing of sockets can severely impact the performance
+      of a busy Web server (although a number of operating system tricks can be used to
+      mitigate the problem).
+    </p>
+  </div>
+  <div class="col-md-6">
+    <p class="text-muted">
+      このようにソケットを頻繁に作成および閉じることは、多忙なWebサーバーのパフォーマンスに深刻な影響を与える可能性があります（ただし、OSレベルでこの問題を緩和するための工夫がいくつか存在します）。
+    </p>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-6">
+    <p>
+      Readers interested in the operating system issues surrounding persistent
+      and non-persistent HTTP are encouraged to see [Nielsen 1997; Nahum 2002].
+    </p>
+  </div>
+  <div class="col-md-6">
+    <p class="text-muted">
+      持続的および非持続的HTTPに関するオペレーティングシステム上の課題に関心のある読者は、[Nielsen 1997; Nahum 2002] を参照することをお勧めします。
+    </p>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-6">
+    <p>
+      Now that we’ve discussed transport-layer multiplexing and demultiplexing, let’s
+      move on and discuss one of the Internet’s transport protocols, UDP. In the next section,
+      we’ll see that UDP adds little more to the network-layer protocol than a multiplexing/
+      demultiplexing service.
+    </p>
+  </div>
+  <div class="col-md-6">
+    <p class="text-muted">
+      これまでトランスポート層のマルチプレクシングとデマルチプレクシングについて説明してきましたが、次はインターネットのトランスポートプロトコルの一つであるUDPについて取り上げます。次のセクションでは、UDPがネットワーク層プロトコルにマルチプレクシング／デマルチプレクシング以上のことをほとんど追加していないことがわかります。
+    </p>
+  </div>
+</div>
+
+  </div>
 </template>
 
 <script setup>
-import imgUrl from '@/assets/lecture/lecture04/Figure_00.png';
+import imgUrl from '@/assets/lecture/lecture04/Figure_02.png';
+import imgUrl2 from '@/assets/lecture/lecture04/Figure_03.png';
+import imgUrl3 from '@/assets/lecture/lecture04/Figure_04.png';
+import imgUrl4 from '@/assets/lecture/lecture04/Figure_05.png';
 </script>
+
+<style scoped>
+.text-muted {
+  color: #6c757d;
+}
+</style>

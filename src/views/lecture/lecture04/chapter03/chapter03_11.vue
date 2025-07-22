@@ -172,15 +172,15 @@
       <div class="col-md-6">
         <p>
           In a similar manner, the services that a transport protocol can provide are often
-          constrained by the service model of the underlying network-layer protocol. If the
-          network-layer protocol cannot provide delay or bandwidth guarantees for transport-layer
-          segments sent between hosts, then the transport-layer protocol cannot provide
-          delay or bandwidth guarantees for application messages sent between processes.
+          constrained by the service model of the underlying network-layer protocol.
+          If the network-layer protocol cannot provide delay or bandwidth guarantees for
+          transport-layer segments sent between hosts, then the transport-layer protocol cannot
+          provide delay or bandwidth guarantees for application messages sent between processes.
         </p>
       </div>
       <div class="col-md-6">
         <p class="text-muted">
-          同様に、トランスポートプロトコルが提供できるサービスは、下位のネットワーク層プロトコルのサービスモデルによって制限されることがよくあります。たとえば、ネットワーク層プロトコルがホスト間で送信されるセグメントに対して遅延や帯域幅の保証を提供できない場合、トランスポート層プロトコルもアプリケーション間のメッセージに対してこれらの保証を提供することはできません。
+          同様に、トランスポートプロトコルが提供できるサービスは、しばしば下位にあるネットワーク層プロトコルのサービスモデルに制約されます。もしネットワーク層プロトコルがホスト間で送られるトランスポート層セグメントに対して遅延や帯域幅の保証を提供できない場合、トランスポート層プロトコルもアプリケーションプロセス間のメッセージに対してそのような保証を提供することはできません。
         </p>
       </div>
     </div>
@@ -188,19 +188,36 @@
     <div class="row mb-3">
       <div class="col-md-6">
         <p>
-          Nevertheless, certain services can be offered by a transport protocol even when
-          the underlying network protocol doesn’t offer the corresponding service at the network layer.
-          For example, a transport protocol can offer reliable data transfer even over an unreliable
-          network layer, and can use encryption to guarantee confidentiality even when the network
-          layer cannot.
+          Nevertheless, certain services can be offered by a transport protocol even when the
+          underlying network protocol doesn’t offer the corresponding service at the network layer.
+          For example, as we’ll see in this chapter, a transport protocol can offer reliable data
+          transfer service to an application even when the underlying network protocol is unreliable,
+          that is, even when the network protocol loses, garbles, or duplicates packets.
         </p>
       </div>
       <div class="col-md-6">
         <p class="text-muted">
-          それでも、下位のネットワークプロトコルが対応するサービスを提供していない場合でも、トランスポートプロトコルが特定のサービスを提供することは可能です。たとえば、ネットワーク層が信頼性のない場合でも、トランスポート層は信頼性のあるデータ転送を提供でき、ネットワーク層が機密性を保証できない場合でも、暗号化を用いてメッセージの秘密を保証することができます。
+          それでも、トランスポートプロトコルは、下位のネットワークプロトコルが対応するサービスを提供していない場合でも、ある種のサービスを提供できます。たとえば、本章で後述するように、下位のネットワークプロトコルが信頼できない、すなわちパケットを紛失・破損・重複させるような場合であっても、トランスポートプロトコルはアプリケーションに対して信頼性のあるデータ転送サービスを提供できます。
         </p>
       </div>
     </div>
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <p>
+          As another example (which we’ll explore in Chapter 8 when we discuss network security),
+          a transport protocol can use encryption to guarantee that application messages are not read
+          by intruders, even when the network layer cannot guarantee the confidentiality of
+          transport-layer segments.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <p class="text-muted">
+          もう1つの例として（これは第8章のネットワークセキュリティで扱いますが）、トランスポートプロトコルは暗号化を使用することで、たとえネットワーク層がトランスポート層セグメントの機密性を保証できないとしても、アプリケーションメッセージを外部から読み取られないようにすることができます。
+        </p>
+      </div>
+    </div>
+
   </div>
 </template>
 
