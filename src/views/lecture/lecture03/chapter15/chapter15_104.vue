@@ -2,7 +2,7 @@
   <div class="container my-4">
     <h3 class="mb-4">10(d) TCP BBR – Verhalten bei zu niedrigem Durchsatz</h3>
 
-    <!-- 問題文（Deutsch + 日本語） -->
+    <!-- 問題文 -->
     <div class="border rounded p-3 bg-light mb-4">
       <p><strong>Aufgabe:</strong><br />
         Was macht BBR, wenn der aktuelle Durchsatz deutlich unter der berechneten Bandbreite liegt?<br />
@@ -15,51 +15,60 @@
       </p>
     </div>
 
-    <!-- 解答：ドイツ語 & 日本語 横並び -->
+    <!-- 解答 -->
     <div class="row">
       <div class="col-md-6">
         <h5>Antwort (Deutsch)</h5>
-        <p>
-          Wenn der aktuelle Durchsatz deutlich unter der geschätzten Bottleneck-Bandbreite liegt,
-          interpretiert BBR dies als Unterauslastung.
-        </p>
-        <p>
-          In diesem Fall erhöht BBR aggressiv die Congestion Window (cwnd) und die Pacing Rate,
-          um die verfügbare Bandbreite besser zu nutzen.
-        </p>
-        <p>
-          Ziel ist es, durch schnelles Hochskalieren die Leitungsauslastung zu verbessern und
-          Engpässe (z.B. zu niedrige Sendeleistung) zu kompensieren.
-        </p>
+        <ul>
+          <li>Wenn der gemessene Durchsatz deutlich unter der geschätzten Bottleneck-Bandbreite (BtlBw) liegt, geht BBR von einer Unterauslastung der Verbindung aus.</li>
+          <li>In diesem Fall erhöht BBR aktiv die Sende­rate: Die Pacing Rate und das Congestion Window (cwnd) werden aggressiv gesteigert.</li>
+          <li>Ziel ist es, die verfügbare Bandbreite besser auszunutzen und die Verbindung wieder in den optimalen Betriebszustand zu bringen.</li>
+        </ul>
+        <p><em>Quelle: Folie 45</em></p>
       </div>
 
       <div class="col-md-6">
         <h5>解答（日本語）</h5>
+        <ul>
+          <li>現在のスループット（配信レート）が、推定されたボトルネック帯域幅（BtlBw）よりも大幅に低い場合、BBR は「未利用帯域が存在する」と判断します。</li>
+          <li>このとき、BBR は積極的に送信速度（Pacing Rate）および輻輳ウィンドウ（cwnd）を増加させます。</li>
+          <li>目的は、リンクの使用率を高め、スループットを推定値に近づけることです。</li>
+        </ul>
+        <p><em>出典：スライド p.45</em></p>
+      </div>
+    </div>
+
+    <!-- 解説 -->
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <h5>Erklärung (Deutsch)</h5>
         <p>
-          現在のスループットが推定されたボトルネック帯域幅を大きく下回っているとき、<br />
-          BBR はそれを「帯域未利用（低利用）」と判断します。
+          Wenn BBR feststellt, dass der aktuelle Durchsatz wesentlich geringer ist als die geschätzte BtlBw, bedeutet das, dass die Verbindung unterausgelastet ist – also mehr Kapazität zur Verfügung steht, als derzeit genutzt wird.
         </p>
+        <ul>
+          <li>Dieser Zustand kann z.B. durch eine neue Verbindung, einen Startpunkt im Netzwerk oder durch fehlerhafte Schätzungen entstehen.</li>
+          <li>BBR reagiert darauf, indem es sowohl das <strong>cwnd</strong> als auch die <strong>Pacing Rate</strong> aktiv erhöht, um mehr Daten pro Zeiteinheit zu senden.</li>
+          <li>Diese Phase dient dazu, die Bandbreitenschätzung zu aktualisieren und schnell die tatsächliche Kapazitätsgrenze zu erreichen.</li>
+        </ul>
         <p>
-          この場合、BBR は輻輳ウィンドウ（cwnd）と送信レート（Pacing Rate）を積極的に増加させ、<br />
-          利用可能な帯域を最大限に活用しようとします。
+          Im Unterschied zu CUBIC, das beim Start langsam exponentiell wächst (Slow Start), geht BBR hier gezielt mit gesteuerter Beschleunigung vor, ohne auf Paketverluste zu warten.
         </p>
+      </div>
+
+      <div class="col-md-6">
+        <h5>解説（日本語）</h5>
         <p>
-          目的は、送信不足による非効率を補い、リンクの使用率を向上させることです。
+          BBR は、現在のスループットが推定されたボトルネック帯域より大幅に小さい場合、それを「リンクがまだ十分に使われていない＝過小利用状態」と判断します。
+        </p>
+        <ul>
+          <li>たとえば新しい接続を開始したばかりのときや、ネットワークの一時的な変動によって帯域を使い切れていない場合などです。</li>
+          <li>このとき、BBR は <strong>送信レート（Pacing Rate）</strong> と <strong>輻輳ウィンドウ（cwnd）</strong> を意図的に大きく増やし、より多くのデータを送るように動作します。</li>
+          <li>目的は、未使用の帯域を見つけ出して活用し、スループットを理論上の最大値（BtlBw）に近づけることです。</li>
+        </ul>
+        <p>
+          この動作は、CUBIC などがパケットロスを経験するまで増加を続ける「スロースタート」に比べて、より効率的かつ損失を回避するアプローチです。
         </p>
       </div>
     </div>
   </div>
 </template>
-
-<script setup>
-// Keine Logik erforderlich
-</script>
-
-<style scoped>
-.border {
-  border: 1px solid #ccc;
-}
-.bg-light {
-  background-color: #f8f9fa;
-}
-</style>

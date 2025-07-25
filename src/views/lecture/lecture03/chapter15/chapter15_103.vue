@@ -2,7 +2,7 @@
   <div class="container my-4">
     <h3 class="mb-4">10(c) TCP BBR – Verhalten bei Auslastung nahe der geschätzten Bandbreite</h3>
 
-    <!-- 問題文（Deutsch + 日本語） -->
+    <!-- 問題文 -->
     <div class="border rounded p-3 bg-light mb-4">
       <p><strong>Aufgabe:</strong><br />
         Was macht BBR, wenn der aktuelle Durchsatz nahe an der berechneten Bandbreite liegt?<br />
@@ -14,50 +14,60 @@
       </p>
     </div>
 
-    <!-- 解答：ドイツ語 & 日本語 横並び -->
+    <!-- 解答 -->
     <div class="row">
       <div class="col-md-6">
         <h5>Antwort (Deutsch)</h5>
-        <p>
-          Wenn der aktuelle Durchsatz nahe an der berechneten Bottleneck-Bandbreite liegt,
-          geht BBR davon aus, dass die Verbindung optimal ausgelastet ist.
-        </p>
-        <p>
-          In diesem Fall stabilisiert BBR seine Sende­rate, d.h. es hält die Congestion Window (cwnd)
-          und die Pacing Rate konstant. Dadurch wird verhindert, dass unnötige Warteschlangen entstehen.
-        </p>
-        <p>
-          Ziel ist es, die Leitungsauslastung zu maximieren ohne Überlastung zu verursachen.
-        </p>
+        <ul>
+          <li>Wenn der aktuelle Durchsatz nahe der geschätzten Bottleneck-Bandbreite (BtlBw) liegt, interpretiert BBR dies als optimalen Zustand.</li>
+          <li>In diesem Fall stabilisiert BBR seine Sende­rate: Die Congestion Window (cwnd) und die Pacing Rate bleiben konstant.</li>
+          <li>Damit vermeidet BBR unnötige Warteschlangen und erhält eine niedrige Latenz im Netzwerk.</li>
+        </ul>
+        <p><em>Quelle: Folie 45–46</em></p>
       </div>
 
       <div class="col-md-6">
         <h5>解答（日本語）</h5>
+        <ul>
+          <li>現在のスループットが推定されたボトルネック帯域幅（BtlBw）に近い場合、BBR は回線が最適に使用されていると判断します。</li>
+          <li>このとき、BBR は送信速度（Pacing Rate）と輻輳ウィンドウ（cwnd）を安定させ、変化させません。</li>
+          <li>その結果、輻輳の原因となるキュー（待ち行列）の発生を抑え、通信遅延も低く保つことができます。</li>
+        </ul>
+        <p><em>出典：スライド p.45〜46</em></p>
+      </div>
+    </div>
+
+    <!-- 解説 -->
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <h5>Erklärung (Deutsch)</h5>
         <p>
-          現在のスループットが推定されたボトルネック帯域幅に近いと BBR が判断した場合、
-          回線が最適に利用されていると見なします。
+          BBR berechnet kontinuierlich die aktuelle <strong>Delivery Rate</strong> und vergleicht sie mit der geschätzten <strong>Bottleneck Bandwidth (BtlBw)</strong>. Wenn diese beiden Werte fast gleich sind, bedeutet das, dass die maximale Kapazität der Verbindung ausgenutzt wird – aber ohne Überlast.
         </p>
+        <ul>
+          <li>In diesem Zustand muss BBR keine aggressiven Anpassungen mehr vornehmen, sondern hält die <strong>Pacing Rate</strong> und das <strong>cwnd</strong> konstant.</li>
+          <li>Das verhindert, dass Pakete unnötig im Netzwerk gepuffert werden, und reduziert damit die Round-Trip Time (RTT).</li>
+          <li>Man spricht hier von einem "bandwidth-limited"-Zustand: Die Anwendung nutzt exakt so viel Bandbreite, wie möglich – nicht mehr, nicht weniger.</li>
+        </ul>
         <p>
-          このとき BBR は輻輳ウィンドウ（cwnd）および送信レート（Pacing Rate）を一定に保ち、
-          不必要なキューや輻輳を防ぎます。
+          Dies ist ein zentraler Unterschied zu CUBIC oder Reno, die ihre Fenstergröße ständig erhöhen, bis es zu einem Verlust kommt. BBR hingegen erkennt frühzeitig, dass mehr Senden keinen Nutzen bringt, und hält das Niveau stabil.
         </p>
+      </div>
+
+      <div class="col-md-6">
+        <h5>解説（日本語）</h5>
         <p>
-          目的は、輻輳を起こさずに最大限の帯域利用率を維持することです。
+          BBR は現在の「スループット（配信レート）」が、推定された「ボトルネック帯域幅（BtlBw）」にほぼ一致しているかを常に確認しています。この2つが一致している場合、それは「現在の帯域を最大限活用できている状態」だと判断します。
+        </p>
+        <ul>
+          <li>このとき BBR は、それ以上レートを増やす必要がないと判断し、<strong>送信間隔（Pacing Rate）</strong> や <strong>輻輳ウィンドウ（cwnd）</strong> を一定に保ちます。</li>
+          <li>これにより、余計なデータを流してルーターのバッファを埋めることがなくなり、<strong>キュー遅延（Queueing Delay）</strong> を防ぐことができます。</li>
+          <li>この状態は「帯域制限状態（bandwidth-limited）」と呼ばれます。つまり、アプリケーションは可能な最大帯域で安定して通信しており、それ以上のデータ送信は意味がありません。</li>
+        </ul>
+        <p>
+          このように、BBR は帯域が最適に使用されていると判断したら、無理にウィンドウを拡張せずに安定動作へと移行します。これは、CUBIC のように「損失が起きるまで送信を増やし続ける」設計とは対照的です。
         </p>
       </div>
     </div>
   </div>
 </template>
-
-<script setup>
-// Kein Script notwendig
-</script>
-
-<style scoped>
-.border {
-  border: 1px solid #ccc;
-}
-.bg-light {
-  background-color: #f8f9fa;
-}
-</style>

@@ -2,7 +2,7 @@
   <div class="container my-4">
     <h3 class="mb-4">10(a) TCP BBR – Motivation & Unterschied zu CUBIC</h3>
 
-    <!-- 問題文（Deutsch + 日本語） -->
+    <!-- 問題文 -->
     <div class="border rounded p-3 bg-light mb-4">
       <p><strong>Aufgabe:</strong><br />
         Wofür steht <strong>BBR</strong> und was ist der Hauptunterschied zwischen BBR und CUBIC? (4P)<br />
@@ -15,62 +15,111 @@
       </p>
     </div>
 
-    <!-- 解答：ドイツ語 & 日本語 横並び -->
+    <!-- 解答 -->
     <div class="row">
       <div class="col-md-6">
         <h5>Antwort (Deutsch)</h5>
-        <p>
-          <strong>BBR</strong> steht für <em>Bottleneck Bandwidth and Round-trip propagation time</em>.
-        </p>
-        <p>
-          Im Gegensatz zu CUBIC ist BBR kein verlustbasierter Algorithmus. Es basiert nicht auf Paketverlust
-          zur Erkennung von Überlastung.
-        </p>
-        <p>
-          Stattdessen schätzt BBR kontinuierlich zwei Größen:
-        </p>
         <ul>
-          <li>die maximale verfügbare Bandbreite (Bottleneck Bandwidth)</li>
-          <li>die minimale RTT (Round-Trip Propagation Delay)</li>
+          <li><strong>BBR</strong> steht für <em>Bottleneck Bandwidth and Round-trip propagation time</em>.</li>
+          <li>Im Gegensatz zu CUBIC, das Paketverluste als Signal für Überlastung nutzt, arbeitet BBR verlustunabhängig.</li>
+          <li>BBR schätzt kontinuierlich zwei Schlüsselwerte: die maximale Engpassbandbreite (Bottleneck Bandwidth) und die minimale Round-Trip Time (RT<sub>prop</sub>).</li>
+          <li>Anhand dieses Modells passt BBR die Sende­rate so an, dass eine maximale Auslastung bei minimaler Verzögerung erreicht wird – unabhängig von Paketverlusten.</li>
         </ul>
-        <p>
-          Daraus berechnet es eine optimale Sende­rate, um die Leitungsauslastung zu maximieren und gleichzeitig
-          Warteschlangen zu vermeiden.
-        </p>
+        <p><em>Quelle: Vorlesungsfolien S.24–25</em></p>
       </div>
 
       <div class="col-md-6">
         <h5>解答（日本語）</h5>
-        <p>
-          <strong>BBR</strong> は <em>Bottleneck Bandwidth and Round-trip propagation time</em>（ボトルネック帯域幅とRTT）を意味します。
-        </p>
-        <p>
-          CUBIC とは異なり、BBR はパケット損失を輻輳の指標としない「非損失型アルゴリズム」です。
-        </p>
-        <p>
-          BBR は次の2つを継続的に推定します：
-        </p>
         <ul>
-          <li>利用可能な最大ボトルネック帯域幅</li>
-          <li>最小の往復遅延（RTT）</li>
+          <li><strong>BBR</strong> は <em>Bottleneck Bandwidth and Round-trip propagation time</em>（ボトルネック帯域幅と往復遅延）を意味します。</li>
+          <li>BBR は、CUBIC のようにパケット損失を輻輳のシグナルとして扱う「損失ベース型」アルゴリズムとは異なり、損失に依存しない動作をします。</li>
+          <li>BBR は常時、最大のボトルネック帯域（スループット）と最小の伝搬遅延（RT<sub>prop</sub>）を推定し、それに基づいて送信レートを制御します。</li>
+          <li>その結果、遅延を抑えつつリンクの利用率を最大化し、パケットロスによる制限を受けません。</li>
         </ul>
-        <p>
-          これにより、最適な送信速度を算出し、輻輳やキュー遅延を発生させることなくリンク利用率を最大化します。
-        </p>
+        <p><em>出典：スライド p.24〜25</em></p>
       </div>
     </div>
+
+    <!-- 図1: スループット比較 -->
+    <div class="text-center my-4">
+      <img
+        :src="imgUrl1"
+        alt="Durchsatzvergleich: TCP BBR vs. TCP CUBIC"
+        class="img-fluid rounded border"
+      />
+      <p class="text-muted mt-2 mb-0">
+        Figure 10.1 — Durchsatz bei verschiedenen Paketverlustwahrscheinlichkeiten: BBR bleibt stabil, CUBIC fällt rapide ab
+      </p>
+      <p class="text-muted">
+        図10.1 — 損失率に対するスループットの比較。BBRは損失の影響を受けず高いスループットを維持するが、CUBICは損失に敏感に反応し性能が大幅に低下する
+      </p>
+    </div>
+
+    <!-- 図2: RTTの違い -->
+    <div class="text-center my-4">
+      <img
+        :src="imgUrl2"
+        alt="RTT-Verhalten bei BBR und CUBIC"
+        class="img-fluid rounded border"
+      />
+      <p class="text-muted mt-2 mb-0">
+        Figure 10.2 — Round Trip Time: TCP CUBIC verursacht starkes Queueing und hohe Latenz, während BBR RTT konstant hält
+      </p>
+      <p class="text-muted">
+        図10.2 — RTTの時間変化。CUBICは輻輳ウィンドウが大きくなりすぎてバッファを満たし、パケットロスと遅延の急増を引き起こすが、BBRはその前に制御してRTTを一定に保つ
+      </p>
+    </div>
+
+    <!-- 解説 -->
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <h5>Erklärung (Deutsch)</h5>
+        <p>
+          Der Hauptunterschied zwischen TCP BBR und CUBIC liegt im Mechanismus der Überlastkontrolle:
+        </p>
+        <ul>
+          <li>
+            <strong>CUBIC</strong> verwendet einen klassischen verlustbasierten Algorithmus. Es erkennt Überlastungen nur, wenn Paketverluste auftreten. Sobald ein Verlust festgestellt wird, reduziert CUBIC drastisch seine Congestion Window (cwnd), was zu einer schlechteren Ausnutzung der verfügbaren Bandbreite führt.
+          </li>
+          <li>
+            <strong>BBR</strong> hingegen basiert auf einem <strong>modellbasierten Ansatz</strong>: Es schätzt unabhängig von Paketverlusten kontinuierlich die maximale Bottleneck-Bandbreite und die minimale RTT (RT<sub>prop</sub>), um die optimale Sende­rate zu berechnen.
+          </li>
+          <li>
+            In <strong>Abbildung 10.1</strong> (Durchsatz vs. Verlustwahrscheinlichkeit) ist klar ersichtlich, dass der Durchsatz von TCP CUBIC bei schon geringer Paketverlustrate (<code>~0.01%</code>) massiv einbricht, während TCP BBR seine Sende­rate stabil hält – sogar bis zu einem Verlustniveau von 20%.
+          </li>
+          <li>
+            <strong>Abbildung 10.2</strong> zeigt die RTT über die Zeit: Bei TCP CUBIC steigt die RTT kontinuierlich an, da der Sende­puffer gefüllt wird („Bufferbloat“), was schließlich zu Paketverlust führt. Bei TCP BBR bleibt die RTT konstant, weil BBR frühzeitig erkennt, wann sich Queues bilden, und die Sende­rate stabilisiert.
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-md-6">
+        <h5>解説（日本語）</h5>
+        <p>
+          TCP BBR と CUBIC の違いは、ネットワーク輻輳の「検出方法」と「対応の仕方」にあります。
+        </p>
+        <ul>
+          <li>
+            <strong>CUBIC</strong> は、パケットが失われたときに初めて「輻輳が起きた」と判断し、送信ウィンドウ（cwnd）を大幅に減らします。これはパケットロスが発生しない限り帯域の使いすぎを制御できず、ネットワークに過剰な負荷をかけやすいことを意味します。
+          </li>
+          <li>
+            一方で <strong>BBR</strong> は、「ボトルネック帯域幅」と「最小RTT（RT<sub>prop</sub>）」をリアルタイムで観測・推定することで、ネットワークの状態をモデル化し、最適な送信レートを事前に決定します。損失は制御に使いません。
+          </li>
+          <li>
+            <strong>図10.1</strong>（スループットと損失率の関係）では、CUBICはパケット損失率がわずかでもあるとスループットが急落しています。たとえば、0.01% 程度の損失で既にスループットが半減しており、耐障害性に乏しいことがわかります。一方、BBRは20%以上の損失でも高いスループットを維持しており、損失に対するロバスト性が高い設計です。
+          </li>
+          <li>
+            <strong>図10.2</strong>（RTTの時間変化）では、TCP CUBICが送信を続けることでバッファが徐々に埋まり、RTTが指数関数的に増加しているのがわかります。最終的にパケットロスが発生するタイミングでRTTが急落します。BBRはRTTが上がる前に自動的に制御を行い、RTTを最小値近くに保ちます。これにより、遅延が少ない通信を継続できるのです。
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    
   </div>
 </template>
 
 <script setup>
-// Keine Logik nötig
+import imgUrl1 from '@/assets/lecture/lecture03/Figure_1001.png'; // 図10.1: スループット比較（スライド24）
+import imgUrl2 from '@/assets/lecture/lecture03/Figure_1002.png'; // 図10.2: RTT比較（スライド25）
 </script>
-
-<style scoped>
-.border {
-  border: 1px solid #ccc;
-}
-.bg-light {
-  background-color: #f8f9fa;
-}
-</style>

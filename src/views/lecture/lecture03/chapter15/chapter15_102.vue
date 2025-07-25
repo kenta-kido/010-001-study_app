@@ -2,7 +2,7 @@
   <div class="container my-4">
     <h3 class="mb-4">10(b) TCP BBR – RTT-Berechnung: RTT<sub>t</sub> = RT<sub>prop</sub> + η<sub>t</sub></h3>
 
-    <!-- 問題文（Deutsch + 日本語） -->
+    <!-- 問題文 -->
     <div class="border rounded p-3 bg-light mb-4">
       <p><strong>Aufgabe:</strong><br />
         Erklären Sie anhand der folgenden Formel, wie BBR die aktuelle Round-Trip Time (RTT) berechnet:<br />
@@ -17,48 +17,87 @@
       </p>
     </div>
 
-    <!-- 解答：ドイツ語 & 日本語 横並び -->
+    <!-- 解答 -->
     <div class="row">
       <div class="col-md-6">
         <h5>Antwort (Deutsch)</h5>
-        <p>
-          Die Formel <code>RTT<sub>t</sub> = RT<sub>prop</sub> + η<sub>t</sub></code> beschreibt die aktuelle RTT-Schätzung durch BBR:
-        </p>
         <ul>
-          <li><strong>RT<sub>prop</sub>:</strong> die minimale gemessene Round-Trip Propagation Time. Sie stellt die kleinstmögliche RTT dar – ohne Warteschlangenverzögerung.</li>
-          <li><strong>η<sub>t</sub>:</strong> die aktuell geschätzte Warteschlangenverzögerung (queueing delay), also zusätzliche Zeit durch Staus im Netz.</li>
+          <li>Die Formel <code>RTT<sub>t</sub> = RT<sub>prop</sub> + η<sub>t</sub></code> beschreibt die Zerlegung der RTT in zwei Anteile.</li>
+          <li><strong>RT<sub>prop</sub></strong> steht für die minimale Round-Trip Propagation Time – also die Verzögerung ohne Warteschlangen oder Staus. Sie entspricht dem physikalischen Minimum.</li>
+          <li><strong>η<sub>t</sub></strong> beschreibt die zusätzliche Verzögerung zur Zeit <em>t</em>, z.B. durch Warteschlangen in Routern, Verarbeitungszeiten oder ACK-Verzögerung.</li>
+          <li>BBR versucht stets, η<sub>t</sub> zu minimieren und RT<sub>prop</sub> präzise zu schätzen, um effizient und staufrei zu senden.</li>
         </ul>
-        <p>
-          BBR unterscheidet klar zwischen physikalischer Latenz (<code>RT<sub>prop</sub></code>) und dynamischer Last (<code>η<sub>t</sub></code>), um die Netzwerkbedingungen präzise zu modellieren.
-        </p>
+        <p><em>Quelle: Vorlesung Folie 47</em></p>
       </div>
 
       <div class="col-md-6">
         <h5>解答（日本語）</h5>
-        <p>
-          式 <code>RTT<sub>t</sub> = RT<sub>prop</sub> + η<sub>t</sub></code> は、BBR における RTT（往復遅延時間）の推定方法を示します：
-        </p>
         <ul>
-          <li><strong>RT<sub>prop</sub>：</strong> 最小の往復伝搬遅延。これはネットワークに混雑がないときの最小RTTを示し、物理的距離に基づきます。</li>
-          <li><strong>η<sub>t</sub>：</strong> 現在の待ち行列による遅延（キューイングディレイ）であり、輻輳により発生する追加時間です。</li>
+          <li>式 <code>RTT<sub>t</sub> = RT<sub>prop</sub> + η<sub>t</sub></code> は、BBR が RTT（往復遅延時間）を物理的遅延と混雑遅延に分解して捉えていることを示します。</li>
+          <li><strong>RT<sub>prop</sub></strong> は最小の伝搬遅延であり、ネットワークに混雑や処理待ちがないときの最短RTT（物理的最小値）です。</li>
+          <li><strong>η<sub>t</sub></strong> は時間tにおける追加遅延を示し、ルーターのバッファ待ち・受信側の処理遅延・ACK処理などが含まれます。</li>
+          <li>BBR はこのη<sub>t</sub>を小さく保ち、RT<sub>prop</sub>を定期的に再測定することでネットワークの状態を正確に把握します。</li>
         </ul>
-        <p>
-          BBR は伝搬遅延と混雑による遅延を分離して評価することで、ネットワーク状態をより正確に推定します。
-        </p>
+        <p><em>出典：スライド p.47</em></p>
       </div>
     </div>
+
+    <!-- 解説 -->
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <h5>Erklärung (Deutsch)</h5>
+        <p>
+          TCP BBR berechnet die Round-Trip Time (RTT) nicht einfach als einen gemessenen Wert, sondern zerlegt sie in zwei sinnvolle Bestandteile. Dadurch kann BBR besser verstehen, wie sich Netzwerklatenz zusammensetzt und wie stark das Netzwerk aktuell belastet ist.
+        </p>
+        <ul>
+          <li>
+            Der erste Teil ist <strong>RT<sub>prop</sub></strong>, also die minimale Round-Trip Propagation Time. Das ist die schnellstmögliche Zeit, die ein Paket braucht, um einmal hin und zurück durch das Netzwerk zu reisen – ganz ohne Warteschlangen oder Verzögerungen. Sie hängt nur von der physikalischen Entfernung und Signalübertragung ab.
+          </li>
+          <li>
+            Der zweite Teil ist <strong>η<sub>t</sub></strong>, die zusätzliche Verzögerung zur aktuellen Zeit <em>t</em>. Diese entsteht durch verschiedene Effekte, zum Beispiel:
+            <ul>
+              <li>Warteschlangen in Routern (Queueing)</li>
+              <li>Verzögerungen bei der Verarbeitung von Paketen am Empfänger</li>
+              <li>Verzögerte oder gebündelte Acknowledgements (ACKs)</li>
+            </ul>
+            Diese Zusatzverzögerung ist also ein Anzeichen dafür, dass das Netzwerk gerade belastet ist.
+          </li>
+          <li>
+            Wenn η<sub>t</sub> sehr klein oder null ist, weiß BBR: Es gibt keine Warteschlangen – das Netzwerk ist frei. Steigt η<sub>t</sub>, erkennt BBR frühzeitig, dass sich Staus bilden, noch bevor es zu Paketverlusten kommt. Dadurch kann BBR intelligent gegensteuern.
+          </li>
+          <li>
+            Um <strong>RT<sub>prop</sub></strong> immer aktuell zu halten, führt BBR regelmäßig Messungen im Zustand <em>ProbeRTT</em> durch. In diesem Zustand wird die Sendegeschwindigkeit stark reduziert, damit man die wahre, minimale RTT erfassen kann – ohne dass sie durch Warteschlangen verfälscht wird.
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-md-6">
+        <h5>解説（日本語）</h5>
+        <p>
+          BBR は RTT（往復遅延時間）を、ただの測定値としてではなく、2つの意味のある要素に分解して扱います。これにより、ネットワークが今どれだけ混雑しているかを、より正確に判断できます。
+        </p>
+        <ul>
+          <li>
+            1つ目の要素は <strong>RT<sub>prop</sub></strong>（伝搬遅延）です。これはネットワーク上で、パケットが待たされることなく、最速で往復したときにかかる最小時間を意味します。物理的な距離やケーブルの速度によって決まります。
+          </li>
+          <li>
+            2つ目の要素は <strong>η<sub>t</sub></strong>（追加の遅延）です。これは、今この瞬間に発生している「待ち時間」を表します。たとえば：
+            <ul>
+              <li>ルーター内でパケットがキューに入っている時間</li>
+              <li>受信側で処理待ちをしている時間</li>
+              <li>ACK（確認応答）の遅延やまとめて送る処理</li>
+            </ul>
+            などが含まれます。
+          </li>
+          <li>
+            η<sub>t</sub> が 0 に近ければ、ネットワークは空いている状態です。逆に η<sub>t</sub> が大きくなると、ネットワークにキュー（待ち）が発生していると BBR は判断します。これにより、パケット損失が起きる前に早めに輻輳を検知できます。
+          </li>
+          <li>
+            また、<strong>RT<sub>prop</sub></strong> は定期的に正確に再測定する必要があります。BBR はそのために <em>ProbeRTT</em> という特別な状態に入り、一時的に送信を抑えて、最小のRTTを再度測ります。これにより、モデルの正確性が保たれます。
+          </li>
+        </ul>
+      </div>
+    </div>
+
   </div>
 </template>
-
-<script setup>
-// Keine Logik nötig
-</script>
-
-<style scoped>
-.border {
-  border: 1px solid #ccc;
-}
-.bg-light {
-  background-color: #f8f9fa;
-}
-</style>

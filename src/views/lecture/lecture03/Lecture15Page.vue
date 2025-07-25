@@ -76,11 +76,13 @@ const rawSections =
   ['9(c) TCP CUBIC – Vergleich Wachstum & Reaktion mit AIMD', 93],
   ['9(d) TCP CUBIC – Vergleich Wachstumsverlauf mit AIMD', 94],
   ['9(e) TCP CUBIC – Fairnessbewertung mit Jain’s Index', 95],
+  ['10　TCP BBR', 100],
   ['10(a) TCP BBR – Unterschied zu CUBIC & Verlustbasierung', 101],
   ['10(b) TCP BBR – RTT-Berechnung: Formel und Komponenten', 102],
   ['10(c) TCP BBR – Verhalten bei aktuellem Durchsatz nahe der Bandbreite', 103],
   ['10(d) TCP BBR – Verhalten bei zu geringem Durchsatz', 104],
   ['10(e) TCP BBR – Die vier Phasen (States) und ihre Ziele', 105],
+  ['10(f) TCP BBR – Erklärung der Kennzahlen und Betriebspunkte', 106],
 ];
 
 // 動的インポートとデータ構築

@@ -44,6 +44,66 @@
         </p>
       </div>
     </div>
+    <!-- 解説：Deutsch & 日本語 -->
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h5>Erklärung (Deutsch)</h5>
+    <p>
+      Jede Netzwerkkarte überprüft die Ziel-MAC-Adresse eines eingehenden Frames. Nur wenn diese Adresse mit der eigenen übereinstimmt
+      oder ein Broadcast ist, wird der Frame akzeptiert. In einem LAN mit Switches wird der Frame gezielt nur an den Zielport weitergeleitet.
+      Frames für andere Hosts werden daher von der Netzwerkkarte ignoriert. Broadcasts hingegen werden an alle Ports gesendet, weil sie
+      an alle Teilnehmer im Netzwerk gerichtet sind. Solche Frames verarbeitet die Netzwerkkarte und reicht sie an höhere Protokolle weiter.
+      Dieses Verhalten schützt das System vor unnötiger Belastung durch fremde Daten.
+    </p>
+  </div>
+
+  <div class="col-md-6">
+    <h5>解説（日本語）</h5>
+    <p>
+      ネットワークカードは、受信したフレームの宛先MACアドレスを必ず確認し、自分宛かブロードキャストでなければ破棄します。
+      スイッチ環境ではフレームは特定の宛先にだけ転送されるため、他のホストには届きません。
+      つまり、A→B宛のフレームはCに届かず、Cのネットワーク層にも渡されません。
+      しかし、ブロードキャストは「全ホスト宛」の特別なアドレスであるため、すべてのネットワークカードがそれを処理し、
+      上位層（IP層など）に渡します。
+      この仕組みによって、必要な通信だけが適切に処理され、他のホストへの影響を最小限に抑えることができます。
+    </p>
+  </div>
+</div>
+
+<!-- 中タイトル -->
+<div class="row mb-4">
+  <div class="col-12">
+    <p class="fw-bold fs-5" style="color: #004085;">
+      スイッチの学習前の挙動とFloodingの仕組み
+    </p>
+  </div>
+</div>
+
+<!-- 解説ブロック -->
+<div class="row mb-4">
+  <div class="col-md-6">
+    <h5>Erklärung (Deutsch)</h5>
+    <p>
+      Wenn ein Switch noch keine MAC-Adresse einem Port zugeordnet hat, kennt er das Zielgerät nicht.
+      In diesem Fall verhält er sich wie ein Hub und <strong>sendet den Frame an alle Ports außer dem Eingangsport</strong>.
+      Dieses Verhalten nennt man <em>Flooding</em>. Sobald der Switch jedoch ein Frame empfängt, merkt er sich die Quelladresse
+      und den dazugehörigen Port in seiner MAC-Tabelle. Zukünftige Frames an diese Adresse können dann gezielt weitergeleitet werden.
+      So entsteht durch Lernen nach und nach ein optimierter Weiterleitungsprozess.
+    </p>
+  </div>
+
+  <div class="col-md-6">
+    <h5>解説（日本語）</h5>
+    <p>
+      スイッチは初期状態では、宛先MACアドレスがどのポートにあるかを知りません。
+      そのため、最初の通信ではフレームを<strong>全ポート（受信元以外）に送信</strong>する「フラッディング」と呼ばれる動作を行います。
+      これにより正しい宛先に届くまで全体に広く配信されます。
+      その後、受信フレームの<strong>送信元MACアドレスとポート番号</strong>を学習し、内部のMACテーブルに記録します。
+      次回以降はその情報を使い、宛先にのみフレームを転送することで、通信効率が向上していきます。
+    </p>
+  </div>
+</div>
+
   </div>
 </template>
 

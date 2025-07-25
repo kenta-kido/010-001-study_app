@@ -1,18 +1,10 @@
-<!-- chapter03/chapter03_00.vue -->
 <template>
-  <div>
-    <h3>Chapter 3.0.0 - Detailed Content</h3>
-    <p>This is detailed content from chapter03_00.vue</p>
-  </div>
-  
+  <div class="container my-4">
+    <h3 class="mb-4">not yet</h3>
 
-    <img
-      :src="imgUrl"
-      alt="Transport Layer"
-      class="img-fluid my-3 rounded border"
-    />
+
+  </div>
 </template>
 
 <script setup>
-import imgUrl from '@/assets/lecture/lecture04/Figure_01.png';
 </script>
