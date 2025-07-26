@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkstudy_site"]=self["webpackChunkstudy_site"]||[]).push([[2612],{2612:function(n,t,e){e.r(t),e.d(t,{default:function(){return d}});var s=e(6768);const u={class:"container my-4"};function r(n,t){return(0,s.uX)(),(0,s.CE)("div",u)}var c=e(1241);const a={},i=(0,c.A)(a,[["render",r]]);var d=i}}]);
+//# sourceMappingURL=2612.e58c0158.js.map

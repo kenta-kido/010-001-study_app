@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkstudy_site"]=self["webpackChunkstudy_site"]||[]).push([[9304],{9304:function(e,t,s){s.r(t),s.d(t,{default:function(){return d}});var n=s(6768);const u={class:"container my-4"};var a={__name:"chapter15_20",setup(e){return(e,t)=>((0,n.uX)(),(0,n.CE)("div",u))}},c=s(1241);const r=(0,c.A)(a,[["__scopeId","data-v-79e06e31"]]);var d=r}}]);
+//# sourceMappingURL=9304.32f4b27c.js.map
