@@ -11,14 +11,23 @@
       </p>
       <hr />
       <p><strong>問題:</strong><br />
-        UDP パケットが、クライアントの送信元 IP アドレスと送信元ポートから、
-        サーバの宛先ポートに送信される。<br />
+        UDP パケットが、クライアントの送信元 IP アドレスと送信元ポートから、サーバの宛先ポートに送信される。<br />
         このとき、送信される IP アドレスおよびポートは何か？<br />
         また、返信がある場合、それはどの IP アドレスおよびポートに送られるか？
       </p>
     </div>
 
-    <!-- 解答：ドイツ語 & 日本語 横並び -->
+    <!-- 図（送信） -->
+    <div class="text-center my-4">
+      <img
+        :src="imgUrl"
+        alt="UDP Senden: Client zu Server"
+        class="img-fluid rounded border"
+      />
+      <p class="text-muted mt-2">Abbildung 5.1 — UDP-Paket vom Client zum Server</p>
+    </div>
+
+    <!-- 解答：ドイツ語 & 日本語 -->
     <div class="row">
       <div class="col-md-6">
         <h5>Antwort (Deutsch)</h5>
@@ -26,16 +35,16 @@
           Die Nachricht vom Client wird gesendet an:
           <br />
           <strong>Ziel-IP:</strong> IP-Adresse des Servers<br />
-          <strong>Ziel-Port:</strong> vom Client spezifizierter Zielport (z.B. 53 bei DNS)
+          <strong>Ziel-Port:</strong> vom Client spezifizierter Zielport (z.&nbsp;B.&nbsp;46428)
         </p>
         <p>
           Die Antwort vom Server wird zurückgesendet an:
           <br />
           <strong>Ziel-IP:</strong> ursprüngliche Quell-IP (IP des Clients)<br />
-          <strong>Ziel-Port:</strong> ursprünglicher Quell-Port (Port des Clients)
+          <strong>Ziel-Port:</strong> ursprünglicher Quell-Port (z.&nbsp;B.&nbsp;19157)
         </p>
         <p>
-          → Die Zuordnung erfolgt also: Antwort geht an (Client-IP, Client-Port).
+          → Die Portnummern werden gespiegelt: Der ursprüngliche Zielport wird zum Quellport der Antwort.
         </p>
       </div>
 
@@ -45,24 +54,38 @@
           クライアントからのメッセージは次の宛先に送信されます：
           <br />
           <strong>宛先IP：</strong> サーバのIPアドレス<br />
-          <strong>宛先ポート：</strong> クライアントが指定した宛先ポート（例：DNSなら53番など）
+          <strong>宛先ポート：</strong> クライアントが指定した宛先ポート（例：46428）
         </p>
         <p>
           サーバからの返信は次の宛先に返されます：
           <br />
           <strong>宛先IP：</strong> 元の送信元IP（クライアントのIP）<br />
-          <strong>宛先ポート：</strong> 元の送信元ポート（クライアントのポート）
+          <strong>宛先ポート：</strong> 元の送信元ポート（例：19157）
         </p>
         <p>
-          → つまり、返信は (クライアントのIP, ポート) に対して行われます。
+          → つまり、返信ではポート番号が入れ替わります：元の宛先が送信元に、元の送信元が宛先に。
         </p>
       </div>
     </div>
+
+    <!-- 図（返信） -->
+    <div class="text-center my-4">
+      <img
+        :src="imgUrl2"
+        alt="UDP Antwort: Server zu Client"
+        class="img-fluid rounded border"
+      />
+      <p class="text-muted mt-2">Abbildung 5.2 — Antwort vom Server zurück zum Client</p>
+    </div>
+
+
+    
   </div>
 </template>
 
 <script setup>
-// Keine Logik nötig
+import imgUrl from '@/assets/lecture/lecture03/Figure_0501.png'
+import imgUrl2 from '@/assets/lecture/lecture03/Figure_0502.png'
 </script>
 
 <style scoped>

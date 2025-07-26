@@ -14,37 +14,55 @@
         A がフレームを MAC ブロードキャストアドレス宛に送信した場合は何が変わるか？
       </p>
     </div>
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h5>Ergänzende Erklärung (Deutsch)</h5>
+    <p>
+      Wenn ein <strong>Switch oder eine Bridge</strong> im Netzwerk verwendet wird, die bereits die MAC-Adressen gelernt haben,
+      wird ein <strong>Unicast-Frame</strong> (z.B. von A an B) nur an den Port weitergeleitet, an dem sich B befindet.
+      <strong>C erhält diesen Frame nicht</strong>, da sich C an einem anderen Port befindet.
+    </p>
+    <p>
+      Wird hingegen ein <strong>Hub</strong> verwendet, leitet dieser den Frame an <strong>alle Ports</strong> weiter.
+      In diesem Fall erhält auch C den Frame, aber <strong>seine Netzwerkkarte verwirft ihn</strong>, weil die Zieladresse nicht seiner MAC-Adresse entspricht.
+    </p>
+    <p>
+      Bei einem <strong>Broadcast-Frame</strong> (z.B. FF:FF:FF:FF:FF:FF) verhalten sich Switch, Bridge und Hub wie folgt:
+    </p>
+    <ul>
+      <li><strong>Switch/Bridge:</strong> Leiten den Broadcast an <em>alle Ports außer dem empfangenden</em> weiter. C erhält den Frame und verarbeitet ihn.</li>
+      <li><strong>Hub:</strong> Sendet den Frame an alle Ports. Auch hier erhält C den Frame und verarbeitet ihn, da es sich um einen Broadcast handelt.</li>
+    </ul>
+    <p>
+      <strong>Zusammenfassung:</strong> Ein Switch oder eine Bridge verwendet MAC-Adressentabellen zur gezielten Weiterleitung (intelligent), während ein Hub immer an alle weiterleitet (dumm).
+    </p>
+  </div>
 
-    <!-- 解答：ドイツ語 & 日本語 横並び -->
-    <div class="row">
-      <div class="col-md-6">
-        <h5>Antwort (Deutsch)</h5>
-        <p>
-          Wenn A Frames an die MAC-Adresse von B sendet, prüft die Netzwerkkarte von C
-          zunächst die Zieladresse in jedem Frame. Da diese nicht der MAC-Adresse von C entspricht,
-          verwirft die Netzwerkkarte diese Frames. Sie werden also nicht an die Netzwerkschicht von C
-          weitergegeben.
-        </p>
-        <p>
-          Wenn A hingegen die Frames an die MAC-Broadcast-Adresse (FF:FF:FF:FF:FF:FF) sendet,
-          werden alle Netzwerkkarten im LAN diese Frames akzeptieren, einschließlich der Netzwerkkarte
-          von C. Diese leitet die Frames dann an die Netzwerkschicht weiter.
-        </p>
-      </div>
+  <div class="col-md-6">
+    <h5>補足解説（日本語）</h5>
+    <p>
+      <strong>スイッチやブリッジ</strong> を使用しており、すでにMACアドレスを学習している場合、
+      <strong>ユニキャストフレーム</strong>（例：A→B）はBが接続されたポートのみに転送されます。
+      よって、<strong>Cには届きません</strong>。
+    </p>
+    <p>
+      一方、<strong>ハブ</strong>はすべてのポートに信号を送るため、Cにもフレームが届きます。
+      しかし、<strong>宛先MACがCと一致しないため、NICで破棄</strong>され、上位層には渡りません。
+    </p>
+    <p>
+      <strong>ブロードキャストフレーム</strong>（例：FF:FF:FF:FF:FF:FF）の場合は以下のように動作します：
+    </p>
+    <ul>
+      <li><strong>スイッチ／ブリッジ：</strong> 受信ポートを除く <em>すべてのポート</em> に転送。Cにも届き、NICが受け取りネットワーク層に渡されます。</li>
+      <li><strong>ハブ：</strong> 全ポートに送信。Cにも届き、ブロードキャストと認識してネットワーク層へ渡されます。</li>
+    </ul>
+    <p>
+      <strong>まとめ：</strong> スイッチやブリッジはMACアドレスに基づき「<em>賢く転送</em>」する機器であり、ハブは常に「<em>全てに送信する</em>」単純な装置です。
+    </p>
+  </div>
+</div>
 
-      <div class="col-md-6">
-        <h5>解答（日本語）</h5>
-        <p>
-          A が B の MAC アドレス宛にフレームを送信した場合、C のネットワークカードは各フレームの宛先アドレスを確認します。
-          宛先が C の MAC アドレスと一致しないため、フレームは破棄され、C のネットワーク層には渡されません。
-        </p>
-        <p>
-          一方、A がフレームを MAC ブロードキャストアドレス（FF:FF:FF:FF:FF:FF）宛に送信した場合、
-          LAN 上のすべてのネットワークカードがそのフレームを受信し、C のネットワークカードもそれをネットワーク層に渡します。
-        </p>
-      </div>
-    </div>
-    <!-- 解説：Deutsch & 日本語 -->
+<!-- 解説：Deutsch & 日本語 -->
 <div class="row mt-4">
   <div class="col-md-6">
     <h5>Erklärung (Deutsch)</h5>
@@ -69,6 +87,54 @@
     </p>
   </div>
 </div>
+
+<!-- 中タイトル -->
+<div class="row mb-4">
+  <div class="col-12">
+    <p class="fw-bold fs-5" style="color: #004085;">
+      スイッチ・ブリッジ・ハブにおけるフレーム転送の仕組みと送信元ポートの扱い
+    </p>
+  </div>
+</div>
+
+<!-- 解説ブロック -->
+<div class="row mb-4">
+  <div class="col-md-6">
+    <h5>Erklärung (Deutsch)</h5>
+    <p>
+      Der <strong>Sendungsport</strong> ist der physische Port, über den ein Gerät – z.B. Host A – ein Frame in das Netzwerk einspeist.
+      Bei einem <strong>Switch oder einer Bridge</strong> wird ein Broadcast-Frame an <strong>alle Ports weitergeleitet, außer dem Port, an dem der Frame empfangen wurde</strong>.
+      Beispiel: Wenn A an Port 1 eines Switches angeschlossen ist und ein Broadcast sendet, geht der Frame an alle anderen Ports (Port 2, Port 3 usw.), jedoch <strong>nicht zurück an Port 1</strong>.
+    </p>
+    <p>
+      Ein <strong>Hub</strong> hingegen ist ein physikalisches Gerät ohne Intelligenz. Er <strong>spiegelt das Signal an alle Ports, einschließlich des Eingangsports</strong>.
+      Das bedeutet: Wenn A an Port 1 sendet, wird das Signal an alle Ports (auch Port 1) weitergegeben. 
+      Moderne Netzwerkkarten ignorieren jedoch typischerweise ihr eigenes Echo.
+    </p>
+    <p>
+      Beispiel: A sendet ein Frame an die Broadcast-Adresse. B und C empfangen es. Bei Switch/Bridge bekommt C das Frame über seinen Port, aber nicht A. Beim Hub bekommen A, B und C das Signal.
+    </p>
+  </div>
+
+  <div class="col-md-6">
+    <h5>解説（日本語）</h5>
+    <p>
+      <strong>送信元ポート</strong>とは、端末（例：ホストA）がフレームをネットワークに送信した際に、<strong>そのフレームがスイッチやハブに入力されたポート</strong>を指します。
+    </p>
+    <p>
+      <strong>スイッチやブリッジ</strong>では、ブロードキャストフレームを受信すると、<strong>そのフレームが入力されたポート（送信元ポート）以外の全ポート</strong>に転送します。
+      例：Aがスイッチのポート1に接続されていて、ブロードキャストを送信した場合、<strong>ポート2、ポート3、… など他のすべてのポート</strong>にフレームが送られ、<strong>ポート1には送られません</strong>。
+    </p>
+    <p>
+      一方、<strong>ハブ</strong>は制御を行わないため、<strong>すべてのポート（送信元ポートを含む）</strong>に信号を電気的に中継します。
+      つまり、Aがポート1から送信した場合、ポート1にも信号が戻ってくる可能性があります（通常AのNICはそれを無視します）。
+    </p>
+    <p>
+      例：Aがブロードキャストフレームを送信すると、BとCはそのフレームを受信します。スイッチ／ブリッジではCのポートにだけ転送され、Aには戻りません。ハブではA・B・Cすべてに届きます。
+    </p>
+  </div>
+</div>
+
 
 <!-- 中タイトル -->
 <div class="row mb-4">

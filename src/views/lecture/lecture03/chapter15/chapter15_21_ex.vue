@@ -104,6 +104,324 @@
   </div>
 </div>
 
+<!-- Thema 1: Warum reicht Port-Unabhängigkeit bei Switches nicht aus, um Kollisionen zu vermeiden? -->
+<div class="border rounded p-3 bg-light mb-4">
+  <p><strong>Thema:</strong><br />
+    Warum reicht Port-Unabhängigkeit bei Switches nicht aus, um Kollisionen zu vermeiden?
+  </p>
+  <hr />
+  <p><strong>テーマ:</strong><br />
+    スイッチのポート独立性だけでは衝突を完全に防げないのはなぜか？
+  </p>
+</div>
+
+<!-- 解説ブロック -->
+<div class="row mb-4">
+  <div class="col-md-6">
+    <h5>Erklärung (Deutsch)</h5>
+    <p>
+      Switches ermöglichen <strong>portweise getrennte Kommunikation</strong>. Dadurch können z.&nbsp;B. PC1 und PC2 sowie PC3 und PC4 gleichzeitig kommunizieren, ohne sich zu stören.
+    </p>
+    <p>
+      Diese Unabhängigkeit basiert auf der <strong>MAC-Adresstabelle</strong>, die jeder Switch intern führt: Für jede empfangene Frame speichert der Switch die Quell-MAC-Adresse und den zugehörigen Port.
+    </p>
+    <p>
+      Künftige Frames mit derselben Zieladresse werden dann gezielt nur an den entsprechenden Port weitergeleitet – andere Ports bleiben unberührt. So entstehen parallele, nicht überlappende Kommunikationspfade.
+    </p>
+    <p>
+      Doch diese Port-Trennung <strong>verhindert keine Kollisionen, wenn der Link halbduplex ist</strong>. 
+      Das bedeutet: Wenn ein Gerät gleichzeitig senden will, während das andere gerade empfängt (oder umgekehrt), kollidieren die Signale – selbst wenn es sich um nur eine Verbindung handelt.
+    </p>
+    <p>
+      ➤ <strong>Beispiel:</strong> PC1 sendet an Switch, während Switch gleichzeitig Daten an PC1 zurücksenden will → Signalüberlagerung → Kollision.
+    </p>
+    <p>
+      Deshalb benötigt man zusätzlich zum Switch eine <strong>Vollduplex-Fähigkeit</strong> auf beiden Seiten, um Kollisionen auch innerhalb eines einzelnen Links zu vermeiden.
+    </p>
+  </div>
+
+  <div class="col-md-6">
+    <h5>解説（日本語）</h5>
+    <p>
+      スイッチは<strong>各ポートごとに通信を独立して制御</strong>できるため、PC1↔PC2とPC3↔PC4が同時に通信しても干渉しません。
+    </p>
+    <p>
+      この独立性は、スイッチ内部の<strong>MACアドレステーブル</strong>によって実現されています。
+      スイッチはフレームを受信すると、送信元MACアドレスと受信ポートを記録し、次に同じMAC宛のフレームが来たときに、<strong>対応するポートのみに転送</strong>するのです。
+    </p>
+    <p>
+      これにより、異なるポート間の通信が<strong>干渉せずに並行して行える</strong>ようになります。
+    </p>
+    <p>
+      しかし、この<strong>ポートの独立性だけでは衝突を完全に防ぐことはできません</strong>。それは、通信が<strong>半二重（送信と受信が同時にできない）</strong>で行われている場合です。
+    </p>
+    <p>
+      ➤ <strong>例：</strong> PC1がスイッチに送信している最中に、スイッチがPC1に応答を返そうとすると、<strong>送信と受信が重なって衝突</strong>が発生します。
+    </p>
+    <p>
+      つまり、ポートが独立していても、<strong>片方向ずつの通信では信号の物理的な衝突が避けられない</strong>場合があるのです。
+    </p>
+    <p>
+      この問題を防ぐためには、<strong>フルデュプレックス（全二重通信）</strong>への対応が必要です。
+    </p>
+  </div>
+</div>
+
+
+
+<!-- Thema 2: Was unterscheidet Halbduplex und Vollduplex bei der Kollisionsvermeidung? -->
+<div class="border rounded p-3 bg-light mb-4">
+  <p><strong>Thema:</strong><br />
+    Was unterscheidet Halbduplex und Vollduplex bei der Kollisionsvermeidung?
+  </p>
+  <hr />
+  <p><strong>テーマ:</strong><br />
+    衝突回避の観点から見た半二重通信と全二重通信の違いとは？
+  </p>
+</div>
+
+<!-- 解説ブロック -->
+<div class="row mb-4">
+  <div class="col-md-6">
+    <h5>Erklärung (Deutsch)</h5>
+    <p>
+      Bei <strong>Halbduplex</strong>-Verbindungen kann ein Gerät entweder senden oder empfangen – <strong>nicht beides gleichzeitig</strong>. Wird dennoch gleichzeitig gesendet und empfangen, entsteht eine <strong>Kollision</strong>.
+    </p>
+    <p>
+      Früher wurde in solchen Fällen <strong>CSMA/CD</strong> (Collision Detection) eingesetzt, um Konflikte zu erkennen und das Senden zu verzögern.
+    </p>
+    <p>
+      <strong>Vollduplex</strong>-Verbindungen hingegen ermöglichen gleichzeitiges Senden und Empfangen auf demselben Link. 
+      Das beseitigt Kollisionen vollständig – insbesondere in Kombination mit Switches, die jede Verbindung isoliert behandeln.
+    </p>
+    <p>
+      ➤ Fazit: <strong>Halbduplex benötigt Kollisionsvermeidung</strong>, Vollduplex <strong>macht sie überflüssig</strong>.
+    </p>
+  </div>
+
+  <div class="col-md-6">
+    <h5>解説（日本語）</h5>
+    <p>
+      <strong>半二重通信（Half-Duplex）</strong>では、1つの機器は<strong>送信または受信のどちらか一方</strong>しか同時に行えません。
+    </p>
+    <p>
+      そのため、送受信が同時に行われようとすると、信号が<strong>物理的に衝突（コリジョン）</strong>してしまいます。
+      かつてはこれを検出して処理するために<strong>CSMA/CD</strong>が使われていました。
+    </p>
+    <p>
+      一方で、<strong>全二重通信（Full-Duplex）</strong>では、送信と受信を<strong>同時に行うことができる</strong>ため、同一リンク内でも衝突は発生しません。
+    </p>
+    <p>
+      スイッチとフルデュプレックスの組み合わせにより、通信は完全に分離され、<strong>衝突のない安定した通信</strong>が実現されます。
+    </p>
+    <p>
+      ➤ 結論：<strong>半二重通信では衝突対策が必要</strong>ですが、<strong>全二重通信ではそもそも衝突が起きない</strong>ため、対策自体が不要です。
+    </p>
+  </div>
+</div>
+
+<!-- Thema 2: Wie hängt die Port-Unabhängigkeit eines Switches mit der MAC-Adresslernfunktion zusammen? -->
+<div class="border rounded p-3 bg-light mb-4">
+  <p><strong>Thema:</strong><br />
+    Wie hängt die Port-Unabhängigkeit eines Switches mit der MAC-Adresslernfunktion zusammen?
+  </p>
+  <hr />
+  <p><strong>テーマ:</strong><br />
+    スイッチの通信の独立性とMACアドレス学習機能にはどんな関係があるのか？
+  </p>
+</div>
+
+<!-- 解説ブロック -->
+<div class="row mb-4">
+  <div class="col-md-6">
+    <h5>Erklärung (Deutsch)</h5>
+    <p>
+      Ein Switch erreicht seine <strong>Port-Unabhängigkeit</strong> durch das Lernen von <strong>MAC-Adressen</strong>.
+    </p>
+    <p>
+      Sobald ein Frame empfangen wird, speichert der Switch die <strong>Quell-MAC-Adresse</strong> zusammen mit dem dazugehörigen Port in seiner internen <strong>MAC-Tabelle</strong>.
+    </p>
+    <p>
+      Für zukünftige Frames mit derselben Zieladresse kann der Switch das Frame gezielt nur an den zugehörigen Port weiterleiten – die anderen Ports bleiben unberührt.
+    </p>
+    <p>
+      ➤ Ergebnis: Die Kommunikation ist vollständig <strong>portbasiert isoliert</strong>.
+    </p>
+    <p>
+      <strong>Vor dem Lernen</strong> kennt der Switch die Zieladresse noch nicht – er leitet das Frame an <strong>alle Ports außer dem Empfangsport</strong> weiter (Flooding).
+    </p>
+    <p>
+      In dieser Phase ist die Port-Trennung <strong>vorübergehend aufgehoben</strong>, ähnlich wie bei einem Hub.
+    </p>
+    <table class="table table-sm mt-3">
+      <thead>
+        <tr>
+          <th>Status</th>
+          <th>MAC-Adresse bekannt?</th>
+          <th>Unabhängige Kommunikation?</th>
+          <th>Verhalten</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Erstkontakt</td>
+          <td>❌ Nein</td>
+          <td>❌ Nein</td>
+          <td>Flooding auf allen Ports</td>
+        </tr>
+        <tr>
+          <td>Gelernt</td>
+          <td>✅ Ja</td>
+          <td>✅ Ja</td>
+          <td>Gezielte Weiterleitung nur an Zielport</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="col-md-6">
+    <h5>解説（日本語）</h5>
+    <p>
+      スイッチが実現する<strong>ポートごとの通信の独立性</strong>は、<strong>MACアドレスの学習機能</strong>によって支えられています。
+    </p>
+    <p>
+      スイッチはフレームを受信すると、その<strong>送信元MACアドレスと受信ポート</strong>を内部の<strong>MACアドレステーブル</strong>に記録します。
+    </p>
+    <p>
+      次回以降、そのMAC宛のフレームは対応するポート<strong>だけ</strong>に送信されるようになります。他のポートには一切影響を与えません。
+    </p>
+    <p>
+      ➤ 結果として、通信は<strong>完全にポート単位で分離（独立）</strong>されるのです。
+    </p>
+    <p>
+      一方で、<strong>学習前</strong>には宛先MACアドレスのポートがわからないため、スイッチはそのフレームを<strong>受信ポート以外のすべてに送信（フラッディング）</strong>します。
+    </p>
+    <p>
+      このとき、通信の独立性は<strong>一時的に崩れた状態</strong>となり、ハブのような動作になります。
+    </p>
+    <table class="table table-sm mt-3">
+      <thead>
+        <tr>
+          <th>状態</th>
+          <th>MACアドレス学習済み？</th>
+          <th>通信は独立？</th>
+          <th>動作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>初回通信</td>
+          <td>❌ いいえ</td>
+          <td>❌ 独立していない</td>
+          <td>全ポートにフラッディング</td>
+        </tr>
+        <tr>
+          <td>学習後</td>
+          <td>✅ はい</td>
+          <td>✅ 独立している</td>
+          <td>宛先ポートのみに転送</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Thema 3: Warum sind Port-Unabhängigkeit und Vollduplex-Kommunikation entscheidend für Switches? -->
+<div class="border rounded p-3 bg-light mb-4">
+  <p><strong>Thema:</strong><br />
+    Warum sind Port-Unabhängigkeit und Vollduplex-Kommunikation entscheidend für Switches?
+  </p>
+  <hr />
+  <p><strong>テーマ:</strong><br />
+    スイッチにおける「ポートの独立性」と「フルデュプレックス通信」はなぜ重要なのか？
+  </p>
+</div>
+
+<!-- 解説ブロック -->
+<div class="row mb-4">
+  <div class="col-md-6">
+    <h5>Erklärung (Deutsch)</h5>
+    <p>
+      Die hohe Effizienz moderner Switches beruht auf zwei zentralen Konzepten:
+    </p>
+    <ul>
+      <li><strong>1. Port-Unabhängigkeit:</strong> Jeder Port kann unabhängig Daten senden und empfangen.</li>
+      <li><strong>2. Vollduplex-Kommunikation:</strong> Innerhalb einer Verbindung kann gleichzeitig gesendet und empfangen werden.</li>
+    </ul>
+    <h6>🔹 Port-Unabhängigkeit (Mehrere parallele Verbindungen)</h6>
+    <p>
+      Der Switch lernt durch MAC-Adressen-Tabellen, welche Geräte an welchen Ports angeschlossen sind.
+      Basierend darauf kann er Frames gezielt nur an den Zielport senden.
+    </p>
+    <p>
+      ➤ So können z.&nbsp;B. PC1 ↔ PC2 und gleichzeitig PC3 ↔ PC4 kommunizieren – ohne sich gegenseitig zu stören.
+    </p>
+    <h6>🔹 Vollduplex (Gleichzeitiges Senden und Empfangen)</h6>
+    <p>
+      Vollduplex ist möglich, wenn beide Geräte sowie der Switch dies unterstützen.
+      Die physikalische Voraussetzung: moderne Ethernet-Kabel (z.&nbsp;B. Cat5e) mit 4 Drahtpaaren.
+    </p>
+    <p>
+      ➤ Zwei Paare für den Sendeweg, zwei Paare für den Empfang – die Richtungen sind physikalisch getrennt.
+    </p>
+    <p>
+      Die Switch-Ports enthalten dafür spezialisierte Schaltungen (PHY/MAC), die gleichzeitige Verarbeitung ermöglichen.
+    </p>
+
+    <h6>❗ Warum ist ein Hub immer Halbduplex?</h6>
+    <p>
+      Ein Hub arbeitet wie ein elektrischer Verteiler: Er sendet empfangene Signale an alle Ports weiter – ohne Intelligenz.
+      Da alle Geräte denselben Übertragungskanal teilen, können nicht gleichzeitig Signale übertragen werden.
+    </p>
+    <p>
+      ➤ Sobald zwei Geräte gleichzeitig senden, kommt es zu einer <strong>Kollision</strong>.
+      Deshalb funktioniert ein Hub nur im <strong>Halbduplex-Modus</strong> (entweder Senden oder Empfangen, nicht beides gleichzeitig).
+    </p>
+  </div>
+
+  <div class="col-md-6">
+    <h5>解説（日本語）</h5>
+    <p>
+      スイッチの通信性能が高い理由は、次の<strong>2つの「独立性」</strong>にあります：
+    </p>
+    <ul>
+      <li><strong>① ポート間の通信の独立性：</strong>複数の通信が干渉せず同時に行える</li>
+      <li><strong>② ポート内の送受信の独立性（フルデュプレックス）：</strong>1つの接続内で同時送受信が可能</li>
+    </ul>
+    <h6>🔹 ポート間の通信の独立性（多対多通信）</h6>
+    <p>
+      スイッチは<strong>MACアドレスを学習</strong>し、宛先が分かればフレームを<strong>該当ポートだけ</strong>に送信します。
+    </p>
+    <p>
+      ➤ これにより、たとえばPC1 ↔ PC2、PC3 ↔ PC4の通信が同時に行われても干渉しません。
+    </p>
+    <p>
+      この制御はスイッチの<strong>レイヤ2（データリンク層）</strong>で行われます。
+    </p>
+    <h6>🔹 ポート内の送受信の独立性（フルデュプレックス通信）</h6>
+    <p>
+      スイッチと端末の両方がフルデュプレックス対応であれば、<strong>送信と受信を同時に</strong>行えます。
+    </p>
+    <p>
+      Ethernetケーブル（例：Cat5e）は<strong>8本（4対）の銅線</strong>で構成され、2対を送信用、2対を受信用に使います。
+    </p>
+    <p>
+      スイッチのポートには、<strong>送信と受信を分離して処理する専用の回路（PHY/MAC）</strong>が搭載されており、
+      これによりフルデュプレックス通信が物理的に実現されています。
+    </p>
+
+    <h6>❗ なぜハブは半二重通信なのか？</h6>
+    <p>
+      ハブは<strong>電気的な信号をすべてのポートにそのまま中継する</strong>だけの装置です（インテリジェンスなし）。
+    </p>
+    <p>
+      すべての端末が同じ通信路（バス）を共有しており、<strong>複数が同時に送信すると衝突</strong>が発生してしまいます。
+    </p>
+    <p>
+      そのため、ハブでは<strong>「送信中は受信できない」「受信中は送信できない」</strong>という<strong>半二重通信</strong>しか実現できません。
+    </p>
+  </div>
+</div>
 
   </div>
 </template>

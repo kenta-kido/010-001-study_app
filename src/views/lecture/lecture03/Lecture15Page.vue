@@ -73,6 +73,7 @@ const rawSections =
   ['5(a) UDP – Zielport & Ziel-IP beim Senden', 51],
   ['6(a) UDP Prüfsumme – Prüfsummenbereich', 61],
   ['6(b) UDP Prüfsumme – Berechnung mit 16-Bit-Folgen', 62],
+  ['7 Überlastkontrolle', 70],
   ['7(a) Überlastkontrolle – P2P vs. Netzwerk-gestützt', 71],
   ['8(a) AIMD – Erklärung des Mechanismus', 81],
   ['9(a) TCP CUBIC – Name, Motivation & Vergleich mit AIMD', 91],

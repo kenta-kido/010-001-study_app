@@ -38,6 +38,42 @@
     </ul>
   </div>
 </div>
+<!-- Thema 2: Was ist ein LAN? Besteht es aus Ethernet-Geräten? -->
+<div class="border rounded p-3 bg-light mb-4">
+  <p><strong>Thema:</strong><br />
+    Was ist ein LAN? Besteht es aus Ethernet-Geräten?
+  </p>
+  <hr />
+  <p><strong>テーマ:</strong><br />
+    LANとは？Ethernetで接続された機器群はLANなのか？
+  </p>
+</div>
+
+<div class="row mb-4">
+  <div class="col-md-6">
+    <h5>Antwort (Deutsch)</h5>
+    <ul>
+      <li>Ein <strong>LAN (Local Area Network)</strong> bezeichnet ein Netzwerk, das sich typischerweise über einen begrenzten geografischen Bereich erstreckt – z.B. innerhalb eines Gebäudes.</li>
+      <li><strong>Ethernet</strong> ist die am weitesten verbreitete Technologie zur Realisierung eines LANs. Es handelt sich dabei um einen Standard für Protokolle und physikalische Übertragung.</li>
+      <li>Geräte, die über Ethernet-Kabel direkt miteinander verbunden sind, bilden in der Regel ein <strong>LAN-Segment</strong> – insbesondere wenn sie sich im selben <em>Broadcast-Domain</em> befinden.</li>
+      <li>Ein Switch verbindet Geräte zu einem gemeinsamen LAN-Segment. Eine Bridge funktioniert ähnlich.</li>
+      <li>Ein Router trennt Netzwerke logisch – Geräte auf verschiedenen Seiten eines Routers befinden sich <strong>nicht im selben LAN</strong>, sondern in unterschiedlichen IP-Subnetzen.</li>
+      <li>Fazit: <strong>Ja</strong>, Geräte, die direkt per Ethernet verbunden sind, gelten im Allgemeinen als Teil eines LANs – sofern keine Segmentierung durch Router oder VLANs vorliegt.</li>
+    </ul>
+  </div>
+
+  <div class="col-md-6">
+    <h5>解答（日本語）</h5>
+    <ul>
+      <li><strong>LAN（Local Area Network）</strong>とは、主に同じ建物やフロアなど、限られた範囲内にある機器同士を接続したネットワークのことです。</li>
+      <li><strong>Ethernet</strong>は、LANを構築するための標準的な通信技術（プロトコルと物理仕様のセット）です。</li>
+      <li>Ethernetで直接接続された機器は、通常同一の<strong>LANセグメント</strong>を構成し、同じブロードキャストドメイン内にあると見なされます。</li>
+      <li>スイッチやブリッジを介して接続された機器は、同一のLAN内に属します。</li>
+      <li>一方、<strong>ルーター</strong>を挟むとネットワークは分割され、別々のLAN（およびIPサブネット）になります。</li>
+      <li>結論：<strong>はい</strong>、Ethernetで直接接続された機器同士は通常「同じLAN」として扱われます。ただし、ルーターやVLANの有無により分割される場合もあります。</li>
+    </ul>
+  </div>
+</div>
 
 
 <!-- Thema 2: Verhalten der Netzwerkkarte bei Empfang von Frames -->
@@ -269,6 +305,168 @@
     </ul>
   </div>
 </div>
+
+<!-- Thema 3: Verhältnis zwischen MAC-Adresse und IP-Adresse -->
+<div class="border rounded p-3 bg-light mb-4">
+  <p><strong>Thema:</strong><br />
+    Verhältnis zwischen MAC-Adresse und IP-Adresse
+  </p>
+  <hr />
+  <p><strong>テーマ:</strong><br />
+    MACアドレスとIPアドレスの関係とは？1対1なのか？
+  </p>
+</div>
+
+<div class="row mb-4">
+  <div class="col-md-6">
+    <h5>Antwort (Deutsch)</h5>
+    <ul>
+      <li>Die <strong>MAC-Adresse</strong> ist eine eindeutige physikalische Adresse, die jeder Netzwerkschnittstelle (NIC) zugewiesen ist.</li>
+      <li>Ein Gerät kann mehrere MAC-Adressen haben (z.B. für LAN und WLAN).</li>
+      <li>Die <strong>IP-Adresse</strong> ist eine logische Adresse, die einem Gerät im Netzwerk dynamisch (DHCP) oder statisch zugewiesen wird.</li>
+      <li>Ein <strong>MAC ist keine "Geräteadresse"</strong>, sondern gehört zur Netzwerkschnittstelle (z.B. Ethernet/WLAN).</li>
+      <li>Die Zuordnung IP ⇔ MAC erfolgt über das ARP-Protokoll.</li>
+      <li>In einem LAN wird jeder NIC eine eindeutige IP-Adresse zugewiesen (meist durch den Router per DHCP).</li>
+      <li><strong>1:1 Beziehung?</strong> In der Praxis meistens, aber es gibt Ausnahmen:</li>
+      <ul>
+        <li>Ein NIC kann mehrere IPs haben (z.B. bei Servern oder virtuellen Interfaces).</li>
+        <li>Eine IP kann von mehreren MACs verwendet werden (z.B. bei Load-Balancing oder VRRP).</li>
+      </ul>
+    </ul>
+  </div>
+
+  <div class="col-md-6">
+    <h5>解答（日本語）</h5>
+    <ul>
+      <li><strong>MACアドレス</strong>は、ネットワークインターフェース（NIC）に割り当てられる固有の物理アドレスです。</li>
+      <li>1台の機器に複数のNIC（例：Wi-Fiと有線LAN）がある場合、それぞれ別のMACアドレスを持ちます。</li>
+      <li><strong>IPアドレス</strong>はネットワーク上で通信のために使われる論理的なアドレスで、通常DHCPなどにより割り当てられます。</li>
+      <li>MACは「機器そのもの」ではなく、「通信インターフェースの識別子」です。</li>
+      <li>IPアドレスとMACアドレスの対応は<strong>ARP（Address Resolution Protocol）</strong>により行われます。</li>
+      <li>LAN内では、各NICごとに一意のIPアドレスが割り当てられる必要があります。</li>
+      <li><strong>MACとIPは1対1か？</strong> → 多くの場合そうですが、例外も存在します：</li>
+      <ul>
+        <li>1つのNICが複数のIPアドレスを持つ（サーバ、仮想環境など）</li>
+        <li>1つのIPアドレスを複数のMACが使う（フェイルオーバー、プロキシ、NATなど）</li>
+      </ul>
+    </ul>
+  </div>
+</div>
+
+<!-- Thema X:  -->
+<div class="border rounded p-3 bg-light mb-4">
+  <p><strong>Thema:</strong><br />
+    Warum kann es bei DHCP zu Kollisionen kommen?
+  </p>
+  <hr />
+  <p><strong>テーマ:</strong><br />
+    なぜDHCPにおいて衝突が発生する可能性があるのか？
+  </p>
+</div>
+
+<!-- 解説ブロック -->
+<div class="row mb-4">
+  <div class="col-md-6">
+    <h5>Erklärung (Deutsch)</h5>
+    <p>
+      DHCP (Dynamic Host Configuration Protocol) weist Geräten im Netzwerk automatisch IP-Adressen und andere Konfigurationsdaten zu.
+      Der Ablauf folgt dem sogenannten <strong>DORA-Modell</strong>:
+    </p>
+    <ul>
+      <li><strong>Discover:</strong> Wer ist ein DHCP-Server? (Broadcast)</li>
+      <li><strong>Offer:</strong> Hier ist ein IP-Angebot (Unicast oder Broadcast)</li>
+      <li><strong>Request:</strong> Ich hätte gern diese IP (Broadcast)</li>
+      <li><strong>Ack:</strong> OK, IP ist vergeben (Unicast oder Broadcast)</li>
+    </ul>
+    <p>
+      Da ein Gerät zu Beginn <strong>noch keine IP-Adresse besitzt</strong>, nutzt es für die erste Kommunikation <strong>Broadcast</strong> (IP: 255.255.255.255, MAC: FF:FF:FF:FF:FF:FF).
+    </p>
+    <p>
+      In älteren Netzwerken mit Hubs teilen sich alle Geräte denselben Übertragungskanal. Wenn mehrere Hosts gleichzeitig einen DHCP Discover senden – etwa beim gleichzeitigen Einschalten mehrerer PCs – überlagern sich die Signale auf physikalischer Ebene.
+    </p>
+    <p>
+      Dies führt zu einer <strong>Kollision</strong>, die durch <strong>CSMA/CD</strong> (Carrier Sense Multiple Access with Collision Detection) behandelt wird. Die Geräte erkennen den Konflikt, senden ein Jamming-Signal und versuchen es nach zufälliger Wartezeit erneut.
+    </p>
+    <p>
+      In modernen Netzwerken mit Switches sind solche Kollisionen praktisch ausgeschlossen, da jeder Port ein eigenes Übertragungsmedium hat und unabhängig arbeitet.
+    </p>
+  </div>
+
+  <div class="col-md-6">
+    <h5>解説（日本語）</h5>
+    <p>
+      DHCP（Dynamic Host Configuration Protocol）は、ネットワークに接続された機器にIPアドレスや設定情報を自動で割り当てる仕組みです。
+      通信は<strong>DORA</strong>の4ステップで進みます：
+    </p>
+    <ul>
+      <li><strong>Discover：</strong> IPアドレスをくれるDHCPサーバを探す（ブロードキャスト）</li>
+      <li><strong>Offer：</strong> 使えるIPアドレスの提案（ユニキャストまたはブロードキャスト）</li>
+      <li><strong>Request：</strong> そのIPが欲しいと要求（ブロードキャスト）</li>
+      <li><strong>Ack：</strong> 割り当てを承認（ユニキャストまたはブロードキャスト）</li>
+    </ul>
+    <p>
+      接続初期は<strong>自分のIPアドレスを持っていない</strong>ため、DHCP Discoverはブロードキャスト（IP: 255.255.255.255 / MAC: FF:FF:FF:FF:FF:FF）でネットワーク全体に送信されます。
+    </p>
+    <p>
+      特に古い<strong>ハブ接続のネットワーク</strong>では、すべての機器が同じ物理回線を共有しているため、
+      例えば複数のPCを同時に起動したときに<strong>Discoverメッセージが同時に送信される</strong>と、物理的に信号がぶつかり<strong>衝突（コリジョン）</strong>が発生します。
+    </p>
+    <p>
+      こうした衝突は<strong>CSMA/CD</strong>方式により処理され、機器はジャム信号を送って通知し、その後ランダムな時間待機して再送を試みます。
+    </p>
+    <p>
+      一方で現代の<strong>スイッチ接続のネットワーク</strong>では、各ポートが個別に分離されているため、
+      ブロードキャストであっても物理的な衝突は発生せず、より安全かつ高速にDHCP通信が行われます。
+    </p>
+  </div>
+</div>
+
+<!-- Thema X:  -->
+<div class="border rounded p-3 bg-light mb-4">
+  <p><strong>Thema:</strong><br />
+    Wo befindet sich der DHCP-Server?
+  </p>
+  <hr />
+  <p><strong>テーマ:</strong><br />
+    DHCPサーバはどこにある？
+  </p>
+</div>
+
+<!-- 解説ブロック -->
+<div class="row mb-4">
+  <div class="col-md-6">
+    <h5>Erklärung (Deutsch)</h5>
+    <p>
+      Wo sich der DHCP-Server befindet, hängt von der Netzwerkgröße ab:
+    </p>
+    <ul>
+      <li><strong>Zuhause / kleine Büros:</strong> Der DHCP-Server ist in der Regel im <strong>Router</strong> integriert (z.B. Fritzbox, TP-Link, etc.).</li>
+      <li><strong>Unternehmen / Campus-Netzwerke:</strong> Ein <strong>dedizierter Server</strong> (z.B. Windows Server oder Linux) übernimmt die Aufgabe.</li>
+      <li>In VLAN- oder Multi-Subnet-Umgebungen wird DHCP oft über einen <strong>DHCP-Relay-Agenten</strong> weitergeleitet.</li>
+    </ul>
+    <p>
+      Beispiel: Ein zentraler Server auf 192.168.10.1 verwaltet IP-Adressen für mehrere Abteilungen im Netzwerk.
+    </p>
+  </div>
+
+  <div class="col-md-6">
+    <h5>解説（日本語）</h5>
+    <p>
+      DHCPサーバがどこにあるかは、ネットワークの規模によって異なります：
+    </p>
+    <ul>
+      <li><strong>家庭・小規模オフィス：</strong> ルーターの中にDHCPサーバ機能が内蔵されているのが一般的です。（例：バッファロー、NEC、TP-Linkなど）</li>
+      <li><strong>企業や学校：</strong> Windows Server や Linux サーバなどで専用のDHCPサービスを運用するのが一般的です。</li>
+      <li>複数のサブネットやVLANがある場合、<strong>DHCPリレー</strong>で別ネットワークに中継されることもあります。</li>
+    </ul>
+    <p>
+      例：192.168.10.1 にあるWindowsサーバが、部署ごとに異なるIP範囲を配布しているケースなど。
+    </p>
+  </div>
+</div>
+
+
+
 
   </div>
 </template>
