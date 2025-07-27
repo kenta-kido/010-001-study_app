@@ -76,6 +76,7 @@ const rawSections =
   ['7 Überlastkontrolle', 70],
   ['7(a) Überlastkontrolle – P2P vs. Netzwerk-gestützt', 71],
   ['8(a) AIMD – Erklärung des Mechanismus', 81],
+  ['9 TCP CUBIC', 90],
   ['9(a) TCP CUBIC – Name, Motivation & Vergleich mit AIMD', 91],
   ['9(b) TCP CUBIC – Wachstumsfunktion & Parametererklärung', 92],
   ['9(c) TCP CUBIC – Vergleich Wachstum & Reaktion mit AIMD', 93],

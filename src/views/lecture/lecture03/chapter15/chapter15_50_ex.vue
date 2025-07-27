@@ -319,6 +319,288 @@
   </div>
 </div>
 
+<!-- Thema: Welches Transportprotokoll nutzen Internetanwendungen und warum? -->
+<div class="border rounded p-3 bg-light mb-4">
+  <p><strong>Thema:</strong><br />
+    Welches Transportprotokoll nutzen Internetanwendungen und warum?
+  </p>
+  <hr />
+  <p><strong>テーマ:</strong><br />
+    インターネットアプリケーションはどのトランスポートプロトコルを使うのか？そしてその理由は？
+  </p>
+</div>
+
+<!-- 図の挿入 -->
+<div class="text-center mt-4">
+  <img src="@/assets/lecture/lecture03/Figure_0503.png" class="img-fluid" alt="Anwendungen und Transportprotokolle" style="max-width: 700px;" />
+  <p class="text-muted mt-2">Abbildung: Zuordnung von Anwendungen zu TCP oder UDP</p>
+</div>
+
+<!-- 解説：Deutsch & 日本語 -->
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h5>Erklärung (Deutsch)</h5>
+    <p>Diese Tabelle zeigt, welches Transportprotokoll (TCP oder UDP) von typischen Internetanwendungen verwendet wird und warum:</p>
+    <ul>
+      <li><strong>SMTP (E-Mail):</strong> Nutzt <strong>TCP</strong>, da Zuverlässigkeit beim Versand entscheidend ist.</li>
+      <li><strong>Telnet (Fernzugriff):</strong> Verwendet <strong>TCP</strong>, da Reihenfolge und Fehlerkontrolle für interaktive Sitzungen erforderlich sind.</li>
+      <li><strong>HTTP (Web):</strong> Setzt auf <strong>TCP</strong>, um eine zuverlässige Übertragung von Webseiten sicherzustellen.</li>
+      <li><strong>FTP (Dateiübertragung):</strong> Nutzt <strong>TCP</strong>, da selbst kleinste Verluste in Dateien kritisch sind.</li>
+      <li><strong>NFS (Dateiserver):</strong> Verwendet oft <strong>UDP</strong> mit eigener Fehlerbehandlung zur Performanzsteigerung, unterstützt aber auch TCP.</li>
+      <li><strong>Streaming Multimedia:</strong> Nutzt <strong>UDP</strong> für niedrige Latenz, oder <strong>TCP</strong>, wenn Zuverlässigkeit wichtiger ist.</li>
+      <li><strong>Internettelefonie:</strong> Typischerweise <strong>UDP</strong> (z.&nbsp;B. RTP), da Zeitverzögerung wichtiger ist als perfekte Übertragung.</li>
+      <li><strong>SNMP (Netzwerkverwaltung):</strong> Setzt meist auf <strong>UDP</strong> für einfache, gelegentliche Nachrichten.</li>
+      <li><strong>DNS (Namensauflösung):</strong> Typischerweise <strong>UDP</strong> für schnelle Abfragen; TCP wird nur bei großen Antworten verwendet.</li>
+    </ul>
+    <p><strong>Merke:</strong> TCP wird verwendet, wenn Zuverlässigkeit, Reihenfolge und Fehlerkontrolle wichtig sind. UDP wird bevorzugt, wenn Geschwindigkeit und geringer Overhead im Vordergrund stehen.</p>
+  </div>
+
+  <div class="col-md-6">
+    <h5>解説（日本語）</h5>
+    <p>この表は、代表的なインターネットアプリケーションが、TCP または UDP のどちらを使っているか、そしてその理由を示しています：</p>
+    <ul>
+      <li><strong>SMTP（電子メール）:</strong> <strong>TCP</strong>。メールは確実に届ける必要があるため信頼性が重要。</li>
+      <li><strong>Telnet（リモート端末）:</strong> <strong>TCP</strong>。キー入力の順番や応答の正確さが要求される。</li>
+      <li><strong>HTTP（ウェブ）:</strong> <strong>TCP</strong>。ウェブページの完全な表示に再送や順序保証が不可欠。</li>
+      <li><strong>FTP（ファイル転送）:</strong> <strong>TCP</strong>。データの欠落が許されないため。</li>
+      <li><strong>NFS（リモートファイルシステム）:</strong> <strong>通常はUDP</strong>。軽量で高速、ただし自前でエラー処理。</li>
+      <li><strong>ストリーミング:</strong> <strong>UDPまたはTCP</strong>。遅延を避けたいならUDP、信頼性を重視するならTCP。</li>
+      <li><strong>インターネット電話:</strong> <strong>UDPまたはTCP</strong>。リアルタイム性重視でUDPが多い。</li>
+      <li><strong>SNMP（ネットワーク管理）:</strong> <strong>通常はUDP</strong>。小規模な監視データを迅速に。</li>
+      <li><strong>DNS（名前解決）:</strong> <strong>通常はUDP</strong>。高速応答が求められる。応答が大きい場合はTCPにフォールバック。</li>
+    </ul>
+    <p><strong>ポイント：</strong>信頼性と正確さが必要な用途はTCP、速度と軽量性が重視される場合はUDPが使われます。</p>
+  </div>
+</div>
+
+<!-- Thema: Warum verwenden bestimmte Anwendungen UDP – und was passiert bei Paketverlust? -->
+<div class="border rounded p-3 bg-light mb-4">
+  <p><strong>Thema:</strong><br />
+    Warum verwenden bestimmte Anwendungen das verbindungslose UDP – und wie reagieren sie auf verlorene Pakete?
+  </p>
+  <hr />
+  <p><strong>テーマ:</strong><br />
+    なぜ特定のアプリケーションはUDPを使うのか？パケットが届かなかったらどうなる？
+  </p>
+</div>
+
+<!-- 図：Figure_0503.png -->
+<div class="text-center mb-4">
+  <img src="@/assets/lecture/lecture03/Figure_0503.png" class="img-fluid" alt="UDP Anwendungen und Transportprotokolle">
+</div>
+
+<div class="row mb-4">
+  <div class="col-md-6">
+    <h5>Erklärung (Deutsch)</h5>
+    <p>
+      UDP ist ein verbindungsloses, leichtgewichtiges Transportprotokoll, das keine Garantie für Paketlieferung oder Reihenfolge bietet.
+      Dennoch wird es in vielen Anwendungen verwendet, wo geringe Latenz oder Overhead entscheidend ist.
+    </p>
+
+    <h6>Typische UDP-Anwendungen und Verhalten bei Paketverlust:</h6>
+    <ul>
+      <li><strong>DNS:</strong> Sehr kurze Anfragen. UDP ist schnell. <br />
+      <em>Bei Verlust:</em> Client fragt erneut nach Timeout.</li>
+
+      <li><strong>SNMP (Netzwerküberwachung):</strong> Protokoll zur Überwachung von Netzwerkgeräten wie Routern oder Switches.<br />
+      <em>Bei Verlust:</em> Meldung geht verloren. Manager kann erneut anfragen, aber meistens ist es nicht kritisch.</li>
+
+      <li><strong>VoIP:</strong> Sprachübertragung über das Internet. Geringe Verzögerung ist wichtiger als Vollständigkeit.<br />
+      <em>Bei Verlust:</em> Kurzer Ton-Aussetzer, keine Wiederholung.</li>
+
+      <li><strong>Streaming:</strong> UDP für kontinuierliche Wiedergabe bevorzugt.<br />
+      <em>Bei Verlust:</em> Kleine Störungen im Bild oder Ton, keine Wiederholung.</li>
+
+      <li><strong>NFS (Network File System):</strong> Ermöglicht Zugriff auf Dateien über das Netzwerk, als wären sie lokal.<br />
+      <em>Bei Verlust:</em> NFS erkennt Fehler und fragt fehlende Daten selbstständig erneut an.</li>
+    </ul>
+  </div>
+
+  <div class="col-md-6">
+    <h5>解説（日本語）</h5>
+    <p>
+      UDPは「接続を確立せずに」送信できる軽量なプロトコルで、信頼性のある転送は保証されません。
+      しかし、リアルタイム性やシンプルな通信が求められる場面で多く使われています。
+    </p>
+
+    <h6>UDPを使う代表的なアプリケーションと、届かなかった場合の挙動：</h6>
+    <ul>
+      <li><strong>DNS（名前解決）:</strong> 非常に小さな問い合わせで一回の応答がほとんど。<br />
+      <em>届かなかった場合：</em> タイムアウト後に再送される。</li>
+
+      <li><strong>SNMP（ネットワーク監視）:</strong> ルータやスイッチなどの状態を取得するためのプロトコル。<br />
+      <em>届かなかった場合：</em> 応答が欠けても大きな影響はなく、必要なら再取得される。</li>
+
+      <li><strong>VoIP（音声通話）:</strong> 遅延なく会話を続けることが優先される。<br />
+      <em>届かなかった場合：</em> 短い音声の欠落が発生するが、再送されない。</li>
+
+      <li><strong>ストリーミング:</strong> 映像や音声を途切れずに送るためにUDPが選ばれることがある。<br />
+      <em>届かなかった場合：</em> 一部の映像・音声が乱れるが、再送はされずそのまま進む。</li>
+
+      <li><strong>NFS（ネットワークファイルシステム）:</strong> ネットワーク越しにファイルをローカルのように操作できる仕組み。<br />
+      <em>届かなかった場合：</em> クライアント側が応答の欠落を検知して、自動的に再送を行う。</li>
+    </ul>
+
+    <p><strong>まとめ：</strong> UDPを使うアプリは、届かないことを前提に、アプリ側で再送制御や誤り処理を行うか、
+      届かなくても許容できるよう設計されています。</p>
+  </div>
+</div>
+
+<!-- Thema: Warum verwenden bestimmte Anwendungen TCP – und wie wird Zuverlässigkeit sichergestellt? -->
+<div class="border rounded p-3 bg-light mb-4">
+  <p><strong>Thema:</strong><br />
+    Warum nutzen viele Anwendungen TCP – und wie wird mit verlorenen Paketen umgegangen?
+  </p>
+  <hr />
+  <p><strong>テーマ:</strong><br />
+    なぜ多くのアプリケーションはTCPを使うのか？パケットが届かなかった場合どう対処するのか？
+  </p>
+</div>
+
+<!-- 図：Figure_0503.png -->
+<div class="text-center mb-4">
+  <img src="@/assets/lecture/lecture03/Figure_0503.png" class="img-fluid" alt="TCP Anwendungen und Transportprotokolle">
+</div>
+
+<div class="row mb-4">
+  <div class="col-md-6">
+    <h5>Erklärung (Deutsch)</h5>
+    <p>
+      TCP ist ein verbindungsorientiertes Protokoll mit zuverlässiger Datenübertragung, garantierter Reihenfolge und Flusskontrolle. 
+      Es ist besonders für Anwendungen geeignet, bei denen Daten vollständig und korrekt ankommen müssen.
+    </p>
+
+    <h6>Typische TCP-Anwendungen und Paketverlustbehandlung:</h6>
+    <ul>
+      <li><strong>SMTP (E-Mail):</strong> Zuverlässiger Versand von Nachrichten. <br />
+        <em>Bei Verlust:</em> TCP erkennt fehlende Segmente und sendet sie automatisch erneut.</li>
+
+      <li><strong>Telnet (Fernzugriff):</strong> Interaktive Eingabe über Netzwerk. <br />
+        <em>Bei Verlust:</em> TCP garantiert, dass alle Eingaben in korrekter Reihenfolge ankommen.</li>
+
+      <li><strong>HTTP (Web):</strong> Webseiten müssen vollständig geladen werden. <br />
+        <em>Bei Verlust:</em> TCP puffert und wiederholt Segmente bei Bedarf.</li>
+
+      <li><strong>FTP (Dateitransfer):</strong> Dateien dürfen keine Fehler enthalten. <br />
+        <em>Bei Verlust:</em> TCP sorgt für korrekten und vollständigen Transfer.</li>
+    </ul>
+
+    <p><strong>Zusammenfassung:</strong> TCP erkennt verlorene Pakete durch Sequenznummern und erwartet Quittierungen (ACKs). 
+      Fehlende Segmente werden erneut gesendet, bevor die Übertragung fortgesetzt wird.</p>
+  </div>
+
+  <div class="col-md-6">
+    <h5>解説（日本語）</h5>
+    <p>
+      TCPは信頼性の高い接続型プロトコルで、データの順序や完全性が保証されます。
+      そのため、<strong>「一部でも失われると困る通信」</strong>に非常に適しています。
+    </p>
+
+    <h6>TCPを使う代表的なアプリケーションと、届かなかった場合の対処：</h6>
+    <ul>
+      <li><strong>SMTP（メール送信）:</strong> メール本文や添付ファイルの正確な配送が必要。<br />
+        <em>届かなかった場合：</em> TCPが再送し、受信確認（ACK）を待って次に進む。</li>
+
+      <li><strong>Telnet（リモート端末）:</strong> キーボード入力や応答が即時かつ正確に必要。<br />
+        <em>届かなかった場合：</em> 入力が遅延するが、順番通りに届けられる。</li>
+
+      <li><strong>HTTP（Web）:</strong> ページデータを正しく取得しないと表示できない。<br />
+        <em>届かなかった場合：</em> ブラウザは待機し、TCPが不足部分を補完する。</li>
+
+      <li><strong>FTP（ファイル転送）:</strong> 完全なデータでなければファイル破損につながる。<br />
+        <em>届かなかった場合：</em> TCPが誤りを検出し、必要部分を自動で再送する。</li>
+    </ul>
+
+    <p><strong>まとめ：</strong> TCPでは、全てのデータが届いたことを確認しながら送信が行われ、
+      届かない場合は自動で再送されるため、アプリケーション側は信頼性を意識しなくて済みます。</p>
+  </div>
+</div>
+
+
+<!-- Thema: Warum verwendet NFS UDP und Telnet TCP? -->
+<div class="border rounded p-3 bg-light mb-4">
+  <p><strong>Thema:</strong><br />
+    Warum verwendet NFS typischerweise UDP, während Telnet TCP nutzt?
+  </p>
+  <hr />
+  <p><strong>テーマ:</strong><br />
+    なぜNFSはUDP、TelnetはTCPを使うのか？アプリケーションの性質から見るトランスポート層プロトコルの選択
+  </p>
+</div>
+
+<div class="row mb-4">
+  <div class="col-md-6">
+    <h5>Erklärung (Deutsch)</h5>
+
+    <p>
+      <strong>NFS (Network File System)</strong> ist ein System, mit dem ein Computer über das Netzwerk auf Dateien auf einem anderen Computer zugreifen kann,
+      als wären sie lokal gespeichert. Es wird z.&nbsp;B. in Firmennetzwerken eingesetzt.
+    </p>
+    <ul>
+      <li><strong>Verwendetes Protokoll:</strong> Meist UDP (leicht und schnell)</li>
+      <li><strong>Grund:</strong> NFS wurde für schnelle lokale Netzwerke konzipiert, wo Paketverlust selten ist. UDP ist schnell, da es keine Verbindungsaufbau braucht.</li>
+      <li>
+        <strong>Was passiert bei Paketverlust?</strong><br />
+        Wenn ein Paket verloren geht, erkennt NFS das selbst (z.&nbsp;B. durch Zeitüberschreitung) und sendet die Anfrage erneut. 
+        Die Anwendung selbst ist also verantwortlich für die Zuverlässigkeit.
+      </li>
+    </ul>
+
+    <p>
+      <strong>Telnet</strong> ist ein Protokoll, mit dem man sich auf entfernte Rechner einloggen kann, um sie über eine Kommandozeile zu steuern.
+    </p>
+    <ul>
+      <li><strong>Verwendetes Protokoll:</strong> TCP (zuverlässig und verbindungsorientiert)</li>
+      <li><strong>Grund:</strong> Bei Telnet ist es sehr wichtig, dass jede Tasteneingabe korrekt und in der richtigen Reihenfolge beim Server ankommt.
+        Dafür ist TCP ideal, da es automatisch für fehlerfreie und geordnete Übertragung sorgt.
+      </li>
+      <li>
+        <strong>Was passiert bei Paketverlust?</strong><br />
+        TCP merkt, wenn Daten fehlen oder beschädigt sind, und sendet sie automatisch erneut. 
+        Für die Anwendung ist das völlig transparent.
+      </li>
+    </ul>
+  </div>
+
+  <div class="col-md-6">
+    <h5>解説（日本語）</h5>
+
+    <p>
+      <strong>NFS（Network File System）</strong> は、他のコンピュータのファイルを自分のPC上にあるかのように操作できる仕組みです。
+      職場や大学などのネットワークでよく使われます。
+    </p>
+    <ul>
+      <li><strong>使われるプロトコル：</strong> UDP（軽量・高速）</li>
+      <li><strong>理由：</strong> NFSは元々、高速で安定したLAN内での利用を想定して設計されました。
+        UDPは接続を確立する手間がないため、すぐにデータを送れて高速です。
+      </li>
+      <li>
+        <strong>正しく届かなかった場合は？</strong><br />
+        UDPは再送や順序保証をしないため、NFS自身が「届かなかった」と判断したら、
+        タイムアウトやリトライ処理を自力で行います（プロトコルの中に含まれている）。
+      </li>
+    </ul>
+
+    <p>
+      一方で、<strong>Telnet</strong> はリモートのPCに接続して、文字ベースで操作を行うプロトコルです。
+    </p>
+    <ul>
+      <li><strong>使われるプロトコル：</strong> TCP（信頼性の高い通信）</li>
+      <li><strong>理由：</strong> Telnetでは、キーボードから入力した文字が1文字でも欠けると大問題になります。
+        また、順番が入れ替わると正しくコマンドを解釈できません。
+        そのため、<strong>通信の順序・正確性を自動で保証するTCP</strong>が必要なのです。
+      </li>
+      <li>
+        <strong>正しく届かなかった場合は？</strong><br />
+        TCPが自動的に再送して、正しい順序でアプリケーションに届けてくれます。
+        ユーザーやアプリ側は意識する必要はありません。
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+
 
   </div>
 </template>
