@@ -1,2 +1,0 @@
-"use strict";(self["webpackChunkstudy_site"]=self["webpackChunkstudy_site"]||[]).push([[9936],{9936:function(t,n,s){s.r(n),s.d(n,{default:function(){return o}});var e=s(6768);const u={class:"container my-4"};function r(t,n){return(0,e.uX)(),(0,e.CE)("div",u,n[0]||(n[0]=[(0,e.Lk)("h3",{class:"mb-4"},"not yet",-1)]))}var c=s(1241);const a={},i=(0,c.A)(a,[["render",r]]);var o=i}}]);
-//# sourceMappingURL=9936.106606ed.js.map
