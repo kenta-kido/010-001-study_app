@@ -1,6 +1,87 @@
 <template>
   <div class="container my-4">
     <h3 class="mb-4">Kollision</h3>
+<!-- Thema: CSMA – Carrier Sense Multiple Access -->
+<div class="border rounded p-3 bg-light mb-4">
+  <p><strong>Thema:</strong><br />
+    Was ist CSMA? – Grundprinzipien des Carrier Sense Multiple Access
+  </p>
+  <hr />
+  <p><strong>テーマ:</strong><br />
+    CSMAとは何か？―Carrier Sense Multiple Access の基本と意義
+  </p>
+</div>
+
+<!-- Erklärung -->
+<div class="row mb-4">
+  <div class="col-md-6">
+    <h5>Erklärung (Deutsch)</h5>
+
+    <p>
+      CSMA steht für <strong>Carrier Sense Multiple Access</strong> und beschreibt ein Zugriffsverfahren auf das Übertragungsmedium in Netzwerken wie Ethernet oder WLAN.
+    </p>
+
+    <ul>
+      <li><strong>Carrier Sense:</strong> Das Netzwerkgerät (z.&nbsp;B. die Netzwerkkarte) hört zunächst auf das Medium, um festzustellen, ob es bereits verwendet wird.</li>
+      <li><strong>Multiple Access:</strong> Alle Geräte dürfen prinzipiell senden – es gibt keinen festen Sendeberechtigten.</li>
+    </ul>
+
+    <p>
+      Der Begriff <strong>Carrier Sense</strong> bedeutet, dass die Netzwerkkarte (NIC) vor dem Senden prüft, ob das Übertragungsmedium gerade belegt ist. 
+    </p>
+    <p> 
+      Dies geschieht durch das Messen elektrischer Signale auf dem Kabel (bei Ethernet) oder durch das Erkennen von Funksignalen in einem bestimmten Frequenzband (bei WLAN).
+    <br/> 
+      Nur wenn kein aktives Signal festgestellt wird, darf gesendet werden.
+    </p>
+    <p>
+      Wenn das Medium frei ist, darf gesendet werden. Sind mehrere Geräte gleichzeitig bereit zu senden, kann es zu <strong>Kollisionen</strong> kommen.
+    </p>
+
+    <p>
+      CSMA ist typisch für Ethernet (mit CSMA/CD) und WLAN (mit CSMA/CA).
+    </p>
+
+    <p>
+      <strong>Gegenbeispiel:</strong> Im Token-Ring-Netzwerk darf nur das Gerät mit dem „Token“ senden. Das ist <em>kein Multiple Access</em>.
+    </p>
+  </div>
+
+  <div class="col-md-6">
+    <h5>解説（日本語）</h5>
+
+    <p>
+      <strong>CSMA（Carrier Sense Multiple Access）</strong>は、ネットワークで複数の端末が同じ通信媒体を共有してアクセスする方式を指します。
+    </p>
+
+    <ul>
+      <li><strong>Carrier Sense（搬送波感知）：</strong> NIC（ネットワークインタフェース）は送信前に、通信媒体（ケーブルや電波）に他の信号が存在しないか確認します。</li>
+      <li><strong>Multiple Access（多重アクセス）：</strong> すべての端末が自由に送信を試みることができます（ただし競合の可能性あり）。</li>
+    </ul>
+
+    <p>
+      <strong>Carrier Sense（搬送波感知）</strong>とは、NIC（ネットワークインタフェースカード）がデータ送信の前に、通信媒体が現在使用中かどうかを検出する動作を指します。
+    </p>
+    <p> 
+      これは、（イーサネットの場合）ケーブル上の電気信号を測定することで、または（無線LANの場合）特定の周波数帯での電波信号を検出することで行われます。
+    <br/> 
+      信号が検出されなければ、そのタイミングで送信が許可されます。
+    </p>
+
+
+    <p>
+      媒体が空いていれば送信しますが、他の端末も同時に送信しようとすると<strong>衝突（コリジョン）</strong>が起きることがあります。
+    </p>
+
+    <p>
+      有線LAN（イーサネット）では<strong>CSMA/CD</strong>（Collision Detection：衝突検出）、無線LANでは<strong>CSMA/CA</strong>（Collision Avoidance：衝突回避）という派生方式が使われます。
+    </p>
+
+    <p>
+      <strong>対照例：</strong>「トークンリング」のように、トークンを持った端末だけが送信できる方式は<strong>Multiple Accessではありません</strong>。
+    </p>
+  </div>
+</div>
 
 <!-- Thema 1: Warum verwendet WLAN CSMA/CA anstelle von CSMA/CD? -->
 <div class="border rounded p-3 bg-light mb-4">
@@ -21,7 +102,7 @@
       Im kabelgebundenen Ethernet wird CSMA/CD verwendet, da Geräte dort gleichzeitig senden und empfangen können. Dabei kann eine <strong>Kollision erkannt</strong> werden, wenn sich Signale überlagern.
     </p>
     <p>
-      In drahtlosen Netzwerken (WLAN) ist das jedoch nicht möglich: Ein Gerät kann <strong>während der eigenen Übertragung keine anderen Signale empfangen</strong>, weil es durch die eigene Sendeleistung "taub" wird.
+      In drahtlosen Netzwerken (WLAN) ist das jedoch nicht möglich: Ein Gerät kann <strong style="color: red;">während der eigenen Übertragung keine anderen Signale empfangen</strong>, weil es durch die eigene Sendeleistung "taub" wird.
     </p>
     <p>
       Deshalb kommt im WLAN <strong>CSMA/CA (Collision Avoidance)</strong> zum Einsatz. Hierbei:
@@ -29,12 +110,12 @@
     <ul>
       <li>Der Kanal wird zuerst auf andere Übertragungen geprüft (Carrier Sense).</li>
       <li>Ist der Kanal frei, wird eine zufällige Wartezeit (Backoff) eingelegt.</li>
-      <li>Dann erfolgt die Übertragung – jedoch nur, wenn der Kanal weiterhin frei ist.</li>
-      <li>Der Empfänger sendet ein <strong>ACK</strong>, um den erfolgreichen Empfang zu bestätigen.</li>
+      <li>Das empfangende Gerät sendet ein ACK (Acknowledgement), um den erfolgreichen Empfang zu bestätigen.</li>
+      <li>Wenn kein ACK empfangen wird, geht das sendende Gerät von einer Kollision aus und versucht die Übertragung erneut.</li>
     </ul>
     <p>
-      Ohne ACK geht der Sender davon aus, dass eine Kollision aufgetreten ist, und versucht es erneut.
-      Zusätzlich kann das RTS/CTS-Verfahren verwendet werden, um das <strong>Hidden-Station-Problem</strong> zu vermeiden.
+      Da <span style="color: red;">die Reichweite von Funksignalen begrenzt</span> ist, kann es zum sogenannten Hidden-Terminal-Problem kommen.
+      <br/>Um dieses Problem zu lösen, wurde der Mechanismus von RTS (Request to Send) und CTS (Clear to Send) eingeführt, der andere Geräte informiert und die Kommunikation koordiniert.
     </p>
   </div>
 
@@ -44,7 +125,7 @@
       有線LAN（Ethernet）ではCSMA/CD（衝突検出方式）が使われていますが、これは送信中でも他の信号を受信できるため、<strong>衝突を検出して再送信する</strong>ことが可能です。
     </p>
     <p>
-      しかし、無線LAN（Wi-Fi）では、端末が<strong>自分の電波を送信している間は他の電波を受信できず</strong>、衝突を検出できません。
+      しかし、無線LAN（Wi-Fi）では、<span style="color: red;">端末が<strong>自分の電波を送信している間は他の電波を受信できず</strong>、衝突を検出できません。</span>
       そのため、<strong>CSMA/CDは使えず</strong>、代わりに<strong>CSMA/CA（衝突回避方式）</strong>が採用されています。
     </p>
     <p>
@@ -162,7 +243,7 @@
   <div class="col-md-6">
     <h5>解説（日本語）</h5>
     <p>
-      <strong>隠れ端末（Hidden Terminal）問題</strong>とは、無線LANにおいて、例えばPC1とPC3が<strong>同じアクセスポイント（例：PC2）</strong>には届くが、<strong>互いの電波を感知できない</strong>ような状況で発生します。
+      <strong>隠れ端末（Hidden Terminal）問題</strong>とは、無線LANにおいて、例えばPC1とPC3が<strong style="color: red;">同じアクセスポイント（例：PC2）</strong>には届くが、<strong>互いの電波を感知できない</strong>ような状況で発生します。
     </p>
     <p>
       このような場合、両者は「他に誰も通信していない」と誤解して<strong>同時に送信</strong>してしまい、アクセスポイント側で<strong>電波の衝突（コリジョン）</strong>が起きてしまいます。
@@ -206,7 +287,7 @@
       Nachdem ein Sender (z.&nbsp;B. PC1) ein <strong>RTS</strong> an den Empfänger (z.&nbsp;B. PC2) geschickt hat, antwortet der Empfänger mit einem <strong>CTS</strong>-Frame.
     </p>
     <p>
-      Dieser <strong>CTS</strong>-Frame wird per <strong>Broadcast</strong> an alle Geräte in Reichweite des Empfängers gesendet – darunter auch solche, die den ursprünglichen Sender (PC1) nicht hören können (z.&nbsp;B. PC3).
+      Andere Geräte, die sich im Empfangsbereich von PC2 befinden (z.B. PC3), empfangen ebenfalls den <strong>CTS-Rahmen</strong> – darunter auch solche, die den ursprünglichen Sender (PC1) nicht hören können (z.&nbsp;B. PC3).
     </p>
     <p>
       Das CTS enthält eine <strong>Dauerangabe (NAV)</strong>, die angibt, wie lange die bevorstehende Übertragung dauern wird.
@@ -226,7 +307,7 @@
       送信端末（例：PC1）が受信端末（例：PC2）に<strong>RTS（送信要求）</strong>を送った後、PC2はそれに応じて<strong>CTS（送信許可）</strong>を返します。
     </p>
     <p>
-      この<strong>CTSフレームはブロードキャスト</strong>され、PC2の電波が届くすべての端末（例：PC3など）に送信されます。これにより、PC1の存在を知らない機器にも通信の予定が伝わります。
+      この<strong>CTSフレーム</strong>を、PC2の電波が届くすべての端末（例：PC3など）が受信します。これにより、PC1の存在を知らない機器にも通信の予定が伝わります。
     </p>
     <p>
       さらに、CTSの中には<strong>「これから何マイクロ秒の通信があるか」</strong>という<strong>NAV情報</strong>が含まれており、CTSを受け取った端末はその時間分、自身の送信を<strong>待機（黙る）</strong>ようにします。

@@ -29,8 +29,8 @@
         Der AIMD-Algorithmus (Additive Increase, Multiplicative Decrease) ist eine Methode zur Kontrolle der Netzwerküberlastung.
       </p>
       <ul>
-        <li><strong>Additive Increase:</strong> Solange keine Überlastung erkannt wird, erhöht der Sender sein Congestion Window (cwnd) schrittweise – typischerweise um 1 MSS (Maximum Segment Size) pro Round Trip Time.</li>
-        <li><strong>Multiplicative Decrease:</strong> Sobald ein Paketverlust erkannt wird (z.&nbsp;B. durch Timeout oder dreifaches ACK), wird das Fenster <strong>multiplikativ reduziert</strong>, z.&nbsp;B. halbiert (cwnd × 0.5).</li>
+        <li><strong>Additive Increase:</strong> Solange keine Überlastung erkannt wird, erhöht der Sender sein Congestion Window (cwnd) schrittweise – <span style="color: red;">typischerweise um 1 MSS (Maximum Segment Size) pro Round Trip Time.</span></li>
+        <li><strong>Multiplicative Decrease:</strong> Sobald ein Paketverlust erkannt wird (z.&nbsp;B. <span style="color: red;">durch Timeout oder dreifaches ACK</span>), wird das Fenster <strong>multiplikativ reduziert</strong>, z.&nbsp;B. halbiert (cwnd × 0.5).</li>
       </ul>
       <p>
         Die Abbildung zeigt diesen zyklischen Ablauf: Ein stetiger Anstieg der Fenstergröße, gefolgt von einem plötzlichen Rückgang – ein klassisches Verhalten von TCP-Kongestionskontrolle.
@@ -43,7 +43,7 @@
         AIMD（加算法増加・乗算法減少）は、TCPで使われる典型的な輻輳制御アルゴリズムです。
       </p>
       <ul>
-        <li><strong>加算的増加（AI）:</strong> パケットロスが検出されない間は、送信ウィンドウ（cwnd）を1RTTごとに少しずつ増やしていきます（通常は1MSSずつ）。</li>
+        <li><strong>加算的増加（AI）:</strong> パケットロスが検出されない間は、<span style="color: red;">送信ウィンドウ（cwnd）を1RTTごとに少しずつ増やしていきます（通常は1MSSずつ）。</span></li>
         <li><strong>乗算的減少（MD）:</strong> パケット損失が発生すると（タイムアウトや重複ACKなど）、cwndを<strong>一気に半分に減少</strong>させます。</li>
       </ul>
       <p>

@@ -1,6 +1,8 @@
 <template>
   <div class="container my-4">
     <h3 class="mb-4">TCP CUBIC – Formel</h3>
+
+
 <!-- Thema: Wann und warum verhält sich CUBIC wie Standard-TCP? -->
 <div class="border rounded p-3 bg-light mb-4">
   <p><strong>Thema:</strong><br />
@@ -17,7 +19,7 @@
     <h5>Erklärung (Deutsch)</h5>
     <p>
       CUBIC verhält sich wie Standard-TCP, wenn sein eigenes Fenster kleiner ist als das Fenster, das ein TCP-AIMD-Algorithmus (z.&nbsp;B. Reno) zur selben Zeit erreicht hätte.
-      In diesem Fall tritt CUBIC in den sogenannten <strong>TCP-Modus</strong> ein, um eine faire Bandbreitennutzung zu gewährleisten.
+      In diesem Fall tritt CUBIC in den sogenannten <strong>TCP-Modus</strong> ein, <span style="color: red;">um eine faire Bandbreitennutzung zu gewährleisten.</span>
     </p>
     <p>
       Die Entscheidung basiert auf einem Vergleich mit dem idealen Wachstum eines AIMD-Fensters über die Zeit <em>t</em>.
@@ -61,6 +63,7 @@
     <p>
       CUBIC は、自身のウィンドウサイズが標準的な TCP（AIMD）が同時点で到達していると予想される値よりも小さい場合、
       <strong>TCPモード</strong> に切り替わり、TCP と同様の線形成長を行います。
+      <span style="color: red;">これは、ネットワーク上の他の TCP フローとの公平性を維持するためです。</span>
     </p>
     <p>
       この判定は、時間 <em>t</em> における AIMD の平均ウィンドウサイズとの比較に基づいて行われます。
@@ -99,6 +102,99 @@
     </p>
   </div>
 </div>
+
+<!-- Thema: Näherungsformel zur TCP-Fenstergröße – detaillierte Erklärung -->
+<div class="border rounded p-3 bg-light mb-4">
+  <p><strong>Thema:</strong><br />
+    Näherungsformel zur TCP-Fenstergröße – detaillierte Erklärung
+  </p>
+  <hr />
+  <p><strong>テーマ:</strong><br />
+    TCP のウィンドウサイズに関する近似式の詳細解説
+  </p>
+</div>
+
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h5>Erklärung (Deutsch)</h5>
+    <p>
+      Die folgende Gleichung modelliert das Verhalten von TCP Reno über die Zeit nach einem Paketverlust.
+      Sie besteht aus zwei Teilen, die zusammen eine lineare Näherung für das Wachstum des Congestion Window (<code>cwnd</code>) darstellen:
+    </p>
+
+    <!-- Erster Term -->
+    <div class="text-start my-3">
+      <img :src="imageFirstTerm" alt="Erster Term: Wmax(1 - β)" class="img-fluid" style="max-width: 480px;" />
+      <p class="text-muted mt-1"><strong>Erster Term：</strong><br />
+        Der Ausdruck <code>W<sub>max</sub>(1 - β)</code> gibt <span style="color: red;">die Fenstergröße unmittelbar nach einem Paketverlust</span> an.
+        Bei einem Verlust reduziert TCP das Fenster um den Faktor <strong>β</strong>, typischerweise auf die Hälfte.
+        Dieser Term bildet den Startpunkt des Wachstums nach der Reduktion.</p>
+    </div>
+
+    <!-- Zweiter Term -->
+    <div class="text-start my-3">
+      <img :src="imageSecondTerm" alt="Zweiter Term: lineares Wachstum" class="img-fluid" style="max-width: 200px;" />
+      <p class="text-muted mt-1"><strong>Zweiter Term：</strong><br />
+        <span style="color: red;">Der lineare Anstieg über die Zeit </span>wird durch diesen Term modelliert.
+        Er basiert auf dem additive-increase Verhalten von AIMD: TCP erhöht das Fenster um etwa 1 MSS pro RTT.
+        Der Vorfaktor <code>3β / (2 - β)</code> stellt sicher, dass diese Näherung mit der statistischen Durchschnittsrate des TCP-Verhaltens übereinstimmt.
+      </p>
+    </div>
+
+    <!-- Zeitkomponente -->
+    <div class="text-start my-3">
+      <img :src="imageTimeRTT" alt="t / RTT" class="img-fluid" style="max-width: 200px;" />
+      <p class="text-muted mt-1"><strong>Zeitanteil：</strong><br />
+        Der Ausdruck <code>t / RTT</code> gibt an, wie viele RTT-Zeiten seit dem letzten Verlust vergangen sind –
+        also <span style="color: red;">wie oft das Fenster gemäß AIMD erhöht worden wäre.</span></p>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <h5>解説（日本語）</h5>
+    <p>
+      以下の式は、TCP Reno における cwnd（輻輳ウィンドウ）がパケット損失発生後に時間とともにどのように回復するかを
+      線形近似したものです。<br>
+      各項にはそれぞれ重要な意味があり、ウィンドウの減少と回復のメカニズムを表現しています。
+    </p>
+
+    <!-- 第一項 -->
+    <div class="text-start my-3">
+      <img :src="imageFirstTerm" alt="第一項: Wmax(1 - β)" class="img-fluid" style="max-width: 480px;" />
+      <p class="text-muted mt-1"><strong>第一項：</strong><br />
+        <code>W<sub>max</sub>(1 - β)</code> は、<span style="color: red;">TCP Reno がパケット損失を検出した直後に cwnd を縮小する動作</span>を表しています。
+        通常 <strong>β</strong> = 0.5（50% 減）で、損失前の最大ウィンドウサイズ <code>W<sub>max</sub></code> の半分に減少します。
+        この項は、回復の出発点を定めます。
+      </p>
+    </div>
+
+    <!-- 第二項 -->
+    <div class="text-start my-3">
+      <img :src="imageSecondTerm" alt="第二項：線形成長" class="img-fluid" style="max-width: 200px;" />
+      <p class="text-muted mt-1"><strong>第二項：</strong><br />
+        この部分は <span style="color: red;">cwnd の時間に対する線形増加（Additive Increase）</span>を表します。
+        TCP Reno は 1 RTT ごとに 1 MSS ずつウィンドウを増やすため、経過時間に比例して cwnd が増加します。
+        前の係数 <code>3β / (2 - β)</code> は、理論的な平均成長率と一致させるために調整されたスケーリング係数です。
+      </p>
+    </div>
+
+    <!-- t / RTT -->
+    <div class="text-start my-3">
+      <img :src="imageTimeRTT" alt="t / RTT" class="img-fluid" style="max-width: 200px;" />
+      <p class="text-muted mt-1"><strong>RTT 比：</strong><br />
+        <code>t / RTT</code> は、損失が発生してからの経過時間 <code>t</code> を RTT（往復遅延時間）単位で割ったものであり、
+        <span style="color: red;">「何回 Additive Increase が行われたか（= 増加ステップ数）」</span>を示します。
+      </p>
+    </div>
+
+    <p>
+      この近似式は、TCP Reno の挙動を時間ベースで理解・モデル化するために設計されており、
+      特に TCP CUBIC が TCP モードに切り替える条件（<code>cwnd &lt; W<sub>tcp</sub>(t)</code>）を判断する基準として用いられます。
+    </p>
+  </div>
+</div>
+
+
 
 <!-- Thema: Wann verwendet CUBIC das TCP-Modell und warum? -->
 <div class="border rounded p-3 bg-light mb-4">
@@ -291,13 +387,13 @@
   <div class="col-md-6">
     <h5>Erklärung (Deutsch)</h5>
     <p>
-      Fast Convergence ist eine Heuristik im TCP-CUBIC-Protokoll, die auf eine schnellere Anpassung an sich ändernde Netzwerkbedingungen abzielt.
+      Fast Convergence ist eine Heuristik im TCP-CUBIC-Protokoll, die auf <span style="color: red;">eine schnellere Anpassung an sich ändernde Netzwerkbedingungen</span> abzielt.
     </p>
     <p>
-      Sobald ein Paketverlust auftritt, wird überprüft, ob das aktuelle cWnd kleiner als der vorherige W<sub>max</sub> ist.
+      Sobald ein Paketverlust auftritt, wird überprüft, ob <span style="color: red;">das aktuelle cWnd kleiner als der vorherige W<sub>max</sub> ist.</span>
     </p>
     <p>
-      Ist das der Fall, geht CUBIC davon aus, dass ein neuer Flow dem Netzwerk beigetreten ist, und reduziert W<sub>max</sub> zusätzlich.
+      Ist das der Fall, geht CUBIC davon aus, dass <span style="color: red;">ein neuer Flow dem Netzwerk beigetreten ist</span>, und <span style="color: red;">reduziert W<sub>max</sub> zusätzlich.</span>
     </p>
     <p>
       Dadurch wird das cwnd-Wachstum verlangsamt und mehr Bandbreite für neue Verbindungen freigegeben.
@@ -321,19 +417,19 @@
   <div class="col-md-6">
     <h5>解説（日本語）</h5>
     <p>
-      Fast Convergence（高速収束）は、TCP CUBIC がネットワーク環境の変化に素早く適応するために導入されたヒューリスティックな手法です。
+      Fast Convergence（高速収束）は、<span style="color: red;">TCP CUBIC がネットワーク環境の変化に素早く適応するために導入されたヒューリスティックな手法</span>です。
     </p>
     <p>
-      パケット損失が検出されると、現在の cwnd（輻輳ウィンドウ）が以前の W<sub>max</sub> より小さいかがチェックされます。
+      パケット損失が検出されると、<span style="color: red;">現在の cwnd（輻輳ウィンドウ）が以前の W<sub>max</sub> より小さいかがチェック</span>されます。
     </p>
     <p>
-      小さい場合は、新しいデータフローがネットワークに参加したと推定し、W<sub>max</sub> をさらに減少させて帯域を解放します。
+      小さい場合は、<span style="color: red;">新しいデータフローがネットワークに参加したと推定し、W<sub>max</sub> をさらに減少させて帯域を解放</span>します。
     </p>
     <p>
       これにより cwnd の成長が抑えられ、新規フローが公平に帯域を利用できるようになります。
     </p>
     <p>
-      Fast Convergence は、競合する複数のフローが混在するダイナミックな環境でも、公平性と安定性を保つのに有効です。
+      Fast Convergence は、<span style="color: red;">競合する複数のフローが混在するダイナミックな環境でも、公平性と安定性を保つのに有効</span>です。
     </p>
     <p>
       例：2本のCUBICフローが同じリンクを共有しているときに、新たに3本目のフローが開始されると、一時的に既存フローでパケット損失が発生します。
@@ -373,8 +469,8 @@
       was zu einer höheren <strong>Stabilität</strong> führt – insbesondere bei unregelmäßigen Verlusten oder auf hochkapazitiven Pfaden.
     </p>
     <p>
-      Zwar bedeutet ein kleiner β auch eine <strong>langsamere Konvergenz</strong>, wenn sich die verfügbare Bandbreite plötzlich ändert,  
-      aber laut <em>Ha et al. (2008)</em> überwiegt der Stabilitätsgewinn in den meisten realen Netzwerken.
+      Zwar bedeutet ein kleiner β auch <span style="color: red;">eine <strong>langsamere Konvergenz</strong>, wenn sich die verfügbare Bandbreite plötzlich ändert,</span>  
+      aber laut <em>Ha et al. (2008)</em> <span style="color: red;">überwiegt der Stabilitätsgewinn in den meisten realen Netzwerken.</span>
     </p>
     <p>
       Eine adaptive Einstellung von β könnte theoretisch schneller reagieren,  
@@ -433,7 +529,7 @@
       wobei <em>K</em> der Wendepunkt ist (W<sub>max</sub>).
     </p>
     <p>
-      Links vom Wendepunkt nähert sich das Fenster vorsichtig dem Maximum (Steady-State Behavior).  
+      Links vom Wendepunkt <span style="color: red;">nähert sich das Fenster vorsichtig dem Maximum</span> (<span style="color: red;">Steady-State Behavior).  </span>
     </p>
     <p>
       Rechts davon beginnt CUBIC das sogenannte <strong>Max Probing</strong> – eine beschleunigte Suche nach einer höheren möglichen Kapazität.
@@ -536,6 +632,9 @@ import imgUrlAimdAvg from '@/assets/lecture/lecture03/Figure_0903.png';
 import imgUrlTcpGrowth from '@/assets/lecture/lecture03/Figure_0904.png';
 import imgUrlDeltaCubic from '@/assets/lecture/lecture03/Figure_0905.png';
 import imgUrl0906 from '@/assets/lecture/lecture03/Figure_0906.png';
+import imageFirstTerm from '@/assets/lecture/lecture03/Figure_0907.png';
+import imageSecondTerm from '@/assets/lecture/lecture03/Figure_0908.png';
+import imageTimeRTT from '@/assets/lecture/lecture03/Figure_0909.png';
 </script>
 
 <style scoped>

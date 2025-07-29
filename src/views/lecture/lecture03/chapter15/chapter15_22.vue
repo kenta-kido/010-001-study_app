@@ -52,23 +52,29 @@
           Mit dem Übergang zu <strong>Hub-basierten Stern-Topologien</strong> blieb das physikalische Layout zwar sternförmig, aber logisch war es weiterhin ein geteiltes Medium – also weiterhin kollisionsanfällig.
         </p>
         <p>
-          Erst mit der Einführung von <strong>Switches</strong> änderte sich das: Jeder Host ist direkt mit dem Switch verbunden, und der Switch steuert gezielt, welcher Datenverkehr wohin geht. Dank Vollduplex und intelligenter Paketverarbeitung entstehen keine Kollisionen mehr.
+          Moderne Switches verbinden jeden Host über eine eigene, dedizierte Leitung mit dem Switch.
+          <br/>Außerdem unterstützen sie Vollduplex-Kommunikation sowie das Speichern und Weiterleiten von Frames (Store-and-Forward).
+          <br/>Bei diesem Verfahren <span style="color: red;">wird ein Frame zunächst im Speicher abgelegt, bevor der Switch den Zielport bestimmt.</span> Dadurch können Übertragungsfehler leichter erkannt und vermieden werden.
+        </p>
+        <p>
+          Da es durch diese Struktur weder physikalisch noch logisch zu Kollisionen kommt, ist ein MAC-Protokoll wie CSMA/CD im heutigen Ethernet mit Switches nicht mehr notwendig.
         </p>
       </div>
 
       <div class="col-md-6">
         <h5>解説（日本語）</h5>
         <p>
-          初期のEthernetでは、<strong>バス型トポロジー</strong>が一般的で、1本のケーブルに複数のホストが接続されていました。この構成では、複数の端末が同時に送信すると<strong>衝突（コリジョン）</strong>が発生します。
+          初期のEthernetでは、<strong style="color: red;">バス型トポロジー</strong>が一般的で、1本のケーブルに複数のホストが接続されていました。この構成では、複数の端末が同時に送信すると<strong>衝突（コリジョン）</strong>が発生します。
         </p>
         <p>
           そのため、「送信前にキャリア（信号）を感知し、衝突時にはランダムに再送する」<strong>CSMA/CD</strong> というMACプロトコルが必要でした。
         </p>
         <p>
-          その後、<strong>ハブ</strong>を用いたスター型トポロジーが導入されましたが、信号は全ポートにブロードキャストされるため、論理的には依然としてバスと同様の問題を抱えていました。
+          その後、<span style="color: red;"><strong>ハブ</strong>を用いたスター型トポロジー</span>が導入されましたが、信号は全ポートにブロードキャストされるため、論理的には依然としてバスと同様の問題を抱えていました。
         </p>
         <p>
           現在主流のスイッチは、各ホストとスイッチが<strong>1対1の専用リンク</strong>で接続され、しかも<strong>フルデュプレックス通信</strong>と<strong>パケットの一時保存と順次転送（ストア・アンド・フォワード）</strong>によって、衝突が起こらない構造になっています。
+          <br/>この方式では、<span style="color: red;">フレームを一度メモリに蓄積してから宛先ポートを判断</span>するため、誤送信やフレームエラーも防ぎやすくなっています。
         </p>
         <p>
           このように、物理的・論理的にコリジョンが構造的に排除されているため、CSMA/CDのような衝突回避のためのMACプロトコルは、今日のスイッチ型Ethernetでは必要なくなっています。

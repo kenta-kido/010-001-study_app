@@ -93,9 +93,9 @@
     <h5>Erklärung (Deutsch)</h5>
     <p>
       Ein Router sendet seinen Distanzvektor nur dann erneut an seine Nachbarn,  
-      wenn sich ein Eintrag in seiner Routing-Tabelle verändert hat.  
-      Das spart unnötige Bandbreite und Rechenaufwand im gesamten Netzwerk.  
-      Diese Optimierung nennt man „Triggered Updates“ – Updates bei Bedarf.  
+      <span style="color: red;">wenn sich ein Eintrag in seiner Routing-Tabelle verändert hat.</span>  
+      <br/>Das spart unnötige Bandbreite und Rechenaufwand im gesamten Netzwerk.  
+      Diese Optimierung nennt man <span style="color: red;">„Triggered Updates“</span> – Updates bei Bedarf.  
       Sie machen das Protokoll effizienter und skalierbarer.  
       Würde jeder Router seine Vektoren ständig verschicken,  
       würde das Netz überflutet mit Informationen, auch wenn sich nichts geändert hat.  
@@ -105,10 +105,10 @@
   <div class="col-md-6">
     <h5>解説（日本語）</h5>
     <p>
-      Distance Vectorルーティングでは、テーブルに変更があったときのみ  
+      Distance Vectorルーティングでは、<span style="color: red;">テーブルに変更があったときのみ</span>  
       ルーターが隣接ノードへ距離ベクトルを再送します。  
-      これにより、ネットワーク全体での帯域の消費や処理の負荷を大幅に減らすことができます。  
-      この方式は「トリガー付き更新（triggered updates）」と呼ばれ、  
+      <br/>これにより、ネットワーク全体での帯域の消費や処理の負荷を大幅に減らすことができます。  
+      この方式は<span style="color: red;">「トリガー付き更新（triggered updates）」</span>と呼ばれ、  
       必要なときにだけ通信を行うことで、プロトコルの効率性を高めます。  
       もし変化がないのに常に送信していた場合、  
       無駄なトラフィックが発生し、ネットワークが過負荷になる恐れがあります。  
@@ -170,7 +170,7 @@
     <h5>Erklärung (Deutsch)</h5>
 
     <p>
-      Das Count-to-Infinity-Problem tritt auf, wenn sich ein Linkkostenwert plötzlich stark erhöht – z.&nbsp;B. von 4 auf 60 –  
+      Das Count-to-Infinity-Problem tritt auf, <span style="color: red;">wenn sich ein Linkkostenwert plötzlich stark erhöht</span> – z.&nbsp;B. von 4 auf 60 –  
       und Router weiterhin annehmen, dass ein alternativer Pfad mit alten Kosten noch existiert.
     </p>
 
@@ -198,7 +198,7 @@
     <h5>解説（日本語）</h5>
 
     <p>
-      Count-to-Infinity（無限大までのカウント）問題は、あるリンクの<strong>コストが急激に増加した</strong>場合に発生します。  
+      Count-to-Infinity（無限大までのカウント）問題は、<span style="color: red;">あるリンクの<strong>コストが急激に増加した</strong>場合に発生</span>します。  
       例えば、xとyのリンクコストが4から60に変わったとき、ルーターは古い経路情報を信じ続けてしまいます。
     </p>
 
@@ -323,8 +323,8 @@
   <div class="col-md-6">
     <h5>Erklärung (Deutsch)</h5>
     <p>
-      Poisoned Reverse ist eine einfache Technik, um Count-to-Infinity zu vermeiden:  
-      Wenn ein Router x erkennt, dass sein kürzester Weg zu y über Nachbar v führt,  
+      <span style="color: red;">Poisoned Reverse ist eine einfache Technik, um Count-to-Infinity zu vermeiden</span>:  
+      Wenn ein Router x erkennt, dass <span style="color: red;">sein kürzester Weg zu y über Nachbar v führt</span>,  
       dann teilt er v mit, dass y aus seiner Sicht über v „nicht erreichbar“ ist (Distanz = ∞).  
       Das verhindert, dass v denkt, x habe eine alternative Route zu y.  
       So wird das fehlerhafte Rücklernen unterbrochen.  
@@ -335,9 +335,9 @@
   <div class="col-md-6">
     <h5>解説（日本語）</h5>
     <p>
-      「Poisoned Reverse（逆方向への毒）」は、Count-to-Infinity問題の対策として使われる手法です。  
+      <span style="color: red;">「Poisoned Reverse（逆方向への毒）」</span>は、Count-to-Infinity問題の対策として使われる手法です。  
       あるルーターxが、宛先yへ行く最短経路が隣接ノードv経由であると認識した場合、  
-      xはvに対して「自分からyへは行けない（距離＝∞）」と通知します。  
+      xはvに対して<span style="color: red;">「自分からyへは行けない（距離＝∞）」と通知</span>します。  
       これにより、vがxを経由してyに到達できると誤解するのを防ぎます。  
       情報の「逆流」による誤った更新を遮断するため、ルーティングループを回避できます。  
       小規模なネットワークでは効果的ですが、大規模ネットでは限界もあります。  
@@ -609,10 +609,10 @@
     <h5>Erklärung (Deutsch)</h5>
     <p>
       Poisoned Reverse funktioniert gut bei einfachen Netzen mit zwei oder drei Routern.  
-      In komplexeren Topologien jedoch, wo mehrere Pfade involviert sind, hilft es nur begrenzt.  
-      Es kann nicht alle indirekten Schleifen erkennen oder verhindern.  
+      <span style="color: red;">In komplexeren Topologien jedoch, wo mehrere Pfade involviert sind, hilft es nur begrenzt. </span> 
+      Es kann <span style="color: red;">nicht alle indirekten Schleifen erkennen</span> oder verhindern.  
       Außerdem erhöht es den Steuerverkehr im Netzwerk, weil mehr "∞"-Meldungen verteilt werden.  
-      Deshalb setzen moderne Protokolle wie OSPF auf globales Wissen und vollständige Link-State-Datenbanken.  
+      <br/>Deshalb setzen moderne Protokolle wie OSPF auf globales Wissen und vollständige Link-State-Datenbanken.  
       Dort können Loops und falsche Annahmen systematisch ausgeschlossen werden.  
       Poisoned Reverse ist also nur ein Teil einer größeren Lösung.
     </p>
@@ -621,9 +621,9 @@
     <h5>解説（日本語）</h5>
     <p>
       Poisoned Reverseは、単純なネットワーク（2〜3台のルーター）では非常に効果的です。  
-      しかし、複数のルーターや経路が絡む複雑なトポロジーでは、間接的なループや誤情報までは防げません。  
+      しかし、<span style="color: red;">複数のルーターや経路が絡む複雑なトポロジーでは、間接的なループや誤情報までは防げません。</span>  
       さらに、「∞」の情報を頻繁に送るため、制御トラフィックの量が増えるという副作用もあります。  
-      このような限界があるため、OSPFなどの現代的なプロトコルでは、より包括的なLink-State手法が採用されます。  
+      <br/>このような限界があるため、OSPFなどの現代的なプロトコルでは、より包括的なLink-State手法が採用されます。  
       結局のところ、Poisoned Reverseは単独では不十分であり、大規模ネットワークでは補助的な対策にすぎません。
     </p>
   </div>
@@ -646,7 +646,7 @@
       Distance Vector ist einfach, ressourcensparend und gut für kleine Netze oder Zugriffsknoten geeignet.  
       Link-State bietet mehr Kontrolle, schnellere Konvergenz und robuste Fehlerbehandlung – ideal für Backbone- oder ISP-Netze.  
       Link-State erfordert aber mehr Speicher und CPU-Zeit, weil alle Link-Zustände gespeichert und berechnet werden.  
-      Distance Vector ist verteilt und reaktiv, Link-State ist global und proaktiv.  
+      Distance Vector ist <span style="color: red;">verteilt und reaktiv</span>, Link-State ist <span style="color: red;">global und proaktiv</span>.  
       In der Praxis nutzen Netzbetreiber oft beide Verfahren je nach Segment.  
       Beispiel: RIP im Zugriff, OSPF im Kernnetz.  
     </p>
@@ -657,7 +657,7 @@
       Distance Vectorはシンプルで軽量なため、小規模なネットワークやエッジ側（アクセスネット）に適しています。  
       一方、Link-Stateは高い信頼性、迅速な収束、高度な障害対応を提供できるため、コアネットワークやISP環境に適しています。  
       ただし、Link-Stateはネットワーク全体の状態を保持・計算するため、メモリとCPU負荷が高くなります。  
-      Distance Vectorは分散的・受動的、Link-Stateは集中的・能動的という違いもあります。  
+      Distance Vectorは<span style="color: red;">分散的・受動的</span>、Link-Stateは<span style="color: red;">集中的・能動的</span>という違いもあります。  
       実際の運用では、アクセス部にRIP、バックボーンにOSPFというように、用途ごとに使い分けられています。
     </p>
   </div>

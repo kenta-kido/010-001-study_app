@@ -77,8 +77,13 @@
       <ul>
         <li><strong>Carrier Sense:</strong> Erst prüfen, ob das Medium frei ist.</li>
         <li><strong>Multiple Access:</strong> Jeder darf senden.</li>
-        <li><strong>Collision Detection:</strong> Prüfen, ob eine Kollision auftritt – und wenn ja: Abbruch, Jamming, Backoff.</li>
+        <li><strong>Collision Detection:</strong> bedeutet, dass das sendende Gerät prüft, ob während der Übertragung eine Kollision passiert. Wenn eine Kollision erkannt wird, stoppt das Gerät die Übertragung, sendet ein sogenanntes Jamming-Signal und wartet eine zufällige Zeit, bevor es erneut versucht zu senden.</li>
       </ul>
+    <p>
+Ein Jamming-Signal ist ein spezielles Signal, das gesendet wird, um anderen Geräten im Netzwerk mitzuteilen, dass eine Kollision aufgetreten ist.
+    <br/>
+    Allerdings brechen nur die Geräte, die an der Kollision beteiligt waren, ihre Übertragung ab – andere Geräte müssen ihre Übertragung nicht stoppen.
+    </p>
     <p>
       Heute verwendet man Switches, bei denen jedes Gerät einen eigenen dedizierten Kanal besitzt – <strong>CSMA/CD ist hier nicht mehr notwendig</strong>.
     </p>
@@ -100,8 +105,13 @@
       <ul>
         <li><strong>搬送波感知（Carrier Sense）：</strong> 通信前に回線が空いているか確認</li>
         <li><strong>多重アクセス（Multiple Access）：</strong> 誰でも送信可能</li>
-        <li><strong>衝突検出（Collision Detection）：</strong> 衝突が起きたら送信中止、ジャム信号を出し、ランダムに待って再送（指数的バックオフ）</li>
+        <li><strong>衝突検出（Collision Detection）：</strong> 送信している機器が通信中に衝突が起きたかを確認することです。衝突が検出された場合、機器は送信を中止し、「ジャミング信号」と呼ばれる通知を送り、その後ランダムな時間だけ待ってから再送信を試みます。</li>
       </ul>
+    <p>
+ジャミング信号（Jamming-Signal）とは、衝突が起きたことをネットワーク上の他の機器に知らせるために送られる特別な信号です。
+    <br/>
+ただし、送信を中止するのは衝突に関与していた機器であり、他の機器は送信を止める必要はありません。
+    </p>
     <p>
       現在は各機器が<strong>スイッチ</strong>で直接接続され、ポートごとに独立した通信路が確保されているため、<strong>CSMA/CDは不要</strong>です。
     </p>

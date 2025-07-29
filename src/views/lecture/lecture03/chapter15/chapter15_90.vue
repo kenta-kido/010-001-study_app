@@ -20,15 +20,15 @@
       <div class="col-md-6">
         <h5>Antwort (Deutsch)</h5>
         <p>
-          Der Name <strong>CUBIC</strong> steht für das kubische Wachstum der Congestion Window (cwnd).
+          Der Name <strong>CUBIC</strong> steht für <span style="color: red;">das kubische Wachstum der Congestion Window (cwnd)</span>.
         </p>
         <p>
-          Ziel des Algorithmus ist es, die Leistung in Netzwerken mit hoher Bandbreite und Latenz zu verbessern,
+          Ziel des Algorithmus ist es, die Leistung in <span style="color: red;">Netzwerken mit hoher Bandbreite und Latenz</span> zu verbessern,
           in denen klassische Verfahren wie AIMD (linearer Anstieg) ineffizient sind.
         </p>
         <p>
           Im Gegensatz zu AIMD nutzt CUBIC eine Zeit-basierte Wachstumsfunktion, die aggressiver wachsen kann,
-          aber gleichzeitig Stabilität nahe dem vorherigen Maximum (W<sub>max</sub>) erreicht.
+          aber <span style="color: red;">gleichzeitig Stabilität nahe dem vorherigen Maximum (W<sub>max</sub>) erreicht.</span>
         </p>
       </div>
 
@@ -38,7 +38,7 @@
           <strong>CUBIC</strong> は、「三次関数（キュービック）」の成長を意味しており、輻輳ウィンドウ（cwnd）の増加が t³ に基づいています。
         </p>
         <p>
-          このアルゴリズムの目的は、高帯域かつ高遅延のネットワークにおいて、従来の AIMD（線形増加）よりも
+          このアルゴリズムの目的は、<span style="color: red;">高帯域かつ高遅延のネットワーク</span>において、従来の AIMD（線形増加）よりも
           効率的にネットワークリソースを活用できるようにすることです。
         </p>
         <p>

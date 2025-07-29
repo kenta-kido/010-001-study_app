@@ -107,9 +107,9 @@
       relativ zu früheren Werten verhält:
     </p>
     <ul>
-      <li><strong>TCP-Modus:</strong>
-        Wenn cwnd kleiner ist als das Fenster, das ein Standard-TCP (z.&nbsp;B. Reno) zum selben Zeitpunkt t erreicht hätte,
-        schaltet CUBIC in den TCP-Modus. Dies dient der Fairness gegenüber langsamer wachsenden TCP-Verbindungen.
+      <li><strong style="color: red;">TCP-Modus:</strong>
+        <span style="color: red;">Wenn cwnd kleiner ist als das Fenster</span>, das ein Standard-TCP (z.&nbsp;B. Reno) zum selben Zeitpunkt t erreicht hätte,
+        <span style="color: red;">schaltet CUBIC in den TCP-Modus</span>. Dies dient der Fairness gegenüber langsamer wachsenden TCP-Verbindungen.
       </li>
       <li><strong>Konkaver Bereich (vor K):</strong>
         Wenn cwnd kleiner ist als W<sub>max</sub>, befindet sich CUBIC im konkaven Bereich.

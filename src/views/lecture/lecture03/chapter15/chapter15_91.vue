@@ -18,7 +18,7 @@
       <div class="col-md-6">
         <h5>Antwort (Deutsch)</h5>
         <p>
-          Der Name <strong>CUBIC</strong> leitet sich von der kubischen (t³-)Wachstumsfunktion ab, die zur Steuerung der Congestion Window (cwnd) verwendet wird.
+          Der Name <strong>CUBIC</strong> leitet sich <span style="color: red;">von der kubischen (t³-)Wachstumsfunktion</span> ab, die zur Steuerung der Congestion Window (cwnd) verwendet wird.
         </p>
         <p>
           Der Algorithmus wurde als Nachfolger von <strong>TCP BIC</strong> (Binary Increase Congestion Control) entwickelt.

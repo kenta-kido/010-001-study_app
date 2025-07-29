@@ -16,8 +16,8 @@
   <div class="col-md-6">
     <h5>Antwort (Deutsch)</h5>
     <ul>
-      <li>In frühen Ethernet-Topologien war die Reichweite durch Signalverlust stark begrenzt.</li>
-      <li><strong>Repeater</strong> wurden eingeführt, um auf Layer 1 analoge Signale zu verstärken und die Reichweite zu vergrößern.</li>
+      <li>In frühen Ethernet-Topologien war <span style="color: red;">die Reichweite durch Signalverlust</span> stark begrenzt.</li>
+      <li><strong>Repeater</strong> wurden eingeführt, um auf Layer 1 <span style="color: red;">analoge Signale zu verstärken und die Reichweite zu vergrößern</span>.</li>
       <li>Allerdings verlängerte der Repeater nur das gemeinsame Medium – das Problem von Kollisionen blieb bestehen.</li>
       <li><strong>Hubs</strong> als Mehrport-Repeater ermöglichten die Verbindung mehrerer Geräte, verschärften aber das Kollisionsrisiko, da alle Ports simultan aktiv waren.</li>
       <li>Die Kollisiondomäne umfasste weiterhin das gesamte Netzsegment.</li>
@@ -95,7 +95,7 @@
   <div class="col-md-6">
     <h5>Antwort (Deutsch)</h5>
     <ul>
-      <li>Bridges brachten eine gezielte Weiterleitung von Frames auf Layer 2, konnten aber nur eine Frame-Übertragung gleichzeitig behandeln.</li>
+      <li>Bridges brachten eine gezielte Weiterleitung von Frames auf Layer 2, konnten aber <span style="color: red;">nur eine Frame-Übertragung gleichzeitig behandeln</span>.</li>
       <li>Bei mehreren aktiven Hosts entstanden schnell Engpässe und Verzögerungen, da der Datenverkehr nacheinander verarbeitet werden musste.</li>
       <li><strong>Switches</strong> wurden entwickelt, um diesen Flaschenhals zu beseitigen: Sie besitzen mehrere dedizierte Ports für gleichzeitige Verbindungen.</li>
       <li>Dank <strong>Vollduplex</strong> kann jeder Host gleichzeitig senden und empfangen – ohne Kollisionen.</li>
@@ -109,7 +109,7 @@
     <h5>解答（日本語）</h5>
     <ul>
       <li>ブリッジは、データリンク層においてフレームをMACアドレスに基づいて中継する装置として登場し、不要なブロードキャストを削減しました。</li>
-      <li>しかし、ブリッジは基本的に1つのフレームしか同時に処理できず、複数の通信が重なると待ち時間や遅延が発生しました。</li>
+      <li>しかし、ブリッジは基本的に<span style="color: red;">1つのフレームしか同時に処理</span>できず、複数の通信が重なると待ち時間や遅延が発生しました。</li>
       <li><strong>スイッチ</strong>は、この課題を解決するために開発され、各ポートが独立して通信できる構造を持っています。</li>
       <li><strong>フルデュプレックス通信</strong>に対応しているため、送信と受信が同時に可能であり、コリジョンも発生しません。</li>
       <li>さらに、MACアドレステーブルを利用して、宛先のみにフレームを転送することでネットワーク効率を大幅に向上させました。</li>
@@ -136,10 +136,10 @@
     <ul>
       <li>Sowohl Bridges als auch Switches arbeiten auf Layer 2 und verwenden MAC-Adress-Tabellen zur gezielten Weiterleitung von Frames.</li>
       <li>Beide lernen MAC-Adressen dynamisch, indem sie eingehende Frames analysieren – der Lernmechanismus ist grundsätzlich gleich.</li>
-      <li>Bridges speichern diese Informationen meist in Software, während Switches spezialisierte Hardware (ASICs) nutzen, was sie viel schneller macht.</li>
+      <li>Bridges speichern diese Informationen meist <span style="color: red;">in Software</span>, während Switches spezialisierte <strong style="color: red;">Hardware (ASICs)</strong> nutzen, was sie viel schneller macht.</li>
       <li>Ein wesentlicher Unterschied: Bridges arbeiten in der Regel <strong>halbduplex</strong> und verarbeiten nur eine Übertragung gleichzeitig.</li>
       <li>Switches unterstützen <strong>Vollduplex</strong> auf jedem Port, sodass gleichzeitiges Senden und Empfangen ohne Kollision möglich ist.</li>
-      <li>Switches besitzen oft mehr Ports (multiport-fähig), während Bridges typischerweise zwei oder wenige Schnittstellen haben.</li>
+      <li>Switches besitzen oft mehr Ports (multiport-fähig), während <span style="color: red;">Bridges typischerweise zwei oder wenige Schnittstellen</span> haben.</li>
       <li>Durch die vollduplexfähige Architektur entstehen bei Switches keine Kollisionen mehr – im Gegensatz zu manchen Bridge-Szenarien.</li>
       <li>Zusammenfassend: Die Logik ist ähnlich, aber die Leistungsfähigkeit, Parallelität und Medienzugriffssteuerung sind beim Switch deutlich weiterentwickelt.</li>
     </ul>
@@ -149,10 +149,10 @@
     <ul>
       <li>ブリッジとスイッチはどちらもOSI参照モデルの<strong>データリンク層（Layer 2）</strong>で動作し、MACアドレスに基づいてフレームを転送します。</li>
       <li>両者とも、受信したフレームの送信元MACアドレスを学習し、<strong>MACアドレステーブル</strong>を動的に構築します。学習方式そのものはほぼ共通です。</li>
-      <li>ただし、ブリッジはソフトウェア処理が主流であり、スイッチは専用ハードウェア（ASIC）による高速処理を行います。</li>
+      <li>ただし、ブリッジは<span style="color: red;">ソフトウェア処理が主流</span>であり、<span style="color: red;">スイッチは専用ハードウェア（ASIC）</span>による高速処理を行います。</li>
       <li>通信モードにも差があり、ブリッジは基本的に<strong>半二重通信</strong>で動作するのに対し、スイッチは<strong>フルデュプレックス</strong>での同時送受信が可能です。</li>
       <li>そのため、スイッチでは衝突（コリジョン）が原理的に発生せず、ネットワークの効率が大きく向上しています。</li>
-      <li>さらに、ブリッジは2〜数ポートの構成が多いのに対し、スイッチは数十ポートを持ち、大規模なネットワークを扱えるよう設計されています。</li>
+      <li>さらに、<span style="color: red;">ブリッジは2〜数ポートの構成</span>が多いのに対し、スイッチは<span style="color: red;">数十ポート</span>を持ち、大規模なネットワークを扱えるよう設計されています。</li>
       <li>両者は動作原理は似ていても、<strong>性能・スケーラビリティ・衝突制御</strong>の面で大きな違いがあります。</li>
       <li>結果として、スイッチはブリッジの発展形として、現代のネットワークインフラにおいて標準的な役割を担っています。</li>
     </ul>
@@ -248,12 +248,13 @@
   <div class="col-md-6">
     <h5>Antwort (Deutsch)</h5>
     <ul>
-      <li>In Netzen mit redundanten Verbindungen kann es zu Layer-2-Schleifen kommen, wenn mehrere Switches miteinander verbunden sind.</li>
+      <li><span style="color: red;">In Netzen mit redundanten Verbindungen</span> kann es zu Layer-2-Schleifen kommen, wenn mehrere Switches miteinander verbunden sind.</li>
       <li>Solche Loops führen dazu, dass Broadcast-Frames unendlich im Netzwerk zirkulieren – man spricht von einem <strong>Broadcast-Sturm</strong>.</li>
-      <li>Da Layer 2 keine TTL (Time to Live) wie IP hat, werden die Frames niemals automatisch verworfen.</li>
-      <li>Das <strong>Spanning Tree Protocol (STP)</strong> analysiert die Netzstruktur und berechnet einen Schleifen-freien Baum (Spanning Tree).</li>
-      <li>Dazu werden bestimmte Ports als <em>Blocking</em> markiert, sodass nur ein logischer Pfad aktiv bleibt.</li>
-      <li>Wenn eine aktive Verbindung ausfällt, kann STP automatisch einen zuvor blockierten Pfad reaktivieren – Redundanz bleibt erhalten.</li>
+      <li><span style="color: red;">Da Layer 2 keine TTL (Time to Live) wie IP hat</span>, werden die Frames niemals automatisch verworfen.</li>
+      <li>Das <strong>Spanning Tree Protocol (STP)</strong> analysiert die Netzstruktur und <span style="color: red;">berechnet einen Schleifen-freien Baum (Spanning Tree)</span>.</li>
+      <li><span style="color: red;">STP deaktiviert bestimmte Ports (Blocking-Status)</span>, anstatt physikalische Verbindungen vollständig zu trennen.</li>
+      <li style="color: red;">Dadurch bleiben die physischen Leitungen erhalten, aber logische Schleifen werden vermieden.</li>
+      <li style="color: red;">Wenn eine aktive Verbindung ausfällt, kann STP automatisch einen zuvor blockierten Pfad reaktivieren – Redundanz bleibt erhalten.</li>
       <li>STP wurde standardisiert als IEEE 802.1D und ist ein wesentlicher Bestandteil für stabile Switch-Netzwerke.</li>
       <li>Moderne Varianten wie RSTP (Rapid STP) bieten kürzere Umschaltzeiten für schnellere Reaktionen im Fehlerfall.</li>
     </ul>
@@ -261,53 +262,15 @@
   <div class="col-md-6">
     <h5>解答（日本語）</h5>
     <ul>
-      <li>複数のスイッチを冗長的に接続したネットワークでは、<strong>ループ</strong>（循環経路）が生じる可能性があります。</li>
+      <li><span style="color: red;">複数のスイッチを冗長的に接続したネットワーク</span>では、<strong>ループ</strong>（循環経路）が生じる可能性があります。</li>
       <li>ループがあると、ブロードキャストフレームがネットワーク内を無限に回り続ける<strong>ブロードキャストストーム</strong>が発生し、通信障害を引き起こします。</li>
-      <li>レイヤ2にはTTL（Time to Live）のような自動消滅機能がないため、フレームが永遠に循環し続けることになります。</li>
-      <li><strong>スパニングツリープロトコル（STP）</strong>は、ネットワーク全体を分析して、ループのない論理的なツリー構造（Spanning Tree）を作成します。</li>
-      <li>これにより、特定のポートを<strong>ブロッキング状態</strong>にしてループを物理的には維持しつつ、論理的には排除します。</li>
-      <li>もしアクティブな経路に障害が発生した場合、ブロッキングされていたポートが自動的にアクティブ化され、冗長性を維持できます。</li>
+      <li><span style="color: red;">レイヤ2にはTTL（Time to Live）のような自動消滅機能がない</span>ため、フレームが永遠に循環し続けることになります。</li>
+      <li><strong>スパニングツリープロトコル（STP）</strong>は、ネットワーク全体を分析して、<span style="color: red;">ループのない論理的なツリー構造（Spanning Tree）を作成</span>します。</li>
+      <li>STPは、ループを完全に物理的に切断するのではなく、<span style="color: red;">特定のポートを「一時的に無効（ブロッキング）」にします</span>。</li>
+      <li>これにより、<span style="color: red;">ケーブルなどの物理的接続はそのまま残しつつ、ループのない論理構造を保つ</span>ことができます。</li>
+      <li style="color: red;">もしアクティブな経路に障害が発生した場合、ブロッキングされていたポートが自動的にアクティブ化され、冗長性を維持できます。</li>
       <li>STPはIEEE 802.1Dとして標準化され、安定したスイッチネットワーク構築に不可欠なプロトコルです。</li>
       <li>また、<strong>RSTP（Rapid STP）</strong>のような高速版では、より迅速な切替が可能となっています。</li>
-    </ul>
-  </div>
-</div>
-
-<!-- Thema 5: Next-Hop Forwarding -->
-<div class="border rounded p-3 bg-light mb-4">
-  <p><strong>Thema:</strong><br />
-    Next-Hop Forwarding – Optimierung der Pfadwahl in IP-Netzen
-  </p>
-  <hr />
-  <p><strong>テーマ:</strong><br />
-    Next-Hop Forwarding – IPネットワークにおける経路制御
-  </p>
-</div>
-<div class="row mb-4">
-  <div class="col-md-6">
-    <h5>Antwort (Deutsch)</h5>
-    <ul>
-      <li>Next-Hop Forwarding ist ein zentrales Konzept der <strong>Layer-3-Routing-Logik</strong> in IP-Netzwerken.</li>
-      <li>Ein Router prüft die <strong>Ziel-IP-Adresse</strong> eines eingehenden Pakets und sucht in seiner Routing-Tabelle nach dem passenden Eintrag.</li>
-      <li>Statt den gesamten Pfad zu kennen, entscheidet der Router nur über den <strong>nächsten Sprung</strong> – also den nächsten Router auf dem Weg zum Ziel.</li>
-      <li>Dadurch kann das Routing dynamisch angepasst und optimiert werden, etwa bei Ausfällen oder Lastverteilung.</li>
-      <li>Im Gegensatz zu Switches, die MAC-Adressen auf Layer 2 verwenden, arbeitet Next-Hop Forwarding auf der Netzwerk-Schicht (Layer 3).</li>
-      <li>Dieses Verfahren bildet die Grundlage für das gesamte Internet-Routing über viele autonome Systeme hinweg.</li>
-      <li>Protokolle wie OSPF oder BGP basieren auf dieser Logik, um große Netzwerke skalierbar zu steuern.</li>
-      <li>Next-Hop-Informationen reduzieren zudem den Speicherbedarf, da nur der nächste Zielrouter gespeichert werden muss – nicht der gesamte Pfad.</li>
-    </ul>
-  </div>
-  <div class="col-md-6">
-    <h5>解答（日本語）</h5>
-    <ul>
-      <li><strong>Next-Hop Forwarding</strong>は、IPネットワークにおける<strong>ルーティング（Layer 3）</strong>の基本的な仕組みです。</li>
-      <li>ルーターは受信したパケットの<strong>宛先IPアドレス</strong>を参照し、自身のルーティングテーブルから最も適切な経路を選択します。</li>
-      <li>ここで重要なのは、パケットの「最終目的地」ではなく、<strong>次に渡すべきルーター（Next Hop）</strong>だけを決定する点です。</li>
-      <li>この方式により、ネットワーク全体の構成を知らなくても柔軟で効率的なルーティングが可能になります。</li>
-      <li>障害発生時やネットワークの負荷変動にも動的に対応でき、耐障害性が向上します。</li>
-      <li>スイッチがMACアドレスによってフレームを転送するのとは異なり、Next-Hop ForwardingはIPベースで制御されます。</li>
-      <li>この仕組みは、<strong>インターネット全体の通信</strong>の根幹を支える要素であり、OSPFやBGPといったルーティングプロトコルに応用されています。</li>
-      <li>Next Hopの情報だけを保持すれば良いため、ルーターのルーティングテーブルも比較的簡素に保てます。</li>
     </ul>
   </div>
 </div>

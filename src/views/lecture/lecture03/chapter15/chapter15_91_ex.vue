@@ -27,8 +27,8 @@
       um Stabilität und schnelle Bandbreitenausnutzung zu erreichen.
     </p>
     <ul>
-      <li>Nach einem Paketverlust wird das Fenster mit einem Faktor β reduziert. Der vorherige Wert wird als <code>W<sub>max</sub></code> gespeichert.</li>
-      <li>Es folgt eine additive Erhöhung bis nahe <code>W<sub>max</sub></code>, dann beginnt eine binäre Suche zwischen aktuellem Minimum und <code>W<sub>max</sub></code>.</li>
+      <li><span style="color: red;">Nach einem Paketverlust wird das Fenster mit einem Faktor β reduziert</span>. <span style="color: red;">Der vorherige Wert wird als <code>W<sub>max</sub></code> gespeichert.</span></li>
+      <li>Es folgt eine additive Erhöhung bis nahe <code>W<sub>max</sub></code>, dann <span style="color: red;">beginnt eine binäre Suche zwischen aktuellem Minimum und <code>W<sub>max</sub></code>.</span></li>
       <li>Die binäre Suche wird solange durchgeführt, bis die Differenz unterhalb eines Schwellwertes (<code>S<sub>min</sub></code>) liegt.</li>
       <li>Wird <code>W<sub>max</sub></code> überschritten, geht BIC in die <strong>Max Probing</strong>-Phase über, bei der das Fenster zunächst langsam und später wieder aggressiver wächst.</li>
     </ul>
@@ -44,7 +44,7 @@
       安定性と帯域の早期活用を両立することを目的としたアルゴリズムです。
     </p>
     <ul>
-      <li>パケットロスが発生すると、ウィンドウサイズは係数βで減少し、ロス直前の値が <code>W<sub>max</sub></code> として記録されます。</li>
+      <li><span style="color: red;">パケットロスが発生すると、ウィンドウサイズは係数βで減少</span>し、<strong style="color: red;">ロス直前の値が <code>W<sub>max</sub></code> として記録</strong>されます。</li>
       <li>そこから <strong>加算増加</strong>（Additive Increase）で成長し、<code>W<sub>max</sub></code> に近づくと <strong>二分探索</strong>（Binary Search）に切り替わります。</li>
       <li>探索範囲が閾値（<code>S<sub>min</sub></code>）未満になると最大値が更新されます。</li>
       <li><code>W<sub>max</sub></code> を超えた場合、新たな最大値を探る <strong>Max Probing</strong> フェーズに入り、ウィンドウが再び加速的に増加します。</li>
@@ -71,11 +71,11 @@
   <div class="col-md-6">
     <h5>Erklärung (Deutsch)</h5>
     <p>
-      Die Stelle um <code>W<sub>max</sub></code> ist besonders kritisch, weil dort beim letzten Mal ein Paketverlust aufgetreten ist. 
+      <span style="color: red;">Die Stelle um <code>W<sub>max</sub></code> ist besonders kritisch, weil dort beim letzten Mal ein Paketverlust aufgetreten ist. </span>
       Ein zu schneller Anstieg in diesem Bereich könnte erneut zu Verlusten führen und somit Instabilität verursachen.
     </p>
     <p>
-      Deshalb steigt TCP BIC in diesem Bereich nur langsam (logarithmisch), um die Stabilität zu bewahren. 
+      Deshalb <span style="color: red;">steigt TCP BIC in diesem Bereich nur langsam, um die Stabilität zu bewahren. </span>
       Sobald der Bereich um <code>W<sub>max</sub></code> durchquert ist, nimmt der Algorithmus an, dass das Netzwerk mehr Kapazität erlaubt.
     </p>
     <p>
@@ -87,11 +87,11 @@
   <div class="col-md-6">
     <h5>解説（日本語）</h5>
     <p>
-      <code>W<sub>max</sub></code> 付近は、直前にパケットロスが発生した「危険域」であるため、  
+      <span style="color: red;"><code>W<sub>max</sub></code> 付近は、直前にパケットロスが発生した「危険域」</span>であるため、  
       その周辺でウィンドウサイズを急激に増やすと再度ロスを引き起こし、不安定な挙動につながります。
     </p>
     <p>
-      TCP BIC はこの領域では慎重に（対数的に）増加させ、安定性を保ちます。
+      TCP BIC は<span style="color: red;">この領域では慎重に増加させ、安定性を保ちます。</span>
       一方で <code>W<sub>max</sub></code> を超えた後は、ネットワークがより大きな負荷に耐えられると仮定し、
       積極的な増加（線形や指数的）へと切り替えます。
     </p>
@@ -116,8 +116,8 @@
   <div class="col-md-6">
     <h5>Erklärung (Deutsch)</h5>
     <p>
-      In TCP BIC und CUBIC bezeichnet „Bandbreite“ die maximale Datenrate, mit der ein Netzwerksegment dauerhaft Daten übertragen kann – 
-      ohne dass dabei Paketverluste oder Warteschlangen entstehen.
+      In TCP BIC und CUBIC bezeichnet „Bandbreite“ die <span style="color: red;">maximale Datenrate, mit der ein Netzwerksegment dauerhaft Daten übertragen kann</span> – 
+      <span style="color: red;">ohne dass dabei Paketverluste oder Warteschlangen entstehen.</span>
     </p>
     <p>
       Der Congestion Window (cwnd) muss sich dynamisch an diese Bandbreite anpassen. 
@@ -137,7 +137,7 @@
   <div class="col-md-6">
     <h5>解説（日本語）</h5>
     <p>
-      TCP BIC や CUBIC において「帯域（bandwidth）」とは、ネットワークセグメントが継続的に安定してデータを転送できる最大速度を意味します。
+      TCP BIC や CUBIC において「帯域（bandwidth）」とは、<span style="color: red;">ネットワークセグメントが継続的に安定してデータを転送できる最大速度</span>を意味します。
       これは、パケットロスやキューの蓄積を発生させることなく持続的に維持できるデータ転送速度です。
     </p>
     <p>
@@ -170,7 +170,7 @@
   <div class="col-md-6">
     <h5>Erklärung (Deutsch)</h5>
     <p>
-      Ja – das grundlegende Prinzip von TCP BIC besteht darin, kontinuierlich nach der maximal nutzbaren Bandbreite zu suchen.
+      Ja – das grundlegende Prinzip von TCP BIC besteht darin, <span style="color: red;">kontinuierlich nach der maximal nutzbaren Bandbreite zu suchen.</span>
       Dabei folgt der Algorithmus einer klaren Strategie:
     </p>
     <p>
@@ -190,7 +190,7 @@
   <div class="col-md-6">
     <h5>解説（日本語）</h5>
     <p>
-      はい、TCP BIC の基本方針は「ネットワークが扱える限界帯域」を常に探し続けることにあります。
+      はい、TCP BIC の基本方針は<span style="color: red;">「ネットワークが扱える限界帯域」を常に探し続ける</span>ことにあります。
       そのために次のような明確な段階的戦略を採用しています：
     </p>
     <p>
@@ -225,15 +225,11 @@
   <div class="col-md-6">
     <h5>Erklärung (Deutsch)</h5>
     <p>
-      In der TCP-Staukontrolle beschreibt „Fairness“ die gerechte Verteilung der verfügbaren Netzwerkressourcen (z.B. Bandbreite) auf mehrere konkurrierende Verbindungen.
+      In der TCP-Staukontrolle beschreibt „Fairness“ <span style="color: red;">die gerechte Verteilung der verfügbaren Netzwerkressourcen (z.B. Bandbreite) auf mehrere konkurrierende Verbindungen.</span>
     </p>
     <p>
       Klassische TCP-Varianten wie Reno teilen die Bandbreite unter sich relativ gleichmäßig auf, da sie denselben AIMD-Mechanismus verwenden.
       Neue Algorithmen wie BIC oder CUBIC haben jedoch aggressivere Wachstumsstrategien, was die Fairness gegenüber klassischen Flows gefährden kann.
-    </p>
-    <p>
-      Um dies zu verhindern, implementieren moderne Algorithmen explizite Mechanismen zur Wahrung der Fairness. 
-      CUBIC zum Beispiel verlangsamt sein Wachstum in einem Bereich namens TCP-freundliche Region, wenn es mit Reno-Flows konkurriert.
     </p>
     <p>
       Fairness ist entscheidend für ein stabiles und kooperatives Verhalten im Netzwerk – besonders in gemeinsam genutzten Umgebungen wie dem Internet.
@@ -243,14 +239,11 @@
   <div class="col-md-6">
     <h5>解説（日本語）</h5>
     <p>
-      TCP における「フェアネス（公平性）」とは、ネットワーク資源（特に帯域）を複数の通信フローが**平等に分け合う**ことを意味します。
+      TCP における「フェアネス（公平性）」とは、<span style="color: red;">ネットワーク資源（特に帯域）を複数の通信フローが**平等に分け合う**こと</span>を意味します。
     </p>
     <p>
       古典的な TCP（Reno など）は同じ AIMD 方式を使うため、帯域を自然にバランスよく共有します。
       しかし BIC や CUBIC のような新しいアルゴリズムは、より攻撃的な成長戦略を採用しているため、古典的なフローとの間で公平性を崩す可能性があります。
-    </p>
-    <p>
-      この問題を回避するために、CUBIC では「TCPフレンドリー領域」と呼ばれる成長制限ゾーンを用意し、Reno との競合時には成長を抑えるように設計されています。
     </p>
     <p>
       フェアネスは、特に多数のユーザーが共有するネットワーク（インターネットやWi-Fiなど）において、安定性と協調性を保つ上で極めて重要な要素です。
@@ -277,7 +270,7 @@
       Dies kann reale, messbare Konsequenzen haben.
     </p>
     <p>
-      „Bandbreite monopolisieren“ bedeutet dabei: Eine einzelne Verbindung nutzt fast die gesamte verfügbare Übertragungskapazität eines Links aus,
+      „Bandbreite monopolisieren“ bedeutet dabei: <span style="color: red;">Eine einzelne Verbindung nutzt fast die gesamte verfügbare Übertragungskapazität eines Links aus,</span>
       während andere Verbindungen kaum noch Daten senden können.
     </p>
     <p>
@@ -297,11 +290,11 @@
   <div class="col-md-6">
     <h5>解説（日本語）</h5>
     <p>
-      TCP においてフェアネス（公平性）が守られない場合、一部の通信フローが帯域を独占し、  
+      TCP においてフェアネス（公平性）が守られない場合、<span style="color: red;">一部の通信フローが帯域を独占</span>し、  
       他のフローが極端に低速になるという<strong>現実的な問題</strong>が発生します。
     </p>
     <p>
-      「帯域を独占する」とは、ひとつのフローがネットワークの伝送能力をほぼすべて使い切り、  
+      <span style="color: red;">「帯域を独占する」とは、ひとつのフローがネットワークの伝送能力をほぼすべて使い切り、</span>
       他のフローが送れるデータ量が非常に少なくなる状態を意味します。
     </p>
     <p>
@@ -400,7 +393,7 @@
       Diese Warteschlangen sind eine konkrete, begrenzte Ressource – sie werden faktisch monopolisiert.
     </p>
     <p>
-      Die „Monopolisierung der Bandbreite“ bedeutet also oft: Kontrolle über die Warteschlange, kürzere RTTs, und am Ende höherer effektiver Durchsatz.
+      <span style="color: red;">Die „Monopolisierung der Bandbreite“</span> bedeutet also oft: Kontrolle über die Warteschlange, kürzere RTTs, und <span style="color: red;">am Ende höherer effektiver Durchsatz.</span>
     </p>
   </div>
 
@@ -423,7 +416,7 @@
       これは容量に限りがある「具体的な資源」であり、ここを先に埋めることで他のフローを排除できます。
     </p>
     <p>
-      よって、「帯域を独占する」という表現は、**バッファや転送順序の支配＝実効スループットの優先的取得**を意味するのです。
+      よって、<span style="color: red;">「帯域を独占する」</span>という表現は、**バッファや転送順序の支配＝<span style="color: red;">実効スループットの優先的取得</span>**を意味するのです。
     </p>
   </div>
 </div>

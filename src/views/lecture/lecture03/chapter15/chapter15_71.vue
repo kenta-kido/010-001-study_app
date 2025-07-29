@@ -19,15 +19,15 @@
         <h5>Antwort (Deutsch)</h5>
         <p><strong>Ende-zu-Ende Überlastkontrolle:</strong></p>
         <ul>
-          <li>Das Netz liefert keine direkte Rückmeldung über den Überlastungszustand.</li>
-          <li>Die aktuelle Auslastung wird anhand beobachtbarer Parameter wie Paketverlust oder Verzögerungszeit geschätzt.</li>
+          <li style="color: red;">Das Netz liefert keine direkte Rückmeldung über den Überlastungszustand.</li>
+          <li style="color: red;">Die aktuelle Auslastung wird anhand beobachtbarer Parameter wie Paketverlust oder Verzögerungszeit geschätzt.</li>
           <li>Die Überlastkontrolle erfolgt ausschließlich durch die Endsysteme, typischerweise auf Basis von TCP.</li>
         </ul>
         <p><strong>Netzgestützte Überlastkontrolle:</strong></p>
         <ul>
-          <li>Router geben dem Sender und Empfänger explizit Rückmeldung über den Zustand des Netzes.</li>
-          <li>Ein spezielles Bit im Paket signalisiert eine Überlastung (z.&nbsp;B. ECN, DECbit, ATM).</li>
-          <li>Das Netz kann auch eine zulässige Senderrate vorgeben, mit der Pakete versendet werden sollen.</li>
+          <li style="color: red;">Router geben dem Sender und Empfänger explizit Rückmeldung über den Zustand des Netzes.</li>
+          <li><span style="color: red;">Ein spezielles Bit im Paket signalisiert eine Überlastung</span> (z.&nbsp;B. ECN, DECbit, ATM).</li>
+          <li style="color: red;">Das Netz kann auch eine zulässige Senderrate vorgeben, mit der Pakete versendet werden sollen.</li>
         </ul>
       </div>
 
@@ -35,15 +35,15 @@
         <h5>解答（日本語）</h5>
         <p><strong>エンドツーエンド型輻輳制御:</strong></p>
         <ul>
-          <li>ネットワークからの直接的な輻輳通知は行われない。</li>
-          <li>パケット損失や遅延など、送信側・受信側が観測できる情報から輻輳状態を推測する。</li>
+          <li style="color: red;">ネットワークからの直接的な輻輳通知は行われない。</li>
+          <li><span style="color: red;">パケット損失や遅延など、送信側・受信側が観測できる情報から輻輳状態を推測</span>する。</li>
           <li>制御は送信側・受信側のエンドシステムで完結し、主にTCPによって実現される。</li>
         </ul>
         <p><strong>ネットワーク支援型輻輳制御:</strong></p>
         <ul>
-          <li>ルーターが送信者や受信者に対してネットワークの輻輳状態を明示的に通知する。</li>
-          <li>パケット中のビットを用いて輻輳を示す（例：ECN、DECbit、ATMなど）。</li>
-          <li>ネットワーク側がパケット送信レートを決定し、それに基づいて送信者が制御を行う。</li>
+          <li style="color: red;">ルーターが送信者や受信者に対してネットワークの輻輳状態を明示的に通知する。</li>
+          <li><span style="color: red;">パケット中のビットを用いて輻輳</span>を示す（例：ECN、DECbit、ATMなど）。</li>
+          <li style="color: red;">ネットワーク側がパケット送信レートを決定し、それに基づいて送信者が制御を行う。</li>
         </ul>
       </div>
     </div>
@@ -68,28 +68,28 @@
     </p>
     <p>
       Beim Ende-zu-Ende-Ansatz verlassen sich die Endsysteme (Sender und Empfänger)
-      auf beobachtbare Hinweise wie Paketverlust oder Verzögerung,
-      um eine Überlastung im Netzwerk zu erkennen.
+      auf <span style="color: red;">beobachtbare Hinweise wie Paketverlust oder Verzögerung,
+      um eine Überlastung im Netzwerk zu erkennen.</span>
     </p>
     <p>
-      Dies bedeutet, dass das Netzwerk selbst keine explizite Rückmeldung über seinen Zustand liefert.
-      Stattdessen schätzt das Transportprotokoll (z.&nbsp;B. TCP) anhand von Timeout oder Duplikat-Acknowledgments,
-      ob das Netz überlastet ist.
+      Dies bedeutet, dass <span style="color: red;">das Netzwerk selbst keine explizite Rückmeldung über seinen Zustand liefert</span>.
+      Stattdessen schätzt das Transportprotokoll (z.&nbsp;B. TCP) <span style="color: red;">anhand von Timeout oder Duplikat-Acknowledgments,
+      ob das Netz überlastet ist.</span>
     </p>
     <p>
       Diese Methode ist in vielen Netzwerken verwendbar,
       da sie keine spezielle Unterstützung durch Router oder Switches erfordert.
     </p>
     <p>
-      Ein Nachteil ist jedoch, dass solche Erkennungen reaktiv sind und die Reaktion auf Überlastung verzögert erfolgen kann.
+      Ein Nachteil ist jedoch, dass <span style="color: red;">solche Erkennungen reaktiv sind</span> und <span style="color: red;">die Reaktion auf Überlastung verzögert erfolgen kann.</span>
       Dadurch kann es zu Paketverlusten oder unnötiger Verzögerung kommen.
     </p>
     <p>
-      Bei der netzgestützten Überlastkontrolle helfen die Netzwerkgeräte aktiv mit und geben Informationen über die Überlastung weiter.
-      Router erkennen Überlast und geben Rückmeldungen an die Endsysteme.
+      Bei der netzgestützten Überlastkontrolle <span style="color: red;">helfen die Netzwerkgeräte aktiv mit und geben Informationen über die Überlastung weiter.</span>
+      <span style="color: red;">Router erkennen Überlast und geben Rückmeldungen an die Endsysteme.</span>
     </p>
     <p>
-      Diese Rückmeldung kann etwa durch das Setzen eines sogenannten Congestion-Bits im IP-Header erfolgen (wie bei ECN),
+      Diese Rückmeldung kann etwa durch das Setzen eines sogenannten <span style="color: red;">Congestion-Bits</span> im IP-Header erfolgen (wie bei ECN),
       oder durch spezielle Pakete, sogenannte Choke-Pakete.
     </p>
     <p>
@@ -114,31 +114,31 @@
       基本的に<strong>エンドツーエンド型</strong>と<strong>ネットワーク支援型</strong>の2つの方法があります。
     </p>
     <p>
-      エンドツーエンド型では、送信側と受信側のエンドシステムが、
+      エンドツーエンド型では、<span style="color: red;">送信側と受信側のエンドシステムが、
       パケットの損失や通信の遅延といった観測可能な情報をもとに
-      輻輳状態を推測します。
+      輻輳状態を推測</span>します。
     </p>
     <p>
-      つまり、ネットワーク自体は輻輳について明示的に通知せず、
+      つまり、<span style="color: red;">ネットワーク自体は輻輳について明示的に通知しません。</span>
       TCPなどのトランスポート層プロトコルが、
-      タイムアウトや3重ACKなどを根拠に輻輳を判断します。
+      <span style="color: red;">タイムアウトや3重ACKなどを根拠に輻輳を判断</span>します。
     </p>
     <p>
       この方法は特別なルーター機能などを必要とせず、
       汎用的なネットワーク環境で使えるという利点があります。
     </p>
     <p>
-      その一方で、判断が遅れたり誤った判断をしたりすることがあり、
+      その一方で、<span style="color: red;">判断が遅れたり誤った判断をしたりすることがあり</span>、
       輻輳への反応が遅くなる可能性があります。
       そのため、効率的な制御が難しい場合もあります。
     </p>
     <p>
       一方、ネットワーク支援型の輻輳制御では、
-      ルーターなどのネットワーク機器が輻輳を検知し、
-      送信者や受信者に通知を行います。
+      <span style="color: red;">ルーターなどのネットワーク機器が輻輳を検知し、
+      送信者や受信者に通知</span>を行います。
     </p>
     <p>
-      通知の方法としては、パケットのヘッダー内にある輻輳ビットをセットする（ECN）か、
+      通知の方法としては、パケットのヘッダー内にある<span style="color: red;">輻輳ビット</span>をセットする（ECN）か、
       「チョークパケット」と呼ばれる警告パケットを送る方法があります。
     </p>
     <p>

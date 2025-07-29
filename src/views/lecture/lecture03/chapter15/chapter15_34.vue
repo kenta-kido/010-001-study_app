@@ -19,16 +19,16 @@
         <h5>Antwort (Deutsch)</h5>
         <p><strong>Dijkstra (Link-State):</strong></p>
         <ul>
-          <li>Jeder Router kennt die vollständige Netzwerktopologie und alle Link-Kosten.</li>
-          <li>Der Algorithmus startet am Quellknoten und baut schrittweise den kürzesten Pfadbaum auf.</li>
+          <li>Jeder Router kennt <span style="color: red;">die vollständige Netzwerktopologie und alle Link-Kosten.</span></li>
+          <li>Der Algorithmus <span style="color: red;">startet am Quellknoten</span> und baut schrittweise den kürzesten Pfadbaum auf.</li>
           <li>In jedem Schritt wird der Knoten mit der derzeit geringsten bekannten Distanz gewählt (greedy-Verfahren).</li>
           <li>Alle Distanzen werden zentral im Router selbst berechnet (globales Wissen).</li>
           <li>Erfordert Konsistenz zwischen allen Routern – z.B. durch regelmäßige Link-State-Updates.</li>
         </ul>
         <p><strong>Distance-Vector:</strong></p>
         <ul>
-          <li>Jeder Router kennt nur direkte Nachbarn und deren gemeldete Distanzen.</li>
-          <li>In regelmäßigen Intervallen tauschen Nachbarn ihre Distanzvektoren aus.</li>
+          <li>Jeder Router kennt <span style="color: red;">nur direkte Nachbarn und deren gemeldete Distanzen.</span></li>
+          <li>In regelmäßigen Intervallen <span style="color: red;">tauschen Nachbarn ihre Distanzvektoren aus</span>.</li>
           <li>Jeder Router berechnet D(y) = min(c(x, v) + Dv(y)) für alle Nachbarn v (Bellman-Ford-Prinzip).</li>
           <li>Konvergenz erfolgt schrittweise – bei Änderungen kann es lange dauern (z.B. Count-to-Infinity).</li>
         </ul>
@@ -38,16 +38,16 @@
         <h5>解答（日本語）</h5>
         <p><strong>Dijkstra（リンク状態型）:</strong></p>
         <ul>
-          <li>各ルーターはネットワーク全体の構成（トポロジー）と全リンクのコストを把握しています。</li>
-          <li>アルゴリズムは出発ノードから始まり、最短距離のノードを順に選んでいく貪欲法で動作します。</li>
+          <li><span style="color: red;">各ルーターはネットワーク全体の構成（トポロジー）と全リンクのコストを把握</span>しています。</li>
+          <li>アルゴリズムは<span style="color: red;">出発ノード</span>から始まり、最短距離のノードを順に選んでいく貪欲法で動作します。</li>
           <li>各ステップで、既知ノードに隣接するノードの距離を更新し、最も短いノードを確定させます。</li>
           <li>計算は各ルーターが独立して実行し、自身の転送テーブルを作ります。</li>
           <li>トポロジーが変化した場合は、全ルーターにLink-State情報を再配布する必要があります。</li>
         </ul>
         <p><strong>Distance Vector（距離ベクトル型）:</strong></p>
         <ul>
-          <li>各ルーターは自分の隣接ノードからのみ情報を受け取り、ネットワーク全体の構造は知りません。</li>
-          <li>隣接ノードと定期的に経路情報（距離ベクトル）を交換します。</li>
+          <li><span style="color: red;">各ルーターは自分の隣接ノードからのみ情報を受け取り、ネットワーク全体の構造は知りません</span>。</li>
+          <li>定期的に<span style="color: red;">隣接ノードと経路情報（距離ベクトル）を交換</span>します。</li>
           <li>各ノードは Bellman-Ford の式：D(y) = min(c(x,v) + Dv(y)) を使って距離を計算します。</li>
           <li>計算はネットワーク全体に分散して行われ、収束には時間がかかることがあります。</li>
         </ul>

@@ -20,21 +20,21 @@
       Es dient dazu, die Übertragungsrate vorsichtig zu erhöhen, um die verfügbare Bandbreite zu erkunden.
     </p>
     <p>
-      Beginnend mit einem cwnd von 1 oder 2 MSS wird das Fenster bei jedem ACK exponentiell vergrößert.  
-      Nach jedem RTT verdoppelt sich cwnd typischerweise.
+      <span style="color: red;">Beginnend mit einem cwnd von 1 oder 2 MSS</span> wird das Fenster <span style="color: red;">bei jedem ACK exponentiell vergrößert</span>.  
+      <span style="color: red;">Nach jedem RTT verdoppelt sich cwnd</span> typischerweise.
     </p>
     <p>
-      Wenn cwnd den ssthresh erreicht, geht TCP in die Phase „Congestion Avoidance“ über und wächst nur noch linear.
+      <span style="color: red;">Wenn cwnd den ssthresh erreicht</span>, geht TCP in die Phase „Congestion Avoidance“ über und wächst nur noch linear.
     </p>
     <p>
       Bei Paketverlusten reagiert TCP unterschiedlich je nach Variante:  
     </p>
     <ul>
     <li>
-      TCP Tahoe setzt cwnd sofort auf 1 MSS zurück und beginnt wieder mit Slow Start.  
+      TCP Tahoe <span style="color: red;">setzt cwnd sofort auf 1 MSS zurück</span> und beginnt wieder mit Slow Start.  
     </li>
     <li>
-      TCP Reno hingegen geht bei dreifachen Duplikat-ACKs in die Phase „Fast Recovery“ über, in der linear gewachsen wird – analog zur Congestion Avoidance.
+      TCP Reno hingegen geht <span style="color: red;">bei dreifachen Duplikat-ACKs in die Phase „Fast Recovery“</span> über, in der linear gewachsen wird – analog zur Congestion Avoidance.
       </li>
     </ul>
   </div>
@@ -45,7 +45,7 @@
       Slow Start は TCP 輻輳制御の最初のフェーズであり、ネットワーク帯域を徐々に探索するため、送信速度を慎重に増加させます。
     </p>
     <p>
-      開始時の cwnd（輻輳ウィンドウ）は通常 1〜2 MSS で、ACK を受信するたびに指数関数的に増加し、RTT ごとにおよそ倍になります。
+      開始時の cwnd（輻輳ウィンドウ）は<span style="color: red;">通常 1〜2 MSS</span>で、ACK を受信するたびに指数関数的に増加し、<span style="color: red;">RTT ごとにおよそ倍</span>になります。
     </p>
     <p>
       cwnd が ssthresh（しきい値）に達すると、TCP は Congestion Avoidance フェーズに移行し、以降の成長は線形になります。
@@ -67,7 +67,7 @@
 <!-- Abbildung -->
 <div class="text-center mb-4">
   <img :src="image" alt="Poisoned Reverse Beispiel" class="img-fluid rounded border" />
-  <p class="text-muted mt-2">Abbildung: Beispiel – Linkkostenänderung und Anwendung von Poisoned Reverse</p>
+  <p class="text-muted mt-2">Abbildung: TCP Tahoe, Reno</p>
 </div>
 
 

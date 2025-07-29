@@ -67,7 +67,7 @@
   <div class="col-md-6">
     <h5>Erklärung (Deutsch)</h5>
     <p>
-      Jede Netzwerkkarte überprüft die Ziel-MAC-Adresse eines eingehenden Frames. Nur wenn diese Adresse mit der eigenen übereinstimmt
+      Jede Netzwerkkarte überprüft die Ziel-MAC-Adresse eines eingehenden Frames. Nur wenn diese Adresse mit der eigenen MAC-Adresse übereinstimmt
       oder ein Broadcast ist, wird der Frame akzeptiert. In einem LAN mit Switches wird der Frame gezielt nur an den Zielport weitergeleitet.
       Frames für andere Hosts werden daher von der Netzwerkkarte ignoriert. Broadcasts hingegen werden an alle Ports gesendet, weil sie
       an alle Teilnehmer im Netzwerk gerichtet sind. Solche Frames verarbeitet die Netzwerkkarte und reicht sie an höhere Protokolle weiter.
@@ -169,13 +169,9 @@
     </p>
   </div>
 </div>
-
   </div>
 </template>
 
-<script setup>
-// No JS logic needed
-</script>
 
 <style scoped>
 .border {

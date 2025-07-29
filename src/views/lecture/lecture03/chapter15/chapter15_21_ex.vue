@@ -18,18 +18,18 @@
     <h5>Erklärung (Deutsch)</h5>
     <p>
       Ein <strong>Hub</strong> arbeitet auf Layer 1 (Bitübertragungsschicht) und agiert wie ein elektrischer Verteiler:
-      Alle eingehenden Signale werden unverändert an alle Ports ausgesendet. Der gesamte LAN-Segment ist somit ein <em>gemeinsames Übertragungsmedium</em>.
+      <span style="color: red;">Alle eingehenden Signale werden unverändert an alle Ports ausgesendet.</span> Der gesamte LAN-Segment ist somit ein <em>gemeinsames Übertragungsmedium</em>.
     </p>
     <p>
-      Das führt zu einer <strong>großen Kollisionsdomäne</strong>: Wenn zwei Hosts gleichzeitig senden, stoßen die Signale zusammen – Kollision.
-      Dadurch sinkt der Datendurchsatz erheblich und es wird <strong>CSMA/CD</strong> benötigt.
+      <span style="color: red;">Das führt zu einer <strong>großen Kollisionsdomäne</strong></span>: Wenn zwei Hosts gleichzeitig senden, stoßen die Signale zusammen – Kollision.
+      <span style="color: blue;">Dadurch sinkt der Datendurchsatz</span> erheblich und es wird <strong>CSMA/CD</strong> benötigt.
     </p>
     <p>
       Ein <strong>Switch</strong> hingegen arbeitet auf Layer 2 (Sicherungsschicht) und verwendet eine <strong>MAC-Lerntabelle</strong>,
-      um Frames nur an den richtigen Port weiterzuleiten. Jeder Port bildet eine eigene Kollisionsdomäne.
+      um Frames nur an den richtigen Port weiterzuleiten. <span style="color: red;">Jeder Port bildet eine eigene Kollisionsdomäne.</span>
     </p>
     <p>
-      Switches unterstützen außerdem <strong>Vollduplex</strong>-Kommunikation, was gleichzeitiges Senden und Empfangen ohne Kollision ermöglicht.
+      <span style="color: red;">Switches unterstützen außerdem <strong>Vollduplex</strong>-Kommunikation, was gleichzeitiges Senden und Empfangen ohne Kollision ermöglicht.</span>
       Sie isolieren den Verkehr und erhöhen die Sicherheit, da Frames nicht mehr für alle sichtbar sind.
     </p>
     <p>
@@ -49,10 +49,10 @@
     </p>
     <p>
       一方、<strong>スイッチ</strong>はデータリンク層（レイヤ2）で動作し、受信したフレームの送信元MACアドレスを学習し、
-      宛先MACアドレスに応じて<strong>適切なポートのみに転送</strong>します。各ポートは独立した通信領域（コリジョンドメイン）になります。
+      宛先MACアドレスに応じて<strong>適切なポートのみに転送</strong>します。<span style="color: red;">各ポートは独立した通信領域（コリジョンドメイン）になります。</span>
     </p>
     <p>
-      スイッチはさらに<strong>フルデュプレックス通信</strong>をサポートしており、送受信の同時通信でも衝突は発生しません。
+      <span style="color: red;">スイッチはさらに<strong>フルデュプレックス通信</strong>をサポートしており、送受信の同時通信でも衝突は発生しません。</span>
       また、通信は宛先にだけ届くため、<strong>セキュリティ面でも優れています</strong>。
     </p>
     <p>
@@ -81,7 +81,7 @@
     </p>
     <p>
       Mit <strong>Vollduplex</strong>-Verbindungen (z.B. bei Switches) kommunizieren zwei Geräte gleichzeitig in beide Richtungen, 
-      ohne dass es zu einer Kollision kommt, weil die Sende- und Empfangskanäle physisch getrennt sind.
+      ohne dass es zu einer Kollision kommt, <span style="color: red;">weil die Sende- und Empfangskanäle physisch getrennt sind.</span>
     </p>
     <p>
       Damit entfällt der Bedarf an CSMA/CD und die Effizienz der Netzwerkkommunikation steigt erheblich.
@@ -107,11 +107,11 @@
 <!-- Thema 1: Warum reicht Port-Unabhängigkeit bei Switches nicht aus, um Kollisionen zu vermeiden? -->
 <div class="border rounded p-3 bg-light mb-4">
   <p><strong>Thema:</strong><br />
-    Warum reicht Port-Unabhängigkeit bei Switches nicht aus, um Kollisionen zu vermeiden?
+    Warum reicht <span style="color: red;">Port-Unabhängigkeit bei Switches</span> nicht aus, um Kollisionen zu vermeiden?
   </p>
   <hr />
   <p><strong>テーマ:</strong><br />
-    スイッチのポート独立性だけでは衝突を完全に防げないのはなぜか？
+    <span style="color: red;">スイッチのポート独立性</span>だけでは衝突を完全に防げないのはなぜか？
   </p>
 </div>
 
@@ -120,7 +120,7 @@
   <div class="col-md-6">
     <h5>Erklärung (Deutsch)</h5>
     <p>
-      Switches ermöglichen <strong>portweise getrennte Kommunikation</strong>. Dadurch können z.&nbsp;B. PC1 und PC2 sowie PC3 und PC4 gleichzeitig kommunizieren, ohne sich zu stören.
+      Switches ermöglichen <strong>portweise getrennte Kommunikation</strong>. Dadurch können z.&nbsp;B. <span style="color: red;">PC1 und PC2 sowie PC3 und PC4 gleichzeitig kommunizieren, ohne sich zu stören.</span>
     </p>
     <p>
       Diese Unabhängigkeit basiert auf der <strong>MAC-Adresstabelle</strong>, die jeder Switch intern führt: Für jede empfangene Frame speichert der Switch die Quell-MAC-Adresse und den zugehörigen Port.
@@ -147,7 +147,7 @@
     </p>
     <p>
       この独立性は、スイッチ内部の<strong>MACアドレステーブル</strong>によって実現されています。
-      スイッチはフレームを受信すると、送信元MACアドレスと受信ポートを記録し、次に同じMAC宛のフレームが来たときに、<strong>対応するポートのみに転送</strong>するのです。
+      スイッチはフレームを受信すると、<span style="color: red;">送信元MACアドレス</span>と<span style="color: red;">受信ポート</span>を記録し、次に同じMAC宛のフレームが来たときに、<strong>対応するポートのみに転送</strong>するのです。
     </p>
     <p>
       これにより、異なるポート間の通信が<strong>干渉せずに並行して行える</strong>ようになります。
@@ -165,6 +165,11 @@
       この問題を防ぐためには、<strong>フルデュプレックス（全二重通信）</strong>への対応が必要です。
     </p>
   </div>
+  
+    <!-- 図1 -->
+    <div class="text-center mb-4">
+      <img :src="image" alt="MAC Adresstabelle" />
+    </div>
 </div>
 
 
@@ -245,7 +250,7 @@
       Für zukünftige Frames mit derselben Zieladresse kann der Switch das Frame gezielt nur an den zugehörigen Port weiterleiten – die anderen Ports bleiben unberührt.
     </p>
     <p>
-      ➤ Ergebnis: Die Kommunikation ist vollständig <strong>portbasiert isoliert</strong>.
+      ➤ Ergebnis: <span style="color: red;">Die Kommunikation ist vollständig <strong>portbasiert isoliert</strong>.</span>
     </p>
     <p>
       <strong>Vor dem Lernen</strong> kennt der Switch die Zieladresse noch nicht – er leitet das Frame an <strong>alle Ports außer dem Empfangsport</strong> weiter (Flooding).
@@ -291,7 +296,7 @@
       次回以降、そのMAC宛のフレームは対応するポート<strong>だけ</strong>に送信されるようになります。他のポートには一切影響を与えません。
     </p>
     <p>
-      ➤ 結果として、通信は<strong>完全にポート単位で分離（独立）</strong>されるのです。
+      ➤ 結果として、<span style="color: red;">通信は<strong>完全にポート単位で分離（独立）</strong>されるのです。</span>
     </p>
     <p>
       一方で、<strong>学習前</strong>には宛先MACアドレスのポートがわからないため、スイッチはそのフレームを<strong>受信ポート以外のすべてに送信（フラッディング）</strong>します。
@@ -362,7 +367,7 @@
       Die physikalische Voraussetzung: moderne Ethernet-Kabel (z.&nbsp;B. Cat5e) mit 4 Drahtpaaren.
     </p>
     <p>
-      ➤ Zwei Paare für den Sendeweg, zwei Paare für den Empfang – die Richtungen sind physikalisch getrennt.
+      ➤ <span style="color: red;">Zwei Paare für den Sendeweg, zwei Paare für den Empfang – die Richtungen sind physikalisch getrennt.</span>
     </p>
     <p>
       Die Switch-Ports enthalten dafür spezialisierte Schaltungen (PHY/MAC), die gleichzeitige Verarbeitung ermöglichen.
@@ -403,7 +408,7 @@
       スイッチと端末の両方がフルデュプレックス対応であれば、<strong>送信と受信を同時に</strong>行えます。
     </p>
     <p>
-      Ethernetケーブル（例：Cat5e）は<strong>8本（4対）の銅線</strong>で構成され、2対を送信用、2対を受信用に使います。
+      <span style="color: red;">Ethernetケーブル（例：Cat5e）は<strong>8本（4対）の銅線</strong>で構成され、2対を送信用、2対を受信用に使います。</span>
     </p>
     <p>
       スイッチのポートには、<strong>送信と受信を分離して処理する専用の回路（PHY/MAC）</strong>が搭載されており、
@@ -427,4 +432,5 @@
 </template>
 
 <script setup>
+import image from '@/assets/lecture/lecture03/Figure_0201.png'
 </script>

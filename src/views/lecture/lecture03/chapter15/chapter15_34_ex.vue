@@ -32,11 +32,11 @@
         </p>
         <p>
           <strong>Konvergenzgeschwindigkeit:</strong> LS konvergiert schneller und deterministisch.
-          DV kann langsam sein, Routing-Loops verursachen und unter dem Count-to-Infinity-Problem leiden.
+          <span style="color: red;">DV kann langsam sein, Routing-Loops verursachen und unter dem Count-to-Infinity-Problem leiden</span>.
         </p>
         <p>
-          <strong>Robustheit:</strong> LS ist robuster gegenüber fehlerhaften Routern, da die Berechnung lokal erfolgt.
-          Im Gegensatz dazu kann ein einzelner fehlerhafter DV-Router das ganze Netz negativ beeinflussen.
+          <strong>Robustheit:</strong> LS ist <span style="color: red;">robuster gegenüber fehlerhaften Routern, da die Berechnung lokal erfolgt</span>.
+          Im Gegensatz dazu kann <span style="color: red;">ein einzelner fehlerhafter DV-Router das ganze Netz negativ beeinflusse</span>.
         </p>
       </div>
 
@@ -52,16 +52,16 @@
           そのため、情報がネットワーク全体に広がるのに時間がかかります。
         </p>
         <p>
-          <strong>メッセージ数:</strong> LS は O(N×E) の大量のメッセージが必要ですが、
+          <span style="color: red;"><strong>メッセージ数:</strong> LS は O(N×E) の大量のメッセージが必要</span>ですが、
           DV は直接隣接ノード間でのみメッセージ交換を行います。
         </p>
         <p>
           <strong>収束速度:</strong> LS は決定論的で比較的速く収束しますが、
-          DV はループやCount-to-Infinityなどの問題で遅くなる可能性があります。
+          <span style="color: red;">DV はループやCount-to-Infinityなどの問題で遅くなる可能性</span>があります。
         </p>
         <p>
-          <strong>堅牢性:</strong> LS ではルーターごとに独立して計算が行われるため、
-          誤動作するルーターの影響が局所的です。DV では1つの誤った経路情報が全体に波及する可能性があります。
+          <span style="color: red;"><strong>堅牢性:</strong> LS ではルーターごとに独立して計算が行われるため、
+          誤動作するルーターの影響が局所的</span>です。DV では<span style="color: red;">1つの誤った経路情報が全体に波及する可能性</span>があります。
         </p>
       </div>
     </div>

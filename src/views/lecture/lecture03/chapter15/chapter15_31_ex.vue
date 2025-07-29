@@ -18,8 +18,8 @@
           <h5>Erklärung (Deutsch)</h5>
           <p>
             Dijkstra berechnet die kürzesten Wege zu allen Zielen.  
-            Für den Forwarding Table braucht man aber nur die nächste Station (Next Hop).  
-            Daher verfolgt man vom Ziel aus rückwärts den Pfad zum Startknoten und notiert den ersten Link.
+            <br/><span style="color: red;">Für den Forwarding Table braucht man aber nur die nächste Station (Next Hop).</span>  
+            <br/>Daher verfolgt man vom Ziel aus rückwärts den Pfad zum Startknoten und notiert den ersten Link.
           </p>
           <p>
             Für jeden Zielknoten wird also ermittelt, über welchen Nachbarn das erste Paket gehen muss.  
@@ -30,11 +30,11 @@
           <h5>解説（日本語）</h5>
           <p>
             Dijkstraアルゴリズムでは、自ノードからすべての宛先ノードまでの最短経路を計算します。  
-            ただし、実際のパケット転送に必要なのは、「次に送るべき隣接ノード（next hop）」だけです。
+            <br/><span style="color: red;">ただし、実際のパケット転送に必要なのは、「次に送るべき隣接ノード（next hop）」だけです。</span>
           </p>
           <p>
             そのため、最短経路を各宛先から逆方向にたどり、出発点（自ノード）に戻る経路上の最初のリンクを記録します。  
-            これにより、各宛先に対してどの隣接ノードに送るべきかがわかり、<strong>転送表（Forwarding Table）</strong>が作成されます。
+            <br/>これにより、各宛先に対してどの隣接ノードに送るべきかがわかり、<strong>転送表（Forwarding Table）</strong>が作成されます。
           </p>
         </div>
       </div>
@@ -93,9 +93,9 @@
         <div class="col-md-6">
           <h5>Erklärung (Deutsch)</h5>
           <p>
-            Die naive Implementierung von Dijkstra hat eine Komplexität von O(n<sup>2</sup>).  
-            Bei vielen Knoten wird das langsam. Nutzt man einen Min-Heap (Priority Queue),  
-            kann man die Laufzeit auf O(n log<sub>n</sub> + E log<sub>n</sub>) senken.
+            Die naive Implementierung von Dijkstra hat <span style="color: red;">eine Komplexität von O(n<sup>2</sup>)</span>.  
+            Bei vielen Knoten wird das langsam. Nutzt man <span style="color: red;">einen Min-Heap (Priority Queue)</span>,  
+            kann man <span style="color: red;">die Laufzeit auf O(n log<sub>n</sub> + E log<sub>n</sub>) senken</span>.
           </p>
           <p>
             Moderne Implementierungen (z.&nbsp;B. in OSPF) verwenden binäre Heaps oder Fibonacci-Heaps,  
@@ -106,11 +106,11 @@
           <h5>解説（日本語）</h5>
           <p>
             Dijkstraアルゴリズムの単純な実装では、すべてのノードに対して距離を比較するため、  
-            計算量はO(n<sup>2</sup>)となり、大規模ネットワークでは遅くなります。
+            <span style="color: red;">計算量はO(n<sup>2</sup>)</span>となり、大規模ネットワークでは遅くなります。
           </p>
           <p>
-            これを改善するために、優先度付きキュー（Min-Heapなど）を使って  
-            最小コストのノードを効率的に取り出すことで、O(n log<sub>n</sub> + E log<sub>n</sub>)に高速化できます。
+            これを改善するために、<span style="color: red;">優先度付きキュー（Min-Heapなど）</span>を使って  
+            最小コストのノードを効率的に取り出すことで、<span style="color: red;">O(n log<sub>n</sub> + E log<sub>n</sub>)に高速化</span>できます。
           </p>
           <p>
             実際のOSPFなどでは、バイナリヒープやフィボナッチヒープを使用して処理性能を高めています。
@@ -134,22 +134,27 @@
         <div class="col-md-6">
           <h5>Erklärung (Deutsch)</h5>
           <p>
-            Wenn sich Metriken wie Delay oder Load schnell ändern,  
-            können Router sich gegenseitig beeinflussen und ständig die Routen wechseln.  
-            Dies nennt man Oscillation.
+            <span style="color: red;">Wenn sich Metriken wie Delay oder Load schnell ändern</span>,  
+            können Router sich gegenseitig beeinflussen und <span style="color: red;">ständig die Routen wechseln</span>.  
+            <br/>Dies nennt man <span style="color: red;">Oscillation</span>.
           </p>
           <p>
             Beispiel: Zwei Router wechseln immer wieder zwischen zwei Wegen,  
             weil jeder denkt, der andere Weg sei kürzer. Die Routen „springen“ ständig hin und her.
           </p>
           <p>
-            Lösung: Hysterese, Schwellenwerte oder Stabilitätsfilter, die nur echte Änderungen akzeptieren.
+            Lösung: 
           </p>
+          <ul style="color: red;">
+            <li>Hysterese: kleine Änderungen werden ignoriert, um unnötige Umschaltungen zu vermeiden</li>
+            <li>Schwellenwerte: Routenwechsel nur, wenn ein bestimmter Wert überschritten wird</li>
+            <li>Stabilitätsfilter: bevorzugt stabile Routen gegenüber kurzfristigen Schwankungen</li>
+          </ul>
         </div>
         <div class="col-md-6">
           <h5>解説（日本語）</h5>
           <p>
-            遅延やトラフィック量などのメトリックが頻繁に変動する環境では、  
+            <span style="color: red;">遅延やトラフィック量などのメトリックが頻繁に変動する環境</span>では、  
             ルーターが経路を頻繁に切り替えすぎて不安定になることがあります。これを「Oscillation（経路の揺れ）」と呼びます。
           </p>
           <p>
@@ -157,9 +162,13 @@
             経路が何度も切り替わり、パケットの安定した転送ができなくなります。
           </p>
           <p>
-            この問題を防ぐには、一定以上の変化がない限り経路を変えない「ヒステリシス」や、  
-            しきい値による制御、安定化フィルターの導入が効果的です。
+            解決策：
           </p>
+          <ul style="color: red;">
+            <li>ヒステリシス：小さな変化を無視して無駄な切り替えを避ける</li>
+            <li>しきい値：ある値を超えた場合のみルートを切り替える</li>
+            <li>安定性フィルター：短期的な変動よりも安定した経路を優先する</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -236,9 +245,9 @@
           Um solche Oszillationen zu vermeiden, kann man Folgendes tun:
         </p>
         <ul>
-          <li>Linkkosten sollten nicht vom aktuellen Traffic abhängen</li>
+          <li><span style="color: red;">Linkkosten sollten nicht vom aktuellen Traffic abhängen</span></li>
           <li>Nicht alle Router sollten gleichzeitig den LS-Algorithmus starten</li>
-          <li>Man kann zufällige Verzögerungen beim Senden von Link-State-Advertisments einführen</li>
+          <li>Man kann <span style="color: red;">zufällige Verzögerungen beim Senden von Link-State-Advertisments einführen</span></li>
         </ul>
         <p>
           Diese Maßnahmen helfen, das Phänomen der Selbst-Synchronisation zu vermeiden,  
@@ -252,9 +261,9 @@
           このような経路振動を防ぐには、以下のような工夫が有効です：
         </p>
         <ul>
-          <li>リンクのコストをトラフィック量に依存させない</li>
+          <li><span style="color: red;">リンクのコストをトラフィック量に依存させない</span></li>
           <li>すべてのルーターが同時にLSアルゴリズムを実行しない</li>
-          <li>各ルーターがリンク状態情報の送信タイミングをランダムにする</li>
+          <li><span style="color: red;">各ルーターがリンク状態情報の送信タイミングをランダム</span>にする</li>
         </ul>
         <p>
           特に「自己同期（self-synchronization）」の問題を避けるためには、  
@@ -291,9 +300,9 @@
       Es gibt mehrere Gegenmaßnahmen:
     </p>
     <ul>
-      <li><strong>Feste Linkkosten:</strong> Man sollte Metriken wählen, die nicht direkt vom aktuellen Datenverkehr abhängen.</li>
-      <li><strong>Asynchrone Ausführung:</strong> Router sollten den LS-Algorithmus nicht exakt zur selben Zeit ausführen.</li>
-      <li><strong>Zufällige Verzögerung:</strong> Jeder Router kann die Aussendung seiner Link-State-Advertisments leicht verzögern (z.B. durch zufällige Timer).</li>
+      <li><strong style="color: red;">Feste Linkkosten:</strong> Man sollte Metriken wählen, die nicht direkt vom aktuellen Datenverkehr abhängen.</li>
+      <li><strong style="color: red;">Asynchrone Ausführung:</strong> Router sollten den LS-Algorithmus nicht exakt zur selben Zeit ausführen.</li>
+      <li><strong style="color: red;">Zufällige Verzögerung:</strong> Jeder Router kann die Aussendung seiner Link-State-Advertisments leicht verzögern (z.B. durch zufällige Timer).</li>
     </ul>
     <p>
       Diese Maßnahmen verhindern <strong>Selbstsynchronisation</strong>, ein bekanntes Phänomen, bei dem sich Router unbeabsichtigt im Takt angleichen und damit alle gleichzeitig reagieren – was Oszillation erst auslöst.
