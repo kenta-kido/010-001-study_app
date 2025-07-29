@@ -72,9 +72,9 @@
 
     <p><strong>(i) Reaktionsgeschwindigkeit:</strong></p>
     <ul>
-      <li>AIMD erhöht cwnd konstant um 1 MSS（Maximum Segment Size） pro RTT → konstante, lineare Geschwindigkeit.</li>
+      <li>AIMD <span style="color: red;">erhöht cwnd konstant um 1 MSS（Maximum Segment Size） pro RTT</span> → <span style="color: red;">konstante, lineare Geschwindigkeit.</span></li>
       <li>CUBIC verwendet <i>W(t) = C(t−K)³ + W<sub>max</sub></i>, wobei die Änderungsrate <i>dW/dt = 3C(t−K)²</i> ist.</li>
-      <li>⇒ Zu Beginn (t = 0) ist die Reaktion schnell (3CK²), wird jedoch langsamer, je näher t an K liegt. Bei t = K ist die Geschwindigkeit null.</li>
+      <li>⇒ Zu Beginn (t = 0) ist die Reaktion schnell (3CK²), wird <span style="color: red;">jedoch langsamer, je näher t an K liegt</span>. Bei t = K ist die Geschwindigkeit null.</li>
     </ul>
     <div>
         <strong>Ergänzung zu AIMD (Deutsch)</strong>
@@ -97,9 +97,9 @@
 
     <p><strong>(ii) Entwicklung der Senderate:</strong></p>
     <ul>
-      <li>AIMD: cwnd wächst linear mit der Zeit, unabhängig vom vorherigen Maximum.</li>
-      <li>CUBIC: cwnd wächst nicht-linear (t³), bildet ein Plateau bei W<sub>max</sub> und wächst danach erneut schneller (konvexes Wachstum).</li>
-      <li>Durch die Zeit-basierte Steuerung ist CUBIC effizienter bei großen Bandbreiten und hohen RTTs.</li>
+      <li>AIMD: cwnd wächst linear mit der Zeit, <span style="color: red;">unabhängig vom vorherigen Maximum.</span></li>
+      <li>CUBIC: cwnd wächst <span style="color: red;">nicht-linear</span> (t³), bildet ein Plateau bei W<sub>max</sub> und wächst danach erneut schneller (konvexes Wachstum).</li>
+      <li>Durch die <span style="color: red;">Zeit-basierte Steuerung</span> ist CUBIC effizienter bei großen Bandbreiten und hohen RTTs.</li>
     </ul>
     
   </div>
@@ -138,7 +138,7 @@
 
     <p><strong>(ii) 送信レートの推移：</strong></p>
     <ul>
-      <li>AIMD：時間に対して直線的にウィンドウが増加し、過去の最大値に依存しない。</li>
+      <li>AIMD：時間に対して直線的にウィンドウが増加し、<span style="color: red;">過去の最大値に依存しない。</span></li>
       <li>CUBIC：三次関数的に成長し、W<sub>max</sub> に近づくと成長が鈍化（プラトー）、それを越えると再び加速的に増加（凸型）。</li>
       <li>RTT に依存せず、経過時間のみで増加するため、遅延が大きいネットワークでも高効率。</li>
     </ul>

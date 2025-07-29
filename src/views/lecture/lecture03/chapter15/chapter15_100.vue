@@ -8,14 +8,14 @@
         <h4>BBR – Übersicht (Deutsch)</h4>
         <ul>
           <li><strong>BBR</strong> steht für <em>Bottleneck Bandwidth and Round-trip propagation time</em> und ist ein moderner TCP-Staukontrollalgorithmus, entwickelt von Google.</li>
-          <li>Klassische Algorithmen wie TCP Reno oder CUBIC reagieren auf Paketverluste. BBR hingegen schätzt Bandbreite und Latenz, um Überlastung proaktiv zu vermeiden.</li>
+          <li>Klassische Algorithmen wie TCP Reno oder CUBIC reagieren auf Paketverluste. BBR hingegen <span style="color: red;">schätzt Bandbreite und Latenz, um Überlastung proaktiv zu vermeiden.</span></li>
         </ul>
       </div>
       <div class="col-md-6">
         <h4>BBRの概要（日本語）</h4>
         <ul>
-          <li><strong>BBR</strong>（Bottleneck Bandwidth and Round-trip propagation time）は、Google が開発したTCPの新しい輻輳制御アルゴリズムです。</li>
-          <li>従来のRenoやCUBICがパケット損失に基づく制御を行うのに対し、BBRは「帯域幅」と「遅延」の推定に基づき、<strong>損失の前に輻輳を回避</strong>するよう設計されています。</li>
+          <li><strong>BBR</strong>（<span style="color: red;">Bottleneck Bandwidth and Round-trip propagation time</span>）は、Google が開発したTCPの新しい輻輳制御アルゴリズムです。</li>
+          <li>従来のRenoやCUBICがパケット損失に基づく制御を行うのに対し、<span style="color: red;">BBRは「帯域幅」と「遅延」の推定に基づき</span>、<strong style="color: red;">損失の前に輻輳を回避</strong>するよう設計されています。</li>
         </ul>
       </div>
     </div>
@@ -44,8 +44,8 @@
         <h5>📌 Grundbegriffe (Folie 40)</h5>
         <ul>
           <li><strong>BtlBw:</strong> Bottleneck Bandwidth – maximale Rate am Engpass</li>
-          <li><strong>RT<sub>prop</sub>:</strong> minimale RTT (nur Übertragungszeit)</li>
-          <li><strong>BDP:</strong> = BtlBw × RT<sub>prop</sub></li>
+          <li><strong>RT<sub>prop</sub>:</strong> <span style="color: red;">minimale RTT (nur Übertragungszeit)</span></li>
+          <li><strong>BDP:</strong> = BtlBw × RT<sub>prop</sub>: <span style="color: red;">Datenmenge, die sich gleichzeitig im Netzwerk befinden kann</span></li>
         </ul>
       </div>
       <div class="col-md-6">

@@ -147,7 +147,7 @@
   <div class="col-md-6">
     <h5>Erklärung (Deutsch)</h5>
     <p>
-      AIMD (Additive Increase, Multiplicative Decrease) erhöht das Congestion Window pro empfangenem ACK – also indirekt pro RTT.
+      AIMD (Additive Increase, Multiplicative Decrease) <span style="color: red;">erhöht das Congestion Window pro empfangenem ACK – also indirekt pro RTT.</span>
       Das bedeutet: Je länger die RTT, desto langsamer wächst das Fenster.
     </p>
     <p>
@@ -155,8 +155,8 @@
       da ACKs verzögert eintreffen.
     </p>
     <p>
-      Dadurch wird die verfügbare Bandbreite nicht effizient genutzt, insbesondere nach einem Paketverlust,  
-      da die Fensterwiederherstellung sehr lange dauert.
+      Dadurch wird die verfügbare Bandbreite nicht effizient genutzt, <span style="color: red;">insbesondere nach einem Paketverlust,  
+      da die Fensterwiederherstellung sehr lange dauert.</span>
     </p>
     <p>
       Diese RTT-Abhängigkeit macht AIMD für moderne Netzwerke mit großer Latenz ungeeignet.
@@ -166,14 +166,14 @@
   <div class="col-md-6">
     <h5>解説（日本語）</h5>
     <p>
-      AIMD（加算増加・乗算減少）アルゴリズムでは、ACK の受信ごとに cwnd（輻輳ウィンドウ）を少しずつ増加させます。
+      AIMD（加算増加・乗算減少）アルゴリズムでは、<span style="color: red;">ACK の受信ごとに cwnd（輻輳ウィンドウ）を少しずつ増加</span>させます。
       これは、**RTT に比例して成長速度が決まる**ことを意味します。
     </p>
     <p>
       高遅延ネットワーク（例：衛星通信）では ACK の応答が遅れるため、  
       **ウィンドウの成長に非常に時間がかかってしまい、帯域を有効に使えません**。
     </p>
-    <p>
+    <p style="color: red;">
       特にパケットロス後の回復にも時間がかかり、スループットが低下します。
     </p>
     <p>

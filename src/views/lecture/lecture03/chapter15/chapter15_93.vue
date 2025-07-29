@@ -37,15 +37,15 @@
         <h5>解答（日本語）</h5>
         <ul>
           <li><strong>AIMD：</strong> 輻輳ウィンドウは線形（遅い）に増加し、損失時に半減する。</li>
-          <li>損失に敏感で、回復には時間がかかる。</li>
-          <li>公平性は高いが、高帯域ネットワークでは非効率。</li>
+          <li><span style="color: red;">損失に敏感</span>で、<span style="color: red;">回復には時間</span>がかかる。</li>
+          <li><span style="color: red;">公平性は高い</span>が、<span style="color: red;">高帯域ネットワークでは非効率</span>。</li>
           <li>回復速度はRTTに依存。</li>
         </ul>
         <ul>
           <li><strong>CUBIC：</strong> 増加は線形ではなく三次関数的（t³）である。</li>
-          <li>損失直後はゆるやかに、W<sub>max</sub>から離れると急速に成長する。</li>
+          <li><span style="color: red;">損失直後はゆるやかに、W<sub>max</sub>から離れると急速に成長</span>する。</li>
           <li>RTT に依存せず、回復が速い。</li>
-          <li>高帯域・高遅延ネットワークに最適化されている。</li>
+          <li><span style="color: red;">高帯域・高遅延ネットワークに最適化</span>されている。</li>
         </ul>
       </div>
     </div>

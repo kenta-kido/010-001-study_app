@@ -42,9 +42,11 @@
         <p><strong>2) Erklärung der Betriebspunkte:</strong></p>
         <ul>
           <li><strong>Betriebspunkt 1:</strong> Optimale Ausnutzung der Leitung: inflight ≈ BDP, RTT ≈ RT<sub>prop</sub>. Kein Warteschlangenaufbau – idealer Zustand laut Kleinrock.</li>
-          <li><strong>Betriebspunkt 2:</strong> Bufferbloat-Zustand: inflight ≫ BDP, Puffer sind voll, RTT ist stark erhöht – ineffizient trotz hohen Durchsatzes.</li>
+          <li><strong>Betriebspunkt 2:</strong> Bufferbloat-Zustand: inflight ≫ BDP, Puffer sind voll, RTT ist stark erhöht – ineffizient, da zwar <span style="color: red;">der Durchsatz erhalten bleibt</span>, aber <span style="color: red;">die Latenz stark leidet.</span></li>
         </ul>
-
+        <p style="color: red;">
+        Betriebspunkt 2: Verlustbasierte Überlastkontrollen arbeiten hier.
+        </p>
         <p><strong>Fazit:</strong> TCP BBR strebt Betriebspunkt 1 an, indem es regelmäßig <em>RT<sub>prop</sub></em> und <em>BtlBw</em> modelliert und sich dynamisch anpasst (siehe Folien 41–42).</p>
       </div>
 
@@ -61,8 +63,11 @@
         <p><strong>2）動作点の説明：</strong></p>
         <ul>
           <li><strong>動作点1：</strong> Kleinrock の理想点。BDPちょうどで送信し、RTTは最小。BBRが目標とする最適点。</li>
-          <li><strong>動作点2：</strong> バッファが詰まり、RTTが大幅上昇するBufferbloat状態。スループットは高いが遅延が深刻。</li>
+          <li><strong>動作点2：</strong> <span style="color: red;">バッファが詰まり、RTTが大幅上昇するBufferbloat状態。スループットは変わらず遅延が深刻。</span></li>
         </ul>
+        <p style="color: red;">
+        動作点2： ロスベースの輻輳制御（例：TCP Reno, CUBICなど）はこの領域で動作する.
+        </p>
 
         <p><strong>結論：</strong> BBR は RT<sub>prop</sub> と BtlBw を別々に推定しながら制御を行い、BDP という理想的な送信量に近づくように設計されています。</p>
       </div>
@@ -214,7 +219,9 @@
     一方で <strong>TCP BBR は予防的なアプローチ</strong>を取ります。RTT が RT<sub>prop</sub> から上昇し始めた段階で、「バッファが埋まりつつある」と判断して送信レートの調整を始めます。これにより、損失や輻輳が発生する前に制御を行えます。
   </li>
   <li>
-    <strong>重要なのは：</strong> RT<sub>prop</sub>（最小遅延）と BtlBw（最大帯域幅）は、<em>同時に測定することができません</em>。RT<sub>prop</sub> はネットワークが空のときに、BtlBw は帯域が飽和しているときにしか正確に推定できないためです。BBR はこの問題に対処するため、定期的に <em>ProbeRTT</em>（RTT計測）と <em>ProbeBW</em>（帯域推定）を繰り返して、それぞれの値を継続的に更新します。
+    <strong>重要なのは：</strong><span style="color: red;"> RT<sub>prop</sub>（最小遅延）と BtlBw（最大帯域幅）は、<em>同時に測定することができません</em></span>。
+    <br/>RT<sub>prop</sub> は<span style="color: red;">ネットワークが空のとき</span>にしか、BtlBw は<span style="color: red;">帯域が飽和しているときにしか正確に推定できない</span>ためです。
+    <br/>BBR はこの問題に対処するため、定期的に <em>ProbeRTT</em>（RTT計測）と <em>ProbeBW</em>（帯域推定）を繰り返して、それぞれの値を継続的に更新します。
   </li>
 </ul>
   </div>
@@ -227,19 +234,19 @@
   <strong>Wichtig:</strong> <code>RT<sub>prop</sub></code> (minimale Verzögerung) und <code>BtlBw</code> (maximale Bottleneck-Bandbreite) können <em>nicht gleichzeitig</em> zuverlässig gemessen werden. Der Grund ist, dass die Voraussetzungen für die Erfassung dieser beiden Größen sich widersprechen:
   <ul>
     <li>
-      Um <strong>RT<sub>prop</sub></strong> zu messen, muss das Netzwerk <strong>frei von Warteschlangen</strong> sein – also möglichst keine zusätzlichen Verzögerungen enthalten.
+      Um <strong>RT<sub>prop</sub></strong> zu messen, <span style="color: red;">muss das Netzwerk <strong>frei von Warteschlangen</strong> sein</span> – also möglichst keine zusätzlichen Verzögerungen enthalten.
     </li>
     <li>
-      Um <strong>BtlBw</strong> zu messen, muss das Netzwerk <strong>voll ausgelastet</strong> sein – d.h. es muss ein kontinuierlicher Datenfluss stattfinden, damit die delivery rate die wahre Kapazität widerspiegelt.
+      Um <strong>BtlBw</strong> zu messen, muss das Netzwerk <strong>voll ausgelastet</strong> sein – d.h. <span style="color: red;">es muss ein kontinuierlicher Datenfluss stattfinden, damit die delivery rate die wahre Kapazität widerspiegelt.</span>
     </li>
   </ul>
-  Diese zwei Zustände (leer vs. voll) schließen sich aus – man kann sie nicht gleichzeitig herstellen. <br />
-  Deshalb hat BBR einen Mechanismus entwickelt, der diese beiden Bedingungen <strong>zeitlich getrennt</strong> behandelt:
+  Diese zwei Zustände (leer vs. voll) schließen sich aus – <span style="color: red;">man kann sie nicht gleichzeitig herstellen.</span><br />
+  Deshalb hat BBR einen Mechanismus entwickelt, der <span style="color: red;">diese beiden Bedingungen <strong>zeitlich getrennt</strong> behandelt:</span>
   <ul>
     <li>
-      In der <em>ProbeRTT</em>-Phase wird die Sende­rate drastisch reduziert (z.B. auf vier kleine Pakete), um die tatsächliche RT<sub>prop</sub> ohne Staus zu ermitteln.
+      In der <em>ProbeRTT</em>-Phase wird <span style="color: red;">die Sende­rate drastisch reduziert</span> (z.B. auf vier kleine Pakete), <span style="color: red;">um die tatsächliche RT<sub>prop</sub> ohne Staus zu ermitteln.</span>
     </li>
-    <li>
+    <li style="color: red;">
       In der <em>ProbeBW</em>-Phase wird die delivery rate aktiv variiert, um ein realistisches Maximum für die Bottleneck-Bandbreite zu finden.
     </li>
   </ul>
@@ -250,20 +257,20 @@
 <li>
   <strong>重要なのは：</strong> <code>RT<sub>prop</sub></code>（最小遅延）と <code>BtlBw</code>（ボトルネック帯域幅）は、<em>同時に正確に測定することができません</em>。これは、それぞれの測定に必要なネットワーク状態が相反するためです：
   <ul>
-    <li>
+    <li style="color: red;">
       <strong>RT<sub>prop</sub></strong> を正確に測るには、ネットワークが<strong>混雑していない状態（キューがゼロ）</strong>でなければなりません。つまり、パケットが一切待たされることなく最速で往復する必要があります。
     </li>
-    <li>
+    <li style="color: red;">
       一方で <strong>BtlBw</strong> を測定するには、ネットワークが<strong>十分に負荷されている状態</strong>である必要があります。送信レートを高め、ボトルネックを飽和させることで初めて、実際の最大delivery rateを観測できます。
     </li>
   </ul>
   この2つの条件（ネットワークが空 vs. ネットワークが満杯）は、同時に成立することがないため、<strong>1つの瞬間に両方を測ることは原理的に不可能</strong>なのです。<br />
   この課題を解決するために、BBRは以下の2つの状態を設けて、<strong>時間的に分けて交互に測定</strong>します：
   <ul>
-    <li>
+    <li style="color: red;">
       <em>ProbeRTT</em> 状態では、送信量を一時的に極端に減らし（通常は4パケット程度）、キューが完全に消えた状態で RT<sub>prop</sub> を再計測します。
     </li>
-    <li>
+    <li style="color: red;">
       <em>ProbeBW</em> 状態では、送信レートを周期的に増減させることで、ネットワークを適度に負荷しながら、delivery rate を最大化し、BtlBw を更新します。
     </li>
   </ul>

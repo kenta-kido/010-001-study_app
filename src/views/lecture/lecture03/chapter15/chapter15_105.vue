@@ -20,19 +20,19 @@
         <h5>Antwort (Deutsch)</h5>
         <ol>
           <li>
-            <strong>Startup:</strong> BBR erhöht die Sende­rate exponentiell, um schnell eine erste Schätzung für die Bottleneck-Bandbreite (BtlBw) zu erhalten.<br />
-            <em>Ziel:</em> Möglichst schnell den maximal nutzbaren Durchsatz erkennen.
+            <strong>Startup:</strong> BBR <span style="color: red;">erhöht die Sende­rate exponentiell</span>, <span style="color: red;">um schnell eine erste Schätzung für die Bottleneck-Bandbreite (BtlBw) zu erhalten.</span><br />
+            <em>Ziel:</em> <span style="color: red;">Möglichst schnell den maximal nutzbaren Durchsatz erkennen</span>.
           </li>
           <li>
-            <strong>Drain:</strong> Nach dem Startup reduziert BBR die Sende­rate, um überflüssige Warteschlangen im Netzwerk abzubauen.<br />
-            <em>Ziel:</em> Puffer leeren und Latenz minimieren.
+            <strong>Drain:</strong> Nach dem Startup <span style="color: red;">reduziert BBR die Sende­rate</span>, <span style="color: red;">um überflüssige Warteschlangen im Netzwerk abzubauen</span>.<br />
+            <em>Ziel:</em> <span style="color: red;">Puffer leeren und Latenz minimieren.</span>
           </li>
           <li>
-            <strong>ProbeBW (Probe Bandwidth):</strong> BBR variiert die Sende­rate zyklisch (schneller/langsamer), um freie Bandbreite zu erkennen.<br />
-            <em>Ziel:</em> Änderungen der verfügbaren Bandbreite rechtzeitig erfassen.
+            <strong>ProbeBW (Probe Bandwidth):</strong> BBR <span style="color: red;">variiert die Sende­rate zyklisch (schneller/langsamer), um freie Bandbreite zu erkennen.</span><br />
+            <em>Ziel:</em> <span style="color: red;">Änderungen der verfügbaren Bandbreite rechtzeitig erfassen.</span>
           </li>
           <li>
-            <strong>ProbeRTT:</strong> BBR reduziert temporär die Sende­menge, um den minimalen RTT-Wert (RT<sub>prop</sub>) neu zu messen.<br />
+            <strong>ProbeRTT:</strong> BBR <span style="color: red;">reduziert temporär die Sende­menge, um den minimalen RTT-Wert (RT<sub>prop</sub>) neu zu messen.</span><br />
             <em>Ziel:</em> Die Netzwerklatenz korrekt modellieren.
           </li>
         </ol>
